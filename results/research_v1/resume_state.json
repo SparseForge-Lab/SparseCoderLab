@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "date_utc": "2026-10-06T13:02:13.428809+00:00",
+  "date_utc": "2026-10-06T13:56:20.690921+00:00",
   "models": {
     "dense": {
       "state": "resumable",
@@ -169,11 +169,77 @@
       "fallback_required": false
     },
     "memory": {
-      "state": "fresh_unstarted",
-      "consumed_tokens": 0,
-      "latest_valid_checkpoint": null,
-      "fully_evaluated_milestones": [],
-      "verified_checkpoints": [],
+      "state": "resumable",
+      "consumed_tokens": 20004864,
+      "latest_valid_checkpoint": {
+        "path": "D:\\SparseCoderLab\\experiments\\research_v1\\memory\\checkpoints\\last.pt",
+        "sha256": "67920b5f5da6b439154d5751e41b6f94016a465360e89a362f5c562688175190",
+        "size_bytes": 309405219,
+        "tokens": 20004864,
+        "optimizer_step": 2442,
+        "cursor": 19536,
+        "rng_available": true,
+        "scheduler_step": 2442,
+        "learning_rate": 0.0002781474196784636,
+        "config_hash": "a8ba057f1e9785490131ff364881006d4b3142d7eaddf1c661663ba635f874b9",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+      },
+      "fully_evaluated_milestones": [
+        20004864
+      ],
+      "verified_checkpoints": [
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\memory\\checkpoints\\last.pt",
+          "sha256": "67920b5f5da6b439154d5751e41b6f94016a465360e89a362f5c562688175190",
+          "size_bytes": 309405219,
+          "tokens": 20004864,
+          "optimizer_step": 2442,
+          "cursor": 19536,
+          "rng_available": true,
+          "scheduler_step": 2442,
+          "learning_rate": 0.0002781474196784636,
+          "config_hash": "a8ba057f1e9785490131ff364881006d4b3142d7eaddf1c661663ba635f874b9",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\memory\\checkpoints\\recovery_tokens_8192000.pt",
+          "sha256": "b6919c3c2420c81ae5c983619c7cc9044cc57269516670323328c21ee2c6f266",
+          "size_bytes": 309405219,
+          "tokens": 8192000,
+          "optimizer_step": 1000,
+          "cursor": 8000,
+          "rng_available": true,
+          "scheduler_step": 1000,
+          "learning_rate": 0.00029735519267377864,
+          "config_hash": "a8ba057f1e9785490131ff364881006d4b3142d7eaddf1c661663ba635f874b9",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\memory\\checkpoints\\tokens_20004864.pt",
+          "sha256": "67920b5f5da6b439154d5751e41b6f94016a465360e89a362f5c562688175190",
+          "size_bytes": 309405219,
+          "tokens": 20004864,
+          "optimizer_step": 2442,
+          "cursor": 19536,
+          "rng_available": true,
+          "scheduler_step": 2442,
+          "learning_rate": 0.0002781474196784636,
+          "config_hash": "a8ba057f1e9785490131ff364881006d4b3142d7eaddf1c661663ba635f874b9",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        }
+      ],
       "rejected_checkpoints": [],
       "frozen_identity": {
         "config_hash": "a8ba057f1e9785490131ff364881006d4b3142d7eaddf1c661663ba635f874b9",

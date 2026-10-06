@@ -1,6 +1,6 @@
 # Documentation index
 
-New permanent continuation documents:38_release_and_model_card_evidence.md covers research ledger/release/card/timeline rules;39_local_dense_playground.md covers the explicitly requested loopback Dense50M CPU playground. Exact Prompt-2.5 request:00_prompt_2_5_request.md. All remain part of Prompt-2.
+New permanent continuation documents:38_release_and_model_card_evidence.md covers research ledger/release/card/timeline rules;39_local_dense_playground.md covers the explicitly requested loopback Dense50M CPU playground. All remain part of Prompt-2.
 
 This directory is the maintained documentation for SparseCoderLab. The small models test architecture hypotheses; they are not expected to be useful coding agents.
 
@@ -35,14 +35,12 @@ The `00_*` exact request records mentioned below are local-only provenance notes
 
 | File | Topic |
 |---|---|
-| 00_phase1_request.txt | Exact continuation request and stop conditions |
 | 23_phase1a_protocol.md | Predeclared matched endpoint and measurement scope |
 | 23_phase1a_results.md | Executed training comparison, fairness, timing and review stop |
 | 24_research_corpus.md | Candidate source review and explicitly unprepared real corpus |
 | 25_phase1b_results.md | Explicit not-run states and next experiment recommendation |
 | 26_phase1a_ngram.md | Gate, gradients, sampled buckets and trained-checkpoint ablation |
 | 27_phase1_routing_review.md | Observed balance versus unmeasured specialization/locality |
-| 00_moe_runtime_request.txt | Exact Prompt-1 request and stop conditions |
 | 28_moe_runtime_optimization.md | Reference/grouped profiling, actual speed, geometry and Case A decision |
 | 29_prompt_archives.md | Mandatory future goal/numbered SHA256 second-copy archive convention |
 | 30_moe_backend_correctness.md | Optimizer/checkpoint semantics, parity tolerances, rejected trials and controls |
@@ -50,15 +48,17 @@ The `00_*` exact request records mentioned below are local-only provenance notes
 
 | File | Topic |
 |---|---|
-| 00_research_v1_request.txt | Exact Prompt-2 real-data continuation request |
 | 32_research_v1_corpus.md | Verified bounded sources, split/dedup audit and frozen corpus |
 | 33_research_tokenizer.md | Measured real-data tokenizer decision and freeze |
 | 34_20m_50m_70m_100m_protocol.md | Matched cumulative updates, resume gates and evaluation scope |
 | 35_realdata_training_results.md | Primary quality/cost curves and replication decision |
 | 36_sparse_specialization.md | Held-out category/language routes and enrichment |
 | 37_ngram_realdata_results.md | Gate/table diagnostics and same-checkpoint ablations |
-| 00_prompt_2_5_request.md | Exact verified continuation request from the prompt pack |
 | 38_release_and_model_card_evidence.md | Permanent ledger, release, model-card and figure rules |
 | 39_local_dense_playground.md | CPU-only browser playground and observed capability limits |
 | 41_primary_run_controls.md | Sequential phase barriers, process guard, thermal samples and final audit |
 | 42_github_repository.md | GitHub, Apache-2.0, public/private artifact policy and publication checks |
+| 43_training_resume_with_roblox.md | Explicit training resume, retained Roblox and concurrent runtime scope |
+| 44_matched_20m_evidence.md | First all-three real-data comparison, ablation, routing and sampling limits |
+| 45_prompt2_completion_audit.md | Full-objective evidence inventory, final review schema and archive checks |
+| 46_public_repository_cleanup.md | Public/private classifications, narrowed experiment ignores and research continuity |

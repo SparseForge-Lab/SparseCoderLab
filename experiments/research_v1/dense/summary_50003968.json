@@ -1,0 +1,124 @@
+{
+  "step": 6104,
+  "tokens_seen": 50003968,
+  "cursor": 48832,
+  "training_seconds": 1567.896506200148,
+  "wall_time": 1675.0303698000025,
+  "seed": 42,
+  "config_hash": "178003c8c32adf7ebfe307b9c294aea8e2cf0ebcb340ab6ee4ae1132215ab7b1",
+  "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+  "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+  "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+  "model": "ResearchV1_DenseCompute",
+  "tag": "dense",
+  "wall_tok_s": 29852.573960178666,
+  "training_step_tok_s": 31892.390730040188,
+  "vram_peak": 1579603968,
+  "stored_params": 16574400,
+  "active_params_est": 16574400,
+  "training_flops_est": 4972714603315200,
+  "checkpoint": "experiments\\research_v1\\dense\\checkpoints\\tokens_50003968.pt",
+  "checkpoint_sha256": "f466676092df5d4b7e0ec1306985c5aff4d25e6440fa37858fb41f92bf61ac19",
+  "val_loss": 3.2885922230780125,
+  "mixed_predictions": 262144,
+  "bits_per_token": 4.7444356917406605,
+  "context_val_loss": 2.7322800051174116,
+  "code_val_loss": 2.7788633109765346,
+  "technical_val_loss": 3.6846171685595177,
+  "general_val_loss": 5.11328869683008,
+  "language": {
+    "context": {
+      "nll": 2.7322800051174116,
+      "predictions": 42474,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/other": {
+      "nll": 2.8503087158576736,
+      "predictions": 40688,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/Java": {
+      "nll": 2.2565663038200907,
+      "predictions": 42311,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/C#": {
+      "nll": 2.917519178184119,
+      "predictions": 40063,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/HTML/CSS": {
+      "nll": 2.344041302303729,
+      "predictions": 46584,
+      "documents": 64,
+      "sufficient": true
+    },
+    "technical": {
+      "nll": 3.6846171685595177,
+      "predictions": 38956,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/Python": {
+      "nll": 3.1561266612634835,
+      "predictions": 45406,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/C/C++": {
+      "nll": 2.71583323607138,
+      "predictions": 46741,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/JS/TS": {
+      "nll": 2.855182501377846,
+      "predictions": 35005,
+      "documents": 64,
+      "sufficient": true
+    },
+    "general": {
+      "nll": 5.11328869683008,
+      "predictions": 41495,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/Go": {
+      "nll": 2.788083609753205,
+      "predictions": 44812,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/SQL": {
+      "nll": 2.9080780085503632,
+      "predictions": 6736,
+      "documents": 11,
+      "sufficient": false
+    },
+    "code/Rust": {
+      "nll": 3.4938501902345647,
+      "predictions": 6459,
+      "documents": 8,
+      "sufficient": false
+    },
+    "code/Bash": {
+      "nll": 3.7307834497454393,
+      "predictions": 11698,
+      "documents": 20,
+      "sufficient": true
+    }
+  },
+  "category_predictions": {
+    "context": 42474,
+    "code": 366503,
+    "technical": 38956,
+    "general": 41495
+  },
+  "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+  "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+}

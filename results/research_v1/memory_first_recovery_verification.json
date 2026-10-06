@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "utc": "2026-10-06T13:45:30.052698+00:00",
+  "model": "memory",
+  "tokens": 8192000,
+  "step": 1000,
+  "cursor": 8000,
+  "canonical_checkpoint": "D:\\SparseCoderLab\\experiments\\research_v1\\memory\\checkpoints\\last.pt",
+  "retained_recovery_copy": "D:\\SparseCoderLab\\experiments\\research_v1\\memory\\checkpoints\\recovery_tokens_8192000.pt",
+  "sha256": "b6919c3c2420c81ae5c983619c7cc9044cc57269516670323328c21ee2c6f266",
+  "size_bytes": 309405219,
+  "strict_model_load_finite_shapes": true,
+  "optimizer_scheduler_loaded_finite_shapes": true,
+  "rng_verified": true,
+  "frozen_identity_verified": true,
+  "scope": "CPU inspection of the first periodic recovery checkpoint; no interruption, training or milestone evaluation."
+}

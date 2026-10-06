@@ -26,8 +26,8 @@ def main():
     # Public Git exclusions do not remove private research evidence from the
     # offline prompt archive. Include retained small notes/results/run logs and
     # historical source snapshots, while model/data payloads remain references.
-    offline_extensions={'.md','.txt','.json','.jsonl','.csv','.xml','.log','.zip','.png','.svg','.pdf'}
-    for directory in ('Documentation','GOALS','results','experiments'):
+    offline_extensions={'.md','.txt','.json','.jsonl','.csv','.xml','.log','.zip','.png','.svg','.pdf','.html','.css','.js'}
+    for directory in ('Documentation','GOALS','web','results','experiments'):
         paths.extend(p.relative_to(root).as_posix() for p in (root/directory).rglob('*')
                      if p.is_file() and p.suffix in offline_extensions and 'checkpoints' not in p.parts)
     manifest_path=f'results/{name.lower()}_archive_manifest.json'

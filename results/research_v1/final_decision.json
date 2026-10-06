@@ -1,6 +1,6 @@
 {
   "status": "in_progress",
-  "milestones_completed": 0,
+  "milestones_completed": 1,
   "quality_decision": "pending human-readable analysis of all curves",
   "seed_replication": "Pending100M ambiguity/trend review; not automatically doubling all models",
   "large_model_transfer": "unproven;100M micro-scale results do not establish60\u201375B performance"

@@ -13,7 +13,7 @@
   },
   {
     "stage": "Prompt-2/20M",
-    "status": "partial",
+    "status": "matched_complete",
     "evidence": "results/releases/20M/summary.json"
   },
   {

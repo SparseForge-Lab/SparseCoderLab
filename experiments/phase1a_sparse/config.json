@@ -1,0 +1,160 @@
+{
+  "model": {
+    "vocab_size": 32768,
+    "d_model": 320,
+    "layers": 9,
+    "q_heads": 5,
+    "kv_heads": 1,
+    "head_dim": 64,
+    "ffn": 384,
+    "norm_eps": 1e-06,
+    "rope_theta": 10000.0,
+    "init_std": 0.02,
+    "moe_layers": [
+      2,
+      5,
+      8
+    ],
+    "experts": 12,
+    "expert_ffn": 160,
+    "top_k": 1,
+    "aux_weight": 0.01,
+    "activation_checkpointing": false
+  },
+  "memory": {
+    "enabled": false,
+    "banks": 4,
+    "rows": 131072,
+    "dim": 8,
+    "orders": [
+      2,
+      2,
+      3,
+      3
+    ],
+    "seeds": [
+      17,
+      65537,
+      104729,
+      999983
+    ],
+    "layer": 1,
+    "gate_bias": -2.0
+  },
+  "mtp": {
+    "enabled": false,
+    "design": "shared_mtp_3step",
+    "horizons": 3,
+    "ffn": 160,
+    "loss_weights": [
+      0.1,
+      0.1,
+      0.1
+    ]
+  },
+  "routeahead": {
+    "horizons": 3,
+    "hidden": 32,
+    "top_k": 2,
+    "history": 4
+  },
+  "training": {
+    "seed": 42,
+    "device": "cuda",
+    "bf16": true,
+    "tf32": true,
+    "compile": false,
+    "fused_optimizer": false,
+    "context": 1024,
+    "max_context": 16384,
+    "microbatch": 2,
+    "accumulation": 4,
+    "lr": 0.0003,
+    "weight_decay": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "grad_clip": 1.0,
+    "warmup_steps": 100,
+    "schedule_steps": 100000,
+    "min_lr_ratio": 0.1,
+    "max_wall_minutes": 30,
+    "reserve_seconds": 60,
+    "target_tokens": 5005312,
+    "checkpoint_steps": 500,
+    "log_steps": 10,
+    "eval_steps": 200,
+    "eval_batches": 16,
+    "batch_candidates": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "headroom_fraction": 0.15
+  },
+  "data": {
+    "tokenizer": "data/tokenizer.json",
+    "shards": "data/shards",
+    "manifest": "data/manifest.json",
+    "cache_gb": 20,
+    "project_gb": 30,
+    "seed": 42,
+    "eval_fraction": 0.05,
+    "mixture": {
+      "code": 0.55,
+      "general": 0.3,
+      "technical": 0.1,
+      "context": 0.05
+    },
+    "dev_documents": 16000,
+    "shard_tokens": 262144,
+    "max_tokens": 4000000
+  },
+  "runtime": {
+    "expert_bytes": 307200,
+    "page_sizes": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "vram_pages": 4,
+    "ram_pages": 8,
+    "ssd_mib_s": 400,
+    "ssd_latency_ms": 0.2,
+    "ram_mib_s": 12000,
+    "ram_latency_ms": 0.02,
+    "scale_layers": 16,
+    "scale_experts": 256,
+    "trace_tokens": 16384,
+    "prefetch_window_s": 0.0002
+  },
+  "context": {
+    "task_count": 100,
+    "ratios": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "boundaries": 3,
+    "exact_fields": [
+      "identifier",
+      "filename",
+      "signature",
+      "constraint",
+      "numeric_value",
+      "failed_approach",
+      "tool_output",
+      "compiler_error"
+    ]
+  },
+  "agent": {
+    "shell_timeout": 10,
+    "max_actions": 30,
+    "max_output_chars": 10000
+  },
+  "name": "Phase1A_SparseV3"
+}

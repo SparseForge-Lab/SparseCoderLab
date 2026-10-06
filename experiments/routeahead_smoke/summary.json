@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "step": 10,
+    "cursor": 1280,
+    "tokens_seen": 1280,
+    "config_hash": "9f1875f00d0ad667f849cc47e99babf53de26d3e3860c6e418a884b4b7da0b1c",
+    "base_checkpoint": "D:\\SparseCoderLab\\experiments\\smoke_mtp\\checkpoints\\last.pt",
+    "base_sha256": "357fa63745ec45293e0dd736d773adbc172a0c5160eb920dc0241c76b097984a"
+  },
+  "route_metrics": {
+    "t+1/top1": {
+      "expert_recall": 0.20845624385447395,
+      "precision": 0.20845624385447395,
+      "page_recall": 0.4844313339888561
+    },
+    "t+1/top2": {
+      "expert_recall": 0.2700753851196329,
+      "precision": 0.13503769255981646,
+      "page_recall": 0.5512946574893478
+    },
+    "t+2/top1": {
+      "expert_recall": 0.04981973123566044,
+      "precision": 0.04981973123566044,
+      "page_recall": 0.15601442150114717
+    },
+    "t+2/top2": {
+      "expert_recall": 0.08259587020648967,
+      "precision": 0.04129793510324484,
+      "page_recall": 0.4133071124221567
+    },
+    "t+3/top1": {
+      "expert_recall": 0.119960668633235,
+      "precision": 0.119960668633235,
+      "page_recall": 0.18289085545722714
+    },
+    "t+3/top2": {
+      "expert_recall": 0.17568010488364472,
+      "precision": 0.08784005244182236,
+      "page_recall": 0.24778761061946902
+    }
+  },
+  "simulations": [
+    {
+      "sequence": 0,
+      "without_prefetch": {
+        "tokens": 1017,
+        "accesses": 3051,
+        "vram_hit_rate": 0.0,
+        "ram_hit_rate_on_vram_miss": 0.7974434611602753,
+        "bytes_loaded_per_token": 373352.21238938055,
+        "ram_to_vram_bytes_per_token": 1843200.0,
+        "page_reads_per_token": 0.6076696165191741,
+        "predicted_io_stall_s_per_token": 0.0012181593381268654,
+        "io_limited_tokens_s": 820.9106712900762,
+        "wasted_prefetch_bytes": 0,
+        "correct_prefetch_bytes": 0,
+        "issued_prefetch_bytes": 0,
+        "prefetch_latency_hidden_s": 0.0,
+        "cache_churn": 3663,
+        "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+      },
+      "with_prefetch": {
+        "tokens": 1017,
+        "accesses": 3051,
+        "vram_hit_rate": 0.0,
+        "ram_hit_rate_on_vram_miss": 0.7974434611602753,
+        "bytes_loaded_per_token": 581776.9911504425,
+        "ram_to_vram_bytes_per_token": 2060686.725663717,
+        "page_reads_per_token": 0.9469026548672567,
+        "predicted_io_stall_s_per_token": 0.001781088833579171,
+        "io_limited_tokens_s": 561.4543088176342,
+        "wasted_prefetch_bytes": 221184000,
+        "correct_prefetch_bytes": 157286400,
+        "issued_prefetch_bytes": 378470400,
+        "prefetch_latency_hidden_s": 0.019449921874999974,
+        "cache_churn": 3663,
+        "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+      },
+      "stall_improves": false
+    }
+  ],
+  "feature_sources": [
+    "current hidden",
+    "shared MTP state",
+    "causal recent routing"
+  ],
+  "scope": "Train/val document split, synthetic smoke base, configured I/O assumptions. No actual routing changes; no architecture success claim."
+}

@@ -2,20 +2,19 @@
 
 ## Current continuation, 2026-10-06
 
-The shutdown pause ended with the user's Prompt-2.5 request. Dense and Sparse20M/50M are complete. Training is stopped again at the user's explicit choice after GitHub preparation; Ngram is unstarted. The matched all-model50M review and70M/100M remain pending. No final architecture winner exists yet.
+Dense/Sparse20M/50M and Ngram20M are complete. Ngram20M→50M is running cumulatively with Roblox kept open. All-three50M review,70M/100M, replication decision and final classification remain pending.
 
-| Model | Actual tokens | Mixed NLL | Code NLL | Cumulative step tok/s |
-|---|---:|---:|---:|---:|
-| DenseCompute | 20,004,864 | 4.302957 | 3.757303 | 30,090 |
-| SparseV3 | 20,004,864 | 4.464748 | 3.916070 | 22,528 |
-| DenseCompute | 50,003,968 | 3.288592 | 2.778863 | 31,892 |
-| SparseV3 | 50,003,968 | 3.276931 | 2.756853 | 23,367 |
+| Model | Actual tokens | Mixed NLL | Code NLL | General NLL | Technical NLL | Cumulative step tok/s |
+|---|---:|---:|---:|---:|---:|---:|
+| dense | 20,004,864 | 4.302957 | 3.757303 | 5.917018 | 4.588342 | 30,090 |
+| sparse | 20,004,864 | 4.464748 | 3.916070 | 5.969997 | 4.714492 | 22,528 |
+| memory | 20,004,864 | 4.171885 | 3.623517 | 5.846257 | 4.489081 | 22,217 |
+| dense | 50,003,968 | 3.288592 | 2.778863 | 5.113289 | 3.684617 | 31,892 |
+| sparse | 50,003,968 | 3.276931 | 2.756853 | 5.109978 | 3.672832 | 23,367 |
 
-Sparse-Dense at20M is+0.161791 mixed/+0.158768 code (lower NLL is better). This early result does not determine the full curve. All immutable source/checkpoint identities remain in the canonical summaries and release snapshots. Cumulative quality-run speeds have different scopes from the controlled Prompt-1 benchmark. CPU playground activity can affect host/wall throughput.
+Sparse-Dense mixed/code gap changes from+0.161791/+0.158768 at20M to−0.011661/−0.022011 at50M. Ngram20M improves over Sparse by−0.292863/−0.292553 and over Dense by−0.131072/−0.133786. Its zero-residual ablation penalty is+0.059097 mixed/+0.094661 code/+0.035774 general/+0.109459 technical. See Documentation44 for sampling/routing/memory evidence and limits. All three20M probes and the existing Dense/Sparse50M probes passed0/6; useful coding capability is unproved.
 
-At50M Sparse-Dense is−0.011661 mixed/−0.022011 code, so the signed gap changed from a Sparse deficit to a small advantage. General difference is−0.003311 nats/token. The cumulative step-time cost ratio is1.365x Dense, close to the separate controlled Prompt-1 result1.376x. This single-seed sign change motivates completing the remaining curves and considering replication; it is not a final promotion or large-model claim. Sparse50M checkpoint SHA2c9ec686cc7213a80b469c5f21fd5b90545d1ff02c3e4bfd20bbd97baac49954.
-
-Dense20M/50M micro-code checks passed0/6 each. Better prediction loss has not demonstrated useful coding or chat capability. Manual playground prompts agree with those limitations but are not a new controlled evaluation.
+Quality-run speed is cumulative observational timing, affected by CPU playground and later Roblox concurrency; it is not the controlled Prompt-1 study. Dense cumulative wall remains a reporting-recovery lower bound. No final promotion or scaling claim.
 
 ## Historical shutdown state
 

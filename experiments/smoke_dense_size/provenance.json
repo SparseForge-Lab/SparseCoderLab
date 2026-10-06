@@ -1,0 +1,14 @@
+{
+  "step": 0,
+  "tokens_seen": 0,
+  "cursor": 0,
+  "wall_time": 0.0,
+  "training_seconds": 0.0,
+  "config_hash": "a430300a27ed6930955d574fd0c16517aeab40a6eda2d138257b126513c4fbb6",
+  "data_hash": "6ea70524cfe59df09fa2b692c2d87e380aa4f5dfc88d8e66a18ddf24ed28a969",
+  "tokenizer_hash": "24c6a4967ec4e61ec68f7b07a0fc3f58b4993a751a22d1b588c311be26b0d1e8",
+  "seed": 42,
+  "git_commit": "96ea0d57e1c253c8a189f17d88400656bf287a11",
+  "source_hash": "66d7c68edb7662b7d5da55cb736b31badf8cc10124de32fd3969c22d126d238f",
+  "git_dirty": true
+}

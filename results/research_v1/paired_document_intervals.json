@@ -1,1 +1,88 @@
-{}
+{
+  "20004864": {
+    "sparse_minus_dense": {
+      "all": {
+        "weighted_delta": 0.14595677341864838,
+        "approx_95_interval": [
+          0.13568540742604382,
+          0.15622813941125294
+        ],
+        "documents": 743,
+        "effective_documents": 590.8121483349067,
+        "caveat": "Descriptive paired document sampling interval, not seed uncertainty; repository correlation can make it optimistic."
+      },
+      "code": {
+        "weighted_delta": 0.15876750625590857,
+        "approx_95_interval": [
+          0.1462645116779535,
+          0.17127050083386364
+        ],
+        "documents": 551,
+        "effective_documents": 438.32259553813276,
+        "caveat": "Descriptive paired document sampling interval, not seed uncertainty; repository correlation can make it optimistic."
+      },
+      "general": {
+        "weighted_delta": 0.05297881101237563,
+        "approx_95_interval": [
+          0.04095315250183677,
+          0.06500446952291448
+        ],
+        "documents": 64,
+        "effective_documents": 52.73097514886673,
+        "caveat": "Descriptive paired document sampling interval, not seed uncertainty; repository correlation can make it optimistic."
+      },
+      "technical": {
+        "weighted_delta": 0.12615074681536792,
+        "approx_95_interval": [
+          0.09297683944581145,
+          0.1593246541849244
+        ],
+        "documents": 64,
+        "effective_documents": 48.615838274941595,
+        "caveat": "Descriptive paired document sampling interval, not seed uncertainty; repository correlation can make it optimistic."
+      }
+    },
+    "ngram_minus_sparse": {
+      "all": {
+        "weighted_delta": -0.27187220052576266,
+        "approx_95_interval": [
+          -0.2860555110168402,
+          -0.25768889003468515
+        ],
+        "documents": 743,
+        "effective_documents": 590.8121483349067,
+        "caveat": "Descriptive paired document sampling interval, not seed uncertainty; repository correlation can make it optimistic."
+      },
+      "code": {
+        "weighted_delta": -0.29255314672172117,
+        "approx_95_interval": [
+          -0.3096498497862938,
+          -0.27545644365714855
+        ],
+        "documents": 551,
+        "effective_documents": 438.32259553813276,
+        "caveat": "Descriptive paired document sampling interval, not seed uncertainty; repository correlation can make it optimistic."
+      },
+      "general": {
+        "weighted_delta": -0.12374054329239298,
+        "approx_95_interval": [
+          -0.14081364909992816,
+          -0.1066674374848578
+        ],
+        "documents": 64,
+        "effective_documents": 52.73097514886673,
+        "caveat": "Descriptive paired document sampling interval, not seed uncertainty; repository correlation can make it optimistic."
+      },
+      "technical": {
+        "weighted_delta": -0.2254115599591527,
+        "approx_95_interval": [
+          -0.2722876533262596,
+          -0.1785354665920458
+        ],
+        "documents": 64,
+        "effective_documents": 48.615838274941595,
+        "caveat": "Descriptive paired document sampling interval, not seed uncertainty; repository correlation can make it optimistic."
+      }
+    }
+  }
+}

@@ -1,79 +1,728 @@
 {
-  "matched": {},
+  "matched": {
+    "20004864": {
+      "losses": {
+        "dense": {
+          "val_loss": 4.302957044914365,
+          "code_val_loss": 3.757302833015951,
+          "general_val_loss": 5.917018428137825,
+          "technical_val_loss": 4.588341566775232
+        },
+        "sparse": {
+          "val_loss": 4.464747846126556,
+          "code_val_loss": 3.91607033927186,
+          "general_val_loss": 5.969997239150201,
+          "technical_val_loss": 4.7144923135906
+        },
+        "memory": {
+          "val_loss": 4.1718848049640656,
+          "code_val_loss": 3.6235171925501386,
+          "general_val_loss": 5.846256695857808,
+          "technical_val_loss": 4.4890807536314465
+        }
+      },
+      "deltas": {
+        "sparse_minus_dense": {
+          "val_loss": 0.16179080121219158,
+          "code_val_loss": 0.15876750625590885,
+          "general_val_loss": 0.05297881101237589,
+          "technical_val_loss": 0.12615074681536775,
+          "mixed_perplexity_ratio": 1.175614278512341
+        },
+        "ngram_minus_dense": {
+          "val_loss": -0.13107223995029926,
+          "code_val_loss": -0.13378564046581243,
+          "general_val_loss": -0.07076173228001714,
+          "technical_val_loss": -0.09926081314378532,
+          "mixed_perplexity_ratio": 0.8771544065114937
+        },
+        "ngram_minus_sparse": {
+          "val_loss": -0.29286304116249084,
+          "code_val_loss": -0.2925531467217213,
+          "general_val_loss": -0.12374054329239303,
+          "technical_val_loss": -0.22541155995915307,
+          "mixed_perplexity_ratio": 0.7461243220195253
+        }
+      },
+      "ablation": {
+        "val_loss": 0.05909736640751362,
+        "code_val_loss": 0.09466052046934603,
+        "general_val_loss": 0.035774241310815746,
+        "technical_val_loss": 0.1094594849264956
+      },
+      "micro_pass_count_out_of_six": {
+        "dense": 0,
+        "sparse": 0,
+        "memory": 0
+      },
+      "cumulative_training_cost_ratios": {
+        "sparse": 1.3356657199724276,
+        "memory": 1.3543346371367204
+      },
+      "allocated_vram_bytes": {
+        "dense": 1584584704,
+        "sparse": 1820570112,
+        "memory": 1894864384
+      },
+      "routing": {
+        "sparse": {
+          "2": {
+            "category_expert_mutual_information_bits": 0.030459271796940184,
+            "pooled_counts": [
+              51168,
+              36614,
+              33830,
+              38183,
+              38848,
+              41186,
+              44846,
+              37788,
+              59148,
+              32758,
+              40246,
+              34813
+            ],
+            "pooled_hard_entropy_nats": 2.4696840181115114,
+            "uniform_entropy_nats": 2.4849066497880004,
+            "pooled_load_cv": 0.18007836731847576,
+            "max_share": 0.12085127945274893,
+            "unused_experts": 0,
+            "adjacent_same_expert_fraction": 0.12707981624154618,
+            "independent_same_expert_baseline": 0.08603568486467399,
+            "strongest_supported_category_biases": [
+              {
+                "category": "general",
+                "expert": 7,
+                "enrichment": 1.8103691049614088,
+                "frequency": 0.13977587661163995,
+                "documents": 64,
+                "predictions": 41495
+              },
+              {
+                "category": "code/Go",
+                "expert": 8,
+                "enrichment": 1.5963180254016265,
+                "frequency": 0.19291707578327233,
+                "documents": 64,
+                "predictions": 44812
+              },
+              {
+                "category": "code/HTML/CSS",
+                "expert": 9,
+                "enrichment": 1.3422398181484132,
+                "frequency": 0.08983771251931993,
+                "documents": 64,
+                "predictions": 46584
+              },
+              {
+                "category": "code/JS/TS",
+                "expert": 10,
+                "enrichment": 1.3385512862500393,
+                "frequency": 0.11006999000142836,
+                "documents": 64,
+                "predictions": 35005
+              },
+              {
+                "category": "code/C#",
+                "expert": 6,
+                "enrichment": 1.3380735625473186,
+                "frequency": 0.12260689414172678,
+                "documents": 64,
+                "predictions": 40063
+              },
+              {
+                "category": "code/Java",
+                "expert": 10,
+                "enrichment": 1.326143097312028,
+                "frequency": 0.10904965611779442,
+                "documents": 64,
+                "predictions": 42311
+              }
+            ],
+            "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+          },
+          "5": {
+            "category_expert_mutual_information_bits": 0.04968550460945528,
+            "pooled_counts": [
+              28600,
+              38737,
+              48206,
+              36641,
+              28275,
+              34387,
+              41058,
+              45458,
+              46398,
+              46350,
+              55125,
+              40193
+            ],
+            "pooled_hard_entropy_nats": 2.466743239797888,
+            "uniform_entropy_nats": 2.4849066497880004,
+            "pooled_load_cv": 0.1889561964769869,
+            "max_share": 0.1126314800134034,
+            "unused_experts": 0,
+            "adjacent_same_expert_fraction": 0.14898554283434115,
+            "independent_same_expert_baseline": 0.08630870368225414,
+            "strongest_supported_category_biases": [
+              {
+                "category": "general",
+                "expert": 1,
+                "enrichment": 1.9246548098168583,
+                "frequency": 0.15233160621761657,
+                "documents": 64,
+                "predictions": 41495
+              },
+              {
+                "category": "code/HTML/CSS",
+                "expert": 5,
+                "enrichment": 1.8173086999193016,
+                "frequency": 0.12768332474669414,
+                "documents": 64,
+                "predictions": 46584
+              },
+              {
+                "category": "code/Java",
+                "expert": 10,
+                "enrichment": 1.7408271954066936,
+                "frequency": 0.1960719434662381,
+                "documents": 64,
+                "predictions": 42311
+              },
+              {
+                "category": "code/JS/TS",
+                "expert": 11,
+                "enrichment": 1.6728734306904907,
+                "frequency": 0.13738037423225252,
+                "documents": 64,
+                "predictions": 35005
+              },
+              {
+                "category": "code/Go",
+                "expert": 8,
+                "enrichment": 1.5849071993314372,
+                "frequency": 0.15024993305364634,
+                "documents": 64,
+                "predictions": 44812
+              },
+              {
+                "category": "code/C#",
+                "expert": 11,
+                "enrichment": 1.4267175604513505,
+                "frequency": 0.11716546439358011,
+                "documents": 64,
+                "predictions": 40063
+              }
+            ],
+            "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+          },
+          "8": {
+            "category_expert_mutual_information_bits": 0.062401539161765635,
+            "pooled_counts": [
+              32921,
+              45796,
+              34536,
+              55144,
+              44786,
+              37289,
+              41632,
+              36803,
+              36312,
+              34890,
+              46775,
+              42544
+            ],
+            "pooled_hard_entropy_nats": 2.473460557841758,
+            "uniform_entropy_nats": 2.4849066497880004,
+            "pooled_load_cv": 0.15356180893893023,
+            "max_share": 0.11267030084098172,
+            "unused_experts": 0,
+            "adjacent_same_expert_fraction": 0.17415103798970707,
+            "independent_same_expert_baseline": 0.08529843576371637,
+            "strongest_supported_category_biases": [
+              {
+                "category": "code/C#",
+                "expert": 8,
+                "enrichment": 2.2251503727410333,
+                "frequency": 0.16508998327633975,
+                "documents": 64,
+                "predictions": 40063
+              },
+              {
+                "category": "general",
+                "expert": 6,
+                "enrichment": 1.9885705810475673,
+                "frequency": 0.16915290998915533,
+                "documents": 64,
+                "predictions": 41495
+              },
+              {
+                "category": "code/C/C++",
+                "expert": 1,
+                "enrichment": 1.7809222877993822,
+                "frequency": 0.16664170642476628,
+                "documents": 64,
+                "predictions": 46741
+              },
+              {
+                "category": "code/Bash",
+                "expert": 4,
+                "enrichment": 1.692751128928264,
+                "frequency": 0.15489827320909558,
+                "documents": 20,
+                "predictions": 11698
+              },
+              {
+                "category": "code/Java",
+                "expert": 10,
+                "enrichment": 1.6892970004843495,
+                "frequency": 0.16144737775046678,
+                "documents": 64,
+                "predictions": 42311
+              },
+              {
+                "category": "code/HTML/CSS",
+                "expert": 0,
+                "enrichment": 1.6266482462246552,
+                "frequency": 0.10941524987120041,
+                "documents": 64,
+                "predictions": 46584
+              }
+            ],
+            "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+          }
+        },
+        "memory": {
+          "2": {
+            "category_expert_mutual_information_bits": 0.03654800473200055,
+            "pooled_counts": [
+              48238,
+              52604,
+              39867,
+              25558,
+              35035,
+              33923,
+              41635,
+              31414,
+              35790,
+              56633,
+              46592,
+              42139
+            ],
+            "pooled_hard_entropy_nats": 2.462022474312978,
+            "uniform_entropy_nats": 2.4849066497880004,
+            "pooled_load_cv": 0.21331159327412502,
+            "max_share": 0.11571262780225079,
+            "unused_experts": 0,
+            "adjacent_same_expert_fraction": 0.12623878367455518,
+            "independent_same_expert_baseline": 0.0871251529854288,
+            "strongest_supported_category_biases": [
+              {
+                "category": "code/HTML/CSS",
+                "expert": 3,
+                "enrichment": 1.6422601409122655,
+                "frequency": 0.08575905890434483,
+                "documents": 64,
+                "predictions": 46584
+              },
+              {
+                "category": "general",
+                "expert": 4,
+                "enrichment": 1.6408785795307406,
+                "frequency": 0.1174599349319195,
+                "documents": 64,
+                "predictions": 41495
+              },
+              {
+                "category": "code/Java",
+                "expert": 11,
+                "enrichment": 1.522133860382158,
+                "frequency": 0.13105339037129823,
+                "documents": 64,
+                "predictions": 42311
+              },
+              {
+                "category": "code/Go",
+                "expert": 10,
+                "enrichment": 1.472118514296112,
+                "frequency": 0.14014103365170044,
+                "documents": 64,
+                "predictions": 44812
+              },
+              {
+                "category": "code/Python",
+                "expert": 0,
+                "enrichment": 1.422948978716118,
+                "frequency": 0.1402457824957054,
+                "documents": 64,
+                "predictions": 45406
+              },
+              {
+                "category": "code/Bash",
+                "expert": 5,
+                "enrichment": 1.396141282762975,
+                "frequency": 0.09676867840656522,
+                "documents": 20,
+                "predictions": 11698
+              }
+            ],
+            "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+          },
+          "5": {
+            "category_expert_mutual_information_bits": 0.05290782286231881,
+            "pooled_counts": [
+              42043,
+              54252,
+              46208,
+              35891,
+              33927,
+              44558,
+              42854,
+              42229,
+              35037,
+              31679,
+              45798,
+              34952
+            ],
+            "pooled_hard_entropy_nats": 2.4730483411489983,
+            "uniform_entropy_nats": 2.4849066497880004,
+            "pooled_load_cv": 0.15491442928563584,
+            "max_share": 0.11084776514625236,
+            "unused_experts": 0,
+            "adjacent_same_expert_fraction": 0.1739873333537964,
+            "independent_same_expert_baseline": 0.08533320670007452,
+            "strongest_supported_category_biases": [
+              {
+                "category": "code/HTML/CSS",
+                "expert": 0,
+                "enrichment": 1.992666263041728,
+                "frequency": 0.17117465224111283,
+                "documents": 64,
+                "predictions": 46584
+              },
+              {
+                "category": "code/C/C++",
+                "expert": 6,
+                "enrichment": 1.7685527805254004,
+                "frequency": 0.15485334075009094,
+                "documents": 64,
+                "predictions": 46741
+              },
+              {
+                "category": "code/Java",
+                "expert": 10,
+                "enrichment": 1.6765876280628307,
+                "frequency": 0.1568859161920068,
+                "documents": 64,
+                "predictions": 42311
+              },
+              {
+                "category": "general",
+                "expert": 8,
+                "enrichment": 1.6387650721451876,
+                "frequency": 0.11731533919749368,
+                "documents": 64,
+                "predictions": 41495
+              },
+              {
+                "category": "code/C#",
+                "expert": 6,
+                "enrichment": 1.5553507426111899,
+                "frequency": 0.13618550782517536,
+                "documents": 64,
+                "predictions": 40063
+              },
+              {
+                "category": "technical",
+                "expert": 3,
+                "enrichment": 1.4870083375767618,
+                "frequency": 0.10904610329602629,
+                "documents": 64,
+                "predictions": 38956
+              }
+            ],
+            "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+          },
+          "8": {
+            "category_expert_mutual_information_bits": 0.03883706553760816,
+            "pooled_counts": [
+              40230,
+              41934,
+              29388,
+              42251,
+              31539,
+              45252,
+              38044,
+              35688,
+              41090,
+              57099,
+              38222,
+              48691
+            ],
+            "pooled_hard_entropy_nats": 2.469960617972102,
+            "uniform_entropy_nats": 2.4849066497880004,
+            "pooled_load_cv": 0.17451153420577986,
+            "max_share": 0.11666475967864527,
+            "unused_experts": 0,
+            "adjacent_same_expert_fraction": 0.14837574306557394,
+            "independent_same_expert_baseline": 0.08587118963090459,
+            "strongest_supported_category_biases": [
+              {
+                "category": "code/Java",
+                "expert": 1,
+                "enrichment": 1.8892803044415112,
+                "frequency": 0.16187279903571175,
+                "documents": 64,
+                "predictions": 42311
+              },
+              {
+                "category": "general",
+                "expert": 2,
+                "enrichment": 1.7896185957029034,
+                "frequency": 0.10745872996746596,
+                "documents": 64,
+                "predictions": 41495
+              },
+              {
+                "category": "code/Bash",
+                "expert": 10,
+                "enrichment": 1.7864215158817114,
+                "frequency": 0.13951102752607283,
+                "documents": 20,
+                "predictions": 11698
+              },
+              {
+                "category": "code/Go",
+                "expert": 11,
+                "enrichment": 1.4485844900161033,
+                "frequency": 0.14411318396857983,
+                "documents": 64,
+                "predictions": 44812
+              },
+              {
+                "category": "code/C#",
+                "expert": 3,
+                "enrichment": 1.408690649284488,
+                "frequency": 0.12160846666500262,
+                "documents": 64,
+                "predictions": 40063
+              },
+              {
+                "category": "code/C/C++",
+                "expert": 1,
+                "enrichment": 1.380110899064444,
+                "frequency": 0.11824736312873066,
+                "documents": 64,
+                "predictions": 46741
+              }
+            ],
+            "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+          }
+        }
+      },
+      "paired_document_cluster_intervals": {
+        "sparse_minus_dense": {
+          "all": {
+            "weighted_delta": 0.14595677341864838,
+            "bootstrap_95_interval": [
+              0.13566776890570134,
+              0.1561388953673589
+            ],
+            "clusters": 663,
+            "bootstrap_replicates": 2000,
+            "seed": 42,
+            "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+          },
+          "code": {
+            "weighted_delta": 0.15876750625590857,
+            "bootstrap_95_interval": [
+              0.14613945261753905,
+              0.17052400844967816
+            ],
+            "clusters": 503,
+            "bootstrap_replicates": 2000,
+            "seed": 42,
+            "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+          },
+          "general": {
+            "weighted_delta": 0.05297881101237563,
+            "bootstrap_95_interval": [
+              0.042759186536303055,
+              0.06321709287951709
+            ],
+            "clusters": 59,
+            "bootstrap_replicates": 2000,
+            "seed": 42,
+            "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+          },
+          "technical": {
+            "weighted_delta": 0.12615074681536792,
+            "bootstrap_95_interval": [
+              0.09480291763123389,
+              0.1624048663181877
+            ],
+            "clusters": 56,
+            "bootstrap_replicates": 2000,
+            "seed": 42,
+            "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+          }
+        },
+        "ngram_minus_sparse": {
+          "all": {
+            "weighted_delta": -0.27187220052576266,
+            "bootstrap_95_interval": [
+              -0.2862336106206143,
+              -0.2578109796283243
+            ],
+            "clusters": 663,
+            "bootstrap_replicates": 2000,
+            "seed": 42,
+            "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+          },
+          "code": {
+            "weighted_delta": -0.29255314672172117,
+            "bootstrap_95_interval": [
+              -0.3093356876943358,
+              -0.27510890184854897
+            ],
+            "clusters": 503,
+            "bootstrap_replicates": 2000,
+            "seed": 42,
+            "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+          },
+          "general": {
+            "weighted_delta": -0.12374054329239298,
+            "bootstrap_95_interval": [
+              -0.138356532186679,
+              -0.10805640463781417
+            ],
+            "clusters": 59,
+            "bootstrap_replicates": 2000,
+            "seed": 42,
+            "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+          },
+          "technical": {
+            "weighted_delta": -0.2254115599591527,
+            "bootstrap_95_interval": [
+              -0.27821536861416796,
+              -0.17946866447613438
+            ],
+            "clusters": 56,
+            "bootstrap_replicates": 2000,
+            "seed": 42,
+            "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+          }
+        }
+      },
+      "speed_scope": "Cumulative training-loop time, not randomized repeated runtime benchmark. Prompt-1 remains the primary controlled study. CPU playground may affect host/wall time; the later user-authorized Roblox continuation also has concurrent game/desktop GPU use (Documentation43). Full thermal/power history is unavailable; partial30s samples beginning mid-Sparse20M\u219250M are retained in hardware_samples.jsonl."
+    }
+  },
   "trends": {
     "sparse_minus_dense": {
       "val_loss": {
-        "values": [],
+        "values": [
+          0.16179080121219158
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "code_val_loss": {
-        "values": [],
+        "values": [
+          0.15876750625590885
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "general_val_loss": {
-        "values": [],
+        "values": [
+          0.05297881101237589
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "technical_val_loss": {
-        "values": [],
+        "values": [
+          0.12615074681536775
+        ],
         "shape": "insufficient matched checkpoints"
       }
     },
     "ngram_minus_dense": {
       "val_loss": {
-        "values": [],
+        "values": [
+          -0.13107223995029926
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "code_val_loss": {
-        "values": [],
+        "values": [
+          -0.13378564046581243
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "general_val_loss": {
-        "values": [],
+        "values": [
+          -0.07076173228001714
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "technical_val_loss": {
-        "values": [],
+        "values": [
+          -0.09926081314378532
+        ],
         "shape": "insufficient matched checkpoints"
       }
     },
     "ngram_minus_sparse": {
       "val_loss": {
-        "values": [],
+        "values": [
+          -0.29286304116249084
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "code_val_loss": {
-        "values": [],
+        "values": [
+          -0.2925531467217213
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "general_val_loss": {
-        "values": [],
+        "values": [
+          -0.12374054329239303
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "technical_val_loss": {
-        "values": [],
+        "values": [
+          -0.22541155995915307
+        ],
         "shape": "insufficient matched checkpoints"
       }
     },
     "ablation": {
       "val_loss": {
-        "values": [],
+        "values": [
+          0.05909736640751362
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "code_val_loss": {
-        "values": [],
+        "values": [
+          0.09466052046934603
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "general_val_loss": {
-        "values": [],
+        "values": [
+          0.035774241310815746
+        ],
         "shape": "insufficient matched checkpoints"
       },
       "technical_val_loss": {
-        "values": [],
+        "values": [
+          0.1094594849264956
+        ],
         "shape": "insufficient matched checkpoints"
       }
     }
   },
   "scope": "Calculated from completed immutable seed42 checkpoint summaries and deterministic held-out evaluations. Confidence intervals are document-cluster sampling only, not training-seed variance.",
-  "status": "no_matched_milestone"
+  "status": "partial"
 }

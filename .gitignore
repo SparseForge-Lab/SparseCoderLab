@@ -57,7 +57,6 @@ experiments/*/checkpoints/
 *.sqlite-shm
 *.log
 experiments/**/metrics.jsonl
-experiments/*/
 # Raw process output and local operating-condition logs are retained offline.
 results/**/*_output*.txt
 results/*_tests.txt
@@ -81,3 +80,14 @@ data/research_v1/documents_prefreeze_attempt/
 data/research_v1/dedup_prefreeze_attempt.*
 data/research_v1/ingestion.lock
 experiments/research_v1/**/checkpoints/
+results/research_v1/hardware_monitor*.stop
+/GOALS/
+/web/
+# Private requests and process coordination; public experiment metadata remains visible.
+Documentation/00_*_request.*
+experiments/**/logs/
+experiments/**/cache/
+experiments/**/*_output*.txt
+results/history/**/metrics.jsonl
+results/research_v1/schedule_state.json
+results/research_v1/user_resume_*.json

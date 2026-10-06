@@ -35,7 +35,7 @@ def main():
             'cumulative_training_cost_ratios':{t:summaries['dense']['training_step_tok_s']/summaries[t]['training_step_tok_s'] for t in ('sparse','memory')},
             'allocated_vram_bytes':{t:s['vram_peak'] for t,s in summaries.items()},
             'routing':{t:routes.get(f'{t}/{tokens}') for t in ('sparse','memory')},'paired_document_cluster_intervals':intervals.get(str(tokens)),
-            'speed_scope':'Cumulative training-loop time, not randomized repeated runtime benchmark. Prompt-1 remains the primary controlled study. CPU playground may affect host/wall time. Full thermal/power history is unavailable; partial30s samples beginning mid-Sparse20M→50M are retained in hardware_samples.jsonl.'}
+            'speed_scope':'Cumulative training-loop time, not randomized repeated runtime benchmark. Prompt-1 remains the primary controlled study. CPU playground may affect host/wall time; the later user-authorized Roblox continuation also has concurrent game/desktop GPU use (Documentation43). Full thermal/power history is unavailable; partial30s samples beginning mid-Sparse20M→50M are retained in hardware_samples.jsonl.'}
     matched=list(output['matched'].values())
     for pair in ('sparse_minus_dense','ngram_minus_dense','ngram_minus_sparse'):
         output['trends'][pair]={key:{'values':[m['deltas'][pair][key] for m in matched],

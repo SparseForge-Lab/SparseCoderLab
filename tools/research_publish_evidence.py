@@ -58,6 +58,12 @@ def main():
                 learning_rate=state['optimizer']['param_groups'][0]['lr'],git_commit=commit,source_hash=summary['source_hash'],config_hash=summary['config_hash'],data_manifest_hash=summary['data_hash'],
                 tokenizer_hash=summary['tokenizer_hash'],checkpoint_hash=summary['checkpoint_sha256'],status='completed',
                 notes='Measured single-seed research result. Code is fixed language-balanced document diagnostic; insufficient Rust/SQL standalone groups flagged. '+('Dense cumulative wall is a lower bound after reporting recovery. ' if tag=='dense' else '')+'Active params/FLOPs are calculated estimates; source hash binds dirty source, git commit alone does not.')
+            operating_receipt=RESULTS/'operating_conditions.json'
+            if operating_receipt.exists():
+                operating=json.loads(operating_receipt.read_text(encoding='utf-8'))
+                resumed=datetime.datetime.fromisoformat(operating['continuation_started_utc']).timestamp()
+                if checkpoint.stat().st_mtime>=resumed:
+                    row['notes']+=' Runtime includes a user-authorized continuation with Roblox kept open; it is not a controlled speed comparison. See Documentation43 and operating_conditions.json.'
             if ablation:
                 for field,key in [('val','val_loss'),('code','code_val_loss'),('general','general_val_loss'),('technical','technical_val_loss')]:row[f'ngram_ablation_{field}_delta']=ablation['delta_ablated_minus_normal'][key]
             key=(row['experiment'],str(tokens),str(row['seed']))
@@ -117,6 +123,7 @@ def main():
         'intended_use':'Architecture research and reproducibility, not production coding assistance',
         'unsupported_claims':['SOTA','superior to named production models','production ready','proved future60–75B performance'],
         'licensing_scope':'Code repository annotations filtered by permissive whitelist; FineWeb ODC-By collection/CommonCrawl terms do not certify per-page ownership. See Documentation32 and pinned cards.',
+        'operating_conditions':{'primary_speed_study':'Prompt-1 controlled benchmark','quality_run_runtime':'Cumulative observations; later continuation with Roblox kept open by user request, plus CPU Dense playground. Not controlled speed evidence.','receipt':'results/research_v1/operating_conditions.json','documentation':'Documentation/43_training_resume_with_roblox.md'},
         'release_snapshots':releases,'source_repository':'https://github.com/SparseForge-Lab/SparseCoderLab',
         'source_license':'Apache-2.0; dataset/dependency licenses and checkpoint redistribution rights are separate',
         'publication_status':'Local checkpoint evidence; no Hugging Face model/checkpoint publication. Source publication uses the separately reviewed GitHub repository.'}

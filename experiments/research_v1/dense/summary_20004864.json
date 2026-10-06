@@ -1,0 +1,127 @@
+{
+  "step": 2442,
+  "tokens_seen": 20004864,
+  "cursor": 19536,
+  "training_seconds": 664.8378420001172,
+  "wall_time": 707.8018082000017,
+  "seed": 42,
+  "config_hash": "178003c8c32adf7ebfe307b9c294aea8e2cf0ebcb340ab6ee4ae1132215ab7b1",
+  "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+  "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+  "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+  "model": "ResearchV1_DenseCompute",
+  "tag": "dense",
+  "wall_tok_s": 28263.369446418932,
+  "training_step_tok_s": 30089.839561203065,
+  "vram_peak": 1584584704,
+  "stored_params": 16574400,
+  "active_params_est": 16574400,
+  "training_flops_est": 1989411707289600,
+  "checkpoint": "experiments\\research_v1\\dense\\checkpoints\\tokens_20004864.pt",
+  "checkpoint_sha256": "4bb8f42917a0773fde293b1c5c4c3e505a1ac0615a41bbd4ca724734836ce07b",
+  "val_loss": 4.302957044914365,
+  "mixed_predictions": 262144,
+  "bits_per_token": 6.207854789856183,
+  "context_val_loss": 3.733916741556528,
+  "code_val_loss": 3.757302833015951,
+  "technical_val_loss": 4.588341566775232,
+  "general_val_loss": 5.917018428137825,
+  "language": {
+    "context": {
+      "nll": 3.733916741556528,
+      "predictions": 42474,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/other": {
+      "nll": 3.9696007801049156,
+      "predictions": 40688,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/Java": {
+      "nll": 3.1494835595013284,
+      "predictions": 42311,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/C#": {
+      "nll": 3.935161972070893,
+      "predictions": 40063,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/HTML/CSS": {
+      "nll": 3.212051934834999,
+      "predictions": 46584,
+      "documents": 64,
+      "sufficient": true
+    },
+    "technical": {
+      "nll": 4.588341566775232,
+      "predictions": 38956,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/Python": {
+      "nll": 4.141535084194976,
+      "predictions": 45406,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/C/C++": {
+      "nll": 3.736609726712582,
+      "predictions": 46741,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/JS/TS": {
+      "nll": 3.743387164335356,
+      "predictions": 35005,
+      "documents": 64,
+      "sufficient": true
+    },
+    "general": {
+      "nll": 5.917018428137825,
+      "predictions": 41495,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/Go": {
+      "nll": 3.7444735685916903,
+      "predictions": 44812,
+      "documents": 64,
+      "sufficient": true
+    },
+    "code/SQL": {
+      "nll": 4.251630198502484,
+      "predictions": 6736,
+      "documents": 11,
+      "sufficient": false
+    },
+    "code/Rust": {
+      "nll": 4.41277840506977,
+      "predictions": 6459,
+      "documents": 8,
+      "sufficient": false
+    },
+    "code/Bash": {
+      "nll": 4.815017277694274,
+      "predictions": 11698,
+      "documents": 20,
+      "sufficient": true
+    }
+  },
+  "category_predictions": {
+    "context": 42474,
+    "code": 366503,
+    "technical": 38956,
+    "general": 41495
+  },
+  "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+  "scope": "Cumulative fresh seed42 real-data quality run. Recovered 20M wall is measured through evaluation, before initial milestone/rolling writes; a lower bound. Later dense cumulative walls inherit this small omission. Step time is unaffected. Original checkpoint metadata source hash was administratively rebound after a reporting-only repair; original serialized checkpoint bytes were not retained. No optimizer update was replayed in dense recovery.",
+  "wall_time_is_lower_bound": true,
+  "original_training_source_hash": "06d42ccd2915edcabb235ff1f5b5d7c3d5cda4d696cc75d71fb18d2622cee6e7",
+  "source_rebinding_scope": "Reporting-only result-construction repair; all code before result construction and every other covered source file verified byte-identical to original gate."
+}

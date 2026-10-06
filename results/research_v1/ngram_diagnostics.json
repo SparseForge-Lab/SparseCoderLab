@@ -1,6 +1,1708 @@
 {
   "dense/20004864": {},
   "sparse/20004864": {},
+  "memory/20004864": {
+    "context": {
+      "tokens": 42474,
+      "gate_min": 0.09521484375,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        1,
+        9,
+        60,
+        202,
+        266,
+        226,
+        336,
+        374,
+        989,
+        40011
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 165,
+            "rows": 131072,
+            "distinct_ngrams": 165,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 125,
+              "2": 23,
+              "3": 8,
+              "4": 1,
+              "5": 5,
+              "8": 2,
+              "9": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 165
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 165,
+            "rows": 131072,
+            "distinct_ngrams": 165,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 125,
+              "2": 23,
+              "3": 8,
+              "4": 1,
+              "5": 5,
+              "8": 2,
+              "9": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 165
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 195,
+            "rows": 131072,
+            "distinct_ngrams": 195,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 170,
+              "2": 14,
+              "3": 4,
+              "5": 5,
+              "7": 2
+            },
+            "bucket_utilization_histogram": {
+              "1": 195
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 195,
+            "rows": 131072,
+            "distinct_ngrams": 195,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 170,
+              "2": 14,
+              "3": 4,
+              "5": 5,
+              "7": 2
+            },
+            "bucket_utilization_histogram": {
+              "1": 195
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9706938017412122
+    },
+    "code/other": {
+      "tokens": 40688,
+      "gate_min": 0.11572265625,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        0,
+        19,
+        97,
+        292,
+        348,
+        227,
+        309,
+        453,
+        801,
+        38142
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 168,
+            "rows": 131072,
+            "distinct_ngrams": 168,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 137,
+              "2": 13,
+              "3": 11,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "11": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 168
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 168,
+            "rows": 131072,
+            "distinct_ngrams": 168,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 137,
+              "2": 13,
+              "3": 11,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "11": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 168
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 197,
+            "rows": 131072,
+            "distinct_ngrams": 197,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 173,
+              "2": 14,
+              "3": 7,
+              "4": 2,
+              "5": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 197
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 197,
+            "rows": 131072,
+            "distinct_ngrams": 197,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 173,
+              "2": 14,
+              "3": 7,
+              "4": 2,
+              "5": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 197
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9676411786606309
+    },
+    "code/Java": {
+      "tokens": 42311,
+      "gate_min": 0.125,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        0,
+        17,
+        124,
+        216,
+        264,
+        302,
+        321,
+        536,
+        1288,
+        39243
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 373,
+            "rows": 131072,
+            "distinct_ngrams": 373,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 280,
+              "2": 30,
+              "3": 17,
+              "4": 13,
+              "5": 4,
+              "6": 8,
+              "8": 3,
+              "11": 1,
+              "13": 1,
+              "16": 2,
+              "17": 2,
+              "19": 2,
+              "21": 4,
+              "32": 2,
+              "53": 3,
+              "54": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 373
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 373,
+            "rows": 131072,
+            "distinct_ngrams": 373,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 280,
+              "2": 30,
+              "3": 17,
+              "4": 13,
+              "5": 4,
+              "6": 8,
+              "8": 3,
+              "11": 1,
+              "13": 1,
+              "16": 2,
+              "17": 2,
+              "19": 2,
+              "21": 4,
+              "32": 2,
+              "53": 3,
+              "54": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 373
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 467,
+            "rows": 131072,
+            "distinct_ngrams": 467,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 374,
+              "2": 39,
+              "3": 17,
+              "4": 12,
+              "5": 2,
+              "6": 5,
+              "8": 3,
+              "16": 2,
+              "17": 2,
+              "19": 2,
+              "21": 4,
+              "31": 1,
+              "32": 1,
+              "52": 1,
+              "53": 2
+            },
+            "bucket_utilization_histogram": {
+              "1": 467
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 467,
+            "rows": 131072,
+            "distinct_ngrams": 467,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 374,
+              "2": 39,
+              "3": 17,
+              "4": 12,
+              "5": 2,
+              "6": 5,
+              "8": 3,
+              "16": 2,
+              "17": 2,
+              "19": 2,
+              "21": 4,
+              "31": 1,
+              "32": 1,
+              "52": 1,
+              "53": 2
+            },
+            "bucket_utilization_histogram": {
+              "1": 467
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9651745639801116
+    },
+    "code/C#": {
+      "tokens": 40063,
+      "gate_min": 0.11767578125,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        0,
+        22,
+        101,
+        246,
+        389,
+        303,
+        376,
+        416,
+        1099,
+        37111
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 492,
+            "rows": 131072,
+            "distinct_ngrams": 495,
+            "collisions": 3,
+            "collision_fraction": 0.006060606060606061,
+            "lookup_frequency_histogram": {
+              "1": 290,
+              "2": 95,
+              "3": 41,
+              "4": 21,
+              "5": 11,
+              "6": 6,
+              "7": 9,
+              "8": 6,
+              "9": 5,
+              "10": 4,
+              "11": 1,
+              "12": 1,
+              "13": 1,
+              "14": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 489,
+              "2": 3
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 492,
+            "rows": 131072,
+            "distinct_ngrams": 495,
+            "collisions": 3,
+            "collision_fraction": 0.006060606060606061,
+            "lookup_frequency_histogram": {
+              "1": 290,
+              "2": 95,
+              "3": 41,
+              "4": 21,
+              "5": 11,
+              "6": 6,
+              "7": 9,
+              "8": 6,
+              "9": 5,
+              "10": 4,
+              "11": 1,
+              "12": 1,
+              "13": 1,
+              "14": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 489,
+              "2": 3
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 661,
+            "rows": 131072,
+            "distinct_ngrams": 661,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 488,
+              "2": 97,
+              "3": 36,
+              "4": 12,
+              "5": 10,
+              "6": 5,
+              "7": 6,
+              "8": 3,
+              "9": 2,
+              "10": 1,
+              "12": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 661
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 661,
+            "rows": 131072,
+            "distinct_ngrams": 661,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 488,
+              "2": 97,
+              "3": 36,
+              "4": 12,
+              "5": 10,
+              "6": 5,
+              "7": 6,
+              "8": 3,
+              "9": 2,
+              "10": 1,
+              "12": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 661
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9648124516386691
+    },
+    "code/HTML/CSS": {
+      "tokens": 46584,
+      "gate_min": 0.1083984375,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        0,
+        8,
+        23,
+        62,
+        114,
+        109,
+        262,
+        342,
+        981,
+        44683
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 166,
+            "rows": 131072,
+            "distinct_ngrams": 166,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 109,
+              "2": 31,
+              "3": 6,
+              "4": 6,
+              "5": 3,
+              "6": 2,
+              "7": 1,
+              "8": 2,
+              "9": 2,
+              "10": 1,
+              "11": 1,
+              "14": 1,
+              "16": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 166
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 166,
+            "rows": 131072,
+            "distinct_ngrams": 166,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 109,
+              "2": 31,
+              "3": 6,
+              "4": 6,
+              "5": 3,
+              "6": 2,
+              "7": 1,
+              "8": 2,
+              "9": 2,
+              "10": 1,
+              "11": 1,
+              "14": 1,
+              "16": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 166
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 218,
+            "rows": 131072,
+            "distinct_ngrams": 218,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 164,
+              "2": 35,
+              "3": 4,
+              "4": 6,
+              "5": 2,
+              "6": 1,
+              "7": 3,
+              "8": 2,
+              "9": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 218
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 218,
+            "rows": 131072,
+            "distinct_ngrams": 218,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 164,
+              "2": 35,
+              "3": 4,
+              "4": 6,
+              "5": 2,
+              "6": 1,
+              "7": 3,
+              "8": 2,
+              "9": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 218
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9757679843132835
+    },
+    "technical": {
+      "tokens": 38956,
+      "gate_min": 0.0654296875,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        2,
+        26,
+        153,
+        166,
+        218,
+        197,
+        277,
+        519,
+        992,
+        36406
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 684,
+            "rows": 131072,
+            "distinct_ngrams": 687,
+            "collisions": 3,
+            "collision_fraction": 0.004366812227074236,
+            "lookup_frequency_histogram": {
+              "1": 581,
+              "2": 52,
+              "3": 15,
+              "4": 15,
+              "5": 3,
+              "6": 3,
+              "7": 1,
+              "8": 2,
+              "10": 2,
+              "11": 3,
+              "13": 1,
+              "14": 1,
+              "15": 1,
+              "20": 2,
+              "21": 1,
+              "22": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 681,
+              "2": 3
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 684,
+            "rows": 131072,
+            "distinct_ngrams": 687,
+            "collisions": 3,
+            "collision_fraction": 0.004366812227074236,
+            "lookup_frequency_histogram": {
+              "1": 581,
+              "2": 52,
+              "3": 15,
+              "4": 15,
+              "5": 3,
+              "6": 3,
+              "7": 1,
+              "8": 2,
+              "10": 2,
+              "11": 3,
+              "13": 1,
+              "14": 1,
+              "15": 1,
+              "20": 2,
+              "21": 1,
+              "22": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 681,
+              "2": 3
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 803,
+            "rows": 131072,
+            "distinct_ngrams": 803,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 725,
+              "2": 39,
+              "3": 11,
+              "4": 16,
+              "5": 2,
+              "6": 1,
+              "7": 1,
+              "8": 2,
+              "10": 1,
+              "11": 2,
+              "14": 1,
+              "18": 1,
+              "21": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 803
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 803,
+            "rows": 131072,
+            "distinct_ngrams": 803,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 725,
+              "2": 39,
+              "3": 11,
+              "4": 16,
+              "5": 2,
+              "6": 1,
+              "7": 1,
+              "8": 2,
+              "10": 1,
+              "11": 2,
+              "14": 1,
+              "18": 1,
+              "21": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 803
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.967287663084634
+    },
+    "code/Python": {
+      "tokens": 45406,
+      "gate_min": 0.09033203125,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        2,
+        5,
+        68,
+        193,
+        251,
+        287,
+        342,
+        452,
+        946,
+        42860
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 516,
+            "rows": 131072,
+            "distinct_ngrams": 519,
+            "collisions": 3,
+            "collision_fraction": 0.005780346820809248,
+            "lookup_frequency_histogram": {
+              "1": 309,
+              "2": 115,
+              "3": 33,
+              "4": 13,
+              "5": 11,
+              "6": 17,
+              "7": 6,
+              "8": 3,
+              "9": 2,
+              "10": 1,
+              "11": 1,
+              "12": 1,
+              "14": 1,
+              "15": 2,
+              "16": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 513,
+              "2": 3
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 516,
+            "rows": 131072,
+            "distinct_ngrams": 519,
+            "collisions": 3,
+            "collision_fraction": 0.005780346820809248,
+            "lookup_frequency_histogram": {
+              "1": 309,
+              "2": 115,
+              "3": 33,
+              "4": 13,
+              "5": 11,
+              "6": 17,
+              "7": 6,
+              "8": 3,
+              "9": 2,
+              "10": 1,
+              "11": 1,
+              "12": 1,
+              "14": 1,
+              "15": 2,
+              "16": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 513,
+              "2": 3
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 654,
+            "rows": 131072,
+            "distinct_ngrams": 655,
+            "collisions": 1,
+            "collision_fraction": 0.0015267175572519084,
+            "lookup_frequency_histogram": {
+              "1": 458,
+              "2": 134,
+              "3": 24,
+              "4": 10,
+              "5": 6,
+              "6": 15,
+              "7": 3,
+              "8": 2,
+              "14": 1,
+              "15": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 653,
+              "2": 1
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 653,
+            "rows": 131072,
+            "distinct_ngrams": 655,
+            "collisions": 2,
+            "collision_fraction": 0.0030534351145038168,
+            "lookup_frequency_histogram": {
+              "1": 456,
+              "2": 135,
+              "3": 24,
+              "4": 10,
+              "5": 6,
+              "6": 15,
+              "7": 3,
+              "8": 2,
+              "14": 1,
+              "15": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 651,
+              "2": 2
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9721334279541801
+    },
+    "code/C/C++": {
+      "tokens": 46741,
+      "gate_min": 0.09521484375,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        1,
+        48,
+        104,
+        332,
+        399,
+        304,
+        282,
+        489,
+        1225,
+        43557
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 303,
+            "rows": 131072,
+            "distinct_ngrams": 303,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 191,
+              "2": 40,
+              "3": 21,
+              "4": 16,
+              "5": 9,
+              "6": 2,
+              "7": 6,
+              "8": 1,
+              "10": 1,
+              "11": 1,
+              "12": 3,
+              "13": 1,
+              "15": 2,
+              "17": 2,
+              "18": 3,
+              "20": 1,
+              "23": 1,
+              "38": 2
+            },
+            "bucket_utilization_histogram": {
+              "1": 303
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 303,
+            "rows": 131072,
+            "distinct_ngrams": 303,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 191,
+              "2": 40,
+              "3": 21,
+              "4": 16,
+              "5": 9,
+              "6": 2,
+              "7": 6,
+              "8": 1,
+              "10": 1,
+              "11": 1,
+              "12": 3,
+              "13": 1,
+              "15": 2,
+              "17": 2,
+              "18": 3,
+              "20": 1,
+              "23": 1,
+              "38": 2
+            },
+            "bucket_utilization_histogram": {
+              "1": 303
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 385,
+            "rows": 131072,
+            "distinct_ngrams": 387,
+            "collisions": 2,
+            "collision_fraction": 0.00516795865633075,
+            "lookup_frequency_histogram": {
+              "1": 261,
+              "2": 60,
+              "3": 20,
+              "4": 14,
+              "5": 8,
+              "6": 3,
+              "7": 3,
+              "8": 1,
+              "10": 2,
+              "12": 5,
+              "13": 3,
+              "15": 1,
+              "18": 2,
+              "20": 1,
+              "38": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 383,
+              "2": 2
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 385,
+            "rows": 131072,
+            "distinct_ngrams": 387,
+            "collisions": 2,
+            "collision_fraction": 0.00516795865633075,
+            "lookup_frequency_histogram": {
+              "1": 261,
+              "2": 60,
+              "3": 20,
+              "4": 14,
+              "5": 8,
+              "6": 3,
+              "7": 3,
+              "8": 1,
+              "10": 2,
+              "12": 5,
+              "13": 3,
+              "15": 1,
+              "18": 2,
+              "20": 1,
+              "38": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 383,
+              "2": 2
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9647305200633545
+    },
+    "code/JS/TS": {
+      "tokens": 35005,
+      "gate_min": 0.08056640625,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        9,
+        11,
+        244,
+        58,
+        148,
+        155,
+        142,
+        262,
+        546,
+        33430
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 148,
+            "rows": 131072,
+            "distinct_ngrams": 148,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 111,
+              "2": 32,
+              "3": 2,
+              "4": 3
+            },
+            "bucket_utilization_histogram": {
+              "1": 148
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 148,
+            "rows": 131072,
+            "distinct_ngrams": 148,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 111,
+              "2": 32,
+              "3": 2,
+              "4": 3
+            },
+            "bucket_utilization_histogram": {
+              "1": 148
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 170,
+            "rows": 131072,
+            "distinct_ngrams": 170,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 150,
+              "2": 18,
+              "3": 1,
+              "4": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 170
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 170,
+            "rows": 131072,
+            "distinct_ngrams": 170,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 150,
+              "2": 18,
+              "3": 1,
+              "4": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 170
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9747929425260677
+    },
+    "general": {
+      "tokens": 41495,
+      "gate_min": 0.068359375,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        5,
+        88,
+        181,
+        252,
+        274,
+        358,
+        533,
+        873,
+        2009,
+        36922
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 799,
+            "rows": 131072,
+            "distinct_ngrams": 803,
+            "collisions": 4,
+            "collision_fraction": 0.0049813200498132005,
+            "lookup_frequency_histogram": {
+              "1": 674,
+              "2": 80,
+              "3": 25,
+              "4": 7,
+              "5": 7,
+              "6": 3,
+              "7": 1,
+              "8": 1,
+              "19": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 795,
+              "2": 4
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 799,
+            "rows": 131072,
+            "distinct_ngrams": 803,
+            "collisions": 4,
+            "collision_fraction": 0.0049813200498132005,
+            "lookup_frequency_histogram": {
+              "1": 674,
+              "2": 80,
+              "3": 25,
+              "4": 7,
+              "5": 7,
+              "6": 3,
+              "7": 1,
+              "8": 1,
+              "19": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 795,
+              "2": 4
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 950,
+            "rows": 131072,
+            "distinct_ngrams": 955,
+            "collisions": 5,
+            "collision_fraction": 0.005235602094240838,
+            "lookup_frequency_histogram": {
+              "1": 893,
+              "2": 47,
+              "3": 5,
+              "4": 3,
+              "5": 2
+            },
+            "bucket_utilization_histogram": {
+              "1": 945,
+              "2": 5
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 950,
+            "rows": 131072,
+            "distinct_ngrams": 955,
+            "collisions": 5,
+            "collision_fraction": 0.005235602094240838,
+            "lookup_frequency_histogram": {
+              "1": 893,
+              "2": 47,
+              "3": 5,
+              "4": 3,
+              "5": 2
+            },
+            "bucket_utilization_histogram": {
+              "1": 945,
+              "2": 5
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9530155176828533
+    },
+    "code/Go": {
+      "tokens": 44812,
+      "gate_min": 0.07080078125,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        5,
+        12,
+        120,
+        247,
+        264,
+        315,
+        281,
+        566,
+        858,
+        42144
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 568,
+            "rows": 131072,
+            "distinct_ngrams": 568,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 350,
+              "2": 141,
+              "3": 30,
+              "4": 15,
+              "5": 15,
+              "6": 7,
+              "7": 1,
+              "8": 3,
+              "11": 2,
+              "13": 1,
+              "16": 1,
+              "21": 1,
+              "22": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 568
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 568,
+            "rows": 131072,
+            "distinct_ngrams": 568,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 350,
+              "2": 141,
+              "3": 30,
+              "4": 15,
+              "5": 15,
+              "6": 7,
+              "7": 1,
+              "8": 3,
+              "11": 2,
+              "13": 1,
+              "16": 1,
+              "21": 1,
+              "22": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 568
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 699,
+            "rows": 131072,
+            "distinct_ngrams": 703,
+            "collisions": 4,
+            "collision_fraction": 0.005689900426742532,
+            "lookup_frequency_histogram": {
+              "1": 481,
+              "2": 165,
+              "3": 23,
+              "4": 15,
+              "5": 10,
+              "6": 2,
+              "7": 2,
+              "8": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 695,
+              "2": 4
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 699,
+            "rows": 131072,
+            "distinct_ngrams": 703,
+            "collisions": 4,
+            "collision_fraction": 0.005689900426742532,
+            "lookup_frequency_histogram": {
+              "1": 481,
+              "2": 165,
+              "3": 23,
+              "4": 15,
+              "5": 10,
+              "6": 2,
+              "7": 2,
+              "8": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 695,
+              "2": 4
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9696446011601245
+    },
+    "code/SQL": {
+      "tokens": 6736,
+      "gate_min": 0.1513671875,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        0,
+        3,
+        9,
+        73,
+        108,
+        80,
+        23,
+        67,
+        223,
+        6150
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 288,
+            "rows": 131072,
+            "distinct_ngrams": 290,
+            "collisions": 2,
+            "collision_fraction": 0.006896551724137931,
+            "lookup_frequency_histogram": {
+              "1": 104,
+              "2": 88,
+              "3": 13,
+              "4": 18,
+              "5": 10,
+              "6": 14,
+              "7": 30,
+              "8": 3,
+              "10": 1,
+              "12": 1,
+              "17": 2,
+              "19": 2,
+              "20": 1,
+              "30": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 286,
+              "2": 2
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 288,
+            "rows": 131072,
+            "distinct_ngrams": 290,
+            "collisions": 2,
+            "collision_fraction": 0.006896551724137931,
+            "lookup_frequency_histogram": {
+              "1": 104,
+              "2": 88,
+              "3": 13,
+              "4": 18,
+              "5": 10,
+              "6": 14,
+              "7": 30,
+              "8": 3,
+              "10": 1,
+              "12": 1,
+              "17": 2,
+              "19": 2,
+              "20": 1,
+              "30": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 286,
+              "2": 2
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 365,
+            "rows": 131072,
+            "distinct_ngrams": 365,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 151,
+              "2": 120,
+              "3": 21,
+              "4": 21,
+              "5": 10,
+              "6": 13,
+              "7": 24,
+              "8": 2,
+              "17": 2,
+              "19": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 365
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 365,
+            "rows": 131072,
+            "distinct_ngrams": 365,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 151,
+              "2": 120,
+              "3": 21,
+              "4": 21,
+              "5": 10,
+              "6": 13,
+              "7": 24,
+              "8": 2,
+              "17": 2,
+              "19": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 365
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9594049521693141
+    },
+    "code/Rust": {
+      "tokens": 6459,
+      "gate_min": 0.05029296875,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        1,
+        0,
+        4,
+        43,
+        61,
+        36,
+        67,
+        63,
+        109,
+        6075
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 418,
+            "rows": 131072,
+            "distinct_ngrams": 418,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 239,
+              "2": 81,
+              "3": 39,
+              "4": 15,
+              "5": 9,
+              "6": 11,
+              "7": 6,
+              "9": 2,
+              "10": 5,
+              "11": 1,
+              "12": 1,
+              "13": 1,
+              "14": 2,
+              "15": 1,
+              "18": 2,
+              "28": 1,
+              "35": 1,
+              "47": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 418
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 418,
+            "rows": 131072,
+            "distinct_ngrams": 418,
+            "collisions": 0,
+            "collision_fraction": 0.0,
+            "lookup_frequency_histogram": {
+              "1": 239,
+              "2": 81,
+              "3": 39,
+              "4": 15,
+              "5": 9,
+              "6": 11,
+              "7": 6,
+              "9": 2,
+              "10": 5,
+              "11": 1,
+              "12": 1,
+              "13": 1,
+              "14": 2,
+              "15": 1,
+              "18": 2,
+              "28": 1,
+              "35": 1,
+              "47": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 418
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 566,
+            "rows": 131072,
+            "distinct_ngrams": 568,
+            "collisions": 2,
+            "collision_fraction": 0.0035211267605633804,
+            "lookup_frequency_histogram": {
+              "1": 379,
+              "2": 107,
+              "3": 39,
+              "4": 13,
+              "5": 5,
+              "6": 5,
+              "7": 7,
+              "8": 2,
+              "9": 1,
+              "10": 2,
+              "14": 1,
+              "15": 1,
+              "18": 2,
+              "20": 1,
+              "28": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 564,
+              "2": 2
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 566,
+            "rows": 131072,
+            "distinct_ngrams": 568,
+            "collisions": 2,
+            "collision_fraction": 0.0035211267605633804,
+            "lookup_frequency_histogram": {
+              "1": 379,
+              "2": 107,
+              "3": 39,
+              "4": 13,
+              "5": 5,
+              "6": 5,
+              "7": 7,
+              "8": 2,
+              "9": 1,
+              "10": 2,
+              "14": 1,
+              "15": 1,
+              "18": 2,
+              "20": 1,
+              "28": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 564,
+              "2": 2
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9694700617597538
+    },
+    "code/Bash": {
+      "tokens": 11698,
+      "gate_min": 0.162109375,
+      "gate_max": 1.0,
+      "gate_histogram10bins": [
+        0,
+        3,
+        52,
+        93,
+        90,
+        147,
+        131,
+        113,
+        266,
+        10803
+      ],
+      "sample_bucket_statistics": {
+        "banks": [
+          {
+            "order": 2,
+            "utilized_rows": 542,
+            "rows": 131072,
+            "distinct_ngrams": 543,
+            "collisions": 1,
+            "collision_fraction": 0.001841620626151013,
+            "lookup_frequency_histogram": {
+              "1": 301,
+              "2": 177,
+              "3": 18,
+              "4": 12,
+              "5": 18,
+              "6": 3,
+              "7": 4,
+              "8": 2,
+              "9": 3,
+              "10": 1,
+              "11": 1,
+              "18": 1,
+              "49": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 541,
+              "2": 1
+            }
+          },
+          {
+            "order": 2,
+            "utilized_rows": 542,
+            "rows": 131072,
+            "distinct_ngrams": 543,
+            "collisions": 1,
+            "collision_fraction": 0.001841620626151013,
+            "lookup_frequency_histogram": {
+              "1": 301,
+              "2": 177,
+              "3": 18,
+              "4": 12,
+              "5": 18,
+              "6": 3,
+              "7": 4,
+              "8": 2,
+              "9": 3,
+              "10": 1,
+              "11": 1,
+              "18": 1,
+              "49": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 541,
+              "2": 1
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 639,
+            "rows": 131072,
+            "distinct_ngrams": 641,
+            "collisions": 2,
+            "collision_fraction": 0.0031201248049922,
+            "lookup_frequency_histogram": {
+              "1": 392,
+              "2": 203,
+              "3": 10,
+              "4": 11,
+              "5": 11,
+              "6": 2,
+              "7": 4,
+              "8": 1,
+              "9": 2,
+              "10": 2,
+              "11": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 637,
+              "2": 2
+            }
+          },
+          {
+            "order": 3,
+            "utilized_rows": 639,
+            "rows": 131072,
+            "distinct_ngrams": 641,
+            "collisions": 2,
+            "collision_fraction": 0.0031201248049922,
+            "lookup_frequency_histogram": {
+              "1": 392,
+              "2": 203,
+              "3": 10,
+              "4": 11,
+              "5": 11,
+              "6": 2,
+              "7": 4,
+              "8": 1,
+              "9": 2,
+              "10": 2,
+              "11": 1
+            },
+            "bucket_utilization_histogram": {
+              "1": 637,
+              "2": 2
+            }
+          }
+        ],
+        "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+      },
+      "gate_mean": 0.9601966882693623
+    }
+  },
   "dense/50003968": {},
   "sparse/50003968": {}
 }
