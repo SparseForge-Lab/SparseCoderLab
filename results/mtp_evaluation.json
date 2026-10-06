@@ -1,0 +1,29 @@
+{
+  "horizons": {
+    "t+1_loss": 10.470145225524902,
+    "t+1_accuracy": 0.0,
+    "t+2_loss": 10.511307716369629,
+    "t+2_accuracy": 0.0,
+    "t+3_loss": 10.551253318786621,
+    "t+3_accuracy": 0.0
+  },
+  "speculation": {
+    "accepted_length": 0.8,
+    "accepted_per_iteration": [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tokens_s_including_draft": 18.349987476137226,
+    "wall_seconds": 0.43596759999991264,
+    "draft_seconds": 0.07190729999956602,
+    "method": "Exact greedy parity; full-prefix SDPA reference without KV cache. Not stochastic speculative sampling."
+  },
+  "greedy_tokens_s": 22.944147062817922,
+  "net_speedup": 0.7997676891582625,
+  "greedy_parity": true,
+  "checkpoint": "experiments\\smoke_mtp\\checkpoints\\last.pt",
+  "scope": "Synthetic held-out prefix; full-prefix reference implementation. Smoke checkpoint results cannot justify keeping MTP."
+}

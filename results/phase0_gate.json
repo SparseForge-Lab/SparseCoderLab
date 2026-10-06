@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "source_hash": "b5e28c5181cd3391bf4282d01da6228ef97e00eb6b5902dda360a12faff5968d",
+  "pytest_returncode": 0,
+  "overfit_passed": true,
+  "required_profiles": [
+    "profile_DenseCompute.json",
+    "profile_SparseV3.json",
+    "profile_SparseV3Ngram.json"
+  ],
+  "five_minute_dense_profiler": true,
+  "gate_scope": "Engineering readiness only; does not authorize or automatically start training"
+}

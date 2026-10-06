@@ -1,0 +1,105 @@
+{
+  "status": "partial",
+  "nominal_tokens": 20000000,
+  "actual_tokens": 20004864,
+  "models": {
+    "dense": {
+      "canonical_path": "D:\\SparseCoderLab\\experiments\\research_v1\\dense\\checkpoints\\tokens_20004864.pt",
+      "sha256": "4bb8f42917a0773fde293b1c5c4c3e505a1ac0615a41bbd4ca724734836ce07b",
+      "size_bytes": 198983987,
+      "architecture": {
+        "vocab_size": 32768,
+        "d_model": 320,
+        "layers": 9,
+        "q_heads": 5,
+        "kv_heads": 1,
+        "head_dim": 64,
+        "ffn": 448,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0,
+        "init_std": 0.02,
+        "moe_layers": [],
+        "experts": 12,
+        "expert_ffn": 160,
+        "top_k": 1,
+        "aux_weight": 0.01,
+        "activation_checkpointing": false
+      },
+      "ngram": {
+        "enabled": false,
+        "banks": 4,
+        "rows": 131072,
+        "dim": 8,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "seeds": [
+          17,
+          65537,
+          104729,
+          999983
+        ],
+        "layer": 1,
+        "gate_bias": -2.0
+      },
+      "tokens": 20004864,
+      "summary_path": "D:\\SparseCoderLab\\experiments\\research_v1\\dense\\summary_20004864.json",
+      "evaluation_path": "D:\\SparseCoderLab\\results\\research_v1\\dense_20004864_evaluation.json"
+    },
+    "sparse": {
+      "canonical_path": "D:\\SparseCoderLab\\experiments\\research_v1\\sparse\\checkpoints\\tokens_20004864.pt",
+      "sha256": "ad7268cb8156592c128daaf86645f50d9c38a6f3a745f597d2f0118b35770488",
+      "size_bytes": 258938395,
+      "architecture": {
+        "vocab_size": 32768,
+        "d_model": 320,
+        "layers": 9,
+        "q_heads": 5,
+        "kv_heads": 1,
+        "head_dim": 64,
+        "ffn": 384,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0,
+        "init_std": 0.02,
+        "moe_layers": [
+          2,
+          5,
+          8
+        ],
+        "experts": 12,
+        "expert_ffn": 160,
+        "top_k": 1,
+        "aux_weight": 0.01,
+        "activation_checkpointing": false,
+        "moe_backend": "grouped"
+      },
+      "ngram": {
+        "enabled": false,
+        "banks": 4,
+        "rows": 131072,
+        "dim": 8,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "seeds": [
+          17,
+          65537,
+          104729,
+          999983
+        ],
+        "layer": 1,
+        "gate_bias": -2.0
+      },
+      "tokens": 20004864,
+      "summary_path": "D:\\SparseCoderLab\\experiments\\research_v1\\sparse\\summary_20004864.json",
+      "evaluation_path": "D:\\SparseCoderLab\\results\\research_v1\\sparse_20004864_evaluation.json"
+    }
+  },
+  "scope": "Local release evidence, not a published model release. Checkpoints referenced, not copied."
+}

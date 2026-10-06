@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "prompt": "Prompt-1",
+  "archive": "~\\Data-Zip\\Prompt-1\\Prompt-1.zip",
+  "archive_bytes": 313452,
+  "archive_sha256": "ad0404358128f51a712372260d54206c6f1bec08d346197f41d8f9e4116e1d1e",
+  "canonical_files_verified": 83,
+  "zip_crc_verified": true,
+  "manifest_paths_and_sha256_verified": true,
+  "canonical_files_retained": true,
+  "goal_mirror_verified": true
+}

@@ -1,0 +1,7 @@
+extends: ../sparse_v3.yaml
+name: Runtime_SparseReference
+model:
+  moe_backend: reference
+training:
+  max_wall_minutes: 30
+  target_tokens: 327680

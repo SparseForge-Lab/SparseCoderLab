@@ -1,0 +1,7 @@
+{
+  "status": "planned",
+  "nominal_tokens": 100000000,
+  "actual_tokens": 100007936,
+  "models": {},
+  "scope": "Local release evidence, not a published model release. Checkpoints referenced, not copied."
+}

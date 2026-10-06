@@ -1,0 +1,74 @@
+{
+  "DenseCompute": {
+    "total": 16574400,
+    "routed_experts": 0,
+    "router": 0,
+    "conditional_memory": 0,
+    "mtp": 0,
+    "resident": 16574400,
+    "memory_tables": 0,
+    "active_estimate": 16574400,
+    "base_active_without_mtp": 16574400,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  },
+  "DenseSize": {
+    "total": 25974720,
+    "routed_experts": 0,
+    "router": 0,
+    "conditional_memory": 0,
+    "mtp": 0,
+    "resident": 25974720,
+    "memory_tables": 0,
+    "active_estimate": 25974720,
+    "base_active_without_mtp": 25974720,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  },
+  "SparseV3": {
+    "total": 21562560,
+    "routed_experts": 5529600,
+    "router": 11520,
+    "conditional_memory": 0,
+    "mtp": 0,
+    "resident": 16021440,
+    "memory_tables": 0,
+    "active_estimate": 16493760,
+    "base_active_without_mtp": 16493760,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  },
+  "SparseV3Ngram": {
+    "total": 25767425,
+    "routed_experts": 5529600,
+    "router": 11520,
+    "conditional_memory": 4204865,
+    "mtp": 0,
+    "resident": 16021440,
+    "memory_tables": 4194304,
+    "active_estimate": 16504353,
+    "base_active_without_mtp": 16504353,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  },
+  "SparseV3MTP": {
+    "total": 21921280,
+    "routed_experts": 5529600,
+    "router": 11520,
+    "conditional_memory": 0,
+    "mtp": 358720,
+    "resident": 16021440,
+    "memory_tables": 0,
+    "active_estimate": 16852480,
+    "base_active_without_mtp": 16493760,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  },
+  "SparseV3Top2": {
+    "total": 21562560,
+    "routed_experts": 5529600,
+    "router": 11520,
+    "conditional_memory": 0,
+    "mtp": 0,
+    "resident": 16021440,
+    "memory_tables": 0,
+    "active_estimate": 16954560,
+    "base_active_without_mtp": 16954560,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  }
+}

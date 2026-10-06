@@ -1,0 +1,7 @@
+extends: ../dense_compute.yaml
+name: Phase1A_DenseCompute
+training:
+  seed: 42
+  target_tokens: 5005312
+  max_wall_minutes: 30
+  eval_batches: 16

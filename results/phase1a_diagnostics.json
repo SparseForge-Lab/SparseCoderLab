@@ -1,0 +1,406 @@
+{
+  "dense": {
+    "router_sampled_steps": 61,
+    "router": {}
+  },
+  "sparse": {
+    "router_sampled_steps": 61,
+    "router": {
+      "2": {
+        "entropy_mean": 2.354252721442551,
+        "cv_mean": 0.47915720353361035,
+        "cv_max": 1.9333323240280151,
+        "last_sample": {
+          "entropy": 2.272839069366455,
+          "imbalance": 0.306516170501709,
+          "load": [
+            146.0,
+            134.0,
+            211.0,
+            188.0,
+            198.0,
+            230.0,
+            201.0,
+            142.0,
+            57.0,
+            102.0,
+            236.0,
+            203.0
+          ]
+        },
+        "last_20_sample_cv_mean": 0.3114507727324963,
+        "last_20_sample_max_expert_share": 0.16259765625
+      },
+      "5": {
+        "entropy_mean": 2.3510093180859677,
+        "cv_mean": 0.5560194886610156,
+        "cv_max": 3.2585573196411133,
+        "last_sample": {
+          "entropy": 2.259045124053955,
+          "imbalance": 0.28655409812927246,
+          "load": [
+            191.0,
+            215.0,
+            190.0,
+            252.0,
+            201.0,
+            117.0,
+            177.0,
+            162.0,
+            146.0,
+            137.0,
+            58.0,
+            202.0
+          ]
+        },
+        "last_20_sample_cv_mean": 0.28615294173359873,
+        "last_20_sample_max_expert_share": 0.15625
+      },
+      "8": {
+        "entropy_mean": 2.2270255518741293,
+        "cv_mean": 0.5436125918001425,
+        "cv_max": 2.3109498023986816,
+        "last_sample": {
+          "entropy": 1.9028735160827637,
+          "imbalance": 0.21854935586452484,
+          "load": [
+            239.0,
+            180.0,
+            144.0,
+            190.0,
+            176.0,
+            192.0,
+            119.0,
+            165.0,
+            178.0,
+            92.0,
+            208.0,
+            165.0
+          ]
+        },
+        "last_20_sample_cv_mean": 0.3349353775382042,
+        "last_20_sample_max_expert_share": 0.181640625
+      }
+    }
+  },
+  "memory": {
+    "router_sampled_steps": 61,
+    "router": {
+      "2": {
+        "entropy_mean": 2.37212113083386,
+        "cv_mean": 0.5337510450941617,
+        "cv_max": 2.690443515777588,
+        "last_sample": {
+          "entropy": 2.345959186553955,
+          "imbalance": 0.31235039234161377,
+          "load": [
+            225.0,
+            212.0,
+            188.0,
+            153.0,
+            143.0,
+            177.0,
+            236.0,
+            249.0,
+            114.0,
+            148.0,
+            55.0,
+            148.0
+          ]
+        },
+        "last_20_sample_cv_mean": 0.3367162473499775,
+        "last_20_sample_max_expert_share": 0.1826171875
+      },
+      "5": {
+        "entropy_mean": 2.31674023925281,
+        "cv_mean": 0.47518358440672764,
+        "cv_max": 2.661874532699585,
+        "last_sample": {
+          "entropy": 2.130462169647217,
+          "imbalance": 0.19229605793952942,
+          "load": [
+            154.0,
+            128.0,
+            189.0,
+            197.0,
+            150.0,
+            236.0,
+            121.0,
+            217.0,
+            177.0,
+            160.0,
+            153.0,
+            166.0
+          ]
+        },
+        "last_20_sample_cv_mean": 0.2553428143262863,
+        "last_20_sample_max_expert_share": 0.1435546875
+      },
+      "8": {
+        "entropy_mean": 2.279556243146052,
+        "cv_mean": 0.6037741261916082,
+        "cv_max": 3.0203211307525635,
+        "last_sample": {
+          "entropy": 2.0525660514831543,
+          "imbalance": 0.22665931284427643,
+          "load": [
+            146.0,
+            118.0,
+            139.0,
+            197.0,
+            176.0,
+            213.0,
+            261.0,
+            136.0,
+            141.0,
+            158.0,
+            196.0,
+            167.0
+          ]
+        },
+        "last_20_sample_cv_mean": 0.3182808347046375,
+        "last_20_sample_max_expert_share": 0.1845703125
+      }
+    },
+    "memory": {
+      "first": {
+        "gate_mean_last_microbatch": 0.119140625,
+        "gate_min_last_microbatch": 0.119140625,
+        "gate_max_last_microbatch": 0.119140625,
+        "table_gradients": [
+          {
+            "gradient_norm_after_clip": 0.00015204682131297886,
+            "rows_with_gradient_this_step": 5452
+          },
+          {
+            "gradient_norm_after_clip": 0.00015332942712120712,
+            "rows_with_gradient_this_step": 5453
+          },
+          {
+            "gradient_norm_after_clip": 0.00017882950487546623,
+            "rows_with_gradient_this_step": 6371
+          },
+          {
+            "gradient_norm_after_clip": 0.00016529746062587947,
+            "rows_with_gradient_this_step": 6372
+          }
+        ],
+        "sample_statistics": {
+          "banks": [
+            {
+              "order": 2,
+              "utilized_rows": 1619,
+              "rows": 131072,
+              "distinct_ngrams": 1637,
+              "collisions": 18,
+              "collision_fraction": 0.010995723885155772,
+              "lookup_frequency_histogram": {
+                "1": 1466,
+                "2": 93,
+                "3": 48,
+                "4": 6,
+                "5": 1,
+                "11": 2,
+                "67": 3
+              },
+              "bucket_utilization_histogram": {
+                "1": 1601,
+                "2": 18
+              }
+            },
+            {
+              "order": 2,
+              "utilized_rows": 1619,
+              "rows": 131072,
+              "distinct_ngrams": 1637,
+              "collisions": 18,
+              "collision_fraction": 0.010995723885155772,
+              "lookup_frequency_histogram": {
+                "1": 1466,
+                "2": 93,
+                "3": 48,
+                "4": 6,
+                "5": 1,
+                "11": 2,
+                "67": 3
+              },
+              "bucket_utilization_histogram": {
+                "1": 1601,
+                "2": 18
+              }
+            },
+            {
+              "order": 3,
+              "utilized_rows": 1756,
+              "rows": 131072,
+              "distinct_ngrams": 1767,
+              "collisions": 11,
+              "collision_fraction": 0.00622524052065648,
+              "lookup_frequency_histogram": {
+                "1": 1653,
+                "2": 54,
+                "3": 43,
+                "4": 2,
+                "5": 1,
+                "11": 1,
+                "67": 2
+              },
+              "bucket_utilization_histogram": {
+                "1": 1745,
+                "2": 11
+              }
+            },
+            {
+              "order": 3,
+              "utilized_rows": 1755,
+              "rows": 131072,
+              "distinct_ngrams": 1767,
+              "collisions": 12,
+              "collision_fraction": 0.006791171477079796,
+              "lookup_frequency_histogram": {
+                "1": 1651,
+                "2": 55,
+                "3": 43,
+                "4": 2,
+                "5": 1,
+                "11": 1,
+                "67": 2
+              },
+              "bucket_utilization_histogram": {
+                "1": 1743,
+                "2": 12
+              }
+            }
+          ],
+          "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+        },
+        "update_scope": "Nonzero accumulated gradient rows sampled at log steps. AdamW also applies dense decay/momentum updates; not lifetime unique utilization."
+      },
+      "last": {
+        "gate_mean_last_microbatch": 0.6251850128173828,
+        "gate_min_last_microbatch": 0.1552734375,
+        "gate_max_last_microbatch": 0.98046875,
+        "table_gradients": [
+          {
+            "gradient_norm_after_clip": 0.002607545116916299,
+            "rows_with_gradient_this_step": 5364
+          },
+          {
+            "gradient_norm_after_clip": 0.0023799845948815346,
+            "rows_with_gradient_this_step": 5365
+          },
+          {
+            "gradient_norm_after_clip": 0.0025431127287447453,
+            "rows_with_gradient_this_step": 6290
+          },
+          {
+            "gradient_norm_after_clip": 0.0028284897562116385,
+            "rows_with_gradient_this_step": 6290
+          }
+        ],
+        "sample_statistics": {
+          "banks": [
+            {
+              "order": 2,
+              "utilized_rows": 1587,
+              "rows": 131072,
+              "distinct_ngrams": 1606,
+              "collisions": 19,
+              "collision_fraction": 0.011830635118306352,
+              "lookup_frequency_histogram": {
+                "1": 1419,
+                "2": 118,
+                "3": 40,
+                "4": 2,
+                "5": 1,
+                "6": 1,
+                "7": 1,
+                "12": 2,
+                "74": 2,
+                "75": 1
+              },
+              "bucket_utilization_histogram": {
+                "1": 1568,
+                "2": 19
+              }
+            },
+            {
+              "order": 2,
+              "utilized_rows": 1587,
+              "rows": 131072,
+              "distinct_ngrams": 1606,
+              "collisions": 19,
+              "collision_fraction": 0.011830635118306352,
+              "lookup_frequency_histogram": {
+                "1": 1419,
+                "2": 118,
+                "3": 40,
+                "4": 2,
+                "5": 1,
+                "6": 1,
+                "7": 1,
+                "12": 2,
+                "74": 2,
+                "75": 1
+              },
+              "bucket_utilization_histogram": {
+                "1": 1568,
+                "2": 19
+              }
+            },
+            {
+              "order": 3,
+              "utilized_rows": 1743,
+              "rows": 131072,
+              "distinct_ngrams": 1753,
+              "collisions": 10,
+              "collision_fraction": 0.005704506560182544,
+              "lookup_frequency_histogram": {
+                "1": 1629,
+                "2": 78,
+                "3": 32,
+                "7": 1,
+                "12": 1,
+                "74": 2
+              },
+              "bucket_utilization_histogram": {
+                "1": 1733,
+                "2": 10
+              }
+            },
+            {
+              "order": 3,
+              "utilized_rows": 1743,
+              "rows": 131072,
+              "distinct_ngrams": 1753,
+              "collisions": 10,
+              "collision_fraction": 0.005704506560182544,
+              "lookup_frequency_histogram": {
+                "1": 1629,
+                "2": 78,
+                "3": 32,
+                "7": 1,
+                "12": 1,
+                "74": 2
+              },
+              "bucket_utilization_histogram": {
+                "1": 1733,
+                "2": 10
+              }
+            }
+          ],
+          "scope": "Only the supplied bounded sample; not whole-corpus collision estimates"
+        },
+        "update_scope": "Nonzero accumulated gradient rows sampled at log steps. AdamW also applies dense decay/momentum updates; not lifetime unique utilization."
+      },
+      "gate_mean_over_samples": 0.30168939027629915,
+      "logged_steps_with_nonzero_table_gradient": [
+        61,
+        61,
+        61,
+        61
+      ],
+      "scope": "61 sampled steps, last microbatch bucket statistics; not lifetime row counts."
+    }
+  }
+}

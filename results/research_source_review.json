@@ -1,0 +1,36 @@
+{
+  "codeparrot/github-code": {
+    "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+    "files": [
+      "data/train-00000-of-01126.parquet",
+      "data/train-00001-of-01126.parquet",
+      "data/train-00002-of-01126.parquet",
+      "data/train-00003-of-01126.parquet",
+      "data/train-00004-of-01126.parquet",
+      "data/train-00005-of-01126.parquet",
+      "data/train-00006-of-01126.parquet",
+      "data/train-00007-of-01126.parquet",
+      "data/train-00008-of-01126.parquet",
+      "data/train-00009-of-01126.parquet",
+      "data/train-00010-of-01126.parquet",
+      "data/train-00011-of-01126.parquet"
+    ]
+  },
+  "HuggingFaceFW/fineweb-edu": {
+    "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+    "files": [
+      "data/CC-MAIN-2013-20/train-00000-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00001-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00002-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00003-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00004-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00005-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00006-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00007-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00008-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00009-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00010-of-00014.parquet",
+      "data/CC-MAIN-2013-20/train-00011-of-00014.parquet"
+    ]
+  }
+}

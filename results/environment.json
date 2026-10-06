@@ -1,0 +1,47 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "wsl": false,
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "D:\\SparseCoderLab\\.venv\\Scripts\\python.exe",
+  "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+  "logical_cpus": 16,
+  "disk_free_bytes": 68906627072,
+  "nvidia_smi": "NVIDIA GeForce RTX 5070, 616.64, 12227 MiB, 3347 MiB",
+  "hardware": "{\n    \"TotalPhysicalMemory\":  51442139136\n}\n[\n    {\n        \"FriendlyName\":  \"WDC WD20EZRZ-00Z5HB0\",\n        \"MediaType\":  \"HDD\",\n        \"Size\":  2000398934016\n    },\n    {\n        \"FriendlyName\":  \"FIKWOT FS810 1TB\",\n        \"MediaType\":  \"SSD\",\n        \"Size\":  1024209543168\n    },\n    {\n        \"FriendlyName\":  \"EDILOCA EN605 256GB\",\n        \"MediaType\":  \"SSD\",\n        \"Size\":  256060514304\n    }\n]",
+  "torch": "2.14.1+cu130",
+  "cuda_runtime": "13.0",
+  "arch_list": [
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "compute_capability": [
+    12,
+    0
+  ],
+  "bf16": true,
+  "tf32": true,
+  "free_vram_bytes": 11572084736,
+  "total_vram_bytes": 12792037376,
+  "io_benchmark": {
+    "size_mib": 256,
+    "block_mib": 4,
+    "mode": "Windows FILE_FLAG_NO_BUFFERING, aligned VirtualAlloc buffer",
+    "sequential": {
+      "mib_s": 462.16727566864813,
+      "block_ms": 8.654874999994178,
+      "block_p95_ms": 8.87179999995169
+    },
+    "random_large_block": {
+      "mib_s": 461.9101826475885,
+      "block_ms": 8.659692187499957,
+      "block_p95_ms": 8.96069999998872
+    },
+    "caveat": "Bypasses Windows page cache; device cache/firmware may still contribute. 4MiB block times include transfer, do not add them as a separate latency to bandwidth. SATA on this machine, not NVMe."
+  }
+}

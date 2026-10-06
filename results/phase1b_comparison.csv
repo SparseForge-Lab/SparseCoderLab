@@ -1,0 +1,4 @@
+model,seed,planned_target_tokens,status,stop_reason,tokens_seen,val_loss,code_val_loss,general_val_loss,bits_per_token,wall_time,tok_s,vram_peak
+DenseCompute,42,10000000,not_run_stop_review,Phase1A sparse slowdown without established quality benefit; research corpus not acquired,,,,,,,,
+SparseV3,42,10000000,not_run_stop_review,Phase1A sparse slowdown without established quality benefit; research corpus not acquired,,,,,,,,
+SparseV3Ngram,42,10000000,not_run_stop_review,Phase1A sparse slowdown without established quality benefit; research corpus not acquired,,,,,,,,

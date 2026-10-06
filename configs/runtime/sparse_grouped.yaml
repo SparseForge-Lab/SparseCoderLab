@@ -1,0 +1,4 @@
+extends: sparse_reference.yaml
+name: Runtime_SparseGrouped
+model:
+  moe_backend: grouped

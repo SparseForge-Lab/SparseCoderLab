@@ -1,0 +1,16 @@
+extends: ../dense_compute.yaml
+name: ResearchV1_DenseCompute
+training:
+  target_tokens: 100007936
+  schedule_steps: 12208
+  warmup_steps: 245
+  checkpoint_steps: 1000
+  log_steps: 50
+  eval_steps: 1000
+  max_wall_minutes: 300
+data:
+  tokenizer: data/research_v1/tokenizer.json
+  shards: data/research_v1/shards
+  manifest: results/research_v1/corpus_manifest.json
+  cache_gb: 20
+  project_gb: 30

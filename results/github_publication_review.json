@@ -1,0 +1,21 @@
+{
+  "status": "staged_review_passed",
+  "repository": "https://github.com/SparseForge-Lab/SparseCoderLab",
+  "branch": "main",
+  "public_tree_files": 382,
+  "changed_files": 381,
+  "credential_candidate_count": 0,
+  "personal_home_path_count": 0,
+  "large_file_count_over_20mib": 0,
+  "largest_blob_bytes": 4007140,
+  "frozen_training_source_sha256": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+  "frozen_inputs_staged_bytes_verified": {
+    "data/research_v1/tokenizer.json": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+    "results/research_v1/corpus_manifest.json": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+    "results/research_v1/evaluation_index.json": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+  },
+  "dense_sparse_50m_rolling_milestone_match": true,
+  "prompt1_archive_unchanged": true,
+  "training_remains_stopped": true,
+  "limits": "Pattern-based credential scan supplemented by full staged inventory; does not guarantee every possible credential format."
+}

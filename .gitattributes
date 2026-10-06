@@ -1,0 +1,9 @@
+# Preserve source/config/evidence bytes used by frozen SHA256 identities across
+# Windows and Linux checkouts. Diffs remain textual; only EOL conversion is off.
+*.py -text
+*.yaml -text
+*.json -text
+*.jsonl -text
+*.csv -text
+*.md text eol=lf
+*.sh text eol=lf

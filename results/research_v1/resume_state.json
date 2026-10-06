@@ -1,0 +1,203 @@
+{
+  "passed": true,
+  "date_utc": "2026-10-06T13:02:13.428809+00:00",
+  "models": {
+    "dense": {
+      "state": "resumable",
+      "consumed_tokens": 50003968,
+      "latest_valid_checkpoint": {
+        "path": "D:\\SparseCoderLab\\experiments\\research_v1\\dense\\checkpoints\\last.pt",
+        "sha256": "f466676092df5d4b7e0ec1306985c5aff4d25e6440fa37858fb41f92bf61ac19",
+        "size_bytes": 198986867,
+        "tokens": 50003968,
+        "optimizer_step": 6104,
+        "cursor": 48832,
+        "rng_available": true,
+        "scheduler_step": 6104,
+        "learning_rate": 0.00016934214895056985,
+        "config_hash": "178003c8c32adf7ebfe307b9c294aea8e2cf0ebcb340ab6ee4ae1132215ab7b1",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+      },
+      "fully_evaluated_milestones": [
+        20004864,
+        50003968
+      ],
+      "verified_checkpoints": [
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\dense\\checkpoints\\last.pt",
+          "sha256": "f466676092df5d4b7e0ec1306985c5aff4d25e6440fa37858fb41f92bf61ac19",
+          "size_bytes": 198986867,
+          "tokens": 50003968,
+          "optimizer_step": 6104,
+          "cursor": 48832,
+          "rng_available": true,
+          "scheduler_step": 6104,
+          "learning_rate": 0.00016934214895056985,
+          "config_hash": "178003c8c32adf7ebfe307b9c294aea8e2cf0ebcb340ab6ee4ae1132215ab7b1",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\dense\\checkpoints\\tokens_20004864.pt",
+          "sha256": "4bb8f42917a0773fde293b1c5c4c3e505a1ac0615a41bbd4ca724734836ce07b",
+          "size_bytes": 198983987,
+          "tokens": 20004864,
+          "optimizer_step": 2442,
+          "cursor": 19536,
+          "rng_available": true,
+          "scheduler_step": 2442,
+          "learning_rate": 0.0002781474196784636,
+          "config_hash": "178003c8c32adf7ebfe307b9c294aea8e2cf0ebcb340ab6ee4ae1132215ab7b1",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\dense\\checkpoints\\tokens_50003968.pt",
+          "sha256": "f466676092df5d4b7e0ec1306985c5aff4d25e6440fa37858fb41f92bf61ac19",
+          "size_bytes": 198986867,
+          "tokens": 50003968,
+          "optimizer_step": 6104,
+          "cursor": 48832,
+          "rng_available": true,
+          "scheduler_step": 6104,
+          "learning_rate": 0.00016934214895056985,
+          "config_hash": "178003c8c32adf7ebfe307b9c294aea8e2cf0ebcb340ab6ee4ae1132215ab7b1",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        }
+      ],
+      "rejected_checkpoints": [],
+      "frozen_identity": {
+        "config_hash": "178003c8c32adf7ebfe307b9c294aea8e2cf0ebcb340ab6ee4ae1132215ab7b1",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+      },
+      "fallback_required": false
+    },
+    "sparse": {
+      "state": "resumable",
+      "consumed_tokens": 50003968,
+      "latest_valid_checkpoint": {
+        "path": "D:\\SparseCoderLab\\experiments\\research_v1\\sparse\\checkpoints\\last.pt",
+        "sha256": "2c9ec686cc7213a80b469c5f21fd5b90545d1ff02c3e4bfd20bbd97baac49954",
+        "size_bytes": 258938395,
+        "tokens": 50003968,
+        "optimizer_step": 6104,
+        "cursor": 48832,
+        "rng_available": true,
+        "scheduler_step": 6104,
+        "learning_rate": 0.00016934214895056985,
+        "config_hash": "e835de6ba305d0ad0ea1a995d70aeab90bfa27c3fe9d0adc7f42e28a2f1886d9",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+      },
+      "fully_evaluated_milestones": [
+        20004864,
+        50003968
+      ],
+      "verified_checkpoints": [
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\sparse\\checkpoints\\last.pt",
+          "sha256": "2c9ec686cc7213a80b469c5f21fd5b90545d1ff02c3e4bfd20bbd97baac49954",
+          "size_bytes": 258938395,
+          "tokens": 50003968,
+          "optimizer_step": 6104,
+          "cursor": 48832,
+          "rng_available": true,
+          "scheduler_step": 6104,
+          "learning_rate": 0.00016934214895056985,
+          "config_hash": "e835de6ba305d0ad0ea1a995d70aeab90bfa27c3fe9d0adc7f42e28a2f1886d9",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\sparse\\checkpoints\\tokens_20004864.pt",
+          "sha256": "ad7268cb8156592c128daaf86645f50d9c38a6f3a745f597d2f0118b35770488",
+          "size_bytes": 258938395,
+          "tokens": 20004864,
+          "optimizer_step": 2442,
+          "cursor": 19536,
+          "rng_available": true,
+          "scheduler_step": 2442,
+          "learning_rate": 0.0002781474196784636,
+          "config_hash": "e835de6ba305d0ad0ea1a995d70aeab90bfa27c3fe9d0adc7f42e28a2f1886d9",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        {
+          "path": "D:\\SparseCoderLab\\experiments\\research_v1\\sparse\\checkpoints\\tokens_50003968.pt",
+          "sha256": "2c9ec686cc7213a80b469c5f21fd5b90545d1ff02c3e4bfd20bbd97baac49954",
+          "size_bytes": 258938395,
+          "tokens": 50003968,
+          "optimizer_step": 6104,
+          "cursor": 48832,
+          "rng_available": true,
+          "scheduler_step": 6104,
+          "learning_rate": 0.00016934214895056985,
+          "config_hash": "e835de6ba305d0ad0ea1a995d70aeab90bfa27c3fe9d0adc7f42e28a2f1886d9",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        }
+      ],
+      "rejected_checkpoints": [],
+      "frozen_identity": {
+        "config_hash": "e835de6ba305d0ad0ea1a995d70aeab90bfa27c3fe9d0adc7f42e28a2f1886d9",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+      },
+      "fallback_required": false
+    },
+    "memory": {
+      "state": "fresh_unstarted",
+      "consumed_tokens": 0,
+      "latest_valid_checkpoint": null,
+      "fully_evaluated_milestones": [],
+      "verified_checkpoints": [],
+      "rejected_checkpoints": [],
+      "frozen_identity": {
+        "config_hash": "a8ba057f1e9785490131ff364881006d4b3142d7eaddf1c661663ba635f874b9",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+      },
+      "fallback_required": false
+    }
+  },
+  "scope": "CPU deserialize/load of every existing primary checkpoint, exact parameter/optimizer shapes, finite state, frozen identities, scheduler and stream cursor. No training or checkpoint mutation.",
+  "planned_order": [
+    "sparse20M",
+    "sparse50M",
+    "memory20M",
+    "memory50M",
+    "matched50M_review",
+    "dense70M",
+    "sparse70M",
+    "memory70M",
+    "dense100M",
+    "sparse100M",
+    "memory100M"
+  ],
+  "interrupted_attempt_excluded": "results/history/Prompt-2/sparse_uncheckpointed_attempt; no resumable weights existed"
+}

@@ -1,0 +1,473 @@
+{
+  "tokens": {
+    "train": 210012790,
+    "val": 8393991
+  },
+  "physical_shards": {
+    "train": [
+      {
+        "path": "train-00000.bin",
+        "tokens": 8388608,
+        "sha256": "1133febde904d554ce7314f4f038cc03630d0fc26c6434b7fb8490e0cc6540d0"
+      },
+      {
+        "path": "train-00001.bin",
+        "tokens": 8388608,
+        "sha256": "4976e6646f32a70aad82cdac6165788a97c6200ce3d61fab778c5dbb8b737cd7"
+      },
+      {
+        "path": "train-00002.bin",
+        "tokens": 8388608,
+        "sha256": "9a8cff337b2f392687a15b6c60db7fd3c70313bc69f5c9a66e5340359e94cc13"
+      },
+      {
+        "path": "train-00003.bin",
+        "tokens": 8388608,
+        "sha256": "daa6689b080be6b36e68b079ca5e3495d53f5b8e01df54ea4bb223fe242c8038"
+      },
+      {
+        "path": "train-00004.bin",
+        "tokens": 8388608,
+        "sha256": "9624c6edd3ea1501d91e1efffc265c093e1c3db498bd2b0877e5dda247be9271"
+      },
+      {
+        "path": "train-00005.bin",
+        "tokens": 8388608,
+        "sha256": "23ab2698f8a8bebff96fcb3e2bed4891f7e11220d6688d6e8e34b2971c43e3f7"
+      },
+      {
+        "path": "train-00006.bin",
+        "tokens": 8388608,
+        "sha256": "033f09d52fb6194721e27b2e27457cc6d7b7323ff1a3b8744e7c6eb9b597b377"
+      },
+      {
+        "path": "train-00007.bin",
+        "tokens": 8388608,
+        "sha256": "8095d39dbc5159257a1543886639085762acb668e558d9e7173f9a9f51a7a175"
+      },
+      {
+        "path": "train-00008.bin",
+        "tokens": 8388608,
+        "sha256": "4d232968534c71c1482526808f8d6dd4aed819d8c48c423c96f4f1f3ce95a72f"
+      },
+      {
+        "path": "train-00009.bin",
+        "tokens": 8388608,
+        "sha256": "65c0ed645e79520c3aaa85ad86391fe70c6b9d11f5efd45cc3dc053b422a87bb"
+      },
+      {
+        "path": "train-00010.bin",
+        "tokens": 8388608,
+        "sha256": "fd60d4a80bd080e12bc1e88df706ffe6c446613ba6f6d22a1a93ad97f54128b0"
+      },
+      {
+        "path": "train-00011.bin",
+        "tokens": 8388608,
+        "sha256": "49915dc4050833b56df6ecd15ebd5abe8cfaf3e95b3bc0bcf07f948e51103ddd"
+      },
+      {
+        "path": "train-00012.bin",
+        "tokens": 8388608,
+        "sha256": "a291f565792d2dad4677432a30cda30b9fd153ee99f36a05afe4addf89e2e8b4"
+      },
+      {
+        "path": "train-00013.bin",
+        "tokens": 8388608,
+        "sha256": "509245bfd4a2b3eb159bfc8a640089c465e83bf7c115616d36ee94bd28873719"
+      },
+      {
+        "path": "train-00014.bin",
+        "tokens": 8388608,
+        "sha256": "ad4c153ae52a5e59a3c30c42f58883ef51be215ae58bede5234a0849b64a29c6"
+      },
+      {
+        "path": "train-00015.bin",
+        "tokens": 8388608,
+        "sha256": "1c89cd8603092372a7d56a4e977d42eccaed3f4a49801bfbb5b02f727e8d334d"
+      },
+      {
+        "path": "train-00016.bin",
+        "tokens": 8388608,
+        "sha256": "77f3036b698c348d06e6943de6fc71f5c0e73f12357cf5595bb7272677e3853c"
+      },
+      {
+        "path": "train-00017.bin",
+        "tokens": 8388608,
+        "sha256": "f5b0b7c6ec7ccbb2566f91b27c7f0e1bf5a43f076f0a184e6b16854211774664"
+      },
+      {
+        "path": "train-00018.bin",
+        "tokens": 8388608,
+        "sha256": "453620f4c9b406354b577219cb2f12c6dbb734d7a513714399288ea1ada26cfc"
+      },
+      {
+        "path": "train-00019.bin",
+        "tokens": 8388608,
+        "sha256": "10c73d0968417242be0ea834fad37d7d24ad0cf2ad0a964258c324330d8233e1"
+      },
+      {
+        "path": "train-00020.bin",
+        "tokens": 8388608,
+        "sha256": "28a3799ccd61e07cce98687d1df16d2157e52b852f6140c113a8f3b3a17730aa"
+      },
+      {
+        "path": "train-00021.bin",
+        "tokens": 8388608,
+        "sha256": "60352b44fd157ca3995b6d2a61aeae2ac400bd2734f8a9d9242ae39f444b54c3"
+      },
+      {
+        "path": "train-00022.bin",
+        "tokens": 8388608,
+        "sha256": "7f4dd21e3e9ab1e9197ba68efecbb7b97598fd9640596f40cfd310079cc2c94d"
+      },
+      {
+        "path": "train-00023.bin",
+        "tokens": 8388608,
+        "sha256": "1be77386277a2a4cd28380c37cae8f03a80dca9f8ad029ee0ea682cd3bc13ee7"
+      },
+      {
+        "path": "train-00024.bin",
+        "tokens": 8388608,
+        "sha256": "f9c8347d64bd260b491359c024d821eed6febdc7f8d8ca0b057b4297f84ddc38"
+      },
+      {
+        "path": "train-00025.bin",
+        "tokens": 297590,
+        "sha256": "af0f9a17b00ed382b7c9c7abc5c59f00fe14a3142ef15d4fd23df931133c5520"
+      }
+    ],
+    "val": [
+      {
+        "path": "val-00000.bin",
+        "tokens": 8388608,
+        "sha256": "718cadd4fc56214c609f47785dcd350eff2f6bc778d40ab6f675c0bf30585048"
+      },
+      {
+        "path": "val-00001.bin",
+        "tokens": 5383,
+        "sha256": "817294df9050015eac5f2f47382c39af2fcdcb9526e632b3abaad7d5414b22ee"
+      }
+    ]
+  },
+  "shard_sha256": {
+    "train": "physical_shards authoritative",
+    "val": "physical_shards authoritative"
+  },
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "sources": {
+    "files": [
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00000-of-01126.parquet",
+        "size_bytes": 285840384,
+        "sha256": "4f4541d1e40d08c59381f38d9e09cdadbf005e0e57e0f42ed3741956b3c36de9",
+        "local_path": "data\\research_v1\\raw\\code\\train-00000-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:14:59Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00001-of-01126.parquet",
+        "size_bytes": 288848766,
+        "sha256": "51e30bfc214aedca19241d0140344b8355cb17cbc6096765a3513c526c365d3c",
+        "local_path": "data\\research_v1\\raw\\code\\train-00001-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:15:27Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00002-of-01126.parquet",
+        "size_bytes": 290762148,
+        "sha256": "74d67db8e189c1818f1908e8a4fb647b3a5b51c0c0965d4f8afa1e74490ef389",
+        "local_path": "data\\research_v1\\raw\\code\\train-00002-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:20:19Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00003-of-01126.parquet",
+        "size_bytes": 286618668,
+        "sha256": "e109df908104b38b74e24cbdda7bb33312483cb8a87e586c27f96ea63139ac3b",
+        "local_path": "data\\research_v1\\raw\\code\\train-00003-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:20:48Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00004-of-01126.parquet",
+        "size_bytes": 290585566,
+        "sha256": "495e3eee6b94422fcc59291b6cd86dd945ed37c99ea351a3885541a1aa7fc63d",
+        "local_path": "data\\research_v1\\raw\\code\\train-00004-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:21:22Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00005-of-01126.parquet",
+        "size_bytes": 288208036,
+        "sha256": "0e7e75c8fc73f6a162369c1aa1042a06e67f21dba6a0378cff4a242e1dc31d11",
+        "local_path": "data\\research_v1\\raw\\code\\train-00005-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:21:53Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00006-of-01126.parquet",
+        "size_bytes": 289435376,
+        "sha256": "48dd089762c27f22831ae2d3e42f91beae150a188113c7f75073fc67bc062c60",
+        "local_path": "data\\research_v1\\raw\\code\\train-00006-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:22:20Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00007-of-01126.parquet",
+        "size_bytes": 288105347,
+        "sha256": "ecd2955ededf5d419f541117334c6b7595cc200bea52025dd1b97ac7cc96f1f7",
+        "local_path": "data\\research_v1\\raw\\code\\train-00007-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:22:52Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00008-of-01126.parquet",
+        "size_bytes": 287771043,
+        "sha256": "9b3e7eab1dc4fe7b4f070737657d104b7ad0a72e729e0c4402839bb980306ac9",
+        "local_path": "data\\research_v1\\raw\\code\\train-00008-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:23:55Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00009-of-01126.parquet",
+        "size_bytes": 288608163,
+        "sha256": "a376e8845d529ae21e82ded3e8a0fc11adcdfab45b0b3c8493e9c3369a936fd8",
+        "local_path": "data\\research_v1\\raw\\code\\train-00009-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:24:23Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00010-of-01126.parquet",
+        "size_bytes": 286824772,
+        "sha256": "8a00aca597a85860692dba51ed569ce8b69fbddcb92350ce2b082f299301a085",
+        "local_path": "data\\research_v1\\raw\\code\\train-00010-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:24:50Z"
+      },
+      {
+        "dataset": "codeparrot/github-code",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "remote_file": "data/train-00011-of-01126.parquet",
+        "size_bytes": 287279209,
+        "sha256": "34bc9bc9a2f06edcb05bd008ae5d2d88e3f71aa1ac1bf42936d1f0384dea3863",
+        "local_path": "data\\research_v1\\raw\\code\\train-00011-of-01126.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:25:22Z"
+      },
+      {
+        "dataset": "HuggingFaceFW/fineweb-edu",
+        "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+        "remote_file": "sample/10BT/000_00000.parquet",
+        "size_bytes": 2152819114,
+        "sha256": "b1ba7b2ce4cb5ea6ef42dca40263eabb85f37700d01693a68e9b30a31d78e871",
+        "local_path": "data\\research_v1\\raw\\general\\000_00000.parquet",
+        "verified": true,
+        "download_completed_utc": "2026-10-05T18:18:53Z"
+      }
+    ],
+    "download_upper_bound_bytes": 9084872867,
+    "policy": "Public ungated pinned files only. Code: per-repository MIT/Apache2/BSD2/BSD3/ISC/CC0/Unlicense whitelist, reject unknown/other. FineWebEdu: ODC-By collection/CommonCrawl terms with per-document URL/crawl identifiers; no claim that collection license owns individual pages. Bounded selection; no remote code execution.",
+    "admitted_download_bytes": 5611706592,
+    "scope": "These verified downloaded files only; unused candidates remain in the separate source_plan.json inventory."
+  },
+  "token_statistics": {
+    "train/code": 132002881,
+    "train/language/JavaScript": 15571229,
+    "train/license/ISC": 1046510,
+    "train/code_language/JavaScript": 14116752,
+    "train/language/Go": 3249334,
+    "train/code_language/Go": 3060139,
+    "train/language/PHP": 8362411,
+    "train/code_language/PHP": 7641815,
+    "train/language/C": 15522511,
+    "train/code_language/C": 14236725,
+    "train/language/C++": 13273075,
+    "train/code_language/C++": 12236924,
+    "train/language/Batchfile": 70886,
+    "train/code_language/Batchfile": 69122,
+    "train/language/Java": 22483651,
+    "train/code_language/Java": 20709277,
+    "train/language/SQL": 1155845,
+    "train/code_language/SQL": 982911,
+    "train/language/Python": 11354620,
+    "train/code_language/Python": 10388837,
+    "train/language/HTML/CSS": 30584078,
+    "train/code_language/HTML/CSS": 28031172,
+    "train/language/Bash": 707998,
+    "train/code_language/Bash": 650095,
+    "train/language/C#": 7163689,
+    "train/license/MIT": 91605201,
+    "train/code_language/C#": 6585009,
+    "train/language/Ruby": 2967075,
+    "train/code_language/Ruby": 2707806,
+    "train/language/TypeScript": 6804074,
+    "train/code_language/TypeScript": 6135800,
+    "train/language/Rust": 651097,
+    "train/code_language/Rust": 623104,
+    "train/language/Scala": 1152314,
+    "train/code_language/Scala": 1067953,
+    "train/language/TeX": 364809,
+    "train/code_language/TeX": 329446,
+    "train/language/Lua": 375347,
+    "train/code_language/Lua": 353576,
+    "train/language/Julia": 97603,
+    "train/code_language/Julia": 91974,
+    "train/language/CMake": 89520,
+    "train/code_language/CMake": 88099,
+    "train/language/Makefile": 198174,
+    "train/code_language/Makefile": 187401,
+    "train/language/FORTRAN": 349474,
+    "train/code_language/FORTRAN": 338075,
+    "train/language/Assembly": 113885,
+    "train/code_language/Assembly": 109243,
+    "train/language/Perl": 379962,
+    "train/code_language/Perl": 372329,
+    "train/language/Dockerfile": 53729,
+    "train/code_language/Dockerfile": 47470,
+    "train/language/Visual Basic": 263390,
+    "train/code_language/Visual Basic": 223739,
+    "train/language/PowerShell": 226790,
+    "train/code_language/PowerShell": 218633,
+    "train/language/Haskell": 418179,
+    "train/code_language/Haskell": 399455,
+    "train/license/CC0-1.0": 1149944,
+    "train/license/Unlicense": 1372294,
+    "train/license/Apache-2.0": 61550902,
+    "train/license/BSD-2-Clause": 4289675,
+    "train/license/BSD-3-Clause": 18998191,
+    "train/context": 12001868,
+    "train/general": 30000073,
+    "train/language/English": 30000073,
+    "train/license/ODC-By-1.0 (collection)": 30000073,
+    "train/technical": 36007968,
+    "train/language/Markdown": 36007968,
+    "val/code": 5284127,
+    "val/language/JavaScript": 439451,
+    "val/license/ISC": 62763,
+    "val/code_language/JavaScript": 401903,
+    "val/language/C": 740219,
+    "val/code_language/C": 619722,
+    "val/language/C#": 343121,
+    "val/license/MIT": 3574031,
+    "val/code_language/C#": 328723,
+    "val/language/Python": 563707,
+    "val/code_language/Python": 542881,
+    "val/language/Ruby": 94787,
+    "val/code_language/Ruby": 88606,
+    "val/language/C++": 608079,
+    "val/code_language/C++": 564035,
+    "val/language/PHP": 443127,
+    "val/code_language/PHP": 422771,
+    "val/language/HTML/CSS": 962939,
+    "val/code_language/HTML/CSS": 844217,
+    "val/language/Java": 977876,
+    "val/code_language/Java": 916233,
+    "val/language/Bash": 20405,
+    "val/code_language/Bash": 16871,
+    "val/language/Go": 127906,
+    "val/code_language/Go": 125735,
+    "val/language/Perl": 8297,
+    "val/code_language/Perl": 8297,
+    "val/language/Lua": 40104,
+    "val/code_language/Lua": 28325,
+    "val/language/Scala": 41360,
+    "val/code_language/Scala": 40714,
+    "val/language/Julia": 5364,
+    "val/code_language/Julia": 5364,
+    "val/language/TypeScript": 183739,
+    "val/code_language/TypeScript": 176212,
+    "val/language/Dockerfile": 425,
+    "val/code_language/Dockerfile": 425,
+    "val/language/PowerShell": 8256,
+    "val/code_language/PowerShell": 5283,
+    "val/license/CC0-1.0": 17784,
+    "val/license/Unlicense": 58166,
+    "val/license/Apache-2.0": 2440599,
+    "val/language/TeX": 20206,
+    "val/code_language/TeX": 19788,
+    "val/license/BSD-2-Clause": 130449,
+    "val/license/BSD-3-Clause": 909322,
+    "val/language/Makefile": 7641,
+    "val/code_language/Makefile": 7523,
+    "val/language/Visual Basic": 38833,
+    "val/code_language/Visual Basic": 35919,
+    "val/language/Rust": 17917,
+    "val/code_language/Rust": 17742,
+    "val/language/SQL": 34886,
+    "val/code_language/SQL": 33366,
+    "val/language/Haskell": 21826,
+    "val/code_language/Haskell": 19203,
+    "val/language/FORTRAN": 129,
+    "val/code_language/FORTRAN": 129,
+    "val/language/Batchfile": 6596,
+    "val/code_language/Batchfile": 6277,
+    "val/language/CMake": 5641,
+    "val/code_language/CMake": 5641,
+    "val/language/Assembly": 2222,
+    "val/code_language/Assembly": 2222,
+    "val/context": 480932,
+    "val/general": 1200877,
+    "val/language/English": 1200877,
+    "val/license/ODC-By-1.0 (collection)": 1200877,
+    "val/technical": 1428055,
+    "val/language/Markdown": 1428055
+  },
+  "documents": {
+    "train": 128584,
+    "val": 4959
+  },
+  "preprocessing": {
+    "min_bytes": 128,
+    "max_bytes": 200000,
+    "max_line_chars": 3000,
+    "dedup": "global exact source-content and CRLF-normalized/trailing-newline hash; original body retained",
+    "split_seed": 42,
+    "eval_fraction": 0.03,
+    "code_split_group": "casefolded repository",
+    "web_split_group": "hostname",
+    "shuffle_seed": 42,
+    "train_token_quotas": {
+      "code": 132000000,
+      "technical": 36000000,
+      "general": 30000000,
+      "context": 12000000
+    },
+    "python_code_cap": 0.2,
+    "reservoir_state_sha256": "8caf39ff4b62f6707f3d561a8c8730fbc71c6682692b25b82901f3dd6233d900",
+    "packing": "BOS/body/EOS/doc; whole documents deterministically shuffled before contiguous packing; causal attention can cross doc boundaries within same split"
+  },
+  "leakage": {
+    "duplicate_hashes": 0,
+    "cross_split_groups": 0,
+    "groups": 174848
+  },
+  "synthetic_only": false,
+  "training_order": "Existing PackedStream seed42 permutation of context1024 fixed offsets; >=150M train predictions, 100M consumes less than one epoch.",
+  "source_hashes": {
+    "tools/research_corpus.py": "391c77c9bfb0afc933afc87bd8c78faabeecc477398712bcd7e087f10196a15d",
+    "tools/research_tokenizer.py": "bb85e67706cfe3e0e2b1a75daccb9c7677b91bf42e1b3b770d931cd62e631e36",
+    "tools/research_pack.py": "9bdca5fbae963211d0f79e1d6c3f83e6b2b52bb6d327c39eeca58f6193f1f89d"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "source_before": "06d42ccd2915edcabb235ff1f5b5d7c3d5cda4d696cc75d71fb18d2622cee6e7",
+  "source_after": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+  "only_result_construction_changed": true,
+  "all_other_covered_source_bytes_identical": true,
+  "dense20m_peak_from_endpoint_metric": 1584584704,
+  "dense20m_wall_seconds_lower_bound": 707.8018082000017,
+  "dense_model_updates_replayed_for_recovery": 0,
+  "serialized_checkpoint_migration": "Metadata source_hash only was rewritten via CPU torch.load/atomic_save. Original serialized bytes were not backed up, so an original-payload SHA/byte-equality claim is unavailable.",
+  "sparse_interruption": "7,372,800 logged tokens/900 updates; no checkpoint existed. Preserve logs, restart seed42. Do not merge its curves or time with final primary run.",
+  "stage_order_exception": "Dense20M then interrupted sparse attempt then Dense50M; resume the remaining cumulative schedule sequentially. Input/optimizer/schedule policies stay matched."
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "training_source_hash": "06d42ccd2915edcabb235ff1f5b5d7c3d5cda4d696cc75d71fb18d2622cee6e7",
+  "full_source_hash": "1321947df5ef4cf0f4b28552f69415d69833aafbe358a2c82084982a0b1df471",
+  "frozen_identity": {
+    "config_hash": "178003c8c32adf7ebfe307b9c294aea8e2cf0ebcb340ab6ee4ae1132215ab7b1",
+    "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+    "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+    "source_hash": "06d42ccd2915edcabb235ff1f5b5d7c3d5cda4d696cc75d71fb18d2622cee6e7",
+    "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+  },
+  "test_count": 46,
+  "resume_passed": true,
+  "grouped_parity_passed": true,
+  "frozen_tokens": {
+    "train": 210012790,
+    "val": 8393991
+  },
+  "fairness": "Identical training/data policies; dense FFN448 vs sparse resident384 plus current12x160 experts; memory alone enabled in third variant. Same tokenizer/data/order.",
+  "authorization": "User Prompt-2 explicitly requests primary cumulative20M/50M/70M/100M quality runs; no additional phase authorized."
+}

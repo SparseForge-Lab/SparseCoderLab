@@ -1,0 +1,163 @@
+{
+  "tasks": [
+    {
+      "task_id": "original_prompt2_0",
+      "prompt": "# Return the sum of the two integers.\ndef prompt2_check_0_r7k3(a, b):\n    ",
+      "prompt_sha256": "ca5d8ca95ba97a4cd6d65ecce6b04d97396f84078b6087d8b77273bbf5ab7bdf",
+      "reference_expression": "a + b",
+      "tests": [
+        [
+          2,
+          3,
+          5
+        ],
+        [
+          -3,
+          8,
+          5
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "generated": "# Return the sum of the two integers.\ndef prompt2_check_0_r7k3(a, b):\n    \ndef test_get_0_r7k3(a, b):\n    \ndef test_get_0_r7k3(a, b):\n    \ndef test_get_0_r7k3",
+      "syntax_and_supported_form": false,
+      "passed": false
+    },
+    {
+      "task_id": "original_prompt2_1",
+      "prompt": "# Return the difference of the two integers.\ndef prompt2_check_1_r7k3(a, b):\n    ",
+      "prompt_sha256": "8705146410bb46174c36bbd78cf5d816f52553609ab00e46b12157df3dc57c2a",
+      "reference_expression": "a - b",
+      "tests": [
+        [
+          8,
+          3,
+          5
+        ],
+        [
+          -3,
+          2,
+          -5
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "generated": "# Return the difference of the two integers.\ndef prompt2_check_1_r7k3(a, b):\n    \ndef test_id_t_r8(a, b):\n    \ndef test_id_t_r8(a, b):\n    \ndef test_id_t_r8(a, b):\n    ",
+      "syntax_and_supported_form": false,
+      "passed": false
+    },
+    {
+      "task_id": "original_prompt2_2",
+      "prompt": "# Return the product of the two integers.\ndef prompt2_check_2_r7k3(a, b):\n    ",
+      "prompt_sha256": "9e43d420fac75472ce155ad77c0c784d5109fb891c79dabfbe7251077fbf81f4",
+      "reference_expression": "a * b",
+      "tests": [
+        [
+          2,
+          4,
+          8
+        ],
+        [
+          -2,
+          3,
+          -6
+        ],
+        [
+          0,
+          7,
+          0
+        ]
+      ],
+      "generated": "# Return the product of the two integers.\ndef prompt2_check_2_r7k3(a, b):\n    \ndef test_1_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_",
+      "syntax_and_supported_form": false,
+      "passed": false
+    },
+    {
+      "task_id": "original_prompt2_3",
+      "prompt": "# Return the maximum of the two integers.\ndef prompt2_check_3_r7k3(a, b):\n    ",
+      "prompt_sha256": "cf602b7d57ee91d7230817faf4e4bbf79b18561b893638de5a041dbc59893a10",
+      "reference_expression": "a if a > b else b",
+      "tests": [
+        [
+          3,
+          4,
+          4
+        ],
+        [
+          5,
+          2,
+          5
+        ],
+        [
+          -3,
+          -7,
+          -3
+        ]
+      ],
+      "generated": "# Return the maximum of the two integers.\ndef prompt2_check_3_r7k3(a, b):\n    \ndef test_1_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_",
+      "syntax_and_supported_form": false,
+      "passed": false
+    },
+    {
+      "task_id": "original_prompt2_4",
+      "prompt": "# Return the minimum of the two integers.\ndef prompt2_check_4_r7k3(a, b):\n    ",
+      "prompt_sha256": "ecafb5a14a7f22ea9c1f869f3f69337bc2ad8339c7ca64eb6025aa024787424c",
+      "reference_expression": "a if a < b else b",
+      "tests": [
+        [
+          3,
+          4,
+          3
+        ],
+        [
+          5,
+          2,
+          2
+        ],
+        [
+          -3,
+          -7,
+          -7
+        ]
+      ],
+      "generated": "# Return the minimum of the two integers.\ndef prompt2_check_4_r7k3(a, b):\n    \ndef test_1_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_",
+      "syntax_and_supported_form": false,
+      "passed": false
+    },
+    {
+      "task_id": "original_prompt2_5",
+      "prompt": "# Return the remainder of the two integers.\ndef prompt2_check_5_r7k3(a, b):\n    ",
+      "prompt_sha256": "16fd23558acf47ebc4b929a7ed005c1460e8bba1944970e5f9971d493406dc77",
+      "reference_expression": "a % b",
+      "tests": [
+        [
+          7,
+          3,
+          1
+        ],
+        [
+          10,
+          4,
+          2
+        ],
+        [
+          12,
+          5,
+          2
+        ]
+      ],
+      "generated": "# Return the remainder of the two integers.\ndef prompt2_check_5_r7k3(a, b):\n    \ndef test_1_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_t3_",
+      "syntax_and_supported_form": false,
+      "passed": false
+    }
+  ],
+  "pass_count": 0,
+  "tasks_count": 6,
+  "scope": "Six original deterministic arithmetic Python tasks, greedy48-token cap. Restricted arithmetic AST interpreter evaluates numeric test cases; model-generated Python is never exec/shell code. No benchmark-leadership or useful coding-agent claim."
+}

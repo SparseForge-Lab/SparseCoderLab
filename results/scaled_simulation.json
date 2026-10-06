@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "trace": "results\\routes.jsonl",
+    "source_experts": 12,
+    "capacity_layers": 16,
+    "experts": 256,
+    "expert_bytes": 5898240,
+    "page_experts": 2,
+    "vram_gib": 4,
+    "ram_gib": 32,
+    "ssd_mib_s": 461.9101826,
+    "ssd_latency_ms": 0.2,
+    "rotate_tokens": 1024
+  },
+  "simulation": {
+    "tokens": 2048,
+    "accesses": 32768,
+    "vram_hit_rate": 0.99542236328125,
+    "ram_hit_rate_on_vram_miss": 0.0,
+    "bytes_loaded_per_token": 864000.0,
+    "ram_to_vram_bytes_per_token": 864000.0,
+    "page_reads_per_token": 0.0732421875,
+    "predicted_io_stall_s_per_token": 0.0018686194540907866,
+    "io_limited_tokens_s": 535.1544413234045,
+    "wasted_prefetch_bytes": 0,
+    "correct_prefetch_bytes": 0,
+    "issued_prefetch_bytes": 0,
+    "prefetch_latency_hidden_s": 0.0,
+    "cache_churn": 0,
+    "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+  },
+  "scope": "Synthetic replicated layers and rotating expert identities; a sensitivity scenario, NOT observed large-model routing or speed."
+}

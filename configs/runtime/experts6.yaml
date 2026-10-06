@@ -1,0 +1,5 @@
+extends: sparse_grouped.yaml
+name: Runtime_6Experts_StoredMatched
+model:
+  experts: 6
+  expert_ffn: 320

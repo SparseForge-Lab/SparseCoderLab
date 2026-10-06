@@ -1,0 +1,34 @@
+[
+  {
+    "stage": "Phase0",
+    "scope": "Engineering validation; results/overfit.json and profile files"
+  },
+  {
+    "stage": "Phase1A",
+    "scope": "Three5,005,312-token synthetic runs; engineering corpus, not real architecture-quality evidence"
+  },
+  {
+    "stage": "Prompt-1",
+    "scope": "Controlled grouped MoE runtime study; dense25.27k/sparse18.36k step tok/s,1.38x sparse cost; not quality evidence"
+  },
+  {
+    "stage": "Prompt-2/20M",
+    "status": "partial",
+    "evidence": "results/releases/20M/summary.json"
+  },
+  {
+    "stage": "Prompt-2/50M",
+    "status": "partial",
+    "evidence": "results/releases/50M/summary.json"
+  },
+  {
+    "stage": "Prompt-2/70M",
+    "status": "planned",
+    "evidence": "results/releases/70M/summary.json"
+  },
+  {
+    "stage": "Prompt-2/100M",
+    "status": "planned",
+    "evidence": "results/releases/100M/summary.json"
+  }
+]

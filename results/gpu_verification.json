@@ -1,0 +1,20 @@
+{
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "compute_capability": [
+    12,
+    0
+  ],
+  "arch_list": [
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "bf16_sdpa_backward": true,
+  "tf32_supported": true,
+  "cpu_fallback": false
+}

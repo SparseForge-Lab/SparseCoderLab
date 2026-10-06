@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "identical_inputs": true,
+  "max_weight_difference": 0.0,
+  "optimizer_equal": true,
+  "scheduler_equal": true,
+  "cursor_before": 8,
+  "cursor_after": 16,
+  "token_count_before": 8192,
+  "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+  "scope": "Actual width320/nine-layer grouped+Ngram model, frozen research stream, four BF16 microbatches/step. Deterministic process-local algorithms verify persistence; no quality checkpoint is retained."
+}

@@ -1,0 +1,7 @@
+# Real-data memory contribution protocol
+
+The current four-bank Ngram lookup/projection/gate is retained. No redesign, removal or capacity sweep is authorized. Old synthetic gate/gradient evidence remains historical, with aggregate quality benefit unproved. The real experiment asks whether contribution grows as cumulative tokens increase.
+
+Training samples every200 updates record gate mean/min/max, post-clip table gradient norms, nonzero gradient-row counts, utilized buckets, bounded ngram collision statistics and sampled lookup-frequency histograms. AdamW also applies decay/momentum to dense table parameters: gradient rows are not all changed rows or exact lifetime utilization. Milestone held-out diagnostics separate code/language/general/technical and report gate ranges/means and bounded bucket samples. Full distributions/lifetime aggregates require explicit additional counting; no claim is inferred from a mean gate alone.
+
+At20M/50M/70M/100M evaluate the same checkpoint with normal memory and exactly zeroed residual, on identical frozen mixed and category documents. No retraining or parameter mutation. Ablated-minus-normal NLL deltas are positive when memory helps; report code/general/technical as well as mixed. Track the effect across tokens and compare memory versus sparse and dense curves, rather than asserting usefulness from nonzero gradients. Machine-readable milestone ablations and aggregate ngram_ablations.json/ngram_diagnostics.json remain authoritative. Results are pending quality training.

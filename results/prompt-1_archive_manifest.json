@@ -1,0 +1,533 @@
+{
+  "prompt": "Prompt-1",
+  "project_root": "D:\\SparseCoderLab",
+  "starting_commit": "0e36357925a6b4d0f3fa847adb749766214b3c34",
+  "files": [
+    {
+      "project_relative_path": "Documentation/00_moe_runtime_request.txt",
+      "size_bytes": 16538,
+      "sha256": "0ac2bf5b58fd324b69bbf4cd46dc9a61ed317460b4a7b9f23be6f6e8c4e15d97",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "Documentation/19_testing.md",
+      "size_bytes": 2136,
+      "sha256": "9ab29b965d13d1f137a69e78d7d6e4c00e8aff6599d9d0126ea57b54c5c89f81",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "Documentation/28_moe_runtime_optimization.md",
+      "size_bytes": 9620,
+      "sha256": "b9bec9f6816dc9920682b08848e2296415605350648f6728685470725e650852",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "Documentation/29_prompt_archives.md",
+      "size_bytes": 2267,
+      "sha256": "4be71ca3530079c5dbb94c30ebcbef81d3baf588d33e6fb89ea88c9f8a9e367e",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "Documentation/30_moe_backend_correctness.md",
+      "size_bytes": 5348,
+      "sha256": "fecb8b31e83bf8848fc6ffb8e537cbd300e7ae6410e65db74001f45630695ce7",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "Documentation/31_moe_benchmark_protocol.md",
+      "size_bytes": 5261,
+      "sha256": "a2e58b095ad297aa1bc9e7c104f7087819bd97cbb4d3094f7fee643d23ca297b",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "Documentation/README.md",
+      "size_bytes": 3488,
+      "sha256": "5a9afec462a01e077e60c864d2298933bdf91d6c301970166365983927e6cd42",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "FINAL_STATUS.md",
+      "size_bytes": 5850,
+      "sha256": "b7c2767cce56793a3d5143b29914c958fc2be0786f2e7fd9d0866d172bac3c55",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "GOALS/Prompt-1.md",
+      "size_bytes": 12782,
+      "sha256": "8dc2201936c4ad1544f6a834852bde64a4c500a5e893f62c13fee5a35e96e950",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "GOALS/README.md",
+      "size_bytes": 486,
+      "sha256": "cfb08201e697d96b6747c94090a2c9d69d00ceb9fbcc34f5d1bd921980fcf364",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "RESEARCH_LOG.md",
+      "size_bytes": 6962,
+      "sha256": "4576842e9b90e70c832df8c90646a2c61643997e694399d7950061f7d19ecb61",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "configs/runtime/dense.yaml",
+      "size_bytes": 115,
+      "sha256": "da78827c0ece171ab78df58e33492d6f362b2bd40c1f9bc4ba9bf591081c351a",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "configs/runtime/experts4.yaml",
+      "size_bytes": 104,
+      "sha256": "434352e91e3d54ca79cb12e2ba5fdb917179822ccd9e5fd44ebc12f12a3654e5",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "configs/runtime/experts6.yaml",
+      "size_bytes": 104,
+      "sha256": "3513880b7a106df9980f93af9c136b577c53812c713abdade0e97b61221e38fa",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "configs/runtime/sparse_grouped.yaml",
+      "size_bytes": 89,
+      "sha256": "585f02ced288c5e260a7d537ee220179d6a7b7d94320b60538d46412ab27fb96",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "configs/runtime/sparse_grouped_memory.yaml",
+      "size_bytes": 86,
+      "sha256": "061e1b6c00ec11775c4ce1337a879deed1c9e388144254c5b1b6037c4bac8d5a",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "configs/runtime/sparse_reference.yaml",
+      "size_bytes": 146,
+      "sha256": "7a4ba6d65d56c2075be533d7d95c3d7ff983453c645ead914217cad2293b42a2",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/README.md",
+      "size_bytes": 5417,
+      "sha256": "ba9d6ce76369eac9a6627ca817dbe625f98697b79dcc121b22e9a012fb2e9356",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/FINAL_STATUS.md",
+      "size_bytes": 3175,
+      "sha256": "f7471ddda70817ff3f13196f6d109ef680c89ff63a20aec40de275f49d95fb9a",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/RESEARCH_LOG.md",
+      "size_bytes": 3624,
+      "sha256": "c1ed34e0dc6ff6188cbcb27a90751890d0ba824f8d2f9ba5f12a2466254924ed",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/grouped_padded_backward.py",
+      "size_bytes": 1238,
+      "sha256": "39fb49f1849ad9cefe713ae58895447251259a8582df7c5ce865c75e0a798a5c",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/initial_import_failure.txt",
+      "size_bytes": 1274,
+      "sha256": "ff57ba4f3fb0c6f279bd32852cb1ffdb24be7762bac427534a20a688759d7bf8",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/leaderboard.csv",
+      "size_bytes": 2844,
+      "sha256": "b8222a098c9c04e4697b4c021749ba8a52d48b366b00567c2c663197b9d95273",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/moe_microbench_padded_backward.csv",
+      "size_bytes": 31497,
+      "sha256": "6c172ba75fea46bf3ada8cd66c4b165557bd25a1cde1897375fb23257664f790",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/phase0_gate.json",
+      "size_bytes": 430,
+      "sha256": "e355a25476dbc3d9d76a919fdb8ac13ed34ab9855963643defb50b9c06d284e1",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/starting_manifest.json",
+      "size_bytes": 25732,
+      "sha256": "6a8e1c630ec692657db8041155d5308cd8a3c67156287e4d84ea125fe65c9291",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/test_output_before.txt",
+      "size_bytes": 101,
+      "sha256": "2e54f2624653dd085f0f8ca995422e6b6fc1e761ebc3a28c74f2d77a06ec0881",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/tests_before.xml",
+      "size_bytes": 3259,
+      "sha256": "23acc580129d427277cec3d9380ba9de63c22210c60a34a83bce8975e2597c89",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/trained_parity_deterministic_padded_failure.json",
+      "size_bytes": 410295,
+      "sha256": "f288aab783400c967e354168f7c18c756c7435895488a5d6b6c16f23b322f861",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/history/Prompt-1/trained_parity_initial_failure.json",
+      "size_bytes": 427731,
+      "sha256": "d5a629a238a845195d8ab715fcb6d50d2e1a71e84538d87de1b3b5687e2e302b",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_archive_output.txt",
+      "size_bytes": 590,
+      "sha256": "abbf7aa8f960c2e0880b487fffe48cb3ef220c35e39a0ce951970b9adafa5be2",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_backend_parity.json",
+      "size_bytes": 352712,
+      "sha256": "a7fecfdda783e75762f8cd194ee0658dbbd5c36090f3b638ccf4bc51a1c05ea0",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_benchmark_provenance.json",
+      "size_bytes": 11522,
+      "sha256": "31c18860aba42d844d7ad53756e99ea3d7127fc0334511eac5994a45c4209d1c",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_dense_rep1_benchmark.jsonl",
+      "size_bytes": 1823,
+      "sha256": "b6214a9cade1a1166a3b616246aed48695dc9cdf99746de3882fac9de2316487",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_dense_rep2_benchmark.jsonl",
+      "size_bytes": 1822,
+      "sha256": "af322f6b1d51ea04b2e4fdd97f513cd6b6783ae7ae6b2d86344b16bd8864bb5e",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_expert_granularity.csv",
+      "size_bytes": 5355,
+      "sha256": "ff232fceb359ace50fd8f3b2e1c74c94b34373ba1023ffd3991c5e88c8590aa5",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_expert_granularity_output.txt",
+      "size_bytes": 7008,
+      "sha256": "412852b72982a25ee6a9393656e547679c4dcc94dcbe8a90253f3d54408bd023",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_fullmodel_benchmark.csv",
+      "size_bytes": 5362,
+      "sha256": "ea19761d252868ca826ac36d5ad1bad72459c0e86008edbeb483ec0bf983f9ff",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_fullmodel_benchmark_output.txt",
+      "size_bytes": 9390,
+      "sha256": "3869967323d5ce649c106d76a290ce5691913e564a621f629e031657589bc487",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_geometry12_rep1_benchmark.jsonl",
+      "size_bytes": 897,
+      "sha256": "80547464c6170ff723101defb3f2a36f01bd132ec49a5b3c82f869a0e9d77c30",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_geometry12_rep2_benchmark.jsonl",
+      "size_bytes": 889,
+      "sha256": "a0a9d2ed164c5568051ed47c5c206f37f7e5f8330187c68befafc89e2e3a3b06",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_geometry4_rep1_benchmark.jsonl",
+      "size_bytes": 898,
+      "sha256": "ec5b0be414e1f2161a4b0d3b596ae05c21628ee02e69e06e4f8044bed19eaa0f",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_geometry4_rep2_benchmark.jsonl",
+      "size_bytes": 896,
+      "sha256": "aa7cb8b29bfed43378359af960dc7ac2e0f57d3ba2cf63442e328ac14c55d0a2",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_geometry6_rep1_benchmark.jsonl",
+      "size_bytes": 898,
+      "sha256": "b2ab4ecdc43f6cd876b1f604a70b1c918fc4382ba6da35f175aab8955f43d695",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_geometry6_rep2_benchmark.jsonl",
+      "size_bytes": 898,
+      "sha256": "f7462a6a5d8176cd180a95681c0b9f0c4d160ddfc688cdd1eab9cd691f667978",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_grouped_profile.json",
+      "size_bytes": 13240,
+      "sha256": "e399df6946f84d3bd60a8b4810a48b2eb3b6ec203b9dddc9a288ee5424334c92",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_grouped_profile_output.txt",
+      "size_bytes": 13563,
+      "sha256": "7951da6ac6ac91654111255426a60fb6ee4445837f6c9e4dac80ec70f05e6b10",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_grouped_rep1_benchmark.jsonl",
+      "size_bytes": 1819,
+      "sha256": "85458e36d30a10cc1a5e8362ff34c052db5cbd8debb4ca5212534423ed381fea",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_grouped_rep2_benchmark.jsonl",
+      "size_bytes": 1817,
+      "sha256": "5c02cb5342424bd016565f79993c0dc4cc1f8b55c151759fdd86a621ffbeb0a6",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_memory_rep1_benchmark.jsonl",
+      "size_bytes": 1821,
+      "sha256": "76b12bd4e908900631a072082c9c8327db339c9dd89eb03f31188e1825ac3d6a",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_memory_rep2_benchmark.jsonl",
+      "size_bytes": 1819,
+      "sha256": "af8d8b5782df0e2caf604bb89435e624322010c1a85325552d22a12f7fe4d17d",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_microbench.csv",
+      "size_bytes": 31511,
+      "sha256": "c22ee8588def6b4c658d7060fa6bc8814695d417dff9aae6b3f2dd6ff8d220d5",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_microbench_output.txt",
+      "size_bytes": 643,
+      "sha256": "1e8be5979dee75d5ad3cd2d80ed282a2cfd187d548ea2c6580814d45c71a63ff",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_parity_deterministic_output.txt",
+      "size_bytes": 2143,
+      "sha256": "92be1956f12c0fc88394fdf8b644ca310c0988a8798764fc36d387e2821e8474",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_parity_output.txt",
+      "size_bytes": 1158,
+      "sha256": "3be216338a4c00214fa19ad19a84c5ae5539a38b7b69cbf46c746d6dd7a35ee2",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_phase0_output.txt",
+      "size_bytes": 535,
+      "sha256": "293868c26a003ca9a86a1a94ce1eb2bd44afba41492720c6399e16506f29ae99",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_reference_profile.json",
+      "size_bytes": 13484,
+      "sha256": "101e10933d223ff1059bb759e9d25a99e1c6533687374dbececbef210eccb770",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_reference_profile_output.txt",
+      "size_bytes": 13486,
+      "sha256": "b0a847ebc2b0f8a33725949a38551c2e028de17e750b629fcba903559a239590",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_reference_rep1_benchmark.jsonl",
+      "size_bytes": 1815,
+      "sha256": "33955ec31a3cc0e565166db9102db0b8fa7a4d865280d49a7f68c680b5f0a340",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_reference_rep2_benchmark.jsonl",
+      "size_bytes": 1826,
+      "sha256": "36c4c713878d980cf212eaee3b964946e9be2af29d77daa9201ed9962fcbd024",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_reference_repeatability.json",
+      "size_bytes": 279240,
+      "sha256": "bce6601f542146faa9d7977813469074abfd007e6734bf9be1ff16692ffda6aa",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_reference_repeatability_deterministic.json",
+      "size_bytes": 206075,
+      "sha256": "8da5adfc362eceb35ac467380888b2f3197297b587c2634b97a72378ac46dacb",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_reference_repeatability_deterministic_output.txt",
+      "size_bytes": 1338,
+      "sha256": "15919be9051bfeffcc80a90376ed3502bb0d7f2d9dd35b372140c2a012c62131",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_reference_repeatability_output.txt",
+      "size_bytes": 1764,
+      "sha256": "41aea06a8ad1aaa9bf97bffea01c2a0f2baa7f48935638cce3b8815fec0ceb4a",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_regression_tests.txt",
+      "size_bytes": 101,
+      "sha256": "58955149347d28e16c886e375f5cb70ff0b7134dbf74b8f2013cf4a3393707d0",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_regression_tests.xml",
+      "size_bytes": 4172,
+      "sha256": "c7cc24d413923828b8811df3d80dfe537b5353b259889614939ecb9d4c21d92a",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_runtime_decision.json",
+      "size_bytes": 7018,
+      "sha256": "c9b9fe30906be92545471df484ee2fdc6aee740f65fd5aae7cd9ad9cd32755b4",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_runtime_report_output.txt",
+      "size_bytes": 7020,
+      "sha256": "8daadaddb09139b3139fc4b589bf45f7664472fc1ad2a598a88c9b869bc78a97",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/moe_runtime_tests.txt",
+      "size_bytes": 100,
+      "sha256": "54581cbd365ba9762917a23d684e8c7717d64dd3d1fd0a076b72511b21eec236",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "results/phase0_gate.json",
+      "size_bytes": 430,
+      "sha256": "106d4635d6161ef2179cbd3d017603a150d584dcecd40dd6dc2d0265859cff4e",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "results/test_output.txt",
+      "size_bytes": 101,
+      "sha256": "dac29505cacee5ff0434384490c5ab71470100a66fdb9e4ae1aee9aea76a390c",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "results/tests.xml",
+      "size_bytes": 4172,
+      "sha256": "113b864a31130570b58a26b22c3acbe4b00c22ea8160a74026538354a6d096b3",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "src/model/__init__.py",
+      "size_bytes": 275,
+      "sha256": "37062518670d4dbfbabd32ecf54eebfa3030b169aadc53ee8045bb4a0e771866",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "src/moe/grouped.py",
+      "size_bytes": 2166,
+      "sha256": "6884f0f446a0d407d0a742d17a49e7563c6c523df96f415b0346805f072f05f5",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "src/moe/router.py",
+      "size_bytes": 2997,
+      "sha256": "73b8f31276990363c085121182cf6f40ed2fe89ae99c790e43f4f012f0201d01",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "src/training/engine.py",
+      "size_bytes": 11895,
+      "sha256": "1d726953840c76f0b071abf674032063837388efd20722bd14ad4cc2a7350c86",
+      "change": "modified"
+    },
+    {
+      "project_relative_path": "src/training/moe_optimizer.py",
+      "size_bytes": 1233,
+      "sha256": "e357f353aaa5e70d79c6ba90d2df5f3037a13bda3d68e7448346650d3e29c791",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "tests/test_moe_runtime.py",
+      "size_bytes": 4559,
+      "sha256": "73efa4c09cff4fc957a2635f89d28ce1d71747c5c0d2deaf0d1568814becbcbd",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "tools/archive_prompt.py",
+      "size_bytes": 4780,
+      "sha256": "98824e7f5afd26159a160b406fc3ec96d9fcac786163370d850d8ba4d2554f66",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "tools/moe_benchmark.py",
+      "size_bytes": 10620,
+      "sha256": "3d474976ecff8a5799699b0d8dd8559e72aa199216b8fcd6134b2b89841185e6",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "tools/moe_parity.py",
+      "size_bytes": 7217,
+      "sha256": "573cfe23ae48619d02f5a9a52c1fae206e9ef69c515d2976287fce89a3e5dd87",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "tools/moe_reference_profile.py",
+      "size_bytes": 6752,
+      "sha256": "9cb68dc42c3171747d2e472faf58293abfcbae5f7f5296f4643899b7c4114d10",
+      "change": "created"
+    },
+    {
+      "project_relative_path": "tools/moe_report.py",
+      "size_bytes": 6342,
+      "sha256": "8d932c43d0ca107795508c3b84947ce90950b690a73d0ec4a2ab6c91a85e588b",
+      "change": "created"
+    }
+  ],
+  "large_checkpoint_references": [
+    {
+      "project_relative_path": "experiments/phase1a_dense/checkpoints/last.pt",
+      "size_bytes": 198986867,
+      "sha256": "8f9c308c0e364df4cc02f92150152c39475952bebb6c78b30e4f7ba8cb366692",
+      "originating_experiment": "phase1a_dense",
+      "archived": false
+    },
+    {
+      "project_relative_path": "experiments/phase1a_sparse/checkpoints/last.pt",
+      "size_bytes": 258938395,
+      "sha256": "03611b49fe0cab7f0e6c7847d2a8447c09d2ad688f6079496b6f92efe997b841",
+      "originating_experiment": "phase1a_sparse",
+      "archived": false
+    },
+    {
+      "project_relative_path": "experiments/phase1a_memory/checkpoints/last.pt",
+      "size_bytes": 309405155,
+      "sha256": "31cd00f95cc971bbb836c47bc86dedaf625cdd1e31251733507745500bcce7fe",
+      "originating_experiment": "phase1a_memory",
+      "archived": false
+    }
+  ],
+  "excluded_self_references": [
+    "results/prompt-1_archive_manifest.json",
+    "results/prompt-1_archive_verification.json"
+  ],
+  "scope": "Final changed/new canonical files compared to the beginning-of-prompt byte hashes. ZIP MANIFEST.json and external MANIFEST.json are identical. Manifest and verification receipt are administrative self-references excluded from their own hash inventory; all research source/evidence/goal/report files are hashed. Existing datasets/checkpoints are not copied."
+}

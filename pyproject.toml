@@ -1,0 +1,9 @@
+[project]
+name = "sparsecoderlab"
+version = "0.1.0"
+description = "Falsifiable sparse coding architecture experiments"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["gpu: requires CUDA; fails rather than CPU fallback"]

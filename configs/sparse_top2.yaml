@@ -1,0 +1,4 @@
+extends: sparse_v3.yaml
+name: SparseV3Top2
+model:
+  top_k: 2

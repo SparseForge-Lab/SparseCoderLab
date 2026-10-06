@@ -1,0 +1,4 @@
+extends: sparse_grouped.yaml
+name: Runtime_SparseGroupedNgram
+memory:
+  enabled: true

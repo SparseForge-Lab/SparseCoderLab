@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "status": "paused_at_user_request",
+  "verified_utc": "2026-10-05T19:41:13.754064+00:00",
+  "model": "DenseCompute",
+  "tokens": 50003968,
+  "step": 6104,
+  "cursor": 48832,
+  "checkpoint": "D:\\SparseCoderLab\\experiments\\research_v1\\dense\\checkpoints\\tokens_50003968.pt",
+  "checkpoint_sha256": "f466676092df5d4b7e0ec1306985c5aff4d25e6440fa37858fb41f92bf61ac19",
+  "rolling_checkpoint": "D:\\SparseCoderLab\\experiments\\research_v1\\dense\\checkpoints\\last.pt",
+  "rolling_checkpoint_sha256": "f466676092df5d4b7e0ec1306985c5aff4d25e6440fa37858fb41f92bf61ac19",
+  "model_optimizer_scheduler_saved_and_equal": true,
+  "rng_states_present": true,
+  "training_process_exit_code": 0,
+  "scope": "CPU verification after the specific dense50M exec session completed with exit0. No further GPU work started.",
+  "remaining": "Fresh sparse/Ngram20M; their cumulative50M; all70M/100M; diagnostics/replication decision/final archive. Rerun actual repaired-source resume check and Phase0/readiness gate before starting another GPU stage."
+}

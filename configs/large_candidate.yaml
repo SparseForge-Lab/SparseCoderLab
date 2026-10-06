@@ -1,0 +1,21 @@
+d_model: 2560
+layers: 48
+capacity_layers: 16
+experts: 256
+expert_ffn: 1536
+top_k: 1
+resident_ffn: 3072
+q_heads: 40
+kv_heads: 8
+head_dim: 64
+vocab_size: 32768
+ngram_params: 8000000000
+ngram_touched: 1024
+memory_sweep: [8000000000, 12000000000, 16000000000, 20000000000, 25000000000]
+precision: int4
+page_experts: 2
+gpu_gib: 12
+ram_gib: 48
+activation_reserve_gib: 2
+ssd_mib_s: 400
+cache_hit_rate: 0.5

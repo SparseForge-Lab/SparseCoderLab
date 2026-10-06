@@ -1,0 +1,10 @@
+{
+  "requested": "Keep training stopped after the push",
+  "date_utc": "2026-10-06T13:11:25.610058+00:00",
+  "no_next_stage_launched": true,
+  "dense_tokens": 50003968,
+  "sparse_tokens": 50003968,
+  "memory_tokens": 0,
+  "checkpoint_resume_verification_passed": true,
+  "remaining_objective": "Ngram20M/50M, matched50M review, all70M/100M, conditional replication, final review and Prompt-2 archive; explicit user resume required."
+}

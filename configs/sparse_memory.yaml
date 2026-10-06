@@ -1,0 +1,4 @@
+extends: sparse_v3.yaml
+name: SparseV3Ngram
+memory:
+  enabled: true

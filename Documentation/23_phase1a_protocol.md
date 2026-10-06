@@ -1,0 +1,7 @@
+# Predeclared Phase 1A protocol
+
+Fresh seed 42 runs: DenseCompute, SparseV3 Top1, SparseV3Ngram. Original tokenizer and synthetic shards remain unchanged. The nominal 5,000,000-token target rounds upward to 611 complete optimizer steps, exactly 5,005,312 input tokens each (8,192 per step). No partially weighted final update. Same context 1024, microbatch 2, accumulation 4, AdamW, original 100-step warmup and 100,000-step LR schedule; evaluations at steps 200, 400, 600 and final 611. Evaluation uses 16 fixed mixed batches plus first 16 documents per code/general subset. These are deterministic engineering samples, not coding benchmarks.
+
+No checkpoint warm starts, MTP, routing prediction or locality loss. GPU runs and GPU tests execute sequentially. Wall throughput includes logs/evaluations/checkpoint writes, after initialization; training-step throughput excludes those operations. Memory diagnostics every tenth step introduce measured overhead: table gradient norms and nonzero accumulated-gradient rows, last microbatch gate values and bucket/collision statistics. Sampled gradient updates are distinct from AdamW dense decay/momentum updates. The global norm is measured before clipping; table norms after clipping.
+
+Stop/review follows the user's explicit conditions. Any licensing failure, severe collapse, ineffective memory or dramatic sparse slowdown without benefit prevents automatic promotion. Differences on the repetitive synthetic corpus do not establish real quality. Old Phase 0 evidence is preserved under results/history/pre_phase1.

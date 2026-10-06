@@ -1,0 +1,17 @@
+{
+  "files": {
+    "codeparrot/github-code/data/train-00000-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00001-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    }
+  },
+  "counts": {
+    "raw": 204418,
+    "rejected/size": 204418
+  },
+  "document_bytes": {}
+}

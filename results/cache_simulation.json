@@ -1,0 +1,1690 @@
+{
+  "atlas": {
+    "load": {
+      "35": 15,
+      "67": 6,
+      "103": 4,
+      "29": 10,
+      "60": 21,
+      "97": 200,
+      "24": 379,
+      "98": 163,
+      "30": 19,
+      "96": 1279,
+      "31": 157,
+      "63": 868,
+      "64": 848,
+      "26": 76,
+      "34": 642,
+      "99": 94,
+      "32": 27,
+      "28": 682,
+      "71": 70,
+      "70": 172,
+      "65": 2,
+      "25": 38,
+      "100": 308,
+      "61": 58,
+      "33": 2,
+      "69": 3,
+      "27": 1,
+      "62": 0,
+      "105": 0,
+      "101": 0,
+      "106": 0,
+      "66": 0
+    },
+    "edges": [
+      {
+        "a": 35,
+        "b": 67,
+        "weight": 2
+      },
+      {
+        "a": 67,
+        "b": 103,
+        "weight": 3
+      },
+      {
+        "a": 35,
+        "b": 103,
+        "weight": 2
+      },
+      {
+        "a": 29,
+        "b": 67,
+        "weight": 2
+      },
+      {
+        "a": 29,
+        "b": 103,
+        "weight": 1
+      },
+      {
+        "a": 29,
+        "b": 35,
+        "weight": 3
+      },
+      {
+        "a": 60,
+        "b": 97,
+        "weight": 16
+      },
+      {
+        "a": 29,
+        "b": 97,
+        "weight": 1
+      },
+      {
+        "a": 29,
+        "b": 60,
+        "weight": 1
+      },
+      {
+        "a": 60,
+        "b": 67,
+        "weight": 1
+      },
+      {
+        "a": 97,
+        "b": 103,
+        "weight": 3
+      },
+      {
+        "a": 24,
+        "b": 98,
+        "weight": 62
+      },
+      {
+        "a": 24,
+        "b": 60,
+        "weight": 1
+      },
+      {
+        "a": 60,
+        "b": 98,
+        "weight": 1
+      },
+      {
+        "a": 24,
+        "b": 29,
+        "weight": 1
+      },
+      {
+        "a": 97,
+        "b": 98,
+        "weight": 12
+      },
+      {
+        "a": 35,
+        "b": 97,
+        "weight": 12
+      },
+      {
+        "a": 35,
+        "b": 60,
+        "weight": 4
+      },
+      {
+        "a": 24,
+        "b": 35,
+        "weight": 2
+      },
+      {
+        "a": 60,
+        "b": 96,
+        "weight": 1
+      },
+      {
+        "a": 30,
+        "b": 96,
+        "weight": 1
+      },
+      {
+        "a": 30,
+        "b": 60,
+        "weight": 2
+      },
+      {
+        "a": 30,
+        "b": 35,
+        "weight": 2
+      },
+      {
+        "a": 96,
+        "b": 97,
+        "weight": 2
+      },
+      {
+        "a": 60,
+        "b": 103,
+        "weight": 1
+      },
+      {
+        "a": 31,
+        "b": 60,
+        "weight": 13
+      },
+      {
+        "a": 31,
+        "b": 103,
+        "weight": 1
+      },
+      {
+        "a": 31,
+        "b": 35,
+        "weight": 14
+      },
+      {
+        "a": 30,
+        "b": 97,
+        "weight": 1
+      },
+      {
+        "a": 30,
+        "b": 31,
+        "weight": 2
+      },
+      {
+        "a": 31,
+        "b": 97,
+        "weight": 122
+      },
+      {
+        "a": 63,
+        "b": 97,
+        "weight": 183
+      },
+      {
+        "a": 31,
+        "b": 63,
+        "weight": 120
+      },
+      {
+        "a": 60,
+        "b": 63,
+        "weight": 1
+      },
+      {
+        "a": 64,
+        "b": 97,
+        "weight": 1
+      },
+      {
+        "a": 31,
+        "b": 64,
+        "weight": 22
+      },
+      {
+        "a": 63,
+        "b": 64,
+        "weight": 24
+      },
+      {
+        "a": 35,
+        "b": 63,
+        "weight": 9
+      },
+      {
+        "a": 26,
+        "b": 97,
+        "weight": 41
+      },
+      {
+        "a": 26,
+        "b": 63,
+        "weight": 76
+      },
+      {
+        "a": 26,
+        "b": 31,
+        "weight": 33
+      },
+      {
+        "a": 26,
+        "b": 35,
+        "weight": 2
+      },
+      {
+        "a": 24,
+        "b": 97,
+        "weight": 10
+      },
+      {
+        "a": 24,
+        "b": 63,
+        "weight": 298
+      },
+      {
+        "a": 24,
+        "b": 31,
+        "weight": 9
+      },
+      {
+        "a": 24,
+        "b": 26,
+        "weight": 44
+      },
+      {
+        "a": 34,
+        "b": 97,
+        "weight": 9
+      },
+      {
+        "a": 34,
+        "b": 63,
+        "weight": 179
+      },
+      {
+        "a": 24,
+        "b": 34,
+        "weight": 166
+      },
+      {
+        "a": 63,
+        "b": 99,
+        "weight": 89
+      },
+      {
+        "a": 31,
+        "b": 99,
+        "weight": 7
+      },
+      {
+        "a": 31,
+        "b": 34,
+        "weight": 23
+      },
+      {
+        "a": 97,
+        "b": 99,
+        "weight": 43
+      },
+      {
+        "a": 26,
+        "b": 99,
+        "weight": 19
+      },
+      {
+        "a": 24,
+        "b": 99,
+        "weight": 36
+      },
+      {
+        "a": 26,
+        "b": 34,
+        "weight": 36
+      },
+      {
+        "a": 32,
+        "b": 99,
+        "weight": 8
+      },
+      {
+        "a": 32,
+        "b": 63,
+        "weight": 16
+      },
+      {
+        "a": 31,
+        "b": 32,
+        "weight": 4
+      },
+      {
+        "a": 24,
+        "b": 32,
+        "weight": 19
+      },
+      {
+        "a": 32,
+        "b": 97,
+        "weight": 4
+      },
+      {
+        "a": 32,
+        "b": 35,
+        "weight": 1
+      },
+      {
+        "a": 63,
+        "b": 98,
+        "weight": 152
+      },
+      {
+        "a": 32,
+        "b": 34,
+        "weight": 18
+      },
+      {
+        "a": 34,
+        "b": 99,
+        "weight": 17
+      },
+      {
+        "a": 98,
+        "b": 99,
+        "weight": 54
+      },
+      {
+        "a": 26,
+        "b": 32,
+        "weight": 2
+      },
+      {
+        "a": 34,
+        "b": 98,
+        "weight": 69
+      },
+      {
+        "a": 34,
+        "b": 64,
+        "weight": 377
+      },
+      {
+        "a": 64,
+        "b": 99,
+        "weight": 2
+      },
+      {
+        "a": 26,
+        "b": 96,
+        "weight": 8
+      },
+      {
+        "a": 63,
+        "b": 96,
+        "weight": 444
+      },
+      {
+        "a": 96,
+        "b": 99,
+        "weight": 21
+      },
+      {
+        "a": 26,
+        "b": 98,
+        "weight": 8
+      },
+      {
+        "a": 96,
+        "b": 98,
+        "weight": 134
+      },
+      {
+        "a": 24,
+        "b": 96,
+        "weight": 271
+      },
+      {
+        "a": 31,
+        "b": 98,
+        "weight": 2
+      },
+      {
+        "a": 28,
+        "b": 99,
+        "weight": 7
+      },
+      {
+        "a": 28,
+        "b": 63,
+        "weight": 163
+      },
+      {
+        "a": 28,
+        "b": 31,
+        "weight": 10
+      },
+      {
+        "a": 24,
+        "b": 28,
+        "weight": 211
+      },
+      {
+        "a": 34,
+        "b": 96,
+        "weight": 440
+      },
+      {
+        "a": 24,
+        "b": 71,
+        "weight": 42
+      },
+      {
+        "a": 71,
+        "b": 99,
+        "weight": 1
+      },
+      {
+        "a": 63,
+        "b": 71,
+        "weight": 115
+      },
+      {
+        "a": 28,
+        "b": 34,
+        "weight": 486
+      },
+      {
+        "a": 28,
+        "b": 98,
+        "weight": 19
+      },
+      {
+        "a": 26,
+        "b": 28,
+        "weight": 3
+      },
+      {
+        "a": 71,
+        "b": 98,
+        "weight": 6
+      },
+      {
+        "a": 64,
+        "b": 98,
+        "weight": 2
+      },
+      {
+        "a": 35,
+        "b": 98,
+        "weight": 1
+      },
+      {
+        "a": 34,
+        "b": 35,
+        "weight": 1
+      },
+      {
+        "a": 28,
+        "b": 96,
+        "weight": 539
+      },
+      {
+        "a": 32,
+        "b": 98,
+        "weight": 2
+      },
+      {
+        "a": 28,
+        "b": 32,
+        "weight": 8
+      },
+      {
+        "a": 71,
+        "b": 96,
+        "weight": 63
+      },
+      {
+        "a": 34,
+        "b": 71,
+        "weight": 11
+      },
+      {
+        "a": 28,
+        "b": 71,
+        "weight": 14
+      },
+      {
+        "a": 32,
+        "b": 96,
+        "weight": 13
+      },
+      {
+        "a": 24,
+        "b": 70,
+        "weight": 26
+      },
+      {
+        "a": 70,
+        "b": 99,
+        "weight": 2
+      },
+      {
+        "a": 63,
+        "b": 70,
+        "weight": 73
+      },
+      {
+        "a": 70,
+        "b": 71,
+        "weight": 10
+      },
+      {
+        "a": 24,
+        "b": 64,
+        "weight": 10
+      },
+      {
+        "a": 64,
+        "b": 96,
+        "weight": 604
+      },
+      {
+        "a": 70,
+        "b": 96,
+        "weight": 165
+      },
+      {
+        "a": 34,
+        "b": 70,
+        "weight": 70
+      },
+      {
+        "a": 70,
+        "b": 98,
+        "weight": 2
+      },
+      {
+        "a": 24,
+        "b": 65,
+        "weight": 2
+      },
+      {
+        "a": 65,
+        "b": 96,
+        "weight": 2
+      },
+      {
+        "a": 64,
+        "b": 65,
+        "weight": 1
+      },
+      {
+        "a": 65,
+        "b": 71,
+        "weight": 2
+      },
+      {
+        "a": 28,
+        "b": 70,
+        "weight": 70
+      },
+      {
+        "a": 28,
+        "b": 64,
+        "weight": 434
+      },
+      {
+        "a": 64,
+        "b": 70,
+        "weight": 154
+      },
+      {
+        "a": 25,
+        "b": 96,
+        "weight": 7
+      },
+      {
+        "a": 25,
+        "b": 63,
+        "weight": 7
+      },
+      {
+        "a": 25,
+        "b": 34,
+        "weight": 7
+      },
+      {
+        "a": 24,
+        "b": 25,
+        "weight": 4
+      },
+      {
+        "a": 32,
+        "b": 70,
+        "weight": 3
+      },
+      {
+        "a": 25,
+        "b": 28,
+        "weight": 9
+      },
+      {
+        "a": 32,
+        "b": 71,
+        "weight": 3
+      },
+      {
+        "a": 63,
+        "b": 65,
+        "weight": 1
+      },
+      {
+        "a": 67,
+        "b": 100,
+        "weight": 3
+      },
+      {
+        "a": 30,
+        "b": 67,
+        "weight": 2
+      },
+      {
+        "a": 30,
+        "b": 100,
+        "weight": 17
+      },
+      {
+        "a": 30,
+        "b": 34,
+        "weight": 1
+      },
+      {
+        "a": 67,
+        "b": 71,
+        "weight": 1
+      },
+      {
+        "a": 96,
+        "b": 100,
+        "weight": 54
+      },
+      {
+        "a": 29,
+        "b": 100,
+        "weight": 8
+      },
+      {
+        "a": 70,
+        "b": 100,
+        "weight": 3
+      },
+      {
+        "a": 29,
+        "b": 70,
+        "weight": 2
+      },
+      {
+        "a": 29,
+        "b": 30,
+        "weight": 3
+      },
+      {
+        "a": 67,
+        "b": 70,
+        "weight": 2
+      },
+      {
+        "a": 61,
+        "b": 100,
+        "weight": 58
+      },
+      {
+        "a": 30,
+        "b": 61,
+        "weight": 14
+      },
+      {
+        "a": 61,
+        "b": 67,
+        "weight": 1
+      },
+      {
+        "a": 30,
+        "b": 70,
+        "weight": 1
+      },
+      {
+        "a": 61,
+        "b": 70,
+        "weight": 2
+      },
+      {
+        "a": 25,
+        "b": 100,
+        "weight": 31
+      },
+      {
+        "a": 25,
+        "b": 61,
+        "weight": 31
+      },
+      {
+        "a": 25,
+        "b": 30,
+        "weight": 8
+      },
+      {
+        "a": 29,
+        "b": 61,
+        "weight": 4
+      },
+      {
+        "a": 25,
+        "b": 29,
+        "weight": 3
+      },
+      {
+        "a": 33,
+        "b": 100,
+        "weight": 2
+      },
+      {
+        "a": 33,
+        "b": 61,
+        "weight": 2
+      },
+      {
+        "a": 29,
+        "b": 33,
+        "weight": 1
+      },
+      {
+        "a": 25,
+        "b": 33,
+        "weight": 3
+      },
+      {
+        "a": 34,
+        "b": 100,
+        "weight": 107
+      },
+      {
+        "a": 34,
+        "b": 61,
+        "weight": 5
+      },
+      {
+        "a": 29,
+        "b": 34,
+        "weight": 1
+      },
+      {
+        "a": 31,
+        "b": 100,
+        "weight": 25
+      },
+      {
+        "a": 31,
+        "b": 61,
+        "weight": 1
+      },
+      {
+        "a": 69,
+        "b": 100,
+        "weight": 3
+      },
+      {
+        "a": 29,
+        "b": 69,
+        "weight": 1
+      },
+      {
+        "a": 29,
+        "b": 31,
+        "weight": 2
+      },
+      {
+        "a": 61,
+        "b": 69,
+        "weight": 3
+      },
+      {
+        "a": 60,
+        "b": 100,
+        "weight": 2
+      },
+      {
+        "a": 60,
+        "b": 69,
+        "weight": 1
+      },
+      {
+        "a": 25,
+        "b": 31,
+        "weight": 2
+      },
+      {
+        "a": 60,
+        "b": 61,
+        "weight": 1
+      },
+      {
+        "a": 28,
+        "b": 100,
+        "weight": 117
+      },
+      {
+        "a": 28,
+        "b": 69,
+        "weight": 1
+      },
+      {
+        "a": 27,
+        "b": 100,
+        "weight": 1
+      },
+      {
+        "a": 27,
+        "b": 61,
+        "weight": 1
+      },
+      {
+        "a": 27,
+        "b": 34,
+        "weight": 1
+      },
+      {
+        "a": 64,
+        "b": 100,
+        "weight": 239
+      },
+      {
+        "a": 27,
+        "b": 31,
+        "weight": 1
+      },
+      {
+        "a": 61,
+        "b": 64,
+        "weight": 3
+      },
+      {
+        "a": 31,
+        "b": 69,
+        "weight": 1
+      },
+      {
+        "a": 64,
+        "b": 69,
+        "weight": 2
+      },
+      {
+        "a": 60,
+        "b": 64,
+        "weight": 2
+      },
+      {
+        "a": 32,
+        "b": 64,
+        "weight": 5
+      }
+    ],
+    "conditioned_usage": {
+      "technical/English": {
+        "35": 8,
+        "67": 3,
+        "103": 4,
+        "29": 2,
+        "60": 19,
+        "97": 75,
+        "24": 1,
+        "98": 1,
+        "30": 2,
+        "96": 133,
+        "31": 66,
+        "63": 58,
+        "64": 88,
+        "26": 2,
+        "28": 74,
+        "70": 45,
+        "34": 58
+      },
+      "code/C": {
+        "31": 63,
+        "63": 216,
+        "97": 125,
+        "26": 58,
+        "35": 6,
+        "24": 43,
+        "34": 36,
+        "99": 64,
+        "32": 12,
+        "98": 26,
+        "64": 2,
+        "96": 3
+      },
+      "code/JavaScript": {
+        "31": 3,
+        "63": 200,
+        "98": 95,
+        "28": 137,
+        "99": 27,
+        "24": 99,
+        "96": 282,
+        "34": 164,
+        "26": 16,
+        "71": 4,
+        "64": 219,
+        "35": 1,
+        "32": 4,
+        "100": 20,
+        "70": 1
+      },
+      "code/JSON/YAML": {
+        "28": 55,
+        "63": 182,
+        "98": 30,
+        "24": 109,
+        "96": 184,
+        "34": 50,
+        "71": 18,
+        "32": 3,
+        "99": 3,
+        "70": 12,
+        "64": 4,
+        "65": 1
+      },
+      "code/HTML/CSS": {
+        "28": 87,
+        "70": 33,
+        "96": 232,
+        "24": 100,
+        "71": 31,
+        "63": 159,
+        "34": 44,
+        "98": 6,
+        "64": 14,
+        "25": 4,
+        "32": 3,
+        "65": 1
+      },
+      "general/English": {
+        "28": 95,
+        "70": 26,
+        "96": 222,
+        "24": 25,
+        "63": 53,
+        "34": 100,
+        "71": 17,
+        "98": 5,
+        "32": 4,
+        "25": 3,
+        "64": 131
+      },
+      "context/English": {
+        "30": 17,
+        "67": 3,
+        "100": 94,
+        "29": 8,
+        "70": 3,
+        "61": 58,
+        "25": 31,
+        "33": 2,
+        "34": 12,
+        "31": 16,
+        "69": 3,
+        "60": 2,
+        "28": 7,
+        "27": 1,
+        "64": 25
+      },
+      "code/C++": {
+        "31": 9,
+        "64": 211,
+        "100": 194,
+        "34": 96,
+        "28": 106,
+        "96": 17
+      },
+      "code/TypeScript": {
+        "28": 121,
+        "70": 52,
+        "96": 206,
+        "34": 82,
+        "64": 154,
+        "32": 1,
+        "24": 2
+      }
+    },
+    "router_entropy": 2.4414261215909696,
+    "edge_definition": "Token co-activation + successive-token transitions (global IDs include physical layer)."
+  },
+  "experiments": [
+    {
+      "page_size": 1,
+      "graph_packed": false,
+      "policy": "lru",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.7208658854166666,
+      "ram_hit_rate_on_vram_miss": 0.7795918367346939,
+      "bytes_loaded_per_token": 56700.0,
+      "ram_to_vram_bytes_per_token": 257250.0,
+      "page_reads_per_token": 0.1845703125,
+      "predicted_io_stall_s_per_token": 0.00015425704648061562,
+      "io_limited_tokens_s": 6482.6860283861515,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 2081,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 1,
+      "graph_packed": false,
+      "policy": "lfu",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.5478515625,
+      "ram_hit_rate_on_vram_miss": 0.8999280057595392,
+      "bytes_loaded_per_token": 41700.0,
+      "ram_to_vram_bytes_per_token": 416700.0,
+      "page_reads_per_token": 0.1357421875,
+      "predicted_io_stall_s_per_token": 0.0001463403807296622,
+      "io_limited_tokens_s": 6833.383889080636,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 3044,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 1,
+      "graph_packed": false,
+      "policy": "frequency_pin",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.4269205729166667,
+      "ram_hit_rate_on_vram_miss": 0.9289974439079807,
+      "bytes_loaded_per_token": 37500.0,
+      "ram_to_vram_bytes_per_token": 528150.0,
+      "page_reads_per_token": 0.1220703125,
+      "predicted_io_stall_s_per_token": 0.00015378203798882775,
+      "io_limited_tokens_s": 6502.7100243830155,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 3759,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 1,
+      "graph_packed": false,
+      "policy": "task_profile_prefetch",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.7208658854166666,
+      "ram_hit_rate_on_vram_miss": 0.7795918367346939,
+      "bytes_loaded_per_token": 57450.0,
+      "ram_to_vram_bytes_per_token": 258000.0,
+      "page_reads_per_token": 0.18701171875,
+      "predicted_io_stall_s_per_token": 0.0001521565905149285,
+      "io_limited_tokens_s": 6572.176707008213,
+      "wasted_prefetch_bytes": 1536000,
+      "correct_prefetch_bytes": 50380800,
+      "issued_prefetch_bytes": 51916800,
+      "prefetch_latency_hidden_s": 0.007595078125000031,
+      "cache_churn": 2081,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 1,
+      "graph_packed": true,
+      "policy": "lru",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.7208658854166666,
+      "ram_hit_rate_on_vram_miss": 0.7795918367346939,
+      "bytes_loaded_per_token": 56700.0,
+      "ram_to_vram_bytes_per_token": 257250.0,
+      "page_reads_per_token": 0.1845703125,
+      "predicted_io_stall_s_per_token": 0.00015425704648061562,
+      "io_limited_tokens_s": 6482.6860283861515,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 2081,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 1,
+      "graph_packed": true,
+      "policy": "lfu",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.5478515625,
+      "ram_hit_rate_on_vram_miss": 0.8999280057595392,
+      "bytes_loaded_per_token": 41700.0,
+      "ram_to_vram_bytes_per_token": 416700.0,
+      "page_reads_per_token": 0.1357421875,
+      "predicted_io_stall_s_per_token": 0.0001463403807296622,
+      "io_limited_tokens_s": 6833.383889080636,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 3044,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 1,
+      "graph_packed": true,
+      "policy": "frequency_pin",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.4269205729166667,
+      "ram_hit_rate_on_vram_miss": 0.9289974439079807,
+      "bytes_loaded_per_token": 37500.0,
+      "ram_to_vram_bytes_per_token": 528150.0,
+      "page_reads_per_token": 0.1220703125,
+      "predicted_io_stall_s_per_token": 0.00015378203798882775,
+      "io_limited_tokens_s": 6502.7100243830155,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 3759,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 1,
+      "graph_packed": true,
+      "policy": "task_profile_prefetch",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.7208658854166666,
+      "ram_hit_rate_on_vram_miss": 0.7795918367346939,
+      "bytes_loaded_per_token": 57450.0,
+      "ram_to_vram_bytes_per_token": 258000.0,
+      "page_reads_per_token": 0.18701171875,
+      "predicted_io_stall_s_per_token": 0.0001521565905149285,
+      "io_limited_tokens_s": 6572.176707008213,
+      "wasted_prefetch_bytes": 1536000,
+      "correct_prefetch_bytes": 50380800,
+      "issued_prefetch_bytes": 51916800,
+      "prefetch_latency_hidden_s": 0.007595078125000031,
+      "cache_churn": 2081,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 2,
+      "graph_packed": false,
+      "policy": "lru",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.75244140625,
+      "bytes_loaded_per_token": 456300.0,
+      "ram_to_vram_bytes_per_token": 1843200.0,
+      "page_reads_per_token": 0.74267578125,
+      "predicted_io_stall_s_per_token": 0.001148575731650192,
+      "io_limited_tokens_s": 870.6435043366893,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 7659,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 2,
+      "graph_packed": false,
+      "policy": "lfu",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.21077473958333334,
+      "ram_hit_rate_on_vram_miss": 0.652711899360693,
+      "bytes_loaded_per_token": 505200.0,
+      "ram_to_vram_bytes_per_token": 1454700.0,
+      "page_reads_per_token": 0.822265625,
+      "predicted_io_stall_s_per_token": 0.001206014521974405,
+      "io_limited_tokens_s": 829.1774118630578,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 6527,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 2,
+      "graph_packed": false,
+      "policy": "frequency_pin",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.05224609375,
+      "ram_hit_rate_on_vram_miss": 0.7911729349132749,
+      "bytes_loaded_per_token": 364800.0,
+      "ram_to_vram_bytes_per_token": 1746900.0,
+      "page_reads_per_token": 0.59375,
+      "predicted_io_stall_s_per_token": 0.0009488739467443915,
+      "io_limited_tokens_s": 1053.880764068845,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 7033,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 2,
+      "graph_packed": false,
+      "policy": "task_profile_prefetch",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.75244140625,
+      "bytes_loaded_per_token": 456300.0,
+      "ram_to_vram_bytes_per_token": 1843500.0,
+      "page_reads_per_token": 0.74267578125,
+      "predicted_io_stall_s_per_token": 0.0011432927574070364,
+      "io_limited_tokens_s": 874.6666096862003,
+      "wasted_prefetch_bytes": 614400,
+      "correct_prefetch_bytes": 95846400,
+      "issued_prefetch_bytes": 96460800,
+      "prefetch_latency_hidden_s": 0.010868359374999987,
+      "cache_churn": 7659,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 2,
+      "graph_packed": true,
+      "policy": "lru",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.07552083333333333,
+      "ram_hit_rate_on_vram_miss": 0.8394366197183099,
+      "bytes_loaded_per_token": 273600.0,
+      "ram_to_vram_bytes_per_token": 1704000.0,
+      "page_reads_per_token": 0.4453125,
+      "predicted_io_stall_s_per_token": 0.0007557736832486631,
+      "io_limited_tokens_s": 1323.1474211982875,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 6586,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 2,
+      "graph_packed": true,
+      "policy": "lfu",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.3277994791666667,
+      "ram_hit_rate_on_vram_miss": 0.6777239709443099,
+      "bytes_loaded_per_token": 399300.0,
+      "ram_to_vram_bytes_per_token": 1239000.0,
+      "page_reads_per_token": 0.64990234375,
+      "predicted_io_stall_s_per_token": 0.0009632062651694055,
+      "io_limited_tokens_s": 1038.1992270618416,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 5455,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 2,
+      "graph_packed": true,
+      "policy": "frequency_pin",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.12630208333333334,
+      "ram_hit_rate_on_vram_miss": 0.8923248882265276,
+      "bytes_loaded_per_token": 173400.0,
+      "ram_to_vram_bytes_per_token": 1610400.0,
+      "page_reads_per_token": 0.2822265625,
+      "predicted_io_stall_s_per_token": 0.0005384120715778575,
+      "io_limited_tokens_s": 1857.3134830900503,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 5940,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 2,
+      "graph_packed": true,
+      "policy": "task_profile_prefetch",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.07552083333333333,
+      "ram_hit_rate_on_vram_miss": 0.8394366197183099,
+      "bytes_loaded_per_token": 273600.0,
+      "ram_to_vram_bytes_per_token": 1704300.0,
+      "page_reads_per_token": 0.4453125,
+      "predicted_io_stall_s_per_token": 0.0007468925339566713,
+      "io_limited_tokens_s": 1338.8807017556985,
+      "wasted_prefetch_bytes": 614400,
+      "correct_prefetch_bytes": 87859200,
+      "issued_prefetch_bytes": 88473600,
+      "prefetch_latency_hidden_s": 0.018237421874999996,
+      "cache_churn": 6586,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 4,
+      "graph_packed": false,
+      "policy": "lru",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.012858072916666666,
+      "ram_hit_rate_on_vram_miss": 0.023413025556471557,
+      "bytes_loaded_per_token": 3553800.0,
+      "ram_to_vram_bytes_per_token": 3639000.0,
+      "page_reads_per_token": 2.89208984375,
+      "predicted_io_stall_s_per_token": 0.007685717701699467,
+      "io_limited_tokens_s": 130.11146633435155,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 11985,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 4,
+      "graph_packed": false,
+      "policy": "lfu",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.012858072916666666,
+      "ram_hit_rate_on_vram_miss": 0.25028854080791424,
+      "bytes_loaded_per_token": 2728200.0,
+      "ram_to_vram_bytes_per_token": 3639000.0,
+      "page_reads_per_token": 2.22021484375,
+      "predicted_io_stall_s_per_token": 0.005981157929509032,
+      "io_limited_tokens_s": 167.191706319329,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 10609,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 4,
+      "graph_packed": false,
+      "policy": "frequency_pin",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.012858072916666666,
+      "ram_hit_rate_on_vram_miss": 0.023413025556471557,
+      "bytes_loaded_per_token": 3553800.0,
+      "ram_to_vram_bytes_per_token": 3639000.0,
+      "page_reads_per_token": 2.89208984375,
+      "predicted_io_stall_s_per_token": 0.007685717701699467,
+      "io_limited_tokens_s": 130.11146633435155,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 11985,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 4,
+      "graph_packed": false,
+      "policy": "task_profile_prefetch",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.012858072916666666,
+      "ram_hit_rate_on_vram_miss": 0.023413025556471557,
+      "bytes_loaded_per_token": 3553800.0,
+      "ram_to_vram_bytes_per_token": 3639600.0,
+      "page_reads_per_token": 2.89208984375,
+      "predicted_io_stall_s_per_token": 0.0076672099349757855,
+      "io_limited_tokens_s": 130.42554051353991,
+      "wasted_prefetch_bytes": 1228800,
+      "correct_prefetch_bytes": 319488000,
+      "issued_prefetch_bytes": 320716800,
+      "prefetch_latency_hidden_s": 0.03800156250000006,
+      "cache_churn": 11985,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 4,
+      "graph_packed": true,
+      "policy": "lru",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.1484375,
+      "ram_hit_rate_on_vram_miss": 0.1672400611620795,
+      "bytes_loaded_per_token": 2614200.0,
+      "ram_to_vram_bytes_per_token": 3139200.0,
+      "page_reads_per_token": 2.12744140625,
+      "predicted_io_stall_s_per_token": 0.005697934636806227,
+      "io_limited_tokens_s": 175.5021887300052,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 9586,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 4,
+      "graph_packed": true,
+      "policy": "lfu",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.1484375,
+      "ram_hit_rate_on_vram_miss": 0.40271406727828746,
+      "bytes_loaded_per_token": 1875000.0,
+      "ram_to_vram_bytes_per_token": 3139200.0,
+      "page_reads_per_token": 1.52587890625,
+      "predicted_io_stall_s_per_token": 0.00417175902682181,
+      "io_limited_tokens_s": 239.7070381032613,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 8354,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 4,
+      "graph_packed": true,
+      "policy": "frequency_pin",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.1484375,
+      "ram_hit_rate_on_vram_miss": 0.1672400611620795,
+      "bytes_loaded_per_token": 2614200.0,
+      "ram_to_vram_bytes_per_token": 3139200.0,
+      "page_reads_per_token": 2.12744140625,
+      "predicted_io_stall_s_per_token": 0.005697934636806227,
+      "io_limited_tokens_s": 175.5021887300052,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 9586,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 4,
+      "graph_packed": true,
+      "policy": "task_profile_prefetch",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.1484375,
+      "ram_hit_rate_on_vram_miss": 0.1672400611620795,
+      "bytes_loaded_per_token": 2614800.0,
+      "ram_to_vram_bytes_per_token": 3139800.0,
+      "page_reads_per_token": 2.1279296875,
+      "predicted_io_stall_s_per_token": 0.005558887313415565,
+      "io_limited_tokens_s": 179.89211574529412,
+      "wasted_prefetch_bytes": 1228800,
+      "correct_prefetch_bytes": 1963622400,
+      "issued_prefetch_bytes": 1964851200,
+      "prefetch_latency_hidden_s": 0.28740359374999846,
+      "cache_churn": 9586,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 8,
+      "graph_packed": false,
+      "policy": "lru",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.1220703125,
+      "bytes_loaded_per_token": 6472800.0,
+      "ram_to_vram_bytes_per_token": 7372800.0,
+      "page_reads_per_token": 2.6337890625,
+      "predicted_io_stall_s_per_token": 0.014009884318596533,
+      "io_limited_tokens_s": 71.3781768113969,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 5393,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 8,
+      "graph_packed": false,
+      "policy": "lfu",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.1220703125,
+      "bytes_loaded_per_token": 6472800.0,
+      "ram_to_vram_bytes_per_token": 7372800.0,
+      "page_reads_per_token": 2.6337890625,
+      "predicted_io_stall_s_per_token": 0.014009884318596533,
+      "io_limited_tokens_s": 71.3781768113969,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 5393,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 8,
+      "graph_packed": false,
+      "policy": "frequency_pin",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.1220703125,
+      "bytes_loaded_per_token": 6472800.0,
+      "ram_to_vram_bytes_per_token": 7372800.0,
+      "page_reads_per_token": 2.6337890625,
+      "predicted_io_stall_s_per_token": 0.014009884318596533,
+      "io_limited_tokens_s": 71.3781768113969,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 5393,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 8,
+      "graph_packed": false,
+      "policy": "task_profile_prefetch",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.1220703125,
+      "bytes_loaded_per_token": 6474000.0,
+      "ram_to_vram_bytes_per_token": 7374000.0,
+      "page_reads_per_token": 2.63427734375,
+      "predicted_io_stall_s_per_token": 0.013872711150086793,
+      "io_limited_tokens_s": 72.08396319804753,
+      "wasted_prefetch_bytes": 2457600,
+      "correct_prefetch_bytes": 3516825600,
+      "issued_prefetch_bytes": 3519283200,
+      "prefetch_latency_hidden_s": 0.2862000000000011,
+      "cache_churn": 5393,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 8,
+      "graph_packed": true,
+      "policy": "lru",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.22770182291666666,
+      "bytes_loaded_per_token": 5694000.0,
+      "ram_to_vram_bytes_per_token": 7372800.0,
+      "page_reads_per_token": 2.31689453125,
+      "predicted_io_stall_s_per_token": 0.012401949300934242,
+      "io_limited_tokens_s": 80.6324857274388,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 4744,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 8,
+      "graph_packed": true,
+      "policy": "lfu",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.22770182291666666,
+      "bytes_loaded_per_token": 5694000.0,
+      "ram_to_vram_bytes_per_token": 7372800.0,
+      "page_reads_per_token": 2.31689453125,
+      "predicted_io_stall_s_per_token": 0.012401949300934242,
+      "io_limited_tokens_s": 80.6324857274388,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 4744,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 8,
+      "graph_packed": true,
+      "policy": "frequency_pin",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.22770182291666666,
+      "bytes_loaded_per_token": 5694000.0,
+      "ram_to_vram_bytes_per_token": 7372800.0,
+      "page_reads_per_token": 2.31689453125,
+      "predicted_io_stall_s_per_token": 0.012401949300934242,
+      "io_limited_tokens_s": 80.6324857274388,
+      "wasted_prefetch_bytes": 0,
+      "correct_prefetch_bytes": 0,
+      "issued_prefetch_bytes": 0,
+      "prefetch_latency_hidden_s": 0.0,
+      "cache_churn": 4744,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    },
+    {
+      "page_size": 8,
+      "graph_packed": true,
+      "policy": "task_profile_prefetch",
+      "tokens": 2048,
+      "accesses": 6144,
+      "vram_hit_rate": 0.0,
+      "ram_hit_rate_on_vram_miss": 0.22770182291666666,
+      "bytes_loaded_per_token": 5695200.0,
+      "ram_to_vram_bytes_per_token": 7374000.0,
+      "page_reads_per_token": 2.3173828125,
+      "predicted_io_stall_s_per_token": 0.012212627694924564,
+      "io_limited_tokens_s": 81.88246010443675,
+      "wasted_prefetch_bytes": 2457600,
+      "correct_prefetch_bytes": 4829184000,
+      "issued_prefetch_bytes": 4831641600,
+      "prefetch_latency_hidden_s": 0.39299999999998936,
+      "cache_churn": 4744,
+      "assumptions": "Serial demand I/O, fixed bandwidth/latency, shared limited prefetch window; partial transfers and one-token expiration. No measured decode throughput claim."
+    }
+  ],
+  "fit_tokens": 2048,
+  "evaluation_tokens": 2048,
+  "io": {
+    "expert_bytes": 307200,
+    "vram_bytes": 1228800,
+    "ram_bytes": 2457600,
+    "ssd_bytes_s": 484347931.6299776,
+    "ssd_latency_s": 0.0,
+    "ram_bytes_s": 12582912000,
+    "ram_latency_s": 2e-05,
+    "prefetch_window_s": 0.0
+  },
+  "storage_measurement": "Explicit measured values",
+  "scope": "Micro routing, fixed bytes cache comparison, no model output changes. Large-model projection is a separate assumption-driven analysis."
+}

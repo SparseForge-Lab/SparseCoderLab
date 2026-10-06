@@ -1,0 +1,31 @@
+{
+  "model": "DenseCompute",
+  "context": 1024,
+  "microbatch": 2,
+  "seconds": 2.0219280999999683,
+  "steps": 30,
+  "tokens": 61440,
+  "tok_s": 30386.837197623874,
+  "vram_peak": 1512088576,
+  "vram_reserved": 1652555776,
+  "batch_candidates": [],
+  "recommended_microbatch": 2,
+  "passed": true,
+  "purpose": "Synthetic-corpus eager BF16 train-step profiler; single microbatch optimizer steps. Not gradient-accumulated end-to-end run or real-code validation.",
+  "durations_first_10": [
+    0.07138550000036048,
+    0.0674618000002738,
+    0.0646667000000889,
+    0.0692031999997198,
+    0.06587459999991552,
+    0.07381950000035431,
+    0.06311770000047545,
+    0.06355720000010479,
+    0.06601869999940391,
+    0.06471229999988282
+  ],
+  "max_step_seconds": 0.07567240000025777,
+  "checkpoint": "experiments/profile_DenseCompute/checkpoints/last.pt",
+  "paused": false,
+  "resumed": false
+}

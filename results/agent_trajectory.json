@@ -1,0 +1,145 @@
+{
+  "task": {
+    "task_id": "toy-add",
+    "goal": "Repair integer addition",
+    "allowed_files": [
+      "calculator.py"
+    ],
+    "test_command": [
+      "D:\\SparseCoderLab\\.venv\\Scripts\\python.exe",
+      "-B",
+      "check.py"
+    ],
+    "license": "CC0-1.0"
+  },
+  "events": [
+    {
+      "call": {
+        "action": "inspect",
+        "arguments": {
+          "file": "calculator.py"
+        },
+        "hypothesis": ""
+      },
+      "result": {
+        "text": "def add(a, b):\n    return a - b\n"
+      },
+      "state_before": "768fa28427bbb06a5c57aea97f24c5224202fd68fde2bf8f403934424f655672",
+      "state_after": "768fa28427bbb06a5c57aea97f24c5224202fd68fde2bf8f403934424f655672",
+      "loop_signal": false
+    },
+    {
+      "call": {
+        "action": "hypothesize",
+        "arguments": {},
+        "hypothesis": "Operator is incorrect"
+      },
+      "result": {
+        "hypothesis": "Operator is incorrect"
+      },
+      "state_before": "768fa28427bbb06a5c57aea97f24c5224202fd68fde2bf8f403934424f655672",
+      "state_after": "768fa28427bbb06a5c57aea97f24c5224202fd68fde2bf8f403934424f655672",
+      "loop_signal": false
+    },
+    {
+      "call": {
+        "action": "edit",
+        "arguments": {
+          "file": "calculator.py",
+          "text": "def add(a, b):\n    return a * b\n"
+        },
+        "hypothesis": ""
+      },
+      "result": {
+        "edited": "calculator.py"
+      },
+      "state_before": "768fa28427bbb06a5c57aea97f24c5224202fd68fde2bf8f403934424f655672",
+      "state_after": "f351a5410bd836125c2613373d71a3b9765499abed4c2c745f0da276b22c939f",
+      "loop_signal": false
+    },
+    {
+      "call": {
+        "action": "test",
+        "arguments": {},
+        "hypothesis": ""
+      },
+      "result": {
+        "returncode": 1,
+        "output": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\agent-6evda2tm\\repo\\check.py\", line 2, in <module>\n    assert add(2, 3) == 5\n           ^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "state_before": "f351a5410bd836125c2613373d71a3b9765499abed4c2c745f0da276b22c939f",
+      "state_after": "f351a5410bd836125c2613373d71a3b9765499abed4c2c745f0da276b22c939f",
+      "loop_signal": false
+    },
+    {
+      "call": {
+        "action": "test",
+        "arguments": {},
+        "hypothesis": ""
+      },
+      "result": {
+        "returncode": 1,
+        "output": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\agent-6evda2tm\\repo\\check.py\", line 2, in <module>\n    assert add(2, 3) == 5\n           ^^^^^^^^^^^^^^\nAssertionError\n"
+      },
+      "state_before": "f351a5410bd836125c2613373d71a3b9765499abed4c2c745f0da276b22c939f",
+      "state_after": "f351a5410bd836125c2613373d71a3b9765499abed4c2c745f0da276b22c939f",
+      "loop_signal": true
+    },
+    {
+      "call": {
+        "action": "replan",
+        "arguments": {},
+        "hypothesis": "Multiplication fails; addition required"
+      },
+      "result": {
+        "hypothesis": "Multiplication fails; addition required"
+      },
+      "state_before": "f351a5410bd836125c2613373d71a3b9765499abed4c2c745f0da276b22c939f",
+      "state_after": "f351a5410bd836125c2613373d71a3b9765499abed4c2c745f0da276b22c939f",
+      "loop_signal": false
+    },
+    {
+      "call": {
+        "action": "edit",
+        "arguments": {
+          "file": "calculator.py",
+          "text": "def add(a, b):\n    return a + b\n"
+        },
+        "hypothesis": ""
+      },
+      "result": {
+        "edited": "calculator.py"
+      },
+      "state_before": "f351a5410bd836125c2613373d71a3b9765499abed4c2c745f0da276b22c939f",
+      "state_after": "27b23c4917fba45ec492fd9b1df94f3c09fd69666263a4647b4784501cac278f",
+      "loop_signal": false
+    },
+    {
+      "call": {
+        "action": "test",
+        "arguments": {},
+        "hypothesis": ""
+      },
+      "result": {
+        "returncode": 0,
+        "output": "PASS\n"
+      },
+      "state_before": "27b23c4917fba45ec492fd9b1df94f3c09fd69666263a4647b4784501cac278f",
+      "state_after": "27b23c4917fba45ec492fd9b1df94f3c09fd69666263a4647b4784501cac278f",
+      "loop_signal": false
+    },
+    {
+      "call": {
+        "action": "diff",
+        "arguments": {},
+        "hypothesis": ""
+      },
+      "result": {
+        "diff": "--- calculator.py\n+++ calculator.py\n@@ -1,2 +1,2 @@\n def add(a, b):\n-    return a - b\n+    return a + b\n"
+      },
+      "state_before": "27b23c4917fba45ec492fd9b1df94f3c09fd69666263a4647b4784501cac278f",
+      "state_after": "27b23c4917fba45ec492fd9b1df94f3c09fd69666263a4647b4784501cac278f",
+      "loop_signal": false
+    }
+  ]
+}

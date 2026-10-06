@@ -1,0 +1,63 @@
+{
+  "sample_count": 47,
+  "first_sample_utc": "2026-10-06T12:37:14.267911+00:00",
+  "last_sample_utc": "2026-10-06T13:00:34.047075+00:00",
+  "all_samples_including_idle": {
+    "temperature_c": {
+      "minimum": 43.0,
+      "median": 52.0,
+      "maximum": 62.0
+    },
+    "power_w": {
+      "minimum": 24.59,
+      "median": 79.22,
+      "maximum": 141.39
+    },
+    "gpu_utilization_percent": {
+      "minimum": 0.0,
+      "median": 23.0,
+      "maximum": 58.0
+    },
+    "gpu_memory_mib": {
+      "minimum": 2018.0,
+      "median": 4286.0,
+      "maximum": 11532.0
+    },
+    "sm_clock_mhz": {
+      "minimum": 2535.0,
+      "median": 2820.0,
+      "maximum": 2970.0
+    }
+  },
+  "samples_with_training_counter_advance": {
+    "count": 20,
+    "stats": {
+      "temperature_c": {
+        "minimum": 50.0,
+        "median": 52.5,
+        "maximum": 62.0
+      },
+      "power_w": {
+        "minimum": 43.67,
+        "median": 83.375,
+        "maximum": 141.39
+      },
+      "gpu_utilization_percent": {
+        "minimum": 20.0,
+        "median": 28.0,
+        "maximum": 58.0
+      },
+      "gpu_memory_mib": {
+        "minimum": 4233.0,
+        "median": 4308.0,
+        "maximum": 4616.0
+      },
+      "sm_clock_mhz": {
+        "minimum": 2820.0,
+        "median": 2962.0,
+        "maximum": 2970.0
+      }
+    }
+  },
+  "scope": "30s NVIDIA snapshots beginning mid-Sparse20M\u219250M and ending during GitHub preparation. Includes idle time; progress advances identify sampled windows, not exact active durations. No earlier Dense coverage, occupancy, energy or controlled benchmark claim."
+}

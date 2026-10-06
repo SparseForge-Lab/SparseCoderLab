@@ -1,0 +1,5 @@
+extends: ../dense_compute.yaml
+name: Runtime_DenseCompute
+training:
+  max_wall_minutes: 30
+  target_tokens: 327680

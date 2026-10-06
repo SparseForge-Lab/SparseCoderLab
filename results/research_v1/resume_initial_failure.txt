@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\SparseCoderLab\tools\research_resume_check.py", line 42, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\SparseCoderLab\tools\research_resume_check.py", line 34, in main
+    optimizer_equal=all(torch.equal(value,other.state_dict()['state'][key][field]) if torch.is_tensor(value) else value==other.state_dict()['state'][key][field]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SparseCoderLab\tools\research_resume_check.py", line 34, in <genexpr>
+    optimizer_equal=all(torch.equal(value,other.state_dict()['state'][key][field]) if torch.is_tensor(value) else value==other.state_dict()['state'][key][field]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but got other is on cuda:0, different from other tensors on cpu (when checking argument in method wrapper_CUDA__equal)

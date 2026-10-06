@@ -1,0 +1,232 @@
+{
+  "files": [
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00000-of-01126.parquet",
+      "size_bytes": 285840384,
+      "sha256": "4f4541d1e40d08c59381f38d9e09cdadbf005e0e57e0f42ed3741956b3c36de9",
+      "local_path": "data\\research_v1\\raw\\code\\train-00000-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:14:59Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00001-of-01126.parquet",
+      "size_bytes": 288848766,
+      "sha256": "51e30bfc214aedca19241d0140344b8355cb17cbc6096765a3513c526c365d3c",
+      "local_path": "data\\research_v1\\raw\\code\\train-00001-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:15:27Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00002-of-01126.parquet",
+      "size_bytes": 290762148,
+      "sha256": "74d67db8e189c1818f1908e8a4fb647b3a5b51c0c0965d4f8afa1e74490ef389",
+      "local_path": "data\\research_v1\\raw\\code\\train-00002-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:20:19Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00003-of-01126.parquet",
+      "size_bytes": 286618668,
+      "sha256": "e109df908104b38b74e24cbdda7bb33312483cb8a87e586c27f96ea63139ac3b",
+      "local_path": "data\\research_v1\\raw\\code\\train-00003-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:20:48Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00004-of-01126.parquet",
+      "size_bytes": 290585566,
+      "sha256": "495e3eee6b94422fcc59291b6cd86dd945ed37c99ea351a3885541a1aa7fc63d",
+      "local_path": "data\\research_v1\\raw\\code\\train-00004-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:21:22Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00005-of-01126.parquet",
+      "size_bytes": 288208036,
+      "sha256": "0e7e75c8fc73f6a162369c1aa1042a06e67f21dba6a0378cff4a242e1dc31d11",
+      "local_path": "data\\research_v1\\raw\\code\\train-00005-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:21:53Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00006-of-01126.parquet",
+      "size_bytes": 289435376,
+      "sha256": "48dd089762c27f22831ae2d3e42f91beae150a188113c7f75073fc67bc062c60",
+      "local_path": "data\\research_v1\\raw\\code\\train-00006-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:22:20Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00007-of-01126.parquet",
+      "size_bytes": 288105347,
+      "sha256": "ecd2955ededf5d419f541117334c6b7595cc200bea52025dd1b97ac7cc96f1f7",
+      "local_path": "data\\research_v1\\raw\\code\\train-00007-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:22:52Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00008-of-01126.parquet",
+      "size_bytes": 287771043,
+      "sha256": "9b3e7eab1dc4fe7b4f070737657d104b7ad0a72e729e0c4402839bb980306ac9",
+      "local_path": "data\\research_v1\\raw\\code\\train-00008-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:23:55Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00009-of-01126.parquet",
+      "size_bytes": 288608163,
+      "sha256": "a376e8845d529ae21e82ded3e8a0fc11adcdfab45b0b3c8493e9c3369a936fd8",
+      "local_path": "data\\research_v1\\raw\\code\\train-00009-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:24:23Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00010-of-01126.parquet",
+      "size_bytes": 286824772,
+      "sha256": "8a00aca597a85860692dba51ed569ce8b69fbddcb92350ce2b082f299301a085",
+      "local_path": "data\\research_v1\\raw\\code\\train-00010-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:24:50Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00011-of-01126.parquet",
+      "size_bytes": 287279209,
+      "sha256": "34bc9bc9a2f06edcb05bd008ae5d2d88e3f71aa1ac1bf42936d1f0384dea3863",
+      "local_path": "data\\research_v1\\raw\\code\\train-00011-of-01126.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:25:22Z"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00012-of-01126.parquet",
+      "size_bytes": 289123300,
+      "sha256": "3f6874e48960f29772fd8efe116a0b3dfc13c806685d9dc2492a0517a4f7eed0",
+      "local_path": "data\\research_v1\\raw\\code\\train-00012-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00013-of-01126.parquet",
+      "size_bytes": 289578681,
+      "sha256": "c48677aa8c87aeec90847de213ad2bfbd592bc307e6f7276a9ee8f19631c2bf3",
+      "local_path": "data\\research_v1\\raw\\code\\train-00013-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00014-of-01126.parquet",
+      "size_bytes": 283800281,
+      "sha256": "55bfebc4b948482eae618cf08d4a3a62c58943c32ee99cf42f3e0aeb2d0eb67a",
+      "local_path": "data\\research_v1\\raw\\code\\train-00014-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00015-of-01126.parquet",
+      "size_bytes": 294878772,
+      "sha256": "6672e18421a9467166b6aac92439d355c5ba37a1f23ccd0a2addd3dd82527c83",
+      "local_path": "data\\research_v1\\raw\\code\\train-00015-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00016-of-01126.parquet",
+      "size_bytes": 283302316,
+      "sha256": "6b0d5c9aade342cad4a916822be95be33c809db216080a9fa5f9d8811be62301",
+      "local_path": "data\\research_v1\\raw\\code\\train-00016-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00017-of-01126.parquet",
+      "size_bytes": 290163282,
+      "sha256": "2c73c4f4a54000fd70d17adc94a22163acb88eb7352c8cc025c28c3e8c547259",
+      "local_path": "data\\research_v1\\raw\\code\\train-00017-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00018-of-01126.parquet",
+      "size_bytes": 289359024,
+      "sha256": "3f77fdedc93fbe8e97d9be3c16dd49c27683035e1de48dc1822499aaf07c0d1b",
+      "local_path": "data\\research_v1\\raw\\code\\train-00018-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00019-of-01126.parquet",
+      "size_bytes": 293811742,
+      "sha256": "ff39396ea8313eaa095c5f185ef5ef59d2e200a2b4de0220ad78a25d46a4b6f0",
+      "local_path": "data\\research_v1\\raw\\code\\train-00019-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00020-of-01126.parquet",
+      "size_bytes": 292486311,
+      "sha256": "75b5b38b193097618ffbe014bcab86954f7c1ab73dc22560a6691d2eec74061b",
+      "local_path": "data\\research_v1\\raw\\code\\train-00020-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00021-of-01126.parquet",
+      "size_bytes": 290934072,
+      "sha256": "53639a1dc38ef08cb8d70cd8bf940e99e625c9bd5b8cd154f2a9abc2492f039c",
+      "local_path": "data\\research_v1\\raw\\code\\train-00021-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00022-of-01126.parquet",
+      "size_bytes": 290673463,
+      "sha256": "951c11ae8db3167c1c1c04eae986b561bcc59aa1dbc1e019eef05fd18a3d44b9",
+      "local_path": "data\\research_v1\\raw\\code\\train-00022-of-01126.parquet"
+    },
+    {
+      "dataset": "codeparrot/github-code",
+      "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+      "remote_file": "data/train-00023-of-01126.parquet",
+      "size_bytes": 285055031,
+      "sha256": "5185deee73e91bc683bcc0896541bda7b59eabb2a74d22d48358e1e5cf2eb7ad",
+      "local_path": "data\\research_v1\\raw\\code\\train-00023-of-01126.parquet"
+    },
+    {
+      "dataset": "HuggingFaceFW/fineweb-edu",
+      "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+      "remote_file": "sample/10BT/000_00000.parquet",
+      "size_bytes": 2152819114,
+      "sha256": "b1ba7b2ce4cb5ea6ef42dca40263eabb85f37700d01693a68e9b30a31d78e871",
+      "local_path": "data\\research_v1\\raw\\general\\000_00000.parquet",
+      "verified": true,
+      "download_completed_utc": "2026-10-05T18:18:53Z"
+    }
+  ],
+  "download_upper_bound_bytes": 9084872867,
+  "policy": "Public ungated pinned files only. Code: per-repository MIT/Apache2/BSD2/BSD3/ISC/CC0/Unlicense whitelist, reject unknown/other. FineWebEdu: ODC-By collection/CommonCrawl terms with per-document URL/crawl identifiers; no claim that collection license owns individual pages. Bounded selection; no remote code execution."
+}

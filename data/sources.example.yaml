@@ -1,0 +1,19 @@
+sources:
+  - name: approved-educational-jsonl
+    enabled: false
+    terms_accepted: false
+    url: https://huggingface.co/datasets/OWNER/DATASET/resolve/main/BOUNDED_SHARD.jsonl
+    license: CC-BY-4.0
+    kind: general
+    language: English
+    text_field: text
+  - name: approved-permissive-code-jsonl
+    enabled: false
+    terms_accepted: false
+    gated_access_verified: false
+    url: https://huggingface.co/datasets/OWNER/DATASET/resolve/main/BOUNDED_SHARD.jsonl
+    license: MIT
+    license_field: license
+    kind: code
+    language: Python
+    text_field: text

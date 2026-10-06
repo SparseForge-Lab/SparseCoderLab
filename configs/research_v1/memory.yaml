@@ -1,0 +1,4 @@
+extends: sparse.yaml
+name: ResearchV1_SparseV3_GroupedNgram
+memory:
+  enabled: true

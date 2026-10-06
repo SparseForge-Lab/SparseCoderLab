@@ -1,0 +1,11 @@
+{
+  "task_spec": {"task_id": "string", "goal": "string", "allowed_files": ["relative path"], "test_command": ["executable", "argument"], "license": "SPDX string"},
+  "tool_call": {"action": "inspect|hypothesize|replan|edit|shell|test|diff", "arguments": {}, "hypothesis": "string"},
+  "actions": {
+    "inspect": {"file": "relative allowlisted path"},
+    "edit": {"file": "relative allowlisted path", "text": "replacement UTF-8 content"},
+    "shell": {"command": ["must match reviewed task test command"]},
+    "test": {}, "diff": {}, "hypothesize": {}, "replan": {}
+  },
+  "note": "Typed interchange example; command isolation is not an OS security boundary."
+}

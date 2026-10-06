@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "common_tokens": 5005312,
+  "common_steps": 611,
+  "common_cursor": 4888,
+  "fresh_initializations": true,
+  "matching_training_and_data_configs": true,
+  "matching_attention": true,
+  "shard_checksums_verified": true,
+  "tokenizer_sha256": "24c6a4967ec4e61ec68f7b07a0fc3f58b4993a751a22d1b588c311be26b0d1e8",
+  "evaluation_steps": [
+    200,
+    400,
+    600,
+    611
+  ],
+  "scope": "Deterministic token order follows matching seeded PackedStream/cursor, tested in Phase 0. Same seed does not mean identical shared initial tensors across different parameter-registration layouts."
+}

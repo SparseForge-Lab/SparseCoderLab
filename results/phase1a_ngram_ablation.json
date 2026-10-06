@@ -1,0 +1,22 @@
+{
+  "normal": {
+    "val_loss": 4.34909388422966,
+    "bits_per_token": 6.27441617913865,
+    "code_val_loss": 3.9822752135831423,
+    "general_val_loss": 5.079932211560281
+  },
+  "ablated": {
+    "val_loss": 4.3491478860378265,
+    "bits_per_token": 6.274494087279491,
+    "code_val_loss": 3.99024999587303,
+    "general_val_loss": 5.07987533762271
+  },
+  "delta_ablated_minus_normal": {
+    "val_loss": 5.4001808166503906e-05,
+    "bits_per_token": 7.79081408408544e-05,
+    "code_val_loss": 0.007974782289887905,
+    "general_val_loss": -5.687393757103365e-05
+  },
+  "checkpoint_tokens": 5005312,
+  "scope": "Same frozen checkpoint and deterministic validation samples, no retraining; synthetic single-seed evidence."
+}

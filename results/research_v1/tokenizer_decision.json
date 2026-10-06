@@ -1,0 +1,10 @@
+{
+  "chosen": "train-only real-data32768 BPE",
+  "vocab_size": 32768,
+  "median_code_token_reduction": 0.4517087535884139,
+  "criterion": "At least15% median real-code token reduction with exact roundtrip; same32768 embedding cost. Larger48k/64k not needed for this micro-model.",
+  "tokenizer_path": "data\\research_v1\\tokenizer.json",
+  "sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "fim_markers_supported": true,
+  "loss_comparison": "Only within this frozen tokenizer. Do not compare absolute NLL to old synthetic-tokenizer results."
+}

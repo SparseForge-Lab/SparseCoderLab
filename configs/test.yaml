@@ -1,0 +1,24 @@
+extends: base.yaml
+name: TinyTest
+model:
+  vocab_size: 512
+  d_model: 32
+  layers: 3
+  q_heads: 2
+  kv_heads: 1
+  head_dim: 16
+  ffn: 48
+  moe_layers: [1]
+  experts: 4
+  expert_ffn: 16
+memory:
+  rows: 256
+  dim: 4
+  layer: 0
+mtp:
+  ffn: 16
+training:
+  context: 32
+  accumulation: 1
+  lr: 0.003
+  warmup_steps: 0

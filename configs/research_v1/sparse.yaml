@@ -1,0 +1,6 @@
+extends: dense.yaml
+name: ResearchV1_SparseV3_Grouped
+model:
+  ffn: 384
+  moe_layers: [2, 5, 8]
+  moe_backend: grouped

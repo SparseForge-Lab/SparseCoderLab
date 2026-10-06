@@ -1,0 +1,9 @@
+# Evaluation and fairness
+
+Primary quality metrics: held-out next-token loss, bits/token, code/general held-out loss, gradient/NaN stability, quality per estimated active compute, stored parameter and wall-time. Routing metrics: balance, entropy, language/task usage, transition/co-activation affinity and held-out cache behavior. Later metrics: MTP horizon accuracy/acceptance/net speed, RouteAhead recall/precision/useful bytes/stall, compaction retained fields/model exact accuracy/retrieval recovery.
+
+`results/leaderboard.csv` has the requested fixed columns. Missing experiments stay blank; zero is not a substitute for unmeasured acceptance, retention or cache results. Smoke rows are explicitly synthetic engineering observations. Profiler tokens are recorded in profiler artifacts rather than misrepresented as checkpointed quality training.
+
+Validation loss excludes auxiliary routing/MTP losses to preserve comparability. Code/general losses use deterministic bounded document samples and token weighting. Mixed packed validation uses the same fixed permutation. Estimate train FLOPs using 6 * active_params * tokens with an explicit caveat: it omits quadratic attention/dispatch effects and is not a measured hardware FLOP count.
+
+Use same tokenizer, training data order, context, seed, optimizer and attention for architecture comparisons. DenseSize/SparseMemory approximately match stored size; DenseCompute/SparseV3 approximately match active parameters. Equal-token comparisons use fixed token endpoints, equal-wall comparisons use timer endpoints, equal-FLOP comparisons use a declared estimate. MTP's repeated block and three additional output heads are included in the reference FLOP equivalent even though tied/shared stored weights are counted once. No best-checkpoint cherry-picking. Real task benchmarks for tiny models are secondary and must not be sold as agent capability.

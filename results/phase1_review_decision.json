@@ -1,0 +1,22 @@
+{
+  "status": "stop_review",
+  "trigger": "dramatic sparse slowdown without an established quality benefit in the controlled engineering comparison",
+  "wall_time_ratios": {
+    "dense": 1.0,
+    "sparse": 2.667209563565823,
+    "memory": 2.8530644344202147
+  },
+  "training_step_time_ratios": {
+    "dense": 1.0,
+    "sparse": 2.7886065891958745,
+    "memory": 2.9806054728400384
+  },
+  "sparse_minus_dense_loss": -0.003571420907974243,
+  "memory_minus_dense_loss": -1.582503318786621e-05,
+  "memory_minus_sparse_loss": 0.003555595874786377,
+  "decision_basis": "Single seed, synthetic corpus; tiny oscillating loss differences do not establish quality advantage. This is a review decision, not a real-data architecture ranking.",
+  "research_corpus_prepared": false,
+  "phase1b_started": false,
+  "routing_phase_e_started": false,
+  "future_gpu_training_started": false
+}

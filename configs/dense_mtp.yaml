@@ -1,0 +1,4 @@
+extends: dense_compute.yaml
+name: DenseComputeMTP
+mtp:
+  enabled: true

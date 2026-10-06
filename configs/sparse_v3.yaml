@@ -1,0 +1,5 @@
+extends: base.yaml
+name: SparseV3
+model:
+  ffn: 384
+  moe_layers: [2, 5, 8]

@@ -1,0 +1,130 @@
+{
+  "files": {
+    "codeparrot/github-code/data/train-00000-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00001-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00002-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00003-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00004-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00005-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00006-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00007-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00008-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00009-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00010-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "codeparrot/github-code/data/train-00011-of-01126.parquet": {
+      "rows": 102209,
+      "complete": true
+    },
+    "HuggingFaceFW/fineweb-edu/sample/10BT/000_00000.parquet": {
+      "rows": 726000,
+      "complete": true
+    }
+  },
+  "counts": {
+    "raw": 1952508,
+    "rejected/license": 413110,
+    "accepted": 265578,
+    "docs/train/code": 142016,
+    "language/JavaScript": 21938,
+    "license/ISC": 935,
+    "language/Go": 3717,
+    "language/PHP": 15126,
+    "language/C": 14111,
+    "rejected/generated_header": 33948,
+    "rejected/vendored_or_generated_path": 34013,
+    "rejected/nontechnical_markdown": 36741,
+    "language/C++": 9339,
+    "docs/train/context": 20177,
+    "language/Batchfile": 224,
+    "language/Java": 36238,
+    "language/SQL": 869,
+    "docs/train/technical": 28542,
+    "language/Markdown": 29508,
+    "language/Python": 12131,
+    "rejected/size": 43014,
+    "language/HTML/CSS": 20632,
+    "docs/val/code": 7131,
+    "language/Bash": 1992,
+    "language/C#": 13918,
+    "license/MIT": 108403,
+    "language/Ruby": 9114,
+    "rejected/benchmark_repository_or_path": 2698,
+    "language/TypeScript": 4404,
+    "language/Rust": 744,
+    "language/Scala": 1986,
+    "rejected/single_line_or_minified": 13290,
+    "docs/val/context": 1084,
+    "rejected/conflicting_license_header": 4119,
+    "docs/val/technical": 966,
+    "language/TeX": 341,
+    "language/Lua": 550,
+    "language/Julia": 147,
+    "language/CMake": 223,
+    "language/Makefile": 651,
+    "rejected/language": 1615,
+    "language/FORTRAN": 147,
+    "language/Assembly": 75,
+    "language/Perl": 204,
+    "language/Dockerfile": 352,
+    "language/Visual Basic": 208,
+    "language/PowerShell": 331,
+    "language/Haskell": 696,
+    "license/CC0-1.0": 1091,
+    "rejected/encoding": 383,
+    "license/Unlicense": 1900,
+    "license/Apache-2.0": 64455,
+    "license/BSD-2-Clause": 4879,
+    "license/BSD-3-Clause": 18253,
+    "rejected/reservoir_full": 681880,
+    "rejected/education_or_language_score": 417064,
+    "docs/train/general": 62649,
+    "language/English": 65662,
+    "license/ODC-By-1.0 (collection)": 65662,
+    "rejected/long_line_generated": 5038,
+    "docs/val/general": 3013,
+    "duplicates": 17
+  },
+  "document_bytes": {
+    "train/code": 900000380,
+    "train/context": 130036454,
+    "train/technical": 146550050,
+    "val/code": 45018733,
+    "val/context": 6529445,
+    "val/technical": 4797392,
+    "train/general": 300000765,
+    "val/general": 15006977
+  }
+}

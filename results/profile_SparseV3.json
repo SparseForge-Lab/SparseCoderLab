@@ -1,0 +1,53 @@
+{
+  "model": "SparseV3",
+  "context": 1024,
+  "microbatch": 2,
+  "seconds": 30.10932189999994,
+  "steps": 141,
+  "tokens": 288768,
+  "tok_s": 9590.651060129008,
+  "vram_peak": 1594059264,
+  "vram_reserved": 6790578176,
+  "batch_candidates": [
+    {
+      "microbatch": 1,
+      "tok_s": 7466.912971095231,
+      "vram_peak": 967748096,
+      "safe_headroom": true
+    },
+    {
+      "microbatch": 2,
+      "tok_s": 12150.620227463374,
+      "vram_peak": 1586435072,
+      "safe_headroom": true
+    },
+    {
+      "microbatch": 4,
+      "tok_s": 20060.20346544938,
+      "vram_peak": 2801711616,
+      "safe_headroom": true
+    },
+    {
+      "microbatch": 8,
+      "tok_s": 60667.49050963887,
+      "vram_peak": 5220594176,
+      "safe_headroom": false
+    }
+  ],
+  "recommended_microbatch": 4,
+  "passed": true,
+  "purpose": "Synthetic-corpus eager BF16 train-step profiler; single microbatch optimizer steps. Not gradient-accumulated end-to-end run or real-code validation.",
+  "durations_first_10": [
+    0.12391780000007202,
+    0.13847359999999753,
+    0.1316022000000885,
+    0.11954719999994268,
+    0.12971740000011778,
+    0.12878330000012284,
+    0.1360431999996763,
+    0.13162340000008044,
+    0.15205509999987044,
+    0.14840680000042994
+  ],
+  "max_step_seconds": 0.44345449999991615
+}

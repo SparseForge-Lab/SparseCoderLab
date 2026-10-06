@@ -1,0 +1,15 @@
+# Permanent release and model-card evidence rule
+
+Prompt-2.5 explicitly adds this permanent rule. Keep results/research_history.csv as the cumulative research ledger, using null for non-applicable/unknown values. Never substitute later milestone values or different checkpoint hashes for earlier evidence. Document justified corrections and source migrations. Ledger rows come only from verified completed summaries, checkpoint metadata and frozen evaluations; interrupted attempts remain separate historical evidence.
+
+Run python -m tools.research_publish_evidence to update local results/model_card_evidence.json, results/research_timeline.json and results/releases/{20M,50M,70M,100M}. Each snapshot has summary.json, metrics.json, comparison.csv and README.md. Partial comparisons are labelled partial; matched_complete requires all three models. Reference canonical checkpoint path, SHA256, size, architecture and actual tokens; never duplicate giant payloads. No account publication is performed by these tools.
+
+Measured covers actual losses/throughput/allocated memory/checkpoint tokens and bounded routing/memory observations. Calculated covers architecture arithmetic, active parameter access and estimated6N FLOPs. Planned covers unfinished experiments and later75M/model-scale/token-gate ideas. Unknown covers seed variance, useful coding ability and scaling transfer. Repository-correlated diagnostic sampling is not training-seed uncertainty. Tiny Rust/SQL language groups are insufficient; code diagnostic weights tokens within selected language strata. Absolute NLL is comparable only with the frozen research tokenizer. Dense cumulative wall is a lower bound after the recorded20M reporting recovery.
+
+The current stage is informally~25M: exact stored counts are Dense16,574,400, Sparse21,562,560, Ngram25,767,425. Ngram tables contribute4,194,304 stored values. The proposed~75M neural/stored model plus~10M–25M memory candidates are future plans, not current facts or automatic training authorization.
+
+Keep README.md and MODEL_CARD.md as research documentation suitable for generating HF/GitHub cards and tables. Include source revisions, permissive code policy, FineWeb collection/page licensing distinction, tokenizer/context/training policy, reliability, intended use and unsupported claims. No SOTA, MiMo/Qwen comparison, production-readiness or60–75B performance claim follows from this micro experiment.
+
+Create publication figures only from canonical CSV/JSON. Presentation outputs live under results/figures. Training correctness takes priority; presentation work runs on CPU alongside GPU training or after a completed milestone. Prompt-1 remains the controlled runtime study; quality-run throughput reflects real loop/environment conditions rather than precise repeated speed trials.
+
+All continuation work stays under GOALS/Prompt-2.md and the eventual verified Prompt-2 archive. Preserve20M/50M/70M/100M evidence, perform the matched50M review before advancing all models, finish seed42 through100M, consider the strongest-pair second seed only afterward, classify GOOD/MIXED/BAD, and stop before any75M or Prompt-3 work.

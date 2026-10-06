@@ -1,0 +1,145 @@
+{
+  "tokens": {
+    "train": 2772404,
+    "val": 143226
+  },
+  "document_stats": {
+    "train/general/English": 4431,
+    "train/technical/English": 1574,
+    "train/code/JSON/YAML": 680,
+    "train/code/C++": 742,
+    "train/code/Python": 690,
+    "train/code/Rust": 701,
+    "val/code/HTML/CSS": 38,
+    "train/code/Java": 712,
+    "train/code/JavaScript": 702,
+    "train/code/HTML/CSS": 703,
+    "train/code/SQL": 666,
+    "train/code/C": 672,
+    "train/code/Bash": 730,
+    "train/context/English": 801,
+    "val/code/C": 34,
+    "train/code/TypeScript": 723,
+    "train/code/Go": 697,
+    "val/general/English": 243,
+    "val/code/Go": 47,
+    "val/code/JavaScript": 40,
+    "val/code/SQL": 28,
+    "val/code/Bash": 43,
+    "val/code/Rust": 32,
+    "val/technical/English": 63,
+    "val/code/Python": 39,
+    "val/code/Java": 31,
+    "val/code/C++": 26,
+    "val/code/JSON/YAML": 44,
+    "val/context/English": 37,
+    "val/code/TypeScript": 31
+  },
+  "token_mixture": {
+    "train/general": 624568,
+    "train/technical": 210624,
+    "train/code": 1803771,
+    "val/code": 93842,
+    "train/context": 133441,
+    "val/general": 34505,
+    "val/technical": 8535,
+    "val/context": 6344
+  },
+  "sources": {
+    "original synthetic fixture/CC0-1.0": 16000
+  },
+  "tokenizer_sha256": "24c6a4967ec4e61ec68f7b07a0fc3f58b4993a751a22d1b588c311be26b0d1e8",
+  "seed": 42,
+  "data_config": {
+    "tokenizer": "data/tokenizer.json",
+    "shards": "data/shards",
+    "manifest": "data/manifest.json",
+    "cache_gb": 20,
+    "project_gb": 30,
+    "seed": 42,
+    "eval_fraction": 0.05,
+    "mixture": {
+      "code": 0.55,
+      "general": 0.3,
+      "technical": 0.1,
+      "context": 0.05
+    },
+    "dev_documents": 16000,
+    "shard_tokens": 262144,
+    "max_tokens": 4000000
+  },
+  "synthetic_only": true,
+  "cache_bytes": 10797083,
+  "shard_sha256": {
+    "train": "1eaf3dccd36a893c2e0074b78ee727a32b15ffe27f5b6e5e27429df496f9b4d3",
+    "val": "e0b74ae70dbdb5c111df285b919e362cc570fe54146d21898d7e6e421fcfb3b6"
+  },
+  "packing": "Fixed offsets, EOS/doc separators; causal attention crosses document boundaries within a split.",
+  "quality_scope": "Synthetic dev corpus only: no educational or natural-code quality claims",
+  "physical_shards": {
+    "train": [
+      {
+        "path": "train-00000.bin",
+        "tokens": 262144,
+        "sha256": "aff128d1ccb789853e628ca7fd89709f4fdfc2ada4cebdbf9b284eaac450d895"
+      },
+      {
+        "path": "train-00001.bin",
+        "tokens": 262144,
+        "sha256": "5982931048647ed7843d43755463ac890f79c078115fdc77ab4ae73546269859"
+      },
+      {
+        "path": "train-00002.bin",
+        "tokens": 262144,
+        "sha256": "c57ebc009f22b56521e1a11af1719bdf42f450bdf0762cd645fe1b48d931d3a7"
+      },
+      {
+        "path": "train-00003.bin",
+        "tokens": 262144,
+        "sha256": "7c8b19ca64aef150ca9e1cc5f77137403f8b75bc267728011d393179a40c66c9"
+      },
+      {
+        "path": "train-00004.bin",
+        "tokens": 262144,
+        "sha256": "ecd933bc5d14bfd4b46add50f449fa1f4a40af37891287d7d14ba80b7f088785"
+      },
+      {
+        "path": "train-00005.bin",
+        "tokens": 262144,
+        "sha256": "8fe6948a807eff6e41fad1d1bbbfc451b73b800661599b91eae49d5b56fa2605"
+      },
+      {
+        "path": "train-00006.bin",
+        "tokens": 262144,
+        "sha256": "3913914fb479b7436abe2f1586a38cc3933354c2b45e54c2fe62f0e72c33157e"
+      },
+      {
+        "path": "train-00007.bin",
+        "tokens": 262144,
+        "sha256": "ef5e314f5cf7b503fb43db30a3b541e4dcbdac969b5fff1f170a4b3fd522c687"
+      },
+      {
+        "path": "train-00008.bin",
+        "tokens": 262144,
+        "sha256": "6dd305d99af36fc6b81c102965ba151ddca02cba21a312abcc4181d5ff37e253"
+      },
+      {
+        "path": "train-00009.bin",
+        "tokens": 262144,
+        "sha256": "e4b50e20905448e72370720d958d0e081fa159c143c80d849db3b8b9ad2b33c7"
+      },
+      {
+        "path": "train-00010.bin",
+        "tokens": 150964,
+        "sha256": "a99ddb3907ead2864b46d56873f78b36c05f72947f6a57f9b7e07cb1e03d9d51"
+      }
+    ],
+    "val": [
+      {
+        "path": "val-00000.bin",
+        "tokens": 143226,
+        "sha256": "e0b74ae70dbdb5c111df285b919e362cc570fe54146d21898d7e6e421fcfb3b6"
+      }
+    ]
+  }
+}

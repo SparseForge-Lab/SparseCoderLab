@@ -1,0 +1,79 @@
+{
+  "matched": {},
+  "trends": {
+    "sparse_minus_dense": {
+      "val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "code_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "general_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "technical_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      }
+    },
+    "ngram_minus_dense": {
+      "val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "code_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "general_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "technical_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      }
+    },
+    "ngram_minus_sparse": {
+      "val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "code_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "general_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "technical_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      }
+    },
+    "ablation": {
+      "val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "code_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "general_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      },
+      "technical_val_loss": {
+        "values": [],
+        "shape": "insufficient matched checkpoints"
+      }
+    }
+  },
+  "scope": "Calculated from completed immutable seed42 checkpoint summaries and deterministic held-out evaluations. Confidence intervals are document-cluster sampling only, not training-seed variance.",
+  "status": "no_matched_milestone"
+}

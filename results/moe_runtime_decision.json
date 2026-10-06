@@ -1,0 +1,205 @@
+{
+  "case": "A",
+  "correctness_passed": true,
+  "models": {
+    "dense": {
+      "repetitions": 2,
+      "training_step_tok_s": 25272.85864042867,
+      "wall_tok_s": 25567.750676976768,
+      "training_step_tok_s_range": [
+        24989.824623555836,
+        25562.37737285865
+      ],
+      "wall_tok_s_range": [
+        25311.596114425065,
+        25829.142837100255
+      ],
+      "forward_ms": 30.289699999229924,
+      "forward_backward_ms": 73.77267499987283,
+      "peak_allocated_bytes": 1577625088,
+      "peak_reserved_bytes": 1973420032,
+      "stored_params": 16574400,
+      "routed_params": 0,
+      "active_params_est": 16574400
+    },
+    "reference": {
+      "repetitions": 2,
+      "training_step_tok_s": 11265.97246758364,
+      "wall_tok_s": 11274.646899223055,
+      "training_step_tok_s_range": [
+        11092.143828007656,
+        11445.336099585718
+      ],
+      "wall_tok_s_range": [
+        11148.625067098114,
+        11403.550355921354
+      ],
+      "forward_ms": 69.07774999990579,
+      "forward_backward_ms": 170.03569999997126,
+      "peak_allocated_bytes": 1680961024,
+      "peak_reserved_bytes": 1839202304,
+      "stored_params": 21562560,
+      "routed_params": 5529600,
+      "active_params_est": 16493760
+    },
+    "grouped": {
+      "repetitions": 2,
+      "training_step_tok_s": 18360.652798309606,
+      "wall_tok_s": 18289.224959599756,
+      "training_step_tok_s_range": [
+        18107.556342726304,
+        18620.924807366242
+      ],
+      "wall_tok_s_range": [
+        18261.03213663071,
+        18317.504969786685
+      ],
+      "forward_ms": 40.648375000728265,
+      "forward_backward_ms": 96.64702500003841,
+      "peak_allocated_bytes": 1714720768,
+      "peak_reserved_bytes": 2124414976,
+      "stored_params": 21562560,
+      "routed_params": 5529600,
+      "active_params_est": 16493760
+    },
+    "memory": {
+      "repetitions": 2,
+      "training_step_tok_s": 17792.16131930975,
+      "wall_tok_s": 17650.616538600192,
+      "training_step_tok_s_range": [
+        17790.82476870453,
+        17793.498070749025
+      ],
+      "wall_tok_s_range": [
+        17559.789830407863,
+        17742.387720813484
+      ],
+      "forward_ms": 42.03480000023774,
+      "forward_backward_ms": 98.76372500048092,
+      "peak_allocated_bytes": 1783862272,
+      "peak_reserved_bytes": 2145386496,
+      "stored_params": 25767425,
+      "routed_params": 5529600,
+      "active_params_est": 16504353
+    }
+  },
+  "full_model_grouped_speedup_vs_reference": {
+    "training_step_tok_s": 1.6297441566753317,
+    "wall_tok_s": 1.62215501053608
+  },
+  "grouped_cost_ratio_vs_dense": {
+    "training_step_tok_s": 1.3764684141707337,
+    "wall_tok_s": 1.3979679693073388
+  },
+  "ngram_incremental_cost": {
+    "training_step_tok_s": 1.031951794320956,
+    "wall_tok_s": 1.036180516391764,
+    "extra_allocated_bytes": 69141504
+  },
+  "geometry": {
+    "geometry12": {
+      "repetitions": 2,
+      "training_step_tok_s": 18618.066301554096,
+      "wall_tok_s": 18541.155956880208,
+      "training_step_tok_s_range": [
+        18372.78941444612,
+        18869.98069629128
+      ],
+      "wall_tok_s_range": [
+        17641.98958916033,
+        19536.901037299296
+      ],
+      "forward_ms": 41.37232499988386,
+      "forward_backward_ms": 100.05242499983069,
+      "peak_allocated_bytes": 1798721536,
+      "peak_reserved_bytes": 2189426688,
+      "stored_params": 21562560,
+      "routed_params": 5529600,
+      "active_params_est": 16493760,
+      "experts": 12,
+      "expert_ffn": 160
+    },
+    "geometry6": {
+      "repetitions": 2,
+      "training_step_tok_s": 20370.36466034494,
+      "wall_tok_s": 19932.952089671766,
+      "training_step_tok_s_range": [
+        20196.705358175655,
+        20547.036246773638
+      ],
+      "wall_tok_s_range": [
+        19912.153180465553,
+        19953.794494621732
+      ],
+      "forward_ms": 39.008375000321394,
+      "forward_backward_ms": 87.82117499958986,
+      "peak_allocated_bytes": 1799640576,
+      "peak_reserved_bytes": 2172649472,
+      "stored_params": 21556800,
+      "routed_params": 5529600,
+      "active_params_est": 16948800,
+      "experts": 6,
+      "expert_ffn": 320
+    },
+    "geometry4": {
+      "repetitions": 2,
+      "training_step_tok_s": 20326.57450746703,
+      "wall_tok_s": 20397.08787748674,
+      "training_step_tok_s_range": [
+        19843.32637712455,
+        20833.9474117389
+      ],
+      "wall_tok_s_range": [
+        19892.54383893194,
+        20927.891941775222
+      ],
+      "forward_ms": 42.712000000392436,
+      "forward_backward_ms": 89.88447499996255,
+      "peak_allocated_bytes": 1791366144,
+      "peak_reserved_bytes": 2141192192,
+      "stored_params": 21554880,
+      "routed_params": 5529600,
+      "active_params_est": 17407680,
+      "experts": 4,
+      "expert_ffn": 480
+    }
+  },
+  "fastest_measured_geometry": "geometry6",
+  "fastest_measured_wall_geometry": "geometry4",
+  "geometry_interpretation": "6 wins pure-step by only 0.22% over 4; 4 wins wall. Treat 6/4 as tied at this short-run noise level, both about 9% above 12. No quality winner or automatic architecture change.",
+  "layer_forward_backward_speedups": {
+    "balanced": {
+      "median": 3.4967363960079036,
+      "minimum": 3.2936776567204498,
+      "maximum": 4.060956414475201
+    },
+    "moderate": {
+      "median": 3.3242027737934636,
+      "minimum": 2.621820608619508,
+      "maximum": 3.6130353792253063
+    },
+    "strong": {
+      "median": 3.1272185278992497,
+      "minimum": 1.7660431235659975,
+      "maximum": 4.046398104275849
+    },
+    "natural": {
+      "median": 3.45807727521982,
+      "minimum": 3.0993893401205335,
+      "maximum": 3.7606796854384648
+    }
+  },
+  "next_real_data_quality_phase_recommended": true,
+  "next_quality_phase_started": false,
+  "recommendation": "Next prompt may prepare real data and cumulative 20M -> 50M -> 70M -> 100M quality checkpoints.",
+  "limitations": [
+    "Two short timing repetitions are engineering observations, not confidence intervals.",
+    "Wall loop excludes initialization, evaluation/checkpoint I/O; do not compare this wall scope directly to Phase1A historical wall rates.",
+    "Native BF16 training is non-deterministic even for reference vs reference. Deterministic tested parity passes; no universal bitwise continuation promise.",
+    "Geometry holds routed stored capacity constant; active compute changes. Fresh short loss smoke does not rank quality.",
+    "Microbenchmark memory includes the common checkpoint/input capture fixture. GPU utilization samples are not occupancy.",
+    "Real coding quality, routing specialization/locality, cross-seed reproducibility and useful memory benefit remain unknown."
+  ],
+  "archive_prompt": "Prompt-1",
+  "archive": "~\\Data-Zip\\Prompt-1\\Prompt-1.zip"
+}
