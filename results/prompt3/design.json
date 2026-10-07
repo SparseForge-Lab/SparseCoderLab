@@ -1,0 +1,128 @@
+{
+  "created_utc": "2026-10-07T10:54:24.633901+00:00",
+  "entry": {
+    "prompt2_factual_outcome": "MIXED",
+    "user_override": "User explicitly selected the Prompt-3 GOOD 75M branch; this is an authorization override, not a change to the measured Prompt-2 outcome.",
+    "selector": "Prompt-3-Selector.md says MIXED must stop; override recorded in GOALS/Prompt-3.md."
+  },
+  "variants": [
+    {
+      "variant": "dense75_ref",
+      "total_stored": 54018560,
+      "active_estimate": 54018560,
+      "neural_stored": 54018560,
+      "memory_tables": 0,
+      "config_sha256": "9a0f395e2ad4b3e3c9a594529d9916fea4e5b63fc73ad5f41c823bf1f795c8d2",
+      "config_fingerprint": "01810fd63376254179087ddf906dcc7a4f2613ad7cb3d6104c26501b09a6b6ec"
+    },
+    {
+      "variant": "sparse75",
+      "total_stored": 76063232,
+      "active_estimate": 54436352,
+      "neural_stored": 76063232,
+      "memory_tables": 0,
+      "config_sha256": "a85d9cf0a6adc7e46a472662851434d458bf06dda8196386ec87f96d9be647d8",
+      "config_fingerprint": "dd4e28d89c4ac8ae9f8a32acbdc387d93e159a556d47badcbf206b2e6e999ecd"
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "total_stored": 86565889,
+      "active_estimate": 54453281,
+      "neural_stored": 76080129,
+      "memory_tables": 10485760,
+      "config_sha256": "90db666787fea6aa1793b9bbf47101f343bbcb0aecdd6b743bd2548e15b12f19",
+      "config_fingerprint": "67c209e7f560bd8d8881f7c4b01b925bc8140e97096c2edbf63e2292f7a927d4"
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "total_stored": 101245953,
+      "active_estimate": 54453281,
+      "neural_stored": 76080129,
+      "memory_tables": 25165824,
+      "config_sha256": "649aa73f7e1ea07acf4fd9fda8d30e201efefa669cb9b1c08fb43dfc2c940a63",
+      "config_fingerprint": "152d30f77d95d6d84fd42434853b29421ca2c6cf145842b1cce8a77c9f8a23ce"
+    }
+  ],
+  "policy": {
+    "shared_tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+    "shared_corpus_manifest_sha256": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+    "train_tokens": 210012790,
+    "validation_tokens": 8393991,
+    "token_order_seed": 42,
+    "model_training_seed": 42,
+    "context": 1024,
+    "effective_tokens_per_update": 8192,
+    "policy_equal": true,
+    "schedule_steps": 122071,
+    "warmup_steps": 2441,
+    "cosine_horizon_tokens": 1000005632,
+    "milestone_tokens": {
+      "100M": 100007936,
+      "250M": 250003456,
+      "500M": 500006912,
+      "1B": 1000005632
+    },
+    "data_reuse": "At1B, the frozen210M train set is traversed about4.76 times. PackedStream uses deterministic epoch permutations with data seed42; the same 8 sequences/update are consumed for every model. No dataset modification or silent download is allowed.",
+    "microbatch": 8,
+    "accumulation": 1
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "vram_bytes": 12820938752,
+    "available_disk_bytes_at_entry": 46956474368,
+    "project_bytes_at_entry_excluding_git_caches": 25624133523,
+    "project_write_cap_gib": 45
+  },
+  "checkpoint_budget": {
+    "observed_p2_checkpoint_bytes_per_parameter": "~12 bytes/parameter including model, optimizer and scheduler state",
+    "strategy": "Keep atomic rolling full resume checkpoint plus one latest verified full milestone resume backup per variant. Store earlier milestones as immutable model-only snapshots and full evaluation/router/ablation summaries. This preserves exact resume at the most recent verified gate without duplicating Adam state at every historical gate.",
+    "estimated_added_bytes_range": "~13\u201316GiB including model-only immutable gates, latest verified full-state backups, rolling optimizer states, one atomic-write temporary and evaluation evidence; preflight will enforce the45GiB project guard and confirm at least5GiB volume headroom."
+  },
+  "stage_plan": [
+    {
+      "gate": "100M",
+      "action": "Train/evaluate all four candidates cumulatively; stop only for implementation/data/integrity failure or strong divergence/router/Ngram failure."
+    },
+    {
+      "gate": "250M",
+      "action": "Continue eligible candidates cumulatively; create provisional ranking; apply only strong early-rejection criteria."
+    },
+    {
+      "gate": "500M",
+      "action": "Continue surviving candidates; decide which merit1B based on measured quality, cost and health."
+    },
+    {
+      "gate": "1B",
+      "action": "Continue selected candidates only; run final comparison and recommend the next step. Stop without starting750M."
+    }
+  ],
+  "long_run_precondition": "Do not start any >30-minute stage until the candidate benchmark, four-model GPU smoke/resume parity, full test/current-source gate, exact config/data identity receipt, wall-time projection and storage preflight all pass. Benchmark uses disposable short updates and cannot substitute for quality results.",
+  "policy_equal": true,
+  "throughput_recommendation": "results/prompt3/throughput/recommendation.json",
+  "time_estimates_seconds_per_model": {
+    "dense75_ref": {
+      "100M": 2020,
+      "250M": 5050,
+      "500M": 10099,
+      "1B": 20197
+    },
+    "sparse75": {
+      "100M": 2565,
+      "250M": 6411,
+      "500M": 12822,
+      "1B": 25643
+    },
+    "sparse75_ngram10m": {
+      "100M": 2722,
+      "250M": 6803,
+      "500M": 13605,
+      "1B": 27210
+    },
+    "sparse75_ngram25m": {
+      "100M": 2585,
+      "250M": 6462,
+      "500M": 12924,
+      "1B": 25848
+    }
+  }
+}

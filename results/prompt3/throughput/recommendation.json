@@ -1,0 +1,119 @@
+{
+  "status": "selected",
+  "microbatch": 8,
+  "accumulation": 1,
+  "effective_sequences_per_update": 8,
+  "effective_tokens_per_update": 8192,
+  "device_total_bytes": 12820938752,
+  "max_reserved_bytes_across_selected_rows": 10609491968,
+  "max_reserved_fraction": 0.8275128813282081,
+  "minimum_reserved_headroom_fraction": 0.1724871186717919,
+  "throughput_by_variant_and_microbatch": {
+    "dense75_ref": {
+      "1": {
+        "median_wall_tokens_per_second": 9743.919378333881,
+        "max_peak_reserved_bytes": 2051014656,
+        "reserved_fraction_of_vram": 0.15997382841252963,
+        "oom_repetitions": 0
+      },
+      "2": {
+        "median_wall_tokens_per_second": 18730.921956700135,
+        "max_peak_reserved_bytes": 3112173568,
+        "reserved_fraction_of_vram": 0.24274147378751942,
+        "oom_repetitions": 0
+      },
+      "4": {
+        "median_wall_tokens_per_second": 33837.67030566966,
+        "max_peak_reserved_bytes": 5259657216,
+        "reserved_fraction_of_vram": 0.41023963359777543,
+        "oom_repetitions": 0
+      },
+      "8": {
+        "median_wall_tokens_per_second": 49514.990360625,
+        "max_peak_reserved_bytes": 8864661504,
+        "reserved_fraction_of_vram": 0.6914206264823751,
+        "oom_repetitions": 0
+      }
+    },
+    "sparse75": {
+      "1": {
+        "median_wall_tokens_per_second": 7457.9858966851625,
+        "max_peak_reserved_bytes": 5765070848,
+        "reserved_fraction_of_vram": 0.44966058722499386,
+        "oom_repetitions": 0
+      },
+      "2": {
+        "median_wall_tokens_per_second": 14825.79430282609,
+        "max_peak_reserved_bytes": 3898605568,
+        "reserved_fraction_of_vram": 0.3040811319211581,
+        "oom_repetitions": 0
+      },
+      "4": {
+        "median_wall_tokens_per_second": 26173.149213001743,
+        "max_peak_reserved_bytes": 6048186368,
+        "reserved_fraction_of_vram": 0.4717428641531038,
+        "oom_repetitions": 0
+      },
+      "8": {
+        "median_wall_tokens_per_second": 38998.7339303068,
+        "max_peak_reserved_bytes": 10410262528,
+        "reserved_fraction_of_vram": 0.8119735012676863,
+        "oom_repetitions": 0
+      }
+    },
+    "sparse75_ngram10m": {
+      "1": {
+        "median_wall_tokens_per_second": 7611.765152604619,
+        "max_peak_reserved_bytes": 7264534528,
+        "reserved_fraction_of_vram": 0.5666148687331316,
+        "oom_repetitions": 0
+      },
+      "2": {
+        "median_wall_tokens_per_second": 13688.595875475392,
+        "max_peak_reserved_bytes": 4053794816,
+        "reserved_fraction_of_vram": 0.31618549112619615,
+        "oom_repetitions": 0
+      },
+      "4": {
+        "median_wall_tokens_per_second": 26150.444140110027,
+        "max_peak_reserved_bytes": 6247415808,
+        "reserved_fraction_of_vram": 0.4872822442136256,
+        "oom_repetitions": 0
+      },
+      "8": {
+        "median_wall_tokens_per_second": 36752.00032724738,
+        "max_peak_reserved_bytes": 10523508736,
+        "reserved_fraction_of_vram": 0.8208064120389302,
+        "oom_repetitions": 0
+      }
+    },
+    "sparse75_ngram25m": {
+      "1": {
+        "median_wall_tokens_per_second": 7530.319506216694,
+        "max_peak_reserved_bytes": 5148508160,
+        "reserved_fraction_of_vram": 0.40157029524822113,
+        "oom_repetitions": 0
+      },
+      "2": {
+        "median_wall_tokens_per_second": 14129.21416833082,
+        "max_peak_reserved_bytes": 4395630592,
+        "reserved_fraction_of_vram": 0.34284779586161773,
+        "oom_repetitions": 0
+      },
+      "4": {
+        "median_wall_tokens_per_second": 25426.377954630367,
+        "max_peak_reserved_bytes": 6352273408,
+        "reserved_fraction_of_vram": 0.49546086529811073,
+        "oom_repetitions": 0
+      },
+      "8": {
+        "median_wall_tokens_per_second": 38689.27145266319,
+        "max_peak_reserved_bytes": 10609491968,
+        "reserved_fraction_of_vram": 0.8275128813282081,
+        "oom_repetitions": 0
+      }
+    }
+  },
+  "selection_basis": "Fastest shared setting across all four candidates with no OOM and at least15% total-VRAM headroom measured using peak reserved memory. Each point aggregates two fresh 10-update runs after3 warmup updates. Disposable benchmark only; no quality conclusion.",
+  "caveat": "Microbatch8 changes per-microbatch router-balance auxiliary aggregation relative to Prompt-2 microbatch2/accumulation4. All Prompt-3 variants use the same selected policy; Prompt-3 evaluation fixes the mixed-evaluation batch to the canonical microbatch2."
+}

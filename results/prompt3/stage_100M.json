@@ -1,0 +1,28 @@
+{
+  "endpoint": "100M",
+  "results": [
+    {
+      "tag": "sparse75",
+      "complete": true,
+      "tokens_seen": 100007936,
+      "val_loss": 2.744297035038471,
+      "report": "experiments\\prompt3_v1\\sparse75\\summary_100M.json"
+    },
+    {
+      "tag": "sparse75_ngram10m",
+      "complete": true,
+      "tokens_seen": 100007936,
+      "val_loss": 2.7293970929458737,
+      "report": "experiments\\prompt3_v1\\sparse75_ngram10m\\summary_100M.json"
+    },
+    {
+      "tag": "sparse75_ngram25m",
+      "complete": true,
+      "tokens_seen": 100007936,
+      "val_loss": 2.7187034133821726,
+      "report": "experiments\\prompt3_v1\\sparse75_ngram25m\\summary_100M.json"
+    }
+  ],
+  "source_hash": "4b0a1d8f2c755702ade710e3e228c20109d2eac52dbaf111ea6da61b8cdd3227",
+  "completed_utc": "2026-10-07T14:18:52Z"
+}

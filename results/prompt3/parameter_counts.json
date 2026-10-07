@@ -1,0 +1,50 @@
+{
+  "dense75_ref": {
+    "total": 54018560,
+    "routed_experts": 0,
+    "router": 0,
+    "conditional_memory": 0,
+    "mtp": 0,
+    "resident": 54018560,
+    "memory_tables": 0,
+    "active_estimate": 54018560,
+    "base_active_without_mtp": 54018560,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  },
+  "sparse75": {
+    "total": 76063232,
+    "routed_experts": 23592960,
+    "router": 24576,
+    "conditional_memory": 0,
+    "mtp": 0,
+    "resident": 52445696,
+    "memory_tables": 0,
+    "active_estimate": 54436352,
+    "base_active_without_mtp": 54436352,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  },
+  "sparse75_ngram10m": {
+    "total": 86565889,
+    "routed_experts": 23592960,
+    "router": 24576,
+    "conditional_memory": 10502657,
+    "mtp": 0,
+    "resident": 52445696,
+    "memory_tables": 10485760,
+    "active_estimate": 54453281,
+    "base_active_without_mtp": 54453281,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  },
+  "sparse75_ngram25m": {
+    "total": 101245953,
+    "routed_experts": 23592960,
+    "router": 24576,
+    "conditional_memory": 25182721,
+    "mtp": 0,
+    "resident": 52445696,
+    "memory_tables": 25165824,
+    "active_estimate": 54453281,
+    "base_active_without_mtp": 54453281,
+    "caveat": "Tied embedding counted once; full vocab LM head touched. Active estimate is parameter access, not measured FLOPs. MTP counted once, although shared block unrolled three times."
+  }
+}

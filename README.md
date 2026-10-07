@@ -2,7 +2,11 @@
 
 SparseCoderLab studies sparse transformer architectures and conditional memory for code and repository understanding. The current work compares dense and grouped Top-1 expert models, with and without hashed Ngram memory, on a frozen real-document corpus.
 
-## Latest comparison
+## Prompt-3 architecture study
+
+The four Prompt-3 candidates use a shared frozen seed-42 data and tokenizer setup. At the 100M-token gate, Sparse + 25M Ngram had the lowest held-out NLL, while Sparse + 10M Ngram had the strongest heuristic parseability/loop screen. Dense is the first candidate to complete the 250M gate (mixed NLL 2.483956); its same-gate comparison is still in progress. No architecture has been selected. See the [Prompt-3 milestone table](Documentation/54_prompt3_milestone_results.md) for the matched results and limitations.
+
+## Prompt-2 comparison (historical)
 
 At 100M training tokens, the three seed-42 models reached these held-out negative log-likelihoods (lower is better):
 

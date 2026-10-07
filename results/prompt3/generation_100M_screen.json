@@ -1,0 +1,12 @@
+{
+  "scope": "Internal heuristic generation screen at the 100M-token gate; not a functional coding benchmark.",
+  "parseability": "Prompt plus continuation passed the recorded Python parse check.",
+  "loop_detection": "The screen's repetition heuristic; not a human-rated degeneration score.",
+  "results": {
+    "dense75_ref": {"samples": 175, "parseable": 38, "parseable_rate": 0.2171, "loops": 114, "loop_rate": 0.6514, "mean_generation_tokens_per_second": 33.25},
+    "sparse75": {"samples": 175, "parseable": 34, "parseable_rate": 0.1943, "loops": 127, "loop_rate": 0.7257, "mean_generation_tokens_per_second": 23.47},
+    "sparse75_ngram10m": {"samples": 175, "parseable": 67, "parseable_rate": 0.3829, "loops": 104, "loop_rate": 0.5943, "mean_generation_tokens_per_second": 21.55},
+    "sparse75_ngram25m": {"samples": 175, "parseable": 40, "parseable_rate": 0.2286, "loops": 122, "loop_rate": 0.6971, "mean_generation_tokens_per_second": 20.91}
+  },
+  "reproducibility": "Exact prompts, decoding settings, and raw continuations are retained locally in the research workspace. The summary reports only aggregate heuristic counts."
+}

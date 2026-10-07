@@ -11,6 +11,9 @@ from verify_install import verify
 
 LEADERBOARD = ['model','seed','stored_params','active_params_est','tokens','training_flops_est','wall_time','tok_s','val_loss','code_val_loss','general_val_loss','mtp_acceptance','compaction_score','router_entropy','cache_hit_sim','bytes_per_token_sim','vram_peak']
 
+def read_jsonl_utf8(path: Path) -> list[dict]:
+    return [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines() if line]
+
 def seed_all(seed: int) -> None:
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed); torch.cuda.manual_seed_all(seed)
 
@@ -41,7 +44,7 @@ def validate(model: LanguageModel, cfg: dict) -> dict:
         x, y = stream.next(t['microbatch'], 'cuda')
         with amp(cfg): values.append(float(model(x, y)['lm_loss']))
     loss = sum(values) / len(values); result = {'val_loss': loss, 'bits_per_token': loss / math.log(2)}
-    docs = [json.loads(line) for line in (Path(cfg['data']['shards']) / 'val_documents.jsonl').read_text().splitlines()]
+    docs = read_jsonl_utf8(Path(cfg['data']['shards']) / 'val_documents.jsonl')
     for kind in ('code', 'general'):
         weighted = tokens = 0
         for doc in [d for d in docs if d['kind'] == kind][:t['eval_batches']]:
