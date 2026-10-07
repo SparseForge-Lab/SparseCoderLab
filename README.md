@@ -4,9 +4,9 @@ SparseCoderLab studies sparse transformer architectures and conditional memory f
 
 ## 75M model comparison
 
-I am comparing four versions of the same roughly 75M-parameter model: a dense model, a sparse model, and sparse models with 10M or 25M Ngram memory. They share the same seed-42 data and tokenizer. At 100M tokens, the 25M-memory version had the lowest validation loss. The 10M version produced more parseable code and fewer obvious loops in a quick generation check. Those samples were not run as functional tests.
+I compared a dense model, a sparse model, and sparse models with 10M or 25M Ngram memory. All four reached 100M tokens under the same data and tokenizer. The 25M-memory model had the lowest validation losses; a quick generation screen favored the 10M model on Python parseability and obvious repetition. That screen did not test whether generated code worked.
 
-The dense model is the first to reach 250M tokens, with a mixed validation loss of 2.483956. The other models are still running, so I have not picked a winner. The [full results and checkpoint history](Documentation/54_prompt3_milestone_results.md) include the limits of these measurements.
+I stopped the old training setup before a matched 250M comparison was complete. Dense reached 250M and Sparse reached 180.224M; the two Ngram models remained at 100M. These later checkpoints are exploratory, not a final ranking. The four 100M checkpoints are the common starting point for the next data phase. See the [results and checkpoint record](Documentation/54_prompt3_milestone_results.md).
 
 ## Earlier results
 

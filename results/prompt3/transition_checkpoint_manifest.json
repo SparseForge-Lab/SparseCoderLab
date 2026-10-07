@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-07T17:53:59.552045+00:00",
+  "purpose": "Freeze common 100M model-comparison weights as the transition point; retain later partial continuations as historical evidence.",
+  "canonical_rule": "Use only the 100M model_weights/full_resume_state listed here for the next real-data phase. Do not overwrite or promote later partial checkpoints into canonical starts.",
+  "canonical_transition_checkpoints": {
+    "dense75_ref": {
+      "status": "verified",
+      "canonical_transition_tokens": 100007936,
+      "stored_parameters": 54018560,
+      "active_parameters_estimate": 54018560,
+      "ngram_table_parameters": 0,
+      "config_fingerprint": "01810fd63376254179087ddf906dcc7a4f2613ad7cb3d6104c26501b09a6b6ec",
+      "data_manifest_sha256": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+      "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "config": {
+        "path": "configs/prompt3/dense75_ref.yaml",
+        "size_bytes": 1331,
+        "sha256": "9a0f395e2ad4b3e3c9a594529d9916fea4e5b63fc73ad5f41c823bf1f795c8d2"
+      },
+      "model_weights": {
+        "path": "experiments/prompt3_v1/dense75_ref/checkpoints/model_100M.pt",
+        "size_bytes": 216116547,
+        "sha256": "916eca1b47243493adcabe7d60131665ebb646b257be4c5feb1372729cfd7707"
+      },
+      "full_resume_state": {
+        "path": "experiments/prompt3_v1/dense75_ref/checkpoints/latest_verified_100M.pt",
+        "size_bytes": 648378155,
+        "sha256": "d0808bec5b28afce9c787627c0f9bf34bdb89affbd0781b97afd04fa7437b673"
+      },
+      "resume_state": {
+        "optimizer": true,
+        "scheduler": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true
+      },
+      "latest_rolling_checkpoint": {
+        "path": "experiments/prompt3_v1/dense75_ref/checkpoints/last.pt",
+        "size_bytes": 648378155,
+        "sha256": "5ea3f085c0a917662c6a3e06979e01886be58d69c9c27f8f32e417c7591905fb",
+        "tokens_seen": 250003456,
+        "step": 30518,
+        "classification": "historical-noncanonical"
+      }
+    },
+    "sparse75": {
+      "status": "verified",
+      "canonical_transition_tokens": 100007936,
+      "stored_parameters": 76063232,
+      "active_parameters_estimate": 54436352,
+      "ngram_table_parameters": 0,
+      "config_fingerprint": "dd4e28d89c4ac8ae9f8a32acbdc387d93e159a556d47badcbf206b2e6e999ecd",
+      "data_manifest_sha256": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+      "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "config": {
+        "path": "configs/prompt3/sparse75.yaml",
+        "size_bytes": 1400,
+        "sha256": "a85d9cf0a6adc7e46a472662851434d458bf06dda8196386ec87f96d9be647d8"
+      },
+      "model_weights": {
+        "path": "experiments/prompt3_v1/sparse75/checkpoints/model_100M.pt",
+        "size_bytes": 304334631,
+        "sha256": "368c1a6756f05809aaa0ebc47714132fdaf4f93a4170dd6ed5b7589a5b2170f0"
+      },
+      "full_resume_state": {
+        "path": "experiments/prompt3_v1/sparse75/checkpoints/latest_verified_100M.pt",
+        "size_bytes": 913038475,
+        "sha256": "f60575c13386cf9b646e31938511a316fe3e2794c3b1d709c6745abe82dbe38c"
+      },
+      "resume_state": {
+        "optimizer": true,
+        "scheduler": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true
+      },
+      "latest_rolling_checkpoint": {
+        "path": "experiments/prompt3_v1/sparse75/checkpoints/last.pt",
+        "size_bytes": 913040843,
+        "sha256": "384740cad8943350ce99beef9185b8e14e0702b932ebec36f27c8ace411fa860",
+        "tokens_seen": 180224000,
+        "step": 22000,
+        "classification": "historical-noncanonical"
+      }
+    },
+    "sparse75_ngram10m": {
+      "status": "verified",
+      "canonical_transition_tokens": 100007936,
+      "stored_parameters": 86565889,
+      "active_parameters_estimate": 54453281,
+      "ngram_table_parameters": 10485760,
+      "config_fingerprint": "67c209e7f560bd8d8881f7c4b01b925bc8140e97096c2edbf63e2292f7a927d4",
+      "data_manifest_sha256": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+      "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "config": {
+        "path": "configs/prompt3/sparse75_ngram10m.yaml",
+        "size_bytes": 1408,
+        "sha256": "90db666787fea6aa1793b9bbf47101f343bbcb0aecdd6b743bd2548e15b12f19"
+      },
+      "model_weights": {
+        "path": "experiments/prompt3_v1/sparse75_ngram10m/checkpoints/model_100M.pt",
+        "size_bytes": 346347694,
+        "sha256": "c9c00cb15a179abed2dacd40e48980cef9a6bad56fde4ba1560077fb996e6670"
+      },
+      "full_resume_state": {
+        "path": "experiments/prompt3_v1/sparse75_ngram10m/checkpoints/latest_verified_100M.pt",
+        "size_bytes": 1039078739,
+        "sha256": "d582d4d066685684a4d2fb2f543c7b3f81dba091d47c8e8a19b603155a38d787"
+      },
+      "resume_state": {
+        "optimizer": true,
+        "scheduler": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true
+      },
+      "latest_rolling_checkpoint": {
+        "path": "experiments/prompt3_v1/sparse75_ngram10m/checkpoints/last.pt",
+        "size_bytes": 1039078739,
+        "sha256": "d582d4d066685684a4d2fb2f543c7b3f81dba091d47c8e8a19b603155a38d787",
+        "tokens_seen": 100007936,
+        "step": 12208,
+        "classification": "canonical-100M"
+      }
+    },
+    "sparse75_ngram25m": {
+      "status": "verified",
+      "canonical_transition_tokens": 100007936,
+      "stored_parameters": 101245953,
+      "active_parameters_estimate": 54453281,
+      "ngram_table_parameters": 25165824,
+      "config_fingerprint": "152d30f77d95d6d84fd42434853b29421ca2c6cf145842b1cce8a77c9f8a23ce",
+      "data_manifest_sha256": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+      "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "config": {
+        "path": "configs/prompt3/sparse75_ngram25m.yaml",
+        "size_bytes": 1408,
+        "sha256": "649aa73f7e1ea07acf4fd9fda8d30e201efefa669cb9b1c08fb43dfc2c940a63"
+      },
+      "model_weights": {
+        "path": "experiments/prompt3_v1/sparse75_ngram25m/checkpoints/model_100M.pt",
+        "size_bytes": 405067950,
+        "sha256": "9d308f6c526499c731b1b465fdfe79a4cc2c519cd403dc1ea5bcbaa44061387d"
+      },
+      "full_resume_state": {
+        "path": "experiments/prompt3_v1/sparse75_ngram25m/checkpoints/latest_verified_100M.pt",
+        "size_bytes": 1215239507,
+        "sha256": "52f156b4b11cd371cdb1173c469e646d6d766901e54367f4906f9d49d365bade"
+      },
+      "resume_state": {
+        "optimizer": true,
+        "scheduler": true,
+        "python_rng": true,
+        "numpy_rng": true,
+        "torch_rng": true,
+        "cuda_rng": true
+      },
+      "latest_rolling_checkpoint": {
+        "path": "experiments/prompt3_v1/sparse75_ngram25m/checkpoints/last.pt",
+        "size_bytes": 1215239507,
+        "sha256": "52f156b4b11cd371cdb1173c469e646d6d766901e54367f4906f9d49d365bade",
+        "tokens_seen": 100007936,
+        "step": 12208,
+        "classification": "canonical-100M"
+      }
+    }
+  },
+  "historical_noncanonical_checkpoints": {
+    "dense75_ref": [
+      {
+        "path": "experiments/prompt3_v1/dense75_ref/checkpoints/latest_verified_250M.pt",
+        "size_bytes": 648378155,
+        "sha256": "5ea3f085c0a917662c6a3e06979e01886be58d69c9c27f8f32e417c7591905fb",
+        "tokens_seen": 250003456,
+        "step": 30518,
+        "config_fingerprint": "01810fd63376254179087ddf906dcc7a4f2613ad7cb3d6104c26501b09a6b6ec",
+        "classification": "historical-noncanonical",
+        "optimizer": true,
+        "scheduler": true,
+        "rng": true
+      },
+      {
+        "path": "experiments/prompt3_v1/dense75_ref/checkpoints/model_250M.pt",
+        "size_bytes": 216116547,
+        "sha256": "483ce2fef623b94ef8fd815b138ba65b4cd2e1be005dde4464168155f2f11cf2",
+        "tokens_seen": 250003456,
+        "step": null,
+        "config_fingerprint": "01810fd63376254179087ddf906dcc7a4f2613ad7cb3d6104c26501b09a6b6ec",
+        "classification": "historical-noncanonical",
+        "optimizer": false,
+        "scheduler": false,
+        "rng": false
+      },
+      {
+        "path": "experiments/prompt3_v1/dense75_ref/checkpoints/last.pt",
+        "size_bytes": 648378155,
+        "sha256": "5ea3f085c0a917662c6a3e06979e01886be58d69c9c27f8f32e417c7591905fb",
+        "tokens_seen": 250003456,
+        "step": 30518,
+        "config_fingerprint": "01810fd63376254179087ddf906dcc7a4f2613ad7cb3d6104c26501b09a6b6ec",
+        "classification": "historical-noncanonical",
+        "optimizer": true,
+        "scheduler": true,
+        "rng": true
+      }
+    ],
+    "sparse75": [
+      {
+        "path": "experiments/prompt3_v1/sparse75/checkpoints/last.pt",
+        "size_bytes": 913040843,
+        "sha256": "384740cad8943350ce99beef9185b8e14e0702b932ebec36f27c8ace411fa860",
+        "tokens_seen": 180224000,
+        "step": 22000,
+        "config_fingerprint": "dd4e28d89c4ac8ae9f8a32acbdc387d93e159a556d47badcbf206b2e6e999ecd",
+        "classification": "historical-noncanonical",
+        "optimizer": true,
+        "scheduler": true,
+        "rng": true
+      }
+    ]
+  },
+  "integrity": "Every listed state was loaded from CPU; canonical full/model-only weights loaded with strict=True into the matching configured model."
+}
