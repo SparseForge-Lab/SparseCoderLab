@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "dataset_version": "research_v2_repo_fim_smoke_2026_10_07_r3",
+  "sources": [
+    {
+      "id": "pallets/flask",
+      "revision": "d086db856be187255b8ec61ef409357393020f32",
+      "export_sha256": "1e78649a9b0ee04c97bb74ffcbbf444e1631692d09910356b65d6ae6d3e8bad9"
+    },
+    {
+      "id": "psf/requests",
+      "revision": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "export_sha256": "77614152c6080eebd1db77d5d435a494cc24877fe12c4f18377c04641b5b7208"
+    }
+  ],
+  "dedup": {
+    "format": "lexical5_minhash64_lsh16x4_v1",
+    "input_records": 308,
+    "retained_records": 303,
+    "counts": {
+      "lsh_candidate_pairs": 7,
+      "below_near_dedup_minimum": 56,
+      "exact_jaccard_comparisons": 5,
+      "exact_normalized": 5,
+      "cross_repository_removals": 1
+    },
+    "threshold": 0.85,
+    "minimum_shingles": 64,
+    "permutations": 64,
+    "bands": 16,
+    "rows_per_band": 4,
+    "declared_fork_families": [],
+    "family_mapping": {
+      "pallets/flask": "pallets/flask",
+      "psf/requests": "psf/requests"
+    },
+    "exhaustive_retained_pair_audit": true,
+    "audit_pairs_compared": 2190,
+    "estimated_lsh_candidate_probability_at_threshold": 0.9999925739907028,
+    "limitations": "Lexical 5-shingle similarity, not semantic equivalence. Small files receive exact dedup only. LSH may miss near pairs; exhaustive audit applies only when explicitly enabled. Fork families require reviewed declarations; file similarity is not proof of fork ancestry."
+  },
+  "removed_source_hashes": [
+    "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+    "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  ],
+  "fim": {
+    "target_eligible_fraction": 0.4,
+    "counts": {
+      "roundtrips": 303,
+      "eligible": 122,
+      "applied": 59
+    },
+    "by_split": {
+      "train": {
+        "documents": 89,
+        "eligible": 37,
+        "applied": 16,
+        "tokens": 164253
+      },
+      "val": {
+        "documents": 214,
+        "eligible": 85,
+        "applied": 43,
+        "tokens": 302981
+      }
+    },
+    "marker_token_ids": {
+      "<fim_prefix>": [
+        10
+      ],
+      "<fim_suffix>": [
+        11
+      ],
+      "<fim_middle>": [
+        12
+      ]
+    },
+    "policy": "Use existing frozen-tokenizer delimiters; no vocabulary additions."
+  },
+  "repository_families_by_split": {
+    "train": [
+      "psf/requests"
+    ],
+    "val": [
+      "pallets/flask"
+    ]
+  },
+  "tokens": {
+    "train": 164253,
+    "val": 302981
+  },
+  "stream_resume": {
+    "train": {
+      "saved_cursor": 2,
+      "next_batch_exact": true,
+      "context": 1024,
+      "batch": 2
+    },
+    "val": {
+      "saved_cursor": 2,
+      "next_batch_exact": true,
+      "context": 1024,
+      "batch": 2
+    }
+  },
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "manifest_sha256": "0ed20bfe97045287101ea45b0125550166766c2236985ed7b22e173030b1e73f",
+  "script_sha256": "c7ac94dc6a76a4343faeffbfbb53e09b6249a3f131a777dc6b58ab73c71ecab1",
+  "scope": "CPU-only two-repository preprocessing/stream fixture. No model optimizer resume, checkpoint test, functional evaluation or training readiness certification."
+}

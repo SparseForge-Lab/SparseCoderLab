@@ -17,15 +17,18 @@ def test_repo_export_records_stable_revision_and_filters_secrets(tmp_path):
     repo.mkdir()
     (repo / 'LICENSE').write_text('MIT License\n', encoding='utf-8')
     (repo / 'app.py').write_text('def answer():\n    return 42\n', encoding='utf-8')
-    (repo / 'README.md').write_text('# Example\nRun the test suite.\n', encoding='utf-8')
+    (repo / 'README.md').write_text('# Example\nRun the test suite. Unicode separators: \u2028 and \u2029.\n', encoding='utf-8')
     (repo / 'Makefile').write_text('test:\n\tpython -m pytest\n', encoding='utf-8')
     (repo / 'tests').mkdir()
     (repo / 'tests' / 'test_app.py').write_text('def test_answer():\n    assert 42 == 42\n', encoding='utf-8')
     (repo / 'credentials.py').write_text('API_KEY = "this_is_a_fake_secret_value_123"\n', encoding='utf-8')
+    (repo / 'apache.py').write_text('# SPDX-License-Identifier: Apache-2.0\nprint(1)\n', encoding='utf-8')
+    (repo / 'held.py').write_text('# SPDX-License-Identifier: GPL-3.0-only\nprint(2)\n', encoding='utf-8')
+    (repo / 'AGENTS.md').write_text('Private automation notes\n', encoding='utf-8')
     subprocess.run(['git', 'init', '-q', str(repo)], check=True)
     subprocess.run(['git', '-C', str(repo), 'config', 'user.email', 'test@example.invalid'], check=True)
     subprocess.run(['git', '-C', str(repo), 'config', 'user.name', 'Test'], check=True)
-    subprocess.run(['git', '-C', str(repo), 'add', 'LICENSE', 'app.py', 'credentials.py', 'README.md', 'Makefile', 'tests'], check=True)
+    subprocess.run(['git', '-C', str(repo), 'add', 'LICENSE', 'app.py', 'credentials.py', 'README.md', 'Makefile', 'tests', 'apache.py', 'held.py', 'AGENTS.md'], check=True)
     subprocess.run(['git', '-C', str(repo), 'commit', '-qm', 'fixture'], check=True)
     revision = subprocess.check_output(['git', '-C', str(repo), 'rev-parse', 'HEAD'], text=True).strip()
     output = tmp_path / 'records.jsonl'
@@ -34,7 +37,8 @@ def test_repo_export_records_stable_revision_and_filters_secrets(tmp_path):
         '--source-url', 'https://github.com/example/project', '--license', 'MIT', '--output', str(output),
     ], check=True, capture_output=True, text=True)
 
-    rows = [json.loads(line) for line in output.read_text(encoding='utf-8').splitlines()]
+    with output.open(encoding='utf-8') as handle:
+        rows = [json.loads(line) for line in handle]
     record = next(row for row in rows if row['file_path'] == 'app.py')
     manifest = json.loads(output.with_suffix('.jsonl.manifest.json').read_text(encoding='utf-8'))
     quarantine = output.with_suffix('.jsonl.quarantine.jsonl').read_text(encoding='utf-8')
@@ -48,6 +52,9 @@ def test_repo_export_records_stable_revision_and_filters_secrets(tmp_path):
     assert roles['README.md'] == 'documentation'
     assert roles['Makefile'] == 'build'
     assert roles['tests/test_app.py'] == 'test'
+    assert next(row for row in rows if row['file_path'] == 'apache.py')['license'] == 'Apache-2.0'
+    assert 'held.py' not in roles and 'AGENTS.md' not in roles
+    assert manifest['filtered_counts']['unreviewed_spdx_expression'] == 1
     assert str(repo) not in json.dumps(record)
     assert manifest['revision'] == revision
     assert manifest['filtered_counts']['secret_quarantined'] == 1
@@ -86,7 +93,9 @@ def test_packing_retains_repository_provenance_and_isolates_splits(tmp_path, mon
             docs.append({'text': text, 'source': f'example/repo{repo}', 'repository': f'example/repo{repo}',
                          'revision': 'a' * 40, 'file_path': f'src/file{file}.py',
                          'raw_sha256': hashlib.sha256(text.encode()).hexdigest(),
-                         'license': 'MIT', 'language': 'Python', 'kind': 'code', 'role': 'implementation'})
+                         'license': 'MIT', 'language': 'Python', 'kind': 'code', 'role': 'implementation',
+                         'repository_family': 'example/shared-family' if repo < 2 else f'example/repo{repo}',
+                         'fim': {'applied': file == 1, 'eligible': True}})
     duplicate = dict(docs[0], repository='example/duplicate', source='example/duplicate')
     duplicate['text'] = '<repo>different metadata\n' + duplicate['text']
     docs.append(duplicate)
@@ -99,14 +108,18 @@ def test_packing_retains_repository_provenance_and_isolates_splits(tmp_path, mon
     }}
     report = prepare(cfg, input_path)
     groups = {}
+    family_groups = {}
     total_docs = 0
     for split in ('train', 'val'):
         rows = [json.loads(line) for line in Path(f'data/shards/{split}_documents.jsonl').read_text().splitlines()]
         groups[split] = {row['repository'] for row in rows}
+        family_groups[split] = {row['repository_family'] for row in rows}
+        assert all('fim' in row for row in rows)
         assert sum(row['length'] for row in rows) == report['tokens'][split]
         assert all(row['revision'] == 'a' * 40 and row['file_path'].startswith('src/') for row in rows)
         total_docs += len(rows)
     assert groups['train'] and groups['val'] and groups['train'].isdisjoint(groups['val'])
+    assert family_groups['train'].isdisjoint(family_groups['val'])
     assert total_docs == 40
     assert report['rejected']['exact_or_normalized_duplicate'] == 1
     assert report['dataset_version'] == 'research_v2_smoke'

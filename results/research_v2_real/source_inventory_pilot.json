@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "source_id": "bats-core/bats-core",
+      "source_url": "https://github.com/bats-core/bats-core",
+      "revision": "8c8ec0b1d552f279853b76b9d80b3b6fcb1d7a4d",
+      "license_assertion": "MIT",
+      "license_file_sha256": "55074b2b3b87809105034e1468e59076554d76a80c67bcc592000cc3d929852d",
+      "included_files": 323,
+      "output_bytes": 789797,
+      "filtered_counts": {
+        "generated_header": 1,
+        "included": 323,
+        "symlink_or_submodule": 10,
+        "unsupported_extension": 48
+      },
+      "file_inventory_sha256": "d089b16ae96f52e521424f8351962d6fa8567a17026af9134d0770fd98952302",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE.md",
+      "language_file_counts": {
+        "Dockerfile": 2,
+        "JSON/YAML": 13,
+        "Markdown": 16,
+        "Bash": 277,
+        "Makefile": 2,
+        "Python": 2,
+        "reStructuredText": 10,
+        "Text": 1
+      },
+      "role_file_counts": {
+        "build": 5,
+        "configuration": 12,
+        "documentation": 27,
+        "implementation": 18,
+        "test": 261
+      },
+      "export_sha256": "f264857ca691f9f2a4348d9d80bb422e974788cea4d0762b91aedfa50c3240a5",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "spf13/cobra",
+      "source_url": "https://github.com/spf13/cobra",
+      "revision": "adbc8813901bba65827259daa8e22ff94ec1f30e",
+      "license_assertion": "Apache-2.0",
+      "license_file_sha256": "5e3400b93bbb099e83e52bab885e7441750673c21f97988ca3f1240639b63283",
+      "included_files": 58,
+      "output_bytes": 721400,
+      "filtered_counts": {
+        "generated_header": 2,
+        "included": 58,
+        "unsupported_extension": 6
+      },
+      "file_inventory_sha256": "1590ca9ccd395d6671a4c71512a0e69464413b3f6c9ada1193679d7d26300a15",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE.txt",
+      "language_file_counts": {
+        "JSON/YAML": 5,
+        "Markdown": 16,
+        "Text": 1,
+        "Makefile": 1,
+        "Go": 35
+      },
+      "role_file_counts": {
+        "configuration": 5,
+        "documentation": 17,
+        "build": 1,
+        "implementation": 18,
+        "test": 17
+      },
+      "export_sha256": "4b3b9a8561745f82b131407d9da7d1204a561c96ca6fc27f2819b98ff9133803",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "DapperLib/Dapper",
+      "source_url": "https://github.com/DapperLib/Dapper",
+      "revision": "eb47546a408bbf6c178bda4f04dc205bc51ffbfe",
+      "license_assertion": "Apache-2.0",
+      "license_file_sha256": "9148ebecf47ce49421b0adc69192384b0619bcdc22c67b8bb30d26882b8a7db9",
+      "included_files": 189,
+      "output_bytes": 1489375,
+      "filtered_counts": {
+        "generated_header": 2,
+        "included": 189,
+        "unsupported_extension": 39
+      },
+      "file_inventory_sha256": "bdd5567e89b4900b22f1955a926a0ac867306e778db3b77ce8f3725cfd38abc6",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "License.txt",
+      "language_file_counts": {
+        "JSON/YAML": 10,
+        "Markdown": 8,
+        "C#": 155,
+        "Text": 15,
+        "HTML/CSS": 1
+      },
+      "role_file_counts": {
+        "configuration": 8,
+        "documentation": 23,
+        "implementation": 102,
+        "test": 56
+      },
+      "export_sha256": "54404f02b7ea1874a1507e25be97d84dd5fb9aa2c6dbe8e5d3e5f2c72d852c72",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "expressjs/express",
+      "source_url": "https://github.com/expressjs/express",
+      "revision": "9efc29e280018dafc1f0617f3a3d28f4e463b7be",
+      "license_assertion": "MIT",
+      "license_file_sha256": "95a5762890e5c1c9808921cef095661fc482c5e1f0bba31446ac85595df6237c",
+      "included_files": 171,
+      "output_bytes": 858260,
+      "filtered_counts": {
+        "included": 171,
+        "secret_quarantined": 5,
+        "unsupported_extension": 38
+      },
+      "file_inventory_sha256": "cea04fa5476710e9c1c852b1d2a07cef3349d6982193d5ea5f061668fe21f834",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE",
+      "language_file_counts": {
+        "JSON/YAML": 8,
+        "Markdown": 4,
+        "JavaScript": 136,
+        "Text": 11,
+        "HTML/CSS": 12
+      },
+      "role_file_counts": {
+        "configuration": 7,
+        "documentation": 15,
+        "implementation": 53,
+        "build": 1,
+        "test": 95
+      },
+      "export_sha256": "be2bf6df26396ec0baf0a81f03d5ecf9949bd151f8a18d0e6603b78715a5f356",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "pallets/flask",
+      "source_url": "https://github.com/pallets/flask",
+      "revision": "d086db856be187255b8ec61ef409357393020f32",
+      "license_assertion": "BSD-3-Clause",
+      "license_file_sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+      "included_files": 218,
+      "output_bytes": 1350825,
+      "filtered_counts": {
+        "generated_header": 1,
+        "included": 218,
+        "unsupported_extension": 17
+      },
+      "file_inventory_sha256": "e81972dc39e94b5d8a4de8198c5f6eaf5dbf5e8900bf38638279c60d047fafa5",
+      "exporter_sha256": "2bdef7ad4ca27e38f52334e4d399799521889ced64d7a929c8cd3016cf51881a",
+      "license_file": null,
+      "language_file_counts": {
+        "JSON/YAML": 10,
+        "Bash": 1,
+        "Markdown": 6,
+        "reStructuredText": 79,
+        "Text": 9,
+        "Makefile": 1,
+        "Python": 83,
+        "TOML": 5,
+        "HTML/CSS": 22,
+        "SQL": 2
+      },
+      "role_file_counts": {
+        "configuration": 9,
+        "implementation": 49,
+        "documentation": 94,
+        "build": 5,
+        "test": 61
+      },
+      "export_sha256": "1e78649a9b0ee04c97bb74ffcbbf444e1631692d09910356b65d6ae6d3e8bad9",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "fmtlib/fmt",
+      "source_url": "https://github.com/fmtlib/fmt",
+      "revision": "c4927e6086c2aa5bae0f5c2bce791c369c055197",
+      "license_assertion": "MIT",
+      "license_file_sha256": "a65fcc5a1095fc33cc37e4fff69366e49d7e92f613558a2b95ed1b70e33758b4",
+      "included_files": 117,
+      "output_bytes": 3250205,
+      "filtered_counts": {
+        "generated_header": 1,
+        "included": 117,
+        "unsupported_extension": 27
+      },
+      "file_inventory_sha256": "cb8811f59a8826dfbe88e2119849cb212c18ce63c02399511ede8642221b9993",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE",
+      "language_file_counts": {
+        "JSON/YAML": 11,
+        "Markdown": 12,
+        "CMake": 11,
+        "HTML/CSS": 1,
+        "JavaScript": 1,
+        "C++": 73,
+        "Text": 2,
+        "Python": 4,
+        "C": 1,
+        "Bash": 1
+      },
+      "role_file_counts": {
+        "configuration": 11,
+        "documentation": 23,
+        "implementation": 28,
+        "test": 55
+      },
+      "export_sha256": "98f96520cb98c426880ba0c035517de65628f10789bbb1ec2b806e2788dd8214",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "google/gson",
+      "source_url": "https://github.com/google/gson",
+      "revision": "845664ba1c307e6c1910d07cfed2f622e0ad8df1",
+      "license_assertion": "Apache-2.0",
+      "license_file_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "included_files": 288,
+      "output_bytes": 2480411,
+      "filtered_counts": {
+        "generated_header": 1,
+        "included": 288,
+        "unsupported_extension": 24
+      },
+      "file_inventory_sha256": "d926cdbb121b24f1903169b03c7a6bda2ae77424b9a861ac6492bf473ab2660f",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE",
+      "language_file_counts": {
+        "Markdown": 16,
+        "JSON/YAML": 8,
+        "Java": 264
+      },
+      "role_file_counts": {
+        "documentation": 16,
+        "configuration": 7,
+        "implementation": 122,
+        "test": 143
+      },
+      "export_sha256": "5a78b7eb21435d0f3deec074bd2d153f63e3763b79fc43ed9bb275e09819d3b9",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "benhoyt/inih",
+      "source_url": "https://github.com/benhoyt/inih",
+      "revision": "2bbdec4a366c8c39746ee0982e7ca0febbb044b6",
+      "license_assertion": "BSD-3-Clause",
+      "license_file_sha256": "9ae3b39e83e9158e44b67733baa3bb2d84e80efdcfb14a5820210a42c7abdf7f",
+      "included_files": 40,
+      "output_bytes": 113620,
+      "filtered_counts": {
+        "included": 40,
+        "unsupported_extension": 21
+      },
+      "file_inventory_sha256": "03fdebb3e58d007af5f1bad286bd4fb16add235cf851504888d3b161ef316a4b",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE.txt",
+      "language_file_counts": {
+        "JSON/YAML": 2,
+        "Text": 19,
+        "Markdown": 1,
+        "C++": 3,
+        "C": 10,
+        "Bash": 5
+      },
+      "role_file_counts": {
+        "configuration": 2,
+        "documentation": 20,
+        "implementation": 13,
+        "test": 5
+      },
+      "export_sha256": "62ef4241d2e95fab40cc16627057fe4a3c1e91feb0e2027cbde766a963d43bc0",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "necolas/normalize.css",
+      "source_url": "https://github.com/necolas/normalize.css",
+      "revision": "fc091cce1534909334c1911709a39c22d406977b",
+      "license_assertion": "MIT",
+      "license_file_sha256": "89a9a9ace8be9e79bdc962823479bf980e4a14777ebe51b37e669f658e6f25ef",
+      "included_files": 9,
+      "output_bytes": 46535,
+      "filtered_counts": {
+        "included": 9,
+        "unsupported_extension": 3
+      },
+      "file_inventory_sha256": "e0d63b5459c382d24d83ecb06a7bb30f85eedcbdbe08e8750a6dd413c6619f44",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE.md",
+      "language_file_counts": {
+        "JSON/YAML": 3,
+        "Markdown": 4,
+        "HTML/CSS": 2
+      },
+      "role_file_counts": {
+        "configuration": 2,
+        "documentation": 4,
+        "implementation": 2,
+        "build": 1
+      },
+      "export_sha256": "870ca3c53615167e04481b712b991c1360fc2aabebae38a703219a8bc32ae31a",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "psf/requests",
+      "source_url": "https://github.com/psf/requests",
+      "revision": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "license_assertion": "Apache-2.0",
+      "license_file_sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "included_files": 90,
+      "output_bytes": 696848,
+      "filtered_counts": {
+        "generated_header": 1,
+        "included": 90,
+        "symlink_or_submodule": 2,
+        "unsupported_extension": 37
+      },
+      "file_inventory_sha256": "3056b323a96a190f2a3a28c21f6e414f571d81140c7c057cee668d0edbe8b689",
+      "exporter_sha256": "2bdef7ad4ca27e38f52334e4d399799521889ced64d7a929c8cd3016cf51881a",
+      "license_file": null,
+      "language_file_counts": {
+        "Markdown": 13,
+        "JSON/YAML": 12,
+        "reStructuredText": 16,
+        "Makefile": 8,
+        "HTML/CSS": 2,
+        "Python": 36,
+        "Text": 2,
+        "TOML": 1
+      },
+      "role_file_counts": {
+        "documentation": 31,
+        "configuration": 12,
+        "build": 3,
+        "implementation": 23,
+        "test": 21
+      },
+      "export_sha256": "77614152c6080eebd1db77d5d435a494cc24877fe12c4f18377c04641b5b7208",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "serde-rs/serde",
+      "source_url": "https://github.com/serde-rs/serde",
+      "revision": "6693a89cca77e0151437da1c7f890090b9ebf04c",
+      "license_assertion": "MIT",
+      "license_file_sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "included_files": 225,
+      "output_bytes": 1497033,
+      "filtered_counts": {
+        "included": 225,
+        "symlink_or_submodule": 14,
+        "unsupported_extension": 122
+      },
+      "file_inventory_sha256": "e15a81eb11f507cb8a9df303e77d368a34fce3f8d6f79b86a737c174fe628901",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE-MIT",
+      "language_file_counts": {
+        "JSON/YAML": 2,
+        "Markdown": 8,
+        "TOML": 7,
+        "Rust": 208
+      },
+      "role_file_counts": {
+        "configuration": 2,
+        "documentation": 8,
+        "build": 7,
+        "implementation": 58,
+        "test": 150
+      },
+      "export_sha256": "08c2a0df38eb7a7c352d7af0a30aa5ef020bffe5cc0c1556f543794f7f4104ac",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "sqlfluff/sqlfluff",
+      "source_url": "https://github.com/sqlfluff/sqlfluff",
+      "revision": "67f23c9a1c5fbaf72583cf903102336bfc2b6bc2",
+      "license_assertion": "MIT",
+      "license_file_sha256": "22dce2dc3663d299ccc2606289647982d757e6157393081e59736a9db335c77f",
+      "included_files": 3574,
+      "output_bytes": 14440743,
+      "filtered_counts": {
+        "generated_header": 2339,
+        "included": 3574,
+        "reviewed_exclusion": 5,
+        "secret_quarantined": 7,
+        "unsupported_extension": 132
+      },
+      "file_inventory_sha256": "ebd58ff7fea9b241275874ffb1eac045f0d8866bf8a4202fba749cc6abf9c11b",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE.md",
+      "language_file_counts": {
+        "JSON/YAML": 253,
+        "Markdown": 65,
+        "Dockerfile": 2,
+        "Makefile": 1,
+        "Text": 12,
+        "TypeScript": 3,
+        "HTML/CSS": 2,
+        "Python": 473,
+        "JavaScript": 1,
+        "TOML": 18,
+        "SQL": 2657,
+        "Rust": 87
+      },
+      "role_file_counts": {
+        "configuration": 31,
+        "documentation": 77,
+        "build": 17,
+        "implementation": 378,
+        "test": 3071
+      },
+      "export_sha256": "50dbfa07b1d4294cc080e5e6bdd7a0d4ab38a1ec2fa1cd45cb5cb5006d21dc8e",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    },
+    {
+      "source_id": "colinhacks/zod",
+      "source_url": "https://github.com/colinhacks/zod",
+      "revision": "0b216ef674e297ebe41d8bf902262e56f8755822",
+      "license_assertion": "MIT",
+      "license_file_sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
+      "included_files": 593,
+      "output_bytes": 5108828,
+      "filtered_counts": {
+        "filtered_path": 4,
+        "generated_header": 1,
+        "included": 593,
+        "reviewed_exclusion": 1,
+        "symlink_or_submodule": 4,
+        "unsupported_extension": 139
+      },
+      "file_inventory_sha256": "38e8ba6cfec36211ed3302dd217fb015687b70234338f99d2b1de2adf1544da0",
+      "exporter_sha256": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+      "license_file": "LICENSE",
+      "language_file_counts": {
+        "JavaScript": 2,
+        "JSON/YAML": 51,
+        "Bash": 2,
+        "Markdown": 21,
+        "TypeScript": 511,
+        "HTML/CSS": 4,
+        "Text": 2
+      },
+      "role_file_counts": {
+        "implementation": 320,
+        "configuration": 42,
+        "documentation": 23,
+        "build": 9,
+        "test": 199
+      },
+      "export_sha256": "7e6f98649a850356703fbba4c388cc8dfd3f869c2a41f99187a2e94933eae072",
+      "status": "pinned_preprocessing_pilot",
+      "licensing_review": "Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit."
+    }
+  ],
+  "repositories": 13,
+  "files_before_global_dedup": 5895,
+  "export_bytes": 32843880,
+  "language_file_counts": {
+    "Bash": 286,
+    "C": 11,
+    "C#": 155,
+    "C++": 76,
+    "CMake": 11,
+    "Dockerfile": 4,
+    "Go": 35,
+    "HTML/CSS": 46,
+    "JSON/YAML": 388,
+    "Java": 264,
+    "JavaScript": 140,
+    "Makefile": 13,
+    "Markdown": 190,
+    "Python": 598,
+    "Rust": 295,
+    "SQL": 2659,
+    "TOML": 31,
+    "Text": 74,
+    "TypeScript": 514,
+    "reStructuredText": 105
+  },
+  "role_file_counts": {
+    "build": 49,
+    "configuration": 150,
+    "documentation": 378,
+    "implementation": 1184,
+    "test": 4134
+  },
+  "filter_counts": {
+    "filtered_path": 4,
+    "generated_header": 2349,
+    "included": 5895,
+    "reviewed_exclusion": 6,
+    "secret_quarantined": 12,
+    "symlink_or_submodule": 30,
+    "unsupported_extension": 653
+  },
+  "source_payloads_public": false,
+  "readiness": "Inventory pilot only; mixture, full licensing/fork/contamination review and training preflight remain open."
+}

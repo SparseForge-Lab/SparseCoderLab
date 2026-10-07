@@ -1,0 +1,397 @@
+{
+  "dataset_version": "research_v2_repository_pilot_multilang_2026_10_07_r5",
+  "tokens": {
+    "train": 7151137,
+    "val": 595542
+  },
+  "document_stats": {
+    "val/context/JSON/YAML": 17,
+    "val/technical/Markdown": 14,
+    "val/code/C#": 155,
+    "val/technical/Text": 14,
+    "val/code/HTML/CSS": 23,
+    "val/code/JSON/YAML": 3,
+    "train/context/Dockerfile": 4,
+    "train/context/JSON/YAML": 143,
+    "train/technical/Markdown": 171,
+    "train/code/Bash": 258,
+    "train/context/Makefile": 6,
+    "train/code/Python": 509,
+    "train/technical/reStructuredText": 26,
+    "train/technical/Text": 37,
+    "train/code/C++": 76,
+    "train/code/C": 11,
+    "train/code/JavaScript": 140,
+    "train/code/TypeScript": 509,
+    "train/code/HTML/CSS": 23,
+    "train/technical/CMake": 9,
+    "train/code/CMake": 2,
+    "train/code/Java": 264,
+    "train/code/JSON/YAML": 193,
+    "val/code/Bash": 1,
+    "val/technical/reStructuredText": 79,
+    "val/code/Python": 80,
+    "val/context/TOML": 4,
+    "val/code/SQL": 2,
+    "val/code/TOML": 1,
+    "train/context/TOML": 22,
+    "train/code/Makefile": 6,
+    "train/code/Rust": 292,
+    "train/code/Go": 34,
+    "train/code/SQL": 2394,
+    "train/code/TOML": 4
+  },
+  "reservoir_document_stats": {
+    "val/context/JSON/YAML": 17,
+    "val/technical/Markdown": 14,
+    "val/code/C#": 155,
+    "val/technical/Text": 14,
+    "val/code/HTML/CSS": 23,
+    "val/code/JSON/YAML": 3,
+    "train/context/Dockerfile": 4,
+    "train/context/JSON/YAML": 143,
+    "train/technical/Markdown": 171,
+    "train/code/Bash": 258,
+    "train/context/Makefile": 6,
+    "train/code/Python": 509,
+    "train/technical/reStructuredText": 26,
+    "train/technical/Text": 37,
+    "train/code/C++": 76,
+    "train/code/C": 11,
+    "train/code/JavaScript": 140,
+    "train/code/TypeScript": 509,
+    "train/code/HTML/CSS": 23,
+    "train/technical/CMake": 9,
+    "train/code/CMake": 2,
+    "train/code/Java": 264,
+    "train/code/JSON/YAML": 193,
+    "val/code/Bash": 1,
+    "val/technical/reStructuredText": 79,
+    "val/code/Python": 80,
+    "val/context/TOML": 4,
+    "val/code/SQL": 2,
+    "val/code/TOML": 1,
+    "train/context/TOML": 22,
+    "train/code/Makefile": 6,
+    "train/code/Rust": 292,
+    "train/code/Go": 34,
+    "train/code/SQL": 2394,
+    "train/code/TOML": 4
+  },
+  "rejected": {},
+  "token_mixture": {
+    "val/context": 10684,
+    "val/technical": 168627,
+    "val/code": 416231,
+    "train/context": 384422,
+    "train/technical": 866313,
+    "train/code": 5900402
+  },
+  "sources": {
+    "DapperLib/Dapper/Apache-2.0": 181,
+    "bats-core/bats-core/MIT": 296,
+    "benhoyt/inih/BSD-3-Clause": 33,
+    "colinhacks/zod/MIT": 585,
+    "expressjs/express/MIT": 169,
+    "fmtlib/fmt/MIT": 117,
+    "google/gson/Apache-2.0": 288,
+    "necolas/normalize.css/MIT": 9,
+    "pallets/flask/BSD-3-Clause": 212,
+    "psf/requests/Apache-2.0": 89,
+    "serde-rs/serde/MIT": 223,
+    "spf13/cobra/Apache-2.0": 57,
+    "sqlfluff/sqlfluff/MIT": 3267
+  },
+  "source_revisions": {
+    "DapperLib/Dapper": [
+      "eb47546a408bbf6c178bda4f04dc205bc51ffbfe"
+    ],
+    "bats-core/bats-core": [
+      "8c8ec0b1d552f279853b76b9d80b3b6fcb1d7a4d"
+    ],
+    "benhoyt/inih": [
+      "2bbdec4a366c8c39746ee0982e7ca0febbb044b6"
+    ],
+    "colinhacks/zod": [
+      "0b216ef674e297ebe41d8bf902262e56f8755822"
+    ],
+    "expressjs/express": [
+      "9efc29e280018dafc1f0617f3a3d28f4e463b7be"
+    ],
+    "fmtlib/fmt": [
+      "c4927e6086c2aa5bae0f5c2bce791c369c055197"
+    ],
+    "google/gson": [
+      "845664ba1c307e6c1910d07cfed2f622e0ad8df1"
+    ],
+    "necolas/normalize.css": [
+      "fc091cce1534909334c1911709a39c22d406977b"
+    ],
+    "pallets/flask": [
+      "d086db856be187255b8ec61ef409357393020f32"
+    ],
+    "psf/requests": [
+      "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60"
+    ],
+    "serde-rs/serde": [
+      "6693a89cca77e0151437da1c7f890090b9ebf04c"
+    ],
+    "spf13/cobra": [
+      "adbc8813901bba65827259daa8e22ff94ec1f30e"
+    ],
+    "sqlfluff/sqlfluff": [
+      "67f23c9a1c5fbaf72583cf903102336bfc2b6bc2"
+    ]
+  },
+  "repositories_by_split": {
+    "val": [
+      "DapperLib/Dapper",
+      "pallets/flask"
+    ],
+    "train": [
+      "bats-core/bats-core",
+      "benhoyt/inih",
+      "colinhacks/zod",
+      "expressjs/express",
+      "fmtlib/fmt",
+      "google/gson",
+      "necolas/normalize.css",
+      "psf/requests",
+      "serde-rs/serde",
+      "spf13/cobra",
+      "sqlfluff/sqlfluff"
+    ]
+  },
+  "language_tokens_by_split": {
+    "val/JSON/YAML": 7850,
+    "val/Markdown": 17727,
+    "val/C#": 255890,
+    "val/Text": 16339,
+    "val/HTML/CSS": 4513,
+    "train/Dockerfile": 1706,
+    "train/JSON/YAML": 609714,
+    "train/Markdown": 782416,
+    "train/Bash": 126470,
+    "train/Makefile": 4238,
+    "train/Python": 1619902,
+    "train/reStructuredText": 40881,
+    "train/Text": 28856,
+    "train/C++": 771919,
+    "train/C": 10641,
+    "train/JavaScript": 157461,
+    "train/TypeScript": 1130682,
+    "train/HTML/CSS": 19501,
+    "train/CMake": 14560,
+    "train/Java": 518578,
+    "val/Bash": 78,
+    "val/reStructuredText": 134561,
+    "val/Python": 155064,
+    "val/TOML": 3160,
+    "val/SQL": 360,
+    "train/TOML": 12466,
+    "train/Rust": 591418,
+    "train/Go": 159848,
+    "train/SQL": 549880
+  },
+  "license_document_counts": {
+    "Apache-2.0": 615,
+    "MIT": 4666,
+    "BSD-3-Clause": 245
+  },
+  "processing_script_sha256": "0d97911b392f91769c8eb450860722b9ff9d1f0aa9e97525abc16ead8162d448",
+  "split_helper_sha256": "55616e5a584eaf6b75eb98a3a0031043fae356d9ff3d3a2d217318aa42db85c2",
+  "input_sha256": "d7d8f36b1b80ec6aebb60b525496a809ba9d5ddac73ce60b5376dedb8930a9d4",
+  "split_policy": "Declared repository-family group hash, falling back to repository hash; otherwise legacy document-content hash. Global exact/normalized content deduplication precedes splitting.",
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "seed": 42,
+  "data_config": {
+    "tokenizer": "data/research_v1/tokenizer.json",
+    "shards": "data/research_v2_real/shards/pilot_r5",
+    "manifest": "results/research_v2_real/corpus_multilang_pilot_manifest_v5.json",
+    "cache_gb": 0.25,
+    "project_gb": 45,
+    "seed": 42,
+    "eval_fraction": 0.1,
+    "mixture": {
+      "code": 0.55,
+      "general": 0.3,
+      "technical": 0.1,
+      "context": 0.05
+    },
+    "dev_documents": 16000,
+    "shard_tokens": 262144,
+    "max_tokens": 50000000,
+    "dataset_version": "research_v2_repository_pilot_multilang_2026_10_07_r5",
+    "tokenizer_report": "results/research_v2_real/tokenizer_quality_multilang_pilot_v5.json",
+    "cache": "data/research_v2_real/cache/pilot_r5"
+  },
+  "synthetic_only": false,
+  "cache_bytes": 35141137,
+  "shard_sha256": {
+    "train": "63a3f1dd7d3ffc1d092fddfe06be685ff1d724b3757123cf270b6382c1ba8781",
+    "val": "89e4b6580be0be46d81a2de26f019480150fd8e6d63624929d08dd3134ad9b26"
+  },
+  "packing": "Fixed offsets, EOS/doc separators; causal attention crosses document boundaries within a split.",
+  "quality_scope": "Explicitly supplied licensed corpus",
+  "physical_shards": {
+    "train": [
+      {
+        "path": "train-00000.bin",
+        "tokens": 262144,
+        "sha256": "96fe65d61ed9d825181b4fb6c66d1de6348e5b73dc6e768a89e12955c4c2c641"
+      },
+      {
+        "path": "train-00001.bin",
+        "tokens": 262144,
+        "sha256": "5c2cec626f332bc6f7baa8e2210512dfb5e1b831210bdddf3f0098b4d85dbe15"
+      },
+      {
+        "path": "train-00002.bin",
+        "tokens": 262144,
+        "sha256": "99794e5c7ec7c6e02a1b14385a41a54acda3fdfe01e540ba9a43755ddcdc1e06"
+      },
+      {
+        "path": "train-00003.bin",
+        "tokens": 262144,
+        "sha256": "5b04f40edd7c28d7a4e4429515a3467ebcc52e9be425aa572dc55fd8175614d5"
+      },
+      {
+        "path": "train-00004.bin",
+        "tokens": 262144,
+        "sha256": "7bae850ae8ac253649f89a63cb57664a8446465ade32cd68d72eaaacf40df544"
+      },
+      {
+        "path": "train-00005.bin",
+        "tokens": 262144,
+        "sha256": "475ae8e679ee888edb0cf25a99b10967463c097495ed652a91764e7f798540b3"
+      },
+      {
+        "path": "train-00006.bin",
+        "tokens": 262144,
+        "sha256": "587017ae02f9cd3f5d56bd5bb54509b1d16a21432e251ab531a53673cfac8c22"
+      },
+      {
+        "path": "train-00007.bin",
+        "tokens": 262144,
+        "sha256": "af7e565d0d358b0636cf70bc828992c91539c1df319ae00979a591daeb56516a"
+      },
+      {
+        "path": "train-00008.bin",
+        "tokens": 262144,
+        "sha256": "7d7217862d246e2187011ae73c0ff795187af267ea8b82104c8faa12b7474318"
+      },
+      {
+        "path": "train-00009.bin",
+        "tokens": 262144,
+        "sha256": "6f8ef693a36253396691535c1d737ea88ed7ee9d58d39b077c0a745dca5885f1"
+      },
+      {
+        "path": "train-00010.bin",
+        "tokens": 262144,
+        "sha256": "1bf1dc4743256cb678ebb64b0bcd396fa37cca595c04bd316122e8abca327ced"
+      },
+      {
+        "path": "train-00011.bin",
+        "tokens": 262144,
+        "sha256": "adf3d559153017066d8d341ba7957b06c96266740ab68c6a8712f194f426a3ea"
+      },
+      {
+        "path": "train-00012.bin",
+        "tokens": 262144,
+        "sha256": "7ab1a2b2db2da9355300cdb78edb07eb76f6ce774974e8e6921de91e41bb4085"
+      },
+      {
+        "path": "train-00013.bin",
+        "tokens": 262144,
+        "sha256": "02b99feeaac33475b33f8cebb917f7b2995cd2cef0f38b778b2fb499ecc8a76d"
+      },
+      {
+        "path": "train-00014.bin",
+        "tokens": 262144,
+        "sha256": "49af1e0325964c71e08fe67603ed198adeec1c0f51c1165aedfc36c37b987b82"
+      },
+      {
+        "path": "train-00015.bin",
+        "tokens": 262144,
+        "sha256": "7677bab9683e0903636f21f9ab41d4159e9f07be7dce3d8eb8e87e6375b926d7"
+      },
+      {
+        "path": "train-00016.bin",
+        "tokens": 262144,
+        "sha256": "a97802a2443a145227fa2dcc35fe92f7399a4f605788df5dfd4b51b8e4bab36c"
+      },
+      {
+        "path": "train-00017.bin",
+        "tokens": 262144,
+        "sha256": "8f1d92c11cf1506b6db5a68783a7c3664bd881b49f8e9b01aaadb4558a2bb50a"
+      },
+      {
+        "path": "train-00018.bin",
+        "tokens": 262144,
+        "sha256": "44d2bb2ef288fed0acdff2b37c369f2df4b349ff2c6b6e4935c385a9bc333228"
+      },
+      {
+        "path": "train-00019.bin",
+        "tokens": 262144,
+        "sha256": "851583b6ee4cf70c520782595539dd1067e3531c1d14fbb6e86a341e1a3c026e"
+      },
+      {
+        "path": "train-00020.bin",
+        "tokens": 262144,
+        "sha256": "8f59d78149ea3671d2800789dfd1b7262ab7a57b07964c752bdba6a26186498b"
+      },
+      {
+        "path": "train-00021.bin",
+        "tokens": 262144,
+        "sha256": "5fc24d023c5c466ef7f00a8ffab82003480da0ea3cc86e10d5b4d113186c8c84"
+      },
+      {
+        "path": "train-00022.bin",
+        "tokens": 262144,
+        "sha256": "534f1de74f3cabdd2d389c1f531de06b7b652b9fbfe5c3b856521f6424c9a8e8"
+      },
+      {
+        "path": "train-00023.bin",
+        "tokens": 262144,
+        "sha256": "30ba6c17bf6772e1e3f135ba1a827453fe98fa0775785b0239ac34c9cbf9d319"
+      },
+      {
+        "path": "train-00024.bin",
+        "tokens": 262144,
+        "sha256": "3960c5c48280f265a449142ac313c6f36d25ad9f5fe7bec740131551f2d6ff6e"
+      },
+      {
+        "path": "train-00025.bin",
+        "tokens": 262144,
+        "sha256": "daecbe9a7f6226b5f431cbfcf78e6c2fefc5f8577e500329db827d4f1837a524"
+      },
+      {
+        "path": "train-00026.bin",
+        "tokens": 262144,
+        "sha256": "94fc811a23a92eef41ca58d143264e79e17baf6bb8a606b590a924b58dd7d3d6"
+      },
+      {
+        "path": "train-00027.bin",
+        "tokens": 73249,
+        "sha256": "a618df8e7f35ce2aebfdf7b2fa894495b517536af3ad569a31e767712ea18331"
+      }
+    ],
+    "val": [
+      {
+        "path": "val-00000.bin",
+        "tokens": 262144,
+        "sha256": "98292b1cf6d3fec133693705501a7ae854a35d61e3df15860c9c267cf9a33180"
+      },
+      {
+        "path": "val-00001.bin",
+        "tokens": 262144,
+        "sha256": "db645a30e77ac3415b344ff55bebdec44980519759961f6d7076977362307f25"
+      },
+      {
+        "path": "val-00002.bin",
+        "tokens": 71254,
+        "sha256": "bf97b22c6a0a28e1aca8a685657ebb0f4bbee5718ecd76b3bec1e79fd1e79f05"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+extends: ../prompt3/dense75_ref.yaml
+name: RepositoryFimPipelineSmoke
+data:
+  dataset_version: research_v2_repo_fim_smoke_2026_10_07_r3
+  tokenizer: data/research_v1/tokenizer.json
+  tokenizer_report: results/research_v2_real/tokenizer_quality_fim_smoke.json
+  shards: data/research_v2_real/shards/smoke_r3
+  cache: data/research_v2_real/cache/smoke_r3
+  manifest: results/research_v2_real/corpus_fim_smoke_manifest.json
+  cache_gb: 0.1
+  max_tokens: 2000000
+  # Small preprocessing fixture; not the final validation fraction or corpus.
+  eval_fraction: 0.2
+  seed: 42
+  shard_tokens: 65536

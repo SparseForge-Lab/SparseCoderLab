@@ -23,7 +23,7 @@ The [smoke receipt](../results/research_v2_real/repository_smoke.json) records s
 
 ## Sources for a larger corpus
 
-The [source catalogue](../data/research_v2_sources.yaml) distinguishes the measured pilot from candidates that still need approval or additional metadata.
+The [source catalogue](../data/research_v2_sources.yaml) distinguishes the measured pilot from candidates that still need approval or additional metadata. An expanded [repository inventory](../results/research_v2_real/source_inventory_pilot.json) now covers 13 pinned projects and 5,895 files across Python, JavaScript, TypeScript, C, C++, Rust, Java, Go, C#, SQL, shell and HTML/CSS. It records 32,843,880 export bytes before global deduplication; file counts are not token proportions. This remains a preprocessing pilot with licensing exceptions, fork review, contamination checks and the final mixture still open.
 
 | Source | Useful material | Current status |
 |---|---|---|
@@ -41,7 +41,13 @@ The Stack requires compliance with the original licenses, an update policy for v
 
 The working mixture remains a research hypothesis: 60% code/repositories, 15% technical documentation, 15% structured engineering context and 10% general reasoning. Final proportions will follow usable-token counts and source review. The corpus must cover the intended programming languages, isolate repositories and fork families across splits, and keep benchmark tasks out of training.
 
-Near-duplicate detection, explicit multi-file sample construction, FIM accounting and broad contamination checks are still open. The current importer supplies relationships through metadata and file roles; it does not yet select dependency neighbors or pair individual tests with the implementation they exercise. FIM must remain compatible with the frozen vocabulary. The smoke receipt is not a full data-readiness certificate.
+Exact and near-duplicate filtering now run before FIM and splitting. MinHash with 64 permutations and 16 four-row bands proposes matches from lexical five-token shingles; exact shingle Jaccard of at least 0.85 confirms a removal. Files with fewer than 64 distinct shingles receive exact filtering only. The two-repository audit compared 2,190 retained-file pairs and found no missed pair above the threshold. It removed five exact duplicates and no near duplicates. This validates the fixture, not corpus-wide recall or semantic deduplication. Reviewed fork-family declarations can group repositories before splitting; file similarity alone is not treated as proof of a fork.
+
+FIM uses the existing prefix/suffix/middle delimiters (token IDs 10, 11 and 12). It changes neither tokenizer bytes nor embedding sizes. Selection and span boundaries are deterministic from the seed and source identity, and only suitable code files are eligible. The fixture converted 59 of 122 eligible files, or 48.4%, at a configured 40% selection probability. The small-sample realized fraction is recorded rather than substituted with the target. Every transformed sample reconstructed its original source exactly and round-tripped through the tokenizer.
+
+The combined [dedup/FIM/packing receipt](../results/research_v2_real/pipeline_fim_smoke.json) records 164,253 train tokens and 302,981 validation tokens. Both splits passed an exact packed-stream cursor resume check on CPU. This checks data continuation, not optimizer or model checkpoint continuation. Original source hashes, FIM status and repository-family metadata survive into packed-document sidecars.
+
+The first [dependency-context fixture](../results/research_v2_real/neighbors_smoke.json) found 298 local import edges in the Flask/Requests records and constructed 82 bounded multi-file samples, containing 267,374 tokens. It retains each member's file/license hashes and repository revision. Python links use AST imports; other supported languages use conservative text matches. A link from a test file to implementation is not evidence that the test was executed. This lane deliberately reuses source files, so its token count is separate from unique corpus tokens. Broader dependency resolution and contamination checks remain open. Neither preprocessing receipt certifies long-run readiness.
 
 The first training gate is approximately 250M total tokens: 100,007,936 inherited tokens plus about 150M tokens from the new phase. It will require a frozen source inventory, measured train/validation and language totals, a documented optimizer/LR transition, checkpoint/resume tests, functional coding evaluation, and a runtime benchmark with all four actual checkpoint weights. No larger run is implied by this preprocessing result.
 
@@ -51,7 +57,10 @@ Reproduce the pilot from clean checkouts at the commits above:
 python -m tools.import_local_repo --repo data/research_v2_real/raw/repos/flask --source-id pallets/flask --source-url https://github.com/pallets/flask --license BSD-3-Clause --output data/research_v2_real/exports/flask.jsonl
 python -m tools.import_local_repo --repo data/research_v2_real/raw/repos/requests --source-id psf/requests --source-url https://github.com/psf/requests --license Apache-2.0 --output data/research_v2_real/exports/requests.jsonl
 python -m tools.repository_data_smoke
-python -m pytest -q tests/test_repo_provenance.py tests/test_research_data.py
+python -m tools.repository_dedup --audit-all-pairs
+python -m tools.repository_pipeline_smoke
+python -m tools.repository_neighbors
+python -m pytest -q tests/test_repo_provenance.py tests/test_research_data.py tests/test_repository_dedup.py tests/test_repository_fim.py tests/test_repository_neighbors.py
 ```
 
 Exports and frozen shard directories refuse overwrite. For a rerun, use a new version and output paths.

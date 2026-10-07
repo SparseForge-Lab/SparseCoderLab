@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "dataset_version": "research_v2_repository_pilot_multilang_2026_10_07_r5",
+  "source_file_sha256": {
+    "tools/import_local_repo.py": "9fbbafb9829072bc4dd8b43ac993a905bb415e4a6265fe22a9a8886c0f80442a",
+    "tools/repository_data_smoke.py": "c3ecca9f4117093fc472f1acaab035c20f090279d3a5eadde9fee2d28ca6d1e8",
+    "tools/repository_dedup.py": "623ec395736d62bc264ecf348113598712b2d152c0a933e44355e3659c5e4b72",
+    "tools/repository_fim.py": "8dc1344cff3ce10f7fa2658d646d25b9c0859bb3b0d41f8e0590060a848eff87",
+    "tools/repository_neighbors.py": "9def42f2342ebd52c6a5aa52dfef7d2302c0e7f7cf296a24586ea40d82d7e37b",
+    "tools/repository_pipeline_smoke.py": "fd7612893b1cc21e3ae4ab00da94681c17414fc6e2b1260e92a8a48de95031ed",
+    "tools/repository_source_inventory.py": "8b26803139449d47e02d85fb4ff5ac420c97dbdcea82668e4395027ef838fcb7",
+    "tools/prepare_data.py": "0d97911b392f91769c8eb450860722b9ff9d1f0aa9e97525abc16ead8162d448",
+    "tools/shard_data.py": "991a4bd115017905924c5f469173de875af002b147cc6d5df1b357868cd19f81",
+    "src/training/data.py": "55616e5a584eaf6b75eb98a3a0031043fae356d9ff3d3a2d217318aa42db85c2",
+    "src/config.py": "82a2189209fa338b66c2d35b3f77c2bb9a40eed71babf6cb8ff7e1ffe6510a12",
+    "configs/research_v2_real/repo_multilang_pilot.yaml": "ab5a7cdadd80aa42aee621e7a59bf6711c34d2e7e5f3cad097206ded9f1cbece"
+  },
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "corpus_manifest_sha256": "7d8a65a72e53945f6e0ee69b32abe17dce2c4c620483b635e955ed76bc8af59b",
+  "source_inventory_sha256": "fbf121d88b06d9ff5c703290c697ac8e2327e88dbe569b2f78cc8d2420164ea1",
+  "pipeline_receipt_sha256": "5d86f68d01a99cf35575a2eff5b6ab9bc53c0eeeb1e777b5591dc88b062be0d4",
+  "scope": "Frozen preprocessing pilot r5; code hashes match the loaded version recorded by preprocessing. Earlier r4 draft retained locally and superseded after metadata changes. No long-run readiness claim."
+}

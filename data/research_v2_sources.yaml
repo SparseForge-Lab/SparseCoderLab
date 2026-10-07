@@ -2,6 +2,18 @@ schema_version: 1
 review_date: '2026-10-07'
 license_allowlist: [MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, CC0-1.0, ISC]
 raw_data_redistribution: false
+expanded_repository_pilot:
+  inventory: results/research_v2_real/source_inventory_pilot.json
+  status: pinned_preprocessing_pilot_only
+  repositories: 13
+  exported_files_before_global_dedup: 5895
+  export_bytes: 32843880
+  additional_ids: [expressjs/express, colinhacks/zod, serde-rs/serde, google/gson, spf13/cobra, benhoyt/inih, fmtlib/fmt, DapperLib/Dapper, sqlfluff/sqlfluff, bats-core/bats-core, necolas/normalize.css]
+  measured_pilot_train_tokens: 7151137
+  measured_pilot_validation_tokens: 595542
+  pilot_version: research_v2_repository_pilot_multilang_2026_10_07_r5
+  expected_full_corpus_usable_tokens: null
+  restriction: Full licensing/fork/contamination review, measured mixture and training preflight remain open. Root license assertions and hashes are recorded in the inventory; source payloads stay private.
 sources:
   - id: pallets/flask
     type: git_repository

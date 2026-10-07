@@ -20,7 +20,8 @@ def sha256(path: Path) -> str:
 
 def validate_export(export: Path) -> tuple[dict, list[dict]]:
     source = json.loads(export.with_suffix(export.suffix + '.manifest.json').read_text(encoding='utf-8'))
-    records = [json.loads(line) for line in export.read_text(encoding='utf-8').splitlines()]
+    with export.open(encoding='utf-8') as handle:
+        records = [json.loads(line) for line in handle]
     if len(records) != source['included_files'] or export.stat().st_size != source['output_bytes']:
         raise ValueError('Export record count/size disagrees with its manifest')
     inventory = []

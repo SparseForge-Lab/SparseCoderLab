@@ -1,0 +1,15 @@
+extends: ../prompt3/dense75_ref.yaml
+name: MultilingualRepositoryPilot
+data:
+  dataset_version: research_v2_repository_pilot_multilang_2026_10_07_r5
+  tokenizer: data/research_v1/tokenizer.json
+  tokenizer_report: results/research_v2_real/tokenizer_quality_multilang_pilot_v5.json
+  shards: data/research_v2_real/shards/pilot_r5
+  cache: data/research_v2_real/cache/pilot_r5
+  manifest: results/research_v2_real/corpus_multilang_pilot_manifest_v5.json
+  cache_gb: 0.25
+  max_tokens: 50000000
+  # Inventory pilot, not a final training recipe. Repository groups stay intact.
+  eval_fraction: 0.1
+  seed: 42
+  shard_tokens: 262144

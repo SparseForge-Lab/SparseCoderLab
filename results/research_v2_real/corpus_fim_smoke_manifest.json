@@ -1,0 +1,187 @@
+{
+  "dataset_version": "research_v2_repo_fim_smoke_2026_10_07_r3",
+  "tokens": {
+    "train": 164253,
+    "val": 302981
+  },
+  "document_stats": {
+    "val/context/JSON/YAML": 9,
+    "val/code/Bash": 1,
+    "val/technical/Markdown": 6,
+    "val/technical/reStructuredText": 79,
+    "val/technical/Text": 7,
+    "val/context/Makefile": 1,
+    "val/code/Python": 81,
+    "val/context/TOML": 4,
+    "val/code/HTML/CSS": 22,
+    "val/code/SQL": 2,
+    "val/code/JSON/YAML": 1,
+    "val/code/TOML": 1,
+    "train/technical/Markdown": 13,
+    "train/context/JSON/YAML": 12,
+    "train/technical/reStructuredText": 16,
+    "train/context/Makefile": 2,
+    "train/code/HTML/CSS": 2,
+    "train/code/Python": 35,
+    "train/technical/Text": 2,
+    "train/context/TOML": 1,
+    "train/code/Makefile": 6
+  },
+  "reservoir_document_stats": {
+    "val/context/JSON/YAML": 9,
+    "val/code/Bash": 1,
+    "val/technical/Markdown": 6,
+    "val/technical/reStructuredText": 79,
+    "val/technical/Text": 7,
+    "val/context/Makefile": 1,
+    "val/code/Python": 81,
+    "val/context/TOML": 4,
+    "val/code/HTML/CSS": 22,
+    "val/code/SQL": 2,
+    "val/code/JSON/YAML": 1,
+    "val/code/TOML": 1,
+    "train/technical/Markdown": 13,
+    "train/context/JSON/YAML": 12,
+    "train/technical/reStructuredText": 16,
+    "train/context/Makefile": 2,
+    "train/code/HTML/CSS": 2,
+    "train/code/Python": 35,
+    "train/technical/Text": 2,
+    "train/context/TOML": 1,
+    "train/code/Makefile": 6
+  },
+  "rejected": {},
+  "token_mixture": {
+    "val/context": 6487,
+    "val/code": 160012,
+    "val/technical": 136482,
+    "train/technical": 51583,
+    "train/context": 7877,
+    "train/code": 104793
+  },
+  "sources": {
+    "pallets/flask/BSD-3-Clause": 214,
+    "psf/requests/Apache-2.0": 89
+  },
+  "source_revisions": {
+    "pallets/flask": [
+      "d086db856be187255b8ec61ef409357393020f32"
+    ],
+    "psf/requests": [
+      "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60"
+    ]
+  },
+  "repositories_by_split": {
+    "val": [
+      "pallets/flask"
+    ],
+    "train": [
+      "psf/requests"
+    ]
+  },
+  "language_tokens_by_split": {
+    "val/JSON/YAML": 3214,
+    "val/Bash": 78,
+    "val/Markdown": 1380,
+    "val/reStructuredText": 134561,
+    "val/Text": 541,
+    "val/Makefile": 187,
+    "val/Python": 155090,
+    "val/TOML": 3160,
+    "val/HTML/CSS": 4410,
+    "val/SQL": 360,
+    "train/Markdown": 22793,
+    "train/JSON/YAML": 4298,
+    "train/reStructuredText": 28684,
+    "train/Makefile": 3212,
+    "train/HTML/CSS": 596,
+    "train/Python": 103442,
+    "train/Text": 106,
+    "train/TOML": 1122
+  },
+  "license_document_counts": {
+    "BSD-3-Clause": 214,
+    "Apache-2.0": 89
+  },
+  "processing_script_sha256": "d79b3842d4b15a91c7912253e42d21c4c1a7f534d1dd03d1427157ee14fdbead",
+  "split_helper_sha256": "55616e5a584eaf6b75eb98a3a0031043fae356d9ff3d3a2d217318aa42db85c2",
+  "input_sha256": "fc8e144c2f0b4e29a45973c1ba34c73f1b1f88bea45dd7f738548b6ad48c3ba6",
+  "split_policy": "Declared repository-family group hash, falling back to repository hash; otherwise legacy document-content hash. Global exact/normalized content deduplication precedes splitting.",
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "seed": 42,
+  "data_config": {
+    "tokenizer": "data/research_v1/tokenizer.json",
+    "shards": "data/research_v2_real/shards/smoke_r3",
+    "manifest": "results/research_v2_real/corpus_fim_smoke_manifest.json",
+    "cache_gb": 0.1,
+    "project_gb": 45,
+    "seed": 42,
+    "eval_fraction": 0.2,
+    "mixture": {
+      "code": 0.55,
+      "general": 0.3,
+      "technical": 0.1,
+      "context": 0.05
+    },
+    "dev_documents": 16000,
+    "shard_tokens": 65536,
+    "max_tokens": 2000000,
+    "dataset_version": "research_v2_repo_fim_smoke_2026_10_07_r3",
+    "tokenizer_report": "results/research_v2_real/tokenizer_quality_fim_smoke.json",
+    "cache": "data/research_v2_real/cache/smoke_r3"
+  },
+  "synthetic_only": false,
+  "cache_bytes": 2184719,
+  "shard_sha256": {
+    "train": "7fdebd9116b06079173971685022f1fdc0f7840a5e441f703dd92b09f7be094c",
+    "val": "4ba9493ad35dc8e47fbe1142a26be90ed94871e870cebc6349316a8383fb75a0"
+  },
+  "packing": "Fixed offsets, EOS/doc separators; causal attention crosses document boundaries within a split.",
+  "quality_scope": "Explicitly supplied licensed corpus",
+  "physical_shards": {
+    "train": [
+      {
+        "path": "train-00000.bin",
+        "tokens": 65536,
+        "sha256": "0ae1b1c3f88becb0d158ec403c851e863e1391a5010af9b14acf45f827074b11"
+      },
+      {
+        "path": "train-00001.bin",
+        "tokens": 65536,
+        "sha256": "211af5b6be0ba7e20ebae20060fb162666fd6dce0516c4b43919da1dea355433"
+      },
+      {
+        "path": "train-00002.bin",
+        "tokens": 33181,
+        "sha256": "e322bbfc196714086761f2b993c9547cffc16fd5d6ae8b54960f6a1ce66728e6"
+      }
+    ],
+    "val": [
+      {
+        "path": "val-00000.bin",
+        "tokens": 65536,
+        "sha256": "fb2825ffa0532f4bb9aa19cb31f15cff7dfaa4a4a69e079c292a72ed9fc9002e"
+      },
+      {
+        "path": "val-00001.bin",
+        "tokens": 65536,
+        "sha256": "8d7aa9cbb379fd9600c7e2b4dd22b146364f4c39d385aa7a3c64f9be32b73f98"
+      },
+      {
+        "path": "val-00002.bin",
+        "tokens": 65536,
+        "sha256": "cf50098da0ea72ed46944adae2508397f4328cbbb358ba770047bb83d732270d"
+      },
+      {
+        "path": "val-00003.bin",
+        "tokens": 65536,
+        "sha256": "9251c6ebd0e13e3d63c6eba978399b4be3843a4c828f34a2931a41ca1f841c92"
+      },
+      {
+        "path": "val-00004.bin",
+        "tokens": 40837,
+        "sha256": "cec63fb33798cd6a95ce8a911dfef32376a11be411c48c61bfb137938556c4e4"
+      }
+    ]
+  }
+}

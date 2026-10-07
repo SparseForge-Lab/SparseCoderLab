@@ -1,0 +1,45 @@
+{
+  "format": "lexical5_minhash64_lsh16x4_v1",
+  "input_records": 308,
+  "retained_records": 303,
+  "counts": {
+    "lsh_candidate_pairs": 7,
+    "below_near_dedup_minimum": 56,
+    "exact_jaccard_comparisons": 5,
+    "exact_normalized": 5,
+    "cross_repository_removals": 1
+  },
+  "threshold": 0.85,
+  "minimum_shingles": 64,
+  "permutations": 64,
+  "bands": 16,
+  "rows_per_band": 4,
+  "declared_fork_families": [],
+  "family_mapping": {
+    "pallets/flask": "pallets/flask",
+    "psf/requests": "psf/requests"
+  },
+  "exhaustive_retained_pair_audit": true,
+  "audit_pairs_compared": 2190,
+  "estimated_lsh_candidate_probability_at_threshold": 0.9999925739907028,
+  "limitations": "Lexical 5-shingle similarity, not semantic equivalence. Small files receive exact dedup only. LSH may miss near pairs; exhaustive audit applies only when explicitly enabled. Fork families require reviewed declarations; file similarity is not proof of fork ancestry.",
+  "schema_version": 1,
+  "passed": true,
+  "sources": [
+    {
+      "id": "pallets/flask",
+      "revision": "d086db856be187255b8ec61ef409357393020f32",
+      "export_sha256": "1e78649a9b0ee04c97bb74ffcbbf444e1631692d09910356b65d6ae6d3e8bad9"
+    },
+    {
+      "id": "psf/requests",
+      "revision": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "export_sha256": "77614152c6080eebd1db77d5d435a494cc24877fe12c4f18377c04641b5b7208"
+    }
+  ],
+  "preprocessing_seconds": 6.018597199999931,
+  "output_sha256": "f97d3aca21dbd8722e82794f85e36a52e00060c493c2205311c8defc75567e28",
+  "removed_inventory_sha256": "530d7f589316f674caf396175e92bbbec96f511c05deaf8fb3e2f7f76315524c",
+  "script_sha256": "623ec395736d62bc264ecf348113598712b2d152c0a933e44355e3659c5e4b72",
+  "scope": "Two-repository preprocessing fixture; full-corpus fork audit and benchmark contamination checks remain open."
+}

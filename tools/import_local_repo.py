@@ -16,13 +16,13 @@ EXTENSIONS = {
     '.ts': 'TypeScript', '.tsx': 'TypeScript', '.html': 'HTML/CSS', '.css': 'HTML/CSS',
     '.sql': 'SQL', '.sh': 'Bash', '.bash': 'Bash', '.json': 'JSON/YAML', '.yaml': 'JSON/YAML',
     '.yml': 'JSON/YAML', '.cs': 'C#', '.toml': 'TOML', '.md': 'Markdown',
-    '.rst': 'reStructuredText', '.txt': 'Text', '.cmake': 'CMake',
+    '.rst': 'reStructuredText', '.txt': 'Text', '.cmake': 'CMake', '.bats': 'Bash',
 }
 SPECIAL_FILES = {'Makefile': 'Makefile', 'Dockerfile': 'Dockerfile', 'CMakeLists.txt': 'CMake'}
 LICENSES = ('MIT', 'Apache-2.0', 'BSD-2-Clause', 'BSD-3-Clause', 'CC0-1.0', 'ISC')
 SKIP_PARTS = {
     'vendor', 'vendors', 'node_modules', 'dist', 'build', 'target', 'third_party',
-    'third-party', 'generated', '__generated__', '.venv', 'venv',
+    'third-party', 'generated', '__generated__', '.venv', 'venv', '.codex', '.claude',
 }
 SECRET_PATTERNS = [
     re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
@@ -61,6 +61,9 @@ def main() -> None:
     parser.add_argument('--source-id', required=True, help='Stable identifier such as owner/repository')
     parser.add_argument('--source-url', required=True, help='Canonical HTTPS repository URL')
     parser.add_argument('--license', required=True, choices=LICENSES)
+    parser.add_argument('--license-file', help='Explicit root-relative license file, e.g. LICENSE-MIT')
+    parser.add_argument('--exclude-prefix', action='append', default=[], help='Reviewed root-relative path prefix to omit')
+    parser.add_argument('--header-language', choices=('C', 'C++'), default='C')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--max-mib', type=int, default=64)
     args = parser.parse_args()
@@ -77,7 +80,18 @@ def main() -> None:
     if run_git(root, 'status', '--porcelain', '--untracked-files=no'):
         raise ValueError('Repository has tracked modifications; export a clean committed revision')
 
-    license_path = next((root / name for name in ('LICENSE', 'LICENSE.txt', 'LICENSE.md', 'COPYING') if (root / name).is_file()), None)
+    for prefix in args.exclude_prefix:
+        if not prefix or Path(prefix).is_absolute() or '..' in Path(prefix).parts or '\\' in prefix:
+            raise ValueError('Exclusion prefixes must be safe POSIX repository-relative paths')
+    if args.license_file:
+        candidate = Path(args.license_file)
+        if candidate.is_absolute() or '..' in candidate.parts or len(candidate.parts) != 1:
+            raise ValueError('License file must be a root-relative filename')
+        license_path = root / candidate
+        if not license_path.is_file():
+            raise ValueError('Selected license file missing')
+    else:
+        license_path = next((root / name for name in ('LICENSE', 'LICENSE.txt', 'LICENSE.md', 'License.txt', 'COPYING') if (root / name).is_file()), None)
     if license_path is None:
         raise ValueError('Repository license file missing')
     try:
@@ -120,7 +134,12 @@ def main() -> None:
             if any(part.casefold() in SKIP_PARTS for part in parts) or Path(name).name.casefold().endswith('.min.js'):
                 counts['filtered_path'] += 1
                 continue
+            if Path(name).name.casefold() in {'agents.md', 'claude.md'} or any(name.startswith(prefix) for prefix in args.exclude_prefix):
+                counts['reviewed_exclusion'] += 1
+                continue
             language = SPECIAL_FILES.get(Path(name).name, EXTENSIONS.get(Path(name).suffix.lower()))
+            if Path(name).suffix.lower() == '.h':
+                language = args.header_language
             if language is None:
                 counts['unsupported_extension'] += 1
                 continue
@@ -146,6 +165,20 @@ def main() -> None:
             if re.search(r'GNU (?:GENERAL|LESSER|AFFERO) PUBLIC LICENSE', text[:3000], re.I):
                 counts['conflicting_license_header'] += 1
                 continue
+            spdx = re.search(r'SPDX-License-Identifier:\s*([^\r\n]+)', text[:3000])
+            expression = spdx.group(1).strip().rstrip('*/ ').strip() if spdx else None
+            file_license = args.license
+            if expression:
+                if expression in LICENSES:
+                    file_license = expression
+                elif re.fullmatch(r'[A-Za-z0-9.\- ()]+', expression) and ' OR ' in expression:
+                    options = {piece.strip(' ()') for piece in expression.split(' OR ')}
+                    if args.license not in options:
+                        counts['unreviewed_spdx_expression'] += 1
+                        continue
+                else:
+                    counts['unreviewed_spdx_expression'] += 1
+                    continue
             kind, role = file_role(name)
             record = {
                 'text': f'<repo>{args.source_id}<file>{name}\n{text}',
@@ -158,7 +191,9 @@ def main() -> None:
                 'normalized_sha256': sha256(text.replace('\r\n', '\n').replace('\r', '\n').rstrip().encode('utf-8')),
                 'git_blob': oid.decode('ascii'),
                 'source_license_sha256': license_sha,
-                'license': args.license,
+                'license': file_license,
+                'license_basis': 'spdx_header' if expression else 'repository_root_assertion',
+                'license_expression': expression,
                 'kind': kind,
                 'role': role,
                 'language': language,
@@ -182,6 +217,9 @@ def main() -> None:
         'revision': revision,
         'license_assertion': args.license,
         'license_file_sha256': license_sha,
+        'license_file': license_path.name,
+        'reviewed_exclusion_prefixes': args.exclude_prefix,
+        'header_language': args.header_language,
         'included_files': written,
         'output_bytes': total_bytes,
         'filtered_counts': dict(sorted(counts.items())),

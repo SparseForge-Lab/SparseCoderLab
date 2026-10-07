@@ -44,5 +44,6 @@ Exact internal task prompts and local workflow records are kept out of the publi
 | 54_realdata_comparison.md | Final loss comparison, interpretation, and evidence links |
 | 54_prompt3_milestone_results.md | Four-model 100M comparison and later exploratory checkpoints |
 | 55_repository_data_pipeline.md | Pinned repository ingestion, source review, and measured preprocessing fixture |
+| 56_multilingual_repository_pilot.md | Thirteen-repository token/language inventory, FIM and remaining data gates |
 
 Machine-readable results live under `results/`. Large datasets and checkpoints are not included in ordinary Git; their manifests retain integrity metadata.

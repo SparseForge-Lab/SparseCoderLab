@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "input_documents": 303,
+  "dependency_edges": 298,
+  "edge_methods": {
+    "python_import": 298
+  },
+  "role_links": {
+    "implementation->implementation": 200,
+    "test->implementation": 90,
+    "test->test": 8
+  },
+  "multi_file_samples": 82,
+  "tokens": 267374,
+  "max_sample_tokens": 8068,
+  "input_sha256": "f97d3aca21dbd8722e82794f85e36a52e00060c493c2205311c8defc75567e28",
+  "samples_sha256": "4b2d23bf9a2a2c1f56698a0ad2d921f3ea52cc39222b918c1c9a7425b64ae60d",
+  "edges_sha256": "b23493a1254d7beedc9ed6fb5d2fd598ea6927a88f92fffa677e0d7418caa88b",
+  "diagnostics": {
+    "unsupported_language_files": 187
+  },
+  "scope": "Repository context fixture. Python AST links are static imports; JS/TS/C/C++/Rust matches are conservative text candidates. No execution or complete dependency resolution. Reused file tokens must be counted separately if this lane is mixed into training."
+}
