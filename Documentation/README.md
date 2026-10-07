@@ -42,5 +42,7 @@ Exact internal task prompts and local workflow records are kept out of the publi
 | 50_microbatch_throughput.md | Fixed-effective-batch throughput measurements and limits |
 | 51_seed_replication_results.md | Matched second-seed results and sensitivity evidence |
 | 54_realdata_comparison.md | Final loss comparison, interpretation, and evidence links |
+| 54_prompt3_milestone_results.md | Four-model 100M comparison and later exploratory checkpoints |
+| 55_repository_data_pipeline.md | Pinned repository ingestion, source review, and measured preprocessing fixture |
 
 Machine-readable results live under `results/`. Large datasets and checkpoints are not included in ordinary Git; their manifests retain integrity metadata.

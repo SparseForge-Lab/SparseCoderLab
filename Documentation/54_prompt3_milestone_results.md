@@ -30,6 +30,8 @@ The original data and training setup was stopped before all four models reached 
 
 The two Ngram runs remained at 100M. The Dense result has a full evaluation report; Sparse was stopped at its last saved 22,000-step checkpoint and did not receive a separate evaluation at 180.224M. Do not compare these two rows as if they were measured at the same training exposure, and do not treat either as the architecture selection result.
 
+After the main comparison closed, a supplemental Sparse + 25M Ngram continuation was started on the original frozen corpus, with an endpoint of 180,002,816 tokens. It resumes the original optimizer, scheduler, RNG and data cursor. This is exploratory evidence alongside the repository-pipeline work; the four matching 100M checkpoints remain the transition weights for the new data phase.
+
 ## Transition point
 
 The four 100M checkpoints are the only common comparison point and are now the canonical starting weights for the next data phase. The later partial checkpoints are retained as historical evidence. The next phase changes the data recipe substantially, so it will continue from the matching 100M checkpoint for each model rather than mixing different amounts of prototype-data training into the comparison.

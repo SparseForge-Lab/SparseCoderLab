@@ -91,3 +91,12 @@ experiments/**/*_output*.txt
 results/history/**/metrics.jsonl
 results/research_v1/schedule_state.json
 results/research_v1/user_resume_*.json
+# Versioned repository ingestion payloads and private archive inventories.
+data/research_v2_real/raw/
+data/research_v2_real/exports/
+data/research_v2_real/documents/
+data/research_v2_real/cache/
+data/research_v2_real/shards/
+results/history/Prompt-*/starting_manifest.json
+results/prompt-*_archive_manifest.json
+results/prompt-*_archive_verification.json

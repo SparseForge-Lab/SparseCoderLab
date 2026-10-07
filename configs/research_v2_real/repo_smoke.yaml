@@ -1,0 +1,16 @@
+extends: ../prompt3/dense75_ref.yaml
+name: RepositoryPipelineSmoke
+data:
+  dataset_version: research_v2_repo_smoke_2026_10_07_r2
+  tokenizer: data/research_v1/tokenizer.json
+  tokenizer_report: results/research_v2_real/tokenizer_quality_smoke.json
+  shards: data/research_v2_real/shards/smoke_r2
+  cache: data/research_v2_real/cache/smoke_r2
+  manifest: results/research_v2_real/corpus_smoke_manifest.json
+  cache_gb: 0.1
+  max_tokens: 2000000
+  # A two-repository pipeline fixture, not the final validation recipe.
+  # Seed 42 assigns Flask to validation and Requests to training at 20%.
+  eval_fraction: 0.2
+  seed: 42
+  shard_tokens: 65536

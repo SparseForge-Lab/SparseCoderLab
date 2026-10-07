@@ -18,7 +18,7 @@ from src.model import LanguageModel
 from src.training.engine import require_cuda, run
 from tools.prompt3_preflight import VARIANTS, source_hash
 
-GATES = {"100M": 100_007_936, "250M": 250_003_456, "500M": 500_006_912, "1B": 1_000_005_632}
+GATES = {"100M": 100_007_936, "180M": 180_002_816, "250M": 250_003_456, "500M": 500_006_912, "1B": 1_000_005_632}
 ROOT = Path("results/prompt3")
 
 
@@ -132,6 +132,8 @@ def main() -> None:
     parser.add_argument("--models", nargs="+", choices=VARIANTS, default=list(VARIANTS))
     parser.add_argument("--max-wall-minutes", type=float, default=300)
     args = parser.parse_args()
+    if args.endpoint == "180M" and args.models != ["sparse75_ngram25m"]:
+        raise ValueError("The supplemental 180M continuation is limited to sparse75_ngram25m")
     require_cuda("cuda")
     check_gate()
     rows = []

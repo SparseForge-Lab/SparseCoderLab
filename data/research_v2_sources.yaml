@@ -1,0 +1,56 @@
+schema_version: 1
+review_date: '2026-10-07'
+license_allowlist: [MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, CC0-1.0, ISC]
+raw_data_redistribution: false
+sources:
+  - id: pallets/flask
+    type: git_repository
+    url: https://github.com/pallets/flask
+    revision: d086db856be187255b8ec61ef409357393020f32
+    root_license: BSD-3-Clause
+    status: preprocessing_pilot_only
+    coverage: [implementation, tests, documentation, configuration, build]
+    usable_tokens_in_pilot: 302798
+    restriction: Root license recorded; review per-file exceptions before inclusion in a full training corpus.
+  - id: psf/requests
+    type: git_repository
+    url: https://github.com/psf/requests
+    revision: 611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60
+    root_license: Apache-2.0
+    status: preprocessing_pilot_only
+    coverage: [implementation, tests, documentation, configuration, build]
+    usable_tokens_in_pilot: 164187
+    restriction: Preserve attribution/license metadata; review per-file exceptions before full training.
+  - id: github/CodeSearchNet
+    type: dataset_candidate
+    url: https://github.com/github/CodeSearchNet
+    tooling_revision: 106e827405c968597da938f6b373d30183918869
+    data_revision: null
+    status: hold_for_per_repository_license_and_data_revision_review
+    languages: [Python, JavaScript, Java, Go, Ruby, PHP]
+    license: Per-repository source licenses; tooling MIT license is not a corpus-wide license.
+    expected_usable_tokens: null
+    limitation: Function/comment pairs do not preserve complete repository trees.
+  - id: bigcode/the-stack-dedup
+    type: dataset_candidate
+    url: https://huggingface.co/datasets/bigcode/the-stack-dedup
+    revision: null
+    status: hold_for_gated_access_terms_and_usable_version_review
+    terms_accepted: false
+    gated_access_verified: false
+    license: Original source licenses and dataset terms; filter per-record licenses.
+    expected_usable_tokens: null
+  - id: codeparrot/github-code
+    type: existing_historical_source
+    url: https://huggingface.co/datasets/codeparrot/github-code
+    revision: b5661e6b17396364b2bcf8e68977b0d28e1ebd19
+    status: hold_for_explicit_reuse_audit
+    limitation: Dataset snapshot does not provide source repository commit hashes.
+    expected_usable_tokens: null
+  - id: HuggingFaceFW/fineweb-edu
+    type: existing_historical_source
+    url: https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu
+    revision: 87f09149ef4734204d70ed1d046ddc9ca3f2b8f9
+    status: hold_for_individual_content_provenance_review
+    license: Collection-level terms do not establish each source page's license.
+    expected_usable_tokens: null

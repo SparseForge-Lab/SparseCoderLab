@@ -24,9 +24,11 @@ LANGUAGE_SAMPLES = {
 
 def digest(text: str) -> str: return hashlib.sha256(text.encode('utf-8')).hexdigest()
 
-def split_document(text: str, seed: int, eval_fraction: float) -> str:
-    # Split on content, rather than source ID, so duplicated content cannot leak.
-    value = int(digest(str(seed) + '\0' + text)[:16], 16) / 2**64
+def split_document(text: str, seed: int, eval_fraction: float, group: str | None = None) -> str:
+    # Repository groups stay wholly within one split; legacy corpora retain the
+    # content-hash policy so old experiment manifests remain reproducible.
+    key = f'repository\0{group}' if group is not None else text
+    value = int(digest(str(seed) + '\0' + key)[:16], 16) / 2**64
     return 'val' if value < eval_fraction else 'train'
 
 def development_documents(cfg: dict):

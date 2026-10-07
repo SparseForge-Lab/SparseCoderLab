@@ -1,0 +1,189 @@
+{
+  "dataset_version": "research_v2_repo_smoke_2026_10_07_r2",
+  "tokens": {
+    "train": 164187,
+    "val": 302798
+  },
+  "document_stats": {
+    "val/context/JSON/YAML": 9,
+    "val/code/Bash": 1,
+    "val/technical/Markdown": 6,
+    "val/technical/reStructuredText": 79,
+    "val/technical/Text": 7,
+    "val/context/Makefile": 1,
+    "val/code/Python": 81,
+    "val/context/TOML": 4,
+    "val/code/HTML/CSS": 22,
+    "val/code/SQL": 2,
+    "val/code/JSON/YAML": 1,
+    "val/code/TOML": 1,
+    "train/technical/Markdown": 13,
+    "train/context/JSON/YAML": 12,
+    "train/technical/reStructuredText": 16,
+    "train/context/Makefile": 2,
+    "train/code/HTML/CSS": 2,
+    "train/code/Python": 35,
+    "train/technical/Text": 2,
+    "train/context/TOML": 1,
+    "train/code/Makefile": 6
+  },
+  "reservoir_document_stats": {
+    "val/context/JSON/YAML": 9,
+    "val/code/Bash": 1,
+    "val/technical/Markdown": 6,
+    "val/technical/reStructuredText": 79,
+    "val/technical/Text": 7,
+    "val/context/Makefile": 1,
+    "val/code/Python": 81,
+    "val/context/TOML": 4,
+    "val/code/HTML/CSS": 22,
+    "val/code/SQL": 2,
+    "val/code/JSON/YAML": 1,
+    "val/code/TOML": 1,
+    "train/technical/Markdown": 13,
+    "train/context/JSON/YAML": 12,
+    "train/technical/reStructuredText": 16,
+    "train/context/Makefile": 2,
+    "train/code/HTML/CSS": 2,
+    "train/code/Python": 35,
+    "train/technical/Text": 2,
+    "train/context/TOML": 1,
+    "train/code/Makefile": 6
+  },
+  "rejected": {
+    "exact_or_normalized_duplicate": 5
+  },
+  "token_mixture": {
+    "val/context": 6487,
+    "val/code": 159829,
+    "val/technical": 136482,
+    "train/technical": 51583,
+    "train/context": 7877,
+    "train/code": 104727
+  },
+  "sources": {
+    "pallets/flask/BSD-3-Clause": 214,
+    "psf/requests/Apache-2.0": 89
+  },
+  "source_revisions": {
+    "pallets/flask": [
+      "d086db856be187255b8ec61ef409357393020f32"
+    ],
+    "psf/requests": [
+      "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60"
+    ]
+  },
+  "repositories_by_split": {
+    "val": [
+      "pallets/flask"
+    ],
+    "train": [
+      "psf/requests"
+    ]
+  },
+  "language_tokens_by_split": {
+    "val/JSON/YAML": 3214,
+    "val/Bash": 78,
+    "val/Markdown": 1380,
+    "val/reStructuredText": 134561,
+    "val/Text": 541,
+    "val/Makefile": 187,
+    "val/Python": 154939,
+    "val/TOML": 3160,
+    "val/HTML/CSS": 4381,
+    "val/SQL": 357,
+    "train/Markdown": 22793,
+    "train/JSON/YAML": 4298,
+    "train/reStructuredText": 28684,
+    "train/Makefile": 3212,
+    "train/HTML/CSS": 596,
+    "train/Python": 103376,
+    "train/Text": 106,
+    "train/TOML": 1122
+  },
+  "license_document_counts": {
+    "BSD-3-Clause": 214,
+    "Apache-2.0": 89
+  },
+  "processing_script_sha256": "c434999da5a48f1d9cb1f6368efa4101b7639e22b83b014f4bbd4006d9afb47a",
+  "split_helper_sha256": "55616e5a584eaf6b75eb98a3a0031043fae356d9ff3d3a2d217318aa42db85c2",
+  "input_sha256": "2d64e6e79cfa7a3e2665a2975ed4c0256b06ea3e823bf5bdf62abfd450fbb7c9",
+  "split_policy": "Repository-group hash where repository metadata is present; otherwise legacy document-content hash. Global exact/normalized content deduplication precedes splitting.",
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "seed": 42,
+  "data_config": {
+    "tokenizer": "data/research_v1/tokenizer.json",
+    "shards": "data/research_v2_real/shards/smoke_r2",
+    "manifest": "results/research_v2_real/corpus_smoke_manifest.json",
+    "cache_gb": 0.1,
+    "project_gb": 45,
+    "seed": 42,
+    "eval_fraction": 0.2,
+    "mixture": {
+      "code": 0.55,
+      "general": 0.3,
+      "technical": 0.1,
+      "context": 0.05
+    },
+    "dev_documents": 16000,
+    "shard_tokens": 65536,
+    "max_tokens": 2000000,
+    "dataset_version": "research_v2_repo_smoke_2026_10_07_r2",
+    "tokenizer_report": "results/research_v2_real/tokenizer_quality_smoke.json",
+    "cache": "data/research_v2_real/cache/smoke_r2"
+  },
+  "synthetic_only": false,
+  "cache_bytes": 2069855,
+  "shard_sha256": {
+    "train": "bda04515fd8d4a7b87185efce456df014329a85bfd3d951f7ba7df001527e396",
+    "val": "5358d22eb66dc691de3a4b3a9740a8c855840d0ecec0d829c8776878acfa8991"
+  },
+  "packing": "Fixed offsets, EOS/doc separators; causal attention crosses document boundaries within a split.",
+  "quality_scope": "Explicitly supplied licensed corpus",
+  "physical_shards": {
+    "train": [
+      {
+        "path": "train-00000.bin",
+        "tokens": 65536,
+        "sha256": "d97903bb5fcd94d48b866378e9d6f55594f31e2184d3993a7b7ffc234ed28666"
+      },
+      {
+        "path": "train-00001.bin",
+        "tokens": 65536,
+        "sha256": "f817520ee2b36a35069e35f638e3f7895816fb3b40b14d0976761cc57eab4fcd"
+      },
+      {
+        "path": "train-00002.bin",
+        "tokens": 33115,
+        "sha256": "34dfa36a632fe50fad0e2984a1d888b877d272a017d50add07ac4d2d20e3a68d"
+      }
+    ],
+    "val": [
+      {
+        "path": "val-00000.bin",
+        "tokens": 65536,
+        "sha256": "fb2825ffa0532f4bb9aa19cb31f15cff7dfaa4a4a69e079c292a72ed9fc9002e"
+      },
+      {
+        "path": "val-00001.bin",
+        "tokens": 65536,
+        "sha256": "8d7aa9cbb379fd9600c7e2b4dd22b146364f4c39d385aa7a3c64f9be32b73f98"
+      },
+      {
+        "path": "val-00002.bin",
+        "tokens": 65536,
+        "sha256": "85f22816f94f806788086db5d30d58f5c46d859c7ecadad8a11e77958d7ecb7f"
+      },
+      {
+        "path": "val-00003.bin",
+        "tokens": 65536,
+        "sha256": "c71dec3c18e605c7faf0070144ca2d10a0af036355fff6730802c69de8177e42"
+      },
+      {
+        "path": "val-00004.bin",
+        "tokens": 40654,
+        "sha256": "908bc383e2ec9274cd311ffcb305615aeda78ec4a3433f4edc4e70f2fe260cac"
+      }
+    ]
+  }
+}

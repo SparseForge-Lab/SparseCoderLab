@@ -8,6 +8,8 @@ I compared a dense model, a sparse model, and sparse models with 10M or 25M Ngra
 
 I stopped the old training setup before a matched 250M comparison was complete. Dense reached 250M and Sparse reached 180.224M; the two Ngram models remained at 100M. These later checkpoints are exploratory, not a final ranking. The four 100M checkpoints are the common starting point for the next data phase. See the [results and checkpoint record](Documentation/54_prompt3_milestone_results.md).
 
+The repository data pipeline now preserves pinned commits, source/test/docs/build roles and repository-level splits. A small Flask/Requests fixture passed ingestion, token packing, shard verification and tokenizer round-trip checks. The full corpus and training preflight are still in preparation; [pipeline methods and source review](Documentation/55_repository_data_pipeline.md) describe the measured result and remaining work.
+
 ## Earlier results
 
 At 100M training tokens, the three seed-42 models reached these held-out negative log-likelihoods (lower is better):

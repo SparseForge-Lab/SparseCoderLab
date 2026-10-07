@@ -9,17 +9,27 @@ from src.training.data import SPECIAL_TOKENS, bounded_jsonl, development_documen
 def prepare(cfg: dict, input_path: Path | None = None) -> dict:
     d = cfg['data']; directory = Path(d['shards']); directory.mkdir(parents=True, exist_ok=True)
     if (directory / 'manifest.json').exists(): raise RuntimeError('Frozen shards already exist; use a new shard directory/config')
-    cache = Path('data/cache'); cache.mkdir(parents=True, exist_ok=True)
+    Path(d['manifest']).parent.mkdir(parents=True, exist_ok=True)
+    cache = Path(d.get('cache', 'data/cache')); cache.mkdir(parents=True, exist_ok=True)
     cache_file = cache / 'documents.jsonl'; seen = set(); stats = collections.Counter(); bytes_used = 0
+    rejected = collections.Counter()
+    input_provenance = {'source_revisions': collections.defaultdict(set), 'repositories': collections.defaultdict(set),
+                        'languages': collections.Counter(), 'licenses': collections.Counter()}
     source = bounded_jsonl(input_path, int(d['cache_gb'] * 1024**3)) if input_path else development_documents(d)
     with cache_file.open('w', encoding='utf-8') as out:
         for doc in source:
+            if doc.get('repository') and not d.get('dataset_version'):
+                raise ValueError('Repository corpus requires an explicit dataset_version and new output paths')
             sha = digest(doc['text'])
-            if sha in seen: continue
-            doc.update(sha256=sha, split=split_document(doc['text'], d['seed'], d['eval_fraction']))
+            duplicate_key = doc.get('normalized_sha256', doc.get('raw_sha256', sha))
+            if duplicate_key in seen:
+                rejected['exact_or_normalized_duplicate'] += 1
+                continue
+            split_group = doc.get('repository')
+            doc.update(sha256=sha, split=split_document(doc['text'], d['seed'], d['eval_fraction'], split_group))
             line = json.dumps(doc, ensure_ascii=False) + '\n'; size = len(line.encode('utf-8'))
             if bytes_used + size > d['cache_gb'] * 1024**3: break
-            seen.add(sha); bytes_used += size; out.write(line); stats[f"{doc['split']}/{doc['kind']}/{doc['language']}"] += 1
+            seen.add(duplicate_key); bytes_used += size; out.write(line); stats[f"{doc['split']}/{doc['kind']}/{doc['language']}"] += 1
     def documents():
         with cache_file.open('r', encoding='utf-8') as f:
             for line in f: yield json.loads(line)
@@ -37,6 +47,7 @@ def prepare(cfg: dict, input_path: Path | None = None) -> dict:
         tokenizer.save(str(tokenizer_path))
     assert tokenizer.get_vocab_size() == cfg['model']['vocab_size'] <= 65536
     counts = {'train': 0, 'val': 0}; by_kind = collections.Counter(); provenance = collections.Counter()
+    packed_stats = collections.Counter()
     handles = {split: (directory / f'{split}.bin.tmp').open('wb') for split in counts}
     kinds = {split: (directory / f'{split}_documents.jsonl').open('w', encoding='utf-8') for split in counts}
     try:
@@ -44,13 +55,32 @@ def prepare(cfg: dict, input_path: Path | None = None) -> dict:
             split = doc['split']; tokens = [tokenizer.token_to_id('<bos>')] + tokenizer.encode(doc['text']).ids + [tokenizer.token_to_id('<eos>'), tokenizer.token_to_id('<doc>')]
             if sum(counts.values()) + len(tokens) > d['max_tokens']: break
             if bytes_used + (sum(counts.values()) + len(tokens)) * 2 > d['cache_gb'] * 1024**3: raise RuntimeError('Cache size budget exceeded')
-            kinds[split].write(json.dumps({k: doc[k] for k in ('sha256', 'kind', 'language', 'license', 'source')} | {'start': counts[split], 'length': len(tokens)}) + '\n')
+            metadata_keys = ('sha256', 'kind', 'language', 'license', 'source', 'source_url', 'repository',
+                             'revision', 'file_path', 'raw_sha256', 'normalized_sha256', 'source_license_sha256', 'role', 'git_blob')
+            metadata = {k: doc[k] for k in metadata_keys if k in doc}
+            kinds[split].write(json.dumps(metadata | {'start': counts[split], 'length': len(tokens)}) + '\n')
             np.array(tokens, dtype=np.uint16).tofile(handles[split]); counts[split] += len(tokens)
+            packed_stats[f"{split}/{doc['kind']}/{doc['language']}"] += 1
             by_kind[f'{split}/{doc["kind"]}'] += len(tokens); provenance[f'{doc["source"]}/{doc["license"]}'] += 1
+            input_provenance['languages'][f"{split}/{doc['language']}"] += len(tokens)
+            input_provenance['licenses'][doc['license']] += 1
+            if doc.get('repository'):
+                input_provenance['repositories'][split].add(doc['repository'])
+            if doc.get('source') and doc.get('revision'):
+                input_provenance['source_revisions'][doc['source']].add(doc['revision'])
     finally:
         for f in list(handles.values()) + list(kinds.values()): f.close()
     for split in counts: (directory / f'{split}.bin.tmp').replace(directory / f'{split}.bin')
-    report = {'tokens': counts, 'document_stats': dict(stats), 'token_mixture': dict(by_kind), 'sources': dict(provenance),
+    report = {'dataset_version': d.get('dataset_version', 'synthetic_dev' if input_path is None else 'unversioned-input'),
+              'tokens': counts, 'document_stats': dict(packed_stats), 'reservoir_document_stats': dict(stats),
+              'rejected': dict(rejected), 'token_mixture': dict(by_kind), 'sources': dict(provenance),
+              'source_revisions': {key: sorted(value) for key, value in input_provenance['source_revisions'].items()},
+              'repositories_by_split': {key: sorted(value) for key, value in input_provenance['repositories'].items()},
+              'language_tokens_by_split': dict(input_provenance['languages']), 'license_document_counts': dict(input_provenance['licenses']),
+              'processing_script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+              'split_helper_sha256': hashlib.sha256((Path(__file__).resolve().parents[1] / 'src/training/data.py').read_bytes()).hexdigest(),
+              'input_sha256': hashlib.sha256(input_path.read_bytes()).hexdigest() if input_path else None,
+              'split_policy': 'Repository-group hash where repository metadata is present; otherwise legacy document-content hash. Global exact/normalized content deduplication precedes splitting.',
               'tokenizer_sha256': hashlib.sha256(tokenizer_path.read_bytes()).hexdigest(), 'seed': d['seed'],
               'data_config': d, 'synthetic_only': input_path is None, 'cache_bytes': bytes_used,
               'shard_sha256': {s: hashlib.sha256((directory / f'{s}.bin').read_bytes()).hexdigest() for s in counts},
@@ -58,7 +88,9 @@ def prepare(cfg: dict, input_path: Path | None = None) -> dict:
               'quality_scope': 'Synthetic dev corpus only: no educational or natural-code quality claims' if input_path is None else 'Explicitly supplied licensed corpus'}
     (directory / 'manifest.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     Path(d['manifest']).write_text(json.dumps(report, indent=2), encoding='utf-8')
-    Path('results/tokenizer_quality.json').write_text(json.dumps(tokenizer_report(tokenizer), indent=2), encoding='utf-8')
+    report_path = Path(d.get('tokenizer_report', 'results/tokenizer_quality.json'))
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(tokenizer_report(tokenizer), indent=2), encoding='utf-8')
     from tools.shard_data import shard
     return shard(cfg)
 

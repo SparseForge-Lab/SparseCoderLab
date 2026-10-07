@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "dataset_version": "research_v2_repo_smoke_2026_10_07_r2",
+  "sources": [
+    {
+      "source_id": "pallets/flask",
+      "source_url": "https://github.com/pallets/flask",
+      "revision": "d086db856be187255b8ec61ef409357393020f32",
+      "license_assertion": "BSD-3-Clause",
+      "license_file_sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+      "included_files": 218,
+      "output_bytes": 1350825,
+      "filtered_counts": {
+        "generated_header": 1,
+        "included": 218,
+        "unsupported_extension": 17
+      },
+      "file_inventory_sha256": "e81972dc39e94b5d8a4de8198c5f6eaf5dbf5e8900bf38638279c60d047fafa5",
+      "exporter_sha256": "2bdef7ad4ca27e38f52334e4d399799521889ced64d7a929c8cd3016cf51881a",
+      "export_sha256": "1e78649a9b0ee04c97bb74ffcbbf444e1631692d09910356b65d6ae6d3e8bad9"
+    },
+    {
+      "source_id": "psf/requests",
+      "source_url": "https://github.com/psf/requests",
+      "revision": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "license_assertion": "Apache-2.0",
+      "license_file_sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "included_files": 90,
+      "output_bytes": 696848,
+      "filtered_counts": {
+        "generated_header": 1,
+        "included": 90,
+        "symlink_or_submodule": 2,
+        "unsupported_extension": 37
+      },
+      "file_inventory_sha256": "3056b323a96a190f2a3a28c21f6e414f571d81140c7c057cee668d0edbe8b689",
+      "exporter_sha256": "2bdef7ad4ca27e38f52334e4d399799521889ced64d7a929c8cd3016cf51881a",
+      "export_sha256": "77614152c6080eebd1db77d5d435a494cc24877fe12c4f18377c04641b5b7208"
+    }
+  ],
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "tokenizer_unchanged": true,
+  "exact_tokenizer_roundtrips": 308,
+  "role_document_counts_before_dedup": {
+    "configuration": 21,
+    "implementation": 72,
+    "documentation": 125,
+    "build": 8,
+    "test": 82
+  },
+  "language_efficiency_before_dedup": {
+    "Bash": {
+      "documents": 1,
+      "tokens": 75,
+      "characters": 225,
+      "utf8_bytes": 225,
+      "tokens_per_character": 0.3333333333333333
+    },
+    "HTML/CSS": {
+      "documents": 24,
+      "tokens": 4905,
+      "characters": 15526,
+      "utf8_bytes": 15528,
+      "tokens_per_character": 0.31592167976297825
+    },
+    "JSON/YAML": {
+      "documents": 22,
+      "tokens": 7446,
+      "characters": 23031,
+      "utf8_bytes": 23048,
+      "tokens_per_character": 0.3233033737136902
+    },
+    "Makefile": {
+      "documents": 9,
+      "tokens": 3372,
+      "characters": 11274,
+      "utf8_bytes": 11274,
+      "tokens_per_character": 0.2990952634379989
+    },
+    "Markdown": {
+      "documents": 19,
+      "tokens": 24116,
+      "characters": 87394,
+      "utf8_bytes": 87438,
+      "tokens_per_character": 0.27594571709728355
+    },
+    "Python": {
+      "documents": 119,
+      "tokens": 258030,
+      "characters": 989835,
+      "utf8_bytes": 989991,
+      "tokens_per_character": 0.26067981027140885
+    },
+    "SQL": {
+      "documents": 2,
+      "tokens": 351,
+      "characters": 1011,
+      "utf8_bytes": 1011,
+      "tokens_per_character": 0.34718100890207715
+    },
+    "TOML": {
+      "documents": 6,
+      "tokens": 4264,
+      "characters": 12366,
+      "utf8_bytes": 12366,
+      "tokens_per_character": 0.3448164321526767
+    },
+    "Text": {
+      "documents": 11,
+      "tokens": 1248,
+      "characters": 5499,
+      "utf8_bytes": 5499,
+      "tokens_per_character": 0.22695035460992907
+    },
+    "reStructuredText": {
+      "documents": 95,
+      "tokens": 162960,
+      "characters": 631055,
+      "utf8_bytes": 631348,
+      "tokens_per_character": 0.25823422681065833
+    }
+  },
+  "tokens": {
+    "train": 164187,
+    "val": 302798
+  },
+  "document_stats": {
+    "val/context/JSON/YAML": 9,
+    "val/code/Bash": 1,
+    "val/technical/Markdown": 6,
+    "val/technical/reStructuredText": 79,
+    "val/technical/Text": 7,
+    "val/context/Makefile": 1,
+    "val/code/Python": 81,
+    "val/context/TOML": 4,
+    "val/code/HTML/CSS": 22,
+    "val/code/SQL": 2,
+    "val/code/JSON/YAML": 1,
+    "val/code/TOML": 1,
+    "train/technical/Markdown": 13,
+    "train/context/JSON/YAML": 12,
+    "train/technical/reStructuredText": 16,
+    "train/context/Makefile": 2,
+    "train/code/HTML/CSS": 2,
+    "train/code/Python": 35,
+    "train/technical/Text": 2,
+    "train/context/TOML": 1,
+    "train/code/Makefile": 6
+  },
+  "rejected": {
+    "exact_or_normalized_duplicate": 5
+  },
+  "repositories_by_split": {
+    "val": [
+      "pallets/flask"
+    ],
+    "train": [
+      "psf/requests"
+    ]
+  },
+  "physical_shards_verified": true,
+  "manifest_sha256": "45956796ea5ca95c47eb191b6cd36ce4b0826183f1780ac32c01fac164005e55",
+  "scope": "Two-repository preprocessing fixture only. No model training or functional coding evaluation. Does not certify the full corpus, near deduplication, FIM or a long-run readiness gate.",
+  "source_inventory_verified": true
+}
