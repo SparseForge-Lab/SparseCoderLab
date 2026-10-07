@@ -1,7 +1,147 @@
 {
-  "status": "planned",
+  "status": "matched_complete",
   "nominal_tokens": 70000000,
   "actual_tokens": 70000640,
-  "models": {},
+  "models": {
+    "dense": {
+      "sha256": "6c4b6acaf787293f79d6a1639b4bc6b06d2a59ec8ba7bc5d4bcb9f75b9c6d3fb",
+      "size_bytes": 198986867,
+      "architecture": {
+        "vocab_size": 32768,
+        "d_model": 320,
+        "layers": 9,
+        "q_heads": 5,
+        "kv_heads": 1,
+        "head_dim": 64,
+        "ffn": 448,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0,
+        "init_std": 0.02,
+        "moe_layers": [],
+        "experts": 12,
+        "expert_ffn": 160,
+        "top_k": 1,
+        "aux_weight": 0.01,
+        "activation_checkpointing": false
+      },
+      "ngram": {
+        "enabled": false,
+        "banks": 4,
+        "rows": 131072,
+        "dim": 8,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "seeds": [
+          17,
+          65537,
+          104729,
+          999983
+        ],
+        "layer": 1,
+        "gate_bias": -2.0
+      },
+      "tokens": 70000640
+    },
+    "sparse": {
+      "sha256": "96e71afd65f641c9952456afc67504dbf03f93e4759acdacb6ba11277cdd41a9",
+      "size_bytes": 258938395,
+      "architecture": {
+        "vocab_size": 32768,
+        "d_model": 320,
+        "layers": 9,
+        "q_heads": 5,
+        "kv_heads": 1,
+        "head_dim": 64,
+        "ffn": 384,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0,
+        "init_std": 0.02,
+        "moe_layers": [
+          2,
+          5,
+          8
+        ],
+        "experts": 12,
+        "expert_ffn": 160,
+        "top_k": 1,
+        "aux_weight": 0.01,
+        "activation_checkpointing": false,
+        "moe_backend": "grouped"
+      },
+      "ngram": {
+        "enabled": false,
+        "banks": 4,
+        "rows": 131072,
+        "dim": 8,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "seeds": [
+          17,
+          65537,
+          104729,
+          999983
+        ],
+        "layer": 1,
+        "gate_bias": -2.0
+      },
+      "tokens": 70000640
+    },
+    "memory": {
+      "sha256": "06859ffc68b3c8b1d22fc45c76e9c43ce330904d4d87c90be0cc16c47fb11b3b",
+      "size_bytes": 309405219,
+      "architecture": {
+        "vocab_size": 32768,
+        "d_model": 320,
+        "layers": 9,
+        "q_heads": 5,
+        "kv_heads": 1,
+        "head_dim": 64,
+        "ffn": 384,
+        "norm_eps": 1e-06,
+        "rope_theta": 10000.0,
+        "init_std": 0.02,
+        "moe_layers": [
+          2,
+          5,
+          8
+        ],
+        "experts": 12,
+        "expert_ffn": 160,
+        "top_k": 1,
+        "aux_weight": 0.01,
+        "activation_checkpointing": false,
+        "moe_backend": "grouped"
+      },
+      "ngram": {
+        "enabled": true,
+        "banks": 4,
+        "rows": 131072,
+        "dim": 8,
+        "orders": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "seeds": [
+          17,
+          65537,
+          104729,
+          999983
+        ],
+        "layer": 1,
+        "gate_bias": -2.0
+      },
+      "tokens": 70000640
+    }
+  },
   "scope": "Local release evidence, not a published model release. Checkpoints referenced, not copied."
 }

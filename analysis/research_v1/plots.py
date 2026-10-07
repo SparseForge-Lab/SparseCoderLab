@@ -55,7 +55,7 @@ def main():
             for key,label in [('val_loss','Mixed'),('code_val_loss','Code'),('general_val_loss','General'),('technical_val_loss','Technical')]:
                 points=sorted((int(t),r['delta_ablated_minus_normal'][key]) for t,r in ablation.items())
                 ax.plot([t/1e6 for t,_ in points],[v for _,v in points],marker='o',label=label)
-            ax.axhline(0,color='black',lw=.8);ax.grid(alpha=.18);ax.legend();ax.set(title='Same-checkpoint Ngram residual-zero ablation\nPositive delta means memory helps',xlabel='Consumed training tokens (millions)',ylabel='Ablated − normal NLL (nats/token)')
+            ax.axhline(0,color='black',lw=.8);ax.grid(alpha=.18);ax.legend(loc='lower right');ax.set(title='Same-checkpoint Ngram residual-zero ablation\nPositive delta means memory helps',xlabel='Consumed training tokens (millions)',ylabel='Ablated − normal NLL (nats/token)')
             save(fig,'ngram_ablation_curve')
 
 if __name__=='__main__':main()

@@ -1,0 +1,40 @@
+{
+  "status": "verified_complete",
+  "verification_sha256": "83bb5b6ec60832ad1acf0517bd70b6a4cac7dca70f0aab45dbf9df3aa0dfb55d",
+  "inputs": {
+    "loss_curves.csv": "012596d5425dbbdc575f21913bde8c3b724dacec495d1278204ff128e51785a0",
+    "paired_deltas.csv": "889921bb010cadecd1d520b63ec25a564970cf8c662fb6df20920e1ac96d8df1",
+    "tables_receipt.json": "dc0c81914aaecba514542565cb4dfdd2ce193c8e1a22b4b62884a54c33cc5832"
+  },
+  "outputs": [
+    {
+      "path": "results/replication_seed1337/paired_seed_gaps.png",
+      "sha256": "f520b8811cb7bfaef2c2cf0baf5359797d8d7cd1c0bfb2e38634f7393bdb568d"
+    },
+    {
+      "path": "results/replication_seed1337/paired_seed_gaps.svg",
+      "sha256": "f23eb9c1e754aad23634452a8d6b41b242724d8d2322891633ba87575fbe681b"
+    },
+    {
+      "path": "results/replication_seed1337/paired_seed_gaps.pdf",
+      "sha256": "f2d15d6ba55bff47a3f30ca32c6aea357b3b5fc6d2099ae15b1bd00069087eb7"
+    },
+    {
+      "path": "results/replication_seed1337/paired_seed_losses.png",
+      "sha256": "3f2ea87b294e0ccd4bc622ace22d1e4a6d668b5e1bfa0e251eb136b6e48cee8d"
+    },
+    {
+      "path": "results/replication_seed1337/paired_seed_losses.svg",
+      "sha256": "9c1ded4bb8736fb59491e58eee697b6629119bb8a75c36c12188af6298e51f1a"
+    },
+    {
+      "path": "results/replication_seed1337/paired_seed_losses.pdf",
+      "sha256": "ee98a5b239663a73855233e5b05ff4fcbcdb78ac444609f6a02b8c13a1f19a45"
+    }
+  ],
+  "visual_review": {
+    "status": "reviewed",
+    "scope": "Both regenerated complete-seed figures show all four measured checkpoints with clear labels, sign convention, and fixed evaluation-order caveat."
+  },
+  "scope": "Measured checkpoint markers only; lines connect measurements and do not imply intermediate evaluation. Two seeds are a sensitivity check, not a population interval."
+}

@@ -1,0 +1,125 @@
+{
+  "status": "measured_speed_only",
+  "date_local": "2026-10-06",
+  "training_source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+  "effective_tokens_per_update": 8192,
+  "context": 1024,
+  "measured_steps_per_row": 20,
+  "warmup_steps_per_row": 3,
+  "repetitions": 2,
+  "models": {
+    "sparse": {
+      "1": {
+        "microbatch": 1,
+        "accumulation": 8,
+        "wall_tokens_per_second_runs": [
+          13776.318894604296,
+          13677.37530967404
+        ],
+        "mean_wall_tokens_per_second": 13726.847102139167,
+        "mean_step_seconds": 0.596794467500058,
+        "max_peak_allocated_bytes": 1151181312,
+        "max_peak_reserved_bytes": 1304428544
+      },
+      "2": {
+        "microbatch": 2,
+        "accumulation": 4,
+        "wall_tokens_per_second_runs": [
+          25620.113790899573,
+          25977.92440886874
+        ],
+        "mean_wall_tokens_per_second": 25799.019099884157,
+        "mean_step_seconds": 0.31754672249999205,
+        "max_peak_allocated_bytes": 1802527232,
+        "max_peak_reserved_bytes": 2189426688
+      },
+      "4": {
+        "microbatch": 4,
+        "accumulation": 2,
+        "wall_tokens_per_second_runs": [
+          44774.20725826109,
+          45293.321946971344
+        ],
+        "mean_wall_tokens_per_second": 45033.76460261622,
+        "mean_step_seconds": 0.18191399749994164,
+        "max_peak_allocated_bytes": 3033395712,
+        "max_peak_reserved_bytes": 3441426432
+      },
+      "8": {
+        "microbatch": 8,
+        "accumulation": 1,
+        "wall_tokens_per_second_runs": [
+          74525.19300854678,
+          72192.18914358548
+        ],
+        "mean_wall_tokens_per_second": 73358.69107606613,
+        "mean_step_seconds": 0.11169872000000396,
+        "max_peak_allocated_bytes": 5454404608,
+        "max_peak_reserved_bytes": 6572474368,
+        "speedup_vs_2x4": 2.843468226138703
+      }
+    },
+    "memory": {
+      "1": {
+        "microbatch": 1,
+        "accumulation": 8,
+        "wall_tokens_per_second_runs": [
+          13209.805739421283,
+          13010.71823826191
+        ],
+        "mean_wall_tokens_per_second": 13110.261988841597,
+        "mean_step_seconds": 0.6248900524999954,
+        "max_peak_allocated_bytes": 1217457664,
+        "max_peak_reserved_bytes": 1453326336
+      },
+      "2": {
+        "microbatch": 2,
+        "accumulation": 4,
+        "wall_tokens_per_second_runs": [
+          23907.676096099054,
+          24782.583277246926
+        ],
+        "mean_wall_tokens_per_second": 24345.12968667299,
+        "mean_step_seconds": 0.3366030900000624,
+        "max_peak_allocated_bytes": 1864721920,
+        "max_peak_reserved_bytes": 2187329536
+      },
+      "4": {
+        "microbatch": 4,
+        "accumulation": 2,
+        "wall_tokens_per_second_runs": [
+          43991.488678019414,
+          43183.64006351665
+        ],
+        "mean_wall_tokens_per_second": 43587.56437076803,
+        "mean_step_seconds": 0.18795965499994055,
+        "max_peak_allocated_bytes": 3134428672,
+        "max_peak_reserved_bytes": 3456106496
+      },
+      "8": {
+        "microbatch": 8,
+        "accumulation": 1,
+        "wall_tokens_per_second_runs": [
+          72460.52164235189,
+          72664.83928316596
+        ],
+        "mean_wall_tokens_per_second": 72562.68046275893,
+        "mean_step_seconds": 0.11289572249997945,
+        "max_peak_allocated_bytes": 5524764672,
+        "max_peak_reserved_bytes": 6522142720,
+        "speedup_vs_2x4": 2.980583032280218
+      }
+    }
+  },
+  "recommendation": {
+    "microbatch": 8,
+    "accumulation": 1,
+    "rationale": "Highest repeated wall throughput for both architectures, with peak reserved VRAM about6.1GiB on a12GiB RTX5070; this benchmark measures speed only. Use only as an explicitly new, shared training protocol after quality validation; do not resume frozen runs with changed microbatch because MoE router auxiliary loss is batch-dependent."
+  },
+  "limitations": [
+    "Two repetitions of 20 measured updates per candidate; short-window speeds may not represent multi-hour data and checkpoint behavior.",
+    "No evaluation-quality comparison, quality checkpoint, or optimizer-continuation equivalence was tested.",
+    "CPU time is per-process and not whole-host CPU utilization; dataloader timing is a combined host-side measurement.",
+    "Router balance depends on microbatch grouping even when total tokens/update is fixed."
+  ]
+}

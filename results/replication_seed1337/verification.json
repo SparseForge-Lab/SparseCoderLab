@@ -1,0 +1,3355 @@
+{
+  "passed": true,
+  "status": "verified_complete",
+  "seed": 1337,
+  "decision": {
+    "required": true,
+    "seed": 1337,
+    "models": [
+      "sparse",
+      "memory"
+    ],
+    "endpoint": 100007936,
+    "status": "selected",
+    "rationale": "At100M the best-loss model is Sparse+Ngram, but its mixed/code advantage over Sparse is only0.006509/0.005529 nats (about0.65% mixed perplexity improvement), while its stored capacity is larger and cumulative step cost about4.77% above Sparse. All72 individual primary arithmetic task attempts fail. The key surviving architecture question is whether current memory adds a reproducible incremental benefit over the same grouped sparse backbone. Replicate this pair, not all three. Continue both fresh seed1337 runs cumulatively through20M/50M/70M/100M with the same100M LR horizon;100M is chosen because the small incremental gap and curve shape cannot be settled by a50M-only endpoint. Document bootstrap does not measure training-seed uncertainty.",
+    "primary_evidence": "results/research_v1/review_evidence.json",
+    "primary_integrity": "results/research_v1/final_integrity.json",
+    "primary100m_ngram_minus_sparse": {
+      "val_loss": -0.006508529186248779,
+      "code_val_loss": -0.005528548650174603,
+      "general_val_loss": -0.025098428221722813,
+      "technical_val_loss": -0.02342100971656569,
+      "mixed_perplexity_ratio": 0.9935126054132579
+    },
+    "data_order_seed": 42,
+    "evaluation_seed": 42,
+    "pair_difference": "Current Ngram alone; same grouped backbone/active-compute policy.",
+    "no_dense_replication": "Dense remains the seed42 baseline; this second-seed comparison resolves the extra-memory survivor decision and does not replicate the Dense gap.",
+    "scope": "Selected-pair seed sensitivity study on a fixed corpus."
+  },
+  "completed": {
+    "sparse/20004864": {
+      "summary": {
+        "step": 2442,
+        "tokens_seen": 20004864,
+        "cursor": 19536,
+        "training_seconds": 1053.3151745999912,
+        "wall_time": 1102.8234998999997,
+        "seed": 1337,
+        "config_hash": "c06920a6d91dd7744df3c17832171b3a12fa382926b2f57e619a14df5b53264d",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+        "model": "ResearchV1_SparseV3_Grouped",
+        "tag": "sparse",
+        "wall_tok_s": 18139.67874443551,
+        "training_step_tok_s": 18992.286907474852,
+        "vram_peak": 1816363520,
+        "stored_params": 21562560,
+        "active_params_est": 16493760,
+        "training_flops_est": 1979732553891840,
+        "checkpoint": "experiments\\research_v1\\sparse\\checkpoints\\tokens_20004864.pt",
+        "checkpoint_sha256": "7332c13342f48d8b76213d63112785b1842f8079c09ed5dcc31c58a27e240f2c",
+        "val_loss": 4.212787184864283,
+        "mixed_predictions": 262144,
+        "bits_per_token": 6.077767179924278,
+        "context_val_loss": 3.642222135165892,
+        "code_val_loss": 3.665866462024728,
+        "technical_val_loss": 4.540364972107929,
+        "general_val_loss": 5.883902920227565,
+        "language": {
+          "context": {
+            "nll": 3.642222135165892,
+            "predictions": 42474,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/other": {
+            "nll": 3.8659574167727486,
+            "predictions": 40688,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Java": {
+            "nll": 3.069376906445695,
+            "predictions": 42311,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C#": {
+            "nll": 3.8429676358509304,
+            "predictions": 40063,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/HTML/CSS": {
+            "nll": 3.1220085483256144,
+            "predictions": 46584,
+            "documents": 64,
+            "sufficient": true
+          },
+          "technical": {
+            "nll": 4.540364972107929,
+            "predictions": 38956,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Python": {
+            "nll": 4.045305938469819,
+            "predictions": 45406,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C/C++": {
+            "nll": 3.6274067762281064,
+            "predictions": 46741,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/JS/TS": {
+            "nll": 3.6723537797809347,
+            "predictions": 35005,
+            "documents": 64,
+            "sufficient": true
+          },
+          "general": {
+            "nll": 5.883902920227565,
+            "predictions": 41495,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Go": {
+            "nll": 3.6614065787243777,
+            "predictions": 44812,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/SQL": {
+            "nll": 4.12931460885424,
+            "predictions": 6736,
+            "documents": 11,
+            "sufficient": false
+          },
+          "code/Rust": {
+            "nll": 4.3263699279368195,
+            "predictions": 6459,
+            "documents": 8,
+            "sufficient": false
+          },
+          "code/Bash": {
+            "nll": 4.733591370510024,
+            "predictions": 11698,
+            "documents": 20,
+            "sufficient": true
+          }
+        },
+        "category_predictions": {
+          "context": 42474,
+          "code": 366503,
+          "technical": 38956,
+          "general": 41495
+        },
+        "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+        "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+      },
+      "integrity": {
+        "passed": true,
+        "seed": 1337,
+        "tokens": 20004864,
+        "optimizer_step_range": [
+          2382,
+          2442
+        ],
+        "checkpoint": {
+          "project_relative_path": "work/replication_seed1337/experiments/research_v1/sparse/checkpoints/tokens_20004864.pt",
+          "sha256": "7332c13342f48d8b76213d63112785b1842f8079c09ed5dcc31c58a27e240f2c",
+          "size_bytes": 258938459,
+          "tokens": 20004864,
+          "seed": 1337
+        },
+        "frozen_identity": {
+          "config_hash": "c06920a6d91dd7744df3c17832171b3a12fa382926b2f57e619a14df5b53264d",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        "no_epoch_repeat": true,
+        "scope": "CPU strict model/Adam/scheduler loading, finite weights/moments and shapes, counters/cursor/saved RNG and exact frozen document identities. No new GPU resume equivalence test."
+      },
+      "micro_pass_count": 0,
+      "routing": {
+        "2": {
+          "category_expert_mutual_information_bits": 0.029267035261721933,
+          "pooled_counts": [
+            40076,
+            45301,
+            35248,
+            34431,
+            49453,
+            47478,
+            33305,
+            48014,
+            37368,
+            36710,
+            41708,
+            40336
+          ],
+          "pooled_hard_entropy_nats": 2.476209266369125,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.13230160429574098,
+          "max_share": 0.10104244138055035,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.15697023645088348,
+          "independent_same_expert_baseline": 0.0847919762082689,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 1,
+              "enrichment": 1.5640221005392219,
+              "frequency": 0.14476442944933124,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Java",
+              "expert": 9,
+              "enrichment": 1.5342315586764905,
+              "frequency": 0.11507645765876486,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/Bash",
+              "expert": 1,
+              "enrichment": 1.4952584118775383,
+              "frequency": 0.13839972644896564,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 8,
+              "enrichment": 1.4102941616037483,
+              "frequency": 0.10767645543534261,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/C/C++",
+              "expert": 3,
+              "enrichment": 1.328992752268906,
+              "frequency": 0.0934939346612182,
+              "documents": 64,
+              "predictions": 46741
+            },
+            {
+              "category": "code/C#",
+              "expert": 0,
+              "enrichment": 1.3110837032133518,
+              "frequency": 0.10735591443476525,
+              "documents": 64,
+              "predictions": 40063
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "5": {
+          "category_expert_mutual_information_bits": 0.03866226045998443,
+          "pooled_counts": [
+            39859,
+            34890,
+            38750,
+            50843,
+            48581,
+            44577,
+            35327,
+            35472,
+            29002,
+            42563,
+            43854,
+            45710
+          ],
+          "pooled_hard_entropy_nats": 2.473446447452837,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.15010439613446194,
+          "max_share": 0.10388249139812189,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.13522207557015256,
+          "independent_same_expert_baseline": 0.08521094414490764,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Go",
+              "expert": 5,
+              "enrichment": 1.7951875942747342,
+              "frequency": 0.16350531107739,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "general",
+              "expert": 9,
+              "enrichment": 1.7929372583872942,
+              "frequency": 0.15592240028919147,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/C#",
+              "expert": 0,
+              "enrichment": 1.6167445653661976,
+              "frequency": 0.13166762349299851,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "technical",
+              "expert": 7,
+              "enrichment": 1.4347988562602556,
+              "frequency": 0.10398911592565972,
+              "documents": 64,
+              "predictions": 38956
+            },
+            {
+              "category": "code/Python",
+              "expert": 2,
+              "enrichment": 1.4192023256838302,
+              "frequency": 0.11236400475708057,
+              "documents": 64,
+              "predictions": 45406
+            },
+            {
+              "category": "code/Bash",
+              "expert": 2,
+              "enrichment": 1.404697418362113,
+              "frequency": 0.1112155924089588,
+              "documents": 20,
+              "predictions": 11698
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "8": {
+          "category_expert_mutual_information_bits": 0.043004349872815525,
+          "pooled_counts": [
+            38503,
+            35457,
+            32574,
+            42210,
+            32282,
+            45495,
+            46657,
+            38347,
+            42111,
+            41864,
+            49412,
+            44516
+          ],
+          "pooled_hard_entropy_nats": 2.476543673716793,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.12842432341879859,
+          "max_share": 0.10095867012103925,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.14614117478539346,
+          "independent_same_expert_baseline": 0.08470773390379802,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Bash",
+              "expert": 5,
+              "enrichment": 1.8374224105873178,
+              "frequency": 0.1707984270815524,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "technical",
+              "expert": 4,
+              "enrichment": 1.6520824426394518,
+              "frequency": 0.10896909333607147,
+              "documents": 64,
+              "predictions": 38956
+            },
+            {
+              "category": "code/Java",
+              "expert": 6,
+              "enrichment": 1.596383154070256,
+              "frequency": 0.15218264753846517,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/Python",
+              "expert": 1,
+              "enrichment": 1.5427999849700664,
+              "frequency": 0.11176936968682553,
+              "documents": 64,
+              "predictions": 45406
+            },
+            {
+              "category": "code/Go",
+              "expert": 9,
+              "enrichment": 1.5413250941372598,
+              "frequency": 0.13183968579844685,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/C/C++",
+              "expert": 10,
+              "enrichment": 1.5412460150331984,
+              "frequency": 0.15560214800710298,
+              "documents": 64,
+              "predictions": 46741
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        }
+      },
+      "ablation": null,
+      "raw_summary_path_base": "work/replication_seed1337",
+      "raw_summary_path_scope": "Inherited checkpoint field is relative to the isolated workspace, never the canonical seed42 output directory."
+    },
+    "memory/20004864": {
+      "summary": {
+        "step": 2442,
+        "tokens_seen": 20004864,
+        "cursor": 19536,
+        "training_seconds": 1093.2093822999923,
+        "wall_time": 1178.079733100003,
+        "seed": 1337,
+        "config_hash": "6fc11a8c1fd2cd38a57af6190df85763411ec6f5242ebeecaa46988409750253",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+        "model": "ResearchV1_SparseV3_GroupedNgram",
+        "tag": "memory",
+        "wall_tok_s": 16980.90836972395,
+        "training_step_tok_s": 18299.206285544282,
+        "vram_peak": 1889998336,
+        "stored_params": 25767425,
+        "active_params_est": 16504353,
+        "training_flops_est": 1981004023037952,
+        "checkpoint": "experiments\\research_v1\\memory\\checkpoints\\tokens_20004864.pt",
+        "checkpoint_sha256": "4396283ac4590f2f954b184bf87b5c157695bd3a7d11e8b420f3d938b2913587",
+        "val_loss": 4.332047702744603,
+        "mixed_predictions": 262144,
+        "bits_per_token": 6.249823737644065,
+        "context_val_loss": 3.755548067066401,
+        "code_val_loss": 3.78147243376392,
+        "technical_val_loss": 4.614742308547517,
+        "general_val_loss": 5.925440057655001,
+        "language": {
+          "context": {
+            "nll": 3.755548067066401,
+            "predictions": 42474,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/other": {
+            "nll": 4.018629793588964,
+            "predictions": 40688,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Java": {
+            "nll": 3.1692816478049632,
+            "predictions": 42311,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C#": {
+            "nll": 3.9398088133067612,
+            "predictions": 40063,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/HTML/CSS": {
+            "nll": 3.220714472872724,
+            "predictions": 46584,
+            "documents": 64,
+            "sufficient": true
+          },
+          "technical": {
+            "nll": 4.614742308547517,
+            "predictions": 38956,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Python": {
+            "nll": 4.17027978605832,
+            "predictions": 45406,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C/C++": {
+            "nll": 3.7477520891036837,
+            "predictions": 46741,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/JS/TS": {
+            "nll": 3.7865045489660076,
+            "predictions": 35005,
+            "documents": 64,
+            "sufficient": true
+          },
+          "general": {
+            "nll": 5.925440057655001,
+            "predictions": 41495,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Go": {
+            "nll": 3.7522211206828677,
+            "predictions": 44812,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/SQL": {
+            "nll": 4.393249162656394,
+            "predictions": 6736,
+            "documents": 11,
+            "sufficient": false
+          },
+          "code/Rust": {
+            "nll": 4.448878249289321,
+            "predictions": 6459,
+            "documents": 8,
+            "sufficient": false
+          },
+          "code/Bash": {
+            "nll": 4.863431623112872,
+            "predictions": 11698,
+            "documents": 20,
+            "sufficient": true
+          }
+        },
+        "category_predictions": {
+          "context": 42474,
+          "code": 366503,
+          "technical": 38956,
+          "general": 41495
+        },
+        "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+        "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+      },
+      "integrity": {
+        "passed": true,
+        "seed": 1337,
+        "tokens": 20004864,
+        "optimizer_step_range": [
+          2397,
+          2442
+        ],
+        "checkpoint": {
+          "project_relative_path": "work/replication_seed1337/experiments/research_v1/memory/checkpoints/tokens_20004864.pt",
+          "sha256": "4396283ac4590f2f954b184bf87b5c157695bd3a7d11e8b420f3d938b2913587",
+          "size_bytes": 309405219,
+          "tokens": 20004864,
+          "seed": 1337
+        },
+        "frozen_identity": {
+          "config_hash": "6fc11a8c1fd2cd38a57af6190df85763411ec6f5242ebeecaa46988409750253",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        "no_epoch_repeat": true,
+        "scope": "CPU strict model/Adam/scheduler loading, finite weights/moments and shapes, counters/cursor/saved RNG and exact frozen document identities. No new GPU resume equivalence test."
+      },
+      "micro_pass_count": 0,
+      "routing": {
+        "2": {
+          "category_expert_mutual_information_bits": 0.03564089620734423,
+          "pooled_counts": [
+            42100,
+            36626,
+            38700,
+            31461,
+            42203,
+            42502,
+            46377,
+            38090,
+            44334,
+            39029,
+            41540,
+            46466
+          ],
+          "pooled_hard_entropy_nats": 2.4797075608600423,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.10067632774399199,
+          "max_share": 0.0949393986449488,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.135179103103226,
+          "independent_same_expert_baseline": 0.08417797691400132,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Java",
+              "expert": 8,
+              "enrichment": 1.9297253734616813,
+              "frequency": 0.1748008792039895,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "general",
+              "expert": 3,
+              "enrichment": 1.8291584936307377,
+              "frequency": 0.11758043137727436,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 3,
+              "enrichment": 1.8066614459594712,
+              "frequency": 0.11613429503692255,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Go",
+              "expert": 6,
+              "enrichment": 1.7127951318628323,
+              "frequency": 0.1623002767115951,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/Bash",
+              "expert": 11,
+              "enrichment": 1.4811798959152325,
+              "frequency": 0.14062232860318002,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/C#",
+              "expert": 8,
+              "enrichment": 1.395962053589749,
+              "frequency": 0.12645083992711478,
+              "documents": 64,
+              "predictions": 40063
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "5": {
+          "category_expert_mutual_information_bits": 0.03808300086698553,
+          "pooled_counts": [
+            31168,
+            40833,
+            56990,
+            43342,
+            45928,
+            39217,
+            36210,
+            38601,
+            40567,
+            36887,
+            48155,
+            31530
+          ],
+          "pooled_hard_entropy_nats": 2.4710009295548625,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.16919672171076114,
+          "max_share": 0.11644205072043283,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.14571554273202575,
+          "independent_same_expert_baseline": 0.0857189608864724,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/C#",
+              "expert": 11,
+              "enrichment": 1.8814819307861606,
+              "frequency": 0.12120909567431296,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/Java",
+              "expert": 10,
+              "enrichment": 1.7737231020908923,
+              "frequency": 0.1745172650138262,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 3,
+              "enrichment": 1.7140517265706292,
+              "frequency": 0.15179031427099432,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Go",
+              "expert": 4,
+              "enrichment": 1.4846028342558788,
+              "frequency": 0.13931536195661876,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/C/C++",
+              "expert": 10,
+              "enrichment": 1.4766689912120659,
+              "frequency": 0.14529000235339423,
+              "documents": 64,
+              "predictions": 46741
+            },
+            {
+              "category": "code/Python",
+              "expert": 11,
+              "enrichment": 1.4474462641102284,
+              "frequency": 0.0932475884244373,
+              "documents": 64,
+              "predictions": 45406
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "8": {
+          "category_expert_mutual_information_bits": 0.043788969942050546,
+          "pooled_counts": [
+            33142,
+            45759,
+            37104,
+            33357,
+            33312,
+            40038,
+            40787,
+            36640,
+            50275,
+            52951,
+            43369,
+            42694
+          ],
+          "pooled_hard_entropy_nats": 2.473230799310612,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.15407291449810503,
+          "max_share": 0.10818956005786347,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.15092544276988243,
+          "independent_same_expert_baseline": 0.08531153858182836,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Java",
+              "expert": 1,
+              "enrichment": 1.8395490470123825,
+              "frequency": 0.1719883718182033,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "general",
+              "expert": 0,
+              "enrichment": 1.6168028515489974,
+              "frequency": 0.10948307024942765,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Bash",
+              "expert": 9,
+              "enrichment": 1.5834368415895521,
+              "frequency": 0.1713113352709865,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/C#",
+              "expert": 0,
+              "enrichment": 1.5378392151665936,
+              "frequency": 0.10413598582232983,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 2,
+              "enrichment": 1.5279292473520085,
+              "frequency": 0.1158337626652928,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Go",
+              "expert": 8,
+              "enrichment": 1.3868684974761456,
+              "frequency": 0.1424618405784165,
+              "documents": 64,
+              "predictions": 44812
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        }
+      },
+      "ablation": {
+        "val_loss": 0.059876369312405586,
+        "code_val_loss": 0.09631735100931449,
+        "general_val_loss": 0.04016891668641254,
+        "technical_val_loss": 0.11114472818057575
+      },
+      "raw_summary_path_base": "work/replication_seed1337",
+      "raw_summary_path_scope": "Inherited checkpoint field is relative to the isolated workspace, never the canonical seed42 output directory."
+    },
+    "sparse/50003968": {
+      "summary": {
+        "step": 6104,
+        "tokens_seen": 50003968,
+        "cursor": 48832,
+        "training_seconds": 2511.966739700061,
+        "wall_time": 2600.4221055000016,
+        "seed": 1337,
+        "config_hash": "c06920a6d91dd7744df3c17832171b3a12fa382926b2f57e619a14df5b53264d",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+        "model": "ResearchV1_SparseV3_Grouped",
+        "tag": "sparse",
+        "wall_tok_s": 19229.173561568914,
+        "training_step_tok_s": 19906.301787248452,
+        "vram_peak": 1734935040,
+        "stored_params": 21562560,
+        "active_params_est": 16493760,
+        "training_flops_est": 4948520683438080,
+        "checkpoint": "experiments\\research_v1\\sparse\\checkpoints\\tokens_50003968.pt",
+        "checkpoint_sha256": "0165eefa5131ff5161044cc5c0124a09b1ab822b10badec7556fab8ebe14b545",
+        "val_loss": 3.263231560587883,
+        "mixed_predictions": 262144,
+        "bits_per_token": 4.707847989732492,
+        "context_val_loss": 2.6965768206600598,
+        "code_val_loss": 2.7427873481108183,
+        "technical_val_loss": 3.657097327440215,
+        "general_val_loss": 5.110932406960862,
+        "language": {
+          "context": {
+            "nll": 2.6965768206600598,
+            "predictions": 42474,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/other": {
+            "nll": 2.8218505308618003,
+            "predictions": 40688,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Java": {
+            "nll": 2.2177485449121233,
+            "predictions": 42311,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C#": {
+            "nll": 2.866955943618566,
+            "predictions": 40063,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/HTML/CSS": {
+            "nll": 2.3066714190493003,
+            "predictions": 46584,
+            "documents": 64,
+            "sufficient": true
+          },
+          "technical": {
+            "nll": 3.657097327440215,
+            "predictions": 38956,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Python": {
+            "nll": 3.1174118527388175,
+            "predictions": 45406,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C/C++": {
+            "nll": 2.6885889159075034,
+            "predictions": 46741,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/JS/TS": {
+            "nll": 2.809890486713546,
+            "predictions": 35005,
+            "documents": 64,
+            "sufficient": true
+          },
+          "general": {
+            "nll": 5.110932406960862,
+            "predictions": 41495,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Go": {
+            "nll": 2.755458289636498,
+            "predictions": 44812,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/SQL": {
+            "nll": 2.898483855530372,
+            "predictions": 6736,
+            "documents": 11,
+            "sufficient": false
+          },
+          "code/Rust": {
+            "nll": 3.4509995617462694,
+            "predictions": 6459,
+            "documents": 8,
+            "sufficient": false
+          },
+          "code/Bash": {
+            "nll": 3.710702438052036,
+            "predictions": 11698,
+            "documents": 20,
+            "sufficient": true
+          }
+        },
+        "category_predictions": {
+          "context": 42474,
+          "code": 366503,
+          "technical": 38956,
+          "general": 41495
+        },
+        "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+        "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+      },
+      "integrity": {
+        "passed": true,
+        "seed": 1337,
+        "tokens": 50003968,
+        "optimizer_step_range": [
+          6044,
+          6104
+        ],
+        "checkpoint": {
+          "project_relative_path": "work/replication_seed1337/experiments/research_v1/sparse/checkpoints/tokens_50003968.pt",
+          "sha256": "0165eefa5131ff5161044cc5c0124a09b1ab822b10badec7556fab8ebe14b545",
+          "size_bytes": 258938459,
+          "tokens": 50003968,
+          "seed": 1337
+        },
+        "frozen_identity": {
+          "config_hash": "c06920a6d91dd7744df3c17832171b3a12fa382926b2f57e619a14df5b53264d",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        "no_epoch_repeat": true,
+        "scope": "CPU strict model/Adam/scheduler loading, finite weights/moments and shapes, counters/cursor/saved RNG and exact frozen document identities. No new GPU resume equivalence test."
+      },
+      "micro_pass_count": 0,
+      "routing": {
+        "2": {
+          "category_expert_mutual_information_bits": 0.025450084160792606,
+          "pooled_counts": [
+            49503,
+            43178,
+            41192,
+            39331,
+            33875,
+            43871,
+            43677,
+            41036,
+            34894,
+            41614,
+            37497,
+            39760
+          ],
+          "pooled_hard_entropy_nats": 2.479981774272993,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.09933252468341562,
+          "max_share": 0.10114460145312487,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.1294576260781485,
+          "independent_same_expert_baseline": 0.08415557920499843,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 2,
+              "enrichment": 1.6086512422635912,
+              "frequency": 0.13538980600072298,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Go",
+              "expert": 0,
+              "enrichment": 1.5889714069373269,
+              "frequency": 0.16071587967508702,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/Bash",
+              "expert": 1,
+              "enrichment": 1.5019185135734252,
+              "frequency": 0.13250128227047359,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/Java",
+              "expert": 9,
+              "enrichment": 1.3503724512657438,
+              "frequency": 0.1148164779844485,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/C#",
+              "expert": 0,
+              "enrichment": 1.310660245999265,
+              "frequency": 0.13256620822205026,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "technical",
+              "expert": 2,
+              "enrichment": 1.2968651846201993,
+              "frequency": 0.10914878324263272,
+              "documents": 64,
+              "predictions": 38956
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "5": {
+          "category_expert_mutual_information_bits": 0.03708146627282607,
+          "pooled_counts": [
+            36623,
+            39250,
+            43179,
+            43361,
+            44702,
+            46593,
+            34489,
+            43396,
+            37555,
+            43311,
+            39606,
+            37363
+          ],
+          "pooled_hard_entropy_nats": 2.4809359473269543,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.08882411246890887,
+          "max_share": 0.09519888522928807,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.12153841431597041,
+          "independent_same_expert_baseline": 0.08399081024632411,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 6,
+              "enrichment": 2.078268603210509,
+              "frequency": 0.1464513796842993,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Go",
+              "expert": 5,
+              "enrichment": 1.6052310862223307,
+              "frequency": 0.15281620994376507,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/Bash",
+              "expert": 7,
+              "enrichment": 1.5223328675655672,
+              "frequency": 0.13498033851940502,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 10,
+              "enrichment": 1.49745919729046,
+              "frequency": 0.12117894556070753,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/C#",
+              "expert": 8,
+              "enrichment": 1.4605751898687938,
+              "frequency": 0.1120734842622869,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/Java",
+              "expert": 1,
+              "enrichment": 1.3768882531488476,
+              "frequency": 0.11042045803691711,
+              "documents": 64,
+              "predictions": 42311
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "8": {
+          "category_expert_mutual_information_bits": 0.0433344824357164,
+          "pooled_counts": [
+            39264,
+            44161,
+            39415,
+            40984,
+            43247,
+            37675,
+            40412,
+            39112,
+            36449,
+            49362,
+            38104,
+            41243
+          ],
+          "pooled_hard_entropy_nats": 2.4816458660764233,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.08195115658989004,
+          "max_share": 0.10085651004846474,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.13408842096647125,
+          "independent_same_expert_baseline": 0.08389299933886839,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 8,
+              "enrichment": 1.9574514961806158,
+              "frequency": 0.14577659959031208,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Bash",
+              "expert": 1,
+              "enrichment": 1.8787154615231576,
+              "frequency": 0.16951615660796718,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/Python",
+              "expert": 1,
+              "enrichment": 1.644872060966692,
+              "frequency": 0.14841650883143198,
+              "documents": 64,
+              "predictions": 45406
+            },
+            {
+              "category": "code/C#",
+              "expert": 10,
+              "enrichment": 1.4821722210990294,
+              "frequency": 0.11539325562239473,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/Go",
+              "expert": 4,
+              "enrichment": 1.416776547658818,
+              "frequency": 0.1251896813353566,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 5,
+              "enrichment": 1.4066104882806334,
+              "frequency": 0.1082775201786021,
+              "documents": 64,
+              "predictions": 46584
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        }
+      },
+      "ablation": null,
+      "raw_summary_path_base": "work/replication_seed1337",
+      "raw_summary_path_scope": "Inherited checkpoint field is relative to the isolated workspace, never the canonical seed42 output directory."
+    },
+    "memory/50003968": {
+      "summary": {
+        "step": 6104,
+        "tokens_seen": 50003968,
+        "cursor": 48832,
+        "training_seconds": 2294.53416880007,
+        "wall_time": 2446.642811300004,
+        "seed": 1337,
+        "config_hash": "6fc11a8c1fd2cd38a57af6190df85763411ec6f5242ebeecaa46988409750253",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+        "model": "ResearchV1_SparseV3_GroupedNgram",
+        "tag": "memory",
+        "wall_tok_s": 20437.78837231692,
+        "training_step_tok_s": 21792.64474677649,
+        "vram_peak": 1803552256,
+        "stored_params": 25767425,
+        "active_params_est": 16504353,
+        "training_flops_est": 4951698835636224,
+        "checkpoint": "experiments\\research_v1\\memory\\checkpoints\\tokens_50003968.pt",
+        "checkpoint_sha256": "844f9282f8653f0c739d9bd2122ae0af2689f559c2475aca86c715d4f8884be3",
+        "val_loss": 3.25262757204473,
+        "mixed_predictions": 262144,
+        "bits_per_token": 4.692549668047642,
+        "context_val_loss": 2.691028625422763,
+        "code_val_loss": 2.7388025788269883,
+        "technical_val_loss": 3.6372893939797106,
+        "general_val_loss": 5.0691214858056375,
+        "language": {
+          "context": {
+            "nll": 2.691028625422763,
+            "predictions": 42474,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/other": {
+            "nll": 2.833055530468568,
+            "predictions": 40688,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Java": {
+            "nll": 2.2163721590192456,
+            "predictions": 42311,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C#": {
+            "nll": 2.854719782620687,
+            "predictions": 40063,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/HTML/CSS": {
+            "nll": 2.299029286087798,
+            "predictions": 46584,
+            "documents": 64,
+            "sufficient": true
+          },
+          "technical": {
+            "nll": 3.6372893939797106,
+            "predictions": 38956,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Python": {
+            "nll": 3.115389405150448,
+            "predictions": 45406,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C/C++": {
+            "nll": 2.6710250892279244,
+            "predictions": 46741,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/JS/TS": {
+            "nll": 2.8244269999312155,
+            "predictions": 35005,
+            "documents": 64,
+            "sufficient": true
+          },
+          "general": {
+            "nll": 5.0691214858056375,
+            "predictions": 41495,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Go": {
+            "nll": 2.7347864861478977,
+            "predictions": 44812,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/SQL": {
+            "nll": 2.9139466884937537,
+            "predictions": 6736,
+            "documents": 11,
+            "sufficient": false
+          },
+          "code/Rust": {
+            "nll": 3.469394394369165,
+            "predictions": 6459,
+            "documents": 8,
+            "sufficient": false
+          },
+          "code/Bash": {
+            "nll": 3.7188595765919783,
+            "predictions": 11698,
+            "documents": 20,
+            "sufficient": true
+          }
+        },
+        "category_predictions": {
+          "context": 42474,
+          "code": 366503,
+          "technical": 38956,
+          "general": 41495
+        },
+        "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+        "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+      },
+      "integrity": {
+        "passed": true,
+        "seed": 1337,
+        "tokens": 50003968,
+        "optimizer_step_range": [
+          6059,
+          6104
+        ],
+        "checkpoint": {
+          "project_relative_path": "work/replication_seed1337/experiments/research_v1/memory/checkpoints/tokens_50003968.pt",
+          "sha256": "844f9282f8653f0c739d9bd2122ae0af2689f559c2475aca86c715d4f8884be3",
+          "size_bytes": 309405219,
+          "tokens": 50003968,
+          "seed": 1337
+        },
+        "frozen_identity": {
+          "config_hash": "6fc11a8c1fd2cd38a57af6190df85763411ec6f5242ebeecaa46988409750253",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        "no_epoch_repeat": true,
+        "scope": "CPU strict model/Adam/scheduler loading, finite weights/moments and shapes, counters/cursor/saved RNG and exact frozen document identities. No new GPU resume equivalence test."
+      },
+      "micro_pass_count": 0,
+      "routing": {
+        "2": {
+          "category_expert_mutual_information_bits": 0.024143587567608364,
+          "pooled_counts": [
+            42657,
+            45994,
+            37723,
+            36336,
+            34320,
+            40932,
+            45970,
+            37243,
+            48157,
+            38160,
+            41753,
+            40183
+          ],
+          "pooled_hard_entropy_nats": 2.4798391393445742,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.10099082379748017,
+          "max_share": 0.09839445229941891,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.11473853300183144,
+          "independent_same_expert_baseline": 0.0841832622076078,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/HTML/CSS",
+              "expert": 4,
+              "enrichment": 1.64697509114047,
+              "frequency": 0.11549029709771595,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Go",
+              "expert": 6,
+              "enrichment": 1.6393401337094071,
+              "frequency": 0.1539766134071231,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "general",
+              "expert": 0,
+              "enrichment": 1.4887020448715973,
+              "frequency": 0.12975057235811543,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Java",
+              "expert": 8,
+              "enrichment": 1.4270383681734955,
+              "frequency": 0.14041265864668762,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/Bash",
+              "expert": 2,
+              "enrichment": 1.3730666398080542,
+              "frequency": 0.10583005641990084,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/JS/TS",
+              "expert": 2,
+              "enrichment": 1.25313447123332,
+              "frequency": 0.09658620197114698,
+              "documents": 64,
+              "predictions": 35005
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "5": {
+          "category_expert_mutual_information_bits": 0.023000215322427117,
+          "pooled_counts": [
+            46277,
+            37608,
+            47211,
+            38957,
+            47671,
+            35169,
+            38499,
+            41740,
+            37418,
+            35359,
+            40401,
+            43118
+          ],
+          "pooled_hard_entropy_nats": 2.479541115762374,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.10410785625978004,
+          "max_share": 0.09740145639399463,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.11842393361777014,
+          "independent_same_expert_baseline": 0.08423653714458391,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/HTML/CSS",
+              "expert": 3,
+              "enrichment": 1.600616363186488,
+              "frequency": 0.12740425897303795,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "general",
+              "expert": 6,
+              "enrichment": 1.5496100297286222,
+              "frequency": 0.12189420412097843,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/C#",
+              "expert": 11,
+              "enrichment": 1.5038954677969933,
+              "frequency": 0.13249132616129597,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/Java",
+              "expert": 10,
+              "enrichment": 1.4962797978625697,
+              "frequency": 0.12351397981612347,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/Go",
+              "expert": 4,
+              "enrichment": 1.3306591654269717,
+              "frequency": 0.12960814067660448,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/JS/TS",
+              "expert": 1,
+              "enrichment": 1.306040489976498,
+              "frequency": 0.10035709184402228,
+              "documents": 64,
+              "predictions": 35005
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "8": {
+          "category_expert_mutual_information_bits": 0.03147409950553663,
+          "pooled_counts": [
+            34080,
+            47044,
+            44217,
+            34144,
+            42230,
+            42643,
+            40351,
+            38667,
+            43404,
+            40865,
+            43468,
+            38315
+          ],
+          "pooled_hard_entropy_nats": 2.4805645466475523,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.09239058512241531,
+          "max_share": 0.0961203690839102,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.13715174396594942,
+          "independent_same_expert_baseline": 0.08404466835160519,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/C#",
+              "expert": 0,
+              "enrichment": 1.7213449673571635,
+              "frequency": 0.11986121858073534,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 2,
+              "enrichment": 1.6183544307312612,
+              "frequency": 0.14620899879787053,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Java",
+              "expert": 1,
+              "enrichment": 1.549072805845732,
+              "frequency": 0.1488974498357401,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "general",
+              "expert": 10,
+              "enrichment": 1.4470880859175692,
+              "frequency": 0.12852150861549586,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Go",
+              "expert": 8,
+              "enrichment": 1.4257431695120502,
+              "frequency": 0.12643934660358833,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/Bash",
+              "expert": 9,
+              "enrichment": 1.376020677151353,
+              "frequency": 0.11489143443323645,
+              "documents": 20,
+              "predictions": 11698
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        }
+      },
+      "ablation": {
+        "val_loss": 0.07651353813707829,
+        "code_val_loss": 0.12887511410217511,
+        "general_val_loss": 0.06969064402715297,
+        "technical_val_loss": 0.14134305776915923
+      },
+      "raw_summary_path_base": "work/replication_seed1337",
+      "raw_summary_path_scope": "Inherited checkpoint field is relative to the isolated workspace, never the canonical seed42 output directory."
+    },
+    "sparse/70000640": {
+      "summary": {
+        "step": 8545,
+        "tokens_seen": 70000640,
+        "cursor": 68360,
+        "training_seconds": 3346.1559371000276,
+        "wall_time": 3478.662532000002,
+        "seed": 1337,
+        "config_hash": "c06920a6d91dd7744df3c17832171b3a12fa382926b2f57e619a14df5b53264d",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+        "model": "ResearchV1_SparseV3_Grouped",
+        "tag": "sparse",
+        "wall_tok_s": 20122.860253349794,
+        "training_step_tok_s": 20919.718421929436,
+        "vram_peak": 1735229952,
+        "stored_params": 21562560,
+        "active_params_est": 16493760,
+        "training_flops_est": 6927442536038400,
+        "checkpoint": "experiments\\research_v1\\sparse\\checkpoints\\tokens_70000640.pt",
+        "checkpoint_sha256": "00c8bc3abe5d24f11f0a5a5c4d25b6fb686830b94ff2fa3eed7b706431b8a337",
+        "val_loss": 3.082940964959562,
+        "mixed_predictions": 262144,
+        "bits_per_token": 4.447743641500596,
+        "context_val_loss": 2.528534393503756,
+        "code_val_loss": 2.5760442529331984,
+        "technical_val_loss": 3.4874443870517084,
+        "general_val_loss": 4.914545336343076,
+        "language": {
+          "context": {
+            "nll": 2.528534393503756,
+            "predictions": 42474,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/other": {
+            "nll": 2.6504147362448878,
+            "predictions": 40688,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Java": {
+            "nll": 2.0749300494686183,
+            "predictions": 42311,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C#": {
+            "nll": 2.6892209522342627,
+            "predictions": 40063,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/HTML/CSS": {
+            "nll": 2.1696559809008846,
+            "predictions": 46584,
+            "documents": 64,
+            "sufficient": true
+          },
+          "technical": {
+            "nll": 3.4874443870517084,
+            "predictions": 38956,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Python": {
+            "nll": 2.934547614632254,
+            "predictions": 45406,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C/C++": {
+            "nll": 2.5211269988835348,
+            "predictions": 46741,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/JS/TS": {
+            "nll": 2.652013518397867,
+            "predictions": 35005,
+            "documents": 64,
+            "sufficient": true
+          },
+          "general": {
+            "nll": 4.914545336343076,
+            "predictions": 41495,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Go": {
+            "nll": 2.575863481546889,
+            "predictions": 44812,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/SQL": {
+            "nll": 2.7502727096019903,
+            "predictions": 6736,
+            "documents": 11,
+            "sufficient": false
+          },
+          "code/Rust": {
+            "nll": 3.2424972760158717,
+            "predictions": 6459,
+            "documents": 8,
+            "sufficient": false
+          },
+          "code/Bash": {
+            "nll": 3.493543599646078,
+            "predictions": 11698,
+            "documents": 20,
+            "sufficient": true
+          }
+        },
+        "category_predictions": {
+          "context": 42474,
+          "code": 366503,
+          "technical": 38956,
+          "general": 41495
+        },
+        "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+        "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+      },
+      "integrity": {
+        "passed": true,
+        "seed": 1337,
+        "tokens": 70000640,
+        "optimizer_step_range": [
+          8485,
+          8545
+        ],
+        "checkpoint": {
+          "project_relative_path": "work/replication_seed1337/experiments/research_v1/sparse/checkpoints/tokens_70000640.pt",
+          "sha256": "00c8bc3abe5d24f11f0a5a5c4d25b6fb686830b94ff2fa3eed7b706431b8a337",
+          "size_bytes": 258938459,
+          "tokens": 70000640,
+          "seed": 1337
+        },
+        "frozen_identity": {
+          "config_hash": "c06920a6d91dd7744df3c17832171b3a12fa382926b2f57e619a14df5b53264d",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        "no_epoch_repeat": true,
+        "scope": "CPU strict model/Adam/scheduler loading, finite weights/moments and shapes, counters/cursor/saved RNG and exact frozen document identities. No new GPU resume equivalence test."
+      },
+      "micro_pass_count": 0,
+      "routing": {
+        "2": {
+          "category_expert_mutual_information_bits": 0.02449638371261184,
+          "pooled_counts": [
+            51524,
+            38293,
+            45328,
+            38381,
+            40137,
+            40996,
+            41622,
+            39103,
+            35288,
+            39354,
+            35166,
+            44236
+          ],
+          "pooled_hard_entropy_nats": 2.479370861264655,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.10680195953630303,
+          "max_share": 0.10527391158658679,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.12592569855837604,
+          "independent_same_expert_baseline": 0.08428388821339952,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Bash",
+              "expert": 1,
+              "enrichment": 1.6924241760683054,
+              "frequency": 0.13241579757223457,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/Go",
+              "expert": 0,
+              "enrichment": 1.5855739812281893,
+              "frequency": 0.1669195751138088,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "general",
+              "expert": 1,
+              "enrichment": 1.5659546933554267,
+              "frequency": 0.12252078563682371,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Java",
+              "expert": 9,
+              "enrichment": 1.454962631971106,
+              "frequency": 0.11699085344236723,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 10,
+              "enrichment": 1.3441417037589654,
+              "frequency": 0.09657822428301563,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/C/C++",
+              "expert": 3,
+              "enrichment": 1.3283554457542126,
+              "frequency": 0.10416978669690422,
+              "documents": 64,
+              "predictions": 46741
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "5": {
+          "category_expert_mutual_information_bits": 0.03498760110174878,
+          "pooled_counts": [
+            42390,
+            40137,
+            42045,
+            46760,
+            47013,
+            40681,
+            33146,
+            38091,
+            38359,
+            38806,
+            40598,
+            41402
+          ],
+          "pooled_hard_entropy_nats": 2.4810045933694362,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.08809373340055607,
+          "max_share": 0.096057029838914,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.11333885836479532,
+          "independent_same_expert_baseline": 0.0839800421553707,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 6,
+              "enrichment": 2.0542981455769374,
+              "frequency": 0.1391251958067237,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Bash",
+              "expert": 2,
+              "enrichment": 1.621998477113838,
+              "frequency": 0.1393400581295948,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/Go",
+              "expert": 5,
+              "enrichment": 1.5888314399240813,
+              "frequency": 0.1320628403106311,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/C#",
+              "expert": 8,
+              "enrichment": 1.4936571096982014,
+              "frequency": 0.1170656216459077,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/Python",
+              "expert": 2,
+              "enrichment": 1.394120820382107,
+              "frequency": 0.11976390785358763,
+              "documents": 64,
+              "predictions": 45406
+            },
+            {
+              "category": "code/Java",
+              "expert": 1,
+              "enrichment": 1.387960451614502,
+              "frequency": 0.11382382831887689,
+              "documents": 64,
+              "predictions": 42311
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "8": {
+          "category_expert_mutual_information_bits": 0.036807886675543126,
+          "pooled_counts": [
+            38892,
+            44761,
+            40203,
+            42214,
+            38394,
+            38105,
+            40636,
+            38683,
+            38539,
+            41708,
+            42254,
+            45039
+          ],
+          "pooled_hard_entropy_nats": 2.483287783811452,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.05717909801065056,
+          "max_share": 0.09202375017367212,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.12717190009924595,
+          "independent_same_expert_baseline": 0.08360578743744262,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Bash",
+              "expert": 1,
+              "enrichment": 1.9853264401102602,
+              "frequency": 0.18156949905966832,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "general",
+              "expert": 8,
+              "enrichment": 1.8561941787257092,
+              "frequency": 0.14616218821544766,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Python",
+              "expert": 1,
+              "enrichment": 1.5216828347993456,
+              "frequency": 0.13916662996079812,
+              "documents": 64,
+              "predictions": 45406
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 5,
+              "enrichment": 1.4676636384595176,
+              "frequency": 0.11426670101322342,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/C#",
+              "expert": 10,
+              "enrichment": 1.377654837451717,
+              "frequency": 0.1189376731647655,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "technical",
+              "expert": 4,
+              "enrichment": 1.365851671802242,
+              "frequency": 0.10714652428380737,
+              "documents": 64,
+              "predictions": 38956
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        }
+      },
+      "ablation": null,
+      "raw_summary_path_base": "work/replication_seed1337",
+      "raw_summary_path_scope": "Inherited checkpoint field is relative to the isolated workspace, never the canonical seed42 output directory."
+    },
+    "memory/70000640": {
+      "summary": {
+        "step": 8545,
+        "tokens_seen": 70000640,
+        "cursor": 68360,
+        "training_seconds": 3279.0987902999696,
+        "wall_time": 3507.9043388000064,
+        "seed": 1337,
+        "config_hash": "6fc11a8c1fd2cd38a57af6190df85763411ec6f5242ebeecaa46988409750253",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+        "model": "ResearchV1_SparseV3_GroupedNgram",
+        "tag": "memory",
+        "wall_tok_s": 19955.116570808772,
+        "training_step_tok_s": 21347.523962093375,
+        "vram_peak": 1803912704,
+        "stored_params": 25767425,
+        "active_params_est": 16504353,
+        "training_flops_est": 6931891636715520,
+        "checkpoint": "experiments\\research_v1\\memory\\checkpoints\\tokens_70000640.pt",
+        "checkpoint_sha256": "c326a5ce20fa4716959dcb958d81f2537b27c5d027911387e321324b093d89a0",
+        "val_loss": 3.0614706240594387,
+        "mixed_predictions": 262144,
+        "bits_per_token": 4.416768487157793,
+        "context_val_loss": 2.5116674444059894,
+        "code_val_loss": 2.5557575318783288,
+        "technical_val_loss": 3.4594453825922407,
+        "general_val_loss": 4.871207833499819,
+        "language": {
+          "context": {
+            "nll": 2.5116674444059894,
+            "predictions": 42474,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/other": {
+            "nll": 2.6394584134947676,
+            "predictions": 40688,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Java": {
+            "nll": 2.058620088499554,
+            "predictions": 42311,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C#": {
+            "nll": 2.661877521895655,
+            "predictions": 40063,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/HTML/CSS": {
+            "nll": 2.14714719593095,
+            "predictions": 46584,
+            "documents": 64,
+            "sufficient": true
+          },
+          "technical": {
+            "nll": 3.4594453825922407,
+            "predictions": 38956,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Python": {
+            "nll": 2.9152885594239546,
+            "predictions": 45406,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C/C++": {
+            "nll": 2.4942141746653945,
+            "predictions": 46741,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/JS/TS": {
+            "nll": 2.6431855524596,
+            "predictions": 35005,
+            "documents": 64,
+            "sufficient": true
+          },
+          "general": {
+            "nll": 4.871207833499819,
+            "predictions": 41495,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Go": {
+            "nll": 2.5453136952888706,
+            "predictions": 44812,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/SQL": {
+            "nll": 2.746620371318345,
+            "predictions": 6736,
+            "documents": 11,
+            "sufficient": false
+          },
+          "code/Rust": {
+            "nll": 3.229493891090999,
+            "predictions": 6459,
+            "documents": 8,
+            "sufficient": false
+          },
+          "code/Bash": {
+            "nll": 3.473349253730624,
+            "predictions": 11698,
+            "documents": 20,
+            "sufficient": true
+          }
+        },
+        "category_predictions": {
+          "context": 42474,
+          "code": 366503,
+          "technical": 38956,
+          "general": 41495
+        },
+        "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+        "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+      },
+      "integrity": {
+        "passed": true,
+        "seed": 1337,
+        "tokens": 70000640,
+        "optimizer_step_range": [
+          8500,
+          8545
+        ],
+        "checkpoint": {
+          "project_relative_path": "work/replication_seed1337/experiments/research_v1/memory/checkpoints/tokens_70000640.pt",
+          "sha256": "c326a5ce20fa4716959dcb958d81f2537b27c5d027911387e321324b093d89a0",
+          "size_bytes": 309405219,
+          "tokens": 70000640,
+          "seed": 1337
+        },
+        "frozen_identity": {
+          "config_hash": "6fc11a8c1fd2cd38a57af6190df85763411ec6f5242ebeecaa46988409750253",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        "no_epoch_repeat": true,
+        "scope": "CPU strict model/Adam/scheduler loading, finite weights/moments and shapes, counters/cursor/saved RNG and exact frozen document identities. No new GPU resume equivalence test."
+      },
+      "micro_pass_count": 0,
+      "routing": {
+        "2": {
+          "category_expert_mutual_information_bits": 0.020981287493752256,
+          "pooled_counts": [
+            41160,
+            38419,
+            39153,
+            33344,
+            41168,
+            41540,
+            46480,
+            39739,
+            50897,
+            38996,
+            39583,
+            38949
+          ],
+          "pooled_hard_entropy_nats": 2.47981396463388,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.1021477555771186,
+          "max_share": 0.10399282427650236,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.10694414602453524,
+          "independent_same_expert_baseline": 0.08420284699745358,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Go",
+              "expert": 6,
+              "enrichment": 1.6537795883294721,
+              "frequency": 0.15705614567526555,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/Bash",
+              "expert": 2,
+              "enrichment": 1.498166783015199,
+              "frequency": 0.11984954693109934,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "general",
+              "expert": 1,
+              "enrichment": 1.4914355700105848,
+              "frequency": 0.11707434630678396,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 4,
+              "enrichment": 1.4891317588747572,
+              "frequency": 0.12525759917568263,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Java",
+              "expert": 8,
+              "enrichment": 1.4577138922511643,
+              "frequency": 0.15159178464229162,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/Python",
+              "expert": 5,
+              "enrichment": 1.2592714750697027,
+              "frequency": 0.10688014799806193,
+              "documents": 64,
+              "predictions": 45406
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "5": {
+          "category_expert_mutual_information_bits": 0.021090573905724625,
+          "pooled_counts": [
+            38676,
+            40396,
+            48194,
+            45618,
+            46703,
+            41915,
+            40890,
+            40082,
+            32515,
+            34120,
+            40442,
+            39877
+          ],
+          "pooled_hard_entropy_nats": 2.479000670913499,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.1081343892947641,
+          "max_share": 0.09847005075312405,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.11391182459048262,
+          "independent_same_expert_baseline": 0.0843077538456793,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 6,
+              "enrichment": 1.6655309660098947,
+              "frequency": 0.13914929509579468,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/C#",
+              "expert": 11,
+              "enrichment": 1.4824446541459846,
+              "frequency": 0.1207847639967052,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 3,
+              "enrichment": 1.4279318580516693,
+              "frequency": 0.13309290743602953,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Java",
+              "expert": 10,
+              "enrichment": 1.4198245124399889,
+              "frequency": 0.11732173666422444,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/C/C++",
+              "expert": 2,
+              "enrichment": 1.2781937421028788,
+              "frequency": 0.12586380265719604,
+              "documents": 64,
+              "predictions": 46741
+            },
+            {
+              "category": "code/Go",
+              "expert": 4,
+              "enrichment": 1.2616565729167468,
+              "frequency": 0.12039185932339552,
+              "documents": 64,
+              "predictions": 44812
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "8": {
+          "category_expert_mutual_information_bits": 0.02921453896820489,
+          "pooled_counts": [
+            32338,
+            48549,
+            46902,
+            39868,
+            38653,
+            42710,
+            40482,
+            38622,
+            41905,
+            37805,
+            37880,
+            43714
+          ],
+          "pooled_hard_entropy_nats": 2.479629619237859,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.10258361754699023,
+          "max_share": 0.09919538726840312,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.13455293287086773,
+          "independent_same_expert_baseline": 0.08421028321575226,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/C#",
+              "expert": 0,
+              "enrichment": 1.7891381714531875,
+              "frequency": 0.11821381324414047,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "general",
+              "expert": 10,
+              "enrichment": 1.571195832426217,
+              "frequency": 0.12160501265212677,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 2,
+              "enrichment": 1.5644615821328132,
+              "frequency": 0.14992272024729522,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Java",
+              "expert": 1,
+              "enrichment": 1.5265462155173934,
+              "frequency": 0.15142634303136301,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/Go",
+              "expert": 8,
+              "enrichment": 1.4209686172172742,
+              "frequency": 0.12166384004284567,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/Bash",
+              "expert": 9,
+              "enrichment": 1.3844754587235988,
+              "frequency": 0.10694135749700803,
+              "documents": 20,
+              "predictions": 11698
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        }
+      },
+      "ablation": {
+        "val_loss": 0.08283033035695553,
+        "code_val_loss": 0.1386320030303514,
+        "general_val_loss": 0.08210540788261866,
+        "technical_val_loss": 0.14728289367142455
+      },
+      "raw_summary_path_base": "work/replication_seed1337",
+      "raw_summary_path_scope": "Inherited checkpoint field is relative to the isolated workspace, never the canonical seed42 output directory."
+    },
+    "sparse/100007936": {
+      "summary": {
+        "step": 12208,
+        "tokens_seen": 100007936,
+        "cursor": 97664,
+        "training_seconds": 4657.205847699965,
+        "wall_time": 4827.805636100002,
+        "seed": 1337,
+        "config_hash": "c06920a6d91dd7744df3c17832171b3a12fa382926b2f57e619a14df5b53264d",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+        "model": "ResearchV1_SparseV3_Grouped",
+        "tag": "sparse",
+        "wall_tok_s": 20714.988037668478,
+        "training_step_tok_s": 21473.806241437775,
+        "vram_peak": 1732280832,
+        "stored_params": 21562560,
+        "active_params_est": 16493760,
+        "training_flops_est": 9897041366876160,
+        "checkpoint": "experiments\\research_v1\\sparse\\checkpoints\\tokens_100007936.pt",
+        "checkpoint_sha256": "2f1373fe0b5e97fe36469d9aedf8afc54f48d07fc85b7a91b1a9447da647b6b2",
+        "val_loss": 2.9846899081021547,
+        "mixed_predictions": 262144,
+        "bits_per_token": 4.305997329010315,
+        "context_val_loss": 2.437205018819027,
+        "code_val_loss": 2.4828497979061885,
+        "technical_val_loss": 3.3882437200348705,
+        "general_val_loss": 4.786798505269414,
+        "language": {
+          "context": {
+            "nll": 2.437205018819027,
+            "predictions": 42474,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/other": {
+            "nll": 2.5497025205097095,
+            "predictions": 40688,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Java": {
+            "nll": 1.9958492640143253,
+            "predictions": 42311,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C#": {
+            "nll": 2.589889340557745,
+            "predictions": 40063,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/HTML/CSS": {
+            "nll": 2.0725721093990255,
+            "predictions": 46584,
+            "documents": 64,
+            "sufficient": true
+          },
+          "technical": {
+            "nll": 3.3882437200348705,
+            "predictions": 38956,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Python": {
+            "nll": 2.835081051236149,
+            "predictions": 45406,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C/C++": {
+            "nll": 2.430969727607826,
+            "predictions": 46741,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/JS/TS": {
+            "nll": 2.5641130512875328,
+            "predictions": 35005,
+            "documents": 64,
+            "sufficient": true
+          },
+          "general": {
+            "nll": 4.786798505269414,
+            "predictions": 41495,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Go": {
+            "nll": 2.4852433545450263,
+            "predictions": 44812,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/SQL": {
+            "nll": 2.686800059984104,
+            "predictions": 6736,
+            "documents": 11,
+            "sufficient": false
+          },
+          "code/Rust": {
+            "nll": 3.1043822905618277,
+            "predictions": 6459,
+            "documents": 8,
+            "sufficient": false
+          },
+          "code/Bash": {
+            "nll": 3.406150631668996,
+            "predictions": 11698,
+            "documents": 20,
+            "sufficient": true
+          }
+        },
+        "category_predictions": {
+          "context": 42474,
+          "code": 366503,
+          "technical": 38956,
+          "general": 41495
+        },
+        "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+        "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+      },
+      "integrity": {
+        "passed": true,
+        "seed": 1337,
+        "tokens": 100007936,
+        "optimizer_step_range": [
+          12148,
+          12208
+        ],
+        "checkpoint": {
+          "project_relative_path": "work/replication_seed1337/experiments/research_v1/sparse/checkpoints/tokens_100007936.pt",
+          "sha256": "2f1373fe0b5e97fe36469d9aedf8afc54f48d07fc85b7a91b1a9447da647b6b2",
+          "size_bytes": 258938459,
+          "tokens": 100007936,
+          "seed": 1337
+        },
+        "frozen_identity": {
+          "config_hash": "c06920a6d91dd7744df3c17832171b3a12fa382926b2f57e619a14df5b53264d",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        "no_epoch_repeat": true,
+        "scope": "CPU strict model/Adam/scheduler loading, finite weights/moments and shapes, counters/cursor/saved RNG and exact frozen document identities. No new GPU resume equivalence test."
+      },
+      "micro_pass_count": 0,
+      "routing": {
+        "2": {
+          "category_expert_mutual_information_bits": 0.022474841176451276,
+          "pooled_counts": [
+            52879,
+            34943,
+            41358,
+            38440,
+            37397,
+            43758,
+            40043,
+            42241,
+            35282,
+            41184,
+            38045,
+            43858
+          ],
+          "pooled_hard_entropy_nats": 2.478711079827769,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.11337880657945941,
+          "max_share": 0.10804244955335617,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.11980928409916408,
+          "independent_same_expert_baseline": 0.0844045628151152,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Go",
+              "expert": 0,
+              "enrichment": 1.601537261168861,
+              "frequency": 0.17303400874765687,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/Bash",
+              "expert": 1,
+              "enrichment": 1.563724293448774,
+              "frequency": 0.11164301590015387,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "general",
+              "expert": 1,
+              "enrichment": 1.5378591813841238,
+              "frequency": 0.10979636100735028,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Java",
+              "expert": 9,
+              "enrichment": 1.4172753794069763,
+              "frequency": 0.11925976696367376,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 10,
+              "enrichment": 1.321406345924716,
+              "frequency": 0.10271767130345183,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/C/C++",
+              "expert": 3,
+              "enrichment": 1.316782599513724,
+              "frequency": 0.10342097943989217,
+              "documents": 64,
+              "predictions": 46741
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "5": {
+          "category_expert_mutual_information_bits": 0.034818724139110135,
+          "pooled_counts": [
+            42313,
+            41632,
+            41327,
+            46676,
+            48115,
+            42392,
+            34195,
+            37117,
+            39904,
+            37341,
+            39112,
+            39304
+          ],
+          "pooled_hard_entropy_nats": 2.4807065425091337,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.09197759295278894,
+          "max_share": 0.09830863783845632,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.11163837645927335,
+          "independent_same_expert_baseline": 0.08403832313378241,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 6,
+              "enrichment": 1.9888639352341912,
+              "frequency": 0.13895650078322688,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Bash",
+              "expert": 2,
+              "enrichment": 1.5651386057423586,
+              "frequency": 0.13215934347751754,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/Go",
+              "expert": 5,
+              "enrichment": 1.531402594373555,
+              "frequency": 0.1326430420423101,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "code/Java",
+              "expert": 4,
+              "enrichment": 1.4112148339348116,
+              "frequency": 0.13873460802155468,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 10,
+              "enrichment": 1.3987161450805863,
+              "frequency": 0.11177657564829126,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/C#",
+              "expert": 8,
+              "enrichment": 1.3948022141790672,
+              "frequency": 0.11372088959888176,
+              "documents": 64,
+              "predictions": 40063
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "8": {
+          "category_expert_mutual_information_bits": 0.03543914007871423,
+          "pooled_counts": [
+            41154,
+            42590,
+            40931,
+            40739,
+            38696,
+            36694,
+            42503,
+            40103,
+            38502,
+            40549,
+            40574,
+            46393
+          ],
+          "pooled_hard_entropy_nats": 2.4833028647773077,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.056930104202319864,
+          "max_share": 0.09479024493899,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.12476544195135926,
+          "independent_same_expert_baseline": 0.08360341973037391,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 8,
+              "enrichment": 1.9308878958119047,
+              "frequency": 0.15189781901433907,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Bash",
+              "expert": 1,
+              "enrichment": 1.755472809061707,
+              "frequency": 0.1527611557531202,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/Python",
+              "expert": 1,
+              "enrichment": 1.5144659432644105,
+              "frequency": 0.13178875038541163,
+              "documents": 64,
+              "predictions": 45406
+            },
+            {
+              "category": "technical",
+              "expert": 4,
+              "enrichment": 1.451620356744142,
+              "frequency": 0.11477051031933463,
+              "documents": 64,
+              "predictions": 38956
+            },
+            {
+              "category": "code/Java",
+              "expert": 10,
+              "enrichment": 1.3738667823709048,
+              "frequency": 0.11389473186641771,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 5,
+              "enrichment": 1.3712031898173496,
+              "frequency": 0.10280353769534605,
+              "documents": 64,
+              "predictions": 46584
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        }
+      },
+      "ablation": null,
+      "raw_summary_path_base": "work/replication_seed1337",
+      "raw_summary_path_scope": "Inherited checkpoint field is relative to the isolated workspace, never the canonical seed42 output directory."
+    },
+    "memory/100007936": {
+      "summary": {
+        "step": 12208,
+        "tokens_seen": 100007936,
+        "cursor": 97664,
+        "training_seconds": 4524.308664100077,
+        "wall_time": 4813.5390082000085,
+        "seed": 1337,
+        "config_hash": "6fc11a8c1fd2cd38a57af6190df85763411ec6f5242ebeecaa46988409750253",
+        "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+        "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+        "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31",
+        "model": "ResearchV1_SparseV3_GroupedNgram",
+        "tag": "memory",
+        "wall_tok_s": 20776.384242370004,
+        "training_step_tok_s": 22104.578494732832,
+        "vram_peak": 1803929088,
+        "stored_params": 25767425,
+        "active_params_est": 16504353,
+        "training_flops_est": 9903397671272448,
+        "checkpoint": "experiments\\research_v1\\memory\\checkpoints\\tokens_100007936.pt",
+        "checkpoint_sha256": "c272bd4fe7f40cf65982d09c719cd8dd1f9f1419777bf22dced422e81c4806eb",
+        "val_loss": 2.9612880274653435,
+        "mixed_predictions": 262144,
+        "bits_per_token": 4.272235551868111,
+        "context_val_loss": 2.4182818635386725,
+        "code_val_loss": 2.4590718738348127,
+        "technical_val_loss": 3.356157480642951,
+        "general_val_loss": 4.740826134452448,
+        "language": {
+          "context": {
+            "nll": 2.4182818635386725,
+            "predictions": 42474,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/other": {
+            "nll": 2.525977344091394,
+            "predictions": 40688,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Java": {
+            "nll": 1.9771676507173879,
+            "predictions": 42311,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C#": {
+            "nll": 2.562877529212808,
+            "predictions": 40063,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/HTML/CSS": {
+            "nll": 2.0506555449147825,
+            "predictions": 46584,
+            "documents": 64,
+            "sufficient": true
+          },
+          "technical": {
+            "nll": 3.356157480642951,
+            "predictions": 38956,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Python": {
+            "nll": 2.819629631060648,
+            "predictions": 45406,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/C/C++": {
+            "nll": 2.39160510878572,
+            "predictions": 46741,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/JS/TS": {
+            "nll": 2.554720165140032,
+            "predictions": 35005,
+            "documents": 64,
+            "sufficient": true
+          },
+          "general": {
+            "nll": 4.740826134452448,
+            "predictions": 41495,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/Go": {
+            "nll": 2.4520360412400164,
+            "predictions": 44812,
+            "documents": 64,
+            "sufficient": true
+          },
+          "code/SQL": {
+            "nll": 2.6629176140008517,
+            "predictions": 6736,
+            "documents": 11,
+            "sufficient": false
+          },
+          "code/Rust": {
+            "nll": 3.095289926038731,
+            "predictions": 6459,
+            "documents": 8,
+            "sufficient": false
+          },
+          "code/Bash": {
+            "nll": 3.3824060022535436,
+            "predictions": 11698,
+            "documents": 20,
+            "sufficient": true
+          }
+        },
+        "category_predictions": {
+          "context": 42474,
+          "code": 366503,
+          "technical": 38956,
+          "general": 41495
+        },
+        "evaluation_scope": "First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.",
+        "scope": "Cumulative fresh seed42 real-data quality run. Wall includes loop/validation/milestone and rolling checkpoint writes, excludes initialization/verification. Estimated6N FLOPs omit quadratic attention/lookup/dispatch; not measured hardware FLOPs."
+      },
+      "integrity": {
+        "passed": true,
+        "seed": 1337,
+        "tokens": 100007936,
+        "optimizer_step_range": [
+          12163,
+          12208
+        ],
+        "checkpoint": {
+          "project_relative_path": "work/replication_seed1337/experiments/research_v1/memory/checkpoints/tokens_100007936.pt",
+          "sha256": "c272bd4fe7f40cf65982d09c719cd8dd1f9f1419777bf22dced422e81c4806eb",
+          "size_bytes": 309405219,
+          "tokens": 100007936,
+          "seed": 1337
+        },
+        "frozen_identity": {
+          "config_hash": "6fc11a8c1fd2cd38a57af6190df85763411ec6f5242ebeecaa46988409750253",
+          "data_hash": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+          "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+          "source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+          "evaluation_hash": "a98fce10e467cccc06c3457c3a8eaf42cf1c9219e0cac91bbb29b3fab90a4a31"
+        },
+        "no_epoch_repeat": true,
+        "scope": "CPU strict model/Adam/scheduler loading, finite weights/moments and shapes, counters/cursor/saved RNG and exact frozen document identities. No new GPU resume equivalence test."
+      },
+      "micro_pass_count": 0,
+      "routing": {
+        "2": {
+          "category_expert_mutual_information_bits": 0.02137567145086346,
+          "pooled_counts": [
+            40165,
+            37236,
+            38465,
+            34993,
+            36811,
+            41141,
+            47839,
+            41032,
+            51367,
+            39208,
+            41183,
+            39988
+          ],
+          "pooled_hard_entropy_nats": 2.479284651208169,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.10801748790095386,
+          "max_share": 0.10495312895870282,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.1030684387693504,
+          "independent_same_expert_baseline": 0.08430564814103605,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/Go",
+              "expert": 6,
+              "enrichment": 1.6241504331535486,
+              "frequency": 0.15875211996786576,
+              "documents": 64,
+              "predictions": 44812
+            },
+            {
+              "category": "general",
+              "expert": 1,
+              "enrichment": 1.5156955066087232,
+              "frequency": 0.11531509820460296,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Bash",
+              "expert": 2,
+              "enrichment": 1.5140865203820835,
+              "frequency": 0.11899469994870918,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 4,
+              "enrichment": 1.4847207110870908,
+              "frequency": 0.1116692426584235,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Java",
+              "expert": 8,
+              "enrichment": 1.42951342265773,
+              "frequency": 0.15003190659639337,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/Python",
+              "expert": 5,
+              "enrichment": 1.2610043498844408,
+              "frequency": 0.10599920715323966,
+              "documents": 64,
+              "predictions": 45406
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "5": {
+          "category_expert_mutual_information_bits": 0.021186931142868435,
+          "pooled_counts": [
+            41758,
+            40313,
+            47721,
+            42828,
+            45270,
+            38037,
+            37076,
+            42238,
+            34330,
+            31871,
+            45090,
+            42896
+          ],
+          "pooled_hard_entropy_nats": 2.4787293462567996,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.10990110843927185,
+          "max_share": 0.09750361646656913,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.11452776328309647,
+          "independent_same_expert_baseline": 0.08433985446968172,
+          "strongest_supported_category_biases": [
+            {
+              "category": "general",
+              "expert": 6,
+              "enrichment": 1.6822541781840177,
+              "frequency": 0.12743704060730207,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/C#",
+              "expert": 1,
+              "enrichment": 1.4633810652298238,
+              "frequency": 0.12053515712752415,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/Java",
+              "expert": 10,
+              "enrichment": 1.4327765468068587,
+              "frequency": 0.13199877100517596,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 3,
+              "enrichment": 1.428960322878164,
+              "frequency": 0.12504293319594711,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/C/C++",
+              "expert": 2,
+              "enrichment": 1.286255042098766,
+              "frequency": 0.1254145183029888,
+              "documents": 64,
+              "predictions": 46741
+            },
+            {
+              "category": "code/JS/TS",
+              "expert": 1,
+              "enrichment": 1.2614118660887212,
+              "frequency": 0.10389944293672332,
+              "documents": 64,
+              "predictions": 35005
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        },
+        "8": {
+          "category_expert_mutual_information_bits": 0.02845817196451692,
+          "pooled_counts": [
+            37131,
+            48510,
+            42383,
+            39808,
+            42613,
+            38493,
+            40322,
+            38523,
+            43481,
+            37645,
+            38191,
+            42328
+          ],
+          "pooled_hard_entropy_nats": 2.482050591578688,
+          "uniform_entropy_nats": 2.4849066497880004,
+          "pooled_load_cv": 0.07646020107874954,
+          "max_share": 0.09911570241179499,
+          "unused_experts": 0,
+          "adjacent_same_expert_fraction": 0.13302229452510309,
+          "independent_same_expert_baseline": 0.08382051352908355,
+          "strongest_supported_category_biases": [
+            {
+              "category": "code/C#",
+              "expert": 0,
+              "enrichment": 1.6559058073929724,
+              "frequency": 0.12562713725881736,
+              "documents": 64,
+              "predictions": 40063
+            },
+            {
+              "category": "code/HTML/CSS",
+              "expert": 2,
+              "enrichment": 1.6003827514222475,
+              "frequency": 0.13858835651725915,
+              "documents": 64,
+              "predictions": 46584
+            },
+            {
+              "category": "code/Java",
+              "expert": 1,
+              "enrichment": 1.5435114452566856,
+              "frequency": 0.15298622107726123,
+              "documents": 64,
+              "predictions": 42311
+            },
+            {
+              "category": "general",
+              "expert": 10,
+              "enrichment": 1.4552489488080487,
+              "frequency": 0.11355585010242197,
+              "documents": 64,
+              "predictions": 41495
+            },
+            {
+              "category": "code/Bash",
+              "expert": 9,
+              "enrichment": 1.4059193833311674,
+              "frequency": 0.10813814327235424,
+              "documents": 20,
+              "predictions": 11698
+            },
+            {
+              "category": "code/Go",
+              "expert": 8,
+              "enrichment": 1.371725263090091,
+              "frequency": 0.12186467910381148,
+              "documents": 64,
+              "predictions": 44812
+            }
+          ],
+          "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+        }
+      },
+      "ablation": {
+        "val_loss": 0.08525501657277346,
+        "code_val_loss": 0.14454420800436774,
+        "general_val_loss": 0.09103784892110589,
+        "technical_val_loss": 0.15103447503002032
+      },
+      "raw_summary_path_base": "work/replication_seed1337",
+      "raw_summary_path_scope": "Inherited checkpoint field is relative to the isolated workspace, never the canonical seed42 output directory."
+    }
+  },
+  "comparisons": {
+    "20004864": {
+      "pair": "memory_minus_sparse",
+      "seed1337_deltas": {
+        "val_loss": 0.11926051788032055,
+        "code_val_loss": 0.11560597173919174,
+        "general_val_loss": 0.04153713742743559,
+        "technical_val_loss": 0.07437733643958833
+      },
+      "seed42_deltas": {
+        "val_loss": -0.29286304116249084,
+        "code_val_loss": -0.2925531467217213,
+        "general_val_loss": -0.12374054329239303,
+        "technical_val_loss": -0.22541155995915307
+      },
+      "seed1337_cluster_diagnostic_intervals": {
+        "all": {
+          "weighted_delta": 0.10584676015218433,
+          "bootstrap_95_interval": [
+            0.09854522232979693,
+            0.1134162955019816
+          ],
+          "clusters": 663,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "code": {
+          "weighted_delta": 0.11560597173919192,
+          "bootstrap_95_interval": [
+            0.10775126341860342,
+            0.12441660162407232
+          ],
+          "clusters": 503,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "general": {
+          "weighted_delta": 0.041537137427435165,
+          "bootstrap_95_interval": [
+            0.02757595885902299,
+            0.05420073986449511
+          ],
+          "clusters": 59,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "technical": {
+          "weighted_delta": 0.07437733643958794,
+          "bootstrap_95_interval": [
+            0.04538942355558978,
+            0.10797904161204583
+          ],
+          "clusters": 56,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        }
+      }
+    },
+    "50003968": {
+      "pair": "memory_minus_sparse",
+      "seed1337_deltas": {
+        "val_loss": -0.01060398854315281,
+        "code_val_loss": -0.003984769283829959,
+        "general_val_loss": -0.04181092115522489,
+        "technical_val_loss": -0.01980793346050458
+      },
+      "seed42_deltas": {
+        "val_loss": -0.013719992712140083,
+        "code_val_loss": -0.012914330215844316,
+        "general_val_loss": -0.035794987134408096,
+        "technical_val_loss": -0.03464732550192462
+      },
+      "seed1337_cluster_diagnostic_intervals": {
+        "all": {
+          "weighted_delta": -0.008586893211185075,
+          "bootstrap_95_interval": [
+            -0.0122601708348799,
+            -0.005068922256519426
+          ],
+          "clusters": 663,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "code": {
+          "weighted_delta": -0.0039847692838299075,
+          "bootstrap_95_interval": [
+            -0.00813792779011964,
+            0.0002808124886345422
+          ],
+          "clusters": 503,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "general": {
+          "weighted_delta": -0.04181092115522422,
+          "bootstrap_95_interval": [
+            -0.05161111227425978,
+            -0.03274831155739737
+          ],
+          "clusters": 59,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "technical": {
+          "weighted_delta": -0.019807933460504492,
+          "bootstrap_95_interval": [
+            -0.02988080184841566,
+            -0.010354058573927192
+          ],
+          "clusters": 56,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        }
+      }
+    },
+    "70000640": {
+      "pair": "memory_minus_sparse",
+      "seed1337_deltas": {
+        "val_loss": -0.02147034090012312,
+        "code_val_loss": -0.020286721054869616,
+        "general_val_loss": -0.04333750284325788,
+        "technical_val_loss": -0.02799900445946779
+      },
+      "seed42_deltas": {
+        "val_loss": -0.004915788769721985,
+        "code_val_loss": -0.004485077297812445,
+        "general_val_loss": -0.022961328517730806,
+        "technical_val_loss": -0.026162188923990026
+      },
+      "seed1337_cluster_diagnostic_intervals": {
+        "all": {
+          "weighted_delta": -0.02255810828345619,
+          "bootstrap_95_interval": [
+            -0.025770731779002742,
+            -0.01943980629132422
+          ],
+          "clusters": 663,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "code": {
+          "weighted_delta": -0.02028672105486962,
+          "bootstrap_95_interval": [
+            -0.02393636797575721,
+            -0.01664051579383472
+          ],
+          "clusters": 503,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "general": {
+          "weighted_delta": -0.043337502843257186,
+          "bootstrap_95_interval": [
+            -0.05260923865759783,
+            -0.03378147890608656
+          ],
+          "clusters": 59,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "technical": {
+          "weighted_delta": -0.0279990044594674,
+          "bootstrap_95_interval": [
+            -0.03920725843418898,
+            -0.016399842366135352
+          ],
+          "clusters": 56,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        }
+      }
+    },
+    "100007936": {
+      "pair": "memory_minus_sparse",
+      "seed1337_deltas": {
+        "val_loss": -0.023401880636811256,
+        "code_val_loss": -0.0237779240713758,
+        "general_val_loss": -0.04597237081696637,
+        "technical_val_loss": -0.03208623939191968
+      },
+      "seed42_deltas": {
+        "val_loss": -0.006508529186248779,
+        "code_val_loss": -0.005528548650174603,
+        "general_val_loss": -0.025098428221722813,
+        "technical_val_loss": -0.02342100971656569
+      },
+      "seed1337_cluster_diagnostic_intervals": {
+        "all": {
+          "weighted_delta": -0.025899616842744583,
+          "bootstrap_95_interval": [
+            -0.029020962184874394,
+            -0.02269694445668866
+          ],
+          "clusters": 663,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "code": {
+          "weighted_delta": -0.023777924071375616,
+          "bootstrap_95_interval": [
+            -0.027446865246138017,
+            -0.020359433694291204
+          ],
+          "clusters": 503,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "general": {
+          "weighted_delta": -0.04597237081696634,
+          "bootstrap_95_interval": [
+            -0.05515072046513943,
+            -0.03648111048650665
+          ],
+          "clusters": 59,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        },
+        "technical": {
+          "weighted_delta": -0.03208623939191968,
+          "bootstrap_95_interval": [
+            -0.04161778566382564,
+            -0.022171900646968338
+          ],
+          "clusters": 56,
+          "bootstrap_replicates": 2000,
+          "seed": 42,
+          "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+        }
+      }
+    }
+  },
+  "scope": "Separate seed1337 selected-pair replication; primary seed42 evidence untouched. Frozen data/evaluation order42. Two seeds do not give a precise population confidence interval. Inherited raw runner scope says seed42; actual config/checkpoint seed1337 controls classification."
+}

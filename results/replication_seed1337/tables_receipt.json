@@ -1,0 +1,17 @@
+{
+  "status": "verified_complete",
+  "verification_sha256": "83bb5b6ec60832ad1acf0517bd70b6a4cac7dca70f0aab45dbf9df3aa0dfb55d",
+  "outputs": {
+    "loss_curves.csv": "012596d5425dbbdc575f21913bde8c3b724dacec495d1278204ff128e51785a0",
+    "paired_deltas.csv": "889921bb010cadecd1d520b63ec25a564970cf8c662fb6df20920e1ac96d8df1",
+    "memory_ablations.csv": "0deea2478ac3a5a71369201c8a9fbfb42ce88425c2be865007854da31fdf9c5a",
+    "router_health.csv": "c613494ff6398dee2f3730b8c7e31f73d04193906335562a78cee3fbff265491"
+  },
+  "rows": {
+    "losses": 16,
+    "paired_deltas": 8,
+    "memory_ablations": 4,
+    "router_health": 24
+  },
+  "scope": "Only CPU-verified seed1337 milestones and their matched seed42 references. Signed deltas are memory minus sparse; positive means memory has higher loss. Two training seeds do not establish a population confidence interval."
+}

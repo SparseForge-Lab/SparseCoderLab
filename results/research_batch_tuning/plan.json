@@ -1,0 +1,35 @@
+{
+  "status": "measured",
+  "models": [
+    "sparse",
+    "memory"
+  ],
+  "candidates": [
+    {
+      "microbatch": 1,
+      "accumulation": 8
+    },
+    {
+      "microbatch": 2,
+      "accumulation": 4
+    },
+    {
+      "microbatch": 4,
+      "accumulation": 2
+    },
+    {
+      "microbatch": 8,
+      "accumulation": 1
+    }
+  ],
+  "effective_sequences": 8,
+  "context": 1024,
+  "steps_per_window": 20,
+  "repetitions": 2,
+  "selection": "8x1 won both repetitions for both architectures by wall tokens/sec; confirm sustained throughput and quality before adopting as a new shared protocol.",
+  "quality_limit": "MoE auxiliary balance is microbatch-dependent. Fixed effective tokens alone does not prove identical optimization or a fair changed-policy seed replication.",
+  "scheduling": "Benchmark after the previous training job ends; do not overlap model training.",
+  "training_source_hash": "64531836b7654187ca54939ad007358e8bc8f4f429ae4c7c0fb0bc74b503eda9",
+  "measurement_file": "results/research_batch_tuning/measurements.json",
+  "summary_file": "results/research_batch_tuning/benchmark_summary.json"
+}

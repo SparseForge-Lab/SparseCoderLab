@@ -679,5 +679,1140 @@
       ],
       "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
     }
+  },
+  "memory/50003968": {
+    "2": {
+      "category_expert_mutual_information_bits": 0.02491239474420401,
+      "pooled_counts": [
+        44015,
+        48775,
+        37651,
+        40867,
+        35293,
+        36383,
+        38625,
+        40882,
+        33077,
+        42281,
+        49790,
+        41789
+      ],
+      "pooled_hard_entropy_nats": 2.477911707109607,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.11887127731361632,
+      "max_share": 0.1017310002697026,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.10540941506287281,
+      "independent_same_expert_baseline": 0.08451086504751422,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 4,
+          "enrichment": 1.930998800542609,
+          "frequency": 0.13924569225207856,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/Bash",
+          "expert": 5,
+          "enrichment": 1.5535814860241905,
+          "frequency": 0.11548982732090955,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/Go",
+          "expert": 10,
+          "enrichment": 1.4688173807631972,
+          "frequency": 0.14942426135856468,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "code/Java",
+          "expert": 1,
+          "enrichment": 1.4310129025437464,
+          "frequency": 0.14261066862045332,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 5,
+          "enrichment": 1.3502930443445789,
+          "frequency": 0.10037781212433454,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/C#",
+          "expert": 10,
+          "enrichment": 1.3207712233629703,
+          "frequency": 0.13436337768015374,
+          "documents": 64,
+          "predictions": 40063
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "5": {
+      "category_expert_mutual_information_bits": 0.03540857285143306,
+      "pooled_counts": [
+        40833,
+        33912,
+        42827,
+        40769,
+        36589,
+        49679,
+        47499,
+        39395,
+        35351,
+        40137,
+        44273,
+        38164
+      ],
+      "pooled_hard_entropy_nats": 2.4788611300496446,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.11058550133967839,
+      "max_share": 0.10150420490858716,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.15261978575155774,
+      "independent_same_expert_baseline": 0.08435242942554566,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 1,
+          "enrichment": 1.9456382745602612,
+          "frequency": 0.13481142306301963,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 0,
+          "enrichment": 1.7684268072061855,
+          "frequency": 0.1475399278722308,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/Java",
+          "expert": 10,
+          "enrichment": 1.5864571022249416,
+          "frequency": 0.14350878022263713,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/C/C++",
+          "expert": 5,
+          "enrichment": 1.5116743621260147,
+          "frequency": 0.1534413042082968,
+          "documents": 64,
+          "predictions": 46741
+        },
+        {
+          "category": "code/C#",
+          "expert": 6,
+          "enrichment": 1.4022218338818104,
+          "frequency": 0.13608566507750294,
+          "documents": 64,
+          "predictions": 40063
+        },
+        {
+          "category": "code/other",
+          "expert": 7,
+          "enrichment": 1.3447101228335754,
+          "frequency": 0.10823830121903263,
+          "documents": 64,
+          "predictions": 40688
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "8": {
+      "category_expert_mutual_information_bits": 0.027186705628632693,
+      "pooled_counts": [
+        38722,
+        48022,
+        37376,
+        44180,
+        34292,
+        46524,
+        37829,
+        37574,
+        41777,
+        40622,
+        38337,
+        44173
+      ],
+      "pooled_hard_entropy_nats": 2.4801234104962213,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.09817652838470059,
+      "max_share": 0.09811862010346772,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.14609001708667138,
+      "independent_same_expert_baseline": 0.08413655256047264,
+      "strongest_supported_category_biases": [
+        {
+          "category": "code/Java",
+          "expert": 1,
+          "enrichment": 1.5818390576957215,
+          "frequency": 0.15520786556687385,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "general",
+          "expert": 2,
+          "enrichment": 1.4749895029851756,
+          "frequency": 0.11264007711772503,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 6,
+          "enrichment": 1.428102060563242,
+          "frequency": 0.11038124678001031,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/Bash",
+          "expert": 6,
+          "enrichment": 1.4068229511678836,
+          "frequency": 0.10873653616002736,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/Go",
+          "expert": 11,
+          "enrichment": 1.3823788520155125,
+          "frequency": 0.12476568776220655,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "code/C/C++",
+          "expert": 1,
+          "enrichment": 1.366720020551829,
+          "frequency": 0.13410068248432852,
+          "documents": 64,
+          "predictions": 46741
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    }
+  },
+  "sparse/70000640": {
+    "2": {
+      "category_expert_mutual_information_bits": 0.026883933595745955,
+      "pooled_counts": [
+        47950,
+        37728,
+        45155,
+        39803,
+        34259,
+        38492,
+        40132,
+        42528,
+        44752,
+        43318,
+        37869,
+        37442
+      ],
+      "pooled_hard_entropy_nats": 2.4805690250009937,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.09333291235837857,
+      "max_share": 0.09797150959896042,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.10402201827352998,
+      "independent_same_expert_baseline": 0.08405925271077472,
+      "strongest_supported_category_biases": [
+        {
+          "category": "code/Go",
+          "expert": 8,
+          "enrichment": 1.6776121508198345,
+          "frequency": 0.15339641167544407,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "general",
+          "expert": 7,
+          "enrichment": 1.559225485297394,
+          "frequency": 0.13548620315700688,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 4,
+          "enrichment": 1.5477850844540666,
+          "frequency": 0.10834191997252275,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/Java",
+          "expert": 5,
+          "enrichment": 1.3505109590509037,
+          "frequency": 0.10621351421616128,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/JS/TS",
+          "expert": 10,
+          "enrichment": 1.3394983131260028,
+          "frequency": 0.10364233680902728,
+          "documents": 64,
+          "predictions": 35005
+        },
+        {
+          "category": "code/Bash",
+          "expert": 4,
+          "enrichment": 1.2823064051551702,
+          "frequency": 0.08975893315096597,
+          "documents": 20,
+          "predictions": 11698
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "5": {
+      "category_expert_mutual_information_bits": 0.03238837704254349,
+      "pooled_counts": [
+        36893,
+        37861,
+        40205,
+        37608,
+        30315,
+        37315,
+        42605,
+        44730,
+        44443,
+        40570,
+        54559,
+        42324
+      ],
+      "pooled_hard_entropy_nats": 2.4755622592996587,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.13800609200922273,
+      "max_share": 0.11147502799185989,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.12175736926650091,
+      "independent_same_expert_baseline": 0.08492047345263819,
+      "strongest_supported_category_biases": [
+        {
+          "category": "code/HTML/CSS",
+          "expert": 5,
+          "enrichment": 1.693574165608898,
+          "frequency": 0.1291215868109222,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "general",
+          "expert": 1,
+          "enrichment": 1.6835123336709616,
+          "frequency": 0.13023255813953488,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/Java",
+          "expert": 10,
+          "enrichment": 1.5769767636425072,
+          "frequency": 0.1757935288695611,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/Bash",
+          "expert": 5,
+          "enrichment": 1.5495364319335279,
+          "frequency": 0.11813985296631903,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/Go",
+          "expert": 7,
+          "enrichment": 1.463077699537501,
+          "frequency": 0.13371418370079444,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "code/C#",
+          "expert": 11,
+          "enrichment": 1.414342913644117,
+          "frequency": 0.12230736589870954,
+          "documents": 64,
+          "predictions": 40063
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "8": {
+      "category_expert_mutual_information_bits": 0.04243925901664762,
+      "pooled_counts": [
+        38568,
+        40467,
+        39061,
+        51702,
+        40670,
+        38096,
+        41811,
+        41759,
+        32321,
+        37844,
+        48271,
+        38858
+      ],
+      "pooled_hard_entropy_nats": 2.4781433228492724,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.11768348123196039,
+      "max_share": 0.10563760144495207,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.1453533462250734,
+      "independent_same_expert_baseline": 0.08448745014623944,
+      "strongest_supported_category_biases": [
+        {
+          "category": "code/C#",
+          "expert": 8,
+          "enrichment": 2.1022847494204084,
+          "frequency": 0.13883134063849437,
+          "documents": 64,
+          "predictions": 40063
+        },
+        {
+          "category": "general",
+          "expert": 4,
+          "enrichment": 1.8862506516274147,
+          "frequency": 0.15674177611760454,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/C/C++",
+          "expert": 1,
+          "enrichment": 1.6775127282919413,
+          "frequency": 0.13870049849168825,
+          "documents": 64,
+          "predictions": 46741
+        },
+        {
+          "category": "code/Bash",
+          "expert": 11,
+          "enrichment": 1.493389906378306,
+          "frequency": 0.11856727645751411,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/Go",
+          "expert": 2,
+          "enrichment": 1.4329960607004313,
+          "frequency": 0.11436668749442114,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "code/Java",
+          "expert": 3,
+          "enrichment": 1.4242781530783042,
+          "frequency": 0.15045732788163835,
+          "documents": 64,
+          "predictions": 42311
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    }
+  },
+  "memory/70000640": {
+    "2": {
+      "category_expert_mutual_information_bits": 0.02546811367773014,
+      "pooled_counts": [
+        44834,
+        44807,
+        41405,
+        40521,
+        34122,
+        39583,
+        35759,
+        39362,
+        41744,
+        43410,
+        49820,
+        34061
+      ],
+      "pooled_hard_entropy_nats": 2.478877865664387,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.10983335644266758,
+      "max_share": 0.10179229631324731,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.10424301953200937,
+      "independent_same_expert_baseline": 0.08433861384895516,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 4,
+          "enrichment": 2.0107479184911785,
+          "frequency": 0.1401855645258465,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/Go",
+          "expert": 10,
+          "enrichment": 1.4543409348724587,
+          "frequency": 0.14804070338302242,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "code/Java",
+          "expert": 1,
+          "enrichment": 1.3971641789078952,
+          "frequency": 0.12790999976365483,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/Bash",
+          "expert": 5,
+          "enrichment": 1.395219120694153,
+          "frequency": 0.11283980167550009,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "technical",
+          "expert": 4,
+          "enrichment": 1.3439182148838809,
+          "frequency": 0.09369545127836533,
+          "documents": 64,
+          "predictions": 38956
+        },
+        {
+          "category": "code/C#",
+          "expert": 10,
+          "enrichment": 1.3265966199582506,
+          "frequency": 0.13503731622694257,
+          "documents": 64,
+          "predictions": 40063
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "5": {
+      "category_expert_mutual_information_bits": 0.036533773529542596,
+      "pooled_counts": [
+        41609,
+        34220,
+        43279,
+        43186,
+        37591,
+        40684,
+        46432,
+        44936,
+        38187,
+        40043,
+        40781,
+        38480
+      ],
+      "pooled_hard_entropy_nats": 2.4816857615795667,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.07998526606913699,
+      "max_share": 0.09486992979559812,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.143607845544676,
+      "independent_same_expert_baseline": 0.08386647023234588,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 1,
+          "enrichment": 1.8895225037851446,
+          "frequency": 0.13211230268707072,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 0,
+          "enrichment": 1.8192766320787865,
+          "frequency": 0.15466683839945045,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/Java",
+          "expert": 10,
+          "enrichment": 1.684010130228373,
+          "frequency": 0.14031812058329984,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/C#",
+          "expert": 6,
+          "enrichment": 1.5378446611129168,
+          "frequency": 0.1458952150363178,
+          "documents": 64,
+          "predictions": 40063
+        },
+        {
+          "category": "code/C/C++",
+          "expert": 5,
+          "enrichment": 1.5038449181245832,
+          "frequency": 0.12500802293489655,
+          "documents": 64,
+          "predictions": 46741
+        },
+        {
+          "category": "technical",
+          "expert": 8,
+          "enrichment": 1.396943698732912,
+          "frequency": 0.10899476332272308,
+          "documents": 64,
+          "predictions": 38956
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "8": {
+      "category_expert_mutual_information_bits": 0.029451451812241194,
+      "pooled_counts": [
+        40908,
+        45353,
+        36889,
+        38079,
+        41979,
+        45192,
+        37852,
+        43826,
+        36282,
+        39158,
+        38267,
+        45643
+      ],
+      "pooled_hard_entropy_nats": 2.4815433218600655,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.08222054290183434,
+      "max_share": 0.09325784385037227,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.14179686300991437,
+      "independent_same_expert_baseline": 0.08389668480625605,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 0,
+          "enrichment": 1.6088627415412045,
+          "frequency": 0.13447403301602603,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/Java",
+          "expert": 1,
+          "enrichment": 1.5935677154645969,
+          "frequency": 0.1476684550116991,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/C#",
+          "expert": 8,
+          "enrichment": 1.489935268604833,
+          "frequency": 0.11045103961261014,
+          "documents": 64,
+          "predictions": 40063
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 3,
+          "enrichment": 1.456525732359776,
+          "frequency": 0.11332217070238708,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/Bash",
+          "expert": 6,
+          "enrichment": 1.425863899073891,
+          "frequency": 0.11027526072832963,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/C/C++",
+          "expert": 1,
+          "enrichment": 1.330095019187994,
+          "frequency": 0.12325367450418262,
+          "documents": 64,
+          "predictions": 46741
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    }
+  },
+  "sparse/100007936": {
+    "2": {
+      "category_expert_mutual_information_bits": 0.026021451201801576,
+      "pooled_counts": [
+        44198,
+        38680,
+        40683,
+        40029,
+        38246,
+        39343,
+        43299,
+        38816,
+        49167,
+        41080,
+        37534,
+        38353
+      ],
+      "pooled_hard_entropy_nats": 2.481947792883355,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.07824575239710903,
+      "max_share": 0.10045808576542413,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.1006271933863327,
+      "independent_same_expert_baseline": 0.08384353314734916,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 7,
+          "enrichment": 1.6129213017152517,
+          "frequency": 0.12791902638872155,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 4,
+          "enrichment": 1.5562018524851218,
+          "frequency": 0.1216082775201786,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/Go",
+          "expert": 8,
+          "enrichment": 1.541630325482105,
+          "frequency": 0.15486923145586004,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "code/Java",
+          "expert": 5,
+          "enrichment": 1.3871581743105863,
+          "frequency": 0.11150764576587649,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/Bash",
+          "expert": 9,
+          "enrichment": 1.3637266783676103,
+          "frequency": 0.11446401094204138,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/JS/TS",
+          "expert": 10,
+          "enrichment": 1.3436310216003595,
+          "frequency": 0.10304242251106985,
+          "documents": 64,
+          "predictions": 35005
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "5": {
+      "category_expert_mutual_information_bits": 0.03289512046904368,
+      "pooled_counts": [
+        35173,
+        37039,
+        38418,
+        36820,
+        30673,
+        40457,
+        42828,
+        48211,
+        43494,
+        41793,
+        55240,
+        39282
+      ],
+      "pooled_hard_entropy_nats": 2.473983384364357,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.14982525283782508,
+      "max_share": 0.11286644818032479,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.1202942590830494,
+      "independent_same_expert_baseline": 0.08520396719899319,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 1,
+          "enrichment": 1.7606797921527244,
+          "frequency": 0.13324496927340643,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 5,
+          "enrichment": 1.634500649757102,
+          "frequency": 0.13511076764554353,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/Bash",
+          "expert": 5,
+          "enrichment": 1.543985888730233,
+          "frequency": 0.12762865447084973,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/Java",
+          "expert": 10,
+          "enrichment": 1.542668180416618,
+          "frequency": 0.17411547824442816,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/Go",
+          "expert": 7,
+          "enrichment": 1.4763729023718863,
+          "frequency": 0.14542979559046684,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "code/C#",
+          "expert": 11,
+          "enrichment": 1.4246626707276957,
+          "frequency": 0.11434490677183436,
+          "documents": 64,
+          "predictions": 40063
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "8": {
+      "category_expert_mutual_information_bits": 0.040292791150424584,
+      "pooled_counts": [
+        40326,
+        44189,
+        42041,
+        48698,
+        35980,
+        38690,
+        38936,
+        41214,
+        33639,
+        38986,
+        48085,
+        38644
+      ],
+      "pooled_hard_entropy_nats": 2.4794761017336175,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.10480165303420214,
+      "max_share": 0.09949982428467517,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.14615140632513787,
+      "independent_same_expert_baseline": 0.08424861553989178,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 4,
+          "enrichment": 2.1291734352424707,
+          "frequency": 0.15652488251596577,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/C#",
+          "expert": 8,
+          "enrichment": 1.9708886533674683,
+          "frequency": 0.13546164790455034,
+          "documents": 64,
+          "predictions": 40063
+        },
+        {
+          "category": "code/Bash",
+          "expert": 11,
+          "enrichment": 1.719276072996659,
+          "frequency": 0.13574970080355617,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/C/C++",
+          "expert": 1,
+          "enrichment": 1.5544633166579185,
+          "frequency": 0.14034787445711475,
+          "documents": 64,
+          "predictions": 46741
+        },
+        {
+          "category": "code/Java",
+          "expert": 3,
+          "enrichment": 1.4895709609710959,
+          "frequency": 0.14821204887617878,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/JS/TS",
+          "expert": 11,
+          "enrichment": 1.4454179368789362,
+          "frequency": 0.1141265533495215,
+          "documents": 64,
+          "predictions": 35005
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    }
+  },
+  "memory/100007936": {
+    "2": {
+      "category_expert_mutual_information_bits": 0.026199107643117413,
+      "pooled_counts": [
+        44272,
+        46910,
+        37454,
+        40290,
+        35959,
+        38849,
+        39584,
+        37361,
+        39221,
+        42677,
+        49383,
+        37468
+      ],
+      "pooled_hard_entropy_nats": 2.4802129604085006,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.09811804222574846,
+      "max_share": 0.10089941727894604,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.10015449625014068,
+      "independent_same_expert_baseline": 0.08413559585085115,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 4,
+          "enrichment": 1.956572228615015,
+          "frequency": 0.1437522593083504,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/Go",
+          "expert": 10,
+          "enrichment": 1.4751726386624424,
+          "frequency": 0.14884405962688566,
+          "documents": 64,
+          "predictions": 44812
+        },
+        {
+          "category": "code/Bash",
+          "expert": 5,
+          "enrichment": 1.404348651862366,
+          "frequency": 0.11147204650367584,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "code/Java",
+          "expert": 1,
+          "enrichment": 1.3725029633959591,
+          "frequency": 0.13154971520408404,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/C#",
+          "expert": 10,
+          "enrichment": 1.327451135146388,
+          "frequency": 0.133939046002546,
+          "documents": 64,
+          "predictions": 40063
+        },
+        {
+          "category": "technical",
+          "expert": 4,
+          "enrichment": 1.3248758302647687,
+          "frequency": 0.09734058938289353,
+          "documents": 64,
+          "predictions": 38956
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "5": {
+      "category_expert_mutual_information_bits": 0.031470667455958695,
+      "pooled_counts": [
+        43444,
+        33879,
+        43808,
+        43806,
+        37514,
+        42908,
+        46872,
+        39896,
+        37470,
+        38822,
+        41815,
+        39194
+      ],
+      "pooled_hard_entropy_nats": 2.481255022587198,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.08508494852581225,
+      "max_share": 0.09576893843425387,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.1435710120015961,
+      "independent_same_expert_baseline": 0.08393662070547002,
+      "strongest_supported_category_biases": [
+        {
+          "category": "general",
+          "expert": 1,
+          "enrichment": 1.8939188190846155,
+          "frequency": 0.1311001325460899,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 0,
+          "enrichment": 1.7078508596355588,
+          "frequency": 0.15159711488923236,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/Java",
+          "expert": 10,
+          "enrichment": 1.5485895160876826,
+          "frequency": 0.13230601971118622,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/C#",
+          "expert": 6,
+          "enrichment": 1.4850952342652914,
+          "frequency": 0.14222599405935651,
+          "documents": 64,
+          "predictions": 40063
+        },
+        {
+          "category": "code/C/C++",
+          "expert": 5,
+          "enrichment": 1.4412721095766141,
+          "frequency": 0.12635587599751824,
+          "documents": 64,
+          "predictions": 46741
+        },
+        {
+          "category": "code/Bash",
+          "expert": 8,
+          "enrichment": 1.419185129832937,
+          "frequency": 0.10865105146178834,
+          "documents": 20,
+          "predictions": 11698
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    },
+    "8": {
+      "category_expert_mutual_information_bits": 0.029839625243874728,
+      "pooled_counts": [
+        40569,
+        44914,
+        38319,
+        38410,
+        42875,
+        46322,
+        36925,
+        38908,
+        38372,
+        37237,
+        42574,
+        44003
+      ],
+      "pooled_hard_entropy_nats": 2.4820688415035925,
+      "uniform_entropy_nats": 2.4849066497880004,
+      "pooled_load_cv": 0.07564808897312612,
+      "max_share": 0.09464517763593419,
+      "unused_experts": 0,
+      "adjacent_same_expert_fraction": 0.1382321945629598,
+      "independent_same_expert_baseline": 0.08381021944710716,
+      "strongest_supported_category_biases": [
+        {
+          "category": "code/Java",
+          "expert": 1,
+          "enrichment": 1.5972965330110152,
+          "frequency": 0.1465812672827397,
+          "documents": 64,
+          "predictions": 42311
+        },
+        {
+          "category": "code/Bash",
+          "expert": 6,
+          "enrichment": 1.468458549413223,
+          "frequency": 0.11078816891776372,
+          "documents": 20,
+          "predictions": 11698
+        },
+        {
+          "category": "general",
+          "expert": 9,
+          "enrichment": 1.4583228236424517,
+          "frequency": 0.11095312688275696,
+          "documents": 64,
+          "predictions": 41495
+        },
+        {
+          "category": "code/HTML/CSS",
+          "expert": 6,
+          "enrichment": 1.4090038068402666,
+          "frequency": 0.10630259316503521,
+          "documents": 64,
+          "predictions": 46584
+        },
+        {
+          "category": "code/C#",
+          "expert": 8,
+          "enrichment": 1.3581625774597337,
+          "frequency": 0.1064822903926316,
+          "documents": 64,
+          "predictions": 40063
+        },
+        {
+          "category": "code/JS/TS",
+          "expert": 6,
+          "enrichment": 1.3525386235083738,
+          "frequency": 0.10204256534780745,
+          "documents": 64,
+          "predictions": 35005
+        }
+      ],
+      "scope": "Descriptive fixed-sample conditional structure; mutual information includes small flagged strata and is not a semantic/usefulness proof."
+    }
   }
 }

@@ -1,27 +1,23 @@
 # SparseCoderLab
 
-Public repository: [SparseForge-Lab/SparseCoderLab](https://github.com/SparseForge-Lab/SparseCoderLab). Project code is open source under [Apache-2.0](LICENSE). Dataset records, dependencies and external model artifacts retain their respective licenses; this license does not relicense the training corpus.
+SparseCoderLab studies sparse transformer architectures and conditional memory for code and repository understanding. The current work compares dense and grouped Top-1 expert models, with and without hashed Ngram memory, on a frozen real-document corpus.
 
-A runnable RTX 5070 architecture lab for cheaply falsifying hypotheses before scaling a sparse coding/agent model. The micro models are research instruments, not coding agents.
+## Latest comparison
 
-Prompt-2.5 continues the same Prompt-2 comparison after shutdown. DenseCompute and grouped SparseV3 now have verified20M/50M checkpoints. Training resumed on2026-10-06 at the user's explicit request, with Roblox kept open. Ngram20M/50M catchup is running; all70M/100M stages and final review remain pending. Runtime observations from this continuation include concurrent game/desktop activity (Documentation43). Complete-update endpoints20,004,864 /50,003,968 /70,000,640 /100,007,936 tokens. Final GOOD/MIXED/BAD classification remains pending.
+At 100M training tokens, the three seed-42 models reached these held-out negative log-likelihoods (lower is better):
 
-All variants share9 layers,width320,context1024 and frozen32768 real tokenizer. Dense16.57M stored is the active-compute control; sparse21.56M adds12x160 capacity at layers2/5/8; Ngram25.77M adds current4.19M table values. Inputs, seed42, optimizer and cosine schedule match. Real TRAIN corpus210M unique tokens, pinned bounded sources, repository/hostname splits and audited provenance. This micro stage does not prove60–75B scaling.
+| Model | Mixed | Code | General | Technical |
+|---|---:|---:|---:|---:|
+| Dense | 3.010259 | 2.517283 | 4.804755 | 3.423348 |
+| Sparse | 2.981258 | 2.481819 | 4.775507 | 3.397397 |
+| Sparse + Ngram | 2.974749 | 2.476290 | 4.750409 | 3.373976 |
 
-Latest50M: Dense mixed NLL3.288592/code2.778863; Sparse mixed3.276931/code2.756853. Sparse-Dense changed from+0.161791 mixed at20M to−0.011661 at50M. This small single-seed advantage needs the remaining curves and replication decision; it is not a final architecture verdict. Code diagnostic differs from corpus language prevalence; dense cumulative wall is a documented lower bound. Read `FINAL_STATUS.md`, `MODEL_CARD.md`, `Documentation/README.md`, `results/research_history.csv`, `results/model_card_evidence.json` and `results/releases/` for verified scopes and checkpoint references.
+A selected second-seed comparison favored Ngram over Sparse from 50M through 100M tokens. The overall result is mixed: the loss trends are promising on this fixed corpus, but the bounded arithmetic-code probes all failed, expert specialization evidence is weak, and two seeds do not establish broad robustness. These measurements do not demonstrate coding-agent capability or transfer to larger models. See [the research review](Documentation/54_realdata_comparison.md) and [the model card](MODEL_CARD.md).
 
-```powershell
-Set-Location D:\SparseCoderLab
-.\setup.ps1
-.\.venv\Scripts\python.exe -m tools.prepare_data
-.\.venv\Scripts\python.exe -m tools.count_params
-.\.venv\Scripts\python.exe -m pytest -q
-```
+## Reproduction and evidence
 
-Data/tokenizer already prepared locally should not be overwritten: preparation rejects an existing frozen shard manifest. All configuration comes from YAML; variants inherit the same base. CUDA is mandatory for training. Native SDPA/eager code is the reference. WSL is optional and currently unavailable on this machine. Existing installations and Strata are not modified.
+The corpus, tokenizer, evaluation, model, and training details are documented in [Documentation](Documentation/README.md). Small metrics, resolved configurations, and analysis tools are versioned here. Large datasets and training checkpoints remain outside ordinary Git; their identities are recorded by hashes and sizes in the experiment evidence.
 
-Historical engine cap255 minutes; research cumulative stages cap300 minutes. Checkpoint/resume retains model/optimizer/scheduler/RNG/cursor; atomic writes and immutable milestones are used. Original synthetic fixtures remain engineering regressions; research_v1 is the frozen real-data quality lane. Prompt-2 long training is explicitly authorized; no subsequent prompt starts automatically.
+The project source is licensed under Apache-2.0. Dataset sources and dependencies have separate terms. See [LICENSE](LICENSE).
 
-For frozen research continuation, verify `python -m tools.research_resume_state`, then the GPU resume check, Phase0 and research gate. Use `python -m tools.research_train --model sparse --endpoint 20004864`; then sparse50M, memory20M/50M, matched review, all70M and all100M. Completed milestones are verified/skipped, not retrained. Documentation34 has exact protocol and exceptions; Documentation38 has permanent publication-evidence rules. The optional local browser playground requires the privately retained, Git-ignored web interface and starts with `python -m tools.local_dense_chat` at http://127.0.0.1:8765 and uses CPU inference.
-
-Latest verified Ngram20M milestone:20,004,864 tokens, mixed4.171885/code3.623517/general5.846257/technical4.489081; memory residual-zero penalties+0.059097/+0.094661/+0.035774/+0.109459. Ngram20M→50M continues cumulatively. All-three50M/later comparisons and final decision remain pending. See Documentation44 and immutable checkpoint summary.
+Repository: [SparseForge-Lab/SparseCoderLab](https://github.com/SparseForge-Lab/SparseCoderLab).

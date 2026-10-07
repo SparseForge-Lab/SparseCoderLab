@@ -92,5 +92,287 @@
         "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
       }
     }
+  },
+  "50003968": {
+    "sparse_minus_dense": {
+      "all": {
+        "weighted_delta": -0.01918038233810917,
+        "bootstrap_95_interval": [
+          -0.022777212730121583,
+          -0.015743379083074632
+        ],
+        "clusters": 663,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "code": {
+        "weighted_delta": -0.02201072906142411,
+        "bootstrap_95_interval": [
+          -0.026105614611009492,
+          -0.018048894989110154
+        ],
+        "clusters": 503,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "general": {
+        "weighted_delta": -0.003311112467417273,
+        "bootstrap_95_interval": [
+          -0.011853198124962981,
+          0.005991848465260995
+        ],
+        "clusters": 59,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "technical": {
+        "weighted_delta": -0.011784673455097748,
+        "bootstrap_95_interval": [
+          -0.024312655696005027,
+          0.001679112266300604
+        ],
+        "clusters": 56,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      }
+    },
+    "ngram_minus_sparse": {
+      "all": {
+        "weighted_delta": -0.0175184294941225,
+        "bootstrap_95_interval": [
+          -0.02144909603837901,
+          -0.013621984617480626
+        ],
+        "clusters": 663,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "code": {
+        "weighted_delta": -0.012914330215843999,
+        "bootstrap_95_interval": [
+          -0.01717414763704501,
+          -0.008628426516951629
+        ],
+        "clusters": 503,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "general": {
+        "weighted_delta": -0.03579498713440831,
+        "bootstrap_95_interval": [
+          -0.04585070962517514,
+          -0.02546463878356965
+        ],
+        "clusters": 59,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "technical": {
+        "weighted_delta": -0.03464732550192459,
+        "bootstrap_95_interval": [
+          -0.0464761595642841,
+          -0.021420976607030778
+        ],
+        "clusters": 56,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      }
+    }
+  },
+  "70000640": {
+    "sparse_minus_dense": {
+      "all": {
+        "weighted_delta": -0.02965991746382182,
+        "bootstrap_95_interval": [
+          -0.03319757393328129,
+          -0.026168263776636707
+        ],
+        "clusters": 663,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "code": {
+        "weighted_delta": -0.029532330194103774,
+        "bootstrap_95_interval": [
+          -0.03374523294462859,
+          -0.02537502933031642
+        ],
+        "clusters": 503,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "general": {
+        "weighted_delta": -0.035574003385770665,
+        "bootstrap_95_interval": [
+          -0.0445236178487617,
+          -0.02620937534685699
+        ],
+        "clusters": 59,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "technical": {
+        "weighted_delta": -0.02519687189573208,
+        "bootstrap_95_interval": [
+          -0.038252176173425315,
+          -0.011400701133161339
+        ],
+        "clusters": 56,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      }
+    },
+    "ngram_minus_sparse": {
+      "all": {
+        "weighted_delta": -0.008559533892780628,
+        "bootstrap_95_interval": [
+          -0.012306957319330682,
+          -0.004883385556614321
+        ],
+        "clusters": 663,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "code": {
+        "weighted_delta": -0.0044850772978124636,
+        "bootstrap_95_interval": [
+          -0.008669468487274198,
+          -0.0004793686626264333
+        ],
+        "clusters": 503,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "general": {
+        "weighted_delta": -0.022961328517731333,
+        "bootstrap_95_interval": [
+          -0.03265889212833287,
+          -0.013502384323133363
+        ],
+        "clusters": 59,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "technical": {
+        "weighted_delta": -0.02616218892398991,
+        "bootstrap_95_interval": [
+          -0.03828107637662125,
+          -0.015266474684843134
+        ],
+        "clusters": 56,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      }
+    }
+  },
+  "100007936": {
+    "sparse_minus_dense": {
+      "all": {
+        "weighted_delta": -0.03360332783692455,
+        "bootstrap_95_interval": [
+          -0.036814893348453684,
+          -0.030509800915051347
+        ],
+        "clusters": 663,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "code": {
+        "weighted_delta": -0.03546470577913812,
+        "bootstrap_95_interval": [
+          -0.03908673923134139,
+          -0.03185690178997467
+        ],
+        "clusters": 503,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "general": {
+        "weighted_delta": -0.02924732666070784,
+        "bootstrap_95_interval": [
+          -0.03654651982288802,
+          -0.021639416455851913
+        ],
+        "clusters": 59,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "technical": {
+        "weighted_delta": -0.025950812852955512,
+        "bootstrap_95_interval": [
+          -0.03917465745552232,
+          -0.012678921656397292
+        ],
+        "clusters": 56,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      }
+    },
+    "ngram_minus_sparse": {
+      "all": {
+        "weighted_delta": -0.009027191464017762,
+        "bootstrap_95_interval": [
+          -0.012442038232959737,
+          -0.005876144201996378
+        ],
+        "clusters": 663,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "code": {
+        "weighted_delta": -0.005528548650174867,
+        "bootstrap_95_interval": [
+          -0.009182828442894916,
+          -0.0018904813354475936
+        ],
+        "clusters": 503,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "general": {
+        "weighted_delta": -0.025098428221722226,
+        "bootstrap_95_interval": [
+          -0.03445813365412612,
+          -0.015900503668404502
+        ],
+        "clusters": 59,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      },
+      "technical": {
+        "weighted_delta": -0.023421009716565685,
+        "bootstrap_95_interval": [
+          -0.03539717313159574,
+          -0.011969311932819119
+        ],
+        "clusters": 56,
+        "bootstrap_replicates": 2000,
+        "seed": 42,
+        "caveat": "Paired repository/hostname cluster resampling of fixed diagnostic documents. Does not estimate training-seed uncertainty or prove population-level generalization."
+      }
+    }
   }
 }
