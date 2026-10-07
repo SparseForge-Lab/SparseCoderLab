@@ -27,10 +27,17 @@ The original data and training setup was stopped before all four models reached 
 |---|---:|---:|---:|---:|---:|---:|---:|---|
 | Dense | 250,003,456 | 2.4840 | 2.0029 | 4.2245 | 2.8501 | 39,995 | 7.28 GiB | `5ea3f085…91905fb` |
 | Sparse | 180,224,000 | Not evaluated at this stop | Not evaluated at this stop | Not evaluated at this stop | Not evaluated at this stop | 37,277 | 7.90 GiB | `384740ca…411fa860` |
+| Sparse + 25M Ngram | 180,002,816 | 2.5253 | 2.0461 | 4.2372 | 2.8678 | 32,747 | 8.23 GiB | `9847ad42…8b77d68` |
 
-The two Ngram runs remained at 100M. The Dense result has a full evaluation report; Sparse was stopped at its last saved 22,000-step checkpoint and did not receive a separate evaluation at 180.224M. Do not compare these two rows as if they were measured at the same training exposure, and do not treat either as the architecture selection result.
+The 10M Ngram run remains at 100M. Dense and the 25M-memory model have full evaluation reports at their later stops; Sparse was stopped at its last saved 22,000-step checkpoint and did not receive a separate evaluation at 180.224M. These rows have unequal training exposure and do not constitute an architecture selection result.
 
-After the main comparison closed, a supplemental Sparse + 25M Ngram continuation was started on the original frozen corpus, with an endpoint of 180,002,816 tokens. It resumes the original optimizer, scheduler, RNG and data cursor. This is exploratory evidence alongside the repository-pipeline work; the four matching 100M checkpoints remain the transition weights for the new data phase.
+After the main comparison closed, Sparse + 25M Ngram continued on the original frozen corpus to 180,002,816 tokens, preserving optimizer, scheduler, RNG and data-cursor state. It completed 9,765 additional updates and 79,994,880 additional tokens in about 41.6 minutes of recorded loop wall time. Final full validation and residual-off evaluation added about 1.5 minutes. Training and evaluation have stopped.
+
+From 100M to 180M, mixed/code/general/technical NLL improved by 0.1934/0.1888/0.2054/0.2344. Turning Ngram residuals off at 180M increased mixed NLL by 0.1040 and code NLL by 0.1575. This supports memory contribution on this corpus; it does not establish functional coding performance or a winning architecture. The [180M evidence](../results/prompt3/sparse25m_180M_results.json) records the complete checkpoint identities, CPU integrity checks, measured time and ablation deltas. The [scaling history](../results/prompt3/milestone_history.csv) retains earlier rows; missing functional results remain empty.
+
+The four matching 100M checkpoints remain the transition weights for the new data phase. Later continuations are historical evidence.
+
+![Prototype corpus scaling; later endpoints are unmatched](../results/prompt3/figures/prototype_scaling.png)
 
 ## Transition point
 

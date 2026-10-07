@@ -17,3 +17,11 @@ At 100M tokens, mixed/code/general/technical NLL was 3.010259/2.517283/4.804755/
 All 72 primary arithmetic-code probe attempts failed. Routing used all experts, but category mutual information was low and does not establish useful semantic specialization. The final assessment is mixed: these models provide language-modeling evidence, not proof of software-engineering or agent behavior. See [the full comparison review](Documentation/54_realdata_comparison.md).
 
 The measured models use a 1,024-token context and received no instruction tuning, tool training, or reinforcement learning. No large-model transfer claim is supported. Checkpoint redistribution rights are unresolved, so checkpoints are not included. Dataset and dependency licenses remain separate from the Apache-2.0 source license.
+
+## 75M-class comparison
+
+The later comparison uses 16 layers, width 512, eight query heads, two KV heads and the same frozen vocabulary/context. Stored/estimated active counts are 54,018,560/54,018,560 for Dense, 76,063,232/54,436,352 for Sparse, 86,565,889/54,453,281 for Sparse + 10M Ngram, and 101,245,953/54,453,281 for Sparse + 25M Ngram. The memory counts include the conditional tables. These active counts are much larger than the eventual few-million-parameter miniature aspiration.
+
+All four have matching 100M checkpoints. A historical 25M-memory continuation reached 180,002,816 tokens with mixed/code/general/technical NLL of 2.525322/2.046119/4.237180/2.867805. Ngram residual-off increased mixed/code NLL by 0.104025/0.157506. This is a single-seed prototype-corpus scaling result with no functional coding score at 180M. Its measured throughput was 32,747 tokens/sec and peak allocation 8.23 GiB on the RTX 5070. Checkpoint hashes and resumability evidence are in the [180M record](results/prompt3/sparse25m_180M_results.json).
+
+The canonical transition weights remain the four 100M snapshots; no winner is selected. A separate [multilingual repository pilot](Documentation/56_multilingual_repository_pilot.md) contains 7.15M train tokens, 0.60M validation tokens and 1,533 FIM examples from pinned repositories. No model has trained on that pilot, and its licensing/fork/contamination review, final mixture and training preflight remain incomplete.

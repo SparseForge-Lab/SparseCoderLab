@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "variant": "sparse75_ngram25m",
+  "gate": "180M",
+  "actual_tokens": 180002816,
+  "updates": 21973,
+  "cursor": 175784,
+  "seed": 42,
+  "stored_parameters": 101245953,
+  "active_parameters_estimate": 54453281,
+  "evaluation": {
+    "val_loss": 2.525321824476123,
+    "code_val_loss": 2.046118837826881,
+    "general_val_loss": 4.237179831783949,
+    "technical_val_loss": 2.8678045581231766,
+    "context_val_loss": 2.002457355989285,
+    "mixed_predictions": 262144,
+    "category_predictions": {
+      "context": 42474,
+      "code": 366503,
+      "technical": 38956,
+      "general": 41495
+    }
+  },
+  "ngram_residual_off_delta": {
+    "val_loss": 0.10402512643486261,
+    "context_val_loss": 0.16807573466514913,
+    "code_val_loss": 0.15750582159873572,
+    "technical_val_loss": 0.2033057676335419,
+    "general_val_loss": 0.15092124759123848
+  },
+  "runtime": {
+    "wall_tok_s": 32747.074137056745,
+    "step_tok_s": 34651.32843854471,
+    "peak_vram_bytes": 8836203008,
+    "additional_tokens": 79994880,
+    "additional_wall_seconds": 2498.216018900006,
+    "additional_training_seconds": 2357.4654513998394,
+    "final_full_evaluation_seconds": 92.29773330000171
+  },
+  "loss_delta_180M_minus_100M": {
+    "val_loss": -0.19338158890604973,
+    "code_val_loss": -0.18882399686980778,
+    "general_val_loss": -0.20539310014970447,
+    "technical_val_loss": -0.23436385185782616
+  },
+  "checkpoints": {
+    "latest_verified_180M.pt": {
+      "path": "experiments/prompt3_v1/sparse75_ngram25m/checkpoints/latest_verified_180M.pt",
+      "size_bytes": 1215241939,
+      "sha256": "9847ad4256ab093ed4b0695a44964979cb49547aba719dc7aa94ac0a88b77d68"
+    },
+    "model_180M.pt": {
+      "path": "experiments/prompt3_v1/sparse75_ngram25m/checkpoints/model_180M.pt",
+      "size_bytes": 405067950,
+      "sha256": "0609fcc4ab457b9d58c970db576ed24dfb7ea8d7dbe199d87ab5ec0d5ac85c33"
+    }
+  },
+  "integrity": {
+    "hashes_verified_on_cpu": true,
+    "model_finite": true,
+    "optimizer_moments_finite": true,
+    "optimizer_scheduler_rng_present": true,
+    "tokens_updates_cursor_match": true,
+    "canonical_100M_retained": true
+  },
+  "config_fingerprint": "152d30f77d95d6d84fd42434853b29421ca2c6cf145842b1cce8a77c9f8a23ce",
+  "config_sha256": "649aa73f7e1ea07acf4fd9fda8d30e201efefa669cb9b1c08fb43dfc2c940a63",
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "data_manifest_sha256": "501361addc446c234c765d3634e3401446f0b4a7c65217005b5dcd6aa0b7123e",
+  "stage_report_sha256": "2974cf747b2ff0991dc18b1a3a0678a2175bbebc4204912c57bff82365d61e99",
+  "classification": "historical-exploratory",
+  "scope": "Single-model continuation on the unchanged prototype corpus. No matched 180M four-model ranking, functional coding score or new-data training. Canonical transition weights remain 100M."
+}
