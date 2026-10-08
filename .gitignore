@@ -97,6 +97,7 @@ data/research_v2_real/exports/
 data/research_v2_real/documents/
 data/research_v2_real/cache/
 data/research_v2_real/shards/
+data/research_v2_real/evaluation/
 results/history/Prompt-*/starting_manifest.json
 results/prompt-*_archive_manifest.json
 results/prompt-*_archive_verification.json

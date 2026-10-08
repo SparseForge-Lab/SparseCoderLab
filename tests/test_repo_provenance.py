@@ -1,6 +1,7 @@
 import json
 import subprocess
 import sys
+import pytest
 from pathlib import Path
 
 from src.training.data import split_document
@@ -63,6 +64,15 @@ def test_repo_export_records_stable_revision_and_filters_secrets(tmp_path):
     from tools.repository_data_smoke import validate_export
     validated_source, validated_records = validate_export(output)
     assert validated_source['revision'] == revision and validated_records == rows
+    bare = tmp_path / 'bare.git'
+    subprocess.run(['git', 'clone', '--bare', str(repo), str(bare)], check=True, capture_output=True)
+    bare_output = tmp_path / 'bare_records.jsonl'
+    subprocess.run([
+        sys.executable, 'tools/import_local_repo.py', '--repo', str(bare), '--source-id', 'example/project',
+        '--source-url', 'https://github.com/example/project', '--license', 'MIT', '--output', str(bare_output),
+    ], check=True, capture_output=True)
+    assert not (bare / 'LICENSE').exists()
+    assert bare_output.read_bytes() == output.read_bytes()
     repeated = subprocess.run([
         sys.executable, 'tools/import_local_repo.py', '--repo', str(repo), '--source-id', 'example/project',
         '--source-url', 'https://github.com/example/project', '--license', 'MIT', '--output', str(output),
@@ -71,7 +81,19 @@ def test_repo_export_records_stable_revision_and_filters_secrets(tmp_path):
     assert 'Export already exists' in repeated.stderr
 
 
-def test_packing_retains_repository_provenance_and_isolates_splits(tmp_path, monkeypatch):
+def test_batch_blobs_preserves_binary_bytes_and_validates_object_identity(tmp_path):
+    from tools.import_local_repo import BatchBlobs
+    subprocess.run(['git', 'init', '-q', str(tmp_path)], check=True)
+    values = [b'a\r\nb\n\x00\xff', bytes(range(256))*4097, b'']
+    ids = [subprocess.check_output(['git', '-C', str(tmp_path), 'hash-object', '-w', '--stdin'], input=raw).decode().strip() for raw in values]
+    with BatchBlobs(tmp_path) as batch:
+        for oid, raw in zip(ids, values): assert batch.read(oid) == raw
+        import pytest
+        with pytest.raises(ValueError, match='Invalid Git object'): batch.read('HEAD; unsafe')
+
+
+@pytest.mark.parametrize('explicit_assignments', [False, True])
+def test_packing_retains_repository_provenance_and_isolates_splits(tmp_path, monkeypatch, explicit_assignments):
     import hashlib
     from tokenizers import Tokenizer, decoders, models, pre_tokenizers, trainers
     from src.training.data import SPECIAL_TOKENS
@@ -106,6 +128,8 @@ def test_packing_retains_repository_provenance_and_isolates_splits(tmp_path, mon
         'cache': 'data/cache', 'cache_gb': .01, 'seed': 42, 'eval_fraction': .5, 'tokenizer': 'tokenizer.json',
         'max_tokens': 100_000, 'shard_tokens': 256,
     }}
+    if explicit_assignments:
+        cfg['data']['repository_split_assignments'] = {doc['repository_family']: ('val' if doc['repository'].endswith(('3','7','9')) else 'train') for doc in docs}
     report = prepare(cfg, input_path)
     groups = {}
     family_groups = {}
@@ -123,6 +147,13 @@ def test_packing_retains_repository_provenance_and_isolates_splits(tmp_path, mon
     assert total_docs == 40
     assert report['rejected']['exact_or_normalized_duplicate'] == 1
     assert report['dataset_version'] == 'research_v2_smoke'
+    if explicit_assignments:
+        for split in ('train', 'val'):
+            assert all(cfg['data']['repository_split_assignments'][family] == split for family in family_groups[split])
+        assert report['split_policy'].startswith('Reviewed explicit')
+        cfg['data'].update(shards='data/missing',cache='data/missing_cache',manifest='results/missing.json',repository_split_assignments={})
+        with pytest.raises(ValueError, match='Missing or invalid reviewed'):
+            prepare(cfg,input_path)
 
 
 def test_repo_export_rejects_tracked_modifications(tmp_path):

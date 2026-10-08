@@ -32,7 +32,14 @@ def prepare(cfg: dict, input_path: Path | None = None) -> dict:
                 rejected['exact_or_normalized_duplicate'] += 1
                 continue
             split_group = doc.get('repository_family', doc.get('repository'))
-            doc.update(sha256=sha, split=split_document(doc['text'], d['seed'], d['eval_fraction'], split_group))
+            if 'repository_split_assignments' in d:
+                assignments = d['repository_split_assignments']
+                if split_group not in assignments or assignments[split_group] not in ('train', 'val'):
+                    raise ValueError('Missing or invalid reviewed repository-family split assignment')
+                split = assignments[split_group]
+            else:
+                split = split_document(doc['text'], d['seed'], d['eval_fraction'], split_group)
+            doc.update(sha256=sha, split=split)
             line = json.dumps(doc, ensure_ascii=False) + '\n'; size = len(line.encode('utf-8'))
             if bytes_used + size > d['cache_gb'] * 1024**3: raise RuntimeError('Input cache budget exceeded; refusing biased prefix selection')
             seen.add(duplicate_key); bytes_used += size; out.write(line); stats[f"{doc['split']}/{doc['kind']}/{doc['language']}"] += 1
@@ -88,7 +95,7 @@ def prepare(cfg: dict, input_path: Path | None = None) -> dict:
               'processing_script_sha256': PROCESSING_SCRIPT_SHA256,
               'split_helper_sha256': SPLIT_HELPER_SHA256,
               'input_sha256': sha256_file(input_path) if input_path else None,
-              'split_policy': 'Declared repository-family group hash, falling back to repository hash; otherwise legacy document-content hash. Global exact/normalized content deduplication precedes splitting.',
+              'split_policy': ('Reviewed explicit repository-family assignments; global exact/normalized dedup precedes splitting.' if 'repository_split_assignments' in d else 'Declared repository-family group hash, falling back to repository hash; otherwise legacy document-content hash. Global exact/normalized content deduplication precedes splitting.'),
               'tokenizer_sha256': sha256_file(tokenizer_path), 'seed': d['seed'],
               'data_config': d, 'synthetic_only': input_path is None, 'cache_bytes': bytes_used,
               'physical_shards': physical, 'shard_sha256': {s: 'physical_shards authoritative' for s in counts},

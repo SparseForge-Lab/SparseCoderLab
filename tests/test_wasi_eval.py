@@ -101,3 +101,9 @@ def test_saved_study_comparison_rejects_missing_duplicate_or_mismatched_rows():
     altered[0]["top_k"] = 40
     with pytest.raises(ValueError):
         validate_rows(altered, tasks, manifest)
+    attested = copy.deepcopy(rows)
+    for row in attested:
+        row['checkpoint_sha256'] = manifest['canonical_transition_checkpoints'][row['variant']]['model_weights']['sha256']
+    assert validate_rows(attested,tasks,manifest)==policy
+    attested[0]['checkpoint_sha256']='0'*64
+    with pytest.raises(ValueError,match='checkpoint hash'):validate_rows(attested,tasks,manifest)

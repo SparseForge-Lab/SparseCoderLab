@@ -1,5 +1,5 @@
 from __future__ import annotations
-import contextlib, copy, csv, hashlib, json, math, random, signal, subprocess, time
+import contextlib, copy, csv, hashlib, json, math, random, shutil, signal, subprocess, time
 from pathlib import Path
 import numpy as np
 import torch
@@ -90,8 +90,14 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
     require_cuda(cfg['training']['device']); t = cfg['training']; seed_all(t['seed'])
     from tools.shard_data import verify_shards
     verify_shards(cfg)
-    used_data=sum(p.stat().st_size for p in Path('data').rglob('*') if p.is_file())
-    if used_data>cfg['data']['cache_gb']*1024**3: raise RuntimeError('Data budget exceeded')
+    if 'training_storage_budget_gb' in cfg['data']:
+        used_data=sum(p.stat().st_size for p in Path(cfg['data']['shards']).rglob('*') if p.is_file())
+        used_data+=Path(cfg['data']['tokenizer']).stat().st_size
+        data_budget=cfg['data']['training_storage_budget_gb']
+    else:
+        used_data=sum(p.stat().st_size for p in Path('data').rglob('*') if p.is_file())
+        data_budget=cfg['data']['cache_gb']
+    if used_data>data_budget*1024**3: raise RuntimeError('Data budget exceeded')
     if t['compile']: raise RuntimeError('Compile is disabled pending separate eager parity/benchmark lane')
     torch.backends.cuda.matmul.allow_tf32 = t['tf32']; torch.backends.cudnn.allow_tf32 = t['tf32']
     model = LanguageModel(cfg).cuda(); optimizer, scheduler = make_optimizer(model, cfg)
@@ -130,6 +136,14 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
     reserve = min(t['reserve_seconds'], wall_limit * 0.1); start = time.perf_counter(); base_wall = meta['wall_time']; initial_steps = meta['step']
     torch.cuda.reset_peak_memory_stats(); measured_steps = 0; last_loss = None; norm = None
     checkpoint = run_dir / 'checkpoints' / 'last.pt'
+    def save_checkpoint():
+        reserve=cfg['data'].get('checkpoint_free_space_reserve_gb')
+        if reserve is not None:
+            estimate=sum(v.numel()*v.element_size() for v in model.state_dict().values())*4
+            if shutil.disk_usage(run_dir).free < reserve*1024**3+estimate:
+                raise RuntimeError('Atomic checkpoint would breach the free-space reserve')
+        save_training(checkpoint,model,optimizer,scheduler,meta,
+            None if reserve is not None else int(cfg['data']['project_gb']*1024**3))
     log_file = (run_dir / 'metrics.jsonl').open('a', encoding='utf-8')
     try:
         model.train()
@@ -151,6 +165,9 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
             opt_start.record(); optimizer.step(); opt_end.record(); scheduler.step(); torch.cuda.synchronize()
             elapsed = time.perf_counter() - step_start; measured_steps += 1; meta['training_seconds'] += elapsed
             meta['step'] += 1; meta['cursor'] = stream.cursor; meta['wall_time'] = base_wall + time.perf_counter() - start
+            if 'inherited_tokens' in meta:
+                meta['new_phase_tokens'] = meta['tokens_seen'] - meta['inherited_tokens']
+                meta['phase_steps'] = meta['step'] - meta['phase_start_step']
             last_loss = loss_sum / t['accumulation']
             if meta['step'] % t['log_steps'] == 0:
                 routes = model.routes(); record = dict(meta, train_loss=last_loss, grad_norm=norm,
@@ -165,9 +182,9 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
             if meta['step'] % t['eval_steps'] == 0 and time.perf_counter() - start < wall_limit - reserve:
                 val = validate(model, cfg); log_file.write(json.dumps(dict(meta, **val)) + '\n'); log_file.flush()
             if meta['step'] % t['checkpoint_steps'] == 0:
-                save_training(checkpoint, model, optimizer, scheduler, meta, int(cfg['data']['project_gb'] * 1024**3))
+                save_checkpoint()
         meta['wall_time'] = base_wall + time.perf_counter() - start; meta['cursor'] = stream.cursor
-        save_training(checkpoint, model, optimizer, scheduler, meta, int(cfg['data']['project_gb'] * 1024**3))
+        save_checkpoint()
         val = validate(model, cfg) if time.perf_counter() - start < wall_limit - reserve / 2 else {'val_loss': None}
         from tools.count_params import count_model
         count = count_model(model); step_tok_s = meta['tokens_seen'] / max(meta['training_seconds'], 1e-9)

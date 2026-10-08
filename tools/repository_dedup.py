@@ -115,7 +115,8 @@ def family_ids(repositories: set[str], families: list[list[str]]) -> dict[str, s
 
 
 def deduplicate(records: list[dict], *, threshold: float = .85, min_shingles: int = 64,
-                families: list[list[str]] | None = None, audit_all_pairs: bool = False):
+                families: list[list[str]] | None = None, audit_all_pairs: bool = False,
+                progress=None):
     if not 0 < threshold <= 1 or min_shingles < 1:
         raise ValueError('Invalid similarity threshold or minimum shingle count')
     if audit_all_pairs and len(records) > 1000:
@@ -128,7 +129,9 @@ def deduplicate(records: list[dict], *, threshold: float = .85, min_shingles: in
     index = defaultdict(set)
     counts = Counter()
     ordered = sorted(records, key=lambda r: (r['repository'], r['revision'], r['file_path'], r['raw_sha256']))
-    for record in ordered:
+    for processed, record in enumerate(ordered, 1):
+        if progress is not None and (processed == 1 or processed % 1000 == 0):
+            progress({'processed': processed, 'total': len(ordered), 'retained': len(retained), 'removed': len(removed)})
         if record.get('fim', {}).get('applied'):
             raise ValueError('Deduplication must run before FIM')
         _, body = split_header(record)

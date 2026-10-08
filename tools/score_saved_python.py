@@ -71,6 +71,7 @@ def validate_rows(rows, tasks, checkpoint_manifest):
     temperatures = {0.0, 0.2, 0.5, 0.8, 1.0, 1.2, 1.5}
     seen = set()
     policies = collections.defaultdict(set)
+    hash_attested = any('checkpoint_sha256' in item for item in rows)
     for row in rows:
         variant = row["variant"]
         if variant not in variants or row["temperature"] not in temperatures:
@@ -79,6 +80,9 @@ def validate_rows(rows, tasks, checkpoint_manifest):
         if task["prompt"] != row["input"]:
             raise ValueError("Prompt mismatch")
         canonical = checkpoint_manifest["canonical_transition_checkpoints"][variant]
+        if hash_attested:
+            if row.get('checkpoint_sha256') != canonical['model_weights']['sha256']:
+                raise ValueError('Generation checkpoint hash mismatch')
         if row["training_tokens"] != canonical["canonical_transition_tokens"]:
             raise ValueError("Unmatched checkpoint token stage")
         # Original path is private metadata; only check its variant membership.
@@ -148,7 +152,8 @@ def main():
               "runtime": runtime.runtime_identity, "scope": benchmark["scope"],
               "scorer_sha256": file_hash(__file__),
               "sandbox_source_sha256": file_hash("src/eval/wasi_python.py"),
-              "limitations": ["Saved generations declare model identity and token counts but contain no checkpoint SHA256 at generation time; canonical manifest hashes cannot retroactively prove weight identity.",
+              "generation_checkpoint_hashes_verified": all('checkpoint_sha256' in row for row in rows),
+              "limitations": [("Generation records carry canonical checkpoint hashes checked by the sampler before/after loading; this is local provenance evidence, not a cryptographic execution attestation." if all('checkpoint_sha256' in row for row in rows) else "Saved generations declare model identity and token counts but contain no checkpoint SHA256 at generation time; canonical manifest hashes cannot retroactively prove weight identity."),
                               "Small finite test suite; not pass@k, instruction-following, repository engineering, or benchmark leadership.",
                               "Repetition is a heuristic and is reported independently of functional correctness.",
                               "Parseability is the host Python AST check; executed candidates use CPython 3.14.7 in WASI.",

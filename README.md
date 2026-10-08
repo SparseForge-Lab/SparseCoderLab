@@ -10,6 +10,8 @@ The original training setup ended before a matched 250M comparison was complete.
 
 The repository data pipeline now preserves pinned commits, source/test/docs/build roles and repository-level splits. The [multilingual pilot](Documentation/56_multilingual_repository_pilot.md) packs 7.15M training tokens from 13 projects, with 0.60M validation tokens and 1,533 FIM examples. Ingestion, exact/near-duplicate filtering, FIM reconstruction, token packing, shard verification and exact data-cursor resume checks passed. The tokenizer is unchanged. The full corpus and training preflight are still in preparation; [pipeline methods and source review](Documentation/55_repository_data_pipeline.md) describe the measured result and remaining work.
 
+An expanded 44-repository candidate and explicit checkpoint-transition tools are now under validation. The [preparation record](Documentation/59_repository_transition_preparation.md) describes pinned source subsets, held-out assignments, benchmark screening and the proposed phase policy; final corpus and GPU preflight results are pending.
+
 ## Earlier results
 
 The [completed functional screen](Documentation/57_safe_functional_evaluation.md) now checks the saved Python completions in a bounded WASI runtime. The [implementation review](Documentation/58_implementation_correctness_and_memory.md) documents optimizer/resume fixes, streamed data handling and a 36–42% reduction in measured peak allocated training memory. Short timings do not establish a general throughput improvement.

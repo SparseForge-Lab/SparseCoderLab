@@ -17,9 +17,11 @@ EXTENSIONS = {
     '.sql': 'SQL', '.sh': 'Bash', '.bash': 'Bash', '.json': 'JSON/YAML', '.yaml': 'JSON/YAML',
     '.yml': 'JSON/YAML', '.cs': 'C#', '.toml': 'TOML', '.md': 'Markdown',
     '.rst': 'reStructuredText', '.txt': 'Text', '.cmake': 'CMake', '.bats': 'Bash',
+    '.lean': 'Lean', '.scss': 'HTML/CSS', '.sass': 'HTML/CSS', '.vue': 'TypeScript',
+    '.proto': 'ProtocolBuffers', '.csproj': 'XML', '.props': 'XML', '.targets': 'XML',
 }
 SPECIAL_FILES = {'Makefile': 'Makefile', 'Dockerfile': 'Dockerfile', 'CMakeLists.txt': 'CMake'}
-LICENSES = ('MIT', 'Apache-2.0', 'BSD-2-Clause', 'BSD-3-Clause', 'CC0-1.0', 'ISC')
+LICENSES = ('MIT', 'Apache-2.0', 'BSD-2-Clause', 'BSD-3-Clause', 'CC0-1.0', 'ISC', 'CC-BY-4.0')
 SKIP_PARTS = {
     'vendor', 'vendors', 'node_modules', 'dist', 'build', 'target', 'third_party',
     'third-party', 'generated', '__generated__', '.venv', 'venv', '.codex', '.claude',
@@ -41,6 +43,31 @@ def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+class BatchBlobs:
+    """One Git process, committed byte identities, no checkout or filters."""
+    def __init__(self, root):
+        self.process = subprocess.Popen(['git', '-C', str(root), 'cat-file', '--batch'],
+                                        stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    def __enter__(self): return self
+    def read(self, oid):
+        if not re.fullmatch(r'[0-9a-f]{40,64}', oid): raise ValueError('Invalid Git object identity')
+        self.process.stdin.write(oid.encode('ascii') + b'\n'); self.process.stdin.flush()
+        header = self.process.stdout.readline().split()
+        if len(header) != 3 or header[0].decode('ascii') != oid or header[1] != b'blob':
+            raise ValueError('Git batch blob identity/type mismatch')
+        size = int(header[2])
+        if size > 16*1024**2: raise ValueError('Git blob exceeds reader limit')
+        raw = self.process.stdout.read(size)
+        if len(raw) != size or self.process.stdout.read(1) != b'\n':
+            raise ValueError('Incomplete Git batch blob')
+        return raw
+    def __exit__(self, *args):
+        self.process.stdin.close()
+        try: self.process.wait(timeout=10)
+        except subprocess.TimeoutExpired: self.process.kill(); self.process.wait()
+        self.process.stdout.close()
+
+
 def file_role(name: str) -> tuple[str, str]:
     parts = {part.casefold() for part in Path(name).parts}
     base = Path(name).name.casefold()
@@ -50,7 +77,7 @@ def file_role(name: str) -> tuple[str, str]:
         return 'code', 'test'
     if Path(name).name in SPECIAL_FILES or base in {'package.json', 'pyproject.toml', 'cargo.toml', 'go.mod'}:
         return 'context', 'build'
-    if Path(name).suffix.lower() in ('.json', '.yaml', '.yml', '.toml'):
+    if Path(name).suffix.lower() in ('.json', '.yaml', '.yml', '.toml', '.csproj', '.props', '.targets'):
         return 'context', 'configuration'
     return 'code', 'implementation'
 
@@ -64,9 +91,17 @@ def main() -> None:
     parser.add_argument('--license-file', help='Explicit root-relative license file, e.g. LICENSE-MIT')
     parser.add_argument('--exclude-prefix', action='append', default=[], help='Reviewed root-relative path prefix to omit')
     parser.add_argument('--header-language', choices=('C', 'C++'), default='C')
+    parser.add_argument('--extension-map', type=Path, help='Reviewed additional extension-to-language JSON map')
+    parser.add_argument('--conservative-license-review', action='store_true', help='Hold ambiguous third-party/non-allowlisted license headers')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--max-mib', type=int, default=64)
     args = parser.parse_args()
+    extensions = dict(EXTENSIONS)
+    if args.extension_map:
+        additions = json.loads(args.extension_map.read_text(encoding='utf8'))
+        if not isinstance(additions, dict) or any(not re.fullmatch(r'\.[a-z0-9]+', key) or not isinstance(value, str) or not value for key,value in additions.items()):
+            raise ValueError('Invalid reviewed extension map')
+        extensions.update(additions)
 
     root = args.repo.resolve()
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', args.source_id):
@@ -77,7 +112,8 @@ def main() -> None:
     if args.max_mib <= 0:
         raise ValueError('--max-mib must be positive')
     revision = run_git(root, 'rev-parse', 'HEAD')
-    if run_git(root, 'status', '--porcelain', '--untracked-files=no'):
+    bare = run_git(root, 'rev-parse', '--is-bare-repository') == 'true'
+    if not bare and run_git(root, 'status', '--porcelain', '--untracked-files=no'):
         raise ValueError('Repository has tracked modifications; export a clean committed revision')
 
     for prefix in args.exclude_prefix:
@@ -88,14 +124,15 @@ def main() -> None:
         if candidate.is_absolute() or '..' in candidate.parts or len(candidate.parts) != 1:
             raise ValueError('License file must be a root-relative filename')
         license_path = root / candidate
-        if not license_path.is_file():
-            raise ValueError('Selected license file missing')
     else:
-        license_path = next((root / name for name in ('LICENSE', 'LICENSE.txt', 'LICENSE.md', 'License.txt', 'COPYING') if (root / name).is_file()), None)
+        license_path = None
+        for name in ('LICENSE', 'LICENSE.txt', 'LICENSE.md', 'License.txt', 'COPYING'):
+            check = subprocess.run(['git', '-C', str(root), 'cat-file', '-e', f'{revision}:{name}'], capture_output=True)
+            if check.returncode == 0: license_path = root / name; break
     if license_path is None:
         raise ValueError('Repository license file missing')
     try:
-        run_git(root, 'ls-files', '--error-unmatch', license_path.relative_to(root).as_posix())
+        run_git(root, 'cat-file', '-e', f'{revision}:{license_path.name}')
     except subprocess.CalledProcessError as exc:
         raise ValueError('Repository license file must be tracked in the pinned revision') from exc
     license_raw = subprocess.check_output(['git', '-C', str(root), 'show', f'{revision}:{license_path.name}'])
@@ -125,7 +162,7 @@ def main() -> None:
     total_bytes = 0
     max_bytes = args.max_mib * 1024**2
 
-    with output_tmp.open('x', encoding='utf-8', newline='\n') as out, quarantine_tmp.open('x', encoding='utf-8', newline='\n') as quarantine:
+    with BatchBlobs(root) as blobs, output_tmp.open('x', encoding='utf-8', newline='\n') as out, quarantine_tmp.open('x', encoding='utf-8', newline='\n') as quarantine:
         for index, (name, mode, blob_kind, oid, blob_size) in enumerate(candidates):
             parts = Path(name).parts
             if mode not in (b'100644', b'100755') or blob_kind != b'blob':
@@ -137,7 +174,7 @@ def main() -> None:
             if Path(name).name.casefold() in {'agents.md', 'claude.md'} or any(name.startswith(prefix) for prefix in args.exclude_prefix):
                 counts['reviewed_exclusion'] += 1
                 continue
-            language = SPECIAL_FILES.get(Path(name).name, EXTENSIONS.get(Path(name).suffix.lower()))
+            language = SPECIAL_FILES.get(Path(name).name, extensions.get(Path(name).suffix.lower()))
             if Path(name).suffix.lower() == '.h':
                 language = args.header_language
             if language is None:
@@ -146,7 +183,7 @@ def main() -> None:
             if int(blob_size) > 1024**2:
                 counts['oversize_or_missing'] += 1
                 continue
-            raw = subprocess.check_output(['git', '-C', str(root), 'cat-file', 'blob', oid.decode('ascii')])
+            raw = blobs.read(oid.decode('ascii'))
             if any(pattern.search(raw) for pattern in SECRET_PATTERNS):
                 quarantine.write(json.dumps({'path': name, 'reason': 'secret_pattern'}, ensure_ascii=False) + '\n')
                 counts['secret_quarantined'] += 1
@@ -167,6 +204,11 @@ def main() -> None:
                 continue
             spdx = re.search(r'SPDX-License-Identifier:\s*([^\r\n]+)', text[:3000])
             expression = spdx.group(1).strip().rstrip('*/ ').strip() if spdx else None
+            if args.conservative_license_review and not expression and re.search(
+                r'GNU (?:GENERAL|LESSER|AFFERO) PUBLIC|Mozilla Public License|Creative Commons|(?:AGPL|LGPL|GPL|MPL|BSL|CC-BY)[- ]\d|Unicode.*[Ll]icen[sc]e|ICU [Ll]icen[sc]e|\b(?:copied|borrowed|adapted|derived) from\b',
+                text[:8192], re.I):
+                counts['ambiguous_license_header_held'] += 1
+                continue
             file_license = args.license
             if expression:
                 if expression in LICENSES:
@@ -201,8 +243,7 @@ def main() -> None:
             line = json.dumps(record, ensure_ascii=False) + '\n'
             size = len(line.encode('utf-8'))
             if total_bytes + size > max_bytes:
-                counts['budget_skipped'] += len(candidates) - index
-                break
+                raise RuntimeError('Export budget exceeded; refusing biased sorted-prefix export')
             out.write(line)
             written += 1
             total_bytes += size
@@ -220,6 +261,8 @@ def main() -> None:
         'license_file': license_path.name,
         'reviewed_exclusion_prefixes': args.exclude_prefix,
         'header_language': args.header_language,
+        'additional_extensions': {key:value for key,value in extensions.items() if EXTENSIONS.get(key) != value},
+        'conservative_license_review': args.conservative_license_review,
         'included_files': written,
         'output_bytes': total_bytes,
         'filtered_counts': dict(sorted(counts.items())),
