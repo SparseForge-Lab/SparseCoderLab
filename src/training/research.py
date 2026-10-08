@@ -72,16 +72,16 @@ def run_stage(tag,endpoint):
                 begin=time.perf_counter();opt.zero_grad(set_to_none=True);total=balance=0.
                 for _ in range(t['accumulation']):
                     x,y=stream.next(t['microbatch'],'cuda')
-                    with amp(cfg):out=model(x,y);loss=out['loss']/t['accumulation']
+                    with amp(cfg):out=model(x,y,return_outputs=False,segment_ids=stream.last_segment_ids);loss=out['loss']/t['accumulation']
                     if not torch.isfinite(loss):raise FloatingPointError('Nonfinite loss; stop comparison')
-                    loss.backward();total+=float(out['lm_loss']);balance+=float(out['aux_loss'])
+                    loss.backward();total+=float(out['lm_loss']);balance+=float(out['aux_loss']);del out,loss
                 norm=float(torch.nn.utils.clip_grad_norm_(model.parameters(),t['grad_clip'],error_if_nonfinite=True))
                 router=route_diagnostics(model) if (meta['step']+1)%t['log_steps']==0 else None
                 # Collapse checks use each update's final microbatch after warmup.
                 severe=any(float(r['load'].max()/r['load'].sum())>.95 and int((r['load']==0).sum())>=10 for r in model.routes().values())
                 collapse=collapse+1 if severe and meta['step']>t['warmup_steps'] else 0
                 if collapse>=200:raise RuntimeError('Persistent severe router collapse; stop comparison')
-                memory=model.memory.diagnostics(x) if model.memory is not None and (meta['step']+1)%200==0 else None
+                memory=model.memory.diagnostics(x,stream.last_segment_ids) if model.memory is not None and (meta['step']+1)%200==0 else None
                 if memory is not None:
                     memory['gate_histogram10bins']=torch.histc(model.memory.last_gate.float(),bins=10,min=0,max=1).cpu().tolist()
                     memory['update_frequency_scope']='Observed gradient-bearing rows at every200th accumulated update, not exact per-row lifetime update count.'
@@ -90,7 +90,7 @@ def run_stage(tag,endpoint):
                 meta['training_seconds']+=elapsed;meta['wall_time']=base+time.perf_counter()-start
                 if router is not None or meta['tokens_seen']==endpoint:
                     log.write(json.dumps(dict(meta,train_loss=total/t['accumulation'],balance_loss=balance/t['accumulation'],grad_norm=norm,
-                                              step_tok_s=x.numel()*t['accumulation']/elapsed,vram_peak=torch.cuda.max_memory_allocated(),router=router,ngram=memory))+'\n');log.flush()
+                                              step_tok_s=x.numel()*t['accumulation']/elapsed,vram_peak=torch.cuda.max_memory_allocated(),vram_peak_reserved=torch.cuda.max_memory_reserved(),vram_allocated=torch.cuda.memory_allocated(),vram_reserved=torch.cuda.memory_reserved(),router=router,ngram=memory))+'\n');log.flush()
                 if meta['step']%t['eval_steps']==0 and meta['tokens_seen']<endpoint:
                     quick=evaluate(model,cfg,full=False);log.write(json.dumps(dict(meta,**quick))+'\n');log.flush()
                 if meta['step']%t['checkpoint_steps']==0:save_training(checkpoint,model,opt,scheduler,meta,int(cfg['data']['project_gb']*1024**3))
@@ -113,7 +113,7 @@ def run_stage(tag,endpoint):
             save_training(checkpoint,model,opt,scheduler,meta,int(cfg['data']['project_gb']*1024**3))
             final_wall=base+time.perf_counter()-start
             result=dict(meta,model=cfg['name'],tag=tag,wall_time=final_wall,wall_tok_s=meta['tokens_seen']/final_wall,
-                        training_step_tok_s=meta['tokens_seen']/meta['training_seconds'],vram_peak=torch.cuda.max_memory_allocated(),
+                        training_step_tok_s=meta['tokens_seen']/meta['training_seconds'],vram_peak=torch.cuda.max_memory_allocated(),vram_peak_reserved=torch.cuda.max_memory_reserved(),vram_allocated=torch.cuda.memory_allocated(),vram_reserved=torch.cuda.memory_reserved(),
                         stored_params=count['total'],active_params_est=count['active_estimate'],training_flops_est=6*count['active_estimate']*meta['tokens_seen'],
                         checkpoint=str(milestone),checkpoint_sha256=sha(milestone),
                         **{k:v for k,v in full.items() if k not in ('documents','router','ngram','scope')},

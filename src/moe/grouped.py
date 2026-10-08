@@ -11,7 +11,7 @@ class _BatchedLinear(torch.autograd.Function):
     weight reductions at each expert's true size avoids that amplification.
     """
     @staticmethod
-    def forward(ctx,x,weight,sizes):
+    def forward(ctx,x,weight,sizes,*parameters):
         out=torch.bmm(x,weight.transpose(1,2))
         ctx.save_for_backward(x.to(out.dtype),weight.to(out.dtype))
         ctx.sizes=sizes
@@ -20,12 +20,13 @@ class _BatchedLinear(torch.autograd.Function):
     def backward(ctx,grad):
         x,weight=ctx.saved_tensors
         dx=torch.bmm(grad,weight)
-        dw=torch.stack([grad[i,:size].transpose(0,1) @ x[i,:size]
-                        if size else torch.zeros_like(weight[i])
-                        for i,size in enumerate(ctx.sizes)])
-        return dx,dw,None
+        dw=tuple(grad[i,:size].transpose(0,1) @ x[i,:size] if size else None
+                 for i,size in enumerate(ctx.sizes))
+        # The bank is storage only. Gradients belong to the original registered
+        # expert Parameters, preserving names, Adam state and inactive None.
+        return (dx,None,None,*dw)
 
-def dispatch(flat, indices, weights, experts, counts):
+def dispatch(flat, indices, weights, experts, counts, up, down):
     n=len(experts); tokens=flat.shape[0]
     # One bounded host read for allocation. No fixed capacity, overflow or drops.
     sizes=counts.cpu().tolist()
@@ -35,12 +36,8 @@ def dispatch(flat, indices, weights, experts, counts):
     ranks=torch.arange(tokens,device=flat.device)-starts[ids[order]]
     slots=ids[order]*capacity+ranks
     packed=flat.new_zeros(n*capacity,flat.shape[1]).index_copy(0,slots,flat[order]).view(n,capacity,-1)
-    # Registered parameters stay separate; temporary stacks preserve state_dict
-    # names/optimizer IDs and remove per-expert forward dispatch.
-    up=torch.stack([e.up.weight for e in experts])
-    down=torch.stack([e.down.weight for e in experts])
-    a,b=_BatchedLinear.apply(packed,up,sizes).chunk(2,dim=-1)
-    values=_BatchedLinear.apply(F.silu(a)*b,down,sizes).flatten(0,1)[slots]
+    a,b=_BatchedLinear.apply(packed,up,sizes,*(e.up.weight for e in experts)).chunk(2,dim=-1)
+    values=_BatchedLinear.apply(F.silu(a)*b,down,sizes,*(e.down.weight for e in experts)).flatten(0,1)[slots]
     values=values.to(flat.dtype)*weights[order,0,None].to(flat.dtype)
     output=torch.empty_like(flat).index_copy(0,order,values)
     return output,capacity

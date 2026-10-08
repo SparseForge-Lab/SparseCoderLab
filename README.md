@@ -12,6 +12,8 @@ The repository data pipeline now preserves pinned commits, source/test/docs/buil
 
 ## Earlier results
 
+The [completed functional screen](Documentation/57_safe_functional_evaluation.md) now checks the saved Python completions in a bounded WASI runtime. The [implementation review](Documentation/58_implementation_correctness_and_memory.md) documents optimizer/resume fixes, streamed data handling and a 36–42% reduction in measured peak allocated training memory. Short timings do not establish a general throughput improvement.
+
 At 100M training tokens, the three seed-42 models reached these held-out negative log-likelihoods (lower is better):
 
 | Model | Mixed | Code | General | Technical |

@@ -1,5 +1,7 @@
 from __future__ import annotations
 import hashlib, json, math, random
+from bisect import bisect_right
+from collections import OrderedDict
 from pathlib import Path
 import numpy as np
 import torch
@@ -58,7 +60,7 @@ def bounded_jsonl(path: Path, max_bytes: int):
     with path.open('r', encoding='utf-8') as f:
         for line in f:
             used += len(line.encode('utf-8'))
-            if used > max_bytes: break
+            if used > max_bytes: raise RuntimeError('Input exceeds scan budget; refusing biased prefix ingestion')
             document = json.loads(line)
             if not all(k in document for k in ('text', 'license', 'source', 'kind', 'language')):
                 raise ValueError('Every document requires explicit provenance, license, category and language')
@@ -67,39 +69,89 @@ def bounded_jsonl(path: Path, max_bytes: int):
             yield document
 
 class ShardedTokens:
-    def __init__(self, files: list[Path]):
-        self.arrays=[np.memmap(path,dtype=np.uint16,mode='r') for path in files]
-        self.ends=np.cumsum([len(a) for a in self.arrays]); self.length=int(self.ends[-1])
+    def __init__(self, files: list[Path], max_open: int = 8):
+        if max_open < 1:
+            raise ValueError('At least one shard cache slot required')
+        self.files = list(files); self.max_open = max_open; self._cache = OrderedDict()
+        sizes = [path.stat().st_size for path in self.files]
+        if any(size % 2 for size in sizes):
+            raise ValueError('Token shard must contain whole uint16 values')
+        self.ends = np.cumsum([size // 2 for size in sizes], dtype=np.int64)
+        self.length = int(self.ends[-1]) if len(self.ends) else 0
+    def _array(self, index):
+        if index in self._cache:
+            self._cache.move_to_end(index)
+            return self._cache[index]
+        array = np.memmap(self.files[index], dtype=np.uint16, mode='r')
+        self._cache[index] = array
+        if len(self._cache) > self.max_open:
+            _, old = self._cache.popitem(last=False)
+            old._mmap.close()
+        return array
+    def close(self):
+        for array in self._cache.values():
+            array._mmap.close()
+        self._cache.clear()
     def __len__(self): return self.length
     def __getitem__(self, item: slice) -> np.ndarray:
         if not isinstance(item,slice) or item.step not in (None,1): raise ValueError('Contiguous slice required')
-        start=0 if item.start is None else item.start; stop=self.length if item.stop is None else min(item.stop,self.length)
-        parts=[]; previous=0
-        for array,end in zip(self.arrays,self.ends):
-            if start<int(end) and stop>previous: parts.append(np.asarray(array[max(start-previous,0):min(stop-previous,len(array))]))
-            previous=int(end)
-            if previous>=stop: break
-        return np.concatenate(parts) if len(parts)>1 else parts[0] if parts else np.array([],dtype=np.uint16)
+        start, stop, _ = item.indices(self.length)
+        result = np.empty(max(stop - start, 0), dtype=np.uint16)
+        offset = 0; index = bisect_right(self.ends, start)
+        while start < stop:
+            previous = int(self.ends[index - 1]) if index else 0
+            end = min(stop, int(self.ends[index]))
+            array = self._array(index)
+            size = end - start
+            # Copy before another lookup can evict this mmap. No escaping views.
+            result[offset:offset + size] = array[start - previous:end - previous]
+            start = end; offset += size; index = bisect_right(self.ends, start)
+        return result
 
 class PackedStream:
     """Checkpointable deterministic epoch shuffle over fixed packed-sequence offsets."""
     def __init__(self, directory: Path, split: str, context: int, seed: int, cursor: int = 0):
         self.context = context; self.seed = seed; self.cursor = cursor
+        self.last_segment_ids = None
+        self.last_prediction_count = 0
+        manifest_path = directory / 'manifest.json'
+        manifest = json.loads(manifest_path.read_text(encoding='utf8')) if manifest_path.exists() else {}
+        self.document_ends = None
+        if manifest.get('packing_policy') == 'document_isolated_v1':
+            starts, ends = [], []
+            with (directory / f'{split}_documents.jsonl').open(encoding='utf8') as handle:
+                for line in handle:
+                    doc = json.loads(line); starts.append(doc['start']); ends.append(doc['start'] + doc['length'])
+            if starts != [0] + ends[:-1] or not ends:
+                raise ValueError('Document index must partition the token stream')
+            self.document_ends = np.asarray(ends, dtype=np.int64)
         files=sorted(directory.glob(f'{split}-*.bin'))
         self.tokens=ShardedTokens(files) if files else np.memmap(directory/f'{split}.bin',dtype=np.uint16,mode='r')
         self.count = (len(self.tokens) - 1) // context
+        if self.document_ends is not None and self.document_ends[-1] != len(self.tokens):
+            raise ValueError('Document index length mismatch')
         if self.count < 1: raise ValueError(f'{split} has no full sequence at context={context}')
         self.epoch = -1; self.order = np.array([], dtype=np.int64)
     def next(self, batch: int, device: str) -> tuple[torch.Tensor, torch.Tensor]:
-        rows = []
+        rows = []; segments = []
         for _ in range(batch):
             epoch, pos = divmod(self.cursor, self.count)
             if self.epoch != epoch:
                 self.order = np.random.default_rng(self.seed + epoch).permutation(self.count); self.epoch = epoch
             start = int(self.order[pos]) * self.context
             rows.append(np.array(self.tokens[start:start + self.context + 1], dtype=np.int64)); self.cursor += 1
+            if self.document_ends is not None:
+                segments.append(np.searchsorted(self.document_ends, np.arange(start, start + self.context + 1), side='right'))
         data = torch.from_numpy(np.stack(rows)).to(device)
-        return data[:, :-1], data[:, 1:]
+        targets = data[:, 1:]
+        self.last_prediction_count = batch * self.context
+        if segments:
+            segment_array = np.stack(segments)
+            self.last_prediction_count -= int(np.count_nonzero(segment_array[:, :-1] != segment_array[:, 1:]))
+            ids = torch.from_numpy(segment_array).to(device)
+            self.last_segment_ids = ids[:, :-1]
+            targets = targets.masked_fill(ids[:, :-1] != ids[:, 1:], -100)
+        return data[:, :-1], targets
 
 def tokenizer_report(tokenizer: Tokenizer) -> dict:
     report = {}

@@ -1,0 +1,1030 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "simple_python_v1",
+  "tasks": [
+    {
+      "id": "add",
+      "prompt_number": 1,
+      "prompt": "# Return the sum of two numbers.\ndef add(a, b):",
+      "function": "add",
+      "reference": "# Return the sum of two numbers.\ndef add(a, b):\n    return a + b\n",
+      "cases": [
+        {
+          "args": [
+            2,
+            3
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            8
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            0,
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5,
+            2.25
+          ],
+          "expected": 3.75,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "hello_world",
+      "prompt_number": 2,
+      "prompt": "# Print Hello, World!\ndef hello_world():",
+      "function": "hello_world",
+      "reference": "# Print Hello, World!\ndef hello_world():\n    print(\"Hello, World!\")\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": null,
+          "stdout": "Hello, World!\n"
+        }
+      ]
+    },
+    {
+      "id": "is_even",
+      "prompt_number": 3,
+      "prompt": "# Return True if n is even, otherwise False.\ndef is_even(n):",
+      "function": "is_even",
+      "reference": "# Return True if n is even, otherwise False.\ndef is_even(n):\n    return n % 2 == 0\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -4
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "larger",
+      "prompt_number": 4,
+      "prompt": "# Return the larger of two values.\ndef larger(a, b):",
+      "function": "larger",
+      "reference": "# Return the larger of two values.\ndef larger(a, b):\n    return max(a,b)\n",
+      "cases": [
+        {
+          "args": [
+            1,
+            2
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5,
+            2
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            -7
+          ],
+          "expected": -3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4,
+            4
+          ],
+          "expected": 4,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "reverse_string",
+      "prompt_number": 5,
+      "prompt": "# Return s with its characters in reverse order.\ndef reverse_string(s):",
+      "function": "reverse_string",
+      "reference": "# Return s with its characters in reverse order.\ndef reverse_string(s):\n    return s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "cba",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": "a",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a b!"
+          ],
+          "expected": "!b a",
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "square",
+      "prompt_number": 6,
+      "prompt": "# Return the square of n.\ndef square(n):",
+      "function": "square",
+      "reference": "# Return the square of n.\ndef square(n):\n    return n * n\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": 9,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4
+          ],
+          "expected": 16,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5
+          ],
+          "expected": 2.25,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "numbers_one_to_ten",
+      "prompt_number": 7,
+      "prompt": "# Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():",
+      "function": "numbers_one_to_ten",
+      "reference": "# Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():\n    return list(range(1,11))\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "list_length",
+      "prompt_number": 8,
+      "prompt": "# Return the number of elements in values.\ndef list_length(values):",
+      "function": "list_length",
+      "reference": "# Return the number of elements in values.\ndef list_length(values):\n    return len(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "x"
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "first_element",
+      "prompt_number": 9,
+      "prompt": "# Return the first element of values, or None if it is empty.\ndef first_element(values):",
+      "function": "first_element",
+      "reference": "# Return the first element of values, or None if it is empty.\ndef first_element(values):\n    return values[0] if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              4,
+              5
+            ]
+          ],
+          "expected": 4,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "uppercase",
+      "prompt_number": 10,
+      "prompt": "# Return s converted to uppercase.\ndef uppercase(s):",
+      "function": "uppercase",
+      "reference": "# Return s converted to uppercase.\ndef uppercase(s):\n    return s.upper()\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "ABC",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B!"
+          ],
+          "expected": "A B!",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "12"
+          ],
+          "expected": "12",
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "factorial",
+      "prompt_number": 11,
+      "prompt": "# Return the factorial of n for a nonnegative integer n.\ndef factorial(n):",
+      "function": "factorial",
+      "reference": "# Return the factorial of n for a nonnegative integer n.\ndef factorial(n):\n    result = 1\n    for i in range(2,n+1):\n        result *= i\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5
+          ],
+          "expected": 120,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 5040,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "fibonacci",
+      "prompt_number": 12,
+      "prompt": "# Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):",
+      "function": "fibonacci",
+      "reference": "# Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):\n    a,b = 0,1\n    for _ in range(n):\n        a,b = b,a+b\n    return a\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 13,
+          "stdout": ""
+        },
+        {
+          "args": [
+            10
+          ],
+          "expected": 55,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "is_palindrome",
+      "prompt_number": 13,
+      "prompt": "# Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):",
+      "function": "is_palindrome",
+      "reference": "# Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):\n    return s == s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "racecar"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "ab"
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "Racecar"
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "count_vowels",
+      "prompt_number": 14,
+      "prompt": "# Return the number of vowels in s.\ndef count_vowels(s):",
+      "function": "count_vowels",
+      "reference": "# Return the number of vowels in s.\ndef count_vowels(s):\n    return sum(c.lower() in \"aeiou\" for c in s)\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "hello"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "AEIOU"
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "rhythm"
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B e"
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "maximum",
+      "prompt_number": 15,
+      "prompt": "# Return the largest number in values.\ndef maximum(values):",
+      "function": "maximum",
+      "reference": "# Return the largest number in values.\ndef maximum(values):\n    return max(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "minimum",
+      "prompt_number": 16,
+      "prompt": "# Return the smallest number in values.\ndef minimum(values):",
+      "function": "minimum",
+      "reference": "# Return the smallest number in values.\ndef minimum(values):\n    return min(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -8,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "average",
+      "prompt_number": 17,
+      "prompt": "# Return the arithmetic mean of values, or None if it is empty.\ndef average(values):",
+      "function": "average",
+      "reference": "# Return the arithmetic mean of values, or None if it is empty.\ndef average(values):\n    return sum(values) / len(values) if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -3,
+              3
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 1.5,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "sign_of",
+      "prompt_number": 18,
+      "prompt": "# Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):",
+      "function": "sign_of",
+      "reference": "# Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):\n    return \"positive\" if n > 0 else \"negative\" if n < 0 else \"zero\"\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": "zero",
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": "positive",
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": "negative",
+          "stdout": ""
+        },
+        {
+          "args": [
+            0.5
+          ],
+          "expected": "positive",
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "sum_values",
+      "prompt_number": 19,
+      "prompt": "# Return the sum of all numbers in values using a loop.\ndef sum_values(values):",
+      "function": "sum_values",
+      "reference": "# Return the sum of all numbers in values using a loop.\ndef sum_values(values):\n    total = 0\n    for value in values:\n        total += value\n    return total\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 6,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -4,
+              3
+            ]
+          ],
+          "expected": -1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1.5,
+              2
+            ]
+          ],
+          "expected": 3.5,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "lookup",
+      "prompt_number": 20,
+      "prompt": "# Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):",
+      "function": "lookup",
+      "reference": "# Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):\n    return mapping.get(key, default)\n",
+      "cases": [
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "a"
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "b"
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {},
+            "x",
+            7
+          ],
+          "expected": 7,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "x": null
+            },
+            "x",
+            7
+          ],
+          "expected": null,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "concatenate",
+      "prompt_number": 21,
+      "prompt": "# Return the two strings joined together.\ndef concatenate(a, b):",
+      "function": "concatenate",
+      "reference": "# Return the two strings joined together.\ndef concatenate(a, b):\n    return a+b\n",
+      "cases": [
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "expected": "ab",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "",
+            "x"
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "x",
+            ""
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a ",
+            "b"
+          ],
+          "expected": "a b",
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "count_occurrences",
+      "prompt_number": 22,
+      "prompt": "# Return how many times target occurs in values.\ndef count_occurrences(values, target):",
+      "function": "count_occurrences",
+      "reference": "# Return how many times target occurs in values.\ndef count_occurrences(values, target):\n    return values.count(target)\n",
+      "cases": [
+        {
+          "args": [
+            [],
+            1
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1
+            ],
+            1
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "a",
+              "b",
+              "a"
+            ],
+            "a"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0,
+              1
+            ],
+            0
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "sort_values",
+      "prompt_number": 23,
+      "prompt": "# Return a new list containing the values in ascending order.\ndef sort_values(values):",
+      "function": "sort_values",
+      "reference": "# Return a new list containing the values in ascending order.\ndef sort_values(values):\n    return sorted(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -1,
+              3,
+              -1
+            ]
+          ],
+          "expected": [
+            -1,
+            -1,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ],
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "unique_values",
+      "prompt_number": 24,
+      "prompt": "# Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):",
+      "function": "unique_values",
+      "reference": "# Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):\n    result = []\n    for value in values:\n        if value not in result:\n            result.append(value)\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "b",
+              "a",
+              "b"
+            ]
+          ],
+          "expected": [
+            "b",
+            "a"
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0
+            ]
+          ],
+          "expected": [
+            0
+          ],
+          "stdout": ""
+        }
+      ]
+    },
+    {
+      "id": "celsius_to_fahrenheit",
+      "prompt_number": 25,
+      "prompt": "# Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):",
+      "function": "celsius_to_fahrenheit",
+      "reference": "# Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 32,
+          "stdout": ""
+        },
+        {
+          "args": [
+            100
+          ],
+          "expected": 212,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -40
+          ],
+          "expected": -40,
+          "stdout": ""
+        },
+        {
+          "args": [
+            20
+          ],
+          "expected": 68,
+          "stdout": ""
+        }
+      ]
+    }
+  ],
+  "scope": "25 elementary completion tasks, fixed finite cases; not repository or agentic capability. Raw prompt plus completion, without repair or truncation. Case-sensitive palindrome; ASCII vowels case-insensitive; empty max/min undefined. Loop use is reported separately from numerical correctness."
+}

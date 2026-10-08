@@ -10,7 +10,7 @@ from src.eval.speculation import greedy, speculative_greedy
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('--config', default='configs/sparse_mtp.yaml'); p.add_argument('--checkpoint', required=True, type=Path)
     p.add_argument('--decode-tokens', type=int, default=16); a = p.parse_args(); cfg = load_config(a.config); require_cuda('cuda')
-    model = LanguageModel(cfg).cuda().eval(); model.load_state_dict(torch.load(a.checkpoint, map_location='cuda', weights_only=False)['model'])
+    model = LanguageModel(cfg).cuda().eval(); model.load_state_dict(torch.load(a.checkpoint, map_location='cpu', weights_only=False)['model'])
     stream = PackedStream(Path(cfg['data']['shards']), 'val', cfg['training']['context'], cfg['data']['seed']); x, y = stream.next(1,'cuda')
     with torch.no_grad(), amp(cfg): out = model(x,y,mtp_tokens=x)
     prefix = x[:, :32]; baseline, baseline_s = greedy(model,prefix,a.decode_tokens,cfg); sequence, metrics = speculative_greedy(model,prefix,a.decode_tokens,cfg)

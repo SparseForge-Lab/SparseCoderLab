@@ -14,7 +14,7 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('--config',default='configs/dense_compute.yaml'); p.add_argument('--checkpoint',required=True,type=Path)
     p.add_argument('--tasks',type=int,default=2); p.add_argument('--context',type=int,choices=[1024,2048,4096,8192,16384],default=8192)
     a = p.parse_args(); cfg=load_config(a.config); require_cuda('cuda'); model=LanguageModel(cfg).cuda().eval()
-    model.load_state_dict(torch.load(a.checkpoint,map_location='cuda',weights_only=False)['model']); tokenizer=Tokenizer.from_file(cfg['data']['tokenizer']); archive=Archive(Path('data/archive')); rows=[]
+    model.load_state_dict(torch.load(a.checkpoint,map_location='cpu',weights_only=False)['model']); tokenizer=Tokenizer.from_file(cfg['data']['tokenizer']); archive=Archive(Path('data/archive')); rows=[]
     for index in range(a.tasks):
         task=make_task(index,cfg,archive); answer=json.dumps(task['facts'],sort_keys=True); answer_ids=tokenizer.encode(answer).ids
         for ratio in cfg['context']['ratios']:

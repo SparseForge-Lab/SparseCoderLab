@@ -1,0 +1,522 @@
+{
+  "reference_commit": "06f0ef1f5f9cf4ce58e9073f1ff845c8ac27df1d",
+  "results": [
+    {
+      "variant": "dense75_ref",
+      "before": {
+        "mode": "before",
+        "variant": "dense75_ref",
+        "gpu": "NVIDIA GeForce RTX 5070",
+        "torch_version": "2.14.1+cu130",
+        "context": 1024,
+        "microbatch": 8,
+        "accumulation": 1,
+        "bf16": true,
+        "tf32": true,
+        "loss_chunk_tokens": null,
+        "native_gqa": false,
+        "warmup_steps": 3,
+        "measured_steps": 6,
+        "tokens_per_step": 8192,
+        "wall_tokens_per_second": 47407.51714704084,
+        "median_step_seconds": 0.1627040500000021,
+        "optimizer_cuda_ms_median": 20.55363178253174,
+        "peak_allocated_bytes": 7846355968,
+        "peak_reserved_bytes": 8086618112,
+        "steady_allocated_bytes": [
+          948052992,
+          946873344,
+          946873344,
+          946873344,
+          946873344,
+          946873344
+        ],
+        "steady_reserved_bytes": [
+          8086618112,
+          8086618112,
+          8086618112,
+          8086618112,
+          8086618112,
+          8086618112
+        ],
+        "losses": [
+          11.20298957824707,
+          11.18994426727295,
+          11.173857688903809,
+          11.155020713806152,
+          11.134220123291016,
+          11.112310409545898
+        ],
+        "canonical_weights_sha256": "916eca1b47243493adcabe7d60131665ebb646b257be4c5feb1372729cfd7707",
+        "canonical_file_unchanged": true,
+        "decay_policy": "legacy_all",
+        "scope": "Three warmup and bounded in-memory optimizer steps on copies of canonical weights, fixed synthetic token batches. No research run, no canonical writes. Wall throughput includes backward/clip/optimizer/scheduler/synchronize, excludes data loading, checkpoint and initialization. Short steady allocation trace cannot establish absence of every leak."
+      },
+      "after": {
+        "mode": "after",
+        "variant": "dense75_ref",
+        "gpu": "NVIDIA GeForce RTX 5070",
+        "torch_version": "2.14.1+cu130",
+        "context": 1024,
+        "microbatch": 8,
+        "accumulation": 1,
+        "bf16": true,
+        "tf32": true,
+        "loss_chunk_tokens": 1024,
+        "native_gqa": false,
+        "warmup_steps": 3,
+        "measured_steps": 6,
+        "tokens_per_step": 8192,
+        "wall_tokens_per_second": 48134.55111237544,
+        "median_step_seconds": 0.16464155000016945,
+        "optimizer_cuda_ms_median": 19.773456573486328,
+        "peak_allocated_bytes": 4528137728,
+        "peak_reserved_bytes": 5001707520,
+        "steady_allocated_bytes": [
+          954999808,
+          948577280,
+          948577280,
+          948577280,
+          948577280,
+          948577280
+        ],
+        "steady_reserved_bytes": [
+          5001707520,
+          5001707520,
+          5001707520,
+          5001707520,
+          5001707520,
+          5001707520
+        ],
+        "losses": [
+          11.203058242797852,
+          11.190102577209473,
+          11.173803329467773,
+          11.154987335205078,
+          11.134379386901855,
+          11.112112998962402
+        ],
+        "canonical_weights_sha256": "916eca1b47243493adcabe7d60131665ebb646b257be4c5feb1372729cfd7707",
+        "canonical_file_unchanged": true,
+        "decay_policy": "matrix_except_ngram_v1",
+        "scope": "Three warmup and bounded in-memory optimizer steps on copies of canonical weights, fixed synthetic token batches. No research run, no canonical writes. Wall throughput includes backward/clip/optimizer/scheduler/synchronize, excludes data loading, checkpoint and initialization. Short steady allocation trace cannot establish absence of every leak."
+      }
+    },
+    {
+      "variant": "sparse75",
+      "before": {
+        "mode": "before",
+        "variant": "sparse75",
+        "gpu": "NVIDIA GeForce RTX 5070",
+        "torch_version": "2.14.1+cu130",
+        "context": 1024,
+        "microbatch": 8,
+        "accumulation": 1,
+        "bf16": true,
+        "tf32": true,
+        "loss_chunk_tokens": null,
+        "native_gqa": false,
+        "warmup_steps": 3,
+        "measured_steps": 6,
+        "tokens_per_step": 8192,
+        "wall_tokens_per_second": 40085.05678471378,
+        "median_step_seconds": 0.19572444999994332,
+        "optimizer_cuda_ms_median": 36.506975173950195,
+        "peak_allocated_bytes": 8722157056,
+        "peak_reserved_bytes": 9024045056,
+        "steady_allocated_bytes": [
+          1302070272,
+          1303135232,
+          1303135232,
+          1301234688,
+          1304577024,
+          1303725056
+        ],
+        "steady_reserved_bytes": [
+          9024045056,
+          9024045056,
+          9024045056,
+          9024045056,
+          9024045056,
+          9024045056
+        ],
+        "losses": [
+          11.25253677368164,
+          11.243814468383789,
+          11.233798027038574,
+          11.222068786621094,
+          11.208657264709473,
+          11.193058967590332
+        ],
+        "canonical_weights_sha256": "368c1a6756f05809aaa0ebc47714132fdaf4f93a4170dd6ed5b7589a5b2170f0",
+        "canonical_file_unchanged": true,
+        "decay_policy": "legacy_all",
+        "scope": "Three warmup and bounded in-memory optimizer steps on copies of canonical weights, fixed synthetic token batches. No research run, no canonical writes. Wall throughput includes backward/clip/optimizer/scheduler/synchronize, excludes data loading, checkpoint and initialization. Short steady allocation trace cannot establish absence of every leak."
+      },
+      "after": {
+        "mode": "after",
+        "variant": "sparse75",
+        "gpu": "NVIDIA GeForce RTX 5070",
+        "torch_version": "2.14.1+cu130",
+        "context": 1024,
+        "microbatch": 8,
+        "accumulation": 1,
+        "bf16": true,
+        "tf32": true,
+        "loss_chunk_tokens": 1024,
+        "native_gqa": false,
+        "warmup_steps": 3,
+        "measured_steps": 6,
+        "tokens_per_step": 8192,
+        "wall_tokens_per_second": 39403.39514378235,
+        "median_step_seconds": 0.20197979999989002,
+        "optimizer_cuda_ms_median": 36.81979179382324,
+        "peak_allocated_bytes": 5400350720,
+        "peak_reserved_bytes": 6004146176,
+        "steady_allocated_bytes": [
+          1318044672,
+          1320797184,
+          1318568960,
+          1318568960,
+          1320387584,
+          1320780800
+        ],
+        "steady_reserved_bytes": [
+          6002049024,
+          6004146176,
+          6004146176,
+          6004146176,
+          6004146176,
+          6004146176
+        ],
+        "losses": [
+          11.252622604370117,
+          11.244085311889648,
+          11.233872413635254,
+          11.221893310546875,
+          11.208532333374023,
+          11.1929292678833
+        ],
+        "canonical_weights_sha256": "368c1a6756f05809aaa0ebc47714132fdaf4f93a4170dd6ed5b7589a5b2170f0",
+        "canonical_file_unchanged": true,
+        "decay_policy": "matrix_except_ngram_v1",
+        "scope": "Three warmup and bounded in-memory optimizer steps on copies of canonical weights, fixed synthetic token batches. No research run, no canonical writes. Wall throughput includes backward/clip/optimizer/scheduler/synchronize, excludes data loading, checkpoint and initialization. Short steady allocation trace cannot establish absence of every leak."
+      }
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "before": {
+        "mode": "before",
+        "variant": "sparse75_ngram10m",
+        "gpu": "NVIDIA GeForce RTX 5070",
+        "torch_version": "2.14.1+cu130",
+        "context": 1024,
+        "microbatch": 8,
+        "accumulation": 1,
+        "bf16": true,
+        "tf32": true,
+        "loss_chunk_tokens": null,
+        "native_gqa": false,
+        "warmup_steps": 3,
+        "measured_steps": 6,
+        "tokens_per_step": 8192,
+        "wall_tokens_per_second": 39275.29913534648,
+        "median_step_seconds": 0.19929715000012038,
+        "optimizer_cuda_ms_median": 37.071855545043945,
+        "peak_allocated_bytes": 8890134528,
+        "peak_reserved_bytes": 9216983040,
+        "steady_allocated_bytes": [
+          1470278656,
+          1471196160,
+          1471196160,
+          1470540800,
+          1469492224,
+          1468902400
+        ],
+        "steady_reserved_bytes": [
+          9216983040,
+          9216983040,
+          9216983040,
+          9216983040,
+          9216983040,
+          9216983040
+        ],
+        "losses": [
+          11.254911422729492,
+          11.243050575256348,
+          11.229364395141602,
+          11.212878227233887,
+          11.194396018981934,
+          11.17521858215332
+        ],
+        "canonical_weights_sha256": "c9c00cb15a179abed2dacd40e48980cef9a6bad56fde4ba1560077fb996e6670",
+        "canonical_file_unchanged": true,
+        "decay_policy": "legacy_all",
+        "scope": "Three warmup and bounded in-memory optimizer steps on copies of canonical weights, fixed synthetic token batches. No research run, no canonical writes. Wall throughput includes backward/clip/optimizer/scheduler/synchronize, excludes data loading, checkpoint and initialization. Short steady allocation trace cannot establish absence of every leak."
+      },
+      "after": {
+        "mode": "after",
+        "variant": "sparse75_ngram10m",
+        "gpu": "NVIDIA GeForce RTX 5070",
+        "torch_version": "2.14.1+cu130",
+        "context": 1024,
+        "microbatch": 8,
+        "accumulation": 1,
+        "bf16": true,
+        "tf32": true,
+        "loss_chunk_tokens": 1024,
+        "native_gqa": false,
+        "warmup_steps": 3,
+        "measured_steps": 6,
+        "tokens_per_step": 8192,
+        "wall_tokens_per_second": 38577.16260543076,
+        "median_step_seconds": 0.20608244999993985,
+        "optimizer_cuda_ms_median": 36.177791595458984,
+        "peak_allocated_bytes": 5568541184,
+        "peak_reserved_bytes": 6197084160,
+        "steady_allocated_bytes": [
+          1481812992,
+          1487555584,
+          1487031296,
+          1487031296,
+          1487563776,
+          1489366016
+        ],
+        "steady_reserved_bytes": [
+          6194987008,
+          6194987008,
+          6197084160,
+          6197084160,
+          6197084160,
+          6197084160
+        ],
+        "losses": [
+          11.254867553710938,
+          11.242945671081543,
+          11.229218482971191,
+          11.212804794311523,
+          11.194427490234375,
+          11.17553997039795
+        ],
+        "canonical_weights_sha256": "c9c00cb15a179abed2dacd40e48980cef9a6bad56fde4ba1560077fb996e6670",
+        "canonical_file_unchanged": true,
+        "decay_policy": "matrix_except_ngram_v1",
+        "scope": "Three warmup and bounded in-memory optimizer steps on copies of canonical weights, fixed synthetic token batches. No research run, no canonical writes. Wall throughput includes backward/clip/optimizer/scheduler/synchronize, excludes data loading, checkpoint and initialization. Short steady allocation trace cannot establish absence of every leak."
+      }
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "before": {
+        "mode": "before",
+        "variant": "sparse75_ngram25m",
+        "gpu": "NVIDIA GeForce RTX 5070",
+        "torch_version": "2.14.1+cu130",
+        "context": 1024,
+        "microbatch": 8,
+        "accumulation": 1,
+        "bf16": true,
+        "tf32": true,
+        "loss_chunk_tokens": null,
+        "native_gqa": false,
+        "warmup_steps": 3,
+        "measured_steps": 6,
+        "tokens_per_step": 8192,
+        "wall_tokens_per_second": 37918.83077435906,
+        "median_step_seconds": 0.205769299999929,
+        "optimizer_cuda_ms_median": 39.53259086608887,
+        "peak_allocated_bytes": 9125392384,
+        "peak_reserved_bytes": 9412018176,
+        "steady_allocated_bytes": [
+          1706863616,
+          1704848384,
+          1704766464,
+          1703324672,
+          1703324672,
+          1703832576
+        ],
+        "steady_reserved_bytes": [
+          9412018176,
+          9412018176,
+          9412018176,
+          9412018176,
+          9412018176,
+          9412018176
+        ],
+        "losses": [
+          11.180620193481445,
+          11.173019409179688,
+          11.16429328918457,
+          11.154059410095215,
+          11.14224624633789,
+          11.129873275756836
+        ],
+        "canonical_weights_sha256": "9d308f6c526499c731b1b465fdfe79a4cc2c519cd403dc1ea5bcbaa44061387d",
+        "canonical_file_unchanged": true,
+        "decay_policy": "legacy_all",
+        "scope": "Three warmup and bounded in-memory optimizer steps on copies of canonical weights, fixed synthetic token batches. No research run, no canonical writes. Wall throughput includes backward/clip/optimizer/scheduler/synchronize, excludes data loading, checkpoint and initialization. Short steady allocation trace cannot establish absence of every leak."
+      },
+      "after": {
+        "mode": "after",
+        "variant": "sparse75_ngram25m",
+        "gpu": "NVIDIA GeForce RTX 5070",
+        "torch_version": "2.14.1+cu130",
+        "context": 1024,
+        "microbatch": 8,
+        "accumulation": 1,
+        "bf16": true,
+        "tf32": true,
+        "loss_chunk_tokens": 1024,
+        "native_gqa": false,
+        "warmup_steps": 3,
+        "measured_steps": 6,
+        "tokens_per_step": 8192,
+        "wall_tokens_per_second": 38092.07320323533,
+        "median_step_seconds": 0.20913055000005443,
+        "optimizer_cuda_ms_median": 38.82659149169922,
+        "peak_allocated_bytes": 5804945920,
+        "peak_reserved_bytes": 6360662016,
+        "steady_allocated_bytes": [
+          1721838592,
+          1720871936,
+          1721412608,
+          1721691136,
+          1721150464,
+          1719839744
+        ],
+        "steady_reserved_bytes": [
+          6360662016,
+          6360662016,
+          6360662016,
+          6360662016,
+          6360662016,
+          6360662016
+        ],
+        "losses": [
+          11.180601119995117,
+          11.173028945922852,
+          11.164081573486328,
+          11.153779029846191,
+          11.142477989196777,
+          11.129815101623535
+        ],
+        "canonical_weights_sha256": "9d308f6c526499c731b1b465fdfe79a4cc2c519cd403dc1ea5bcbaa44061387d",
+        "canonical_file_unchanged": true,
+        "decay_policy": "matrix_except_ngram_v1",
+        "scope": "Three warmup and bounded in-memory optimizer steps on copies of canonical weights, fixed synthetic token batches. No research run, no canonical writes. Wall throughput includes backward/clip/optimizer/scheduler/synchronize, excludes data loading, checkpoint and initialization. Short steady allocation trace cannot establish absence of every leak."
+      }
+    }
+  ],
+  "initial_forward_backward_parity": {
+    "dense75_ref": {
+      "logits": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      },
+      "loss_abs": 0.0,
+      "routes_exact": true,
+      "gradient_max_abs": 0.0,
+      "gradient_max_mean": 0.0,
+      "tolerances": {
+        "logits_max_abs": 0.125,
+        "logits_mean_abs": 0.005,
+        "gradient_max_abs": 0.003,
+        "loss_abs": 0.005
+      },
+      "passed": true
+    },
+    "sparse75": {
+      "logits": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      },
+      "loss_abs": 0.0,
+      "routes_exact": true,
+      "gradient_max_abs": 0.0,
+      "gradient_max_mean": 0.0,
+      "tolerances": {
+        "logits_max_abs": 0.125,
+        "logits_mean_abs": 0.005,
+        "gradient_max_abs": 0.003,
+        "loss_abs": 0.005
+      },
+      "passed": true
+    },
+    "sparse75_ngram10m": {
+      "logits": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      },
+      "loss_abs": 0.0,
+      "routes_exact": true,
+      "gradient_max_abs": 0.0,
+      "gradient_max_mean": 0.0,
+      "tolerances": {
+        "logits_max_abs": 0.125,
+        "logits_mean_abs": 0.005,
+        "gradient_max_abs": 0.003,
+        "loss_abs": 0.005
+      },
+      "passed": true
+    },
+    "sparse75_ngram25m": {
+      "logits": {
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      },
+      "loss_abs": 0.0,
+      "routes_exact": true,
+      "gradient_max_abs": 0.0,
+      "gradient_max_mean": 0.0,
+      "tolerances": {
+        "logits_max_abs": 0.125,
+        "logits_mean_abs": 0.005,
+        "gradient_max_abs": 0.003,
+        "loss_abs": 0.005
+      },
+      "passed": true
+    }
+  },
+  "passed": true,
+  "source_sha256": {
+    "src/eval/sampling.py": "67bc49dfbc9cbd735fe141b5972330ca2df852fb87eb83c010e95e3f72c8e713",
+    "src/eval/wasi_python.py": "d7f013aae876d984164da08ee6203e9d29957a816657bbe3a2fd59fc5ecfa0f4",
+    "src/model/loss.py": "be1645822126a4221357fee80ac1e5ec16e3cae06422d5f655ac8d8817b1d391",
+    "src/training/shards.py": "a5d582e84d034d5cf42ad0bc09b6eeaf91824278c355dd807d8e6f928b18b7c9",
+    "src/utils/__init__.py": "b0391a136acc799d0e1d3b140df6f46280226b081cf1e0da5444302f11f90c7c",
+    "src/utils/hashing.py": "6d31571e6565bb605dcac19a648bfac09696b7b143d6d83745a1ee8061c6c09a",
+    "tools/implementation_benchmark.py": "8bda0932b882dc29bee71c022f0908ca15c6bb54ad58ba44bf8dffd3e9aa7a68",
+    "src/__init__.py": "2104c265f2f6b6c5ca56013dae549b972b531912819ef2ead1f3b9076566d3f6",
+    "src/config.py": "82a2189209fa338b66c2d35b3f77c2bb9a40eed71babf6cb8ff7e1ffe6510a12",
+    "src/context/__init__.py": "4c1f70978c25d88ecdb1a8cfb0ac50ebde0109c48648ce278853fc452bc9edc5",
+    "src/context/archive.py": "ffbf06992c603920b04558cb6be973a1349cdcc02835a40fd06551394164ba66",
+    "src/context/tasks.py": "e659bc4f9de500b317dde8aa512c577f19fb0d751dedaf4cd15934b1e0a34a4f",
+    "src/eval/__init__.py": "4d0c88308294ef506d578f46c83461b2b1e8f2e387a6da90b1abf03182a61253",
+    "src/eval/micro_code.py": "9efcf416b71169aee83130263ec78cb6e91149e5704b784fc39dbb23746371a7",
+    "src/eval/research.py": "d512abdf74ae4e944674b035c5b1cc093a07a2783d08feb2abb1df5cd5e83151",
+    "src/eval/speculation.py": "da118ab55450232f4315e59970331e36c4995024ea94b4cc571550ab91bfb40a",
+    "src/memory/__init__.py": "9c7ed267e294520b05454db620c4599200f17c7a7ec6141acb2bd6d9503a8f2e",
+    "src/memory/ngram.py": "0c3ffca65130367d6d258c6f4866160de6653b4231120723dcf8290b1bd88bc7",
+    "src/model/__init__.py": "37062518670d4dbfbabd32ecf54eebfa3030b169aadc53ee8045bb4a0e771866",
+    "src/model/layers.py": "e60fe8335af1bced6a11a885471fef3c4c3ee35c6696e0022414e3ce5cbc239a",
+    "src/model/transformer.py": "59b64dbba5a5fc50ed49ba9510320c255b2ccf035ef602cfed5e7e22275c7b7a",
+    "src/moe/__init__.py": "1910180ef2abf14a2566e0f51e736234d3edcce29133a7aa02552237ea241bc0",
+    "src/moe/atlas.py": "de818c23d94966e0294552f8a1d8aa909da1ea2a31ab8e40cc27d9ce5209aa57",
+    "src/moe/grouped.py": "af3a493507642600b52559b07a0aedeae46db9619f0125972a00e10d134da197",
+    "src/moe/router.py": "dbd89d294be10b01205e9244c2e435b273f945aaeba9e10457eb950fe2e3badc",
+    "src/moe/trace.py": "703f25cf4011e22db082cb898272e66fbe017609c84f253bc4fab51a6b25fea4",
+    "src/mtp/__init__.py": "d7abc14b10765b6bf389b74be854801da8027fddfac9d1779ef6c4468631abb2",
+    "src/mtp/draft.py": "1704db5ffb26a73fecf5506d5143fd10f3b6d92307c3be4653c74296374b2c33",
+    "src/runtime/__init__.py": "20b6f76994968977f1c33b062850e19f8ae9b63a12d311f8ddefe124cd9a80b2",
+    "src/runtime/agent.py": "2938137f7538297f03758968f4e8f53dc28c5545c1869b7ec052d24c145182ac",
+    "src/runtime/cache.py": "fa6c2aa645038fcac9956c445689a798b75bf82543bd0843708a2a11572947e2",
+    "src/runtime/routeahead.py": "3d7c6bf45434746ee3b8fb680d17688a3bd09d5aab261af898b0d99cb49d6212",
+    "src/runtime/scaling.py": "950d2c8464fbd65d6980a618ac24406616102e01eadbd871416768246a370113",
+    "src/runtime/strata_adapter.py": "6285e633008e3ef24e50a70c2b48dbe134fa175b463befd44264eeaa7a2c9055",
+    "src/training/__init__.py": "5afd353fc4f872e5c9fb24d7a72397887fbc9056985031ceeb5a52d5f152eb9b",
+    "src/training/checkpoint.py": "1904e7611c66a85a161369ec5462904372254a925970a483ca0a7c649069ff0a",
+    "src/training/data.py": "b92b4ea03f9e4e31d4e0bd564055f838bffa328d89a296a8bdb14864fb5f5550",
+    "src/training/engine.py": "571df1663e134a6f9acc40e049e7e64b758120abbb6574b9fe1807d7abbbb450",
+    "src/training/moe_optimizer.py": "3e299a72a67724f01df7aaa58d061ab9afe752e60e650887e9c844897b6a0344",
+    "src/training/research.py": "37b5d5770ba4c901e0cec074c80ef8c1b0b0f154a58063aa6bb021425bf69433"
+  }
+}

@@ -39,3 +39,16 @@ def test_zero_ratio_and_double_transform_guard():
     assert transform(original, seed=42, ratio=0)['text'] == original['text']
     with pytest.raises(ValueError, match='twice'):
         transform(transform(original, seed=42, ratio=1), seed=42, ratio=1)
+
+
+def test_token_aware_spans_unicode_reconstruction_and_minimums():
+    from tokenizers import Tokenizer
+    tokenizer=Tokenizer.from_file('data/research_v1/tokenizer.json')
+    original=record(body='\n'.join(f'word_{i} = "résumé 漢字 😺"' for i in range(35)))
+    for seed in range(12):
+        out=transform(original,seed=seed,ratio=1,tokenizer=tokenizer,min_span_tokens=16)
+        assert out['fim']['applied'] and min(out['fim']['span_tokens'])>=16
+        assert restore(out)==original['text']
+        assert out==transform(original,seed=seed,ratio=1,tokenizer=tokenizer,min_span_tokens=16)
+    tiny=transform(record(body='x'*130),seed=42,ratio=1,tokenizer=tokenizer,min_span_tokens=1000)
+    assert not tiny['fim']['applied']

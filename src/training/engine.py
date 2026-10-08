@@ -7,6 +7,7 @@ from src.config import fingerprint
 from src.model import LanguageModel
 from src.training.checkpoint import save_training, resume_training
 from src.training.data import PackedStream
+from src.memory.ngram import NgramMemory
 from verify_install import verify
 
 LEADERBOARD = ['model','seed','stored_params','active_params_est','tokens','training_flops_est','wall_time','tok_s','val_loss','code_val_loss','general_val_loss','mtp_acceptance','compaction_score','router_entropy','cache_hit_sim','bytes_per_token_sim','vram_peak']
@@ -23,13 +24,37 @@ def require_cuda(device: str) -> None:
 
 def amp(cfg: dict): return torch.autocast('cuda', dtype=torch.bfloat16, enabled=cfg['training']['bf16'])
 
+def optimizer_groups(model, weight_decay):
+    """Decay matrices except Ngram lookup tables; exclude every vector/bias."""
+    tables = {id(table.weight) for module in model.modules()
+              if isinstance(module, NgramMemory)
+              for table in module.tables}
+    decay, no_decay = [], []
+    decay_names, no_decay_names = [], []
+    for name, parameter in model.named_parameters():
+        if not parameter.requires_grad:
+            continue
+        if parameter.ndim < 2 or id(parameter) in tables:
+            no_decay.append(parameter); no_decay_names.append(name)
+        else:
+            decay.append(parameter); decay_names.append(name)
+    return [dict(params=decay, param_names=decay_names, weight_decay=weight_decay),
+            dict(params=no_decay, param_names=no_decay_names, weight_decay=0.0)]
+
+
 def make_optimizer(model: LanguageModel, cfg: dict):
     t = cfg['training']
     from src.training.moe_optimizer import GroupedAdamW
     grouped = any(getattr(module,'backend',None)=='grouped' for module in model.modules())
     cls = GroupedAdamW if grouped else torch.optim.AdamW
-    parameters = model if grouped else model.parameters()
-    optimizer = cls(parameters, lr=t['lr'], betas=tuple(t['betas']), weight_decay=t['weight_decay'], fused=t['fused_optimizer'])
+    policy = t.get('optimizer_decay_policy', 'matrix_except_ngram_v1')
+    if policy not in ('legacy_all', 'matrix_except_ngram_v1'):
+        raise ValueError('Unknown optimizer decay policy')
+    parameters = (list(model.parameters()) if policy == 'legacy_all' else optimizer_groups(model, t['weight_decay']))
+    optimizer = (cls(model, param_groups=parameters, lr=t['lr'], betas=tuple(t['betas']),
+                     weight_decay=t['weight_decay'], fused=t['fused_optimizer']) if grouped else
+                 cls(parameters, lr=t['lr'], betas=tuple(t['betas']), weight_decay=t['weight_decay'], fused=t['fused_optimizer']))
+    optimizer.decay_policy = policy
     def rate(step: int) -> float:
         if step < t['warmup_steps']: return (step + 1) / max(t['warmup_steps'], 1)
         fraction = min((step - t['warmup_steps']) / max(t['schedule_steps'] - t['warmup_steps'], 1), 1)
@@ -39,19 +64,23 @@ def make_optimizer(model: LanguageModel, cfg: dict):
 @torch.no_grad()
 def validate(model: LanguageModel, cfg: dict) -> dict:
     model.eval(); t = cfg['training']; stream = PackedStream(Path(cfg['data']['shards']), 'val', t['context'], cfg['data']['seed'])
-    values = []
+    weighted_loss = prediction_count = 0
     for _ in range(t['eval_batches']):
         x, y = stream.next(t['microbatch'], 'cuda')
-        with amp(cfg): values.append(float(model(x, y)['lm_loss']))
-    loss = sum(values) / len(values); result = {'val_loss': loss, 'bits_per_token': loss / math.log(2)}
-    docs = read_jsonl_utf8(Path(cfg['data']['shards']) / 'val_documents.jsonl')
+        with amp(cfg): value = float(model(x, y, return_outputs=False, segment_ids=stream.last_segment_ids)['lm_loss'])
+        weighted_loss += value * stream.last_prediction_count; prediction_count += stream.last_prediction_count
+    loss = weighted_loss / prediction_count; result = {'val_loss': loss, 'bits_per_token': loss / math.log(2), 'validation_predictions': prediction_count}
+    from src.eval.sampling import sample_documents
+    with (Path(cfg['data']['shards']) / 'val_documents.jsonl').open(encoding='utf8') as handle:
+        docs = sample_documents((json.loads(line) for line in handle),t['eval_batches'],t['context'],cfg['data']['seed'],lambda row:row['kind'])
     for kind in ('code', 'general'):
         weighted = tokens = 0
-        for doc in [d for d in docs if d['kind'] == kind][:t['eval_batches']]:
-            start = doc['start']; length = min(doc['length'], t['context'] + 1)
+        for doc in docs.get(kind,[]):
+            offset=doc.get('evaluation_offset',0)
+            start = doc['start']+offset; length = min(doc['length']-offset, t['context'] + 1)
             data = torch.tensor(np.array(stream.tokens[start:start + length], dtype=np.int64), device='cuda')[None]
             if length < 2: continue
-            with amp(cfg): value = model(data[:, :-1], data[:, 1:])['lm_loss']
+            with amp(cfg): value = model(data[:, :-1], data[:, 1:], return_outputs=False)['lm_loss']
             weighted += float(value) * (length - 1); tokens += length - 1
         result[f'{kind}_val_loss'] = weighted / tokens if tokens else None
     model.train(); return result
@@ -99,7 +128,7 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
     if wall_limit <= 0: raise ValueError('wall cap must be positive')
     token_limit = t['target_tokens'] if target_tokens is None else target_tokens
     reserve = min(t['reserve_seconds'], wall_limit * 0.1); start = time.perf_counter(); base_wall = meta['wall_time']; initial_steps = meta['step']
-    torch.cuda.reset_peak_memory_stats(); measured = []; last_loss = None; norm = None
+    torch.cuda.reset_peak_memory_stats(); measured_steps = 0; last_loss = None; norm = None
     checkpoint = run_dir / 'checkpoints' / 'last.pt'
     log_file = (run_dir / 'metrics.jsonl').open('a', encoding='utf-8')
     try:
@@ -107,25 +136,31 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
         while meta['tokens_seen'] < token_limit and not stop[0]:
             if time.perf_counter() - start >= wall_limit - reserve: break
             if max_steps is not None and meta['step'] - initial_steps >= max_steps: break
-            step_start = time.perf_counter(); optimizer.zero_grad(set_to_none=True); loss_sum = 0.0
+            step_start = time.perf_counter(); optimizer.zero_grad(set_to_none=True); loss_sum = 0.0; data_wait_seconds = 0.0
             for _ in range(t['accumulation']):
-                x, y = stream.next(t['microbatch'], 'cuda')
+                data_start = time.perf_counter(); x, y = stream.next(t['microbatch'], 'cuda')
+                data_wait_seconds += time.perf_counter() - data_start
                 with amp(cfg):
-                    out = model(x, y, mtp_tokens=x); loss = out['loss'] / t['accumulation']
+                    out = model(x, y, mtp_tokens=x, return_outputs=False, segment_ids=stream.last_segment_ids); loss = out['loss'] / t['accumulation']
                 if not torch.isfinite(loss): raise FloatingPointError('Nonfinite training loss; do not advance phases')
                 loss.backward(); loss_sum += float(out['lm_loss'].detach()); meta['tokens_seen'] += x.numel()
+                mtp_metrics = out.get('mtp_metrics', {}); del out, loss
             norm = float(torch.nn.utils.clip_grad_norm_(model.parameters(), t['grad_clip'], error_if_nonfinite=True))
-            memory_diagnostics = model.memory.diagnostics(x) if model.memory is not None and (meta['step'] + 1) % t['log_steps'] == 0 else None
-            optimizer.step(); scheduler.step(); torch.cuda.synchronize()
-            elapsed = time.perf_counter() - step_start; measured.append(elapsed); meta['training_seconds'] += elapsed
+            memory_diagnostics = model.memory.diagnostics(x,stream.last_segment_ids) if model.memory is not None and (meta['step'] + 1) % t['log_steps'] == 0 else None
+            opt_start = torch.cuda.Event(enable_timing=True); opt_end = torch.cuda.Event(enable_timing=True)
+            opt_start.record(); optimizer.step(); opt_end.record(); scheduler.step(); torch.cuda.synchronize()
+            elapsed = time.perf_counter() - step_start; measured_steps += 1; meta['training_seconds'] += elapsed
             meta['step'] += 1; meta['cursor'] = stream.cursor; meta['wall_time'] = base_wall + time.perf_counter() - start
             last_loss = loss_sum / t['accumulation']
             if meta['step'] % t['log_steps'] == 0:
                 routes = model.routes(); record = dict(meta, train_loss=last_loss, grad_norm=norm,
                     tok_s=t['context'] * t['microbatch'] * t['accumulation'] / elapsed,
-                    vram_peak=torch.cuda.max_memory_allocated(), gpu_utilization=read_utilization(),
+                    step_seconds=elapsed, data_wait_wall_seconds=data_wait_seconds,
+                    optimizer_cuda_seconds=opt_start.elapsed_time(opt_end)/1000,
+                    vram_peak=torch.cuda.max_memory_allocated(), vram_peak_reserved=torch.cuda.max_memory_reserved(),
+                    vram_allocated=torch.cuda.memory_allocated(), vram_reserved=torch.cuda.memory_reserved(), gpu_utilization=read_utilization(),
                     router={i: {'entropy': float(r['entropy']), 'imbalance': float(r['imbalance']), 'load': r['load'].tolist()} for i, r in routes.items()},
-                    mtp=out.get('mtp_metrics', {}), ngram=memory_diagnostics)
+                    mtp=mtp_metrics, ngram=memory_diagnostics)
                 log_file.write(json.dumps(record) + '\n'); log_file.flush()
             if meta['step'] % t['eval_steps'] == 0 and time.perf_counter() - start < wall_limit - reserve:
                 val = validate(model, cfg); log_file.write(json.dumps(dict(meta, **val)) + '\n'); log_file.flush()
@@ -143,10 +178,10 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
         if model.mtp is not None:
             flop_equivalent=count['base_active_without_mtp']+cfg['mtp']['horizons']*(count['mtp']+model.embedding.weight.numel())
         result = dict(meta, **val, model=cfg['name'], stored_params=count['total'], active_params_est=count['active_estimate'],
-            tok_s=tok_s, train_step_tok_s=step_tok_s, measured_steps=len(measured), train_loss=last_loss, grad_norm=norm,
+            tok_s=tok_s, train_step_tok_s=step_tok_s, measured_steps=measured_steps, train_loss=last_loss, grad_norm=norm,
             training_flops_est=6 * flop_equivalent * meta['tokens_seen'],
             training_flops_caveat='6N reference estimate includes routed active FFNs, repeated MTP block and additional MTP output heads; ignores attention T^2, shortened horizons, lookup arithmetic and dispatch. Not measured FLOPs.',
-            vram_peak=torch.cuda.max_memory_allocated(), checkpoint=str(checkpoint), resumed=resume is not None,
+            vram_peak=torch.cuda.max_memory_allocated(), vram_peak_reserved=torch.cuda.max_memory_reserved(), checkpoint=str(checkpoint), resumed=resume is not None,
             throughput_scope='tok_s includes loop/logging/final checkpoint/validation after model initialization; train_step_tok_s excludes non-step overhead.',
             comparison_basis='Same frozen tokenizer/data order, optimizer, seed, context. Synthetic engineering smoke, not model ranking.')
         (run_dir / 'summary.json').write_text(json.dumps(result, indent=2), encoding='utf-8')

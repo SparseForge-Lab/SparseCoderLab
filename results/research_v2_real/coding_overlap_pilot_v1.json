@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "simple_python_v1",
+  "benchmark_sha256": "02ffd5bcefba8df7d6c67baf21e07f71feeecc099844c5448e478b48b1b3579d",
+  "documents_file": "research_v2_repository_pilot_multilang_2026_10_07_r5.jsonl",
+  "documents_sha256": "d7d8f36b1b80ec6aebb60b525496a809ba9d5ddac73ce60b5376dedb8930a9d4",
+  "scanner_sha256": "4f2011bba6197324eb3e04966b5b079a62ea2338fdabca70ba280e899649e722",
+  "records_scanned": 5526,
+  "source_restoration_before_matching": true,
+  "reference_profiles": [
+    {
+      "task_id": "add",
+      "prompt_phrase": "return the sum of two numbers.",
+      "reference_token_count": 12,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "hello_world",
+      "prompt_phrase": "print hello, world!",
+      "reference_token_count": 14,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "is_even",
+      "prompt_phrase": "return true if n is even, otherwise false.",
+      "reference_token_count": 13,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "larger",
+      "prompt_phrase": "return the larger of two values.",
+      "reference_token_count": 15,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "reverse_string",
+      "prompt_phrase": "return s with its characters in reverse order.",
+      "reference_token_count": 14,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "square",
+      "prompt_phrase": "return the square of n.",
+      "reference_token_count": 10,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "numbers_one_to_ten",
+      "prompt_phrase": "return a list containing the integers from 1 through 10.",
+      "reference_token_count": 15,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "list_length",
+      "prompt_phrase": "return the number of elements in values.",
+      "reference_token_count": 11,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "first_element",
+      "prompt_phrase": "return the first element of values, or none if it is empty.",
+      "reference_token_count": 15,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "uppercase",
+      "prompt_phrase": "return s converted to uppercase.",
+      "reference_token_count": 12,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "factorial",
+      "prompt_phrase": "return the factorial of n for a nonnegative integer n.",
+      "reference_token_count": 27,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "fibonacci",
+      "prompt_phrase": "return the nth fibonacci number, with f(0)=0 and f(1)=1.",
+      "reference_token_count": 32,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "is_palindrome",
+      "prompt_phrase": "return true if s reads the same forwards and backwards.",
+      "reference_token_count": 17,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "count_vowels",
+      "prompt_phrase": "return the number of vowels in s.",
+      "reference_token_count": 23,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "maximum",
+      "prompt_phrase": "return the largest number in values.",
+      "reference_token_count": 11,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "minimum",
+      "prompt_phrase": "return the smallest number in values.",
+      "reference_token_count": 11,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "average",
+      "prompt_phrase": "return the arithmetic mean of values, or none if it is empty.",
+      "reference_token_count": 20,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "sign_of",
+      "prompt_phrase": "return 'positive', 'negative', or 'zero' according to n.",
+      "reference_token_count": 26,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "sum_values",
+      "prompt_phrase": "return the sum of all numbers in values using a loop.",
+      "reference_token_count": 20,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "lookup",
+      "prompt_phrase": "return mapping[key], or default if key is absent.",
+      "reference_token_count": 21,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "concatenate",
+      "prompt_phrase": "return the two strings joined together.",
+      "reference_token_count": 12,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "count_occurrences",
+      "prompt_phrase": "return how many times target occurs in values.",
+      "reference_token_count": 15,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "sort_values",
+      "prompt_phrase": "return a new list containing the values in ascending order.",
+      "reference_token_count": 11,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "unique_values",
+      "prompt_phrase": "return values with duplicates removed, preserving first occurrence order.",
+      "reference_token_count": 29,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    },
+    {
+      "task_id": "celsius_to_fahrenheit",
+      "prompt_phrase": "convert celsius degrees to fahrenheit and return the result.",
+      "reference_token_count": 14,
+      "policy": "Prompt phrase and >=32-token exact reference; shorter ubiquitous snippets omitted."
+    }
+  ],
+  "matching_documents": 0,
+  "hits": [],
+  "status": "NO_MATCH_WITH_LIMITS",
+  "limitations": [
+    "Only this 25-task fixture is covered; other evaluation families remain unreviewed.",
+    "No semantic, paraphrase, external benchmark or training-history contamination proof.",
+    "Elementary functions and comments are ubiquitous; matches require human provenance review.",
+    "Frozen corpus is unchanged. Any exclusion must create a new dataset version."
+  ]
+}

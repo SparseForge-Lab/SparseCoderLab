@@ -8,6 +8,7 @@ import json
 import time
 from collections import Counter
 from pathlib import Path
+from src.utils.hashing import sha256_file
 
 from tokenizers import Tokenizer
 
@@ -25,11 +26,14 @@ def split_header(record: dict) -> tuple[str, str]:
     return header, record['text'][len(header):]
 
 
-def transform(record: dict, *, seed: int, ratio: float, min_chars: int = 128) -> dict:
+def transform(record: dict, *, seed: int, ratio: float, min_chars: int = 128,
+              tokenizer=None, min_span_tokens: int = 16) -> dict:
     if not 0 <= ratio <= 1:
         raise ValueError('FIM ratio must be between zero and one')
     if min_chars < 3:
         raise ValueError('FIM requires at least three characters')
+    if min_span_tokens < 1:
+        raise ValueError('FIM span token minimum must be positive')
     if record.get('fim', {}).get('applied'):
         raise ValueError('Refusing to apply FIM twice')
     header, body = split_header(record)
@@ -37,16 +41,47 @@ def transform(record: dict, *, seed: int, ratio: float, min_chars: int = 128) ->
     eligible = record['kind'] == 'code' and record['language'] in LANGUAGES and len(body) >= min_chars
     collision = any(marker in body for marker in MARKERS)
     eligible = eligible and not collision
+    format_id = FORMAT if tokenizer is None else 'psm_token_minimums_v2'
+    encoded = tokenizer.encode(body) if tokenizer is not None else None
+    if encoded is not None and len(encoded.ids) < 3 * min_span_tokens:
+        eligible = False
     identity = '\0'.join(str(value) for value in (
-        seed, record['repository'], record['revision'], record['file_path'], record['raw_sha256'], FORMAT))
+        seed, record['repository'], record['revision'], record['file_path'], record['raw_sha256'], format_id))
     bits = hashlib.sha256(identity.encode('utf-8')).digest()
     selected = int.from_bytes(bits[:8], 'big') / 2**64 < ratio
-    info = {'format': FORMAT, 'seed': seed, 'target_ratio': ratio, 'eligible': eligible,
+    info = {'format': format_id, 'seed': seed, 'target_ratio': ratio, 'eligible': eligible,
             'applied': eligible and selected, 'marker_policy': 'Existing delimiters encoded by the frozen tokenizer; no vocabulary additions.'}
     if collision:
         info['skip_reason'] = 'marker_collision'
     out['fim'] = info
     if not info['applied']:
+        return out
+    if encoded is not None:
+        info['minimum_span_tokens'] = min_span_tokens
+        positions = sorted({start for start, end in encoded.offsets if 0 < start < len(body)})
+        # Try a bounded deterministic set, then balanced token offsets. Verify
+        # independently encoded spans because BPE merges can cross a cut.
+        found = None
+        for attempt in range(32):
+            bits2 = hashlib.sha256(bits + attempt.to_bytes(2, 'big')).digest()
+            if attempt == 31:
+                start = encoded.offsets[len(encoded.ids)//3][0]
+                end = encoded.offsets[2*len(encoded.ids)//3][0]
+            else:
+                if len(positions) < 2: break
+                a = int.from_bytes(bits2[:8],'big') % (len(positions)-1)
+                b = a+1+int.from_bytes(bits2[8:16],'big') % (len(positions)-a-1)
+                start,end = positions[a],positions[b]
+            lengths = [len(tokenizer.encode(span).ids) for span in (body[:start],body[start:end],body[end:])]
+            if min(lengths) >= min_span_tokens:
+                found = start,end,lengths; break
+        if found is None:
+            info.update(applied=False, skip_reason='no_valid_token_spans')
+            return out
+        start,end,lengths = found
+        info.update(cut_unit='token_offset_unicode_character', span_tokens=lengths,
+                    prefix_characters=start,middle_characters=end-start,suffix_characters=len(body)-end)
+        out['text'] = header+MARKERS[0]+body[:start]+MARKERS[1]+body[end:]+MARKERS[2]+body[start:end]
         return out
     boundaries = []
     position = 0
@@ -105,14 +140,14 @@ def main() -> None:
         for export in sorted(args.exports):
             source, records = validate_export(export)
             sources.append({'id': source['source_id'], 'revision': source['revision'],
-                            'export_sha256': hashlib.sha256(export.read_bytes()).hexdigest()})
+                            'export_sha256': sha256_file(export)})
             for record in records:
                 key = record['normalized_sha256']
                 if key in seen:
                     counts['duplicates_before_transform'] += 1
                     continue
                 seen.add(key)
-                out = transform(record, seed=args.seed, ratio=args.ratio)
+                out = transform(record, seed=args.seed, ratio=args.ratio, tokenizer=tokenizer)
                 if restore(out) != record['text']:
                     raise ValueError('FIM reconstruction changed original source')
                 encoded = tokenizer.encode(out['text']).ids
@@ -127,13 +162,13 @@ def main() -> None:
     if tokenizer_bytes != args.tokenizer.read_bytes():
         raise ValueError('Tokenizer changed during FIM preparation')
     report = {
-        'schema_version': 1, 'passed': True, 'format': FORMAT, 'seed': args.seed, 'target_ratio': args.ratio,
+        'schema_version': 1, 'passed': True, 'format': 'psm_token_minimums_v2', 'seed': args.seed, 'target_ratio': args.ratio,
         'sources': sources, 'counts': dict(counts), 'applied_by_language': dict(language_counts),
         'actual_eligible_fraction': counts['applied'] / max(1, counts['eligible']),
         'marker_token_ids': {marker: tokenizer.encode(marker).ids for marker in MARKERS},
         'marker_policy': 'Existing frozen-tokenizer delimiters; no new tokens.', 'vocabulary_additions': 0,
         'tokenizer_sha256': hashlib.sha256(tokenizer_bytes).hexdigest(),
-        'transformed_records_sha256': hashlib.sha256(args.output.read_bytes()).hexdigest(),
+        'transformed_records_sha256': sha256_file(args.output),
         'preprocessing_seconds': time.perf_counter() - started,
         'exact_reconstruction_and_tokenizer_roundtrips': counts['documents'],
         'scope': 'Two-repository transformation fixture only; no model training and no FIM quality evaluation.',

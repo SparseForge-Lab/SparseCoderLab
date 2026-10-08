@@ -1,15 +1,17 @@
 from __future__ import annotations
-import copy, hashlib, json, os
+import argparse, copy, hashlib, json, os
 from pathlib import Path
 import torch
 from src.config import load_config
 from src.model import LanguageModel
 from src.moe.router import FreeMoE
 from src.training.engine import make_optimizer, require_cuda
+from src.training.checkpoint import load_optimizer_state
 
 def source_hashes():
     paths=['src/moe/grouped.py','src/moe/router.py','src/training/moe_optimizer.py',
-           'src/training/engine.py','src/model/layers.py','src/model/transformer.py','src/model/__init__.py']
+           'src/training/engine.py','src/model/layers.py','src/model/transformer.py','src/model/__init__.py',
+           'src/model/loss.py','src/training/checkpoint.py']
     return {path:hashlib.sha256(Path(path).read_bytes()).hexdigest() for path in paths}
 
 def diff(a,b):
@@ -28,9 +30,9 @@ def trial(device,bf16,trained=False,control=False):
     grouped=LanguageModel(gc).to(device); grouped.load_state_dict(ref.state_dict())
     opt,_=make_optimizer(ref,cfg); gopt,_=make_optimizer(grouped,gc)
     if trained:
-        state=torch.load('experiments/phase1a_sparse/checkpoints/last.pt',map_location=device,weights_only=False)
+        state=torch.load('experiments/phase1a_sparse/checkpoints/last.pt',map_location='cpu',weights_only=False)
         ref.load_state_dict(state['model']); grouped.load_state_dict(state['model'])
-        opt.load_state_dict(copy.deepcopy(state['optimizer'])); gopt.load_state_dict(copy.deepcopy(state['optimizer'])); del state
+        load_optimizer_state(ref,opt,copy.deepcopy(state['optimizer'])); load_optimizer_state(grouped,gopt,copy.deepcopy(state['optimizer'])); del state
         from src.training.data import PackedStream
         stream=PackedStream(Path(cfg['data']['shards']),'train',1024,42)
     reports=[]
@@ -77,16 +79,20 @@ def trial(device,bf16,trained=False,control=False):
 
 def main():
     import sys
-    deterministic='--deterministic' in sys.argv
+    parser=argparse.ArgumentParser();parser.add_argument('--deterministic',action='store_true')
+    parser.add_argument('--control',action='store_true');parser.add_argument('--output',type=Path)
+    args=parser.parse_args();deterministic=args.deterministic
+    if args.output and args.output.exists():raise FileExistsError('Choose a new parity report version')
     if deterministic:
         os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
         torch.use_deterministic_algorithms(True)
     require_cuda('cuda'); torch.backends.cuda.matmul.allow_tf32=False
-    if '--control' in sys.argv:
+    if args.control:
         result=trial('cuda',True,trained=True,control=True)
         result['deterministic_algorithms']=deterministic
         suffix='_deterministic' if deterministic else ''
-        Path(f'results/moe_reference_repeatability{suffix}.json').write_text(json.dumps(result,indent=2))
+        destination=args.output or Path(f'results/moe_reference_repeatability{suffix}.json')
+        destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(json.dumps(result,indent=2))
         print(json.dumps({'passed':result['passed'],'control':'reference vs reference','steps':[{'step':s['step'],'logits':s['forward']['logits'],'embedding':s['parameters_after_step']['embedding.weight']} for s in result['optimizer_steps']]},indent=2))
         return
     report={'fp32_cpu':trial('cpu',False),'bf16_rtx5070':trial('cuda',True),'trained_checkpoint_rtx5070':trial('cuda',True,trained=True)}
@@ -94,7 +100,8 @@ def main():
     report['deterministic_algorithms']=deterministic
     report['source_sha256']=source_hashes()
     report['scope']='Deterministic parity uses process-local CUBLAS_WORKSPACE_CONFIG and deterministic algorithms; native BF16 timing uses the original non-deterministic training policy. Historical failed controls are preserved separately.'
-    Path('results/moe_backend_parity.json').write_text(json.dumps(report,indent=2))
+    destination=args.output or Path('results/moe_backend_parity.json')
+    destination.parent.mkdir(parents=True,exist_ok=True);destination.write_text(json.dumps(report,indent=2))
     print(json.dumps({k:({'passed':v['passed'],'isolated_moe':v['isolated_moe']} if isinstance(v,dict) and 'passed' in v else v) for k,v in report.items()},indent=2))
     if not report['passed']: raise RuntimeError('Backend parity failed; performance promotion blocked')
 

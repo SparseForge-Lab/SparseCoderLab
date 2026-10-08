@@ -19,7 +19,7 @@ def instrumented(self, x):
         from src.moe.grouped import dispatch
         with record_function('moe/grouping_indexing'):
             integers=torch.zeros(self.n,dtype=torch.long,device=flat.device).scatter_add_(0,indices[:,0],torch.ones(flat.shape[0],dtype=torch.long,device=flat.device))
-        with record_function('moe/grouped_dispatch'): output,capacity=dispatch(flat,indices,weights,self.experts,integers)
+        with record_function('moe/grouped_dispatch'): output,capacity=dispatch(flat,indices,weights,self.experts,integers,self._expert_up,self._expert_down)
         self.active_since_zero.logical_or_(integers>0)
     else:
         output=torch.zeros_like(flat)
@@ -46,7 +46,7 @@ def main():
     require_cuda('cuda'); torch.manual_seed(42)
     grouped='--grouped' in sys.argv
     cfg=load_config('configs/runtime/sparse_grouped.yaml' if grouped else 'configs/phase1a/sparse.yaml'); model=LanguageModel(cfg).cuda()
-    state=torch.load('experiments/phase1a_sparse/checkpoints/last.pt',map_location='cuda',weights_only=False)
+    state=torch.load('experiments/phase1a_sparse/checkpoints/last.pt',map_location='cpu',weights_only=False)
     model.load_state_dict(state['model']); opt,_=make_optimizer(model,cfg)
     stream=PackedStream(Path(cfg['data']['shards']),'train',1024,42)
     x,y=stream.next(2,'cuda'); original=[]

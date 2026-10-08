@@ -6,6 +6,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+from src.utils.hashing import sha256_file
 
 import torch
 from tokenizers import Tokenizer
@@ -41,7 +42,7 @@ def main():
         manifest, records = validate_export(export)
         source_records.extend(records)
         sources.append({'id': manifest['source_id'], 'revision': manifest['revision'],
-                        'export_sha256': hashlib.sha256(export.read_bytes()).hexdigest()})
+                        'export_sha256': sha256_file(export)})
     families = json.loads(args.families.read_text(encoding='utf-8'))['families'] if args.families else []
     kept, removed, dedup = deduplicate(source_records, families=families,
                                       audit_all_pairs=args.audit_all_pairs or len(source_records) <= 1000)
@@ -50,7 +51,7 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open('x', encoding='utf-8', newline='\n') as handle:
         for original in kept:
-            sample = transform(original, seed=cfg['data']['seed'], ratio=.4)
+            sample = transform(original, seed=cfg['data']['seed'], ratio=.4, tokenizer=tokenizer)
             if restore(sample) != original['text']:
                 raise ValueError('FIM reconstruction mismatch')
             ids = tokenizer.encode(sample['text']).ids
@@ -120,8 +121,8 @@ def main():
                'role_packed_counts': {key: dict(value) for key, value in sorted(role_stats.items())},
                'language_efficiency_after_dedup_and_fim': {key: dict(value) for key, value in sorted(language_stats.items())},
                'tokenizer_sha256': hashlib.sha256(before).hexdigest(),
-               'manifest_sha256': hashlib.sha256(Path(cfg['data']['manifest']).read_bytes()).hexdigest(),
-               'script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+               'manifest_sha256': sha256_file(Path(cfg['data']['manifest'])),
+               'script_sha256': sha256_file(Path(__file__)),
                'scope': 'CPU-only pinned-repository preprocessing/stream fixture. No model optimizer resume, checkpoint test, functional evaluation or training readiness certification.'}
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(receipt, indent=2) + '\n', encoding='utf-8')

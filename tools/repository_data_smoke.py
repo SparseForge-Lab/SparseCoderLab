@@ -6,6 +6,7 @@ import collections
 import hashlib
 import json
 from pathlib import Path
+from src.utils.hashing import sha256_file
 
 from tokenizers import Tokenizer
 
@@ -15,7 +16,7 @@ from tools.shard_data import verify_shards
 
 
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return sha256_file(path)
 
 
 def validate_export(export: Path) -> tuple[dict, list[dict]]:

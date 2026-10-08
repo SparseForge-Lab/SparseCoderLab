@@ -6,13 +6,19 @@ optional exhaustive audit is for small fixtures, not a corpus-scale guarantee.
 from __future__ import annotations
 
 import argparse
+import ast
 import copy
 import hashlib
 import json
 import re
 import time
+import tempfile
+from collections import OrderedDict
+from functools import lru_cache
 from collections import Counter, defaultdict
 from pathlib import Path
+import numpy as np
+from src.utils.hashing import sha256_file
 
 from tools.repository_data_smoke import validate_export
 from tools.repository_fim import split_header
@@ -32,16 +38,48 @@ def shingles(body: str) -> set[int]:
             for i in range(max(0, len(tokens) - 4))}
 
 
+@lru_cache(maxsize=1)
+def coefficients():
+    pairs=[]
+    for i in range(PERMUTATIONS):
+        digest=hashlib.sha256(f'{FORMAT}\0{i}'.encode()).digest()
+        pairs.append((1+int.from_bytes(digest[:8],'big')%(PRIME-1),int.from_bytes(digest[8:16],'big')%PRIME))
+    return pairs
+
+
 def signature(values: set[int]) -> tuple[int, ...]:
     if not values:
         raise ValueError('MinHash requires nonempty shingles')
-    result = []
-    for i in range(PERMUTATIONS):
-        digest = hashlib.sha256(f'{FORMAT}\0{i}'.encode()).digest()
-        a = 1 + int.from_bytes(digest[:8], 'big') % (PRIME - 1)
-        b = int.from_bytes(digest[8:16], 'big') % PRIME
-        result.append(min((a * value + b) % PRIME for value in values))
+    # Exact 61-bit Mersenne reduction using bounded uint64 limbs. The result
+    # matches Python big-integer arithmetic; no overflowing a*x vectorization.
+    array=np.fromiter(values,dtype=np.uint64); low=array&((1<<31)-1); high=array>>31
+    result=[]
+    for a,b in coefficients():
+        a0,a1=a&((1<<31)-1),a>>31
+        cross=a0*high+a1*low
+        total=a0*low+((cross&((1<<30)-1))<<31)+(cross>>30)+2*a1*high+b
+        reduced=(total&PRIME)+(total>>61)
+        reduced=np.where(reduced>=PRIME,reduced-PRIME,reduced)
+        result.append(int(reduced.min()))
     return tuple(result)
+
+
+class ShingleStore:
+    """Private temporary disk spool; only eight candidate sets stay resident."""
+    def __init__(self):
+        self.directory=tempfile.TemporaryDirectory(prefix='sparsecoder-dedup-')
+        self.lengths=[]; self.cache=OrderedDict()
+    def __len__(self): return len(self.lengths)
+    def add(self, values):
+        index=len(self.lengths); self.lengths.append(len(values))
+        np.fromiter(sorted(values),dtype=np.uint64).tofile(Path(self.directory.name)/f'{index}.bin')
+    def __getitem__(self,index):
+        if index not in self.cache:
+            self.cache[index]=set(np.fromfile(Path(self.directory.name)/f'{index}.bin',dtype=np.uint64).tolist())
+        self.cache.move_to_end(index)
+        if len(self.cache)>8:self.cache.popitem(last=False)
+        return self.cache[index]
+    def close(self): self.directory.cleanup()
 
 
 def band_keys(sig: tuple[int, ...]):
@@ -84,8 +122,9 @@ def deduplicate(records: list[dict], *, threshold: float = .85, min_shingles: in
         raise ValueError('Exhaustive audit is limited to 1000 records')
     mapping = family_ids({record['repository'] for record in records}, families or [])
     retained, removed = [], []
-    sets = []
+    sets = ShingleStore()
     normalized_seen = {}
+    short_seen = {}
     index = defaultdict(set)
     counts = Counter()
     ordered = sorted(records, key=lambda r: (r['repository'], r['revision'], r['file_path'], r['raw_sha256']))
@@ -101,6 +140,14 @@ def deduplicate(records: list[dict], *, threshold: float = .85, min_shingles: in
         reason = 'exact_normalized'
         score = 1.0
         values = shingles(body)
+        short_key = None
+        if len(values) < min_shingles and record.get('language') == 'Python' and record.get('kind') == 'code':
+            try:
+                short_key = hashlib.sha256(ast.dump(ast.parse(body),include_attributes=False).encode()).hexdigest()
+            except (SyntaxError, ValueError):
+                pass
+        if duplicate is None and short_key in short_seen:
+            duplicate, score, reason = short_seen[short_key], None, 'short_ast_duplicate'
         sig = signature(values) if len(values) >= min_shingles else None
         if duplicate is None and sig is not None:
             candidates = set().union(*(index[key] for key in band_keys(sig)))
@@ -125,11 +172,13 @@ def deduplicate(records: list[dict], *, threshold: float = .85, min_shingles: in
             continue
         out = copy.deepcopy(record)
         out['repository_family'] = mapping[record['repository']]
-        out['deduplication'] = {'format': FORMAT, 'threshold': threshold, 'min_shingles': min_shingles}
+        out['deduplication'] = {'format': FORMAT, 'threshold': threshold, 'min_shingles': min_shingles,
+                                'short_file_policy': 'Python AST identity v1'}
         position = len(retained)
         retained.append(out)
-        sets.append(values)
+        sets.add(values)
         normalized_seen[digest] = position
+        if short_key is not None: short_seen[short_key] = position
         if sig is not None:
             for key in band_keys(sig):
                 index[key].add(position)
@@ -146,13 +195,17 @@ def deduplicate(records: list[dict], *, threshold: float = .85, min_shingles: in
                 audit_pairs += 1
                 if jaccard(sets[a], sets[b]) >= threshold:
                     raise ValueError('Exhaustive fixture audit found an LSH miss among retained records')
-    report = {'format': FORMAT, 'input_records': len(records), 'retained_records': len(retained),
+    counts.update({'exact_normalized': 0, 'near_duplicate': 0, 'short_ast_duplicate': 0})
+    report = {'format': FORMAT, 'short_file_policy': 'Python AST identity v1; syntax-error and other-language short files retain exact-only policy',
+              'shingle_storage': 'Temporary disk spool with eight-set LRU; input records and LSH index still in memory',
+              'input_records': len(records), 'retained_records': len(retained),
               'counts': dict(counts), 'threshold': threshold, 'minimum_shingles': min_shingles,
               'permutations': PERMUTATIONS, 'bands': BANDS, 'rows_per_band': ROWS,
               'declared_fork_families': families or [], 'family_mapping': mapping,
               'exhaustive_retained_pair_audit': audit_all_pairs, 'audit_pairs_compared': audit_pairs,
               'estimated_lsh_candidate_probability_at_threshold': 1 - (1 - threshold ** ROWS) ** BANDS,
-              'limitations': 'Lexical 5-shingle similarity, not semantic equivalence. Small files receive exact dedup only. LSH may miss near pairs; exhaustive audit applies only when explicitly enabled. Fork families require reviewed declarations; file similarity is not proof of fork ancestry.'}
+              'limitations': 'Lexical 5-shingle similarity, not semantic equivalence. Short Python removals require identical parsed AST; other short files receive exact dedup only. LSH may miss near pairs; exhaustive audit applies only when explicitly enabled. Fork families require reviewed declarations; file similarity is not proof of fork ancestry.'}
+    sets.close()
     return retained, removed, report
 
 
@@ -173,7 +226,7 @@ def main():
     for export in sorted(args.exports):
         source, rows = validate_export(export)
         sources.append({'id': source['source_id'], 'revision': source['revision'],
-                        'export_sha256': hashlib.sha256(export.read_bytes()).hexdigest()})
+                        'export_sha256': sha256_file(export)})
         records.extend(rows)
     families = json.loads(args.families.read_text(encoding='utf-8'))['families'] if args.families else []
     started = time.perf_counter()
@@ -186,9 +239,9 @@ def main():
                 handle.write(json.dumps(row, ensure_ascii=False) + '\n')
     report.update(schema_version=1, passed=True, sources=sources,
                   preprocessing_seconds=time.perf_counter() - started,
-                  output_sha256=hashlib.sha256(args.output.read_bytes()).hexdigest(),
-                  removed_inventory_sha256=hashlib.sha256(args.removed.read_bytes()).hexdigest(),
-                  script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                  output_sha256=sha256_file(args.output),
+                  removed_inventory_sha256=sha256_file(args.removed),
+                  script_sha256=sha256_file(Path(__file__)),
                   scope='Two-repository preprocessing fixture; full-corpus fork audit and benchmark contamination checks remain open.')
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')

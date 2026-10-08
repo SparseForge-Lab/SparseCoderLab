@@ -24,8 +24,9 @@ def force_router(model):
         model.router.weight.zero_(); model.router.weight[:,:4].copy_(torch.eye(4,device=model.router.weight.device))
 
 @pytest.mark.parametrize('distribution',['balanced','empty','collapse'])
-def test_grouped_top1_forward_grad_and_routing(distribution):
-    a,b=pair(); force_router(a); force_router(b); x=input_for(distribution)
+@pytest.mark.parametrize('device',['cpu',pytest.param('cuda',marks=pytest.mark.gpu)])
+def test_grouped_top1_forward_grad_and_routing(distribution,device):
+    a,b=pair(device); force_router(a); force_router(b); x=input_for(distribution,device)
     xa=x.clone().requires_grad_(); xb=x.clone().requires_grad_()
     ya,la=a(xa); yb,lb=b(xb)
     torch.testing.assert_close(ya,yb,atol=1e-6,rtol=1e-5)
@@ -36,7 +37,8 @@ def test_grouped_top1_forward_grad_and_routing(distribution):
     torch.testing.assert_close(xa.grad,xb.grad,atol=1e-6,rtol=1e-5)
     for pa,pb in zip(a.parameters(),b.parameters()):
         ga=pa.grad if pa.grad is not None else torch.zeros_like(pa)
-        torch.testing.assert_close(ga,pb.grad,atol=1e-6,rtol=1e-5)
+        gb=pb.grad if pb.grad is not None else torch.zeros_like(pb)
+        torch.testing.assert_close(ga,gb,atol=1e-6,rtol=1e-5)
 
 def test_grouped_optimizer_preserves_empty_expert_momentum_and_decay():
     a,b=pair(); force_router(a); force_router(b)
@@ -83,3 +85,18 @@ def test_grouped_bf16_gpu_forward_backward():
 def test_top2_remains_reference_only():
     cfg=load_config('configs/test.yaml')['model']; cfg.update(top_k=2,moe_backend='grouped')
     with pytest.raises(ValueError,match='Top1'): FreeMoE(cfg)
+
+
+def test_persistent_banks_no_per_forward_stack_and_deepcopy_recovery(monkeypatch):
+    a,b=pair(); force_router(a); force_router(b)
+    b=copy.deepcopy(b)
+    # One recovery after deepcopy; subsequent execution must not stack weights.
+    b(input_for('balanced'))
+    pointer=b._expert_up.data_ptr()
+    def forbidden_stack(*args,**kwargs):raise AssertionError('Per-forward materialization')
+    monkeypatch.setattr(torch,'stack',forbidden_stack)
+    y,aux=b(input_for('balanced'));(y.square().mean()+.01*aux).backward()
+    assert b._expert_up.data_ptr()==pointer
+    assert not any('_expert_' in name for name in b.state_dict())
+    for i,expert in enumerate(b.experts):
+        assert expert.up.weight.data_ptr()==b._expert_up[i].data_ptr()

@@ -13,7 +13,7 @@ from src.runtime.cache import IOConfig, simulate
 @torch.no_grad()
 def collect(cfg: dict, checkpoint: Path, output: Path, max_tokens: int) -> None:
     require_cuda('cuda'); model = LanguageModel(cfg).cuda().eval()
-    state = torch.load(checkpoint, map_location='cuda', weights_only=False); model.load_state_dict(state['model'])
+    state = torch.load(checkpoint, map_location='cpu', weights_only=False); model.load_state_dict(state['model'])
     stream = PackedStream(Path(cfg['data']['shards']), 'val', cfg['training']['context'], cfg['data']['seed'])
     documents = [json.loads(line) for line in (Path(cfg['data']['shards']) / 'val_documents.jsonl').read_text().splitlines()]
     def records():

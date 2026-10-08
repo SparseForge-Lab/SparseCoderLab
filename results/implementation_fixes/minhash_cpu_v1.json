@@ -1,0 +1,11 @@
+{
+  "distinct_shingles": 10000,
+  "repetitions": 7,
+  "median_seconds": {
+    "python_bigint_reference": 0.1434479999998075,
+    "vectorized_uint64": 0.006787400000121124
+  },
+  "signature_exact": true,
+  "speedup": 21.134455019189616,
+  "scope": "Synthetic 10000-value signature microbenchmark on CPU; not corpus ingestion throughput or dedup recall."
+}

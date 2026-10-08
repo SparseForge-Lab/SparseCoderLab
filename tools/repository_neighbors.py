@@ -9,6 +9,7 @@ import posixpath
 import re
 from collections import Counter, defaultdict
 from pathlib import Path, PurePosixPath
+from src.utils.hashing import sha256_file
 
 from tokenizers import Tokenizer
 
@@ -174,9 +175,9 @@ def main():
               'dependency_edges': len(edges), 'edge_methods': dict(methods), 'role_links': dict(roles),
               'multi_file_samples': len(items), 'tokens': sum(item['token_count'] for item in items),
               'max_sample_tokens': max((item['token_count'] for item in items), default=0),
-              'input_sha256': hashlib.sha256(args.input_jsonl.read_bytes()).hexdigest(),
-              'samples_sha256': hashlib.sha256(args.output.read_bytes()).hexdigest(),
-              'edges_sha256': hashlib.sha256(args.edges.read_bytes()).hexdigest(),
+              'input_sha256': sha256_file(args.input_jsonl),
+              'samples_sha256': sha256_file(args.output),
+              'edges_sha256': sha256_file(args.edges),
               'diagnostics': diagnostics,
               'scope': 'Repository context fixture. Python AST links are static imports; JS/TS/C/C++/Rust matches are conservative text candidates. No execution or complete dependency resolution. Reused file tokens must be counted separately if this lane is mixed into training.'}
     args.report.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')

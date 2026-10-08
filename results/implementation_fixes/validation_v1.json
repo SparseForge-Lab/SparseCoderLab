@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "baseline_commit": "06f0ef1f5f9cf4ce58e9073f1ff845c8ac27df1d",
+  "tests": [
+    {
+      "scope": "CUDA-inclusive release before final profiler-only change",
+      "tests": 106,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 30.526,
+      "deselected_gpu_tests": 0
+    },
+    {
+      "scope": "Final publication sources, CUDA_VISIBLE_DEVICES empty, GPU tests deselected",
+      "tests": 95,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 28.585,
+      "deselected_gpu_tests": 12
+    }
+  ],
+  "functional_completions": 700,
+  "functional_source_bindings": {
+    "benchmark_sha256": true,
+    "source_sha256": true,
+    "manifest_sha256": true,
+    "scorer_sha256": true,
+    "sandbox_source_sha256": true
+  },
+  "runtime_identity_matches": true,
+  "overlap_source_bindings": {
+    "benchmark": true,
+    "scanner": true,
+    "frozen_documents": true
+  },
+  "canonical_artifacts": [
+    {
+      "variant": "dense75_ref",
+      "kind": "model_weights",
+      "path": "experiments/prompt3_v1/dense75_ref/checkpoints/model_100M.pt",
+      "size_bytes": 216116547,
+      "sha256": "916eca1b47243493adcabe7d60131665ebb646b257be4c5feb1372729cfd7707",
+      "verified_unchanged": true
+    },
+    {
+      "variant": "dense75_ref",
+      "kind": "full_resume_state",
+      "path": "experiments/prompt3_v1/dense75_ref/checkpoints/latest_verified_100M.pt",
+      "size_bytes": 648378155,
+      "sha256": "d0808bec5b28afce9c787627c0f9bf34bdb89affbd0781b97afd04fa7437b673",
+      "verified_unchanged": true
+    },
+    {
+      "variant": "sparse75",
+      "kind": "model_weights",
+      "path": "experiments/prompt3_v1/sparse75/checkpoints/model_100M.pt",
+      "size_bytes": 304334631,
+      "sha256": "368c1a6756f05809aaa0ebc47714132fdaf4f93a4170dd6ed5b7589a5b2170f0",
+      "verified_unchanged": true
+    },
+    {
+      "variant": "sparse75",
+      "kind": "full_resume_state",
+      "path": "experiments/prompt3_v1/sparse75/checkpoints/latest_verified_100M.pt",
+      "size_bytes": 913038475,
+      "sha256": "f60575c13386cf9b646e31938511a316fe3e2794c3b1d709c6745abe82dbe38c",
+      "verified_unchanged": true
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "kind": "model_weights",
+      "path": "experiments/prompt3_v1/sparse75_ngram10m/checkpoints/model_100M.pt",
+      "size_bytes": 346347694,
+      "sha256": "c9c00cb15a179abed2dacd40e48980cef9a6bad56fde4ba1560077fb996e6670",
+      "verified_unchanged": true
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "kind": "full_resume_state",
+      "path": "experiments/prompt3_v1/sparse75_ngram10m/checkpoints/latest_verified_100M.pt",
+      "size_bytes": 1039078739,
+      "sha256": "d582d4d066685684a4d2fb2f543c7b3f81dba091d47c8e8a19b603155a38d787",
+      "verified_unchanged": true
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "kind": "model_weights",
+      "path": "experiments/prompt3_v1/sparse75_ngram25m/checkpoints/model_100M.pt",
+      "size_bytes": 405067950,
+      "sha256": "9d308f6c526499c731b1b465fdfe79a4cc2c519cd403dc1ea5bcbaa44061387d",
+      "verified_unchanged": true
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "kind": "full_resume_state",
+      "path": "experiments/prompt3_v1/sparse75_ngram25m/checkpoints/latest_verified_100M.pt",
+      "size_bytes": 1215239507,
+      "sha256": "52f156b4b11cd371cdb1173c469e646d6d766901e54367f4906f9d49d365bade",
+      "verified_unchanged": true
+    }
+  ],
+  "measured_reports": [
+    {
+      "path": "results/implementation_fixes/diagnostics_v1.json",
+      "sha256": "d16aeecac8108f778909a7f8258d5721cd06cce2db629afdaabf7c6342d9513f",
+      "recorded_source_files_differing_from_final": []
+    },
+    {
+      "path": "results/implementation_fixes/minhash_cpu_v1.json",
+      "sha256": "640db282e4a42a41909f712aea0038c5e5658acf089f2c996860a26b3c23e89d",
+      "recorded_source_files_differing_from_final": []
+    },
+    {
+      "path": "results/implementation_fixes/moe_benchmark_v1.json",
+      "sha256": "a52b191ecabf00656ae807229a5d7fb5858ab5a73399f84785024af0c13d8e00",
+      "recorded_source_files_differing_from_final": []
+    },
+    {
+      "path": "results/implementation_fixes/moe_parity_cpu_v2.json",
+      "sha256": "4f7b988e2b2d09dace38bbbd823040a7be4de240dc2719dbadb471b99fa20f7e",
+      "recorded_source_files_differing_from_final": []
+    },
+    {
+      "path": "results/implementation_fixes/moe_parity_v1.json",
+      "sha256": "32e3c0bdb8bfc4c9b8ef8fd0514a8266c0d6af7bdb5d67d151d3510acfa98436",
+      "recorded_source_files_differing_from_final": [
+        "src/moe/grouped.py",
+        "src/moe/router.py",
+        "src/training/engine.py",
+        "src/model/layers.py",
+        "src/training/checkpoint.py"
+      ]
+    },
+    {
+      "path": "results/implementation_fixes/rtx5070_v3.json",
+      "sha256": "5354f4d3c3431eb6954abec6e97b41296c6269a64ead8b1eb2cce803f3f14c12",
+      "recorded_source_files_differing_from_final": [
+        "src/eval/wasi_python.py",
+        "src/eval/research.py",
+        "src/model/layers.py",
+        "src/training/data.py",
+        "src/training/engine.py"
+      ]
+    }
+  ],
+  "reviewed_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 2672,
+      "sha256": "be00e86873bdcf9a15459fe42a55497f9f8c187ab7250909a897b1568d1df5a6"
+    },
+    {
+      "path": "Documentation/57_safe_functional_evaluation.md",
+      "bytes": 3800,
+      "sha256": "544c2059992a6603ca7e5886424b483ab01296d746679ba56b22b60234ebbc1c"
+    },
+    {
+      "path": "Documentation/58_implementation_correctness_and_memory.md",
+      "bytes": 13043,
+      "sha256": "9721c23b74eb1806392b5c833293b083d406d9219d8d7098111b4873d07700dc"
+    },
+    {
+      "path": "Documentation/README.md",
+      "bytes": 4206,
+      "sha256": "7ff9450afce5a9227c40a029d09411f86289731b9494d4a26557e4b5640b85df"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3744,
+      "sha256": "c3d4471d810ce999bee8634e8b1a55a2b7eba30dfbc79439e35e60c0e421ccd6"
+    },
+    {
+      "path": "configs/eval/simple_python_v1.json",
+      "bytes": 23609,
+      "sha256": "02ffd5bcefba8df7d6c67baf21e07f71feeecc099844c5448e478b48b1b3579d"
+    },
+    {
+      "path": "configs/eval/wasi_runtime.json",
+      "bytes": 868,
+      "sha256": "1542f4c06ca0014b5c8241310fc414c3f113852fdbb474b28dea881a2ba74465"
+    },
+    {
+      "path": "results/implementation_fixes/diagnostics_v1.json",
+      "bytes": 2890,
+      "sha256": "d16aeecac8108f778909a7f8258d5721cd06cce2db629afdaabf7c6342d9513f"
+    },
+    {
+      "path": "results/implementation_fixes/minhash_cpu_v1.json",
+      "bytes": 364,
+      "sha256": "640db282e4a42a41909f712aea0038c5e5658acf089f2c996860a26b3c23e89d"
+    },
+    {
+      "path": "results/implementation_fixes/moe_benchmark_v1.json",
+      "bytes": 3312,
+      "sha256": "a52b191ecabf00656ae807229a5d7fb5858ab5a73399f84785024af0c13d8e00"
+    },
+    {
+      "path": "results/implementation_fixes/moe_parity_cpu_v2.json",
+      "bytes": 275066,
+      "sha256": "4f7b988e2b2d09dace38bbbd823040a7be4de240dc2719dbadb471b99fa20f7e"
+    },
+    {
+      "path": "results/implementation_fixes/moe_parity_v1.json",
+      "bytes": 353130,
+      "sha256": "32e3c0bdb8bfc4c9b8ef8fd0514a8266c0d6af7bdb5d67d151d3510acfa98436"
+    },
+    {
+      "path": "results/implementation_fixes/rtx5070_v3.json",
+      "bytes": 20856,
+      "sha256": "5354f4d3c3431eb6954abec6e97b41296c6269a64ead8b1eb2cce803f3f14c12"
+    },
+    {
+      "path": "results/research_v2_real/coding_overlap_pilot_v1.json",
+      "bytes": 7481,
+      "sha256": "93d72337e68afbe3b49837064d8622bcb6a301e0467e17143f5c4b82e0fdaf0f"
+    },
+    {
+      "path": "results/research_v2_real/functional_100M_v3.json",
+      "bytes": 331943,
+      "sha256": "c01c8d418a69dc595afce04666a0a599b5d89a39898d0f0e770049f8472fb0b9"
+    },
+    {
+      "path": "src/eval/research.py",
+      "bytes": 7396,
+      "sha256": "f48353ff4ba9dae4f7950f37279a22abe765f78c9d7660361001a390caffdfce"
+    },
+    {
+      "path": "src/eval/sampling.py",
+      "bytes": 1252,
+      "sha256": "67bc49dfbc9cbd735fe141b5972330ca2df852fb87eb83c010e95e3f72c8e713"
+    },
+    {
+      "path": "src/eval/wasi_python.py",
+      "bytes": 7486,
+      "sha256": "23ae5f251b63b6107b45c0de2f40720515fe522793cbd27658efbf9816326f39"
+    },
+    {
+      "path": "src/memory/ngram.py",
+      "bytes": 4658,
+      "sha256": "0c3ffca65130367d6d258c6f4866160de6653b4231120723dcf8290b1bd88bc7"
+    },
+    {
+      "path": "src/model/layers.py",
+      "bytes": 3482,
+      "sha256": "243e12289268d986749206c1d991f488ad42125f9d1ea7bd00d01e58f587c74f"
+    },
+    {
+      "path": "src/model/loss.py",
+      "bytes": 1080,
+      "sha256": "be1645822126a4221357fee80ac1e5ec16e3cae06422d5f655ac8d8817b1d391"
+    },
+    {
+      "path": "src/model/transformer.py",
+      "bytes": 4158,
+      "sha256": "59b64dbba5a5fc50ed49ba9510320c255b2ccf035ef602cfed5e7e22275c7b7a"
+    },
+    {
+      "path": "src/moe/grouped.py",
+      "bytes": 2105,
+      "sha256": "af3a493507642600b52559b07a0aedeae46db9619f0125972a00e10d134da197"
+    },
+    {
+      "path": "src/moe/router.py",
+      "bytes": 4255,
+      "sha256": "dbd89d294be10b01205e9244c2e435b273f945aaeba9e10457eb950fe2e3badc"
+    },
+    {
+      "path": "src/training/checkpoint.py",
+      "bytes": 4782,
+      "sha256": "1904e7611c66a85a161369ec5462904372254a925970a483ca0a7c649069ff0a"
+    },
+    {
+      "path": "src/training/data.py",
+      "bytes": 9809,
+      "sha256": "7c44ac839c42593ca99476e239e673589fa3e65e4fa336c8d69897161ecd4d2a"
+    },
+    {
+      "path": "src/training/engine.py",
+      "bytes": 14640,
+      "sha256": "1cc31ca107ede8af6e135e7d8b020ccc4c512289c6e9a41f01a88fea16d836a9"
+    },
+    {
+      "path": "src/training/moe_optimizer.py",
+      "bytes": 974,
+      "sha256": "3e299a72a67724f01df7aaa58d061ab9afe752e60e650887e9c844897b6a0344"
+    },
+    {
+      "path": "src/training/research.py",
+      "bytes": 11212,
+      "sha256": "37b5d5770ba4c901e0cec074c80ef8c1b0b0f154a58063aa6bb021425bf69433"
+    },
+    {
+      "path": "src/training/shards.py",
+      "bytes": 1644,
+      "sha256": "a5d582e84d034d5cf42ad0bc09b6eeaf91824278c355dd807d8e6f928b18b7c9"
+    },
+    {
+      "path": "src/utils/__init__.py",
+      "bytes": 34,
+      "sha256": "b0391a136acc799d0e1d3b140df6f46280226b081cf1e0da5444302f11f90c7c"
+    },
+    {
+      "path": "src/utils/hashing.py",
+      "bytes": 354,
+      "sha256": "6d31571e6565bb605dcac19a648bfac09696b7b143d6d83745a1ee8061c6c09a"
+    },
+    {
+      "path": "tests/test_coding_contamination.py",
+      "bytes": 1720,
+      "sha256": "3663ab3911faf49dc46574b0583beed69a154aba2e8dfaa5379683b5113d4a91"
+    },
+    {
+      "path": "tests/test_implementation_fixes.py",
+      "bytes": 10141,
+      "sha256": "4eedc1e9e1c998e6f9443831238439c12b20bb93f2ae2539de5699e341b610e8"
+    },
+    {
+      "path": "tests/test_moe_runtime.py",
+      "bytes": 5474,
+      "sha256": "bf9796eea27bab8569a0649d7420b9697409660bfd4d3f56409b844e36e6371e"
+    },
+    {
+      "path": "tests/test_repository_dedup.py",
+      "bytes": 3397,
+      "sha256": "db77db525c9a7e0f85c4b26df5e9c86c76dd9817042c019ffdac2c441acb8f30"
+    },
+    {
+      "path": "tests/test_repository_fim.py",
+      "bytes": 2470,
+      "sha256": "e0ca4078c9ad2f2ee2eb425b20d40edd0b84ce7f36ac10ad62eba227f8c46ada"
+    },
+    {
+      "path": "tests/test_sampling_shards.py",
+      "bytes": 3353,
+      "sha256": "a990fe4e5c86e8101337cbd4d330aeb36c0e09f7a9d6bbb672e5072cc9e670e4"
+    },
+    {
+      "path": "tests/test_wasi_eval.py",
+      "bytes": 4829,
+      "sha256": "46ef174646886f38791ff716b890181846f45b2941976682f02fc83dceed3d44"
+    },
+    {
+      "path": "tools/check_coding_contamination.py",
+      "bytes": 4444,
+      "sha256": "4f2011bba6197324eb3e04966b5b079a62ea2338fdabca70ba280e899649e722"
+    },
+    {
+      "path": "tools/eval_context.py",
+      "bytes": 3338,
+      "sha256": "638ceca9dda0c9f223a6ee667ed8a9a61c8d77d421102bd027dd4f1564cadf86"
+    },
+    {
+      "path": "tools/eval_mtp.py",
+      "bytes": 1643,
+      "sha256": "f996b9f0c45215945424de75cd7491cf6822ddef4b4385ad32bbc3f0485b4c8e"
+    },
+    {
+      "path": "tools/implementation_benchmark.py",
+      "bytes": 15251,
+      "sha256": "8bda0932b882dc29bee71c022f0908ca15c6bb54ad58ba44bf8dffd3e9aa7a68"
+    },
+    {
+      "path": "tools/implementation_diagnostics.py",
+      "bytes": 8097,
+      "sha256": "116edf55186ae9f1ffcc69278c06e7beee086dd62e4a90f81036d46113a4d7dc"
+    },
+    {
+      "path": "tools/moe_benchmark.py",
+      "bytes": 10618,
+      "sha256": "671c7f72723eec706067bec8ef49360f892f3b22550bd20c2fd329ce85fedfa3"
+    },
+    {
+      "path": "tools/moe_parity.py",
+      "bytes": 7864,
+      "sha256": "5bf1f47b251cab3eb9578dcc963c491ea05b88fb7a45db010d31038a5567c2f0"
+    },
+    {
+      "path": "tools/moe_reference_profile.py",
+      "bytes": 6785,
+      "sha256": "b9bd455ec9f3f63843d8e330cb1b35f808f835d74a3f44cf57cbe4bc914c3174"
+    },
+    {
+      "path": "tools/phase1_ablation.py",
+      "bytes": 1042,
+      "sha256": "9a270aaab38e5b0c33328f3b01c530c4b4de203b659c8e15fac094a84b2c6824"
+    },
+    {
+      "path": "tools/prepare_data.py",
+      "bytes": 8801,
+      "sha256": "242b8d8f68fc16cc17306ddcf97aba485bcf6e21588e54fe6193d762901f0e3e"
+    },
+    {
+      "path": "tools/profile.py",
+      "bytes": 6412,
+      "sha256": "24ac07ab40d0bdb3a4ec61ec2aebdf5ffc6643f6c11c7838a64cf7d460cb880c"
+    },
+    {
+      "path": "tools/prompt3_train.py",
+      "bytes": 7074,
+      "sha256": "cd132f111bb1841b22025ebcad0b06d94fbc1fe1d8183f70cd8aefae23edc6c4"
+    },
+    {
+      "path": "tools/repository_data_smoke.py",
+      "bytes": 6478,
+      "sha256": "707b1d8fcc5c04827267e948ae424b34f4741fb1abf8528e8eeaa90f18a20f00"
+    },
+    {
+      "path": "tools/repository_dedup.py",
+      "bytes": 12556,
+      "sha256": "5b480b2c162156c0a4faddb016aa89833fcc0864bcdc21fae587b5122ec4b4b4"
+    },
+    {
+      "path": "tools/repository_fim.py",
+      "bytes": 9461,
+      "sha256": "69bb2be62417b360ef0c4b37483e102bd8485a1758bcb27cf42341c743a8c0c4"
+    },
+    {
+      "path": "tools/repository_neighbors.py",
+      "bytes": 10437,
+      "sha256": "c7c3cac89f28dbab1ffe9ea34e1685d3ff21035c14837b84e4bca55c691fbe6c"
+    },
+    {
+      "path": "tools/repository_pipeline_smoke.py",
+      "bytes": 7805,
+      "sha256": "cb210236fc909087730e7e2f36099a7a4256db373e31ab2d28114158cb3669ed"
+    },
+    {
+      "path": "tools/repository_source_inventory.py",
+      "bytes": 2968,
+      "sha256": "9dda7b792ab99872b1232e0e88dfe1b4353610c343ff1a783bf14c8573852c33"
+    },
+    {
+      "path": "tools/research_pack.py",
+      "bytes": 6174,
+      "sha256": "1a6c9ee84a1968653b3d982ea4ba0dbed7fc755229f3c2fe1fde1b179ffe6154"
+    },
+    {
+      "path": "tools/routeahead_lab.py",
+      "bytes": 7564,
+      "sha256": "f7fe5801a80d08f2680628047113e7580e25589bd6e68c5e3c31223adaa085b5"
+    },
+    {
+      "path": "tools/routing_lab.py",
+      "bytes": 5676,
+      "sha256": "78a00f81d9456cf32d79e8b3116ecaa9da59250c755c753eccbe0064a7e0505f"
+    },
+    {
+      "path": "tools/score_saved_python.py",
+      "bytes": 9413,
+      "sha256": "7c4348a853a7d7820433165df451fae20b706944497039ac4ba9274c530fe734"
+    },
+    {
+      "path": "tools/setup_wasi_eval.py",
+      "bytes": 3839,
+      "sha256": "7a2aeb451a9cee36ebda2a9d819f250d87caefdab2e7daded6b0c9b731fc4d07"
+    },
+    {
+      "path": "tools/shard_data.py",
+      "bytes": 2391,
+      "sha256": "0e513451d90973cd6b65cd90df7bfa8d9caaafde6002ec8565384e17e3883586"
+    },
+    {
+      "path": "tools/token_budget.py",
+      "bytes": 3204,
+      "sha256": "b866f4c0144fd472d8acc078480e6ef0713684c075b658df9d9218ddf8dd5191"
+    }
+  ],
+  "scope": "Explicit reviewed file list only. GPU-inclusive tests were completed before the latest pause; final profiler change has CPU coverage. Earlier benchmark/parity hashes remain immutable and are not claimed to match all final files. This is implementation validation, not authorization or readiness for a new training phase.",
+  "publication_scan": {
+    "scope": "Full staged index (572 files)",
+    "credential_candidates": 1,
+    "confirmed_secrets": 0,
+    "candidate_disposition": "One unchanged pre-existing synthetic credential fixture in test_repo_export_records_stable_revision_and_filters_secrets; verifies export quarantine. No new credential candidate.",
+    "personal_path_files": 0,
+    "files_over_20_mib": 0,
+    "reviewed_changed_files": 65,
+    "whitespace_check": "Passed with cr-at-eol: .gitattributes preserves hashed source/config/evidence bytes, including CRLF."
+  }
+}

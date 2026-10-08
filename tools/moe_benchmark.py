@@ -32,7 +32,7 @@ def write(path,rows):
 def micro():
     gate(); cfg=load_config('configs/runtime/sparse_reference.yaml'); seed_all(42)
     whole=LanguageModel(cfg).cuda().eval()
-    state=torch.load('experiments/phase1a_sparse/checkpoints/last.pt',map_location='cuda',weights_only=False)
+    state=torch.load('experiments/phase1a_sparse/checkpoints/last.pt',map_location='cpu',weights_only=False)
     whole.load_state_dict(state['model']); layer=whole.blocks[2].moe
     weights=copy.deepcopy(layer.state_dict()); rows=[]
     for context in (256,1024,2048):
@@ -82,7 +82,7 @@ def full_one(config,tag,repetition,steps=20,fresh=False):
     # Different geometry is a fresh, short learning smoke, not a weight conversion.
     geometry_changed=cfg['model']['experts']!=12 or cfg['model']['expert_ffn']!=160
     if not fresh:
-        state=torch.load(f'experiments/phase1a_{source}/checkpoints/last.pt',map_location='cuda',weights_only=False)
+        state=torch.load(f'experiments/phase1a_{source}/checkpoints/last.pt',map_location='cpu',weights_only=False)
         if not geometry_changed or not cfg['model']['moe_layers']: model.load_state_dict(state['model'])
         del state
     opt,scheduler=make_optimizer(model,cfg)

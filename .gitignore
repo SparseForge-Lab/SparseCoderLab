@@ -100,3 +100,12 @@ data/research_v2_real/shards/
 results/history/Prompt-*/starting_manifest.json
 results/prompt-*_archive_manifest.json
 results/prompt-*_archive_verification.json
+# Saved generation text is private input to aggregate functional scoring.
+results/prompt3_cpu_generation_benchmark.jsonl
+results/prompt3_cpu_generation_prompts.txt
+results/prompt3_dense75_250M_test_benchmark.jsonl
+results/prompt3_dense75_250M_test_prompts.txt
+results/prompt3_sparse75_last_checkpoint_test.jsonl
+results/prompt3_sparse75_last_checkpoint_test_prompts.txt
+results/prompt3_sparse75_ngram25m_180M_fullgpu_benchmark.jsonl
+results/prompt3_sparse75_ngram25m_180M_fullgpu_prompts.txt

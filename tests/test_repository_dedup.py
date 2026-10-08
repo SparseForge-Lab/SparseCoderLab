@@ -58,3 +58,20 @@ def test_reject_transformed_or_corrupt_input():
     a['normalized_sha256'] = 'incorrect'
     with pytest.raises(ValueError, match='hash mismatch'):
         deduplicate([a])
+
+
+def test_vectorized_signature_is_identical_to_big_integer_reference():
+    import random
+    from tools.repository_dedup import PRIME, coefficients, signature
+    values={0,1,PRIME-1,PRIME-2}|{random.Random(i).randrange(PRIME) for i in range(600)}
+    assert signature(values)==tuple(min((a*v+b)%PRIME for v in values) for a,b in coefficients())
+
+
+def test_short_python_requires_identical_ast_and_reports_separately():
+    a=record('org/a','a.py','def add(a,b):\n    return a+b\n')
+    b=record('org/b','b.py','def add(a, b):\n  return a + b\n')
+    c=record('org/c','c.py','def add(a,b):\n    return a-b\n')
+    for row in (a,b,c):row.update(language='Python',kind='code')
+    kept,removed,report=deduplicate([c,b,a],audit_all_pairs=True)
+    assert len(kept)==2 and removed[0]['reason']=='short_ast_duplicate'
+    assert removed[0]['jaccard'] is None and report['counts']['short_ast_duplicate']==1

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "cpython_version": "3.14.7",
+  "cpython_url": "https://github.com/brettcannon/cpython-wasi-build/releases/download/v3.14.7/python-3.14.7-wasi_sdk-24.zip",
+  "cpython_archive_sha256": "2e064d3fb8172471d39d741348efa722349c40b96301f69968dff714999c584b",
+  "wasmtime_version": "49.0.0",
+  "windows_wheel_url": "https://files.pythonhosted.org/packages/c7/41/b1d78d0ea1506abfa3005c8a50eee724b95a9cffbb2a0ed541f0965f5ab9/wasmtime-49.0.0-py3-none-win_amd64.whl",
+  "windows_wheel_sha256": "46a4e4220fd1bee45ad9c29a73cadad54373dad840eff104726490527bc7ef89",
+  "guest_memory_bytes": 134217728,
+  "fuel": 3000000000,
+  "deadline_seconds": 3.0,
+  "output_bytes": 16384,
+  "source_bytes": 16384,
+  "runtime_license": "PSF-2.0 (CPython); Apache-2.0 WITH LLVM-exception (Wasmtime)",
+  "build_project": "https://github.com/brettcannon/cpython-wasi-build"
+}

@@ -6,6 +6,7 @@ import hashlib
 import json
 from collections import Counter
 from pathlib import Path
+from src.utils.hashing import sha256_file
 
 from tools.repository_data_smoke import validate_export
 
@@ -32,7 +33,7 @@ def main():
             'source_id', 'source_url', 'revision', 'license_assertion', 'license_file_sha256',
             'included_files', 'output_bytes', 'filtered_counts', 'file_inventory_sha256', 'exporter_sha256')}
                        | {'license_file': manifest.get('license_file'), 'language_file_counts': dict(lang),
-                          'role_file_counts': dict(role), 'export_sha256': hashlib.sha256(export.read_bytes()).hexdigest(),
+                          'role_file_counts': dict(role), 'export_sha256': sha256_file(export),
                           'status': 'pinned_preprocessing_pilot',
                           'licensing_review': 'Root declaration recorded; obvious conflicting SPDX/GNU headers filtered. No claim of a complete per-file exception audit.'})
     report = {'schema_version': 1, 'sources': sources, 'repositories': len(sources),

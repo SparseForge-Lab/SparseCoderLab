@@ -7,13 +7,14 @@ from src.model.layers import Attention, RMSNorm, SwiGLU
 from src.moe.router import FreeMoE
 from src.memory.ngram import NgramMemory
 from src.mtp.draft import MultiTokenDraft
+from src.model.loss import linear_cross_entropy
 
 class Block(nn.Module):
     def __init__(self, cfg: dict, capacity: bool):
         super().__init__(); d = cfg['d_model']; self.an = RMSNorm(d, cfg['norm_eps']); self.fn = RMSNorm(d, cfg['norm_eps'])
         self.attention = Attention(cfg); self.resident = SwiGLU(d, cfg['ffn']); self.moe = FreeMoE(cfg) if capacity else None
-    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
-        x = x + self.attention(self.an(x)); normalized = self.fn(x); residual = self.resident(normalized)
+    def forward(self, x: torch.Tensor, segment_ids: torch.Tensor | None = None) -> tuple[torch.Tensor, torch.Tensor]:
+        x = x + self.attention(self.an(x), segment_ids); normalized = self.fn(x); residual = self.resident(normalized)
         aux = x.new_zeros(())
         if self.moe is not None:
             routed, aux = self.moe(normalized); residual = residual + routed
@@ -34,18 +35,28 @@ class LanguageModel(nn.Module):
         if isinstance(module, (nn.Linear, nn.Embedding)):
             nn.init.normal_(module.weight, std=self.cfg['model']['init_std'])
             if isinstance(module, nn.Linear) and module.bias is not None: nn.init.zeros_(module.bias)
-    def forward(self, tokens: torch.Tensor, targets: torch.Tensor | None = None, *, mtp_tokens: torch.Tensor | None = None) -> dict:
+    def forward(self, tokens: torch.Tensor, targets: torch.Tensor | None = None, *, mtp_tokens: torch.Tensor | None = None,
+                return_outputs: bool = True, segment_ids: torch.Tensor | None = None) -> dict:
+        if targets is None and not return_outputs:
+            raise ValueError('Loss-only forward requires targets')
+        if segment_ids is not None and self.mtp is not None and mtp_tokens is not None:
+            raise ValueError('Document isolation with MTP requires boundary-aware horizon targets')
         x = self.embedding(tokens); aux = x.new_zeros(())
         for i, block in enumerate(self.blocks):
-            if self.memory is not None and i == self.cfg['memory']['layer']: x = self.memory(x, tokens)
+            if self.memory is not None and i == self.cfg['memory']['layer']: x = self.memory(x, tokens, segment_ids=segment_ids)
             if self.cfg['model']['activation_checkpointing'] and self.training:
-                x, loss = checkpoint(block, x, use_reentrant=False)
-            else: x, loss = block(x)
+                x, loss = checkpoint(block, x, segment_ids, use_reentrant=False)
+            else: x, loss = block(x, segment_ids)
             aux = aux + loss
-        hidden = self.norm(x); logits = F.linear(hidden, self.embedding.weight)
-        result = {'logits': logits, 'hidden': hidden, 'aux_loss': aux}
+        hidden = self.norm(x)
+        result = {'aux_loss': aux}
+        if return_outputs:
+            logits = F.linear(hidden, self.embedding.weight)
+            result.update(logits=logits, hidden=hidden)
         if targets is not None:
-            lm_loss = F.cross_entropy(logits.float().flatten(0, 1), targets.flatten())
+            lm_loss = (F.cross_entropy(logits.float().flatten(0, 1), targets.flatten()) if return_outputs else
+                       linear_cross_entropy(hidden, self.embedding.weight, targets,
+                                            self.cfg['training'].get('loss_chunk_tokens', 1024)))
             result.update(lm_loss=lm_loss, loss=lm_loss + self.cfg['model']['aux_weight'] * aux)
             if self.mtp is not None and mtp_tokens is not None:
                 mtp_loss, metrics = self.mtp.losses(hidden, mtp_tokens, self.embedding)

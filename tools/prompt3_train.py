@@ -88,7 +88,7 @@ def run_variant(tag: str, endpoint_name: str, endpoint: int, wall_minutes: float
     eval_cfg["training"]["microbatch"] = 2
     index = freeze_evaluation(eval_cfg)
     model = LanguageModel(eval_cfg).cuda()
-    saved = torch.load(ckpt, map_location="cuda", weights_only=False)
+    saved = torch.load(ckpt, map_location="cpu", weights_only=False)
     model.load_state_dict(saved["model"])
     del saved
     start = time.perf_counter()

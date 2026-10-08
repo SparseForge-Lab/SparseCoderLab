@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse, hashlib, json, signal, time
 from pathlib import Path
+from src.utils.hashing import sha256_file
 import torch
 from torch.nn import functional as F
 from src.config import load_config,fingerprint
@@ -37,11 +38,11 @@ def features(model,cfg,split,batches):
 def run(cfg,checkpoint,run_dir,max_wall_minutes,steps,batches,resume=None):
     require_cuda('cuda');seed_all(cfg['training']['seed']);m=cfg['model'];rcfg=cfg['routeahead']
     if not m['moe_layers']:raise ValueError('MoE model required')
-    model=LanguageModel(cfg).cuda().eval();model.load_state_dict(torch.load(checkpoint,map_location='cuda',weights_only=False)['model'])
+    model=LanguageModel(cfg).cuda().eval();model.load_state_dict(torch.load(checkpoint,map_location='cpu',weights_only=False)['model'])
     train_x,train_y,fit_records=features(model,cfg,'train',batches);eval_x,eval_y,records=features(model,cfg,'val',batches)
     predictor=RouteAhead(m['d_model'],m['experts'],len(m['moe_layers']),rcfg).cuda()
     optimizer=torch.optim.AdamW(predictor.parameters(),lr=cfg['training']['lr']);scheduler=torch.optim.lr_scheduler.LambdaLR(optimizer,lambda _:1.0)
-    base_hash=hashlib.sha256(checkpoint.read_bytes()).hexdigest()
+    base_hash=sha256_file(checkpoint)
     meta={'step':0,'cursor':0,'tokens_seen':0,'config_hash':fingerprint(cfg),'base_checkpoint':str(checkpoint.resolve()),'base_sha256':base_hash}
     if resume:
         meta=resume_training(resume,predictor,optimizer,scheduler,'cuda')

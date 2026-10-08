@@ -1,0 +1,74 @@
+{
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "torch_version": "2.14.1+cu130",
+  "native_gqa": {
+    "parity": {
+      "output_max_abs": 0.0,
+      "gradient_max_abs": 9.313225746154785e-10,
+      "passed": true,
+      "atol": 0.002,
+      "output_rtol": 0.03,
+      "gradient_rtol": 0.05
+    },
+    "results": {
+      "repeat": {
+        "median_forward_backward_seconds": 0.003417399999761983,
+        "tokens_per_second": 2397144.027790297,
+        "peak_allocated_bytes": 200296448,
+        "peak_reserved_bytes": 232783872
+      },
+      "native": {
+        "median_forward_backward_seconds": 0.003319299999930081,
+        "tokens_per_second": 2467990.23895778,
+        "peak_allocated_bytes": 194004992,
+        "peak_reserved_bytes": 232783872
+      }
+    },
+    "context": 1024,
+    "microbatch": 8,
+    "scope": "Isolated attention forward/backward, same weights/input, three warmups and twelve measured repetitions. Both attention weight sets and the fixed input remain resident. Native GQA is opt-in; whole-model promotion requires additional routing evidence."
+  },
+  "training_components": {
+    "step_seconds_with_instrumentation": 0.209988400000384,
+    "components": {
+      "attention": {
+        "calls": 16,
+        "cuda_interval_ms": 18.865343987941742,
+        "host_call_ms": 20.838799998273316
+      },
+      "ngram": {
+        "calls": 1,
+        "cuda_interval_ms": 1.8984960317611694,
+        "host_call_ms": 2.2757000001547567
+      },
+      "router_linear": {
+        "calls": 4,
+        "cuda_interval_ms": 0.1945599988102913,
+        "host_call_ms": 0.6873000006635266
+      },
+      "moe_dispatch": {
+        "calls": 4,
+        "cuda_interval_ms": 10.520479917526245,
+        "host_call_ms": 5.591199999798846
+      },
+      "optimizer": {
+        "calls": 1,
+        "cuda_interval_ms": 39.76976013183594,
+        "host_call_ms": 39.98540000020512
+      }
+    },
+    "checkpoint_save_seconds": 3.7822931999999128,
+    "checkpoint_resume_seconds": 0.4826749999997446,
+    "temporary_checkpoint_bytes": 1215230659,
+    "temporary_checkpoint_sha256": "ba8390db86da53cad0d654f2d3e26cafc0857b6bd1938008fa5293a5641867ac",
+    "model_optimizer_scheduler_hashes_equal_after_resume": true,
+    "metadata_counters": [
+      3,
+      24576,
+      3
+    ],
+    "canonical_file_unchanged": true,
+    "scope": "Single instrumented step after two warmups, canonical 25M-Ngram weights loaded read-only. CUDA intervals include stream gaps and host submission delays; host calls include any internal synchronization. Component intervals cover forward and optimizer, not attributed backward kernels. Fixed preloaded synthetic input means dataloader wait is excluded. Full temporary model/Adam/scheduler checkpoint is staged on CPU during resume and removed after hash verification."
+  },
+  "passed": true
+}

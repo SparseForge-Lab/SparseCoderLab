@@ -1,0 +1,124 @@
+{
+  "reference_commit": "06f0ef1f5f9cf4ce58e9073f1ff845c8ac27df1d",
+  "before": {
+    "mode": "before",
+    "results": [
+      {
+        "distribution": "balanced",
+        "median_forward_backward_seconds": 0.005480000000034124,
+        "tokens_per_second": 1494890.5109395965,
+        "peak_allocated_bytes": 277090816,
+        "peak_reserved_bytes": 320864256,
+        "padded_capacity": 688,
+        "load": [
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          682.0,
+          682.0,
+          682.0,
+          682.0
+        ]
+      },
+      {
+        "distribution": "skewed",
+        "median_forward_backward_seconds": 0.012158950000184632,
+        "tokens_per_second": 673742.3872847249,
+        "peak_allocated_bytes": 757865472,
+        "peak_reserved_bytes": 889192448,
+        "padded_capacity": 7440,
+        "load": [
+          7440.0,
+          68.0,
+          68.0,
+          68.0,
+          69.0,
+          69.0,
+          69.0,
+          69.0,
+          68.0,
+          68.0,
+          68.0,
+          68.0
+        ]
+      }
+    ],
+    "canonical_file_unchanged": true,
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "context": 1024,
+    "microbatch": 8,
+    "bf16": true,
+    "scope": "Isolated Top1 MoE, checkpoint expert weights, forced matched balanced/90%-skewed routing, no optimizer steps. Three warmup and twelve measured forward/backward repetitions. Padded GEMM geometry and the one counts host read are retained."
+  },
+  "after": {
+    "mode": "after",
+    "results": [
+      {
+        "distribution": "balanced",
+        "median_forward_backward_seconds": 0.0057721000000583444,
+        "tokens_per_second": 1419240.83087909,
+        "peak_allocated_bytes": 277680640,
+        "peak_reserved_bytes": 325058560,
+        "padded_capacity": 688,
+        "load": [
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          683.0,
+          682.0,
+          682.0,
+          682.0,
+          682.0
+        ]
+      },
+      {
+        "distribution": "skewed",
+        "median_forward_backward_seconds": 0.012291549999872586,
+        "tokens_per_second": 666474.1224731557,
+        "peak_allocated_bytes": 733486080,
+        "peak_reserved_bytes": 813694976,
+        "padded_capacity": 7440,
+        "load": [
+          7440.0,
+          68.0,
+          68.0,
+          68.0,
+          69.0,
+          69.0,
+          69.0,
+          69.0,
+          68.0,
+          68.0,
+          68.0,
+          68.0
+        ]
+      }
+    ],
+    "canonical_file_unchanged": true,
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "context": 1024,
+    "microbatch": 8,
+    "bf16": true,
+    "scope": "Isolated Top1 MoE, checkpoint expert weights, forced matched balanced/90%-skewed routing, no optimizer steps. Three warmup and twelve measured forward/backward repetitions. Padded GEMM geometry and the one counts host read are retained."
+  },
+  "parity": {
+    "balanced": {
+      "max_abs": 0.0,
+      "routes_exact": true
+    },
+    "skewed": {
+      "max_abs": 0.0,
+      "routes_exact": true
+    }
+  },
+  "passed": true
+}

@@ -8,7 +8,7 @@ from src.training.engine import validate, require_cuda
 require_cuda('cuda')
 cfg = load_config('configs/phase1a/memory.yaml')
 model = LanguageModel(cfg).cuda()
-state = torch.load('experiments/phase1a_memory/checkpoints/last.pt', map_location='cuda', weights_only=False)
+state = torch.load('experiments/phase1a_memory/checkpoints/last.pt', map_location='cpu', weights_only=False)
 model.load_state_dict(state['model'])
 normal = validate(model, cfg)
 try:

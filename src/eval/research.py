@@ -1,27 +1,41 @@
 """Frozen real-document losses, category routes and memory ablation evidence."""
 from __future__ import annotations
 import collections,json,math
+import re
 from pathlib import Path
 import numpy as np
 import torch
 from src.training.data import PackedStream
 from src.training.engine import amp
+from src.eval.sampling import sample_documents
+from src.utils.hashing import sha256_file
 
 RESULTS=Path('results/research_v1')
 GROUPS={'Python':'Python','JavaScript':'JS/TS','TypeScript':'JS/TS','C':'C/C++','C++':'C/C++','Rust':'Rust','Java':'Java','Go':'Go',
         'C#':'C#','SQL':'SQL','Bash':'Bash','HTML/CSS':'HTML/CSS'}
 def freeze_evaluation(cfg):
     path=RESULTS/'evaluation_index.json'
-    if path.exists():return json.loads(path.read_text())
-    rows=[json.loads(line) for line in (Path(cfg['data']['shards'])/'val_documents.jsonl').open(encoding='utf-8')]
-    selection=collections.defaultdict(list)
-    for row in rows:
-        key='code/'+GROUPS.get(row['language'],'other') if row['kind']=='code' else row['kind']
-        if len(selection[key])<64 and row['length']>=129:selection[key].append(row)
+    version=cfg['data'].get('dataset_version')
+    if version and version.startswith('research_v2'):
+        if not re.fullmatch(r'[A-Za-z0-9_-]+',version): raise ValueError('Invalid dataset version')
+        path=Path('results/research_v2_real')/f'evaluation_index_{version}.json'
+    if path.exists():
+        existing=json.loads(path.read_text())
+        if version and version.startswith('research_v2'):
+            expected=(cfg['training']['context'],cfg['training']['microbatch'],sha256_file(cfg['data']['manifest']))
+            if (existing['context'],existing['microbatch'],existing['manifest_sha256'])!=expected:
+                raise ValueError('Frozen evaluation identity differs; use a new version')
+        return existing
+    with (Path(cfg['data']['shards'])/'val_documents.jsonl').open(encoding='utf-8') as handle:
+        selection=sample_documents((json.loads(line) for line in handle),64,cfg['training']['context'],42,
+                    lambda row:'code/'+GROUPS.get(row['language'],'other') if row['kind']=='code' else row['kind'],minimum_length=129)
     # Category reporting requires enough document and token evidence, not a tiny label.
     result=dict(documents=dict(selection),minimum_documents=16,minimum_predictions=8192,mixed_batches=128,
                 context=cfg['training']['context'],microbatch=cfg['training']['microbatch'],seed=42,
-                scope='First64 eligible fixed held-out documents/stratum, first min(context+1,length) tokens, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed.')
+                sampling_policy='hash_rank_documents_and_positions_v1',dataset_version=version,
+                manifest_sha256=sha256_file(cfg['data']['manifest']),
+                scope='Hash-seeded 64 eligible held-out documents/stratum with independently hashed window offsets, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed. Existing historical indices are preserved.')
+    path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(result,indent=2));return result
 def route_accumulate(model,category,storage):
     for layer,r in model.routes().items():
@@ -45,21 +59,23 @@ def finish_routes(storage):
 def evaluate(model,cfg,index=None,*,full=True,routes=False):
     model.eval();index=index or freeze_evaluation(cfg)
     stream=PackedStream(Path(cfg['data']['shards']),'val',cfg['training']['context'],42)
-    mixed=[];batches=index['mixed_batches'] if full else 16
+    weighted_loss=prediction_count=0;batches=index['mixed_batches'] if full else 16
     for _ in range(batches):
         x,y=stream.next(cfg['training']['microbatch'],'cuda')
-        with amp(cfg):mixed.append(float(model(x,y)['lm_loss']))
-    result={'val_loss':sum(mixed)/len(mixed),'mixed_predictions':batches*cfg['training']['microbatch']*cfg['training']['context']}
+        with amp(cfg):value=float(model(x,y,return_outputs=False,segment_ids=stream.last_segment_ids)['lm_loss'])
+        weighted_loss+=value*stream.last_prediction_count;prediction_count+=stream.last_prediction_count
+    result={'val_loss':weighted_loss/prediction_count,'mixed_predictions':prediction_count}
     result['bits_per_token']=result['val_loss']/math.log(2)
     if not full:model.train();return result
     storage={};documents=[];category=collections.defaultdict(lambda:[0.,0,0]);language={};memory={}
     for key,rows in index['documents'].items():
         subtotal=predictions=0
         for row in rows:
-            length=min(cfg['training']['context']+1,row['length']);data=torch.tensor(np.array(stream.tokens[row['start']:row['start']+length],dtype=np.int64),device='cuda')[None]
-            with amp(cfg):out=model(data[:,:-1],data[:,1:])
+            offset=row.get('evaluation_offset',0);start=row['start']+offset
+            length=min(cfg['training']['context']+1,row['length']-offset);data=torch.tensor(np.array(stream.tokens[start:start+length],dtype=np.int64),device='cuda')[None]
+            with amp(cfg):out=model(data[:,:-1],data[:,1:],return_outputs=False)
             n=length-1;loss=float(out['lm_loss']);subtotal+=loss*n;predictions+=n
-            documents.append(dict(sha256=row['sha256'],source_content_sha256=row['source_content_sha256'],stratum=key,language=row['language'],predictions=n,nll=loss))
+            documents.append(dict(sha256=row['sha256'],source_content_sha256=row.get('source_content_sha256',row.get('raw_sha256',row['sha256'])),stratum=key,language=row['language'],predictions=n,nll=loss))
             kind='code' if key.startswith('code/') else key;category[kind][0]+=loss*n;category[kind][1]+=n;category[kind][2]+=1
             if routes:route_accumulate(model,key,storage)
             if model.memory is not None and not model.memory.ablate:
