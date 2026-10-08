@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "passed": false,
+  "attempt": "r1",
+  "failed_variant": "sparse75_ngram10m",
+  "reason": "CUDA floating-point histc diagnostic rejects strict deterministic algorithms; no training-state failure.",
+  "partial_report_sha256": "a51917904a081869cfafdd63b79a8e5f8b16a9d695f9d219ce27372fdcd2b015",
+  "completed_variants": [
+    "dense75_ref",
+    "sparse75"
+  ],
+  "executed_preflight_script_sha256": "bc8960f462e4cf21942e3ad94bea2ea73a27df34fce4f7b217a7cc4007d861cb",
+  "artifacts": "Preserved original initial, engine_smoke, smoke_resume and partial report; a distinct r2 attempt will run all four variants."
+}

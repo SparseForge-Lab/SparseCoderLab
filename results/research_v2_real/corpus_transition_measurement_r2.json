@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "dataset_version": "research_v2_repository_transition_2026_10_08_r2",
+  "config_sha256": "f501c3f8b88bae2154ccd166c988cf506ab6301eaf5fca0a1d2aec7408bab467",
+  "finalization_sha256": "d20bbe2a26f76aa7ef7eb2f2b59075e4ca7b12d7e3daf1bd6d72207c1b0bce9a",
+  "overlap_sha256": "ded55f2743852e662df26a891afc82d57471c935a883bad841240b260ea80380",
+  "manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6",
+  "documents_sha256": "cd6f31bbbfb772bc6499dab0e3b7317e1b9b1d40f527e6d6a70525516787683b",
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "language_code_coverage": {
+    "train": {
+      "Python": {
+        "documents": 3844,
+        "tokens": 11770230
+      },
+      "JavaScript": {
+        "documents": 3829,
+        "tokens": 5197969
+      },
+      "TypeScript": {
+        "documents": 2001,
+        "tokens": 2164670
+      },
+      "C": {
+        "documents": 684,
+        "tokens": 2063554
+      },
+      "C++": {
+        "documents": 5108,
+        "tokens": 14325164
+      },
+      "Rust": {
+        "documents": 29805,
+        "tokens": 23807994
+      },
+      "Java": {
+        "documents": 13652,
+        "tokens": 25374135
+      },
+      "Go": {
+        "documents": 14108,
+        "tokens": 38029106
+      },
+      "C#": {
+        "documents": 14119,
+        "tokens": 44676208
+      },
+      "SQL": {
+        "documents": 7220,
+        "tokens": 4616525
+      },
+      "Bash": {
+        "documents": 457,
+        "tokens": 769221
+      },
+      "HTML/CSS": {
+        "documents": 1182,
+        "tokens": 952770
+      }
+    },
+    "val": {
+      "Python": {
+        "documents": 1217,
+        "tokens": 2653646
+      },
+      "JavaScript": {
+        "documents": 149,
+        "tokens": 741921
+      },
+      "TypeScript": {
+        "documents": 532,
+        "tokens": 1471531
+      },
+      "C": {
+        "documents": 123,
+        "tokens": 98513
+      },
+      "C++": {
+        "documents": 84,
+        "tokens": 178341
+      },
+      "Rust": {
+        "documents": 107,
+        "tokens": 180572
+      },
+      "Java": {
+        "documents": 589,
+        "tokens": 2084677
+      },
+      "Go": {
+        "documents": 98,
+        "tokens": 243172
+      },
+      "C#": {
+        "documents": 10087,
+        "tokens": 13344870
+      },
+      "SQL": {
+        "documents": 29,
+        "tokens": 347586
+      },
+      "Bash": {
+        "documents": 237,
+        "tokens": 188348
+      },
+      "HTML/CSS": {
+        "documents": 191,
+        "tokens": 394093
+      }
+    }
+  },
+  "held_out": {
+    "code/Bash": {
+      "documents": 64,
+      "predictions": 39816,
+      "sufficient": true
+    },
+    "code/C": {
+      "documents": 64,
+      "predictions": 37479,
+      "sufficient": true
+    },
+    "code/C#": {
+      "documents": 64,
+      "predictions": 36013,
+      "sufficient": true
+    },
+    "code/C++": {
+      "documents": 64,
+      "predictions": 51225,
+      "sufficient": true
+    },
+    "code/CMake": {
+      "documents": 2,
+      "predictions": 2048,
+      "sufficient": false
+    },
+    "code/Go": {
+      "documents": 64,
+      "predictions": 45200,
+      "sufficient": true
+    },
+    "code/HTML/CSS": {
+      "documents": 64,
+      "predictions": 37474,
+      "sufficient": true
+    },
+    "code/JSON/YAML": {
+      "documents": 56,
+      "predictions": 21488,
+      "sufficient": true
+    },
+    "code/Java": {
+      "documents": 64,
+      "predictions": 50243,
+      "sufficient": true
+    },
+    "code/JavaScript": {
+      "documents": 64,
+      "predictions": 34737,
+      "sufficient": true
+    },
+    "code/ProtocolBuffers": {
+      "documents": 18,
+      "predictions": 9011,
+      "sufficient": true
+    },
+    "code/Python": {
+      "documents": 64,
+      "predictions": 43107,
+      "sufficient": true
+    },
+    "code/Rust": {
+      "documents": 64,
+      "predictions": 48193,
+      "sufficient": true
+    },
+    "code/SQL": {
+      "documents": 28,
+      "predictions": 24364,
+      "sufficient": true
+    },
+    "code/TypeScript": {
+      "documents": 64,
+      "predictions": 47566,
+      "sufficient": true
+    },
+    "code/XML": {
+      "documents": 64,
+      "predictions": 36693,
+      "sufficient": true
+    },
+    "context": {
+      "documents": 64,
+      "predictions": 27525,
+      "sufficient": true
+    },
+    "general": {
+      "documents": 24,
+      "predictions": 23144,
+      "sufficient": true
+    },
+    "technical": {
+      "documents": 64,
+      "predictions": 55366,
+      "sufficient": true
+    }
+  },
+  "required_held_out_strata": [
+    "code/Python",
+    "code/JavaScript",
+    "code/TypeScript",
+    "code/C",
+    "code/C++",
+    "code/Rust",
+    "code/Java",
+    "code/Go",
+    "code/C#",
+    "code/SQL",
+    "code/Bash",
+    "code/HTML/CSS",
+    "general",
+    "technical"
+  ],
+  "repository_families_by_split": {
+    "train": [
+      "OpenLogicProject/OpenLogic",
+      "angular/angular",
+      "apache/lucene",
+      "avigad/mathematics_in_lean_source",
+      "colinhacks/zod",
+      "django/django",
+      "dotnet/roslyn",
+      "duckdb/duckdb",
+      "expressjs/express",
+      "fmtlib/fmt",
+      "golang/go",
+      "google/gson",
+      "kubernetes/kubernetes",
+      "libuv/libuv",
+      "microsoft/TypeScript",
+      "ohmyzsh/ohmyzsh",
+      "protocolbuffers/protobuf",
+      "psf/requests",
+      "react/react",
+      "rust-lang/rust",
+      "scikit-learn/scikit-learn",
+      "serde-rs/serde",
+      "spf13/cobra",
+      "spring-projects/spring-framework",
+      "sqlfluff/sqlfluff",
+      "twbs/bootstrap"
+    ],
+    "val": [
+      "DapperLib/Dapper",
+      "apache/commons-lang",
+      "bats-core/bats-core",
+      "benhoyt/inih",
+      "dotnet/aspnetcore",
+      "fastapi/fastapi",
+      "gin-gonic/gin",
+      "google/googletest",
+      "jqlang/jq",
+      "leanprover/logic_and_proof_lean3",
+      "libexpat/libexpat",
+      "lodash/lodash",
+      "necolas/normalize.css",
+      "pallets/flask",
+      "tailwindlabs/tailwindcss",
+      "tobymao/sqlglot",
+      "tokio-rs/tokio",
+      "vuejs/core"
+    ]
+  },
+  "repository_family_overlap": [],
+  "stream_resume": {
+    "train": [
+      {
+        "start_cursor": 0,
+        "saved_cursor": 4,
+        "next_batch_exact": true
+      },
+      {
+        "start_cursor": 196431,
+        "saved_cursor": 196435,
+        "next_batch_exact": true
+      },
+      {
+        "start_cursor": 196439,
+        "saved_cursor": 196443,
+        "next_batch_exact": true
+      }
+    ],
+    "val": [
+      {
+        "start_cursor": 0,
+        "saved_cursor": 4,
+        "next_batch_exact": true
+      },
+      {
+        "start_cursor": 30050,
+        "saved_cursor": 30054,
+        "next_batch_exact": true
+      },
+      {
+        "start_cursor": 30058,
+        "saved_cursor": 30062,
+        "next_batch_exact": true
+      }
+    ]
+  },
+  "tokens": {
+    "train": 201149172,
+    "val": 30774317
+  },
+  "measured_training_mixture": {
+    "train/general": {
+      "tokens": 1337819,
+      "fraction": 0.006650879974788065
+    },
+    "train/technical": {
+      "tokens": 18799389,
+      "fraction": 0.09345993728475303
+    },
+    "train/code": {
+      "tokens": 174950333,
+      "fraction": 0.8697541792516054
+    },
+    "train/context": {
+      "tokens": 6061631,
+      "fraction": 0.030135003488853535
+    }
+  },
+  "sampling_recipe": "Natural retained token proportions; one shuffled packed-stream order; no oversampling or synthetic mixture weights.",
+  "proposed_phase_tokens": 149995520,
+  "proposed_phase_epoch_fraction": 0.7456929526908518,
+  "proposed_phase_full_epoch_repeats": 0,
+  "frozen_evaluation_index_sha256": "841568bb647907508b9e2bed8e09de90ef65c13c56103818cf9ee79a6d62bbf1",
+  "evaluation_scope": "Hash-seeded 64 eligible held-out documents/stratum with independently hashed window offsets, causal token-weighted NLL. Mixed uses128 fixed packed batches separately; category means cannot reconstruct mixed. Existing historical indices are preserved.",
+  "script_sha256": "133c2c8c707e80285cc25bde43ae8891cf84251d65523d953c4647cd8a1b4600",
+  "limitations": [
+    "General reasoning is a narrow logic/mathematics subset, not broad knowledge coverage.",
+    "Repository-family splits and bounded lexical screens cannot rule out all shared upstream ancestry or semantic contamination.",
+    "Mixture counts include repository headers, FIM markers and BOS/EOS/doc tokens.",
+    "One hashed document window per sampled document does not measure all repository tasks."
+  ]
+}

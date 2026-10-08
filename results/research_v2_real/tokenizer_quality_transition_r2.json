@@ -1,0 +1,80 @@
+{
+  "Python": {
+    "characters": 60,
+    "tokens": 19,
+    "tokens_per_character": 0.31666666666666665,
+    "tokens_per_line": 9.5
+  },
+  "C": {
+    "characters": 67,
+    "tokens": 25,
+    "tokens_per_character": 0.373134328358209,
+    "tokens_per_line": 12.5
+  },
+  "C++": {
+    "characters": 52,
+    "tokens": 21,
+    "tokens_per_character": 0.40384615384615385,
+    "tokens_per_line": 10.5
+  },
+  "Rust": {
+    "characters": 78,
+    "tokens": 30,
+    "tokens_per_character": 0.38461538461538464,
+    "tokens_per_line": 30.0
+  },
+  "Java": {
+    "characters": 84,
+    "tokens": 24,
+    "tokens_per_character": 0.2857142857142857,
+    "tokens_per_line": 24.0
+  },
+  "Go": {
+    "characters": 63,
+    "tokens": 20,
+    "tokens_per_character": 0.31746031746031744,
+    "tokens_per_line": 6.666666666666667
+  },
+  "JavaScript": {
+    "characters": 51,
+    "tokens": 23,
+    "tokens_per_character": 0.45098039215686275,
+    "tokens_per_line": 23.0
+  },
+  "TypeScript": {
+    "characters": 59,
+    "tokens": 16,
+    "tokens_per_character": 0.2711864406779661,
+    "tokens_per_line": 16.0
+  },
+  "HTML/CSS": {
+    "characters": 85,
+    "tokens": 31,
+    "tokens_per_character": 0.36470588235294116,
+    "tokens_per_line": 31.0
+  },
+  "SQL": {
+    "characters": 68,
+    "tokens": 16,
+    "tokens_per_character": 0.23529411764705882,
+    "tokens_per_line": 16.0
+  },
+  "Bash": {
+    "characters": 61,
+    "tokens": 23,
+    "tokens_per_character": 0.3770491803278688,
+    "tokens_per_line": 11.5
+  },
+  "JSON/YAML": {
+    "characters": 58,
+    "tokens": 23,
+    "tokens_per_character": 0.39655172413793105,
+    "tokens_per_line": 7.666666666666667
+  },
+  "English": {
+    "characters": 88,
+    "tokens": 17,
+    "tokens_per_character": 0.19318181818181818,
+    "tokens_per_line": 17.0
+  }
+}

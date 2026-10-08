@@ -21,7 +21,14 @@ def quality_reason(body):
     return None
 
 
-def finalize(cfg,documents,upstream_report,overlap_report,report):
+def apply_reviewed_metadata(row,sources):
+    source=sources[row['repository']]
+    if row['revision']!=source['revision'] or row['source_license_sha256']!=source['root_license_sha256']:
+        raise ValueError('Final source pin/license metadata differs from the reviewed source plan')
+    if row['file_path'].endswith('.h'):row['language']=source['header_language']
+
+
+def finalize(cfg,documents,upstream_report,overlap_report,report,source_plan=None):
     output=Path('data/research_v2_real/documents')/(cfg['data']['dataset_version']+'.jsonl')
     if any(p.exists() for p in (output,report,Path(cfg['data']['manifest']))):
         raise FileExistsError('Never overwrite a corpus; choose new versions')
@@ -33,10 +40,15 @@ def finalize(cfg,documents,upstream_report,overlap_report,report):
     # elementary-code match proves leakage; all removed identities are recorded.
     exclusions={(r['repository'],r['revision'],r['file_path'],r['raw_sha256']) for r in overlap['hits']}
     rejected=[];counts=Counter();fim=Counter()
+    sources={row['id']:row for row in json.loads(source_plan.read_text(encoding='utf8'))['sources']} if source_plan else None
+    metadata_corrections=Counter()
     output.parent.mkdir(parents=True,exist_ok=True)
     with documents.open(encoding='utf8') as source,output.open('x',encoding='utf8',newline='\n') as handle:
         for line in source:
             row=json.loads(line)
+            before_language=row['language']
+            if sources:apply_reviewed_metadata(row,sources)
+            if row['language']!=before_language:metadata_corrections['header_language']+=1
             key=tuple(row[k] for k in ('repository','revision','file_path','raw_sha256'))
             _,body=split_header(dict(row,text=restore(row)))
             reason='benchmark_exact_lexical_overlap_held' if key in exclusions else quality_reason(body)
@@ -45,7 +57,7 @@ def finalize(cfg,documents,upstream_report,overlap_report,report):
                 rejected.append({k:row[k] for k in ('repository','revision','file_path','raw_sha256')}|dict(reason=reason))
                 continue
             fim['documents']+=1;fim['eligible']+=int(row['fim']['eligible']);fim['applied']+=int(row['fim']['applied'])
-            handle.write(line)
+            handle.write(json.dumps(row,ensure_ascii=False)+'\n')
     manifest=prepare(cfg,output);verify_shards(cfg)
     stats=defaultdict(Counter)
     for split in ('train','val'):
@@ -54,7 +66,8 @@ def finalize(cfg,documents,upstream_report,overlap_report,report):
                 row=json.loads(line);stats[row['repository']]['documents']+=1;stats[row['repository']]['tokens']+=row['length']
     receipt=dict(schema_version=1,preprocessing_passed=True,dataset_version=cfg['data']['dataset_version'],
         upstream_dataset_version=upstream['dataset_version'],upstream_pipeline_sha256=sha256_file(upstream_report),
-        upstream_documents_sha256=sha256_file(documents),source_plan_sha256=upstream['source_plan_sha256'],
+        upstream_documents_sha256=sha256_file(documents),source_plan_sha256=sha256_file(source_plan) if source_plan else upstream['source_plan_sha256'],
+        metadata_corrections=dict(metadata_corrections),
         global_deduplication=upstream['dedup'],quality_policy='minimum64 nonwhitespace characters; max80percent repeated nonempty lines when32+lines; minimum2percent alphanumeric when1024+characters',
         exclusions=rejected,exclusion_counts=dict(counts),benchmark_screen_sha256=sha256_file(overlap_report),
         benchmark_policy='Hold complete files with exact screened benchmark sequences, including legitimate common-code coincidences; no semantic/history guarantee',
@@ -69,5 +82,6 @@ def finalize(cfg,documents,upstream_report,overlap_report,report):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--config',required=True)
+    parser.add_argument('--source-plan',type=Path)
     for name in ('documents','upstream-report','overlap-report','report'):parser.add_argument('--'+name,type=Path,required=True)
-    args=parser.parse_args();finalize(load_config(args.config),args.documents,args.upstream_report,args.overlap_report,args.report)
+    args=parser.parse_args();finalize(load_config(args.config),args.documents,args.upstream_report,args.overlap_report,args.report,args.source_plan)

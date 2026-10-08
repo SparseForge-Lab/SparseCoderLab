@@ -81,7 +81,10 @@ def evaluate(model,cfg,index=None,*,full=True,routes=False):
             if model.memory is not None and not model.memory.ablate:
                 gate=model.memory.last_gate.float();entry=memory.setdefault(key,{'gate_sum':0.,'tokens':0,'gate_min':1.,'gate_max':0.,'gate_histogram10bins':[0]*10,'sample_bucket_statistics':None})
                 entry['gate_sum']+=float(gate.sum());entry['tokens']+=gate.numel();entry['gate_min']=min(entry['gate_min'],float(gate.min()));entry['gate_max']=max(entry['gate_max'],float(gate.max()))
-                entry['gate_histogram10bins']=[a+int(b) for a,b in zip(entry['gate_histogram10bins'],torch.histc(gate,bins=10,min=0,max=1).cpu().tolist())]
+                # CUDA float histc rejects strict determinism. This diagnostic
+                # needs only integer counts; use the deterministic CPU kernel.
+                histogram=torch.histc(gate.cpu(),bins=10,min=0,max=1).tolist()
+                entry['gate_histogram10bins']=[a+int(b) for a,b in zip(entry['gate_histogram10bins'],histogram)]
                 if entry['sample_bucket_statistics'] is None:entry['sample_bucket_statistics']=model.memory.statistics(data[:,:-1])
         language[key]=dict(nll=subtotal/predictions if predictions else None,predictions=predictions,documents=len(rows),
                            sufficient=len(rows)>=index['minimum_documents'] and predictions>=index['minimum_predictions'])

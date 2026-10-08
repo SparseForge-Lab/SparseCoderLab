@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 from collections import deque
+from contextlib import ExitStack
 from pathlib import Path
 from tools.repository_fim import restore, split_header
 from src.utils.hashing import sha256_file
@@ -65,8 +66,11 @@ def screen(documents, registry_path, output):
     registry = json.loads(registry_path.read_text(encoding='utf8'))
     entries, profiles = patterns(registry); matcher = TokenMatcher(entries)
     count = 0; hits = []; digest = hashlib.sha256()
-    with documents.open('rb') as handle:
-        for line in handle:
+    files=sorted(p for p in documents.glob('*.jsonl') if not p.name.endswith('.quarantine.jsonl')) if documents.is_dir() else [documents]
+    if not files:raise ValueError('No source exports to screen')
+    with ExitStack() as stack:
+        handles=[stack.enter_context(path.open('rb')) for path in files]
+        for line in (line for handle in handles for line in handle):
             digest.update(line)
             if not line.strip(): continue
             record = json.loads(line); count += 1
@@ -76,6 +80,8 @@ def screen(documents, registry_path, output):
                 dict(matches=[dict(task_id=task, kind=kind) for task,kind in matches]))
             if count % 1000 == 0: print(json.dumps(dict(stage='contamination', scanned=count, matching_documents=len(hits))), flush=True)
     receipt = dict(schema_version=1, status='REVIEW_REQUIRED' if hits else 'NO_MATCH_WITH_LIMITS',
+        input_scope='concatenated_original_exports' if documents.is_dir() else 'versioned_documents',
+        input_files=[path.name for path in files],
         registry_sha256=sha256_file(registry_path), sources=registry['sources'],
         documents_sha256=digest.hexdigest(), scanner_sha256=sha256_file(Path(__file__)), records_scanned=count,
         matching_documents=len(hits), hits=hits, reference_profiles=profiles,

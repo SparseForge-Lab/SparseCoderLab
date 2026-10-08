@@ -187,10 +187,11 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
         save_checkpoint()
         val = validate(model, cfg) if time.perf_counter() - start < wall_limit - reserve / 2 else {'val_loss': None}
         from tools.count_params import count_model
-        count = count_model(model); step_tok_s = meta['tokens_seen'] / max(meta['training_seconds'], 1e-9)
+        count = count_model(model); measured_tokens=meta.get('new_phase_tokens',meta['tokens_seen'])
+        step_tok_s = measured_tokens / max(meta['training_seconds'], 1e-9)
         meta['wall_time_at_checkpoint']=meta['wall_time']
         meta['wall_time']=base_wall+time.perf_counter()-start
-        tok_s=meta['tokens_seen']/max(meta['wall_time'],1e-9)
+        tok_s=measured_tokens/max(meta['wall_time'],1e-9)
         flop_equivalent=count['active_estimate']
         if model.mtp is not None:
             flop_equivalent=count['base_active_without_mtp']+cfg['mtp']['horizons']*(count['mtp']+model.embedding.weight.numel())
@@ -200,13 +201,17 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
             training_flops_caveat='6N reference estimate includes routed active FFNs, repeated MTP block and additional MTP output heads; ignores attention T^2, shortened horizons, lookup arithmetic and dispatch. Not measured FLOPs.',
             vram_peak=torch.cuda.max_memory_allocated(), vram_peak_reserved=torch.cuda.max_memory_reserved(), checkpoint=str(checkpoint), resumed=resume is not None,
             throughput_scope='tok_s includes loop/logging/final checkpoint/validation after model initialization; train_step_tok_s excludes non-step overhead.',
-            comparison_basis='Same frozen tokenizer/data order, optimizer, seed, context. Synthetic engineering smoke, not model ranking.')
+            throughput_token_scope='New phase tokens only' if 'inherited_tokens' in meta else 'Lifetime tokens',
+            comparison_basis='Same frozen tokenizer/data order, optimizer, seed, context; throughput evidence does not establish model quality.')
+        if 'inherited_tokens' in meta:
+            result['new_phase_training_flops_est']=6*flop_equivalent*meta['new_phase_tokens']
         (run_dir / 'summary.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
-        leaderboard = Path('results/leaderboard.csv'); exists = leaderboard.exists()
-        with leaderboard.open('a', newline='', encoding='utf-8') as f:
-            writer = csv.DictWriter(f, fieldnames=LEADERBOARD); 
-            if not exists: writer.writeheader()
-            row = {k: result.get(k, '') for k in LEADERBOARD}; row['tokens'] = result['tokens_seen']; writer.writerow(row)
+        if t.get('publish_leaderboard',True):
+            leaderboard = Path('results/leaderboard.csv'); exists = leaderboard.exists()
+            with leaderboard.open('a', newline='', encoding='utf-8') as f:
+                writer = csv.DictWriter(f, fieldnames=LEADERBOARD);
+                if not exists: writer.writeheader()
+                row = {k: result.get(k, '') for k in LEADERBOARD}; row['tokens'] = result['tokens_seen']; writer.writerow(row)
         return result
     finally:
         log_file.close(); signal.signal(signal.SIGINT, previous_handler)

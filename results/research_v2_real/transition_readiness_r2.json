@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "preparation_passed": true,
+  "campaign_started": false,
+  "measured_utc": "2026-10-08T17:48:58.290735+00:00",
+  "dataset_version": "research_v2_repository_transition_2026_10_08_r2",
+  "source_plan_sha256": "c137d89d8168422d705106c12ebcf15e5fbb9687fe649a78929ed3686e761f32",
+  "immutable_canonical_integrity": {
+    "dense75_ref": {
+      "model_weights": true,
+      "full_resume_state": true
+    },
+    "sparse75": {
+      "model_weights": true,
+      "full_resume_state": true
+    },
+    "sparse75_ngram10m": {
+      "model_weights": true,
+      "full_resume_state": true
+    },
+    "sparse75_ngram25m": {
+      "model_weights": true,
+      "full_resume_state": true
+    }
+  },
+  "tests": {
+    "tests": 118,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 32.436,
+    "command": "python -m pytest -q --junitxml=.local/github_preparation/transition_final_r2_tests.xml"
+  },
+  "tokens": {
+    "train": 201149172,
+    "val": 30774317
+  },
+  "measured_training_mixture": {
+    "train/general": {
+      "tokens": 1337819,
+      "fraction": 0.006650879974788065
+    },
+    "train/technical": {
+      "tokens": 18799389,
+      "fraction": 0.09345993728475303
+    },
+    "train/code": {
+      "tokens": 174950333,
+      "fraction": 0.8697541792516054
+    },
+    "train/context": {
+      "tokens": 6061631,
+      "fraction": 0.030135003488853535
+    }
+  },
+  "fim": {
+    "train": {
+      "documents": 107503,
+      "applied_documents": 37250,
+      "tokens": 201149172,
+      "applied_document_tokens": 69873867
+    },
+    "val": {
+      "documents": 17711,
+      "applied_documents": 5286,
+      "tokens": 30774317,
+      "applied_document_tokens": 9160632
+    }
+  },
+  "phase_policy": {
+    "inherited_tokens": 100007936,
+    "new_tokens": 149995520,
+    "total_tokens": 250003456,
+    "updates": 18310,
+    "effective_batch_tokens": 8192,
+    "warmup_updates": 500,
+    "peak_lr": 0.0003,
+    "min_lr_ratio": 0.1,
+    "retained": "Weights, Adam moments/steps, Python/NumPy/Torch/CUDA RNG",
+    "reset": "New-corpus cursor0 and phase-relative LR schedule",
+    "new_phase_epoch_fraction": 0.7456929526908518,
+    "full_epoch_repeats": 0
+  },
+  "cpu_coverage_and_resume_passed": true,
+  "cuda_exact_resume_and_finite_state_passed": true,
+  "contamination_matching_documents": 0,
+  "functional_greedy": {
+    "dense75_ref": {
+      "variant": "dense75_ref",
+      "temperature": 0.0,
+      "tasks": 25,
+      "correct": 2,
+      "functional_rate": 0.08,
+      "parseable_rate": 0.28,
+      "repetition_rate": 1.0,
+      "correct_without_repetition": 0,
+      "outcomes": {
+        "correct": 2,
+        "syntax_error": 18,
+        "runtime_error": 5
+      }
+    },
+    "sparse75": {
+      "variant": "sparse75",
+      "temperature": 0.0,
+      "tasks": 25,
+      "correct": 0,
+      "functional_rate": 0.0,
+      "parseable_rate": 0.36,
+      "repetition_rate": 1.0,
+      "correct_without_repetition": 0,
+      "outcomes": {
+        "syntax_error": 16,
+        "runtime_error": 5,
+        "wrong": 4
+      }
+    },
+    "sparse75_ngram10m": {
+      "variant": "sparse75_ngram10m",
+      "temperature": 0.0,
+      "tasks": 25,
+      "correct": 0,
+      "functional_rate": 0.0,
+      "parseable_rate": 0.52,
+      "repetition_rate": 0.96,
+      "correct_without_repetition": 0,
+      "outcomes": {
+        "wrong": 4,
+        "syntax_error": 12,
+        "runtime_error": 9
+      }
+    },
+    "sparse75_ngram25m": {
+      "variant": "sparse75_ngram25m",
+      "temperature": 0.0,
+      "tasks": 25,
+      "correct": 0,
+      "functional_rate": 0.0,
+      "parseable_rate": 0.32,
+      "repetition_rate": 1.0,
+      "correct_without_repetition": 0,
+      "outcomes": {
+        "syntax_error": 17,
+        "runtime_error": 5,
+        "wrong": 3
+      }
+    }
+  },
+  "artifact_sha256": {
+    "corpus_transition_pipeline_r1.json": "04cd0e6f3166deb991ee230c8fef59b9ac24fdf84f3b7ea78493e962ffd1f685",
+    "corpus_transition_provenance_r1.json": "64e81735516480c35fd775fd682001fd4554ec68ac0b434a9bda511900dbfaad",
+    "corpus_transition_finalization_r2.json": "d20bbe2a26f76aa7ef7eb2f2b59075e4ca7b12d7e3daf1bd6d72207c1b0bce9a",
+    "corpus_transition_manifest_r2.json": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6",
+    "corpus_transition_measurement_r2.json": "1252139f657a960b7f63841aeab697bd5be9f727bb435d85f9f7f906068184d0",
+    "benchmark_overlap_original_exports_r1.json": "cff8ce2339c41f963fed7538dda085d8cac5892ac9cab0f4965b083302243f6c",
+    "benchmark_overlap_transition_r1.json": "2a0d228496575b3301406acc9d3b8a3d9228d951495a8eb244726841c942cebb",
+    "benchmark_overlap_transition_r2.json": "ded55f2743852e662df26a891afc82d57471c935a883bad841240b260ea80380",
+    "transition_initial_states_r1.json": "3a22e49a50774268360e556a625a1a95a717bab9d52c58ee2dac44e747b0edf6",
+    "transition_cuda_preflight_failure_r1.json": "67bd068303f8caaec4bf707de198b492339d5cc6f38280a685fef5ad81ba6b81",
+    "transition_cuda_preflight_r2.json": "f70555f711e938149313567f3d4fda5e1573beac41d09c2e7a1baee5a7891817",
+    "functional_canonical_gpu_r1.json": "cd7de121dbdb335d6b5e5ba01791eba87a37a398f7e1f70bf962fcef50452240",
+    "transition_storage_r2.json": "d556831ee7a6346cbd540d8f2c6024c3818e619f4aaf5f33a2f1a3739b85ae68"
+  },
+  "operative_source_sha256": {
+    "src/__init__.py": "2104c265f2f6b6c5ca56013dae549b972b531912819ef2ead1f3b9076566d3f6",
+    "src/config.py": "82a2189209fa338b66c2d35b3f77c2bb9a40eed71babf6cb8ff7e1ffe6510a12",
+    "src/context/__init__.py": "4c1f70978c25d88ecdb1a8cfb0ac50ebde0109c48648ce278853fc452bc9edc5",
+    "src/context/archive.py": "ffbf06992c603920b04558cb6be973a1349cdcc02835a40fd06551394164ba66",
+    "src/context/tasks.py": "e659bc4f9de500b317dde8aa512c577f19fb0d751dedaf4cd15934b1e0a34a4f",
+    "src/eval/__init__.py": "4d0c88308294ef506d578f46c83461b2b1e8f2e387a6da90b1abf03182a61253",
+    "src/eval/micro_code.py": "9efcf416b71169aee83130263ec78cb6e91149e5704b784fc39dbb23746371a7",
+    "src/eval/research.py": "3593b25805d2c372922e7fe064af610c9e975dc81a7748a4bb2a2eb5017c8e3a",
+    "src/eval/sampling.py": "67bc49dfbc9cbd735fe141b5972330ca2df852fb87eb83c010e95e3f72c8e713",
+    "src/eval/speculation.py": "da118ab55450232f4315e59970331e36c4995024ea94b4cc571550ab91bfb40a",
+    "src/eval/wasi_python.py": "23ae5f251b63b6107b45c0de2f40720515fe522793cbd27658efbf9816326f39",
+    "src/memory/__init__.py": "9c7ed267e294520b05454db620c4599200f17c7a7ec6141acb2bd6d9503a8f2e",
+    "src/memory/ngram.py": "0c3ffca65130367d6d258c6f4866160de6653b4231120723dcf8290b1bd88bc7",
+    "src/model/__init__.py": "37062518670d4dbfbabd32ecf54eebfa3030b169aadc53ee8045bb4a0e771866",
+    "src/model/layers.py": "243e12289268d986749206c1d991f488ad42125f9d1ea7bd00d01e58f587c74f",
+    "src/model/loss.py": "be1645822126a4221357fee80ac1e5ec16e3cae06422d5f655ac8d8817b1d391",
+    "src/model/transformer.py": "59b64dbba5a5fc50ed49ba9510320c255b2ccf035ef602cfed5e7e22275c7b7a",
+    "src/moe/__init__.py": "1910180ef2abf14a2566e0f51e736234d3edcce29133a7aa02552237ea241bc0",
+    "src/moe/atlas.py": "de818c23d94966e0294552f8a1d8aa909da1ea2a31ab8e40cc27d9ce5209aa57",
+    "src/moe/grouped.py": "af3a493507642600b52559b07a0aedeae46db9619f0125972a00e10d134da197",
+    "src/moe/router.py": "dbd89d294be10b01205e9244c2e435b273f945aaeba9e10457eb950fe2e3badc",
+    "src/moe/trace.py": "703f25cf4011e22db082cb898272e66fbe017609c84f253bc4fab51a6b25fea4",
+    "src/mtp/__init__.py": "d7abc14b10765b6bf389b74be854801da8027fddfac9d1779ef6c4468631abb2",
+    "src/mtp/draft.py": "1704db5ffb26a73fecf5506d5143fd10f3b6d92307c3be4653c74296374b2c33",
+    "src/runtime/__init__.py": "20b6f76994968977f1c33b062850e19f8ae9b63a12d311f8ddefe124cd9a80b2",
+    "src/runtime/agent.py": "2938137f7538297f03758968f4e8f53dc28c5545c1869b7ec052d24c145182ac",
+    "src/runtime/cache.py": "fa6c2aa645038fcac9956c445689a798b75bf82543bd0843708a2a11572947e2",
+    "src/runtime/routeahead.py": "3d7c6bf45434746ee3b8fb680d17688a3bd09d5aab261af898b0d99cb49d6212",
+    "src/runtime/scaling.py": "950d2c8464fbd65d6980a618ac24406616102e01eadbd871416768246a370113",
+    "src/runtime/strata_adapter.py": "6285e633008e3ef24e50a70c2b48dbe134fa175b463befd44264eeaa7a2c9055",
+    "src/training/__init__.py": "5afd353fc4f872e5c9fb24d7a72397887fbc9056985031ceeb5a52d5f152eb9b",
+    "src/training/checkpoint.py": "1904e7611c66a85a161369ec5462904372254a925970a483ca0a7c649069ff0a",
+    "src/training/data.py": "7c44ac839c42593ca99476e239e673589fa3e65e4fa336c8d69897161ecd4d2a",
+    "src/training/engine.py": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+    "src/training/moe_optimizer.py": "3e299a72a67724f01df7aaa58d061ab9afe752e60e650887e9c844897b6a0344",
+    "src/training/research.py": "37b5d5770ba4c901e0cec074c80ef8c1b0b0f154a58063aa6bb021425bf69433",
+    "src/training/shards.py": "a5d582e84d034d5cf42ad0bc09b6eeaf91824278c355dd807d8e6f928b18b7c9",
+    "src/utils/__init__.py": "b0391a136acc799d0e1d3b140df6f46280226b081cf1e0da5444302f11f90c7c",
+    "src/utils/hashing.py": "6d31571e6565bb605dcac19a648bfac09696b7b143d6d83745a1ee8061c6c09a",
+    "verify_install.py": "1ceb6a8ea13a1f680ea3d9f5a30d0bd191cd89b61c56f7c59982f7b96751744f",
+    "tools/prepare_repository_corpus.py": "2dcf166544cde06c76ee4545eb7cb37f1378671abc8d750316a0d646b8a00c13",
+    "tools/finalize_repository_corpus.py": "5c0fa50bfd770d549477df5b923dfe058dd1e3c521548b06569adf5e7fcc023e",
+    "tools/prepare_data.py": "75d4f3beacbe8c0c24ded727be08ba62bae304a71a5976dcecd83ef1c5767f7e",
+    "tools/token_budget.py": "b866f4c0144fd472d8acc078480e6ef0713684c075b658df9d9218ddf8dd5191",
+    "tools/repository_dedup.py": "f4e138d03cb32e1dc75d03f6a14cde073b8a34fef0c0c1b046dad7174432e98c",
+    "tools/repository_fim.py": "69bb2be62417b360ef0c4b37483e102bd8485a1758bcb27cf42341c743a8c0c4",
+    "tools/import_local_repo.py": "527bf572790350d07efe9f8b994555cefce4675038dfc042c715f0acb67f30ea",
+    "tools/prepare_data_transition.py": "9efed70e29e137fc90741ad7cf3eb8502a9c039991316890b356e5ebdc95b110",
+    "tools/transition_cuda_preflight.py": "09b1d9bc604c49123cfa1f94d31f34804078f03c2ea6b29e337b17822bd86bfb",
+    "tools/generate_canonical_python.py": "f3008f42edff7c39d65adb07a15ccfa114127c168b05ccf4a6ceee1f8c318115",
+    "tools/screen_benchmark_overlap.py": "86580be1dcb7ecbc85f90f0ab5593eb2958df3ae8cee8aa73b635656d940f295",
+    "tools/score_saved_python.py": "349dded55b93dd96bf6fd655fdb036a7568113e27df7969d2ae705badaaf61cf",
+    "tools/measure_repository_corpus.py": "133c2c8c707e80285cc25bde43ae8891cf84251d65523d953c4647cd8a1b4600",
+    "tools/measure_transition_storage.py": "e066dc9d9c574cc781a23fdcdbbbd36125a6279c3f00a5ac724b17a6f17305d3",
+    "tools/shard_data.py": "0e513451d90973cd6b65cd90df7bfa8d9caaafde6002ec8565384e17e3883586"
+  },
+  "provenance_scope": "Local receipts and source/config/data/checkpoint identities, not external execution attestation. Engine source_hash also covers unrelated dirty tools; operative sources are recorded separately. The first failed CUDA attempt and r1 preprocessing provenance supplement are preserved.",
+  "remaining_scope": "A longer training campaign and subsequent capability conclusions are outside this completed preparation run.",
+  "limitations": [
+    "General reasoning is a narrow logic/mathematics subset, not broad knowledge coverage.",
+    "Repository-family splits and bounded lexical screens cannot rule out all shared upstream ancestry or semantic contamination.",
+    "Mixture counts include repository headers, FIM markers and BOS/EOS/doc tokens.",
+    "One hashed document window per sampled document does not measure all repository tasks.",
+    "Generation records carry canonical checkpoint hashes checked by the sampler before/after loading; this is local provenance evidence, not a cryptographic execution attestation.",
+    "Small finite test suite; not pass@k, instruction-following, repository engineering, or benchmark leadership.",
+    "Repetition is a heuristic and is reported independently of functional correctness.",
+    "Parseability is the host Python AST check; executed candidates use CPython 3.14.7 in WASI.",
+    "Guest linear-memory cap is not a bound on the host's total RSS. Compilation time is outside each guest execution deadline."
+  ]
+}

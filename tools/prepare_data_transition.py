@@ -23,7 +23,8 @@ def transition_config(canonical, data_config):
     cfg['model']['activation_checkpointing'] = True
     cfg['data'] = copy.deepcopy(data_config['data'])
     cfg['training'].update(warmup_steps=500, schedule_steps=PHASE_UPDATES,
-        target_tokens=INHERITED_TOKENS+PHASE_TOKENS, optimizer_decay_policy='matrix_except_ngram_v1')
+        target_tokens=INHERITED_TOKENS+PHASE_TOKENS, optimizer_decay_policy='matrix_except_ngram_v1',
+        publish_leaderboard=False)
     cfg['data']['project_gb'] = 100
     # Corpus cache has its own preprocessing budget; active training storage
     # includes frozen shards and tokenizer, rather than all historical downloads.
@@ -99,6 +100,15 @@ def main():
     if args.report.exists() or args.run_root.exists(): raise FileExistsError('Use new transition outputs')
     manifest=json.loads(Path('results/prompt3/transition_checkpoint_manifest.json').read_text(encoding='utf8'))
     data_cfg=load_config(args.data_config); rows={}
+    packed=json.loads((Path(data_cfg['data']['shards'])/'manifest.json').read_text(encoding='utf8'))
+    if packed['dataset_version']!=data_cfg['data']['dataset_version']:
+        raise ValueError('Frozen dataset version differs')
+    # Synthetic development mixture defaults do not drive an input corpus.
+    # Record its measured token recipe explicitly in the phase configurations.
+    train_tokens=packed['tokens']['train']
+    data_cfg['data']['mixture']={key.split('/',1)[1]:value/train_tokens
+        for key,value in packed['token_mixture'].items() if key.startswith('train/')}
+    data_cfg['data']['mixture_policy']='natural_frozen_tokens_v1; no oversampling'
     for tag,entry in manifest['canonical_transition_checkpoints'].items():
         if sha256_file(Path(entry['config']['path'])) != entry['config']['sha256']:
             raise ValueError('Canonical config bytes changed')

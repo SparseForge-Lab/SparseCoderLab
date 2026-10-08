@@ -56,13 +56,14 @@ def export_sources(plan, paths, directory):
                        '--extension-map', str(extension_map), '--output', str(output), '--max-mib', '1024']
             for prefix in source['excluded_prefixes']: command.extend(['--exclude-prefix', prefix])
             if source.get('conservative_license_review'): command.append('--conservative-license-review')
-            if source['primary_language'] == 'C++': command.extend(['--header-language', 'C++'])
+            command.extend(['--header-language', source.get('header_language','C++' if source['primary_language']=='C++' else 'C')])
             subprocess.run(command, check=True, capture_output=True)
         receipt = json.loads(output.with_suffix('.jsonl.manifest.json').read_text(encoding='utf8'))
         expected = dict(revision=source['revision'], license_assertion=source['license_assertion'],
                         license_file_sha256=source['root_license_sha256'],
                         reviewed_exclusion_prefixes=source['excluded_prefixes'], additional_extensions=additions,
                         conservative_license_review=source.get('conservative_license_review', False),
+                        header_language=source.get('header_language','C++' if source['primary_language']=='C++' else 'C'),
                         exporter_sha256=sha256_file(Path('tools/import_local_repo.py')))
         if any(receipt.get(k) != v for k, v in expected.items()):
             raise ValueError(f"Export identity/policy changed; choose a new export version: {source['id']}")

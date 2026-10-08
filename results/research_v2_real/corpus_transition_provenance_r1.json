@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "pipeline_report_sha256": "04cd0e6f3166deb991ee230c8fef59b9ac24fdf84f3b7ea78493e962ffd1f685",
+  "dataset_version": "research_v2_repository_transition_2026_10_08_r1",
+  "recorded_interpreter_source_revision": "ec9f0fa39bb966d1f78ae9e502bd5b9371f2924c",
+  "recorded_interpreter_script_sha256": "4ed59d256e4e615e267abff35b4044e34c2246964b2584c45edede945b189378",
+  "end_of_run_on_disk_script_sha256": "2dcf166544cde06c76ee4545eb7cb37f1378671abc8d750316a0d646b8a00c13",
+  "interpretation": "The original receipt hashes the on-disk script at completion. A future header-language/cache-policy edit was made while the existing interpreter processed FIM. Its loaded script is the recorded published snapshot above; the original receipt is preserved. Final r2 corrections execute in a fresh process.",
+  "attestation_scope": "Local execution notes and immutable Git snapshot verification; no process-memory or external execution attestation.",
+  "packing_script_sha256": "75d4f3beacbe8c0c24ded727be08ba62bae304a71a5976dcecd83ef1c5767f7e"
+}

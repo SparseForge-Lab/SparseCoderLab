@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "measured_utc": "2026-10-08T17:48:05.406944+00:00",
+  "scoped_existing_bytes": {
+    "data\\research_v2_real\\documents": 2169157370,
+    "data\\research_v2_real\\exports\\transition_r1": 1013662425,
+    "data\\research_v2_real\\cache\\transition_r1": 1058178359,
+    "data\\research_v2_real\\cache\\transition_r2": 1054435917,
+    "data\\research_v2_real\\shards\\transition_r1": 629504146,
+    "data\\research_v2_real\\shards\\transition_r2": 626138712,
+    "experiments\\repository_transition_preflight_r1": 15609095804
+  },
+  "active_training_data_bytes": 628429451,
+  "active_training_data_budget_bytes": 6442450944,
+  "project_volume_free_bytes": 42577014784,
+  "future_checkpoint_allowance_bytes": 10118576081,
+  "free_after_future_allowance_bytes": 32458438703,
+  "free_space_reserve_bytes": 21474836480,
+  "largest_atomic_checkpoint_bytes": 1215239507,
+  "four_canonical_full_state_bytes": 3815734876,
+  "four_canonical_model_only_bytes": 1271866822,
+  "active_data_budget_passed": true,
+  "checkpoint_retention_reserve_passed": true,
+  "checkpoint_retention_policy": "Keep canonical/history and initial/disposable evidence; reserve four rolling + four promoted full states, four model-only gate weights and one atomic temporary replacement. No automatic deletion.",
+  "scope": "Scoped artifact bytes and actual remaining volume space. This does not scan unrelated project files or claim a total-project inventory.",
+  "script_sha256": "e066dc9d9c574cc781a23fdcdbbbd36125a6279c3f00a5ac724b17a6f17305d3",
+  "passed": true
+}
