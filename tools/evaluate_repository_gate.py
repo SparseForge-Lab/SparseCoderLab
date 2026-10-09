@@ -26,6 +26,18 @@ MANIFEST=DIRECTORY/'matched_gate_checkpoints.json'
 BENCHMARK=Path('configs/eval/simple_python_v1.json')
 GENERATIONS=Path('data/research_v2_real/evaluation/repository_gate_250M_r1.jsonl')
 
+def validate_evaluation(result):
+    for key in ('val_loss','code_val_loss','technical_val_loss','general_val_loss'):
+        value=result.get(key)
+        if not isinstance(value,(int,float)) or not math.isfinite(value):
+            raise FloatingPointError('Missing or nonfinite final evaluation loss: '+key)
+    # Cover document losses, ablations and nested router/memory diagnostics too.
+    # Default JSON encoding would otherwise silently emit NaN or Infinity.
+    try:
+        json.dumps(result,allow_nan=False)
+    except ValueError as error:
+        raise FloatingPointError('Nonfinite nested final evaluation measurement') from error
+
 def manifest():
     entries={}
     for tag in TAGS:
@@ -113,6 +125,7 @@ def evaluate_gate(entries):
             result['residual_off_seconds']=time.perf_counter()-begin
             model.memory.ablate=False
         if sha256_file(checkpoint)!=entry['model_weights']['sha256']: raise ValueError('Checkpoint changed during evaluation')
+        validate_evaluation(result)
         write_json(output,result)
         print(json.dumps(dict(stage='evaluation_complete',variant=tag,mixed_nll=result['val_loss'],seconds=elapsed)),flush=True)
         del model;gc.collect();torch.cuda.empty_cache()

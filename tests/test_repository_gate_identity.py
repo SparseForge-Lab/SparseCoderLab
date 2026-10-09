@@ -1,7 +1,7 @@
 import copy,json
 from pathlib import Path
 import pytest
-from tools.evaluate_repository_gate import validate_generation
+from tools.evaluate_repository_gate import validate_generation,validate_evaluation
 
 def fixture_rows():
     benchmark=json.loads(Path('configs/eval/simple_python_v1.json').read_text())
@@ -32,3 +32,19 @@ def test_unmatched_stage_sampler_precision_or_task_is_rejected(field,value):
 def test_missing_task_slot_is_rejected():
     rows,entries,baseline=fixture_rows()
     with pytest.raises(ValueError):validate_generation(rows[:-1],entries,baseline)
+
+def evaluation_fixture():
+    baseline=json.loads(Path('results/research_v2_real/transition_cuda_preflight_r2.json').read_text())
+    return baseline['variants']['sparse75_ngram10m']['baseline_evaluation']
+
+def test_frozen_baseline_including_ablation_passes_finite_measurement_gate():
+    validate_evaluation(evaluation_fixture())
+
+@pytest.mark.parametrize('location',['category','document','ablation','router'])
+def test_nonfinite_nested_measurement_cannot_be_published(location):
+    result=evaluation_fixture()
+    if location=='category':result['technical_val_loss']=float('inf')
+    elif location=='document':result['documents'][0]['nll']=float('nan')
+    elif location=='ablation':result['residual_off']['val_loss']=float('-inf')
+    else:next(iter(result['router'].values()))['soft_entropy']=float('nan')
+    with pytest.raises(FloatingPointError):validate_evaluation(result)

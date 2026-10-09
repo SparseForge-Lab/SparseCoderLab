@@ -10,7 +10,9 @@
     "old_receipt_gap_reproduced": true,
     "patched_recovery_verified": true
   },
-  "targeted_tests": 21,
+  "targeted_tests": 26,
+  "evaluation_guard_sha256": "0fbfa56dfff3782665d92600bc092ca0d3e07953051c134d4b316c1942e42eda",
+  "evaluation_guard_tests_sha256": "c61da2309584b23f294ded8e77257addf785e91b9b07b7a2f2d35e2127bdbc0d",
   "source_snapshot_retained_privately": true,
   "scope": "Recovery bookkeeping and pre-launch identity checks only; no optimizer, data, architecture or schedule change. Dense completed with the prior wrapper and verified final state."
 }
