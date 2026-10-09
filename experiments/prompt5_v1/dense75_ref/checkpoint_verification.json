@@ -1,0 +1,28 @@
+{
+  "last": {
+    "path": "experiments/prompt5_v1/dense75_ref/checkpoints/last.pt",
+    "sha256": "464c06ea8d08eb012919a09b04e1ebfd581c441f466bb9af698823df07af659b",
+    "size_bytes": 648381931,
+    "step": 30518,
+    "tokens_seen": 250003456,
+    "new_phase_tokens": 149995520,
+    "cursor": 146480,
+    "phase_steps": 18310,
+    "finite_model_and_adam": true,
+    "scheduler_cursor_counts_verified": true,
+    "rng_streams_present": true
+  },
+  "previous": {
+    "path": "experiments/prompt5_v1/dense75_ref/checkpoints/previous.pt",
+    "sha256": "1237f7ab64181da0cad75c03949cf496d39654159bf6cc66c42940527328bf18",
+    "size_bytes": 648381931,
+    "step": 30000,
+    "tokens_seen": 245760000,
+    "new_phase_tokens": 145752064,
+    "cursor": 142336,
+    "phase_steps": 17792,
+    "finite_model_and_adam": true,
+    "scheduler_cursor_counts_verified": true,
+    "rng_streams_present": true
+  }
+}

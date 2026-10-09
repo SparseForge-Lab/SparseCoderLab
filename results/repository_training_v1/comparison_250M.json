@@ -1,0 +1,2229 @@
+{
+  "schema_version": 1,
+  "models": {
+    "dense75_ref": {
+      "label": "Dense",
+      "token_counts": {
+        "inherited": 100007936,
+        "new": 149995520,
+        "total": 250003456
+      },
+      "nll": {
+        "mixed": {
+          "baseline": 2.67252055392339,
+          "final": 2.6803345100965092,
+          "delta_final_minus_baseline": 0.007813956173119418
+        },
+        "code": {
+          "baseline": 2.514829410419565,
+          "final": 2.102960138586669,
+          "delta_final_minus_baseline": -0.411869271832896
+        },
+        "technical": {
+          "baseline": 3.763069085689336,
+          "final": 5.963511721551218,
+          "delta_final_minus_baseline": 2.2004426358618825
+        },
+        "general": {
+          "baseline": 3.186911960240264,
+          "final": 2.7450557970852327,
+          "delta_final_minus_baseline": -0.4418561631550313
+        }
+      },
+      "language": {
+        "code/Bash": {
+          "baseline": 3.302074393358172,
+          "final": 2.850023556862199,
+          "sufficient": true,
+          "predictions": 39816,
+          "documents": 64
+        },
+        "code/C#": {
+          "baseline": 2.4212263842416584,
+          "final": 1.9119604671024275,
+          "sufficient": true,
+          "predictions": 36013,
+          "documents": 64
+        },
+        "code/C/C++": {
+          "baseline": 2.78456001342373,
+          "final": 2.7231687467326786,
+          "sufficient": true,
+          "predictions": 43803,
+          "documents": 64
+        },
+        "code/Go": {
+          "baseline": 2.21926252720894,
+          "final": 1.7529542100139424,
+          "sufficient": true,
+          "predictions": 45200,
+          "documents": 64
+        },
+        "code/HTML/CSS": {
+          "baseline": 2.0106658063124723,
+          "final": 2.1366525846006854,
+          "sufficient": true,
+          "predictions": 37474,
+          "documents": 64
+        },
+        "code/JS/TS": {
+          "baseline": 2.631619983459263,
+          "final": 2.341124068952368,
+          "sufficient": true,
+          "predictions": 44336,
+          "documents": 64
+        },
+        "code/Java": {
+          "baseline": 1.71782641143382,
+          "final": 1.453312810389614,
+          "sufficient": true,
+          "predictions": 50243,
+          "documents": 64
+        },
+        "code/Python": {
+          "baseline": 2.5623501786763776,
+          "final": 2.131729525608512,
+          "sufficient": true,
+          "predictions": 43107,
+          "documents": 64
+        },
+        "code/Rust": {
+          "baseline": 3.0755316186148627,
+          "final": 2.1940793373237804,
+          "sufficient": true,
+          "predictions": 48193,
+          "documents": 64
+        },
+        "code/SQL": {
+          "baseline": 2.3980866552005944,
+          "final": 1.593262073138805,
+          "sufficient": true,
+          "predictions": 24364,
+          "documents": 28
+        },
+        "code/other": {
+          "baseline": 2.546562736146646,
+          "final": 1.9129024016208798,
+          "sufficient": true,
+          "predictions": 34769,
+          "documents": 64
+        },
+        "context": {
+          "baseline": 3.2796641959719612,
+          "final": 3.152000611315631,
+          "sufficient": true,
+          "predictions": 27525,
+          "documents": 64
+        },
+        "general": {
+          "baseline": 3.186911960240264,
+          "final": 2.7450557970852327,
+          "sufficient": true,
+          "predictions": 23144,
+          "documents": 24
+        },
+        "technical": {
+          "baseline": 3.763069085689336,
+          "final": 5.963511721551218,
+          "sufficient": true,
+          "predictions": 55366,
+          "documents": 64
+        }
+      },
+      "functional": {
+        "baseline_greedy_pass": 2,
+        "final_greedy_pass": 0,
+        "tasks": 25,
+        "wrong_answer": 4,
+        "syntax_error": 19,
+        "runtime_error": 2,
+        "timeout": 0,
+        "other_outcomes": {},
+        "repetition_count": 19,
+        "correct_without_repetition": 0,
+        "temperatures": [
+          {
+            "temperature": 0.0,
+            "baseline_pass": 2,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 19,
+              "wrong": 4,
+              "runtime_error": 2
+            },
+            "final_repetition_rate": 0.76
+          },
+          {
+            "temperature": 0.2,
+            "baseline_pass": 2,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 20,
+              "wrong": 2,
+              "runtime_error": 3
+            },
+            "final_repetition_rate": 0.72
+          },
+          {
+            "temperature": 0.5,
+            "baseline_pass": 0,
+            "final_pass": 1,
+            "final_outcomes": {
+              "syntax_error": 17,
+              "wrong": 4,
+              "runtime_error": 3,
+              "correct": 1
+            },
+            "final_repetition_rate": 0.6
+          },
+          {
+            "temperature": 0.8,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "wrong": 3,
+              "syntax_error": 16,
+              "runtime_error": 6
+            },
+            "final_repetition_rate": 0.52
+          },
+          {
+            "temperature": 1.0,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "runtime_error": 3,
+              "syntax_error": 22
+            },
+            "final_repetition_rate": 0.32
+          },
+          {
+            "temperature": 1.2,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 22,
+              "runtime_error": 3
+            },
+            "final_repetition_rate": 0.2
+          },
+          {
+            "temperature": 1.5,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "runtime_error": 3,
+              "syntax_error": 22
+            },
+            "final_repetition_rate": 0.04
+          }
+        ],
+        "paired_greedy_changes": {
+          "lost_pass": [
+            "add",
+            "concatenate"
+          ],
+          "remained_fail": [
+            "hello_world",
+            "is_even",
+            "larger",
+            "reverse_string",
+            "square",
+            "numbers_one_to_ten",
+            "list_length",
+            "first_element",
+            "uppercase",
+            "factorial",
+            "fibonacci",
+            "is_palindrome",
+            "count_vowels",
+            "maximum",
+            "minimum",
+            "average",
+            "sign_of",
+            "sum_values",
+            "lookup",
+            "count_occurrences",
+            "sort_values",
+            "unique_values",
+            "celsius_to_fahrenheit"
+          ]
+        }
+      },
+      "efficiency": {
+        "model": "Dense",
+        "variant": "dense75_ref",
+        "inherited_tokens": 100007936,
+        "new_phase_tokens": 149995520,
+        "total_tokens": 250003456,
+        "phase_updates": 18310,
+        "training_seconds": 4757.497094000017,
+        "loop_wall_seconds": 4895.629938400005,
+        "summed_attempt_process_seconds": 4901.429099500001,
+        "training_tokens_per_second": 31528.2420643344,
+        "loop_tokens_per_second": 30638.65567605008,
+        "training_updates_per_second": 3.8486623613689455,
+        "peak_allocated_gib": 1.437906265258789,
+        "peak_reserved_gib": 1.728515625,
+        "cpu_rss_peak_sampled_gib": 2.6850738525390625,
+        "verified_checkpoint_writes": 20,
+        "checkpoint_write_rotation_seconds": 78.59332369999902,
+        "checkpoint_verification_seconds": 25.876022800010105,
+        "sampled_loader_wait_mean_ms": 0.7395224042962492,
+        "sampled_loader_wait_p95_ms": 0.8465250002700486,
+        "sampled_loader_wait_max_ms": 1.0751000008895062,
+        "stored_parameters": 54018560,
+        "active_parameters_estimate": 54018560,
+        "greedy_pass": 0,
+        "greedy_repetition_count": 19
+      },
+      "router_baseline": null,
+      "router_final": null,
+      "ngram": {
+        "baseline_gate_mean": null,
+        "final_gate_mean": null,
+        "baseline_residual_off_mixed_nll": null,
+        "final_residual_off_mixed_nll": null,
+        "final_residual_benefit_nll": 0.0,
+        "residual_off_by_stratum": {}
+      },
+      "checkpoints": {
+        "total_tokens": 250003456,
+        "inherited_tokens": 100007936,
+        "new_phase_tokens": 149995520,
+        "phase_steps": 18310,
+        "config": {
+          "path": "experiments/prompt5_v1/dense75_ref/config.json",
+          "sha256": "ded758caf8a94f445bb3327635061500fbcdb0c8d50cb893da1d9670573eee98",
+          "fingerprint": "a6be1b6b682c4c2e4074050f9aeb38b4f5de8f0e07f146b9f0ec872806bca326"
+        },
+        "full_resume_state": {
+          "path": "experiments/prompt5_v1/dense75_ref/checkpoints/latest_verified_250M.pt",
+          "sha256": "464c06ea8d08eb012919a09b04e1ebfd581c441f466bb9af698823df07af659b",
+          "size_bytes": 648381931,
+          "step": 30518,
+          "tokens_seen": 250003456,
+          "new_phase_tokens": 149995520,
+          "cursor": 146480,
+          "phase_steps": 18310,
+          "finite_model_and_adam": true,
+          "scheduler_cursor_counts_verified": true,
+          "rng_streams_present": true
+        },
+        "model_weights": {
+          "path": "experiments/prompt5_v1/dense75_ref/checkpoints/model_250M.pt",
+          "sha256": "cc7bd2ca5d7da695a488d292c63347dfc436cfe0b0a21a00ebb3730fb5bad344",
+          "size_bytes": 216115611
+        },
+        "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "data_manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6"
+      }
+    },
+    "sparse75": {
+      "label": "Sparse",
+      "token_counts": {
+        "inherited": 100007936,
+        "new": 149995520,
+        "total": 250003456
+      },
+      "nll": {
+        "mixed": {
+          "baseline": 2.6515222052387477,
+          "final": 2.6551754028174908,
+          "delta_final_minus_baseline": 0.0036531975787430504
+        },
+        "code": {
+          "baseline": 2.4904953704409616,
+          "final": 2.07519908115523,
+          "delta_final_minus_baseline": -0.4152962892857315
+        },
+        "technical": {
+          "baseline": 3.770305737458492,
+          "final": 6.0105849453183655,
+          "delta_final_minus_baseline": 2.2402792078598734
+        },
+        "general": {
+          "baseline": 3.163369574021024,
+          "final": 2.7212345703864567,
+          "delta_final_minus_baseline": -0.44213500363456726
+        }
+      },
+      "language": {
+        "code/Bash": {
+          "baseline": 3.274409608271363,
+          "final": 2.820234525244423,
+          "sufficient": true,
+          "predictions": 39816,
+          "documents": 64
+        },
+        "code/C#": {
+          "baseline": 2.393555547804244,
+          "final": 1.8876638593310382,
+          "sufficient": true,
+          "predictions": 36013,
+          "documents": 64
+        },
+        "code/C/C++": {
+          "baseline": 2.7756967273223423,
+          "final": 2.705256619984229,
+          "sufficient": true,
+          "predictions": 43803,
+          "documents": 64
+        },
+        "code/Go": {
+          "baseline": 2.19593087229581,
+          "final": 1.732674733218366,
+          "sufficient": true,
+          "predictions": 45200,
+          "documents": 64
+        },
+        "code/HTML/CSS": {
+          "baseline": 1.9812376723763094,
+          "final": 2.087031311863367,
+          "sufficient": true,
+          "predictions": 37474,
+          "documents": 64
+        },
+        "code/JS/TS": {
+          "baseline": 2.6088859500952983,
+          "final": 2.3094653111665053,
+          "sufficient": true,
+          "predictions": 44336,
+          "documents": 64
+        },
+        "code/Java": {
+          "baseline": 1.706929906731452,
+          "final": 1.4331247866648416,
+          "sufficient": true,
+          "predictions": 50243,
+          "documents": 64
+        },
+        "code/Python": {
+          "baseline": 2.5375367394872383,
+          "final": 2.100078611930637,
+          "sufficient": true,
+          "predictions": 43107,
+          "documents": 64
+        },
+        "code/Rust": {
+          "baseline": 3.0553415110539017,
+          "final": 2.177929655909402,
+          "sufficient": true,
+          "predictions": 48193,
+          "documents": 64
+        },
+        "code/SQL": {
+          "baseline": 2.3799005061940908,
+          "final": 1.5692623366894265,
+          "sufficient": true,
+          "predictions": 24364,
+          "documents": 28
+        },
+        "code/other": {
+          "baseline": 2.4832801377105733,
+          "final": 1.8654214449207784,
+          "sufficient": true,
+          "predictions": 34769,
+          "documents": 64
+        },
+        "context": {
+          "baseline": 3.238637447569394,
+          "final": 3.1220329697233886,
+          "sufficient": true,
+          "predictions": 27525,
+          "documents": 64
+        },
+        "general": {
+          "baseline": 3.163369574021024,
+          "final": 2.7212345703864567,
+          "sufficient": true,
+          "predictions": 23144,
+          "documents": 24
+        },
+        "technical": {
+          "baseline": 3.770305737458492,
+          "final": 6.0105849453183655,
+          "sufficient": true,
+          "predictions": 55366,
+          "documents": 64
+        }
+      },
+      "functional": {
+        "baseline_greedy_pass": 0,
+        "final_greedy_pass": 0,
+        "tasks": 25,
+        "wrong_answer": 1,
+        "syntax_error": 21,
+        "runtime_error": 3,
+        "timeout": 0,
+        "other_outcomes": {},
+        "repetition_count": 19,
+        "correct_without_repetition": 0,
+        "temperatures": [
+          {
+            "temperature": 0.0,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 21,
+              "runtime_error": 3,
+              "wrong": 1
+            },
+            "final_repetition_rate": 0.76
+          },
+          {
+            "temperature": 0.2,
+            "baseline_pass": 0,
+            "final_pass": 1,
+            "final_outcomes": {
+              "syntax_error": 22,
+              "runtime_error": 1,
+              "correct": 1,
+              "wrong": 1
+            },
+            "final_repetition_rate": 0.8
+          },
+          {
+            "temperature": 0.5,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 20,
+              "runtime_error": 3,
+              "wrong": 2
+            },
+            "final_repetition_rate": 0.72
+          },
+          {
+            "temperature": 0.8,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 19,
+              "wrong": 3,
+              "runtime_error": 3
+            },
+            "final_repetition_rate": 0.36
+          },
+          {
+            "temperature": 1.0,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 21,
+              "wrong": 3,
+              "runtime_error": 1
+            },
+            "final_repetition_rate": 0.28
+          },
+          {
+            "temperature": 1.2,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 19,
+              "runtime_error": 6
+            },
+            "final_repetition_rate": 0.2
+          },
+          {
+            "temperature": 1.5,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 25
+            },
+            "final_repetition_rate": 0.08
+          }
+        ],
+        "paired_greedy_changes": {
+          "remained_fail": [
+            "add",
+            "hello_world",
+            "is_even",
+            "larger",
+            "reverse_string",
+            "square",
+            "numbers_one_to_ten",
+            "list_length",
+            "first_element",
+            "uppercase",
+            "factorial",
+            "fibonacci",
+            "is_palindrome",
+            "count_vowels",
+            "maximum",
+            "minimum",
+            "average",
+            "sign_of",
+            "sum_values",
+            "lookup",
+            "concatenate",
+            "count_occurrences",
+            "sort_values",
+            "unique_values",
+            "celsius_to_fahrenheit"
+          ]
+        }
+      },
+      "efficiency": {
+        "model": "Sparse",
+        "variant": "sparse75",
+        "inherited_tokens": 100007936,
+        "new_phase_tokens": 149995520,
+        "total_tokens": 250003456,
+        "phase_updates": 18310,
+        "training_seconds": 5725.116914100012,
+        "loop_wall_seconds": 5882.461899900001,
+        "summed_attempt_process_seconds": 4353.6908459999995,
+        "training_tokens_per_second": 26199.55579083214,
+        "loop_tokens_per_second": 25498.76608678925,
+        "training_updates_per_second": 3.198187962748064,
+        "peak_allocated_gib": 1.7429652214050293,
+        "peak_reserved_gib": 2.013671875,
+        "cpu_rss_peak_sampled_gib": 3.1653289794921875,
+        "verified_checkpoint_writes": 19,
+        "checkpoint_write_rotation_seconds": 123.44795910000244,
+        "checkpoint_verification_seconds": 30.100218900000414,
+        "sampled_loader_wait_mean_ms": 0.8191710382687214,
+        "sampled_loader_wait_p95_ms": 0.7824999998859994,
+        "sampled_loader_wait_max_ms": 10.313000000223838,
+        "stored_parameters": 76063232,
+        "active_parameters_estimate": 54436352,
+        "greedy_pass": 0,
+        "greedy_repetition_count": 19
+      },
+      "router_baseline": {
+        "soft_entropy": 1.6964349176788605,
+        "hard_entropy": 2.40750347554536,
+        "mean_load_cv": 0.3780647105208221,
+        "maximum_stratum_expert_share": 0.2734619920043717,
+        "pooled_layers": {
+          "3": {
+            "counts": [
+              67862,
+              45735,
+              41107,
+              48392,
+              53354,
+              47108,
+              44702,
+              57554,
+              32724,
+              40452,
+              33923,
+              40440
+            ],
+            "frequency": [
+              0.12263780986097482,
+              0.08265067687353281,
+              0.074287118710841,
+              0.08745231344187164,
+              0.0964194646093904,
+              0.08513191398618965,
+              0.08078387575381357,
+              0.10400955628685486,
+              0.05913765715555893,
+              0.07310342584209356,
+              0.061304447613006526,
+              0.07308173986587224
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "7": {
+            "counts": [
+              46300,
+              46642,
+              53017,
+              36298,
+              47850,
+              40854,
+              51105,
+              45468,
+              52407,
+              41524,
+              56763,
+              35125
+            ],
+            "frequency": [
+              0.08367172492062029,
+              0.08428977524292812,
+              0.09581045011050812,
+              0.06559646374014418,
+              0.0864728301825417,
+              0.07382990604550801,
+              0.09235515123257668,
+              0.08216816390260828,
+              0.09470807965259066,
+              0.07504070638453211,
+              0.1025800890209324,
+              0.06347665956450946
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "11": {
+            "counts": [
+              45254,
+              30802,
+              48059,
+              61844,
+              46289,
+              54993,
+              38078,
+              49828,
+              42119,
+              42055,
+              48043,
+              45989
+            ],
+            "frequency": [
+              0.08178143065999462,
+              0.055664286630776376,
+              0.08685052760172982,
+              0.1117622927859793,
+              0.08365184610908408,
+              0.09938140752828664,
+              0.06881321687964102,
+              0.09004740192969045,
+              0.07611596937217292,
+              0.07600031083232583,
+              0.08682161296676805,
+              0.0831096967035509
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "15": {
+            "counts": [
+              27709,
+              61714,
+              59009,
+              43087,
+              73342,
+              25262,
+              27925,
+              43778,
+              64633,
+              46122,
+              34684,
+              46088
+            ],
+            "frequency": [
+              0.05007472625972932,
+              0.11152736137691492,
+              0.10663898090369077,
+              0.07786530478735997,
+              0.13254107233538084,
+              0.04565259427526371,
+              0.05046507383171321,
+              0.07911405558477139,
+              0.11680247509275272,
+              0.08335004960667061,
+              0.06267969993837569,
+              0.08328860600737685
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          }
+        },
+        "scope": "Frozen document-window routes; pooled across sampled strata, not the full corpus or lifetime training utilization."
+      },
+      "router_final": {
+        "soft_entropy": 1.5647157884196652,
+        "hard_entropy": 2.422669951090227,
+        "mean_load_cv": 0.3261553050730525,
+        "maximum_stratum_expert_share": 0.2986128671025539,
+        "pooled_layers": {
+          "3": {
+            "counts": [
+              42581,
+              49604,
+              41679,
+              45711,
+              61427,
+              41274,
+              45642,
+              47292,
+              40007,
+              42465,
+              50906,
+              44765
+            ],
+            "frequency": [
+              0.07695087945669402,
+              0.08964259704022567,
+              0.07532081691072426,
+              0.08260730492109015,
+              0.11100870511228818,
+              0.07458891521325448,
+              0.08248261055781753,
+              0.08546443228825,
+              0.07229923755721936,
+              0.07674124835322119,
+              0.09199552546023966,
+              0.08089772712897554
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "7": {
+            "counts": [
+              37378,
+              46633,
+              49830,
+              40751,
+              47331,
+              43761,
+              53647,
+              45639,
+              44930,
+              47866,
+              46811,
+              48776
+            ],
+            "frequency": [
+              0.06754820160006361,
+              0.08427351076076212,
+              0.09005101625906067,
+              0.07364376808294162,
+              0.0855349117109693,
+              0.0790833337851245,
+              0.09694896386212778,
+              0.0824771890637622,
+              0.08119590930201878,
+              0.08650174481750347,
+              0.08459518607471181,
+              0.08814626468095411
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "11": {
+            "counts": [
+              43178,
+              38880,
+              43281,
+              52596,
+              37437,
+              44394,
+              40726,
+              61448,
+              54857,
+              51992,
+              36480,
+              48084
+            ],
+            "frequency": [
+              0.07802975677370504,
+              0.07026256295709972,
+              0.07821589473627143,
+              0.09504963377807656,
+              0.06765482431648513,
+              0.0802272690307995,
+              0.07359858896581387,
+              0.1110466555706755,
+              0.09913563313111161,
+              0.09395810630826977,
+              0.0659253677128343,
+              0.08689570671885759
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "15": {
+            "counts": [
+              35208,
+              49766,
+              62862,
+              37234,
+              61605,
+              42598,
+              41955,
+              40034,
+              55907,
+              33150,
+              40286,
+              52748
+            ],
+            "frequency": [
+              0.06362665423337363,
+              0.0899353577192136,
+              0.11360198643542187,
+              0.06728796988540768,
+              0.11133038042623786,
+              0.07698160125634089,
+              0.07581959436381477,
+              0.07234803100371734,
+              0.10103315605047772,
+              0.05990750931141604,
+              0.0728034365043652,
+              0.09532432281021337
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          }
+        },
+        "scope": "Frozen document-window routes; pooled across sampled strata, not the full corpus or lifetime training utilization."
+      },
+      "ngram": {
+        "baseline_gate_mean": null,
+        "final_gate_mean": null,
+        "baseline_residual_off_mixed_nll": null,
+        "final_residual_off_mixed_nll": null,
+        "final_residual_benefit_nll": 0.0,
+        "residual_off_by_stratum": {}
+      },
+      "checkpoints": {
+        "total_tokens": 250003456,
+        "inherited_tokens": 100007936,
+        "new_phase_tokens": 149995520,
+        "phase_steps": 18310,
+        "config": {
+          "path": "experiments/prompt5_v1/sparse75/config.json",
+          "sha256": "4165eb0fe50310596d7b88e4723415246769e05b626bec9a1782ed555e373e70",
+          "fingerprint": "2e4cbdf79a7ce9f0de4c94d57acd4532ca544cbc6d3494a9bf60411483cb725b"
+        },
+        "full_resume_state": {
+          "path": "experiments/prompt5_v1/sparse75/checkpoints/latest_verified_250M.pt",
+          "sha256": "b40019b82398fee98817d09481c80de1821e934a18f1e22b384e28b096a8ee63",
+          "size_bytes": 913030715,
+          "step": 30518,
+          "tokens_seen": 250003456,
+          "new_phase_tokens": 149995520,
+          "cursor": 146480,
+          "phase_steps": 18310,
+          "finite_model_and_adam": true,
+          "scheduler_cursor_counts_verified": true,
+          "rng_streams_present": true
+        },
+        "model_weights": {
+          "path": "experiments/prompt5_v1/sparse75/checkpoints/model_250M.pt",
+          "sha256": "6e6bb3156661a75815191f7886237d2a2fed06d6c9721c0d09f0ee3258af6796",
+          "size_bytes": 304316163
+        },
+        "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "data_manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6"
+      }
+    },
+    "sparse75_ngram10m": {
+      "label": "Sparse + 10M Ngram",
+      "token_counts": {
+        "inherited": 100007936,
+        "new": 149995520,
+        "total": 250003456
+      },
+      "nll": {
+        "mixed": {
+          "baseline": 2.656592572843256,
+          "final": 2.673483271973001,
+          "delta_final_minus_baseline": 0.01689069912974528
+        },
+        "code": {
+          "baseline": 2.5076062609044603,
+          "final": 2.079950210224344,
+          "delta_final_minus_baseline": -0.42765605068011636
+        },
+        "technical": {
+          "baseline": 3.7645244542859873,
+          "final": 6.019829748700268,
+          "delta_final_minus_baseline": 2.2553052944142804
+        },
+        "general": {
+          "baseline": 3.170879107227467,
+          "final": 2.7147186539225046,
+          "delta_final_minus_baseline": -0.4561604533049626
+        }
+      },
+      "language": {
+        "code/Bash": {
+          "baseline": 3.2821560448160225,
+          "final": 2.7989052781557877,
+          "sufficient": true,
+          "predictions": 39816,
+          "documents": 64
+        },
+        "code/C#": {
+          "baseline": 2.4253442306610973,
+          "final": 1.8983500151216737,
+          "sufficient": true,
+          "predictions": 36013,
+          "documents": 64
+        },
+        "code/C/C++": {
+          "baseline": 2.7873590163187636,
+          "final": 2.7131301793181684,
+          "sufficient": true,
+          "predictions": 43803,
+          "documents": 64
+        },
+        "code/Go": {
+          "baseline": 2.2013643608763154,
+          "final": 1.7249821807879262,
+          "sufficient": true,
+          "predictions": 45200,
+          "documents": 64
+        },
+        "code/HTML/CSS": {
+          "baseline": 2.010486503506811,
+          "final": 2.1009433774344473,
+          "sufficient": true,
+          "predictions": 37474,
+          "documents": 64
+        },
+        "code/JS/TS": {
+          "baseline": 2.6069407096836423,
+          "final": 2.325490556415325,
+          "sufficient": true,
+          "predictions": 44336,
+          "documents": 64
+        },
+        "code/Java": {
+          "baseline": 1.7072618727238627,
+          "final": 1.4257678393108237,
+          "sufficient": true,
+          "predictions": 50243,
+          "documents": 64
+        },
+        "code/Python": {
+          "baseline": 2.571114722640446,
+          "final": 2.099510614349921,
+          "sufficient": true,
+          "predictions": 43107,
+          "documents": 64
+        },
+        "code/Rust": {
+          "baseline": 3.0738749068986455,
+          "final": 2.175679187623473,
+          "sufficient": true,
+          "predictions": 48193,
+          "documents": 64
+        },
+        "code/SQL": {
+          "baseline": 2.3503691792742525,
+          "final": 1.5877206974762685,
+          "sufficient": true,
+          "predictions": 24364,
+          "documents": 28
+        },
+        "code/other": {
+          "baseline": 2.5637168518959106,
+          "final": 1.906075741904671,
+          "sufficient": true,
+          "predictions": 34769,
+          "documents": 64
+        },
+        "context": {
+          "baseline": 3.263408641447055,
+          "final": 3.1317203934077886,
+          "sufficient": true,
+          "predictions": 27525,
+          "documents": 64
+        },
+        "general": {
+          "baseline": 3.170879107227467,
+          "final": 2.7147186539225046,
+          "sufficient": true,
+          "predictions": 23144,
+          "documents": 24
+        },
+        "technical": {
+          "baseline": 3.7645244542859873,
+          "final": 6.019829748700268,
+          "sufficient": true,
+          "predictions": 55366,
+          "documents": 64
+        }
+      },
+      "functional": {
+        "baseline_greedy_pass": 0,
+        "final_greedy_pass": 1,
+        "tasks": 25,
+        "wrong_answer": 4,
+        "syntax_error": 16,
+        "runtime_error": 4,
+        "timeout": 0,
+        "other_outcomes": {},
+        "repetition_count": 19,
+        "correct_without_repetition": 1,
+        "temperatures": [
+          {
+            "temperature": 0.0,
+            "baseline_pass": 0,
+            "final_pass": 1,
+            "final_outcomes": {
+              "syntax_error": 16,
+              "wrong": 4,
+              "runtime_error": 4,
+              "correct": 1
+            },
+            "final_repetition_rate": 0.76
+          },
+          {
+            "temperature": 0.2,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 16,
+              "wrong": 5,
+              "runtime_error": 4
+            },
+            "final_repetition_rate": 0.8
+          },
+          {
+            "temperature": 0.5,
+            "baseline_pass": 0,
+            "final_pass": 1,
+            "final_outcomes": {
+              "syntax_error": 17,
+              "wrong": 4,
+              "runtime_error": 3,
+              "correct": 1
+            },
+            "final_repetition_rate": 0.6
+          },
+          {
+            "temperature": 0.8,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 19,
+              "wrong": 4,
+              "runtime_error": 2
+            },
+            "final_repetition_rate": 0.56
+          },
+          {
+            "temperature": 1.0,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "wrong": 2,
+              "syntax_error": 15,
+              "runtime_error": 8
+            },
+            "final_repetition_rate": 0.16
+          },
+          {
+            "temperature": 1.2,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "wrong": 3,
+              "syntax_error": 20,
+              "runtime_error": 2
+            },
+            "final_repetition_rate": 0.12
+          },
+          {
+            "temperature": 1.5,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 22,
+              "runtime_error": 2,
+              "wrong": 1
+            },
+            "final_repetition_rate": 0.08
+          }
+        ],
+        "paired_greedy_changes": {
+          "remained_fail": [
+            "add",
+            "hello_world",
+            "is_even",
+            "larger",
+            "reverse_string",
+            "square",
+            "numbers_one_to_ten",
+            "list_length",
+            "first_element",
+            "uppercase",
+            "factorial",
+            "fibonacci",
+            "is_palindrome",
+            "count_vowels",
+            "maximum",
+            "minimum",
+            "average",
+            "sign_of",
+            "lookup",
+            "concatenate",
+            "count_occurrences",
+            "sort_values",
+            "unique_values",
+            "celsius_to_fahrenheit"
+          ],
+          "gained_pass": [
+            "sum_values"
+          ]
+        }
+      },
+      "efficiency": {
+        "model": "Sparse + 10M Ngram",
+        "variant": "sparse75_ngram10m",
+        "inherited_tokens": 100007936,
+        "new_phase_tokens": 149995520,
+        "total_tokens": 250003456,
+        "phase_updates": 18310,
+        "training_seconds": 5830.288497900054,
+        "loop_wall_seconds": 6008.865466100002,
+        "summed_attempt_process_seconds": 6012.164839899999,
+        "training_tokens_per_second": 25726.946454540837,
+        "loop_tokens_per_second": 24962.369493246984,
+        "training_updates_per_second": 3.140496393376567,
+        "peak_allocated_gib": 1.8834915161132812,
+        "peak_reserved_gib": 2.14453125,
+        "cpu_rss_peak_sampled_gib": 3.1982574462890625,
+        "verified_checkpoint_writes": 19,
+        "checkpoint_write_rotation_seconds": 112.63615570000366,
+        "checkpoint_verification_seconds": 33.05029579999609,
+        "sampled_loader_wait_mean_ms": 0.7037912568084522,
+        "sampled_loader_wait_p95_ms": 0.747975000194856,
+        "sampled_loader_wait_max_ms": 0.9078999992198078,
+        "stored_parameters": 86565889,
+        "active_parameters_estimate": 54453281,
+        "greedy_pass": 1,
+        "greedy_repetition_count": 19
+      },
+      "router_baseline": {
+        "soft_entropy": 1.8372855433465685,
+        "hard_entropy": 2.410948131770204,
+        "mean_load_cv": 0.37431640786465653,
+        "maximum_stratum_expert_share": 0.3096371695944837,
+        "pooled_layers": {
+          "3": {
+            "counts": [
+              46322,
+              48608,
+              38569,
+              29271,
+              59299,
+              60971,
+              36643,
+              35649,
+              50586,
+              37314,
+              56647,
+              53474
+            ],
+            "frequency": [
+              0.08371148254369272,
+              0.08784266101385553,
+              0.06970053474003032,
+              0.05289751749787206,
+              0.10716305866237284,
+              0.11018463801587774,
+              0.06621993555650733,
+              0.0644236138595074,
+              0.09141723276100427,
+              0.06743254306021654,
+              0.10237045791745956,
+              0.09663632437160366
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "7": {
+            "counts": [
+              50999,
+              36837,
+              36695,
+              52421,
+              42342,
+              39142,
+              41427,
+              42411,
+              58551,
+              53778,
+              42799,
+              55951
+            ],
+            "frequency": [
+              0.09216359177595496,
+              0.06657052550541878,
+              0.06631390812013307,
+              0.0947333799581822,
+              0.07651896709695258,
+              0.07073604010459869,
+              0.07486541141007638,
+              0.07664366146022521,
+              0.10581129947791013,
+              0.09718570243587728,
+              0.07734484135804812,
+              0.10111267129662259
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "11": {
+            "counts": [
+              41199,
+              50074,
+              55818,
+              48769,
+              32080,
+              36691,
+              59111,
+              40525,
+              32864,
+              56316,
+              41749,
+              58157
+            ],
+            "frequency": [
+              0.07445337786187117,
+              0.09049196444222765,
+              0.10087231839350289,
+              0.08813361452815834,
+              0.05797384309834771,
+              0.06630667946139264,
+              0.10682331170157205,
+              0.07323534886410664,
+              0.05939066021147441,
+              0.10177228640668795,
+              0.07544731843868199,
+              0.10509927659197656
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "15": {
+            "counts": [
+              31098,
+              41409,
+              58316,
+              35198,
+              64396,
+              40236,
+              42274,
+              40824,
+              62998,
+              60923,
+              29399,
+              46282
+            ],
+            "frequency": [
+              0.05619920737756911,
+              0.0748328824457444,
+              0.10538661577690914,
+              0.06360858258652252,
+              0.11637417706238151,
+              0.07271307827010967,
+              0.07639607989836505,
+              0.0737756911049547,
+              0.11384776083259691,
+              0.11009789411099244,
+              0.05312883457756622,
+              0.0836391959562883
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          }
+        },
+        "scope": "Frozen document-window routes; pooled across sampled strata, not the full corpus or lifetime training utilization."
+      },
+      "router_final": {
+        "soft_entropy": 1.7147993186223185,
+        "hard_entropy": 2.4094721418621394,
+        "mean_load_cv": 0.35541488103693314,
+        "maximum_stratum_expert_share": 0.3203229418776867,
+        "pooled_layers": {
+          "3": {
+            "counts": [
+              42439,
+              46186,
+              45598,
+              40394,
+              48907,
+              47040,
+              51066,
+              47838,
+              62632,
+              41642,
+              42839,
+              36772
+            ],
+            "frequency": [
+              0.07669426207140831,
+              0.08346570814651769,
+              0.08240309531167266,
+              0.07299861029035715,
+              0.0883830032547036,
+              0.08500902678760212,
+              0.09228467180985736,
+              0.08645114420632037,
+              0.11318633855784643,
+              0.07525395181737517,
+              0.07741712794545254,
+              0.0664530598008866
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "7": {
+            "counts": [
+              65156,
+              34548,
+              43761,
+              59790,
+              45765,
+              38178,
+              59249,
+              32408,
+              41452,
+              47145,
+              42196,
+              43705
+            ],
+            "frequency": [
+              0.11774762222306556,
+              0.06243392554120064,
+              0.0790833337851245,
+              0.10805037652276214,
+              0.08270489181408612,
+              0.06899393334815208,
+              0.10707270042811731,
+              0.05856659311506398,
+              0.07491059052720415,
+              0.08519877907953874,
+              0.07625512105292644,
+              0.07898213256275831
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "11": {
+            "counts": [
+              42063,
+              43045,
+              57363,
+              63677,
+              49945,
+              41763,
+              44710,
+              33056,
+              35957,
+              43751,
+              52262,
+              45761
+            ],
+            "frequency": [
+              0.07601476814980672,
+              0.07778940387058532,
+              0.10366438783199874,
+              0.115074825653787,
+              0.09025884019784838,
+              0.07547261874427355,
+              0.08079833307129446,
+              0.05973763583101564,
+              0.06498022058252147,
+              0.0790652621382734,
+              0.09444604077324963,
+              0.08269766315534569
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "15": {
+            "counts": [
+              46163,
+              51766,
+              50248,
+              31519,
+              71474,
+              37197,
+              43124,
+              41150,
+              58131,
+              46117,
+              33934,
+              42530
+            ],
+            "frequency": [
+              0.08342414335876014,
+              0.09354968708943477,
+              0.0908064110974369,
+              0.05696002371000067,
+              0.12916528870359428,
+              0.06722110479205859,
+              0.07793216988070906,
+              0.07436482679230076,
+              0.10505229031016368,
+              0.08334101378324506,
+              0.06132432642454274,
+              0.07685871405775337
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          }
+        },
+        "scope": "Frozen document-window routes; pooled across sampled strata, not the full corpus or lifetime training utilization."
+      },
+      "ngram": {
+        "baseline_gate_mean": 0.9851834132382493,
+        "final_gate_mean": 0.8167892100804098,
+        "baseline_residual_off_mixed_nll": 2.682760186983399,
+        "final_residual_off_mixed_nll": 2.7002984861647423,
+        "final_residual_benefit_nll": 0.026815214191741266,
+        "residual_off_by_stratum": {
+          "mixed": {
+            "baseline": 2.682760186983399,
+            "final": 2.7002984861647423,
+            "final_minus_enabled": 0.026815214191741266
+          },
+          "code": {
+            "baseline": 2.5427637194557304,
+            "final": 2.129968083805738,
+            "final_minus_enabled": 0.05001787358139431
+          },
+          "technical": {
+            "baseline": 3.809256540666627,
+            "final": 6.056165461334299,
+            "final_minus_enabled": 0.036335712634031125
+          },
+          "general": {
+            "baseline": 3.2014547323649043,
+            "final": 2.754347503628238,
+            "final_minus_enabled": 0.03962884970573333
+          }
+        },
+        "residual_off_minus_sparse": {
+          "mixed": 0.04512308334725157,
+          "code": 0.0547690026505081,
+          "technical": 0.04558051601593327,
+          "general": 0.03311293324178122
+        }
+      },
+      "checkpoints": {
+        "total_tokens": 250003456,
+        "inherited_tokens": 100007936,
+        "new_phase_tokens": 149995520,
+        "phase_steps": 18310,
+        "config": {
+          "path": "experiments/prompt5_v1/sparse75_ngram10m/config.json",
+          "sha256": "cd1e14e676b3816d467726f255bf240cb56ff76c3b5fc2c41e4706e2dfc51a52",
+          "fingerprint": "42bac718bfc27a4f79862f3f80100f0150118ec4f575f41f97f3e72530bb4a22"
+        },
+        "full_resume_state": {
+          "path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/latest_verified_250M.pt",
+          "sha256": "147d1e0df427501d70b5231d91f30b2f8ec50b2f5f0ad5c190b48e85436ee963",
+          "size_bytes": 1039071235,
+          "step": 30518,
+          "tokens_seen": 250003456,
+          "new_phase_tokens": 149995520,
+          "cursor": 146480,
+          "phase_steps": 18310,
+          "finite_model_and_adam": true,
+          "scheduler_cursor_counts_verified": true,
+          "rng_streams_present": true
+        },
+        "model_weights": {
+          "path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/model_250M.pt",
+          "sha256": "93c3ee428b49fed57032a6eca2f359f8f015be2c706ea9e3ed9e87aa54c5696f",
+          "size_bytes": 346329205
+        },
+        "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "data_manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6"
+      }
+    },
+    "sparse75_ngram25m": {
+      "label": "Sparse + 25M Ngram",
+      "token_counts": {
+        "inherited": 100007936,
+        "new": 149995520,
+        "total": 250003456
+      },
+      "nll": {
+        "mixed": {
+          "baseline": 2.6325944571013773,
+          "final": 2.641633506207447,
+          "delta_final_minus_baseline": 0.009039049106069896
+        },
+        "code": {
+          "baseline": 2.485663438715677,
+          "final": 2.07021377574613,
+          "delta_final_minus_baseline": -0.415449662969547
+        },
+        "technical": {
+          "baseline": 3.719481430575023,
+          "final": 5.924941106032581,
+          "delta_final_minus_baseline": 2.2054596754575586
+        },
+        "general": {
+          "baseline": 3.177588909174223,
+          "final": 2.687806757848814,
+          "delta_final_minus_baseline": -0.48978215132540903
+        }
+      },
+      "language": {
+        "code/Bash": {
+          "baseline": 3.259834090090191,
+          "final": 2.8037600873409803,
+          "sufficient": true,
+          "predictions": 39816,
+          "documents": 64
+        },
+        "code/C#": {
+          "baseline": 2.3846505358142815,
+          "final": 1.8897351404325171,
+          "sufficient": true,
+          "predictions": 36013,
+          "documents": 64
+        },
+        "code/C/C++": {
+          "baseline": 2.760591624338458,
+          "final": 2.702406639114209,
+          "sufficient": true,
+          "predictions": 43803,
+          "documents": 64
+        },
+        "code/Go": {
+          "baseline": 2.1815516846897327,
+          "final": 1.7159764526771233,
+          "sufficient": true,
+          "predictions": 45200,
+          "documents": 64
+        },
+        "code/HTML/CSS": {
+          "baseline": 1.9891096465983475,
+          "final": 2.0691994860439866,
+          "sufficient": true,
+          "predictions": 37474,
+          "documents": 64
+        },
+        "code/JS/TS": {
+          "baseline": 2.5992160404241504,
+          "final": 2.3175909227410276,
+          "sufficient": true,
+          "predictions": 44336,
+          "documents": 64
+        },
+        "code/Java": {
+          "baseline": 1.7019961337466374,
+          "final": 1.4359897591326833,
+          "sufficient": true,
+          "predictions": 50243,
+          "documents": 64
+        },
+        "code/Python": {
+          "baseline": 2.5536121346163103,
+          "final": 2.0986931119833603,
+          "sufficient": true,
+          "predictions": 43107,
+          "documents": 64
+        },
+        "code/Rust": {
+          "baseline": 3.0374349755156227,
+          "final": 2.1675520071640895,
+          "sufficient": true,
+          "predictions": 48193,
+          "documents": 64
+        },
+        "code/SQL": {
+          "baseline": 2.360726478988951,
+          "final": 1.5732683621150014,
+          "sufficient": true,
+          "predictions": 24364,
+          "documents": 28
+        },
+        "code/other": {
+          "baseline": 2.51405453491658,
+          "final": 1.861314804057043,
+          "sufficient": true,
+          "predictions": 34769,
+          "documents": 64
+        },
+        "context": {
+          "baseline": 3.2259885014630143,
+          "final": 3.099481923746911,
+          "sufficient": true,
+          "predictions": 27525,
+          "documents": 64
+        },
+        "general": {
+          "baseline": 3.177588909174223,
+          "final": 2.687806757848814,
+          "sufficient": true,
+          "predictions": 23144,
+          "documents": 24
+        },
+        "technical": {
+          "baseline": 3.719481430575023,
+          "final": 5.924941106032581,
+          "sufficient": true,
+          "predictions": 55366,
+          "documents": 64
+        }
+      },
+      "functional": {
+        "baseline_greedy_pass": 0,
+        "final_greedy_pass": 0,
+        "tasks": 25,
+        "wrong_answer": 1,
+        "syntax_error": 21,
+        "runtime_error": 3,
+        "timeout": 0,
+        "other_outcomes": {},
+        "repetition_count": 22,
+        "correct_without_repetition": 0,
+        "temperatures": [
+          {
+            "temperature": 0.0,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 21,
+              "wrong": 1,
+              "runtime_error": 3
+            },
+            "final_repetition_rate": 0.88
+          },
+          {
+            "temperature": 0.2,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 20,
+              "wrong": 3,
+              "runtime_error": 2
+            },
+            "final_repetition_rate": 0.8
+          },
+          {
+            "temperature": 0.5,
+            "baseline_pass": 0,
+            "final_pass": 1,
+            "final_outcomes": {
+              "syntax_error": 18,
+              "runtime_error": 4,
+              "wrong": 2,
+              "correct": 1
+            },
+            "final_repetition_rate": 0.68
+          },
+          {
+            "temperature": 0.8,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 17,
+              "runtime_error": 4,
+              "wrong": 4
+            },
+            "final_repetition_rate": 0.44
+          },
+          {
+            "temperature": 1.0,
+            "baseline_pass": 0,
+            "final_pass": 1,
+            "final_outcomes": {
+              "syntax_error": 20,
+              "runtime_error": 4,
+              "correct": 1
+            },
+            "final_repetition_rate": 0.36
+          },
+          {
+            "temperature": 1.2,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 21,
+              "wrong": 1,
+              "runtime_error": 3
+            },
+            "final_repetition_rate": 0.12
+          },
+          {
+            "temperature": 1.5,
+            "baseline_pass": 0,
+            "final_pass": 0,
+            "final_outcomes": {
+              "syntax_error": 22,
+              "runtime_error": 3
+            },
+            "final_repetition_rate": 0.12
+          }
+        ],
+        "paired_greedy_changes": {
+          "remained_fail": [
+            "add",
+            "hello_world",
+            "is_even",
+            "larger",
+            "reverse_string",
+            "square",
+            "numbers_one_to_ten",
+            "list_length",
+            "first_element",
+            "uppercase",
+            "factorial",
+            "fibonacci",
+            "is_palindrome",
+            "count_vowels",
+            "maximum",
+            "minimum",
+            "average",
+            "sign_of",
+            "sum_values",
+            "lookup",
+            "concatenate",
+            "count_occurrences",
+            "sort_values",
+            "unique_values",
+            "celsius_to_fahrenheit"
+          ]
+        }
+      },
+      "efficiency": {
+        "model": "Sparse + 25M Ngram",
+        "variant": "sparse75_ngram25m",
+        "inherited_tokens": 100007936,
+        "new_phase_tokens": 149995520,
+        "total_tokens": 250003456,
+        "phase_updates": 18310,
+        "training_seconds": 5883.190085000035,
+        "loop_wall_seconds": 6077.263010399998,
+        "summed_attempt_process_seconds": 6429.769214600001,
+        "training_tokens_per_second": 25495.61000628439,
+        "loop_tokens_per_second": 24681.426448602473,
+        "training_updates_per_second": 3.1122570808452625,
+        "peak_allocated_gib": 2.0416488647460938,
+        "peak_reserved_gib": 2.294921875,
+        "cpu_rss_peak_sampled_gib": 3.4158973693847656,
+        "verified_checkpoint_writes": 19,
+        "checkpoint_write_rotation_seconds": 133.50365499999316,
+        "checkpoint_verification_seconds": 37.645471800009545,
+        "sampled_loader_wait_mean_ms": 0.7175519125458315,
+        "sampled_loader_wait_p95_ms": 0.7695250005781418,
+        "sampled_loader_wait_max_ms": 0.9620999990147538,
+        "stored_parameters": 101245953,
+        "active_parameters_estimate": 54453281,
+        "greedy_pass": 0,
+        "greedy_repetition_count": 22
+      },
+      "router_baseline": {
+        "soft_entropy": 1.8382475855525195,
+        "hard_entropy": 2.410088636583291,
+        "mean_load_cv": 0.38046039252215746,
+        "maximum_stratum_expert_share": 0.298432112953538,
+        "pooled_layers": {
+          "3": {
+            "counts": [
+              38716,
+              51841,
+              49704,
+              31587,
+              47714,
+              65825,
+              46747,
+              47146,
+              43096,
+              39678,
+              51760,
+              39539
+            ],
+            "frequency": [
+              0.06996618794874158,
+              0.09368522444081807,
+              0.08982331350873674,
+              0.05708291090858819,
+              0.08622705578536667,
+              0.11895661539740456,
+              0.08447952753486472,
+              0.08520058624422384,
+              0.07788156926952597,
+              0.07170468037581797,
+              0.09353884410132411,
+              0.07145348448458759
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "7": {
+            "counts": [
+              44487,
+              45267,
+              50553,
+              55079,
+              38270,
+              52128,
+              31955,
+              53976,
+              48970,
+              33307,
+              42516,
+              56845
+            ],
+            "frequency": [
+              0.08039533534651479,
+              0.08180492380090106,
+              0.09135759632639563,
+              0.09953682369120616,
+              0.06916019249918226,
+              0.0942038807054448,
+              0.05774794751270888,
+              0.09754352104352917,
+              0.08849685462986556,
+              0.0601912341669784,
+              0.07683341375216182,
+              0.10272827652511146
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "11": {
+            "counts": [
+              46562,
+              36065,
+              48165,
+              40776,
+              50722,
+              45443,
+              49108,
+              53625,
+              39270,
+              41198,
+              45199,
+              57220
+            ],
+            "frequency": [
+              0.08414520206811926,
+              0.06517539436851341,
+              0.08704208705835154,
+              0.0736889472000694,
+              0.09166300715817932,
+              0.08212298478548051,
+              0.08874624335641082,
+              0.09690920623905536,
+              0.07096735718429285,
+              0.07445157069718607,
+              0.08168203660231353,
+              0.10340596328202793
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "15": {
+            "counts": [
+              33972,
+              46071,
+              61292,
+              59815,
+              51848,
+              35752,
+              54142,
+              39291,
+              48445,
+              44363,
+              42530,
+              35832
+            ],
+            "frequency": [
+              0.061392998682576944,
+              0.08325788420772996,
+              0.11076473787979825,
+              0.1080955556398899,
+              0.09369787459361384,
+              0.06460975182207379,
+              0.09784351038125753,
+              0.07100530764268018,
+              0.0875480931701825,
+              0.08017124692556107,
+              0.07685871405775337,
+              0.06475432499688263
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          }
+        },
+        "scope": "Frozen document-window routes; pooled across sampled strata, not the full corpus or lifetime training utilization."
+      },
+      "router_final": {
+        "soft_entropy": 1.7028552018756598,
+        "hard_entropy": 2.4131625362705345,
+        "mean_load_cv": 0.3511802823200241,
+        "maximum_stratum_expert_share": 0.30303796553841705,
+        "pooled_layers": {
+          "3": {
+            "counts": [
+              44253,
+              41202,
+              46748,
+              46506,
+              47657,
+              45764,
+              52117,
+              42142,
+              45437,
+              39038,
+              52140,
+              50349
+            ],
+            "frequency": [
+              0.07997245881019892,
+              0.0744587993559265,
+              0.08448133469954984,
+              0.08404400084575307,
+              0.08612404739831536,
+              0.08270308464940102,
+              0.09418400189390859,
+              0.07615753415993046,
+              0.08211214179736985,
+              0.0705480949773472,
+              0.09422556668166614,
+              0.09098893473063306
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "7": {
+            "counts": [
+              31151,
+              75887,
+              44428,
+              45354,
+              41028,
+              47866,
+              40158,
+              51766,
+              43119,
+              35993,
+              55962,
+              40641
+            ],
+            "frequency": [
+              0.05629498710587997,
+              0.1371403064589873,
+              0.08028871263009327,
+              0.08196214712850568,
+              0.07414435270071726,
+              0.08650174481750347,
+              0.07257211942467105,
+              0.09354968708943477,
+              0.0779231340572835,
+              0.06504527851118544,
+              0.1011325501081588,
+              0.07344497996757947
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "11": {
+            "counts": [
+              45350,
+              45430,
+              57209,
+              42182,
+              49809,
+              46046,
+              59282,
+              50017,
+              37966,
+              45112,
+              39171,
+              35779
+            ],
+            "frequency": [
+              0.08195491846976523,
+              0.08209949164457409,
+              0.10338608447049172,
+              0.07622982074733488,
+              0.09001306580067335,
+              0.0832127050906022,
+              0.10713233686272597,
+              0.09038895605517636,
+              0.06861081443490864,
+              0.08152481327470891,
+              0.0707884478804669,
+              0.06465854526857177
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          },
+          "15": {
+            "counts": [
+              38613,
+              42661,
+              61954,
+              42749,
+              43254,
+              38592,
+              40964,
+              41056,
+              66621,
+              48069,
+              40068,
+              48752
+            ],
+            "frequency": [
+              0.0697800499861752,
+              0.07709545263150286,
+              0.11196108090134146,
+              0.07725448312379259,
+              0.07816710128977343,
+              0.06974209952778787,
+              0.07402869416087018,
+              0.07419495331190036,
+              0.12039511848675258,
+              0.08686859924858092,
+              0.0724094746030111,
+              0.08810289272851146
+            ],
+            "unused_experts": 0,
+            "under_one_percent_experts": 0
+          }
+        },
+        "scope": "Frozen document-window routes; pooled across sampled strata, not the full corpus or lifetime training utilization."
+      },
+      "ngram": {
+        "baseline_gate_mean": 0.9888503656910688,
+        "final_gate_mean": 0.8388538084809787,
+        "baseline_residual_off_mixed_nll": 2.6735828676703237,
+        "final_residual_off_mixed_nll": 2.694559202798377,
+        "final_residual_benefit_nll": 0.05292569659092994,
+        "residual_off_by_stratum": {
+          "mixed": {
+            "baseline": 2.6735828676703237,
+            "final": 2.694559202798377,
+            "final_minus_enabled": 0.05292569659092994
+          },
+          "code": {
+            "baseline": 2.5420107776295664,
+            "final": 2.157480563382974,
+            "final_minus_enabled": 0.08726678763684426
+          },
+          "technical": {
+            "baseline": 3.788724961185397,
+            "final": 5.9733722469940425,
+            "final_minus_enabled": 0.04843114096146106
+          },
+          "general": {
+            "baseline": 3.228453575328605,
+            "final": 2.7571785598323704,
+            "final_minus_enabled": 0.0693718019835563
+          }
+        },
+        "residual_off_minus_sparse": {
+          "mixed": 0.03938379998088637,
+          "code": 0.08228148222774401,
+          "technical": -0.03721269832432306,
+          "general": 0.035943989445913704
+        }
+      },
+      "checkpoints": {
+        "total_tokens": 250003456,
+        "inherited_tokens": 100007936,
+        "new_phase_tokens": 149995520,
+        "phase_steps": 18310,
+        "config": {
+          "path": "experiments/prompt5_v1/sparse75_ngram25m/config.json",
+          "sha256": "9dfe273a874b33eac0ea45ce00c20f02bcd6df50bcdf69fff8802d2cf6d46e7f",
+          "fingerprint": "3799e490415809872828e7098d05953c23f6821134242581875b40e0c1322dff"
+        },
+        "full_resume_state": {
+          "path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/latest_verified_250M.pt",
+          "sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+          "size_bytes": 1215232003,
+          "step": 30518,
+          "tokens_seen": 250003456,
+          "new_phase_tokens": 149995520,
+          "cursor": 146480,
+          "phase_steps": 18310,
+          "finite_model_and_adam": true,
+          "scheduler_cursor_counts_verified": true,
+          "rng_streams_present": true
+        },
+        "model_weights": {
+          "path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/model_250M.pt",
+          "sha256": "0a78b5b2778301a24da13fe41be357729d34bb73a3e95ba832a001877e84e798",
+          "size_bytes": 405049461
+        },
+        "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+        "data_manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6"
+      }
+    }
+  },
+  "pairwise": [
+    {
+      "left": "dense75_ref",
+      "right": "sparse75",
+      "nll_left_minus_right": {
+        "mixed": 0.02515910727901849,
+        "code": 0.027761057431439085,
+        "technical": -0.047073223767147176,
+        "general": 0.023821226698776066
+      },
+      "greedy_pass_left_minus_right": 0
+    },
+    {
+      "left": "sparse75",
+      "right": "sparse75_ngram10m",
+      "nll_left_minus_right": {
+        "mixed": -0.018307869155510303,
+        "code": -0.004751129069113791,
+        "technical": -0.009244803381902145,
+        "general": 0.0065159164639521094
+      },
+      "greedy_pass_left_minus_right": -1
+    },
+    {
+      "left": "sparse75",
+      "right": "sparse75_ngram25m",
+      "nll_left_minus_right": {
+        "mixed": 0.013541896610043569,
+        "code": 0.004985305409100249,
+        "technical": 0.08564383928578412,
+        "general": 0.0334278125376426
+      },
+      "greedy_pass_left_minus_right": 0
+    },
+    {
+      "left": "sparse75_ngram10m",
+      "right": "sparse75_ngram25m",
+      "nll_left_minus_right": {
+        "mixed": 0.03184976576555387,
+        "code": 0.00973643447821404,
+        "technical": 0.09488864266768626,
+        "general": 0.02691189607369049
+      },
+      "greedy_pass_left_minus_right": 1
+    }
+  ],
+  "input_sha256": {
+    "results/repository_training_v1/matched_gate_checkpoints.json": "fae9670a403e9587642a12c13a382521ec83289d82e90740fdd1ab6d757da5a0",
+    "results/repository_training_v1/functional_250M_r1.json": "4b925e96136fb5ff87e5a2e8cc9a3d7f311981ffab2abf170ee0647e3066fc62",
+    "results/research_v2_real/transition_cuda_preflight_r2.json": "f70555f711e938149313567f3d4fda5e1573beac41d09c2e7a1baee5a7891817",
+    "results/research_v2_real/functional_canonical_gpu_r1.json": "cd7de121dbdb335d6b5e5ba01791eba87a37a398f7e1f70bf962fcef50452240",
+    "experiments/prompt5_v1/dense75_ref/campaign_summary.json": "ddf7a191c130622c49e393422ffbf8d6c39f05d43e5925837b810e38b3813d06",
+    "experiments/prompt5_v1/dense75_ref/metrics.jsonl": "6bd76b435da433d983ab249f70029ceda01d02c0786d0137937130d5b21e7ade",
+    "experiments/prompt5_v1/dense75_ref/campaign_events.jsonl": "0319f4e784f25360a44b3ea8725d2c16289a9a1920f0ea490b9af256d25e0162",
+    "results/repository_training_v1/dense75_ref_evaluation_250M.json": "bc7c7508be74f5a11804755b17b5a35c7cdf9d77b67d73023ef8a0bda20a6a07",
+    "experiments/prompt5_v1/sparse75/campaign_summary.json": "4c403e01095920868ec0b1ba21249f8f4ff41dbfb6c24892c04d8ef7fb449919",
+    "experiments/prompt5_v1/sparse75/metrics.jsonl": "1685a91d8bc17082ad8faef3650b04e68ef7c11548a5d2728d20b750e5cc54b6",
+    "experiments/prompt5_v1/sparse75/campaign_events.jsonl": "ba60d199ec9098edae86e918f22187ba55b0443123f8a3e68c6d4424f37817c1",
+    "results/repository_training_v1/sparse75_evaluation_250M.json": "0fef02dc27e432150164b71d46c79a3cbbbb6b0056e45e70edb559735db0285b",
+    "experiments/prompt5_v1/sparse75_ngram10m/campaign_summary.json": "34e270268500fc9a2847ce6a7ff13f4a62804f0cd04a03ec2e3f5b71ae5958e6",
+    "experiments/prompt5_v1/sparse75_ngram10m/metrics.jsonl": "f1b2eac7b4015c9baf36fbed8f8a4af3bd444ec5eab775c94573c152879f42a7",
+    "experiments/prompt5_v1/sparse75_ngram10m/campaign_events.jsonl": "71770700c10debf494bd1c6030701c3a0b6f3efb0c5f40bb838d88b4dd602993",
+    "results/repository_training_v1/sparse75_ngram10m_evaluation_250M.json": "3b88d898cea65e9eeaeaf8ff6c9e9d318124f59c10ebc11730a654ab0d67c0c1",
+    "experiments/prompt5_v1/sparse75_ngram25m/campaign_summary.json": "90a87eca0982dc87a73f1f5136bddf2d940fe0252e34d1193554b66ae0fd7901",
+    "experiments/prompt5_v1/sparse75_ngram25m/metrics.jsonl": "eedbf9ab115965291c47ac6881d6a1bd7d7d1f891736188aba72c153abc52dd0",
+    "experiments/prompt5_v1/sparse75_ngram25m/campaign_events.jsonl": "48776a6947a8ea2064a5dd026e1655f55859d7dd191217e16239f8b4dffcb5ff",
+    "results/repository_training_v1/sparse75_ngram25m_evaluation_250M.json": "dd5c844eb5c5ed27d3c2604b5721ca0b4802af2f732eed43f422f6201925e3ea"
+  },
+  "summarizer_sha256": "e1d56b383226a3df95773b3b9e118df72119797b4501861134cf15591a4e59d8",
+  "scope": "Matched checkpoint-bound measurements, one training seed. NLL deltas are nats/prediction. Greedy outcomes use25 fixed tasks; repetition overlaps correctness. Seven temperatures are repeated tasks, not pass@k.",
+  "timing_scope": "Training/loop counters follow resumed verified state and exclude discarded uncheckpointed updates. Summed attempt process time includes failed attempts and first-update verification, excluding pre-run identity checks and final promotions. Loader/CPU/router statistics are periodic samples. Checkpoint costs cover verified writes only.",
+  "limitations": [
+    "One training seed; no seed robustness or statistical winner claim.",
+    "General data is a narrow logic/mathematics subset.",
+    "Frozen sampled windows are not full repository tasks; mixed and category samples differ.",
+    "Functional correctness means passing the declared finite cases, not instruction compliance or agent capability.",
+    "Repetition is a separate heuristic, including for passing completions.",
+    "Residual-off changes inference at a checkpoint trained with memory; it does not retrain a matched memory-free counterfactual.",
+    "Active parameter/FLOP counts are estimates, not measured hardware FLOPs."
+  ]
+}

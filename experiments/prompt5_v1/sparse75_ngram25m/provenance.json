@@ -1,0 +1,29 @@
+{
+  "step": 18000,
+  "tokens_seen": 147456000,
+  "cursor": 46336,
+  "wall_time": 1913.9980858999988,
+  "training_seconds": 1864.0719865000356,
+  "config_hash": "3799e490415809872828e7098d05953c23f6821134242581875b40e0c1322dff",
+  "data_hash": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6",
+  "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "seed": 42,
+  "git_commit": "3158d06b2313a27284d7ece0240d1df7722a4a87",
+  "source_hash": "6014d0e3364970da2076b7ae114ffdcc266f73cec7e93eada8660c3c2c94155d",
+  "git_dirty": true,
+  "inherited_tokens": 100007936,
+  "phase_start_step": 12208,
+  "phase_steps": 5792,
+  "new_phase_tokens": 47448064,
+  "optimizer_decay_policy": "matrix_except_ngram_v1",
+  "transition": {
+    "parent_sha256": "52f156b4b11cd371cdb1173c469e646d6d766901e54367f4906f9d49d365bade",
+    "weights_sha256": "9d308f6c526499c731b1b465fdfe79a4cc2c519cd403dc1ea5bcbaa44061387d",
+    "optimizer": "Inherited Adam moments and per-parameter steps; corrected no-decay groups",
+    "rng": "Inherited Python/NumPy/Torch/CUDA streams",
+    "scheduler": "Reset phase-relative 500-update warmup, cosine decay through18310 updates, min_ratio0.1",
+    "data_cursor": "Reset to0 on the new frozen document-isolated corpus",
+    "inherited_step": 12208
+  },
+  "checkpoint_load_seconds": 0.5143288000035682
+}

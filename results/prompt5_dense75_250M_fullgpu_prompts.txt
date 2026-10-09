@@ -1,0 +1,99 @@
+Prompt 01
+# Return the sum of two numbers.
+def add(a, b):
+
+Prompt 02
+# Print Hello, World!
+def hello_world():
+
+Prompt 03
+# Return True if n is even, otherwise False.
+def is_even(n):
+
+Prompt 04
+# Return the larger of two values.
+def larger(a, b):
+
+Prompt 05
+# Return s with its characters in reverse order.
+def reverse_string(s):
+
+Prompt 06
+# Return the square of n.
+def square(n):
+
+Prompt 07
+# Return a list containing the integers from 1 through 10.
+def numbers_one_to_ten():
+
+Prompt 08
+# Return the number of elements in values.
+def list_length(values):
+
+Prompt 09
+# Return the first element of values, or None if it is empty.
+def first_element(values):
+
+Prompt 10
+# Return s converted to uppercase.
+def uppercase(s):
+
+Prompt 11
+# Return the factorial of n for a nonnegative integer n.
+def factorial(n):
+
+Prompt 12
+# Return the nth Fibonacci number, with F(0)=0 and F(1)=1.
+def fibonacci(n):
+
+Prompt 13
+# Return True if s reads the same forwards and backwards.
+def is_palindrome(s):
+
+Prompt 14
+# Return the number of vowels in s.
+def count_vowels(s):
+
+Prompt 15
+# Return the largest number in values.
+def maximum(values):
+
+Prompt 16
+# Return the smallest number in values.
+def minimum(values):
+
+Prompt 17
+# Return the arithmetic mean of values, or None if it is empty.
+def average(values):
+
+Prompt 18
+# Return 'positive', 'negative', or 'zero' according to n.
+def sign_of(n):
+
+Prompt 19
+# Return the sum of all numbers in values using a loop.
+def sum_values(values):
+
+Prompt 20
+# Return mapping[key], or default if key is absent.
+def lookup(mapping, key, default=None):
+
+Prompt 21
+# Return the two strings joined together.
+def concatenate(a, b):
+
+Prompt 22
+# Return how many times target occurs in values.
+def count_occurrences(values, target):
+
+Prompt 23
+# Return a new list containing the values in ascending order.
+def sort_values(values):
+
+Prompt 24
+# Return values with duplicates removed, preserving first occurrence order.
+def unique_values(values):
+
+Prompt 25
+# Convert Celsius degrees to Fahrenheit and return the result.
+def celsius_to_fahrenheit(celsius):

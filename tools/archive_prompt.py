@@ -12,15 +12,19 @@ def sha(path):
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--prompt',type=int,required=True)
     parser.add_argument('--references-json',type=Path)
+    parser.add_argument('--progress-snapshot',action='store_true',help='Archive incomplete preparation without declaring the phase complete')
     args=parser.parse_args(); root=Path(__file__).resolve().parents[1]
     name=f'Prompt-{args.prompt}'; goal=root/'GOALS'/f'{name}.md'
     baseline=json.loads((root/'results/history'/name/'starting_manifest.json').read_text())
+    consumed_exclusions={str(item).replace('\\','/').strip('/').casefold()
+                         for item in baseline.get('consumed_file_exclusions', [])}
     destination=Path.home()/'Data-Zip'/name
     if not destination.is_dir() or not goal.is_file(): raise RuntimeError('Select unused Prompt-N and establish its goal first')
     prior=destination/'MANIFEST.json'
+    prior_manifest={}
     if prior.exists():
-        old=json.loads(prior.read_text())
-        if old['project_root']!=str(root) or old['starting_commit']!=baseline['starting_commit'] or old['prompt']!=name:
+        prior_manifest=json.loads(prior.read_text())
+        if prior_manifest['project_root']!=str(root) or prior_manifest['starting_commit']!=baseline['starting_commit'] or prior_manifest['prompt']!=name:
             raise RuntimeError('Refusing to overwrite another archive')
     paths=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard'],cwd=root,text=True).splitlines()
     # Public Git exclusions do not remove private research evidence from the
@@ -32,9 +36,23 @@ def main():
                      if p.is_file() and p.suffix in offline_extensions and 'checkpoints' not in p.parts)
     manifest_path=f'results/{name.lower()}_archive_manifest.json'
     verification_path=f'results/{name.lower()}_archive_verification.json'
+    volatile_local_outputs = {
+        'results/prompt3_cpu_generation_benchmark.jsonl',
+        'results/prompt3_cpu_generation_prompts.txt',
+        'results/prompt3_dense75_250M_test_benchmark.jsonl',
+        'results/prompt3_dense75_250M_test_prompts.txt',
+        'results/prompt3_sparse75_last_checkpoint_test.jsonl',
+        'results/prompt3_sparse75_last_checkpoint_test_prompts.txt',
+        'results/prompt3_sparse75_ngram25m_180M_fullgpu_benchmark.jsonl',
+        'results/prompt3_sparse75_ngram25m_180M_fullgpu_prompts.txt',
+    } if args.prompt in (3,4) else set()
     files=[]
     for relative in sorted(set(paths)):
-        if relative in (manifest_path,verification_path): continue
+        normalized=relative.replace('\\','/').casefold()
+        if any(normalized==excluded or normalized.endswith('/'+excluded)
+               for excluded in consumed_exclusions):
+            continue
+        if relative in (manifest_path,verification_path) or relative in volatile_local_outputs: continue
         p=root/relative
         if not p.is_file(): raise RuntimeError(f'Missing canonical file: {relative}')
         digest=sha(p)
@@ -55,9 +73,14 @@ def main():
             references.append(dict(project_relative_path=p.relative_to(root).as_posix(),size_bytes=p.stat().st_size,
                                    sha256=sha(p),originating_experiment=experiment,archived=False))
     manifest=dict(prompt=name,project_root=str(root),starting_commit=baseline['starting_commit'],files=files,
+                  snapshot_type='progress' if args.progress_snapshot else 'final_archive',
+                  published_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),
                   large_checkpoint_references=references,large_artifact_references=references,
+                  consumed_file_exclusions=baseline.get('consumed_file_exclusions', []),
+                  parent_preparation=prior_manifest.get('parent_preparation'),
                   excluded_self_references=[manifest_path,verification_path],
-                  scope='Final changed/new canonical files compared to the beginning-of-prompt byte hashes. ZIP MANIFEST.json and external MANIFEST.json are identical. Manifest and verification receipt are administrative self-references excluded from their own hash inventory; all research source/evidence/goal/report files are hashed. Existing datasets/checkpoints are not copied.')
+                  excluded_volatile_local_outputs=sorted(volatile_local_outputs),
+                  scope=('Progress snapshot; phase preparation remains incomplete. ' if args.progress_snapshot else 'Final archive. ') + 'Changed/new canonical files compared to the beginning-of-prompt byte hashes. ZIP MANIFEST.json and external MANIFEST.json are identical. Manifest and verification receipt are administrative self-references excluded from their own hash inventory; all research source/evidence/goal/report files are hashed. Existing datasets/checkpoints are not copied.')
     body=json.dumps(manifest,indent=2).encode('utf-8')
     (root/manifest_path).write_bytes(body); prior.write_bytes(body)
     (destination/'GOAL.md').write_bytes(goal.read_bytes())
@@ -74,7 +97,8 @@ def main():
             if hashlib.sha256(z.read(relative)).hexdigest()!=item['sha256'] or sha(p)!=item['sha256']:
                 raise RuntimeError(f'ZIP/canonical SHA mismatch: {relative}')
     if (destination/'GOAL.md').read_bytes()!=goal.read_bytes(): raise RuntimeError('Goal mirror mismatch')
-    receipt=dict(passed=True,prompt=name,archive=str(archive),archive_bytes=archive.stat().st_size,
+    receipt=dict(passed=True,prompt=name,archive='~/Data-Zip/'+name+'/'+archive.name,archive_bytes=archive.stat().st_size,
+                 snapshot_type='progress' if args.progress_snapshot else 'final_archive',
                  archive_sha256=sha(archive),canonical_files_verified=len(files),zip_crc_verified=True,
                  manifest_paths_and_sha256_verified=True,canonical_files_retained=True,goal_mirror_verified=True)
     (root/verification_path).write_text(json.dumps(receipt,indent=2),encoding='utf-8')

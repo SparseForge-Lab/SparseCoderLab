@@ -1,0 +1,28 @@
+{
+  "last": {
+    "path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/last.pt",
+    "sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+    "size_bytes": 1215232003,
+    "step": 30518,
+    "tokens_seen": 250003456,
+    "new_phase_tokens": 149995520,
+    "cursor": 146480,
+    "phase_steps": 18310,
+    "finite_model_and_adam": true,
+    "scheduler_cursor_counts_verified": true,
+    "rng_streams_present": true
+  },
+  "previous": {
+    "path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/previous.pt",
+    "sha256": "e5b65645e89f7b58a45b007466af17cfb687359f61105932a4ba59d64d77015b",
+    "size_bytes": 1215232003,
+    "step": 30000,
+    "tokens_seen": 245760000,
+    "new_phase_tokens": 145752064,
+    "cursor": 142336,
+    "phase_steps": 17792,
+    "finite_model_and_adam": true,
+    "scheduler_cursor_counts_verified": true,
+    "rng_streams_present": true
+  }
+}
