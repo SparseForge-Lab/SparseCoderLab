@@ -10,7 +10,7 @@ The original training setup ended before a matched 250M comparison was complete.
 
 The repository data pipeline preserves pinned commits, source/test/docs/build roles and repository-level splits. The earlier [multilingual pilot](Documentation/56_multilingual_repository_pilot.md) packs 7.15M training tokens from 13 projects, with 0.60M validation tokens and 1,533 FIM examples. Ingestion, exact/near-duplicate filtering, FIM reconstruction, token packing, shard verification and exact data-cursor resume checks passed. The tokenizer is unchanged; the expanded corpus and final preflight are documented below.
 
-The expanded 44-repository corpus is frozen at 201.15M training / 30.77M held-out tokens. All four canonical 100M models pass final-data CUDA smoke and exact interrupted resume. The [completed preparation record](Documentation/60_frozen_repository_transition_preflight.md) documents source subsets, measured recipe, coverage, bounded contamination/functional evidence and storage. No new training campaign has started.
+The expanded 44-repository corpus is frozen at 201.15M training / 30.77M held-out tokens. All four canonical 100M models pass final-data CUDA smoke and exact interrupted resume. The [completed preparation record](Documentation/60_frozen_repository_transition_preflight.md) documents source subsets, measured recipe, coverage, bounded contamination/functional evidence and storage. The [controlled repository comparison](Documentation/61_matched_repository_training.md) is now training all four models sequentially to a matched 250,003,456 total tokens; final evaluation is pending.
 
 ## Earlier results
 

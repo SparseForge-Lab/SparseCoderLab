@@ -49,5 +49,6 @@ Exact internal task prompts and local workflow records are kept out of the publi
 | 58_implementation_correctness_and_memory.md | Optimizer/resume fixes, measured VRAM, parity, streamed data and remaining scaling limits |
 | 59_repository_transition_preparation.md | Pinned source preparation and explicit phase-transition policy |
 | 60_frozen_repository_transition_preflight.md | Frozen corpus, measured recipe/coverage, canonical functional evidence and exact CUDA transition resume |
+| 61_matched_repository_training.md | Controlled common 250M repository-data campaign, recovery checks and matched evaluation method; results pending |
 
 Machine-readable results live under `results/`. Large datasets and checkpoints are not included in ordinary Git; their manifests retain integrity metadata.

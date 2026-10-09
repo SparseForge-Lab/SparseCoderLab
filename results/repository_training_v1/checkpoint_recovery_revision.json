@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "training_update_semantics_unchanged": true,
+  "dense_loaded_campaign_sha256": "01cb9a418fbafc7ab65eb6ced4216446493653c9a1662dcf7e229a112d5a2f1f",
+  "later_campaign_sha256": "9b939db6f672263f3f7d667956db97551de7875a27c209385265157d723283f1",
+  "applied_after_dense_process_exit": true,
+  "dense_tokens_at_revision": 250003456,
+  "change": "Persist the verified previous-generation receipt before replacing the current checkpoint, and verify inherited operative identities before extending the run inventory.",
+  "fault_injection": {
+    "old_receipt_gap_reproduced": true,
+    "patched_recovery_verified": true
+  },
+  "targeted_tests": 21,
+  "source_snapshot_retained_privately": true,
+  "scope": "Recovery bookkeeping and pre-launch identity checks only; no optimizer, data, architecture or schedule change. Dense completed with the prior wrapper and verified final state."
+}

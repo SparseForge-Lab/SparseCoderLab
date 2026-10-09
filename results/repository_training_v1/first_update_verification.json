@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "first_production_update_exact_vs_prompt4_preflight": [
+    "model",
+    "optimizer",
+    "scheduler",
+    "rng"
+  ],
+  "new_tokens_already_counted": 8192,
+  "resume_cursor": 8,
+  "resume_phase_step": 1,
+  "frozen_document_and_index_references_verified": {
+    "data/research_v2_real/shards/transition_r2/train-00000.bin": {
+      "project_relative_path": "data/research_v2_real/shards/transition_r2/train-00000.bin",
+      "size_bytes": 268435456,
+      "sha256": "d9c3499f92a7ab067312a3df414509bd54214178c64d4a87e8a3bb42d911fc9b",
+      "originating_experiment": "Prompt-4 frozen corpus and disposable transition preparation",
+      "archived": false
+    },
+    "data/research_v2_real/shards/transition_r2/train-00001.bin": {
+      "project_relative_path": "data/research_v2_real/shards/transition_r2/train-00001.bin",
+      "size_bytes": 133862888,
+      "sha256": "21623f8cedffc4b931fee1902067ef36a77097d66094fc695776b78b4dbe0830",
+      "originating_experiment": "Prompt-4 frozen corpus and disposable transition preparation",
+      "archived": false
+    },
+    "data/research_v2_real/shards/transition_r2/train_documents.jsonl": {
+      "project_relative_path": "data/research_v2_real/shards/transition_r2/train_documents.jsonl",
+      "size_bytes": 139295908,
+      "sha256": "d874d76566cfb92e9818710af4c8f7b8dee22ebbcac62d14a9e8978cad72816c",
+      "originating_experiment": "Prompt-4 frozen corpus and disposable transition preparation",
+      "archived": false
+    },
+    "data/research_v2_real/shards/transition_r2/val-00000.bin": {
+      "project_relative_path": "data/research_v2_real/shards/transition_r2/val-00000.bin",
+      "size_bytes": 61548634,
+      "sha256": "d7b83a7d58a00ad42238c955d77a562e9128e39d5da7085c7c95df534328af23",
+      "originating_experiment": "Prompt-4 frozen corpus and disposable transition preparation",
+      "archived": false
+    },
+    "data/research_v2_real/shards/transition_r2/val_documents.jsonl": {
+      "project_relative_path": "data/research_v2_real/shards/transition_r2/val_documents.jsonl",
+      "size_bytes": 22925220,
+      "sha256": "b6552915bcda19631e9c0438cf67cae4e57f5be8369b597d378618ba428cf9c7",
+      "originating_experiment": "Prompt-4 frozen corpus and disposable transition preparation",
+      "archived": false
+    },
+    "data/research_v2_real/documents/research_v2_repository_transition_2026_10_08_r2.jsonl": {
+      "project_relative_path": "data/research_v2_real/documents/research_v2_repository_transition_2026_10_08_r2.jsonl",
+      "size_bytes": 1042325581,
+      "sha256": "cd6f31bbbfb772bc6499dab0e3b7317e1b9b1d40f527e6d6a70525516787683b",
+      "originating_experiment": "Prompt-4 frozen corpus and disposable transition preparation",
+      "archived": false
+    }
+  },
+  "evaluation_index_sha256": "841568bb647907508b9e2bed8e09de90ef65c13c56103818cf9ee79a6d62bbf1",
+  "scope": "Wrapper preserves the actual validated engine update. This is the first production update, retained and resumed, not discarded or recounted."
+}
