@@ -54,7 +54,37 @@ def test_guest_does_not_inherit_host_environment(runtime, monkeypatch):
     monkeypatch.setenv("PRIVATE_EVAL_TEST_VALUE", "not-visible")
     result = runtime.execute('def probe():\n    import os\n    return os.getenv("PRIVATE_EVAL_TEST_VALUE")', "probe", [[]])
     assert result["kind"] == "completed"
-    assert result["results"] == [{"value": None, "stdout": ""}]
+    assert result["results"] == [{"value": None, "stdout": "", "stderr": ""}]
+
+
+def test_guest_captures_module_and_per_call_stdout_and_stderr(runtime):
+    source = (
+        "import sys\n"
+        "print('module out')\n"
+        "print('module err', file=sys.stderr)\n"
+        "def probe():\n"
+        "    print('call out')\n"
+        "    print('call err', file=sys.stderr)\n"
+        "    return 7\n"
+    )
+    result = runtime.execute(source, "probe", [[]])
+    assert result["kind"] == "completed"
+    assert result["module_stdout"] == "module out\n"
+    assert result["module_stderr"] == "module err\n"
+    assert result["results"] == [{"value": 7, "stdout": "call out\n", "stderr": "call err\n"}]
+
+
+def test_guest_preserves_partial_stderr_when_candidate_raises(runtime):
+    source = (
+        "import sys\n"
+        "def probe():\n"
+        "    print('before failure', file=sys.stderr)\n"
+        "    raise RuntimeError('boom')\n"
+    )
+    result = runtime.execute(source, "probe", [[]])
+    assert result["kind"] == "runtime_error"
+    assert result["exception"] == "RuntimeError"
+    assert result["partial_stderr"] == "before failure\n"
 
 
 def test_limits_and_fresh_store_recovery(runtime):

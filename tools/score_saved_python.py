@@ -54,7 +54,7 @@ def score(runtime, source, task):
         if not isinstance(observations, list) or len(observations) != len(task["cases"]):
             outcome = "invalid_output"
         else:
-            passed = sum(isinstance(o, dict) and set(o) == {"value", "stdout"} and equivalent(o["value"], c["expected"])
+            passed = sum(isinstance(o, dict) and {"value", "stdout"}.issubset(o) and equivalent(o["value"], c["expected"])
                          and o.get("stdout") == c["stdout"] for o, c in zip(observations, task["cases"]))
             outcome = "correct" if passed == len(task["cases"]) else "wrong"
     has_loop = any(isinstance(node, (ast.For, ast.While)) for node in ast.walk(tree))

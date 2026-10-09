@@ -1,0 +1,4410 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "unified_python_v1",
+  "source_benchmark": "simple_python_v1",
+  "tasks": [
+    {
+      "id": "add_wording1",
+      "prompt_number": 1,
+      "prompt": "# Implement this Python function. Return the sum of two numbers.\ndef add(a, b):",
+      "function": "add",
+      "reference": "# Return the sum of two numbers.\ndef add(a, b):\n    return a + b\n",
+      "cases": [
+        {
+          "args": [
+            2,
+            3
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            8
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            0,
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5,
+            2.25
+          ],
+          "expected": 3.75,
+          "stdout": ""
+        }
+      ],
+      "family_id": "add",
+      "category": "arithmetic",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "add_wording2",
+      "prompt_number": 2,
+      "prompt": "# Write a function that satisfies this request: Return the sum of two numbers.\ndef add(a, b):",
+      "function": "add",
+      "reference": "# Return the sum of two numbers.\ndef add(a, b):\n    return a + b\n",
+      "cases": [
+        {
+          "args": [
+            2,
+            3
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            8
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            0,
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5,
+            2.25
+          ],
+          "expected": 3.75,
+          "stdout": ""
+        }
+      ],
+      "family_id": "add",
+      "category": "arithmetic",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "add_wording3",
+      "prompt_number": 3,
+      "prompt": "# Complete the implementation with the behavior described here: Return the sum of two numbers.\ndef add(a, b):",
+      "function": "add",
+      "reference": "# Return the sum of two numbers.\ndef add(a, b):\n    return a + b\n",
+      "cases": [
+        {
+          "args": [
+            2,
+            3
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            8
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            0,
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5,
+            2.25
+          ],
+          "expected": 3.75,
+          "stdout": ""
+        }
+      ],
+      "family_id": "add",
+      "category": "arithmetic",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "add_wording4",
+      "prompt_number": 4,
+      "prompt": "# Create a Python solution for the following requirement: Return the sum of two numbers.\ndef add(a, b):",
+      "function": "add",
+      "reference": "# Return the sum of two numbers.\ndef add(a, b):\n    return a + b\n",
+      "cases": [
+        {
+          "args": [
+            2,
+            3
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            8
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            0,
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5,
+            2.25
+          ],
+          "expected": 3.75,
+          "stdout": ""
+        }
+      ],
+      "family_id": "add",
+      "category": "arithmetic",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "hello_world_wording1",
+      "prompt_number": 5,
+      "prompt": "# Implement this Python function. Print Hello, World!\ndef hello_world():",
+      "function": "hello_world",
+      "reference": "# Print Hello, World!\ndef hello_world():\n    print(\"Hello, World!\")\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": null,
+          "stdout": "Hello, World!\n"
+        }
+      ],
+      "family_id": "hello_world",
+      "category": "output",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "hello_world_wording2",
+      "prompt_number": 6,
+      "prompt": "# Write a function that satisfies this request: Print Hello, World!\ndef hello_world():",
+      "function": "hello_world",
+      "reference": "# Print Hello, World!\ndef hello_world():\n    print(\"Hello, World!\")\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": null,
+          "stdout": "Hello, World!\n"
+        }
+      ],
+      "family_id": "hello_world",
+      "category": "output",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "hello_world_wording3",
+      "prompt_number": 7,
+      "prompt": "# Complete the implementation with the behavior described here: Print Hello, World!\ndef hello_world():",
+      "function": "hello_world",
+      "reference": "# Print Hello, World!\ndef hello_world():\n    print(\"Hello, World!\")\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": null,
+          "stdout": "Hello, World!\n"
+        }
+      ],
+      "family_id": "hello_world",
+      "category": "output",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "hello_world_wording4",
+      "prompt_number": 8,
+      "prompt": "# Create a Python solution for the following requirement: Print Hello, World!\ndef hello_world():",
+      "function": "hello_world",
+      "reference": "# Print Hello, World!\ndef hello_world():\n    print(\"Hello, World!\")\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": null,
+          "stdout": "Hello, World!\n"
+        }
+      ],
+      "family_id": "hello_world",
+      "category": "output",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "is_even_wording1",
+      "prompt_number": 9,
+      "prompt": "# Implement this Python function. Return True if n is even, otherwise False.\ndef is_even(n):",
+      "function": "is_even",
+      "reference": "# Return True if n is even, otherwise False.\ndef is_even(n):\n    return n % 2 == 0\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -4
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ],
+      "family_id": "is_even",
+      "category": "conditionals",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "is_even_wording2",
+      "prompt_number": 10,
+      "prompt": "# Write a function that satisfies this request: Return True if n is even, otherwise False.\ndef is_even(n):",
+      "function": "is_even",
+      "reference": "# Return True if n is even, otherwise False.\ndef is_even(n):\n    return n % 2 == 0\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -4
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ],
+      "family_id": "is_even",
+      "category": "conditionals",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "is_even_wording3",
+      "prompt_number": 11,
+      "prompt": "# Complete the implementation with the behavior described here: Return True if n is even, otherwise False.\ndef is_even(n):",
+      "function": "is_even",
+      "reference": "# Return True if n is even, otherwise False.\ndef is_even(n):\n    return n % 2 == 0\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -4
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ],
+      "family_id": "is_even",
+      "category": "conditionals",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "is_even_wording4",
+      "prompt_number": 12,
+      "prompt": "# Create a Python solution for the following requirement: Return True if n is even, otherwise False.\ndef is_even(n):",
+      "function": "is_even",
+      "reference": "# Return True if n is even, otherwise False.\ndef is_even(n):\n    return n % 2 == 0\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -4
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ],
+      "family_id": "is_even",
+      "category": "conditionals",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "larger_wording1",
+      "prompt_number": 13,
+      "prompt": "# Implement this Python function. Return the larger of two values.\ndef larger(a, b):",
+      "function": "larger",
+      "reference": "# Return the larger of two values.\ndef larger(a, b):\n    return max(a,b)\n",
+      "cases": [
+        {
+          "args": [
+            1,
+            2
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5,
+            2
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            -7
+          ],
+          "expected": -3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4,
+            4
+          ],
+          "expected": 4,
+          "stdout": ""
+        }
+      ],
+      "family_id": "larger",
+      "category": "conditionals",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "larger_wording2",
+      "prompt_number": 14,
+      "prompt": "# Write a function that satisfies this request: Return the larger of two values.\ndef larger(a, b):",
+      "function": "larger",
+      "reference": "# Return the larger of two values.\ndef larger(a, b):\n    return max(a,b)\n",
+      "cases": [
+        {
+          "args": [
+            1,
+            2
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5,
+            2
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            -7
+          ],
+          "expected": -3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4,
+            4
+          ],
+          "expected": 4,
+          "stdout": ""
+        }
+      ],
+      "family_id": "larger",
+      "category": "conditionals",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "larger_wording3",
+      "prompt_number": 15,
+      "prompt": "# Complete the implementation with the behavior described here: Return the larger of two values.\ndef larger(a, b):",
+      "function": "larger",
+      "reference": "# Return the larger of two values.\ndef larger(a, b):\n    return max(a,b)\n",
+      "cases": [
+        {
+          "args": [
+            1,
+            2
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5,
+            2
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            -7
+          ],
+          "expected": -3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4,
+            4
+          ],
+          "expected": 4,
+          "stdout": ""
+        }
+      ],
+      "family_id": "larger",
+      "category": "conditionals",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "larger_wording4",
+      "prompt_number": 16,
+      "prompt": "# Create a Python solution for the following requirement: Return the larger of two values.\ndef larger(a, b):",
+      "function": "larger",
+      "reference": "# Return the larger of two values.\ndef larger(a, b):\n    return max(a,b)\n",
+      "cases": [
+        {
+          "args": [
+            1,
+            2
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5,
+            2
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3,
+            -7
+          ],
+          "expected": -3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4,
+            4
+          ],
+          "expected": 4,
+          "stdout": ""
+        }
+      ],
+      "family_id": "larger",
+      "category": "conditionals",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "reverse_string_wording1",
+      "prompt_number": 17,
+      "prompt": "# Implement this Python function. Return s with its characters in reverse order.\ndef reverse_string(s):",
+      "function": "reverse_string",
+      "reference": "# Return s with its characters in reverse order.\ndef reverse_string(s):\n    return s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "cba",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": "a",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a b!"
+          ],
+          "expected": "!b a",
+          "stdout": ""
+        }
+      ],
+      "family_id": "reverse_string",
+      "category": "strings",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "reverse_string_wording2",
+      "prompt_number": 18,
+      "prompt": "# Write a function that satisfies this request: Return s with its characters in reverse order.\ndef reverse_string(s):",
+      "function": "reverse_string",
+      "reference": "# Return s with its characters in reverse order.\ndef reverse_string(s):\n    return s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "cba",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": "a",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a b!"
+          ],
+          "expected": "!b a",
+          "stdout": ""
+        }
+      ],
+      "family_id": "reverse_string",
+      "category": "strings",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "reverse_string_wording3",
+      "prompt_number": 19,
+      "prompt": "# Complete the implementation with the behavior described here: Return s with its characters in reverse order.\ndef reverse_string(s):",
+      "function": "reverse_string",
+      "reference": "# Return s with its characters in reverse order.\ndef reverse_string(s):\n    return s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "cba",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": "a",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a b!"
+          ],
+          "expected": "!b a",
+          "stdout": ""
+        }
+      ],
+      "family_id": "reverse_string",
+      "category": "strings",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "reverse_string_wording4",
+      "prompt_number": 20,
+      "prompt": "# Create a Python solution for the following requirement: Return s with its characters in reverse order.\ndef reverse_string(s):",
+      "function": "reverse_string",
+      "reference": "# Return s with its characters in reverse order.\ndef reverse_string(s):\n    return s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "cba",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": "a",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a b!"
+          ],
+          "expected": "!b a",
+          "stdout": ""
+        }
+      ],
+      "family_id": "reverse_string",
+      "category": "strings",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "square_wording1",
+      "prompt_number": 21,
+      "prompt": "# Implement this Python function. Return the square of n.\ndef square(n):",
+      "function": "square",
+      "reference": "# Return the square of n.\ndef square(n):\n    return n * n\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": 9,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4
+          ],
+          "expected": 16,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5
+          ],
+          "expected": 2.25,
+          "stdout": ""
+        }
+      ],
+      "family_id": "square",
+      "category": "arithmetic",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "square_wording2",
+      "prompt_number": 22,
+      "prompt": "# Write a function that satisfies this request: Return the square of n.\ndef square(n):",
+      "function": "square",
+      "reference": "# Return the square of n.\ndef square(n):\n    return n * n\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": 9,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4
+          ],
+          "expected": 16,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5
+          ],
+          "expected": 2.25,
+          "stdout": ""
+        }
+      ],
+      "family_id": "square",
+      "category": "arithmetic",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "square_wording3",
+      "prompt_number": 23,
+      "prompt": "# Complete the implementation with the behavior described here: Return the square of n.\ndef square(n):",
+      "function": "square",
+      "reference": "# Return the square of n.\ndef square(n):\n    return n * n\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": 9,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4
+          ],
+          "expected": 16,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5
+          ],
+          "expected": 2.25,
+          "stdout": ""
+        }
+      ],
+      "family_id": "square",
+      "category": "arithmetic",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "square_wording4",
+      "prompt_number": 24,
+      "prompt": "# Create a Python solution for the following requirement: Return the square of n.\ndef square(n):",
+      "function": "square",
+      "reference": "# Return the square of n.\ndef square(n):\n    return n * n\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": 9,
+          "stdout": ""
+        },
+        {
+          "args": [
+            4
+          ],
+          "expected": 16,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1.5
+          ],
+          "expected": 2.25,
+          "stdout": ""
+        }
+      ],
+      "family_id": "square",
+      "category": "arithmetic",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "numbers_one_to_ten_wording1",
+      "prompt_number": 25,
+      "prompt": "# Implement this Python function. Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():",
+      "function": "numbers_one_to_ten",
+      "reference": "# Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():\n    return list(range(1,11))\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "numbers_one_to_ten",
+      "category": "sequences",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "numbers_one_to_ten_wording2",
+      "prompt_number": 26,
+      "prompt": "# Write a function that satisfies this request: Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():",
+      "function": "numbers_one_to_ten",
+      "reference": "# Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():\n    return list(range(1,11))\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "numbers_one_to_ten",
+      "category": "sequences",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "numbers_one_to_ten_wording3",
+      "prompt_number": 27,
+      "prompt": "# Complete the implementation with the behavior described here: Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():",
+      "function": "numbers_one_to_ten",
+      "reference": "# Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():\n    return list(range(1,11))\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "numbers_one_to_ten",
+      "category": "sequences",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "numbers_one_to_ten_wording4",
+      "prompt_number": 28,
+      "prompt": "# Create a Python solution for the following requirement: Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():",
+      "function": "numbers_one_to_ten",
+      "reference": "# Return a list containing the integers from 1 through 10.\ndef numbers_one_to_ten():\n    return list(range(1,11))\n",
+      "cases": [
+        {
+          "args": [],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "numbers_one_to_ten",
+      "category": "sequences",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "list_length_wording1",
+      "prompt_number": 29,
+      "prompt": "# Implement this Python function. Return the number of elements in values.\ndef list_length(values):",
+      "function": "list_length",
+      "reference": "# Return the number of elements in values.\ndef list_length(values):\n    return len(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "x"
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        }
+      ],
+      "family_id": "list_length",
+      "category": "sequences",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "list_length_wording2",
+      "prompt_number": 30,
+      "prompt": "# Write a function that satisfies this request: Return the number of elements in values.\ndef list_length(values):",
+      "function": "list_length",
+      "reference": "# Return the number of elements in values.\ndef list_length(values):\n    return len(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "x"
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        }
+      ],
+      "family_id": "list_length",
+      "category": "sequences",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "list_length_wording3",
+      "prompt_number": 31,
+      "prompt": "# Complete the implementation with the behavior described here: Return the number of elements in values.\ndef list_length(values):",
+      "function": "list_length",
+      "reference": "# Return the number of elements in values.\ndef list_length(values):\n    return len(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "x"
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        }
+      ],
+      "family_id": "list_length",
+      "category": "sequences",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "list_length_wording4",
+      "prompt_number": 32,
+      "prompt": "# Create a Python solution for the following requirement: Return the number of elements in values.\ndef list_length(values):",
+      "function": "list_length",
+      "reference": "# Return the number of elements in values.\ndef list_length(values):\n    return len(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "x"
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        }
+      ],
+      "family_id": "list_length",
+      "category": "sequences",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "first_element_wording1",
+      "prompt_number": 33,
+      "prompt": "# Implement this Python function. Return the first element of values, or None if it is empty.\ndef first_element(values):",
+      "function": "first_element",
+      "reference": "# Return the first element of values, or None if it is empty.\ndef first_element(values):\n    return values[0] if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              4,
+              5
+            ]
+          ],
+          "expected": 4,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        }
+      ],
+      "family_id": "first_element",
+      "category": "sequences",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "first_element_wording2",
+      "prompt_number": 34,
+      "prompt": "# Write a function that satisfies this request: Return the first element of values, or None if it is empty.\ndef first_element(values):",
+      "function": "first_element",
+      "reference": "# Return the first element of values, or None if it is empty.\ndef first_element(values):\n    return values[0] if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              4,
+              5
+            ]
+          ],
+          "expected": 4,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        }
+      ],
+      "family_id": "first_element",
+      "category": "sequences",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "first_element_wording3",
+      "prompt_number": 35,
+      "prompt": "# Complete the implementation with the behavior described here: Return the first element of values, or None if it is empty.\ndef first_element(values):",
+      "function": "first_element",
+      "reference": "# Return the first element of values, or None if it is empty.\ndef first_element(values):\n    return values[0] if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              4,
+              5
+            ]
+          ],
+          "expected": 4,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        }
+      ],
+      "family_id": "first_element",
+      "category": "sequences",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "first_element_wording4",
+      "prompt_number": 36,
+      "prompt": "# Create a Python solution for the following requirement: Return the first element of values, or None if it is empty.\ndef first_element(values):",
+      "function": "first_element",
+      "reference": "# Return the first element of values, or None if it is empty.\ndef first_element(values):\n    return values[0] if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              4,
+              5
+            ]
+          ],
+          "expected": 4,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        }
+      ],
+      "family_id": "first_element",
+      "category": "sequences",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "uppercase_wording1",
+      "prompt_number": 37,
+      "prompt": "# Implement this Python function. Return s converted to uppercase.\ndef uppercase(s):",
+      "function": "uppercase",
+      "reference": "# Return s converted to uppercase.\ndef uppercase(s):\n    return s.upper()\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "ABC",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B!"
+          ],
+          "expected": "A B!",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "12"
+          ],
+          "expected": "12",
+          "stdout": ""
+        }
+      ],
+      "family_id": "uppercase",
+      "category": "strings",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "uppercase_wording2",
+      "prompt_number": 38,
+      "prompt": "# Write a function that satisfies this request: Return s converted to uppercase.\ndef uppercase(s):",
+      "function": "uppercase",
+      "reference": "# Return s converted to uppercase.\ndef uppercase(s):\n    return s.upper()\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "ABC",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B!"
+          ],
+          "expected": "A B!",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "12"
+          ],
+          "expected": "12",
+          "stdout": ""
+        }
+      ],
+      "family_id": "uppercase",
+      "category": "strings",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "uppercase_wording3",
+      "prompt_number": 39,
+      "prompt": "# Complete the implementation with the behavior described here: Return s converted to uppercase.\ndef uppercase(s):",
+      "function": "uppercase",
+      "reference": "# Return s converted to uppercase.\ndef uppercase(s):\n    return s.upper()\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "ABC",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B!"
+          ],
+          "expected": "A B!",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "12"
+          ],
+          "expected": "12",
+          "stdout": ""
+        }
+      ],
+      "family_id": "uppercase",
+      "category": "strings",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "uppercase_wording4",
+      "prompt_number": 40,
+      "prompt": "# Create a Python solution for the following requirement: Return s converted to uppercase.\ndef uppercase(s):",
+      "function": "uppercase",
+      "reference": "# Return s converted to uppercase.\ndef uppercase(s):\n    return s.upper()\n",
+      "cases": [
+        {
+          "args": [
+            "abc"
+          ],
+          "expected": "ABC",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B!"
+          ],
+          "expected": "A B!",
+          "stdout": ""
+        },
+        {
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "12"
+          ],
+          "expected": "12",
+          "stdout": ""
+        }
+      ],
+      "family_id": "uppercase",
+      "category": "strings",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "factorial_wording1",
+      "prompt_number": 41,
+      "prompt": "# Implement this Python function. Return the factorial of n for a nonnegative integer n.\ndef factorial(n):",
+      "function": "factorial",
+      "reference": "# Return the factorial of n for a nonnegative integer n.\ndef factorial(n):\n    result = 1\n    for i in range(2,n+1):\n        result *= i\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5
+          ],
+          "expected": 120,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 5040,
+          "stdout": ""
+        }
+      ],
+      "family_id": "factorial",
+      "category": "loops",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "factorial_wording2",
+      "prompt_number": 42,
+      "prompt": "# Write a function that satisfies this request: Return the factorial of n for a nonnegative integer n.\ndef factorial(n):",
+      "function": "factorial",
+      "reference": "# Return the factorial of n for a nonnegative integer n.\ndef factorial(n):\n    result = 1\n    for i in range(2,n+1):\n        result *= i\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5
+          ],
+          "expected": 120,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 5040,
+          "stdout": ""
+        }
+      ],
+      "family_id": "factorial",
+      "category": "loops",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "factorial_wording3",
+      "prompt_number": 43,
+      "prompt": "# Complete the implementation with the behavior described here: Return the factorial of n for a nonnegative integer n.\ndef factorial(n):",
+      "function": "factorial",
+      "reference": "# Return the factorial of n for a nonnegative integer n.\ndef factorial(n):\n    result = 1\n    for i in range(2,n+1):\n        result *= i\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5
+          ],
+          "expected": 120,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 5040,
+          "stdout": ""
+        }
+      ],
+      "family_id": "factorial",
+      "category": "loops",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "factorial_wording4",
+      "prompt_number": 44,
+      "prompt": "# Create a Python solution for the following requirement: Return the factorial of n for a nonnegative integer n.\ndef factorial(n):",
+      "function": "factorial",
+      "reference": "# Return the factorial of n for a nonnegative integer n.\ndef factorial(n):\n    result = 1\n    for i in range(2,n+1):\n        result *= i\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            5
+          ],
+          "expected": 120,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 5040,
+          "stdout": ""
+        }
+      ],
+      "family_id": "factorial",
+      "category": "loops",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "fibonacci_wording1",
+      "prompt_number": 45,
+      "prompt": "# Implement this Python function. Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):",
+      "function": "fibonacci",
+      "reference": "# Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):\n    a,b = 0,1\n    for _ in range(n):\n        a,b = b,a+b\n    return a\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 13,
+          "stdout": ""
+        },
+        {
+          "args": [
+            10
+          ],
+          "expected": 55,
+          "stdout": ""
+        }
+      ],
+      "family_id": "fibonacci",
+      "category": "loops",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "fibonacci_wording2",
+      "prompt_number": 46,
+      "prompt": "# Write a function that satisfies this request: Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):",
+      "function": "fibonacci",
+      "reference": "# Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):\n    a,b = 0,1\n    for _ in range(n):\n        a,b = b,a+b\n    return a\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 13,
+          "stdout": ""
+        },
+        {
+          "args": [
+            10
+          ],
+          "expected": 55,
+          "stdout": ""
+        }
+      ],
+      "family_id": "fibonacci",
+      "category": "loops",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "fibonacci_wording3",
+      "prompt_number": 47,
+      "prompt": "# Complete the implementation with the behavior described here: Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):",
+      "function": "fibonacci",
+      "reference": "# Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):\n    a,b = 0,1\n    for _ in range(n):\n        a,b = b,a+b\n    return a\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 13,
+          "stdout": ""
+        },
+        {
+          "args": [
+            10
+          ],
+          "expected": 55,
+          "stdout": ""
+        }
+      ],
+      "family_id": "fibonacci",
+      "category": "loops",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "fibonacci_wording4",
+      "prompt_number": 48,
+      "prompt": "# Create a Python solution for the following requirement: Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):",
+      "function": "fibonacci",
+      "reference": "# Return the nth Fibonacci number, with F(0)=0 and F(1)=1.\ndef fibonacci(n):\n    a,b = 0,1\n    for _ in range(n):\n        a,b = b,a+b\n    return a\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            2
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            7
+          ],
+          "expected": 13,
+          "stdout": ""
+        },
+        {
+          "args": [
+            10
+          ],
+          "expected": 55,
+          "stdout": ""
+        }
+      ],
+      "family_id": "fibonacci",
+      "category": "loops",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "is_palindrome_wording1",
+      "prompt_number": 49,
+      "prompt": "# Implement this Python function. Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):",
+      "function": "is_palindrome",
+      "reference": "# Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):\n    return s == s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "racecar"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "ab"
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "Racecar"
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ],
+      "family_id": "is_palindrome",
+      "category": "strings",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "is_palindrome_wording2",
+      "prompt_number": 50,
+      "prompt": "# Write a function that satisfies this request: Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):",
+      "function": "is_palindrome",
+      "reference": "# Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):\n    return s == s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "racecar"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "ab"
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "Racecar"
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ],
+      "family_id": "is_palindrome",
+      "category": "strings",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "is_palindrome_wording3",
+      "prompt_number": 51,
+      "prompt": "# Complete the implementation with the behavior described here: Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):",
+      "function": "is_palindrome",
+      "reference": "# Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):\n    return s == s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "racecar"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "ab"
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "Racecar"
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ],
+      "family_id": "is_palindrome",
+      "category": "strings",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "is_palindrome_wording4",
+      "prompt_number": 52,
+      "prompt": "# Create a Python solution for the following requirement: Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):",
+      "function": "is_palindrome",
+      "reference": "# Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):\n    return s == s[::-1]\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "racecar"
+          ],
+          "expected": true,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "ab"
+          ],
+          "expected": false,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "Racecar"
+          ],
+          "expected": false,
+          "stdout": ""
+        }
+      ],
+      "family_id": "is_palindrome",
+      "category": "strings",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "count_vowels_wording1",
+      "prompt_number": 53,
+      "prompt": "# Implement this Python function. Return the number of vowels in s.\ndef count_vowels(s):",
+      "function": "count_vowels",
+      "reference": "# Return the number of vowels in s.\ndef count_vowels(s):\n    return sum(c.lower() in \"aeiou\" for c in s)\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "hello"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "AEIOU"
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "rhythm"
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B e"
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ],
+      "family_id": "count_vowels",
+      "category": "strings",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "count_vowels_wording2",
+      "prompt_number": 54,
+      "prompt": "# Write a function that satisfies this request: Return the number of vowels in s.\ndef count_vowels(s):",
+      "function": "count_vowels",
+      "reference": "# Return the number of vowels in s.\ndef count_vowels(s):\n    return sum(c.lower() in \"aeiou\" for c in s)\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "hello"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "AEIOU"
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "rhythm"
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B e"
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ],
+      "family_id": "count_vowels",
+      "category": "strings",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "count_vowels_wording3",
+      "prompt_number": 55,
+      "prompt": "# Complete the implementation with the behavior described here: Return the number of vowels in s.\ndef count_vowels(s):",
+      "function": "count_vowels",
+      "reference": "# Return the number of vowels in s.\ndef count_vowels(s):\n    return sum(c.lower() in \"aeiou\" for c in s)\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "hello"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "AEIOU"
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "rhythm"
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B e"
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ],
+      "family_id": "count_vowels",
+      "category": "strings",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "count_vowels_wording4",
+      "prompt_number": 56,
+      "prompt": "# Create a Python solution for the following requirement: Return the number of vowels in s.\ndef count_vowels(s):",
+      "function": "count_vowels",
+      "reference": "# Return the number of vowels in s.\ndef count_vowels(s):\n    return sum(c.lower() in \"aeiou\" for c in s)\n",
+      "cases": [
+        {
+          "args": [
+            ""
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "hello"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "AEIOU"
+          ],
+          "expected": 5,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "rhythm"
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a B e"
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ],
+      "family_id": "count_vowels",
+      "category": "strings",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "maximum_wording1",
+      "prompt_number": 57,
+      "prompt": "# Implement this Python function. Return the largest number in values.\ndef maximum(values):",
+      "function": "maximum",
+      "reference": "# Return the largest number in values.\ndef maximum(values):\n    return max(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ],
+      "family_id": "maximum",
+      "category": "sequences",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "maximum_wording2",
+      "prompt_number": 58,
+      "prompt": "# Write a function that satisfies this request: Return the largest number in values.\ndef maximum(values):",
+      "function": "maximum",
+      "reference": "# Return the largest number in values.\ndef maximum(values):\n    return max(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ],
+      "family_id": "maximum",
+      "category": "sequences",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "maximum_wording3",
+      "prompt_number": 59,
+      "prompt": "# Complete the implementation with the behavior described here: Return the largest number in values.\ndef maximum(values):",
+      "function": "maximum",
+      "reference": "# Return the largest number in values.\ndef maximum(values):\n    return max(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ],
+      "family_id": "maximum",
+      "category": "sequences",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "maximum_wording4",
+      "prompt_number": 60,
+      "prompt": "# Create a Python solution for the following requirement: Return the largest number in values.\ndef maximum(values):",
+      "function": "maximum",
+      "reference": "# Return the largest number in values.\ndef maximum(values):\n    return max(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ],
+      "family_id": "maximum",
+      "category": "sequences",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "minimum_wording1",
+      "prompt_number": 61,
+      "prompt": "# Implement this Python function. Return the smallest number in values.\ndef minimum(values):",
+      "function": "minimum",
+      "reference": "# Return the smallest number in values.\ndef minimum(values):\n    return min(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -8,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ],
+      "family_id": "minimum",
+      "category": "sequences",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "minimum_wording2",
+      "prompt_number": 62,
+      "prompt": "# Write a function that satisfies this request: Return the smallest number in values.\ndef minimum(values):",
+      "function": "minimum",
+      "reference": "# Return the smallest number in values.\ndef minimum(values):\n    return min(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -8,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ],
+      "family_id": "minimum",
+      "category": "sequences",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "minimum_wording3",
+      "prompt_number": 63,
+      "prompt": "# Complete the implementation with the behavior described here: Return the smallest number in values.\ndef minimum(values):",
+      "function": "minimum",
+      "reference": "# Return the smallest number in values.\ndef minimum(values):\n    return min(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -8,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ],
+      "family_id": "minimum",
+      "category": "sequences",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "minimum_wording4",
+      "prompt_number": 64,
+      "prompt": "# Create a Python solution for the following requirement: Return the smallest number in values.\ndef minimum(values):",
+      "function": "minimum",
+      "reference": "# Return the smallest number in values.\ndef minimum(values):\n    return min(values)\n",
+      "cases": [
+        {
+          "args": [
+            [
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": 1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -5,
+              -2,
+              -8
+            ]
+          ],
+          "expected": -8,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7,
+          "stdout": ""
+        }
+      ],
+      "family_id": "minimum",
+      "category": "sequences",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "average_wording1",
+      "prompt_number": 65,
+      "prompt": "# Implement this Python function. Return the arithmetic mean of values, or None if it is empty.\ndef average(values):",
+      "function": "average",
+      "reference": "# Return the arithmetic mean of values, or None if it is empty.\ndef average(values):\n    return sum(values) / len(values) if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -3,
+              3
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 1.5,
+          "stdout": ""
+        }
+      ],
+      "family_id": "average",
+      "category": "arithmetic",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "average_wording2",
+      "prompt_number": 66,
+      "prompt": "# Write a function that satisfies this request: Return the arithmetic mean of values, or None if it is empty.\ndef average(values):",
+      "function": "average",
+      "reference": "# Return the arithmetic mean of values, or None if it is empty.\ndef average(values):\n    return sum(values) / len(values) if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -3,
+              3
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 1.5,
+          "stdout": ""
+        }
+      ],
+      "family_id": "average",
+      "category": "arithmetic",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "average_wording3",
+      "prompt_number": 67,
+      "prompt": "# Complete the implementation with the behavior described here: Return the arithmetic mean of values, or None if it is empty.\ndef average(values):",
+      "function": "average",
+      "reference": "# Return the arithmetic mean of values, or None if it is empty.\ndef average(values):\n    return sum(values) / len(values) if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -3,
+              3
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 1.5,
+          "stdout": ""
+        }
+      ],
+      "family_id": "average",
+      "category": "arithmetic",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "average_wording4",
+      "prompt_number": 68,
+      "prompt": "# Create a Python solution for the following requirement: Return the arithmetic mean of values, or None if it is empty.\ndef average(values):",
+      "function": "average",
+      "reference": "# Return the arithmetic mean of values, or None if it is empty.\ndef average(values):\n    return sum(values) / len(values) if values else None\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -3,
+              3
+            ]
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 1.5,
+          "stdout": ""
+        }
+      ],
+      "family_id": "average",
+      "category": "arithmetic",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "sign_of_wording1",
+      "prompt_number": 69,
+      "prompt": "# Implement this Python function. Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):",
+      "function": "sign_of",
+      "reference": "# Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):\n    return \"positive\" if n > 0 else \"negative\" if n < 0 else \"zero\"\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": "zero",
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": "positive",
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": "negative",
+          "stdout": ""
+        },
+        {
+          "args": [
+            0.5
+          ],
+          "expected": "positive",
+          "stdout": ""
+        }
+      ],
+      "family_id": "sign_of",
+      "category": "conditionals",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "sign_of_wording2",
+      "prompt_number": 70,
+      "prompt": "# Write a function that satisfies this request: Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):",
+      "function": "sign_of",
+      "reference": "# Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):\n    return \"positive\" if n > 0 else \"negative\" if n < 0 else \"zero\"\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": "zero",
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": "positive",
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": "negative",
+          "stdout": ""
+        },
+        {
+          "args": [
+            0.5
+          ],
+          "expected": "positive",
+          "stdout": ""
+        }
+      ],
+      "family_id": "sign_of",
+      "category": "conditionals",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "sign_of_wording3",
+      "prompt_number": 71,
+      "prompt": "# Complete the implementation with the behavior described here: Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):",
+      "function": "sign_of",
+      "reference": "# Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):\n    return \"positive\" if n > 0 else \"negative\" if n < 0 else \"zero\"\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": "zero",
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": "positive",
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": "negative",
+          "stdout": ""
+        },
+        {
+          "args": [
+            0.5
+          ],
+          "expected": "positive",
+          "stdout": ""
+        }
+      ],
+      "family_id": "sign_of",
+      "category": "conditionals",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "sign_of_wording4",
+      "prompt_number": 72,
+      "prompt": "# Create a Python solution for the following requirement: Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):",
+      "function": "sign_of",
+      "reference": "# Return 'positive', 'negative', or 'zero' according to n.\ndef sign_of(n):\n    return \"positive\" if n > 0 else \"negative\" if n < 0 else \"zero\"\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": "zero",
+          "stdout": ""
+        },
+        {
+          "args": [
+            3
+          ],
+          "expected": "positive",
+          "stdout": ""
+        },
+        {
+          "args": [
+            -3
+          ],
+          "expected": "negative",
+          "stdout": ""
+        },
+        {
+          "args": [
+            0.5
+          ],
+          "expected": "positive",
+          "stdout": ""
+        }
+      ],
+      "family_id": "sign_of",
+      "category": "conditionals",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "sum_values_wording1",
+      "prompt_number": 73,
+      "prompt": "# Implement this Python function. Return the sum of all numbers in values using a loop.\ndef sum_values(values):",
+      "function": "sum_values",
+      "reference": "# Return the sum of all numbers in values using a loop.\ndef sum_values(values):\n    total = 0\n    for value in values:\n        total += value\n    return total\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 6,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -4,
+              3
+            ]
+          ],
+          "expected": -1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1.5,
+              2
+            ]
+          ],
+          "expected": 3.5,
+          "stdout": ""
+        }
+      ],
+      "family_id": "sum_values",
+      "category": "loops",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "sum_values_wording2",
+      "prompt_number": 74,
+      "prompt": "# Write a function that satisfies this request: Return the sum of all numbers in values using a loop.\ndef sum_values(values):",
+      "function": "sum_values",
+      "reference": "# Return the sum of all numbers in values using a loop.\ndef sum_values(values):\n    total = 0\n    for value in values:\n        total += value\n    return total\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 6,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -4,
+              3
+            ]
+          ],
+          "expected": -1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1.5,
+              2
+            ]
+          ],
+          "expected": 3.5,
+          "stdout": ""
+        }
+      ],
+      "family_id": "sum_values",
+      "category": "loops",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "sum_values_wording3",
+      "prompt_number": 75,
+      "prompt": "# Complete the implementation with the behavior described here: Return the sum of all numbers in values using a loop.\ndef sum_values(values):",
+      "function": "sum_values",
+      "reference": "# Return the sum of all numbers in values using a loop.\ndef sum_values(values):\n    total = 0\n    for value in values:\n        total += value\n    return total\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 6,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -4,
+              3
+            ]
+          ],
+          "expected": -1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1.5,
+              2
+            ]
+          ],
+          "expected": 3.5,
+          "stdout": ""
+        }
+      ],
+      "family_id": "sum_values",
+      "category": "loops",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "sum_values_wording4",
+      "prompt_number": 76,
+      "prompt": "# Create a Python solution for the following requirement: Return the sum of all numbers in values using a loop.\ndef sum_values(values):",
+      "function": "sum_values",
+      "reference": "# Return the sum of all numbers in values using a loop.\ndef sum_values(values):\n    total = 0\n    for value in values:\n        total += value\n    return total\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 6,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -4,
+              3
+            ]
+          ],
+          "expected": -1,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1.5,
+              2
+            ]
+          ],
+          "expected": 3.5,
+          "stdout": ""
+        }
+      ],
+      "family_id": "sum_values",
+      "category": "loops",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "lookup_wording1",
+      "prompt_number": 77,
+      "prompt": "# Implement this Python function. Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):",
+      "function": "lookup",
+      "reference": "# Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):\n    return mapping.get(key, default)\n",
+      "cases": [
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "a"
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "b"
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {},
+            "x",
+            7
+          ],
+          "expected": 7,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "x": null
+            },
+            "x",
+            7
+          ],
+          "expected": null,
+          "stdout": ""
+        }
+      ],
+      "family_id": "lookup",
+      "category": "mappings",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "lookup_wording2",
+      "prompt_number": 78,
+      "prompt": "# Write a function that satisfies this request: Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):",
+      "function": "lookup",
+      "reference": "# Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):\n    return mapping.get(key, default)\n",
+      "cases": [
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "a"
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "b"
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {},
+            "x",
+            7
+          ],
+          "expected": 7,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "x": null
+            },
+            "x",
+            7
+          ],
+          "expected": null,
+          "stdout": ""
+        }
+      ],
+      "family_id": "lookup",
+      "category": "mappings",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "lookup_wording3",
+      "prompt_number": 79,
+      "prompt": "# Complete the implementation with the behavior described here: Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):",
+      "function": "lookup",
+      "reference": "# Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):\n    return mapping.get(key, default)\n",
+      "cases": [
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "a"
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "b"
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {},
+            "x",
+            7
+          ],
+          "expected": 7,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "x": null
+            },
+            "x",
+            7
+          ],
+          "expected": null,
+          "stdout": ""
+        }
+      ],
+      "family_id": "lookup",
+      "category": "mappings",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "lookup_wording4",
+      "prompt_number": 80,
+      "prompt": "# Create a Python solution for the following requirement: Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):",
+      "function": "lookup",
+      "reference": "# Return mapping[key], or default if key is absent.\ndef lookup(mapping, key, default=None):\n    return mapping.get(key, default)\n",
+      "cases": [
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "a"
+          ],
+          "expected": 3,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "a": 3
+            },
+            "b"
+          ],
+          "expected": null,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {},
+            "x",
+            7
+          ],
+          "expected": 7,
+          "stdout": ""
+        },
+        {
+          "args": [
+            {
+              "x": null
+            },
+            "x",
+            7
+          ],
+          "expected": null,
+          "stdout": ""
+        }
+      ],
+      "family_id": "lookup",
+      "category": "mappings",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "concatenate_wording1",
+      "prompt_number": 81,
+      "prompt": "# Implement this Python function. Return the two strings joined together.\ndef concatenate(a, b):",
+      "function": "concatenate",
+      "reference": "# Return the two strings joined together.\ndef concatenate(a, b):\n    return a+b\n",
+      "cases": [
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "expected": "ab",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "",
+            "x"
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "x",
+            ""
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a ",
+            "b"
+          ],
+          "expected": "a b",
+          "stdout": ""
+        }
+      ],
+      "family_id": "concatenate",
+      "category": "strings",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "concatenate_wording2",
+      "prompt_number": 82,
+      "prompt": "# Write a function that satisfies this request: Return the two strings joined together.\ndef concatenate(a, b):",
+      "function": "concatenate",
+      "reference": "# Return the two strings joined together.\ndef concatenate(a, b):\n    return a+b\n",
+      "cases": [
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "expected": "ab",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "",
+            "x"
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "x",
+            ""
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a ",
+            "b"
+          ],
+          "expected": "a b",
+          "stdout": ""
+        }
+      ],
+      "family_id": "concatenate",
+      "category": "strings",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "concatenate_wording3",
+      "prompt_number": 83,
+      "prompt": "# Complete the implementation with the behavior described here: Return the two strings joined together.\ndef concatenate(a, b):",
+      "function": "concatenate",
+      "reference": "# Return the two strings joined together.\ndef concatenate(a, b):\n    return a+b\n",
+      "cases": [
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "expected": "ab",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "",
+            "x"
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "x",
+            ""
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a ",
+            "b"
+          ],
+          "expected": "a b",
+          "stdout": ""
+        }
+      ],
+      "family_id": "concatenate",
+      "category": "strings",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "concatenate_wording4",
+      "prompt_number": 84,
+      "prompt": "# Create a Python solution for the following requirement: Return the two strings joined together.\ndef concatenate(a, b):",
+      "function": "concatenate",
+      "reference": "# Return the two strings joined together.\ndef concatenate(a, b):\n    return a+b\n",
+      "cases": [
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "expected": "ab",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "",
+            "x"
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "x",
+            ""
+          ],
+          "expected": "x",
+          "stdout": ""
+        },
+        {
+          "args": [
+            "a ",
+            "b"
+          ],
+          "expected": "a b",
+          "stdout": ""
+        }
+      ],
+      "family_id": "concatenate",
+      "category": "strings",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "count_occurrences_wording1",
+      "prompt_number": 85,
+      "prompt": "# Implement this Python function. Return how many times target occurs in values.\ndef count_occurrences(values, target):",
+      "function": "count_occurrences",
+      "reference": "# Return how many times target occurs in values.\ndef count_occurrences(values, target):\n    return values.count(target)\n",
+      "cases": [
+        {
+          "args": [
+            [],
+            1
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1
+            ],
+            1
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "a",
+              "b",
+              "a"
+            ],
+            "a"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0,
+              1
+            ],
+            0
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ],
+      "family_id": "count_occurrences",
+      "category": "sequences",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "count_occurrences_wording2",
+      "prompt_number": 86,
+      "prompt": "# Write a function that satisfies this request: Return how many times target occurs in values.\ndef count_occurrences(values, target):",
+      "function": "count_occurrences",
+      "reference": "# Return how many times target occurs in values.\ndef count_occurrences(values, target):\n    return values.count(target)\n",
+      "cases": [
+        {
+          "args": [
+            [],
+            1
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1
+            ],
+            1
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "a",
+              "b",
+              "a"
+            ],
+            "a"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0,
+              1
+            ],
+            0
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ],
+      "family_id": "count_occurrences",
+      "category": "sequences",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "count_occurrences_wording3",
+      "prompt_number": 87,
+      "prompt": "# Complete the implementation with the behavior described here: Return how many times target occurs in values.\ndef count_occurrences(values, target):",
+      "function": "count_occurrences",
+      "reference": "# Return how many times target occurs in values.\ndef count_occurrences(values, target):\n    return values.count(target)\n",
+      "cases": [
+        {
+          "args": [
+            [],
+            1
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1
+            ],
+            1
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "a",
+              "b",
+              "a"
+            ],
+            "a"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0,
+              1
+            ],
+            0
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ],
+      "family_id": "count_occurrences",
+      "category": "sequences",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "count_occurrences_wording4",
+      "prompt_number": 88,
+      "prompt": "# Create a Python solution for the following requirement: Return how many times target occurs in values.\ndef count_occurrences(values, target):",
+      "function": "count_occurrences",
+      "reference": "# Return how many times target occurs in values.\ndef count_occurrences(values, target):\n    return values.count(target)\n",
+      "cases": [
+        {
+          "args": [
+            [],
+            1
+          ],
+          "expected": 0,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1
+            ],
+            1
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "a",
+              "b",
+              "a"
+            ],
+            "a"
+          ],
+          "expected": 2,
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0,
+              1
+            ],
+            0
+          ],
+          "expected": 2,
+          "stdout": ""
+        }
+      ],
+      "family_id": "count_occurrences",
+      "category": "sequences",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "sort_values_wording1",
+      "prompt_number": 89,
+      "prompt": "# Implement this Python function. Return a new list containing the values in ascending order.\ndef sort_values(values):",
+      "function": "sort_values",
+      "reference": "# Return a new list containing the values in ascending order.\ndef sort_values(values):\n    return sorted(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -1,
+              3,
+              -1
+            ]
+          ],
+          "expected": [
+            -1,
+            -1,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "sort_values",
+      "category": "sequences",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "sort_values_wording2",
+      "prompt_number": 90,
+      "prompt": "# Write a function that satisfies this request: Return a new list containing the values in ascending order.\ndef sort_values(values):",
+      "function": "sort_values",
+      "reference": "# Return a new list containing the values in ascending order.\ndef sort_values(values):\n    return sorted(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -1,
+              3,
+              -1
+            ]
+          ],
+          "expected": [
+            -1,
+            -1,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "sort_values",
+      "category": "sequences",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "sort_values_wording3",
+      "prompt_number": 91,
+      "prompt": "# Complete the implementation with the behavior described here: Return a new list containing the values in ascending order.\ndef sort_values(values):",
+      "function": "sort_values",
+      "reference": "# Return a new list containing the values in ascending order.\ndef sort_values(values):\n    return sorted(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -1,
+              3,
+              -1
+            ]
+          ],
+          "expected": [
+            -1,
+            -1,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "sort_values",
+      "category": "sequences",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "sort_values_wording4",
+      "prompt_number": 92,
+      "prompt": "# Create a Python solution for the following requirement: Return a new list containing the values in ascending order.\ndef sort_values(values):",
+      "function": "sort_values",
+      "reference": "# Return a new list containing the values in ascending order.\ndef sort_values(values):\n    return sorted(values)\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              -1,
+              3,
+              -1
+            ]
+          ],
+          "expected": [
+            -1,
+            -1,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "sort_values",
+      "category": "sequences",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "unique_values_wording1",
+      "prompt_number": 93,
+      "prompt": "# Implement this Python function. Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):",
+      "function": "unique_values",
+      "reference": "# Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):\n    result = []\n    for value in values:\n        if value not in result:\n            result.append(value)\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "b",
+              "a",
+              "b"
+            ]
+          ],
+          "expected": [
+            "b",
+            "a"
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0
+            ]
+          ],
+          "expected": [
+            0
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "unique_values",
+      "category": "sequences",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "unique_values_wording2",
+      "prompt_number": 94,
+      "prompt": "# Write a function that satisfies this request: Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):",
+      "function": "unique_values",
+      "reference": "# Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):\n    result = []\n    for value in values:\n        if value not in result:\n            result.append(value)\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "b",
+              "a",
+              "b"
+            ]
+          ],
+          "expected": [
+            "b",
+            "a"
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0
+            ]
+          ],
+          "expected": [
+            0
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "unique_values",
+      "category": "sequences",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "unique_values_wording3",
+      "prompt_number": 95,
+      "prompt": "# Complete the implementation with the behavior described here: Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):",
+      "function": "unique_values",
+      "reference": "# Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):\n    result = []\n    for value in values:\n        if value not in result:\n            result.append(value)\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "b",
+              "a",
+              "b"
+            ]
+          ],
+          "expected": [
+            "b",
+            "a"
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0
+            ]
+          ],
+          "expected": [
+            0
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "unique_values",
+      "category": "sequences",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "unique_values_wording4",
+      "prompt_number": 96,
+      "prompt": "# Create a Python solution for the following requirement: Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):",
+      "function": "unique_values",
+      "reference": "# Return values with duplicates removed, preserving first occurrence order.\ndef unique_values(values):\n    result = []\n    for value in values:\n        if value not in result:\n            result.append(value)\n    return result\n",
+      "cases": [
+        {
+          "args": [
+            []
+          ],
+          "expected": [],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              "b",
+              "a",
+              "b"
+            ]
+          ],
+          "expected": [
+            "b",
+            "a"
+          ],
+          "stdout": ""
+        },
+        {
+          "args": [
+            [
+              0,
+              0
+            ]
+          ],
+          "expected": [
+            0
+          ],
+          "stdout": ""
+        }
+      ],
+      "family_id": "unique_values",
+      "category": "sequences",
+      "paraphrase_index": 4
+    },
+    {
+      "id": "celsius_to_fahrenheit_wording1",
+      "prompt_number": 97,
+      "prompt": "# Implement this Python function. Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):",
+      "function": "celsius_to_fahrenheit",
+      "reference": "# Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 32,
+          "stdout": ""
+        },
+        {
+          "args": [
+            100
+          ],
+          "expected": 212,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -40
+          ],
+          "expected": -40,
+          "stdout": ""
+        },
+        {
+          "args": [
+            20
+          ],
+          "expected": 68,
+          "stdout": ""
+        }
+      ],
+      "family_id": "celsius_to_fahrenheit",
+      "category": "arithmetic",
+      "paraphrase_index": 1
+    },
+    {
+      "id": "celsius_to_fahrenheit_wording2",
+      "prompt_number": 98,
+      "prompt": "# Write a function that satisfies this request: Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):",
+      "function": "celsius_to_fahrenheit",
+      "reference": "# Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 32,
+          "stdout": ""
+        },
+        {
+          "args": [
+            100
+          ],
+          "expected": 212,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -40
+          ],
+          "expected": -40,
+          "stdout": ""
+        },
+        {
+          "args": [
+            20
+          ],
+          "expected": 68,
+          "stdout": ""
+        }
+      ],
+      "family_id": "celsius_to_fahrenheit",
+      "category": "arithmetic",
+      "paraphrase_index": 2
+    },
+    {
+      "id": "celsius_to_fahrenheit_wording3",
+      "prompt_number": 99,
+      "prompt": "# Complete the implementation with the behavior described here: Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):",
+      "function": "celsius_to_fahrenheit",
+      "reference": "# Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 32,
+          "stdout": ""
+        },
+        {
+          "args": [
+            100
+          ],
+          "expected": 212,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -40
+          ],
+          "expected": -40,
+          "stdout": ""
+        },
+        {
+          "args": [
+            20
+          ],
+          "expected": 68,
+          "stdout": ""
+        }
+      ],
+      "family_id": "celsius_to_fahrenheit",
+      "category": "arithmetic",
+      "paraphrase_index": 3
+    },
+    {
+      "id": "celsius_to_fahrenheit_wording4",
+      "prompt_number": 100,
+      "prompt": "# Create a Python solution for the following requirement: Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):",
+      "function": "celsius_to_fahrenheit",
+      "reference": "# Convert Celsius degrees to Fahrenheit and return the result.\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n",
+      "cases": [
+        {
+          "args": [
+            0
+          ],
+          "expected": 32,
+          "stdout": ""
+        },
+        {
+          "args": [
+            100
+          ],
+          "expected": 212,
+          "stdout": ""
+        },
+        {
+          "args": [
+            -40
+          ],
+          "expected": -40,
+          "stdout": ""
+        },
+        {
+          "args": [
+            20
+          ],
+          "expected": 68,
+          "stdout": ""
+        }
+      ],
+      "family_id": "celsius_to_fahrenheit",
+      "category": "arithmetic",
+      "paraphrase_index": 4
+    }
+  ],
+  "scope": "100 deterministic prompts derived as four wording variants of 25 elementary reference implementations; each task has fixed argument/output cases. The 25 underlying problem families are correlated and must not be treated as 100 independent algorithms or a benchmark leaderboard. Function bodies are executed in pinned CPython/WASI; parseability alone is not correctness. Categories are descriptive metadata.",
+  "categories": [
+    "arithmetic",
+    "conditionals",
+    "loops",
+    "mappings",
+    "output",
+    "sequences",
+    "strings"
+  ],
+  "case_count": 376
+}

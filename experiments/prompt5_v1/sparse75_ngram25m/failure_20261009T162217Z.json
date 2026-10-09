@@ -1,0 +1,34 @@
+{
+  "stage": "failure",
+  "error": "ValueError('Run identity changed: src/eval/wasi_python.py')",
+  "traceback": "Traceback (most recent call last):\n  File \"<repo>/tools\\repository_training_campaign.py\", line 174, in run_variant\n    result=engine.run(cfg,run_dir,resume=resume,max_steps=max_steps)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/src\\training\\engine.py\", line 185, in run\n    save_checkpoint()\n  File \"<repo>/src\\training\\engine.py\", line 145, in save_checkpoint\n    save_training(checkpoint,model,optimizer,scheduler,meta,\n  File \"<repo>/tools\\repository_training_campaign.py\", line 107, in save\n    gpu_allowed();check_identities(identities);check_metadata(meta,cfg,scheduler.state_dict())\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/tools\\repository_training_campaign.py\", line 67, in check_identities\n    if sha256_file(Path(name))!=digest: raise ValueError('Run identity changed: '+name)\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Run identity changed: src/eval/wasi_python.py\n",
+  "seconds": 2263.0427579999996,
+  "latest_verified": {
+    "last": {
+      "path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/last.pt",
+      "sha256": "60dc20bcc80e09dad68933fac07aacc6b730fd94005f82555a01577da27c3c06",
+      "size_bytes": 1215232003,
+      "step": 18000,
+      "tokens_seen": 147456000,
+      "new_phase_tokens": 47448064,
+      "cursor": 46336,
+      "phase_steps": 5792,
+      "finite_model_and_adam": true,
+      "scheduler_cursor_counts_verified": true,
+      "rng_streams_present": true
+    },
+    "previous": {
+      "path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/previous.pt",
+      "sha256": "d41a55f87babb288d7a953568b4eeb51fddf6e3c84b0d31b95b46af18f944924",
+      "size_bytes": 1215232003,
+      "step": 17000,
+      "tokens_seen": 139264000,
+      "new_phase_tokens": 39256064,
+      "cursor": 38336,
+      "phase_steps": 4792,
+      "finite_model_and_adam": true,
+      "scheduler_cursor_counts_verified": true,
+      "rng_streams_present": true
+    }
+  }
+}

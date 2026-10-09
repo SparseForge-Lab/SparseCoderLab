@@ -26,25 +26,35 @@ encode = json.dumps
 write = sys.stdout.write
 capture = io.StringIO
 redirect = contextlib.redirect_stdout
+redirect_error = contextlib.redirect_stderr
 results = []
 namespace = {"__name__": "candidate"}
+module_output, module_error = capture(), capture()
+current_output, current_error = module_output, module_error
 try:
     compiled = compile(source, "<candidate>", "exec")
 except SyntaxError:
     write(encode({"kind": "syntax_error"}) + "\n")
 else:
     try:
-        with redirect(capture()):
+        with redirect(module_output), redirect_error(module_error):
             exec(compiled, namespace)
         function = namespace[payload["function"]]
         for args in payload["arguments"]:
-            output = capture()
-            with redirect(output):
+            output, error_output = capture(), capture()
+            current_output, current_error = output, error_output
+            with redirect(output), redirect_error(error_output):
                 value = function(*args)
-            results.append({"value": value, "stdout": output.getvalue()})
-        write(encode({"kind": "completed", "results": results}, allow_nan=False) + "\n")
+            results.append({"value": value, "stdout": output.getvalue(), "stderr": error_output.getvalue()})
+        write(encode({"kind": "completed", "results": results,
+                      "module_stdout": module_output.getvalue(),
+                      "module_stderr": module_error.getvalue()}, allow_nan=False) + "\n")
     except BaseException as error:
-        write(encode({"kind": "runtime_error", "exception": type(error).__name__}) + "\n")
+        write(encode({"kind": "runtime_error", "exception": type(error).__name__,
+                      "module_stdout": module_output.getvalue(),
+                      "module_stderr": module_error.getvalue(),
+                      "partial_stdout": current_output.getvalue(),
+                      "partial_stderr": current_error.getvalue()}) + "\n")
 '''
 
 
@@ -162,4 +172,5 @@ class WasiPython:
         if exceeded:
             result = {"kind": "output_limit", "fuel_consumed": result["fuel_consumed"]}
         result["wall_seconds"] = time.perf_counter() - started
+        result["stderr"] = errors.decode("utf8", errors="replace")
         return result

@@ -1,0 +1,144 @@
+{
+  "artifacts": [
+    {
+      "project_relative_path": "experiments/prompt5_v1/dense75_ref/checkpoints/initial.pt",
+      "size_bytes": 648376747,
+      "sha256": "50c91aabd773fc7fad17dbd6c896a83df5722d47e0e6b1a5e5d9b078aa19f871",
+      "originating_experiment": "dense75_ref",
+      "role": "initial"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/dense75_ref/checkpoints/last.pt",
+      "size_bytes": 648381931,
+      "sha256": "464c06ea8d08eb012919a09b04e1ebfd581c441f466bb9af698823df07af659b",
+      "originating_experiment": "dense75_ref",
+      "role": "last"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/dense75_ref/checkpoints/latest_verified_250M.pt",
+      "size_bytes": 648381931,
+      "sha256": "464c06ea8d08eb012919a09b04e1ebfd581c441f466bb9af698823df07af659b",
+      "originating_experiment": "dense75_ref",
+      "role": "latest_verified_250M"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/dense75_ref/checkpoints/model_250M.pt",
+      "size_bytes": 216115611,
+      "sha256": "cc7bd2ca5d7da695a488d292c63347dfc436cfe0b0a21a00ebb3730fb5bad344",
+      "originating_experiment": "dense75_ref",
+      "role": "model_250M"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/dense75_ref/checkpoints/previous.pt",
+      "size_bytes": 648381931,
+      "sha256": "1237f7ab64181da0cad75c03949cf496d39654159bf6cc66c42940527328bf18",
+      "originating_experiment": "dense75_ref",
+      "role": "previous"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75/checkpoints/initial.pt",
+      "size_bytes": 913020923,
+      "sha256": "bfd3ae8c04dadfc082d846547315a1482dfd718c9e90d461cbd6f8c22389f52a",
+      "originating_experiment": "sparse75",
+      "role": "initial"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75/checkpoints/last.pt",
+      "size_bytes": 913030715,
+      "sha256": "b40019b82398fee98817d09481c80de1821e934a18f1e22b384e28b096a8ee63",
+      "originating_experiment": "sparse75",
+      "role": "last"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75/checkpoints/latest_verified_250M.pt",
+      "size_bytes": 913030715,
+      "sha256": "b40019b82398fee98817d09481c80de1821e934a18f1e22b384e28b096a8ee63",
+      "originating_experiment": "sparse75",
+      "role": "latest_verified_250M"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75/checkpoints/model_250M.pt",
+      "size_bytes": 304316163,
+      "sha256": "6e6bb3156661a75815191f7886237d2a2fed06d6c9721c0d09f0ee3258af6796",
+      "originating_experiment": "sparse75",
+      "role": "model_250M"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75/checkpoints/previous.pt",
+      "size_bytes": 913030715,
+      "sha256": "bdbd29106089d5669d735f64df2fad64c4528f810745088b63d7039a181bc8ea",
+      "originating_experiment": "sparse75",
+      "role": "previous"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/initial.pt",
+      "size_bytes": 1039061123,
+      "sha256": "1e44844ee5f75d0e37167ba6928eae52a0f1809f42c21b3308774234e807e763",
+      "originating_experiment": "sparse75_ngram10m",
+      "role": "initial"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/last.pt",
+      "size_bytes": 1039071235,
+      "sha256": "147d1e0df427501d70b5231d91f30b2f8ec50b2f5f0ad5c190b48e85436ee963",
+      "originating_experiment": "sparse75_ngram10m",
+      "role": "last"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/latest_verified_250M.pt",
+      "size_bytes": 1039071235,
+      "sha256": "147d1e0df427501d70b5231d91f30b2f8ec50b2f5f0ad5c190b48e85436ee963",
+      "originating_experiment": "sparse75_ngram10m",
+      "role": "latest_verified_250M"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/model_250M.pt",
+      "size_bytes": 346329205,
+      "sha256": "93c3ee428b49fed57032a6eca2f359f8f015be2c706ea9e3ed9e87aa54c5696f",
+      "originating_experiment": "sparse75_ngram10m",
+      "role": "model_250M"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/previous.pt",
+      "size_bytes": 1039071235,
+      "sha256": "31bd6f68b5baab8d82cec0d737992e79adaf40639018f695df17a7276aba5276",
+      "originating_experiment": "sparse75_ngram10m",
+      "role": "previous"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/initial.pt",
+      "size_bytes": 1215221891,
+      "sha256": "9c5f8c82fd6cd3e58c4efc6030dce153c60a7e694da16e0ceab00311486404c7",
+      "originating_experiment": "sparse75_ngram25m",
+      "role": "initial"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/last.pt",
+      "size_bytes": 1215232003,
+      "sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+      "originating_experiment": "sparse75_ngram25m",
+      "role": "last"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/latest_verified_250M.pt",
+      "size_bytes": 1215232003,
+      "sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+      "originating_experiment": "sparse75_ngram25m",
+      "role": "latest_verified_250M"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/model_250M.pt",
+      "size_bytes": 405049461,
+      "sha256": "0a78b5b2778301a24da13fe41be357729d34bb73a3e95ba832a001877e84e798",
+      "originating_experiment": "sparse75_ngram25m",
+      "role": "model_250M"
+    },
+    {
+      "project_relative_path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/previous.pt",
+      "size_bytes": 1215232003,
+      "sha256": "e5b65645e89f7b58a45b007466af17cfb687359f61105932a4ba59d64d77015b",
+      "originating_experiment": "sparse75_ngram25m",
+      "role": "previous"
+    }
+  ]
+}
