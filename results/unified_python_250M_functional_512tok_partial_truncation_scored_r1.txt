@@ -1,0 +1,12 @@
+Partial functional execution check at a 512-token generation cap
+Observed rows: 216/400; generation was interrupted intentionally.
+The available code was extracted, parsed and run in the CPU WASI sandbox.
+Truncation is reported independently and does not automatically fail a candidate.
+GPU used for scoring: no
+
+dense75_ref: 3/100 passed (3.0%); truncated=86; truncated-but-correct=3; parseable=29; repetition=86; outcomes={'correct': 3, 'extraction_failure': 23, 'runtime_error': 20, 'syntax_error': 48, 'wrong': 6}
+  passing tasks: sum_values_wording1, sum_values_wording3, sum_values_wording4
+sparse75: 4/100 passed (4.0%); truncated=96; truncated-but-correct=4; parseable=24; repetition=96; outcomes={'correct': 4, 'extraction_failure': 19, 'runtime_error': 14, 'syntax_error': 57, 'wrong': 6}
+  passing tasks: list_length_wording2, list_length_wording4, sort_values_wording1, sort_values_wording2
+sparse75_ngram10m: 1/16 passed (6.2%); truncated=8; truncated-but-correct=0; parseable=8; repetition=8; outcomes={'correct': 1, 'syntax_error': 8, 'wrong': 7}
+  passing tasks: add_wording4

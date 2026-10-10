@@ -37,15 +37,14 @@ def classify_completion(text: str, prompt: str, task: dict, runtime,
     row = {"extraction": extraction, "repetition": repeated, "parseable": False,
            "extracted_code": code, "functional_correct": False,
            "passed_cases": 0, "case_count": len(task["cases"])}
-    if not text.strip():
-        row["outcome"] = "empty"
-        return row
     if token_limit is not None and generated_tokens is not None and generated_tokens >= token_limit:
         row["truncated"] = True
     else:
         row["truncated"] = bool(re.search(r"(?i)(?:<truncated>|\[truncated\])\s*$", text))
-    if row["truncated"]:
-        row["outcome"] = "truncated"
+    # Truncation describes how generation ended, not whether the available
+    # candidate can solve the task. Keep it orthogonal to functional scoring.
+    if not text.strip():
+        row["outcome"] = "empty"
         return row
     if code is None:
         row["outcome"] = "extraction_failure"
