@@ -1,0 +1,41 @@
+Unified functional evaluation: unified_python_v1
+Tasks: 100 | completions: 400 | scoring seconds: 36.952 | GPU used: no
+
+dense75_ref/0.0: accuracy=0.0 parseable=0.27 truncated=86 repetition=0.75 loop_constraint_rate=0.0 pass@1=0.0 outcomes={'extraction_failure': 23, 'runtime_error': 20, 'syntax_error': 50, 'wrong': 7}
+dense75_ref/0.0/category:arithmetic: accuracy=0.0 parseable=0.3125 truncated=14 repetition=0.8125 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 2, 'runtime_error': 5, 'syntax_error': 9}
+dense75_ref/0.0/category:conditionals: accuracy=0.0 parseable=0.25 truncated=12 repetition=1.0 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 3, 'runtime_error': 3, 'syntax_error': 6}
+dense75_ref/0.0/category:loops: accuracy=0.0 parseable=0.3333333333333333 truncated=11 repetition=0.8333333333333334 loop_constraint_rate=0.0 pass@1=0.0 outcomes={'runtime_error': 2, 'syntax_error': 8, 'wrong': 2}
+dense75_ref/0.0/category:mappings: accuracy=0.0 parseable=0.25 truncated=4 repetition=0.5 loop_constraint_rate=None pass@1=0.0 outcomes={'syntax_error': 3, 'wrong': 1}
+dense75_ref/0.0/category:output: accuracy=0.0 parseable=0.0 truncated=4 repetition=1.0 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 4}
+dense75_ref/0.0/category:sequences: accuracy=0.0 parseable=0.21875 truncated=26 repetition=0.6875 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 10, 'runtime_error': 4, 'syntax_error': 15, 'wrong': 3}
+dense75_ref/0.0/category:strings: accuracy=0.0 parseable=0.35 truncated=15 repetition=0.6 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 4, 'runtime_error': 6, 'syntax_error': 9, 'wrong': 1}
+sparse75/0.0: accuracy=0.0 parseable=0.12 truncated=96 repetition=0.67 loop_constraint_rate=0.0 pass@1=0.0 outcomes={'extraction_failure': 19, 'runtime_error': 6, 'syntax_error': 69, 'wrong': 6}
+sparse75/0.0/category:arithmetic: accuracy=0.0 parseable=0.0625 truncated=16 repetition=0.8125 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 7, 'runtime_error': 1, 'syntax_error': 8}
+sparse75/0.0/category:conditionals: accuracy=0.0 parseable=0.25 truncated=12 repetition=0.5 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 2, 'runtime_error': 3, 'syntax_error': 7}
+sparse75/0.0/category:loops: accuracy=0.0 parseable=0.0 truncated=12 repetition=0.6666666666666666 loop_constraint_rate=0.0 pass@1=0.0 outcomes={'extraction_failure': 2, 'syntax_error': 10}
+sparse75/0.0/category:mappings: accuracy=0.0 parseable=0.0 truncated=4 repetition=0.75 loop_constraint_rate=None pass@1=0.0 outcomes={'syntax_error': 4}
+sparse75/0.0/category:output: accuracy=0.0 parseable=0.0 truncated=3 repetition=1.0 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 1, 'syntax_error': 3}
+sparse75/0.0/category:sequences: accuracy=0.0 parseable=0.0625 truncated=30 repetition=0.53125 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 5, 'runtime_error': 1, 'syntax_error': 25, 'wrong': 1}
+sparse75/0.0/category:strings: accuracy=0.0 parseable=0.3 truncated=19 repetition=0.8 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 2, 'runtime_error': 1, 'syntax_error': 12, 'wrong': 5}
+sparse75_ngram10m/0.0: accuracy=0.02 parseable=0.31 truncated=75 repetition=0.68 loop_constraint_rate=0.0 pass@1=0.02 outcomes={'correct': 2, 'extraction_failure': 15, 'runtime_error': 18, 'syntax_error': 54, 'wrong': 11}
+sparse75_ngram10m/0.0/category:arithmetic: accuracy=0.0625 parseable=0.3125 truncated=13 repetition=0.625 loop_constraint_rate=None pass@1=0.0625 outcomes={'correct': 1, 'extraction_failure': 4, 'runtime_error': 3, 'syntax_error': 7, 'wrong': 1}
+sparse75_ngram10m/0.0/category:conditionals: accuracy=0.0 parseable=0.25 truncated=9 repetition=0.6666666666666666 loop_constraint_rate=None pass@1=0.0 outcomes={'runtime_error': 1, 'syntax_error': 9, 'wrong': 2}
+sparse75_ngram10m/0.0/category:loops: accuracy=0.08333333333333333 parseable=0.6666666666666666 truncated=5 repetition=0.3333333333333333 loop_constraint_rate=0.0 pass@1=0.08333333333333333 outcomes={'correct': 1, 'extraction_failure': 1, 'runtime_error': 5, 'syntax_error': 3, 'wrong': 2}
+sparse75_ngram10m/0.0/category:mappings: accuracy=0.0 parseable=0.0 truncated=4 repetition=0.5 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 1, 'syntax_error': 3}
+sparse75_ngram10m/0.0/category:output: accuracy=0.0 parseable=1.0 truncated=0 repetition=0.0 loop_constraint_rate=None pass@1=0.0 outcomes={'wrong': 4}
+sparse75_ngram10m/0.0/category:sequences: accuracy=0.0 parseable=0.21875 truncated=29 repetition=0.90625 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 9, 'runtime_error': 5, 'syntax_error': 16, 'wrong': 2}
+sparse75_ngram10m/0.0/category:strings: accuracy=0.0 parseable=0.2 truncated=15 repetition=0.75 loop_constraint_rate=None pass@1=0.0 outcomes={'runtime_error': 4, 'syntax_error': 16}
+sparse75_ngram25m/0.0: accuracy=0.01 parseable=0.18 truncated=98 repetition=0.72 loop_constraint_rate=0.0 pass@1=0.01 outcomes={'correct': 1, 'extraction_failure': 14, 'runtime_error': 14, 'syntax_error': 68, 'wrong': 3}
+sparse75_ngram25m/0.0/category:arithmetic: accuracy=0.0 parseable=0.25 truncated=16 repetition=0.75 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 5, 'runtime_error': 3, 'syntax_error': 7, 'wrong': 1}
+sparse75_ngram25m/0.0/category:conditionals: accuracy=0.0 parseable=0.4166666666666667 truncated=12 repetition=0.9166666666666666 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 2, 'runtime_error': 5, 'syntax_error': 5}
+sparse75_ngram25m/0.0/category:loops: accuracy=0.08333333333333333 parseable=0.16666666666666666 truncated=11 repetition=0.5 loop_constraint_rate=0.0 pass@1=0.08333333333333333 outcomes={'correct': 1, 'extraction_failure': 1, 'runtime_error': 1, 'syntax_error': 9}
+sparse75_ngram25m/0.0/category:mappings: accuracy=0.0 parseable=0.0 truncated=4 repetition=0.25 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 1, 'syntax_error': 3}
+sparse75_ngram25m/0.0/category:output: accuracy=0.0 parseable=0.25 truncated=3 repetition=0.75 loop_constraint_rate=None pass@1=0.0 outcomes={'syntax_error': 3, 'wrong': 1}
+sparse75_ngram25m/0.0/category:sequences: accuracy=0.0 parseable=0.125 truncated=32 repetition=0.71875 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 2, 'runtime_error': 4, 'syntax_error': 26}
+sparse75_ngram25m/0.0/category:strings: accuracy=0.0 parseable=0.1 truncated=20 repetition=0.8 loop_constraint_rate=None pass@1=0.0 outcomes={'extraction_failure': 3, 'runtime_error': 1, 'syntax_error': 15, 'wrong': 1}
+Efficiency dense75_ref: model_load_s=0.8389112000004388 generation_s=92.74468830000114 generated_tokens_per_s=120.70772143615973 peak_vram_bytes=290697728.0 peak_cpu_rss_bytes=1452916736.0 checkpoint_bytes=216115611.0
+Efficiency sparse75: model_load_s=1.1970467999999528 generation_s=130.0458288000009 generated_tokens_per_s=95.43558693517984 peak_vram_bytes=385561600.0 peak_cpu_rss_bytes=1804677120.0 checkpoint_bytes=304316163.0
+Efficiency sparse75_ngram10m: model_load_s=1.3380863999991561 generation_s=122.36067299999922 generated_tokens_per_s=81.04728224239223 peak_vram_bytes=424607232.0 peak_cpu_rss_bytes=1838850048.0 checkpoint_bytes=346329205.0
+Efficiency sparse75_ngram25m: model_load_s=1.565252500000497 generation_s=135.85805919999984 generated_tokens_per_s=92.42734714408473 peak_vram_bytes=482701824.0 peak_cpu_rss_bytes=1838952448.0 checkpoint_bytes=405049461.0
+
+Parseability is not correctness. Four prompt wordings per underlying function are correlated. This finite fixed-case suite is not a claim of repository engineering or model leadership.

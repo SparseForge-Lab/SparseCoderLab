@@ -43,8 +43,16 @@ def test_extract_and_classify_parseability_is_not_correctness():
     body = classify_completion("return a+b", "def add(a,b):", task(), Runtime())
     assert body["outcome"] == "correct" and body["extracted_code"] == "return a+b"
     assert classify_completion("def add(a,b): return a+b", "", task(), TimeoutRuntime())["outcome"] == "timeout"
-    assert classify_completion("def add(a,b): return a+b", "", task(), Runtime(),
-                               token_limit=10, generated_tokens=10)["outcome"] == "truncated"
+    capped = classify_completion("def add(a,b): return a+b", "", task(), Runtime(),
+                                 token_limit=10, generated_tokens=10)
+    assert capped["outcome"] == "correct" and capped["functional_correct"]
+    assert capped["truncated"] is True
+    empty_capped = classify_completion("", "", task(), Runtime(),
+                                       token_limit=10, generated_tokens=10)
+    assert empty_capped["outcome"] == "empty" and empty_capped["truncated"] is True
+    partial = classify_completion("def add(a,b): return +", "", task(), Runtime(),
+                                  token_limit=10, generated_tokens=10)
+    assert partial["outcome"] == "syntax_error" and partial["truncated"] is True
 
 
 def test_classification_preserves_module_and_per_case_output_streams():
@@ -184,6 +192,11 @@ def test_matched_generation_policy_is_frozen_and_consistent():
         validate_policy_consistency([row, {**row, "generation_seed": 7}])
     with pytest.raises(ValueError, match="frozen deterministic"):
         validate_policy_consistency([{**row, "generation_batch_size": 2}], canonical_greedy=True)
+    extended = {**row, "max_new_tokens": 256}
+    assert validate_policy_consistency([extended], canonical_greedy=True,
+                                       expected_max_new_tokens=256)["max_new_tokens"] == 256
+    with pytest.raises(ValueError, match="frozen deterministic"):
+        validate_policy_consistency([extended], canonical_greedy=True)
 
 
 @pytest.fixture(scope="module")

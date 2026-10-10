@@ -49,7 +49,8 @@ def validate_generation_matrix(generations: list[dict], tasks: list[dict], expec
     return seen
 
 
-def validate_policy_consistency(generations: list[dict], *, canonical_greedy: bool = False) -> dict:
+def validate_policy_consistency(generations: list[dict], *, canonical_greedy: bool = False,
+                                expected_max_new_tokens: int = 128) -> dict:
     keys = ("decoding", "deterministic_algorithms", "gpu_name", "generation_seed", "max_new_tokens", "top_p", "top_k",
             "repetition_penalty", "stop_tokens", "device", "bf16", "tf32", "generation_batch_size")
     policies = {json.dumps({key: row.get(key) for key in keys}, sort_keys=True) for row in generations}
@@ -58,7 +59,7 @@ def validate_policy_consistency(generations: list[dict], *, canonical_greedy: bo
     policy = json.loads(next(iter(policies))) if policies else {}
     if canonical_greedy and (policy.get("decoding") != "greedy"
                             or policy.get("gpu_name") != "NVIDIA GeForce RTX 5070"
-                            or policy.get("generation_seed") != 42 or policy.get("max_new_tokens") != 128
+                            or policy.get("generation_seed") != 42 or policy.get("max_new_tokens") != expected_max_new_tokens
                             or policy.get("deterministic_algorithms") is not True or policy.get("device") != "cuda"
                             or policy.get("bf16") is not True or policy.get("tf32") is not True
                             or policy.get("top_p") is not None or policy.get("top_k") is not None
@@ -120,7 +121,9 @@ def score(args) -> None:
     task_by_prompt = {task["prompt_number"]: task for task in tasks}
     generations = [json.loads(line) for line in raw.decode("utf8").splitlines() if line.strip()]
     validate_generation_matrix(generations, tasks, args.expected_variants or [])
-    generation_policy = validate_policy_consistency(generations, canonical_greedy=bool(args.expected_variants))
+    generation_policy = validate_policy_consistency(
+        generations, canonical_greedy=bool(args.expected_variants),
+        expected_max_new_tokens=args.expected_max_new_tokens)
     if args.expected_variants:
         expected_benchmark_sha = hashlib.sha256(benchmark_raw).hexdigest()
         if any(row.get("benchmark_sha256") != expected_benchmark_sha for row in generations):
@@ -158,7 +161,13 @@ def score(args) -> None:
                       prompt=row.get("input", task["prompt"]), raw_completion=completion,
                       completion_sha256=hashlib.sha256(completion.encode("utf8")).hexdigest(),
                       checkpoint=row.get("checkpoint"), checkpoint_sha256=row.get("checkpoint_sha256"),
+                      checkpoint_manifest_sha256=row.get("checkpoint_manifest_sha256"),
+                      checkpoint_manifest_source_sha256=row.get("checkpoint_manifest_source_sha256"),
                       training_tokens=row.get("training_tokens"), generated_tokens=row.get("generated_tokens"),
+                      tokenizer_sha256=row.get("tokenizer_sha256"), benchmark_sha256=row.get("benchmark_sha256"),
+                      sampler_sha256=row.get("sampler_sha256"), orchestration_sha256=row.get("orchestration_sha256"),
+                      generation_git_commit=row.get("generation_git_commit"),
+                      generation_git_dirty=row.get("generation_git_dirty"),
                       generation_seconds=row.get("generation_group_seconds"),
                       tokens_per_second=(row["generated_tokens"] / row["generation_group_seconds"]
                                          if row.get("generated_tokens") is not None and row.get("generation_group_seconds") else None),
@@ -222,6 +231,7 @@ def score(args) -> None:
     lines = [f"Unified functional evaluation: {report['benchmark_id']}",
              f"Tasks: {len(tasks)} | completions: {len(results)} | scoring seconds: {elapsed:.3f} | GPU used: no", ""]
     lines += [f"{name}: accuracy={summary['functional_accuracy']} parseable={summary['parseable_rate']} "
+              f"truncated={summary['truncated_count']} "
               f"repetition={summary['repetition_rate']} loop_constraint_rate={summary['loop_constraint_rate']} "
               f"pass@1={summary['pass_at_1']['estimate']} "
               f"outcomes={summary['outcomes']}" for name, summary in groups.items()]
@@ -301,7 +311,7 @@ def architecture(args) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
-    p = sub.add_parser("score"); p.add_argument("--benchmark", required=True); p.add_argument("--generations", required=True); p.add_argument("--efficiency"); p.add_argument("--expected-variants", nargs="+"); p.add_argument("--expected-training-tokens", type=int); p.add_argument("--output", required=True); p.set_defaults(func=score)
+    p = sub.add_parser("score"); p.add_argument("--benchmark", required=True); p.add_argument("--generations", required=True); p.add_argument("--efficiency"); p.add_argument("--expected-variants", nargs="+"); p.add_argument("--expected-training-tokens", type=int); p.add_argument("--expected-max-new-tokens", type=int, default=128); p.add_argument("--output", required=True); p.set_defaults(func=score)
     p = sub.add_parser("telemetry"); p.add_argument("--routes"); p.add_argument("--ngram"); p.add_argument("--evaluation"); p.add_argument("--output", required=True); p.set_defaults(func=telemetry)
     p = sub.add_parser("queue"); p.add_argument("--root", required=True); p.add_argument("--existing"); p.add_argument("--output", required=True); p.set_defaults(func=queue)
     p = sub.add_parser("import-history"); p.add_argument("--input", required=True); p.add_argument("--output", required=True); p.add_argument("--prompt", required=True); p.add_argument("--match", choices=["exact", "near_match", "unmatched"], required=True); p.add_argument("--basis", required=True); p.set_defaults(func=import_history)

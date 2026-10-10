@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "matched_gate_checkpoints": {
+    "dense75_ref": {
+      "total_tokens": 250003456,
+      "inherited_tokens": 100007936,
+      "new_phase_tokens": 149995520,
+      "phase_steps": 18310,
+      "config": {
+        "path": "experiments/prompt5_v1/dense75_ref/config.json",
+        "sha256": "ded758caf8a94f445bb3327635061500fbcdb0c8d50cb893da1d9670573eee98",
+        "fingerprint": "a6be1b6b682c4c2e4074050f9aeb38b4f5de8f0e07f146b9f0ec872806bca326"
+      },
+      "full_resume_state": {
+        "path": "experiments/prompt5_v1/dense75_ref/checkpoints/latest_verified_250M.pt",
+        "sha256": "464c06ea8d08eb012919a09b04e1ebfd581c441f466bb9af698823df07af659b",
+        "size_bytes": 648381931,
+        "step": 30518,
+        "tokens_seen": 250003456,
+        "new_phase_tokens": 149995520,
+        "cursor": 146480,
+        "phase_steps": 18310,
+        "finite_model_and_adam": true,
+        "scheduler_cursor_counts_verified": true,
+        "rng_streams_present": true
+      },
+      "model_weights": {
+        "path": "experiments/prompt5_v1/dense75_ref/checkpoints/model_250M.pt",
+        "sha256": "cc7bd2ca5d7da695a488d292c63347dfc436cfe0b0a21a00ebb3730fb5bad344",
+        "size_bytes": 216115611
+      },
+      "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "data_manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6"
+    },
+    "sparse75": {
+      "total_tokens": 250003456,
+      "inherited_tokens": 100007936,
+      "new_phase_tokens": 149995520,
+      "phase_steps": 18310,
+      "config": {
+        "path": "experiments/prompt5_v1/sparse75/config.json",
+        "sha256": "f0082d7fdcc80e71ed8491d230ff62b443707d6a948b8de031ab6c635c5b843b",
+        "fingerprint": "2e4cbdf79a7ce9f0de4c94d57acd4532ca544cbc6d3494a9bf60411483cb725b"
+      },
+      "full_resume_state": {
+        "path": "experiments/prompt5_v1/sparse75/checkpoints/latest_verified_250M.pt",
+        "sha256": "b40019b82398fee98817d09481c80de1821e934a18f1e22b384e28b096a8ee63",
+        "size_bytes": 913030715,
+        "step": 30518,
+        "tokens_seen": 250003456,
+        "new_phase_tokens": 149995520,
+        "cursor": 146480,
+        "phase_steps": 18310,
+        "finite_model_and_adam": true,
+        "scheduler_cursor_counts_verified": true,
+        "rng_streams_present": true
+      },
+      "model_weights": {
+        "path": "experiments/prompt5_v1/sparse75/checkpoints/model_250M.pt",
+        "sha256": "6e6bb3156661a75815191f7886237d2a2fed06d6c9721c0d09f0ee3258af6796",
+        "size_bytes": 304316163
+      },
+      "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "data_manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6"
+    },
+    "sparse75_ngram10m": {
+      "total_tokens": 250003456,
+      "inherited_tokens": 100007936,
+      "new_phase_tokens": 149995520,
+      "phase_steps": 18310,
+      "config": {
+        "path": "experiments/prompt5_v1/sparse75_ngram10m/config.json",
+        "sha256": "5af3b1d4c7c351b887443e4767fc135ae873c303c8da87d55f1e4777d132c6f6",
+        "fingerprint": "42bac718bfc27a4f79862f3f80100f0150118ec4f575f41f97f3e72530bb4a22"
+      },
+      "full_resume_state": {
+        "path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/latest_verified_250M.pt",
+        "sha256": "147d1e0df427501d70b5231d91f30b2f8ec50b2f5f0ad5c190b48e85436ee963",
+        "size_bytes": 1039071235,
+        "step": 30518,
+        "tokens_seen": 250003456,
+        "new_phase_tokens": 149995520,
+        "cursor": 146480,
+        "phase_steps": 18310,
+        "finite_model_and_adam": true,
+        "scheduler_cursor_counts_verified": true,
+        "rng_streams_present": true
+      },
+      "model_weights": {
+        "path": "experiments/prompt5_v1/sparse75_ngram10m/checkpoints/model_250M.pt",
+        "sha256": "93c3ee428b49fed57032a6eca2f359f8f015be2c706ea9e3ed9e87aa54c5696f",
+        "size_bytes": 346329205
+      },
+      "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "data_manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6"
+    },
+    "sparse75_ngram25m": {
+      "total_tokens": 250003456,
+      "inherited_tokens": 100007936,
+      "new_phase_tokens": 149995520,
+      "phase_steps": 18310,
+      "config": {
+        "path": "experiments/prompt5_v1/sparse75_ngram25m/config.json",
+        "sha256": "5bfc73b8feaf4cdb025ef6473454be26231e01c776a137064387ead2487115a0",
+        "fingerprint": "3799e490415809872828e7098d05953c23f6821134242581875b40e0c1322dff"
+      },
+      "full_resume_state": {
+        "path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/latest_verified_250M.pt",
+        "sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+        "size_bytes": 1215232003,
+        "step": 30518,
+        "tokens_seen": 250003456,
+        "new_phase_tokens": 149995520,
+        "cursor": 146480,
+        "phase_steps": 18310,
+        "finite_model_and_adam": true,
+        "scheduler_cursor_counts_verified": true,
+        "rng_streams_present": true
+      },
+      "model_weights": {
+        "path": "experiments/prompt5_v1/sparse75_ngram25m/checkpoints/model_250M.pt",
+        "sha256": "0a78b5b2778301a24da13fe41be357729d34bb73a3e95ba832a001877e84e798",
+        "size_bytes": 405049461
+      },
+      "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "data_manifest_sha256": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6"
+    }
+  },
+  "scope": "Final common repository-training gate; canonical 100M starting states remain separate and unchanged.",
+  "source_manifest_sha256": "89709e99a69621caeb839e498d0272412329c76b5e615fe18580c8e12363e044",
+  "config_hash_reconciliation": {
+    "sparse75": {
+      "previous_sha256": "4165eb0fe50310596d7b88e4723415246769e05b626bec9a1782ed555e373e70",
+      "current_sha256": "f0082d7fdcc80e71ed8491d230ff62b443707d6a948b8de031ab6c635c5b843b",
+      "semantic_fingerprint": "2e4cbdf79a7ce9f0de4c94d57acd4532ca544cbc6d3494a9bf60411483cb725b"
+    },
+    "sparse75_ngram10m": {
+      "previous_sha256": "cd1e14e676b3816d467726f255bf240cb56ff76c3b5fc2c41e4706e2dfc51a52",
+      "current_sha256": "5af3b1d4c7c351b887443e4767fc135ae873c303c8da87d55f1e4777d132c6f6",
+      "semantic_fingerprint": "42bac718bfc27a4f79862f3f80100f0150118ec4f575f41f97f3e72530bb4a22"
+    },
+    "sparse75_ngram25m": {
+      "previous_sha256": "9dfe273a874b33eac0ea45ce00c20f02bcd6df50bcdf69fff8802d2cf6d46e7f",
+      "current_sha256": "5bfc73b8feaf4cdb025ef6473454be26231e01c776a137064387ead2487115a0",
+      "semantic_fingerprint": "3799e490415809872828e7098d05953c23f6821134242581875b40e0c1322dff"
+    }
+  },
+  "reconciled_on_git_commit": "0857873406daa768e20c9f72e8e1c7a98ad732b5"
+}
