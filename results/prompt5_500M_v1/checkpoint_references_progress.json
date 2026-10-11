@@ -1,0 +1,28 @@
+{
+  "artifacts": [
+    {
+      "project_relative_path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/375M_full.pt",
+      "size_bytes": 648381931,
+      "sha256": "46603a0f274e4601f25488c53e65fe8137954e3ca77068a3e959d5a1b1c3381c",
+      "originating_experiment": "dense75_ref",
+      "tokens_seen": 374996992,
+      "step": 45776
+    },
+    {
+      "project_relative_path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt",
+      "size_bytes": 1039071235,
+      "sha256": "4f94d64ef0827353abf37afca19347df0268caf25a1c0d188c0ce8d23103cd6d",
+      "originating_experiment": "sparse75_ngram10m",
+      "tokens_seen": 262144000,
+      "step": 32000
+    },
+    {
+      "project_relative_path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/last.pt",
+      "size_bytes": 1215232003,
+      "sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+      "originating_experiment": "sparse75_ngram25m",
+      "tokens_seen": 250003456,
+      "step": 30518
+    }
+  ]
+}
