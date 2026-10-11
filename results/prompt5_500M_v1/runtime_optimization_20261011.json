@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-11T15:54:22.216758+00:00",
+  "status": "optimization_parity_and_benchmarks_passed_campaign_identity_migrated",
+  "summary": "I reduced per-update host synchronization and moved router, n-gram, and MTP diagnostic work to logging gates. Strict parity passed; benchmark gains are repeated but vary by model and are measured evidence, not a hardware-independent guarantee.",
+  "source": {
+    "baseline_engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+    "candidate_engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+    "candidate_frozen_source_hash": "81c7e9e8999e3edb4293cf1125e0a9d0b8e8ce8e30e4e0dcc6644d181d9d505d"
+  },
+  "cpu_regression": {
+    "command": ".venv/Scripts/python.exe -m pytest -q",
+    "passed": 164,
+    "failed": 0,
+    "duration_seconds": 77.82
+  },
+  "parity": [
+    {
+      "variant": "dense75_ref",
+      "steps": 64,
+      "all_exact": true,
+      "report": "results/prompt5_500M_v1/runtime_optimization_20261011/parity/dense75_ref_64_update.json",
+      "baseline_engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+      "candidate_engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+      "starting_checkpoint_sha256": "3ca0c0bdd90dd14ed44f4261ee466d3875c88bbf96cb6ec5fcac5d3c17e74838"
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "steps": 64,
+      "all_exact": true,
+      "report": "results/prompt5_500M_v1/runtime_optimization_20261011/parity/sparse75_ngram10m_64_update.json",
+      "baseline_engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+      "candidate_engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+      "starting_checkpoint_sha256": "fc63cfaee63e5c098541041f138d233e64f0b28091770d66db24eae85fef2583"
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "steps": 64,
+      "all_exact": true,
+      "report": "results/prompt5_500M_v1/runtime_optimization_20261011/parity/sparse75_ngram25m_64_update.json",
+      "baseline_engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+      "candidate_engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+      "starting_checkpoint_sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69"
+    }
+  ],
+  "profiler_trace_counts_8_steps_sparse10m": {
+    "baseline": {
+      "cudaDeviceSynchronize": 10,
+      "cudaStreamSynchronize": 1660,
+      "cudaEventRecordWithFlags": 16,
+      "aten::_assert_async": 576
+    },
+    "candidate": {
+      "cudaDeviceSynchronize": 3,
+      "cudaStreamSynchronize": 1636,
+      "cudaEventRecordWithFlags": 0,
+      "aten::_assert_async": 576
+    }
+  },
+  "benchmark_method": "Two clean 120-update paired runs per variant. Each baseline/candidate pair loaded the same copied full-state checkpoint and used identical frozen config, data order, seed, batch, and optimizer. Scratch-only outputs; canonical checkpoints were not resumed or overwritten.",
+  "throughput_train_step_tokens_per_second": {
+    "dense75_ref": {
+      "pairs": [
+        {
+          "baseline_label": "baseline_latest_dense_120_v3",
+          "candidate_label": "candidate_latest_dense_120_v3",
+          "checkpoint_sha256": "3ca0c0bdd90dd14ed44f4261ee466d3875c88bbf96cb6ec5fcac5d3c17e74838",
+          "starting_tokens": 401408000,
+          "ending_tokens": 402391040,
+          "steps": 120,
+          "baseline_train_step_tokens_per_second": 31877.450917091428,
+          "candidate_train_step_tokens_per_second": 32379.682982134094,
+          "candidate_change_percent": 1.5755088647109838,
+          "baseline_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/dense75_ref/baseline_latest_dense_120_v3.json",
+          "candidate_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/dense75_ref/candidate_latest_dense_120_v3.json"
+        },
+        {
+          "baseline_label": "baseline_latest_dense_120_v6rev",
+          "candidate_label": "candidate_latest_dense_120_v6rev",
+          "checkpoint_sha256": "3ca0c0bdd90dd14ed44f4261ee466d3875c88bbf96cb6ec5fcac5d3c17e74838",
+          "starting_tokens": 401408000,
+          "ending_tokens": 402391040,
+          "steps": 120,
+          "baseline_train_step_tokens_per_second": 31633.618239078627,
+          "candidate_train_step_tokens_per_second": 31963.581078610547,
+          "candidate_change_percent": 1.0430765049958879,
+          "baseline_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/dense75_ref/baseline_latest_dense_120_v6rev.json",
+          "candidate_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/dense75_ref/candidate_latest_dense_120_v6rev.json"
+        }
+      ],
+      "mean_baseline_tokens_per_second": 31755.534578085026,
+      "mean_candidate_tokens_per_second": 32171.63203037232,
+      "mean_pair_rate_change_percent": 1.3103147461244413
+    },
+    "sparse75_ngram10m": {
+      "pairs": [
+        {
+          "baseline_label": "baseline_latest_sparse10m_120_v4",
+          "candidate_label": "candidate_latest_sparse10m_120_v4",
+          "checkpoint_sha256": "fc63cfaee63e5c098541041f138d233e64f0b28091770d66db24eae85fef2583",
+          "starting_tokens": 286720000,
+          "ending_tokens": 287703040,
+          "steps": 120,
+          "baseline_train_step_tokens_per_second": 24782.038050217798,
+          "candidate_train_step_tokens_per_second": 25568.059634176858,
+          "candidate_change_percent": 3.1717390731395234,
+          "baseline_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/sparse75_ngram10m/baseline_latest_sparse10m_120_v4.json",
+          "candidate_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/sparse75_ngram10m/candidate_latest_sparse10m_120_v4.json"
+        },
+        {
+          "baseline_label": "baseline_latest_sparse10m_120_v6rev",
+          "candidate_label": "candidate_latest_sparse10m_120_v6rev",
+          "checkpoint_sha256": "fc63cfaee63e5c098541041f138d233e64f0b28091770d66db24eae85fef2583",
+          "starting_tokens": 286720000,
+          "ending_tokens": 287703040,
+          "steps": 120,
+          "baseline_train_step_tokens_per_second": 25031.41161555163,
+          "candidate_train_step_tokens_per_second": 25333.006472683675,
+          "candidate_change_percent": 1.2048655575807254,
+          "baseline_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/sparse75_ngram10m/baseline_latest_sparse10m_120_v6rev.json",
+          "candidate_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/sparse75_ngram10m/candidate_latest_sparse10m_120_v6rev.json"
+        }
+      ],
+      "mean_baseline_tokens_per_second": 24906.724832884713,
+      "mean_candidate_tokens_per_second": 25450.533053430267,
+      "mean_pair_rate_change_percent": 2.183379084140191
+    },
+    "sparse75_ngram25m": {
+      "pairs": [
+        {
+          "baseline_label": "baseline_latest_sparse25m_120_v4",
+          "candidate_label": "candidate_latest_sparse25m_120_v4",
+          "checkpoint_sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+          "starting_tokens": 250003456,
+          "ending_tokens": 250986496,
+          "steps": 120,
+          "baseline_train_step_tokens_per_second": 23411.892628450132,
+          "candidate_train_step_tokens_per_second": 25353.71467588892,
+          "candidate_change_percent": 8.294169455907575,
+          "baseline_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/sparse75_ngram25m/baseline_latest_sparse25m_120_v4.json",
+          "candidate_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/sparse75_ngram25m/candidate_latest_sparse25m_120_v4.json"
+        },
+        {
+          "baseline_label": "baseline_latest_sparse25m_120_v6rev",
+          "candidate_label": "candidate_latest_sparse25m_120_v6rev",
+          "checkpoint_sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+          "starting_tokens": 250003456,
+          "ending_tokens": 250986496,
+          "steps": 120,
+          "baseline_train_step_tokens_per_second": 23019.826574996736,
+          "candidate_train_step_tokens_per_second": 25452.46307444041,
+          "candidate_change_percent": 10.567570922041236,
+          "baseline_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/sparse75_ngram25m/baseline_latest_sparse25m_120_v6rev.json",
+          "candidate_report": "results/prompt5_500M_v1/runtime_optimization_20261011/benchmarks/sparse75_ngram25m/candidate_latest_sparse25m_120_v6rev.json"
+        }
+      ],
+      "mean_baseline_tokens_per_second": 23215.859601723434,
+      "mean_candidate_tokens_per_second": 25403.088875164663,
+      "mean_pair_rate_change_percent": 9.421271970816282
+    }
+  },
+  "excluded_measurements": {
+    "labels": [
+      "*120_v5rev"
+    ],
+    "reason": "Roblox was observed at 82% GPU utilization during this sequence. I stopped the comparison, closed only Roblox under the user's prior instruction, and excluded these measurements."
+  },
+  "gpu_context": {
+    "device": "NVIDIA GeForce RTX 5070",
+    "roblox_closed_before_final_v6rev_pairs": true,
+    "gpu_idle_sample_before_final_sequence": "0% utilization, 1037 MiB used, 49 C",
+    "other_processes": "Left other user and desktop processes untouched."
+  },
+  "canonical_checkpoint_hashes_at_migration": {
+    "dense75_ref": {
+      "path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/last.pt",
+      "sha256": "3ca0c0bdd90dd14ed44f4261ee466d3875c88bbf96cb6ec5fcac5d3c17e74838"
+    },
+    "sparse75_ngram10m": {
+      "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt",
+      "sha256": "fc63cfaee63e5c098541041f138d233e64f0b28091770d66db24eae85fef2583"
+    },
+    "sparse75_ngram25m": {
+      "path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/last.pt",
+      "sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69"
+    }
+  },
+  "preflight": {
+    "status": "passed",
+    "final_tokens": 499998720,
+    "path": "results/prompt5_scale_500M_v1/preflight.json"
+  },
+  "identity_migration": {
+    "variants": {
+      "dense75_ref": {
+        "manifest": "experiments/prompt5_500M_v1/dense75_ref/run_manifest.json",
+        "old_frozen_source_hash": "94f9cf28252480476b78bca2dca3509dea94daeedd090d26c27b8d345b46cc0c",
+        "new_frozen_source_hash": "81c7e9e8999e3edb4293cf1125e0a9d0b8e8ce8e30e4e0dcc6644d181d9d505d",
+        "old_engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+        "new_engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+        "manifest_sha256_before": "6dbf528536834d8254b54b3b82c050ca9fcae451d8f182c38f342735d7311ac3"
+      },
+      "sparse75_ngram10m": {
+        "manifest": "experiments/prompt5_500M_v1/sparse75_ngram10m/run_manifest.json",
+        "old_frozen_source_hash": "94f9cf28252480476b78bca2dca3509dea94daeedd090d26c27b8d345b46cc0c",
+        "new_frozen_source_hash": "81c7e9e8999e3edb4293cf1125e0a9d0b8e8ce8e30e4e0dcc6644d181d9d505d",
+        "old_engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+        "new_engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+        "manifest_sha256_before": "6392d39765745de60200e06c158f933fec653cd01abb955e13188d34170408e9"
+      },
+      "sparse75_ngram25m": {
+        "manifest": "experiments/prompt5_500M_v1/sparse75_ngram25m/run_manifest.json",
+        "old_frozen_source_hash": "94f9cf28252480476b78bca2dca3509dea94daeedd090d26c27b8d345b46cc0c",
+        "new_frozen_source_hash": "81c7e9e8999e3edb4293cf1125e0a9d0b8e8ce8e30e4e0dcc6644d181d9d505d",
+        "old_engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+        "new_engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+        "manifest_sha256_before": "21fd19c3218e73d669b8fcd25cd6e8de75058dbca3eeb5ca18a001cf628796c8"
+      }
+    },
+    "audit_path": "results/prompt5_500M_v1/runtime_optimization_20261011_identity_audit.json"
+  }
+}

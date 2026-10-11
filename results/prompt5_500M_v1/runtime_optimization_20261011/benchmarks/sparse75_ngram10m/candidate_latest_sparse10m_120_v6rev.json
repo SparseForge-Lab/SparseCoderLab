@@ -1,0 +1,23 @@
+{
+  "variant": "sparse75_ngram10m",
+  "label": "candidate_latest_sparse10m_120_v6rev",
+  "steps": 120,
+  "starting_tokens": 286720000,
+  "ending_tokens": 287703040,
+  "starting_checkpoint_sha256": "fc63cfaee63e5c098541041f138d233e64f0b28091770d66db24eae85fef2583",
+  "source_checkpoint": "D:\\SparseCoderLab\\work\\runtime_optimization_20261011\\inputs\\newest_verified\\sparse75_ngram10m\\checkpoint.pt",
+  "engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+  "git_commit": "dda2dd471c164b736ed85c418e46a4357c3c2861",
+  "train_step_tokens_per_second": 25333.006472683675,
+  "run_training_seconds": 38.80471119999129,
+  "run_process_seconds": 46.05932919999759,
+  "wall_tokens_per_second": 23738.245222484085,
+  "training_seconds": 7684.670873600115,
+  "wall_seconds": 7906.865155400003,
+  "measured_steps": 120,
+  "peak_allocated_bytes": 1952926208,
+  "peak_reserved_bytes": 2294284288,
+  "summary_path": "work/runtime_optimization_20261011/runs/sparse75_ngram10m/candidate_latest_sparse10m_120_v6rev/summary.json",
+  "scratch_checkpoint_path": "work/runtime_optimization_20261011/runs/sparse75_ngram10m/candidate_latest_sparse10m_120_v6rev/checkpoints/last.pt",
+  "scratch_checkpoint_sha256": "40efa1070231136c30c9c651c6c4f674bb95d76c0787c4892fa951d82c434fa8"
+}

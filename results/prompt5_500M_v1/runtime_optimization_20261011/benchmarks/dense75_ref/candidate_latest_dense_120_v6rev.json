@@ -1,0 +1,23 @@
+{
+  "variant": "dense75_ref",
+  "label": "candidate_latest_dense_120_v6rev",
+  "steps": 120,
+  "starting_tokens": 401408000,
+  "ending_tokens": 402391040,
+  "starting_checkpoint_sha256": "3ca0c0bdd90dd14ed44f4261ee466d3875c88bbf96cb6ec5fcac5d3c17e74838",
+  "source_checkpoint": "D:\\SparseCoderLab\\work\\runtime_optimization_20261011\\inputs\\newest_verified\\dense75_ref\\checkpoint.pt",
+  "engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+  "git_commit": "dda2dd471c164b736ed85c418e46a4357c3c2861",
+  "train_step_tokens_per_second": 31963.581078610547,
+  "run_training_seconds": 30.755002000005334,
+  "run_process_seconds": 36.189083699995535,
+  "wall_tokens_per_second": 27051.80944746181,
+  "training_seconds": 10892.105466200152,
+  "wall_seconds": 11177.925254400005,
+  "measured_steps": 120,
+  "peak_allocated_bytes": 1543940608,
+  "peak_reserved_bytes": 1855979520,
+  "summary_path": "work/runtime_optimization_20261011/runs/dense75_ref/candidate_latest_dense_120_v6rev/summary.json",
+  "scratch_checkpoint_path": "work/runtime_optimization_20261011/runs/dense75_ref/candidate_latest_dense_120_v6rev/checkpoints/last.pt",
+  "scratch_checkpoint_sha256": "f372283e265f2dc6ca8439bef864a9a6748f5ace1c6b70addc288534c732a379"
+}

@@ -38,7 +38,7 @@ class FreeMoE(nn.Module):
         if self.backend == 'grouped':
             self._rebuild_banks()
         return result
-    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+    def forward(self, x: torch.Tensor, *, collect_diagnostics: bool = True) -> tuple[torch.Tensor, torch.Tensor]:
         shape = x.shape; flat = x.reshape(-1, shape[-1]); probs = self.router(flat).float().softmax(-1)
         weights, indices = probs.topk(self.k, dim=-1)
         # Top1 retains selected probability so LM gradients reach the router; Top2 normalizes.
@@ -61,10 +61,16 @@ class FreeMoE(nn.Module):
             if self.training and torch.is_grad_enabled(): self.active_since_zero.logical_or_(integer_counts>0)
         load = counts / indices.numel()
         aux = self.n * (load.detach() * probs.mean(0)).sum()
-        self.last = {'experts': indices.detach().view(*shape[:-1], self.k),
-                     'probabilities': probs.detach().view(*shape[:-1], self.n),
-                     'selected_weights': weights.detach().view(*shape[:-1], self.k),
-                     'entropy': -(probs.detach() * probs.detach().clamp_min(1e-9).log()).sum(-1).mean(),
-                     'load': counts.detach(), 'imbalance': counts.std(unbiased=False) / counts.mean().clamp_min(1),
-                     'backend': self.backend, 'padded_capacity': capacity}
+        if collect_diagnostics:
+            detached_probs = probs.detach()
+            self.last = {'experts': indices.detach().view(*shape[:-1], self.k),
+                         'probabilities': detached_probs.view(*shape[:-1], self.n),
+                         'selected_weights': weights.detach().view(*shape[:-1], self.k),
+                         'entropy': -(detached_probs * detached_probs.clamp_min(1e-9).log()).sum(-1).mean(),
+                         'load': counts.detach(), 'imbalance': counts.std(unbiased=False) / counts.mean().clamp_min(1),
+                         'backend': self.backend, 'padded_capacity': capacity}
+        else:
+            # Retain only the selected IDs for parity/debug hooks; they are not
+            # consumed by training and avoid storing full probability tensors.
+            self.last = {'experts': indices.detach().view(*shape[:-1], self.k)}
         return output.view(shape), aux

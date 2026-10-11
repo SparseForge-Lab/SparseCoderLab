@@ -1,0 +1,53 @@
+{
+  "variant": "sparse75_ngram10m",
+  "steps": 64,
+  "starting_checkpoint": "D:\\SparseCoderLab\\work\\runtime_optimization_20261011\\inputs\\newest_verified\\sparse75_ngram10m\\checkpoint.pt",
+  "starting_checkpoint_sha256": "fc63cfaee63e5c098541041f138d233e64f0b28091770d66db24eae85fef2583",
+  "initial_state_hashes": {
+    "model": "512043b0216026267df89b4ac70785b5e9a37aa5b8b864566602671125eedd20",
+    "optimizer": "94976b48a2d4780d30163e87cd719d0d9c6d4927a5d9d500a7a70f8c9b84ee6c",
+    "scheduler": "a9fa865b1a5084474da814699e6078758fe959418a71e0bb25999a2bc21a143b",
+    "rng": "7167db2670177e0a64a6c25fa1f9d0b306d6cd646b89ea302ed023b095268424"
+  },
+  "baseline_engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+  "candidate_engine_sha256": "161baf25ebf69dec1895f4cd99ca83c29aca7a32ff175e55a03cce3476df7920",
+  "final_state_comparisons": {
+    "model": true,
+    "optimizer": true,
+    "scheduler": true,
+    "rng": true,
+    "tokens_seen": true,
+    "step": true,
+    "cursor": true
+  },
+  "step_trace_comparisons": {
+    "batches": true,
+    "routes": true,
+    "buckets": true,
+    "losses": true,
+    "grad_norms": true
+  },
+  "baseline_final": {
+    "tokens_seen": 287244288,
+    "step": 35064,
+    "cursor": 182848
+  },
+  "candidate_final": {
+    "tokens_seen": 287244288,
+    "step": 35064,
+    "cursor": 182848
+  },
+  "baseline_checkpoint_sha256": "9207556083fa00c8d4ca9f552e6fd70bf802668096c705f51b37a9b3bb943fdc",
+  "candidate_checkpoint_sha256": "5eafa08bebb3ee770969edea78f2b5826747ba7649999553336de22df1f68916",
+  "final_state_hashes": {
+    "baseline_model": "3a9c09f641d746242b842f0591876521a8e7d82f210ce1ec1f785c4dd14c576a",
+    "candidate_model": "3a9c09f641d746242b842f0591876521a8e7d82f210ce1ec1f785c4dd14c576a",
+    "baseline_optimizer": "d6efa68d00a4a97de1428884dbaa9e4e46d75c0d0b28356f32873feb64df37b6",
+    "candidate_optimizer": "d6efa68d00a4a97de1428884dbaa9e4e46d75c0d0b28356f32873feb64df37b6",
+    "baseline_scheduler": "3751fe4673e2e2b0a0cbcd83fc79f12be2eadb7f7956072407bcb30889d78baa",
+    "candidate_scheduler": "3751fe4673e2e2b0a0cbcd83fc79f12be2eadb7f7956072407bcb30889d78baa",
+    "baseline_rng": "7167db2670177e0a64a6c25fa1f9d0b306d6cd646b89ea302ed023b095268424",
+    "candidate_rng": "7167db2670177e0a64a6c25fa1f9d0b306d6cd646b89ea302ed023b095268424"
+  },
+  "all_exact": true
+}

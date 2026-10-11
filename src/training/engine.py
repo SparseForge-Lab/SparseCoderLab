@@ -145,45 +145,81 @@ def run(cfg: dict, run_dir: Path, *, max_wall_minutes: float | None = None, targ
         save_training(checkpoint,model,optimizer,scheduler,meta,
             None if reserve is not None else int(cfg['data']['project_gb']*1024**3))
     log_file = (run_dir / 'metrics.jsonl').open('a', encoding='utf-8')
+    # Keep training arithmetic asynchronous between telemetry gates. Host-visible
+    # loss/gradient checks are batched once per optimizer update; wall time is
+    # accumulated at log gates after the queued optimizer work has completed.
+    window_started = time.perf_counter(); window_step = meta['step']; window_tokens = meta['tokens_seen']
+    window_data_wait = 0.0
     try:
         model.train()
         while meta['tokens_seen'] < token_limit and not stop[0]:
             if time.perf_counter() - start >= wall_limit - reserve: break
             if max_steps is not None and meta['step'] - initial_steps >= max_steps: break
-            step_start = time.perf_counter(); optimizer.zero_grad(set_to_none=True); loss_sum = 0.0; data_wait_seconds = 0.0
-            for _ in range(t['accumulation']):
+            optimizer.zero_grad(set_to_none=True)
+            loss_finite = []; lm_losses = []; data_wait_seconds = 0.0
+            log_step = (meta['step'] + 1) % t['log_steps'] == 0
+            for microbatch_index in range(t['accumulation']):
                 data_start = time.perf_counter(); x, y = stream.next(t['microbatch'], 'cuda')
                 data_wait_seconds += time.perf_counter() - data_start
                 with amp(cfg):
-                    out = model(x, y, mtp_tokens=x, return_outputs=False, segment_ids=stream.last_segment_ids); loss = out['loss'] / t['accumulation']
-                if not torch.isfinite(loss): raise FloatingPointError('Nonfinite training loss; do not advance phases')
-                loss.backward(); loss_sum += float(out['lm_loss'].detach()); meta['tokens_seen'] += x.numel()
+                    out = model(x, y, mtp_tokens=x, return_outputs=False, segment_ids=stream.last_segment_ids,
+                                collect_diagnostics=log_step and microbatch_index == t['accumulation'] - 1,
+                                materialize_diagnostics=False)
+                    loss = out['loss'] / t['accumulation']
+                loss_finite.append(torch.isfinite(loss.detach()))
+                loss.backward(); lm_losses.append(out['lm_loss'].detach()); meta['tokens_seen'] += x.numel()
                 mtp_metrics = out.get('mtp_metrics', {}); del out, loss
-            norm = float(torch.nn.utils.clip_grad_norm_(model.parameters(), t['grad_clip'], error_if_nonfinite=True))
+            norm_tensor = torch.nn.utils.clip_grad_norm_(model.parameters(), t['grad_clip'], error_if_nonfinite=False)
+            finite_flags = torch.stack([*loss_finite, torch.isfinite(norm_tensor)]).to(torch.float32)
+            log_values = [norm_tensor.detach().float().reshape(())]
+            if log_step:
+                log_values.extend(value.float().reshape(()) for value in lm_losses)
+                log_values.extend(value.detach().float().reshape(()) for value in mtp_metrics.values())
+            host_values = torch.cat((finite_flags, torch.stack(log_values))).detach().cpu().tolist()
+            if not all(value == 1.0 for value in host_values[:len(loss_finite) + 1]):
+                raise FloatingPointError('Nonfinite training loss or gradient norm; do not advance phases')
+            norm = host_values[len(loss_finite) + 1]
+            if log_step:
+                metric_start = len(loss_finite) + 2
+                last_loss = sum(host_values[metric_start:metric_start + len(lm_losses)]) / t['accumulation']
+                mtp_start = metric_start + len(lm_losses)
+                mtp_metrics = {key: host_values[mtp_start + index] for index, key in enumerate(mtp_metrics)}
             memory_diagnostics = model.memory.diagnostics(x,stream.last_segment_ids) if model.memory is not None and (meta['step'] + 1) % t['log_steps'] == 0 else None
-            opt_start = torch.cuda.Event(enable_timing=True); opt_end = torch.cuda.Event(enable_timing=True)
-            opt_start.record(); optimizer.step(); opt_end.record(); scheduler.step(); torch.cuda.synchronize()
-            elapsed = time.perf_counter() - step_start; measured_steps += 1; meta['training_seconds'] += elapsed
+            opt_start = torch.cuda.Event(enable_timing=True) if log_step else None
+            opt_end = torch.cuda.Event(enable_timing=True) if log_step else None
+            if log_step: opt_start.record()
+            optimizer.step(); scheduler.step()
+            if log_step:
+                opt_end.record(); opt_end.synchronize()
+            measured_steps += 1
             meta['step'] += 1; meta['cursor'] = stream.cursor; meta['wall_time'] = base_wall + time.perf_counter() - start
             if 'inherited_tokens' in meta:
                 meta['new_phase_tokens'] = meta['tokens_seen'] - meta['inherited_tokens']
                 meta['phase_steps'] = meta['step'] - meta['phase_start_step']
-            last_loss = loss_sum / t['accumulation']
+            window_data_wait += data_wait_seconds
             if meta['step'] % t['log_steps'] == 0:
+                window_elapsed = time.perf_counter() - window_started
+                window_steps = meta['step'] - window_step
+                meta['training_seconds'] += window_elapsed
                 routes = model.routes(); record = dict(meta, train_loss=last_loss, grad_norm=norm,
-                    tok_s=t['context'] * t['microbatch'] * t['accumulation'] / elapsed,
-                    step_seconds=elapsed, data_wait_wall_seconds=data_wait_seconds,
+                    tok_s=(meta['tokens_seen'] - window_tokens) / max(window_elapsed, 1e-9),
+                    step_seconds=window_elapsed / max(window_steps, 1),
+                    data_wait_wall_seconds=window_data_wait / max(window_steps, 1),
                     optimizer_cuda_seconds=opt_start.elapsed_time(opt_end)/1000,
                     vram_peak=torch.cuda.max_memory_allocated(), vram_peak_reserved=torch.cuda.max_memory_reserved(),
                     vram_allocated=torch.cuda.memory_allocated(), vram_reserved=torch.cuda.memory_reserved(), gpu_utilization=read_utilization(),
                     router={i: {'entropy': float(r['entropy']), 'imbalance': float(r['imbalance']), 'load': r['load'].tolist()} for i, r in routes.items()},
                     mtp=mtp_metrics, ngram=memory_diagnostics)
                 log_file.write(json.dumps(record) + '\n'); log_file.flush()
+                window_started = time.perf_counter(); window_step = meta['step']; window_tokens = meta['tokens_seen']; window_data_wait = 0.0
             if meta['step'] % t['eval_steps'] == 0 and time.perf_counter() - start < wall_limit - reserve:
                 val = validate(model, cfg); log_file.write(json.dumps(dict(meta, **val)) + '\n'); log_file.flush()
             if meta['step'] % t['checkpoint_steps'] == 0:
                 save_checkpoint()
         meta['wall_time'] = base_wall + time.perf_counter() - start; meta['cursor'] = stream.cursor
+        # Flush the final partial log window before saving its full-state metadata.
+        torch.cuda.synchronize()
+        meta['training_seconds'] += time.perf_counter() - window_started
         save_checkpoint()
         val = validate(model, cfg) if time.perf_counter() - start < wall_limit - reserve / 2 else {'val_loss': None}
         from tools.count_params import count_model

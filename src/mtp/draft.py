@@ -23,7 +23,8 @@ class MultiTokenDraft(nn.Module):
         n = 1 if cfg['design'] == 'shared_mtp_3step' else self.horizons
         self.blocks = nn.ModuleList(DraftBlock(model_cfg['d_model'], cfg['ffn'], model_cfg['norm_eps']) for _ in range(n))
     def block(self, h: int) -> DraftBlock: return self.blocks[0 if len(self.blocks) == 1 else h]
-    def losses(self, hidden: torch.Tensor, tokens: torch.Tensor, embedding: nn.Embedding) -> tuple[torch.Tensor, dict]:
+    def losses(self, hidden: torch.Tensor, tokens: torch.Tensor, embedding: nn.Embedding, *,
+               collect_diagnostics: bool = True, materialize_diagnostics: bool = True) -> tuple[torch.Tensor, dict]:
         state = hidden; total = hidden.new_zeros(()); metrics = {}
         for h in range(1, self.horizons + 1):
             length = tokens.shape[1] - h
@@ -32,7 +33,11 @@ class MultiTokenDraft(nn.Module):
             logits = F.linear(state, embedding.weight).float(); target = horizon_targets(tokens, h)
             loss = F.cross_entropy(logits.flatten(0, 1), target.flatten())
             total = total + self.cfg['loss_weights'][h - 1] * loss
-            metrics[f't+{h}_loss'] = float(loss.detach()); metrics[f't+{h}_accuracy'] = float((logits.argmax(-1) == target).float().mean().detach())
+            if collect_diagnostics:
+                loss_value = loss.detach()
+                accuracy = (logits.argmax(-1) == target).float().mean().detach()
+                metrics[f't+{h}_loss'] = float(loss_value) if materialize_diagnostics else loss_value
+                metrics[f't+{h}_accuracy'] = float(accuracy) if materialize_diagnostics else accuracy
         return total, metrics
     @torch.no_grad()
     def generate(self, hidden: torch.Tensor, previous_token: torch.Tensor, embedding: nn.Embedding) -> torch.Tensor:

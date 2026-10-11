@@ -1,0 +1,23 @@
+{
+  "variant": "sparse75_ngram25m",
+  "label": "baseline_latest_sparse25m_120_v4",
+  "steps": 120,
+  "starting_tokens": 250003456,
+  "ending_tokens": 250986496,
+  "starting_checkpoint_sha256": "3388c13fd17eda7b6bf52fd6627f01122b9b6fa5e865eed8e54e9759114b7c69",
+  "source_checkpoint": null,
+  "engine_sha256": "0ff0ae3b17831dd3ec6971eea754d2e5f7b06f4fa14828851766dd86efa9336c",
+  "git_commit": "dda2dd471c164b736ed85c418e46a4357c3c2861",
+  "train_step_tokens_per_second": 23411.892628450132,
+  "run_training_seconds": 41.988916299975244,
+  "run_process_seconds": 51.416879600001266,
+  "wall_tokens_per_second": 24695.48353194277,
+  "training_seconds": 5925.17900130001,
+  "wall_seconds": 6113.610199399998,
+  "measured_steps": 120,
+  "peak_allocated_bytes": 2133837824,
+  "peak_reserved_bytes": 2472542208,
+  "summary_path": "work/runtime_optimization_20261011/runs/sparse75_ngram25m/baseline_latest_sparse25m_120_v4/summary.json",
+  "scratch_checkpoint_path": "work/runtime_optimization_20261011/runs/sparse75_ngram25m/baseline_latest_sparse25m_120_v4/checkpoints/last.pt",
+  "scratch_checkpoint_sha256": "097eb2e945ef9fe1f066791ba001b9034da05ce96756e05453c4f86689f04185"
+}

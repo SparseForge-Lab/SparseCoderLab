@@ -29,13 +29,13 @@ class NgramMemory(nn.Module):
         self.last_gate = None
     def bucket_ids(self, tokens: torch.Tensor, segment_ids=None) -> list[torch.Tensor]:
         return [stable_hash(tokens, order, self.cfg['rows'], seed, segment_ids) for order, seed in zip(self.cfg['orders'], self.cfg['seeds'])]
-    def forward(self, x: torch.Tensor, tokens: torch.Tensor, segment_ids=None) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, tokens: torch.Tensor, segment_ids=None, *, collect_diagnostics: bool = True) -> torch.Tensor:
         if self.ablate:
             if self.training: raise RuntimeError('Memory ablation is evaluation-only')
             return x
         vectors = [table(ids) for table, ids in zip(self.tables, self.bucket_ids(tokens, segment_ids))]
         gate = torch.sigmoid(self.gate(x))
-        self.last_gate = gate.detach()
+        if collect_diagnostics: self.last_gate = gate.detach()
         return x + gate * self.projection(torch.cat(vectors, -1))
     def diagnostics(self, tokens: torch.Tensor, segment_ids=None) -> dict:
         banks = []
