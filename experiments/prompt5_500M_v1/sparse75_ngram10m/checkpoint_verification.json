@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "variant": "sparse75_ngram10m",
+  "latest": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt",
+    "sha256": "fc63cfaee63e5c098541041f138d233e64f0b28091770d66db24eae85fef2583",
+    "size_bytes": 1039071235,
+    "tokens_seen": 286720000,
+    "step": 35000,
+    "continuation_updates": 4482,
+    "continuation_tokens": 36716544,
+    "phase_steps": 22792,
+    "cursor": 182336,
+    "cursor_epoch_position": [
+      0,
+      182336
+    ],
+    "scheduler_last_epoch": 22792,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 221,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "e3a3f4fa7f1f6abfbfd1356c038f6f4aedd5e397fee6e7ca96a0e8f99ae0f77d"
+  },
+  "previous": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/previous.pt",
+    "sha256": "6b7ba017ecb453f29f4a2730a423e339210757d2db4e6c8673783784ae5ee628",
+    "size_bytes": 1039071235,
+    "tokens_seen": 278528000,
+    "step": 34000,
+    "continuation_updates": 3482,
+    "continuation_tokens": 28524544,
+    "phase_steps": 21792,
+    "cursor": 174336,
+    "cursor_epoch_position": [
+      0,
+      174336
+    ],
+    "scheduler_last_epoch": 21792,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 221,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "e3a3f4fa7f1f6abfbfd1356c038f6f4aedd5e397fee6e7ca96a0e8f99ae0f77d"
+  },
+  "milestone_375M": null,
+  "final_500M": null,
+  "immutable_250M": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/initial_250M_full.pt",
+    "sha256": "147d1e0df427501d70b5231d91f30b2f8ec50b2f5f0ad5c190b48e85436ee963",
+    "size_bytes": 1039071235,
+    "tokens_seen": 250003456,
+    "step": 30518,
+    "continuation_updates": 0,
+    "continuation_tokens": 0,
+    "phase_steps": 18310,
+    "cursor": 146480,
+    "cursor_epoch_position": [
+      0,
+      146480
+    ],
+    "scheduler_last_epoch": 18310,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 221,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "e3a3f4fa7f1f6abfbfd1356c038f6f4aedd5e397fee6e7ca96a0e8f99ae0f77d"
+  }
+}
