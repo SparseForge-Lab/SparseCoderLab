@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "variant": "dense75_ref",
+  "latest": {
+    "path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/last.pt",
+    "sha256": "46603a0f274e4601f25488c53e65fe8137954e3ca77068a3e959d5a1b1c3381c",
+    "size_bytes": 648381931,
+    "tokens_seen": 374996992,
+    "step": 45776,
+    "continuation_updates": 15258,
+    "continuation_tokens": 124993536,
+    "phase_steps": 33568,
+    "cursor": 268544,
+    "cursor_epoch_position": [
+      1,
+      72110
+    ],
+    "scheduler_last_epoch": 33568,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 114,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "3c2c1ebf8dc04ed6962a86766b4d8fe6197d9db6a93cd8c6302d4a0b26522eef"
+  },
+  "previous": {
+    "path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/previous.pt",
+    "sha256": "537945c29396cebf26c1d9ba68776306652f37bf4e0f0e2426c0ed2f0ce3a4d4",
+    "size_bytes": 648381931,
+    "tokens_seen": 368640000,
+    "step": 45000,
+    "continuation_updates": 14482,
+    "continuation_tokens": 118636544,
+    "phase_steps": 32792,
+    "cursor": 262336,
+    "cursor_epoch_position": [
+      1,
+      65902
+    ],
+    "scheduler_last_epoch": 32792,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 114,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "3c2c1ebf8dc04ed6962a86766b4d8fe6197d9db6a93cd8c6302d4a0b26522eef"
+  },
+  "milestone_375M": {
+    "path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/375M_full.pt",
+    "sha256": "46603a0f274e4601f25488c53e65fe8137954e3ca77068a3e959d5a1b1c3381c",
+    "size_bytes": 648381931,
+    "tokens_seen": 374996992,
+    "step": 45776,
+    "continuation_updates": 15258,
+    "continuation_tokens": 124993536,
+    "phase_steps": 33568,
+    "cursor": 268544,
+    "cursor_epoch_position": [
+      1,
+      72110
+    ],
+    "scheduler_last_epoch": 33568,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 114,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "3c2c1ebf8dc04ed6962a86766b4d8fe6197d9db6a93cd8c6302d4a0b26522eef"
+  },
+  "final_500M": null,
+  "immutable_250M": {
+    "path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/initial_250M_full.pt",
+    "sha256": "464c06ea8d08eb012919a09b04e1ebfd581c441f466bb9af698823df07af659b",
+    "size_bytes": 648381931,
+    "tokens_seen": 250003456,
+    "step": 30518,
+    "continuation_updates": 0,
+    "continuation_tokens": 0,
+    "phase_steps": 18310,
+    "cursor": 146480,
+    "cursor_epoch_position": [
+      0,
+      146480
+    ],
+    "scheduler_last_epoch": 18310,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 114,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "3c2c1ebf8dc04ed6962a86766b4d8fe6197d9db6a93cd8c6302d4a0b26522eef"
+  }
+}
