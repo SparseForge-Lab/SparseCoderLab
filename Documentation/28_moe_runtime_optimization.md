@@ -1,8 +1,8 @@
-# Prompt-1: fix and characterize MoE execution overhead
+# MoE execution overhead
 
 Case A, with a qualification: runtime is sufficiently close to dense to justify a separately authorized real-data quality experiment, but it remains about 38–40% more costly. This meets the user's potentially acceptable <=1.50 band; it is not the <=1.35 strong or <=1.20 excellent result. No real corpus or 20M/50M/70M/100M run was started.
 
-Historical Phase1A training-step cost was 2.79x dense (Ngram 2.98x), with tiny synthetic loss differences that established no quality winner. Those results remain untouched in Documentation 23–27, the historical leaderboard and snapshots. This prompt begins at commit `0e36357` and only changes execution/measurement infrastructure. Current wall measurement excludes evaluation/checkpoint costs, unlike historical wall rates.
+Historical Phase1A training-step cost was 2.79x dense (Ngram 2.98x), with tiny synthetic loss differences that established no quality winner. Those results remain untouched in Documentation 23–27, the historical leaderboard and snapshots. The runtime study begins at commit `0e36357` and only changes execution/measurement infrastructure. Current wall measurement excludes evaluation/checkpoint costs, unlike historical wall rates.
 
 ## Measured cause and remaining cost
 
@@ -59,6 +59,6 @@ Six experts wins pure-step speed by only 0.22% over four; four wins wall-loop sp
 
 ## Decision, reproducibility and archive
 
-Case A is qualified engineering readiness: proceed in the next prompt to verified real data and cumulative20M->50M->70M->100M checkpoints, subject to its own protocol/tokenizer review. No next phase was started. Optional bounded follow-ups can test fusion/compile of shared/eager work and reductions with the same strict gate; custom Triton, changed permanent weight layout and exotic dependencies were unnecessary here and remain untested. Worst-skew padding, a remaining~40% dense cost, default BF16 numerical repeatability, representative routing/locality, real quality, multiple seeds and useful memory benefit remain unresolved.
+Case A is qualified engineering readiness: proceed in the next research phase to verified real data and cumulative20M->50M->70M->100M checkpoints, subject to its own protocol/tokenizer review. No next phase was started. Optional bounded follow-ups can test fusion/compile of shared/eager work and reductions with the same strict gate; custom Triton, changed permanent weight layout and exotic dependencies were unnecessary here and remain untested. Worst-skew padding, a remaining~40% dense cost, default BF16 numerical repeatability, representative routing/locality, real quality, multiple seeds and useful memory benefit remain unresolved.
 
-Prompt-1 goal is `GOALS/Prompt-1.md`. The final frozen second copy is `~\Data-Zip\Prompt-1\Prompt-1.zip`, with external `MANIFEST.json`, `GOAL.md` and verification receipt. Canonical working files remain in place; old measurements, failed trials and large-checkpoint identities are preserved. Follow Documentation 29 for future prompt numbering and verified SHA256 archive convention. The archive is refreshed only after these documents and FINAL_STATUS are finalized.
+The MoE runtime study goal is `GOALS/Prompt-1.md`. The final frozen second copy is `~\Data-Zip\Prompt-1\Prompt-1.zip`, with external `MANIFEST.json`, `GOAL.md` and verification receipt. Canonical working files remain in place; old measurements, failed trials and large-checkpoint identities are preserved. Follow Documentation 29 for future archive numbering and verified SHA256 archive convention. The archive is refreshed only after these documents and FINAL_STATUS are finalized.

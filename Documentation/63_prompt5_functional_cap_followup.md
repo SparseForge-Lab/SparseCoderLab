@@ -1,8 +1,8 @@
-# Prompt-5 functional cap follow-up
+# Functional evaluation of truncated completions
 
-I rescored the frozen Prompt-5 completions after making generation truncation an independent flag. The scorer now extracts, parses, and executes the available candidate even when it reaches its token cap. The official historical 128-token report remains unchanged; these are separate diagnostic reports using the recovered historical benchmark fixture.
+The frozen 250M-token completions were rescored with generation truncation recorded as an independent flag. The scorer now extracts, parses, and executes the available candidate even when it reaches its token cap. The official historical 128-token report remains unchanged; these are separate diagnostic reports using the recovered historical benchmark fixture.
 
-The complete 128-token set contains 400 completions: 100 each from `dense75_ref`, `sparse75`, `sparse75_ngram10m`, and `sparse75_ngram25m`. The all-model 256-token set also contains 400 completions. A separate 512-token generation was stopped at the user's request after 216 rows, so its report is explicitly partial and does not include `sparse75_ngram25m`.
+The complete 128-token set contains 400 completions: 100 each from `dense75_ref`, `sparse75`, `sparse75_ngram10m`, and `sparse75_ngram25m`. The all-model 256-token set also contains 400 completions. A separate 512-token generation was stopped before completion after 216 rows, so its report is explicitly partial and does not include `sparse75_ngram25m`.
 
 | Generation cap | Variant | Functional passes | Parseable | Truncated |
 |---:|---|---:|---:|---:|

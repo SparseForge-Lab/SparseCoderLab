@@ -14,7 +14,7 @@ Geometry compares grouped 12x160, 6x320 and 4x480 at equal routed stored FFN cap
 
 Current N-gram timing uses its existing trained memory checkpoint and unchanged banks/lookup/gate. Its architecture-specific weights can give slightly different natural routing; this is incremental whole-model runtime cost, not a controlled same-output quality ablation. No table capacity sweep or redesign occurs. Single endpoint GPU-utilization samples are reported as coarse samples, not occupancy or average utilization.
 
-`results/moe_benchmark_provenance.json` binds core/config/tool/test bytes, tokenizer/data manifest and binary shards, hardware/software and final CSV hashes. Large checkpoint identity is recorded with size/SHA256/origin in the Prompt-1 archive manifest. Runtime configs cap a direct short training invocation at 327680 tokens; the benchmark tool independently enforces 20-step (geometry10) loops. Original Phase1A configs remain intact.
+`results/moe_benchmark_provenance.json` binds core/config/tool/test bytes, tokenizer/data manifest and binary shards, hardware/software and final CSV hashes. Large checkpoint identity is recorded with size/SHA256/origin in the MoE runtime study archive manifest. Runtime configs cap a direct short training invocation at 327680 tokens; the benchmark tool independently enforces 20-step (geometry10) loops. Original Phase1A configs remain intact.
 
 Reproduce sequentially, after correctness:
 

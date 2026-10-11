@@ -2,7 +2,7 @@
 
 This directory contains the project's research protocols, implementation notes, and measured results. The models are small research systems; their language-modeling scores do not establish coding-agent capability.
 
-Exact internal task prompts and local workflow records are kept out of the public repository. Public reports describe the experiments and their measured evidence.
+Public reports describe experiment methods and measured evidence. Large checkpoints, datasets and private working archives remain outside Git.
 
 | File | Contents |
 |---|---|
@@ -51,6 +51,7 @@ Exact internal task prompts and local workflow records are kept out of the publi
 | 60_frozen_repository_transition_preflight.md | Frozen corpus, measured recipe/coverage, canonical functional evidence and exact CUDA transition resume |
 | 61_matched_repository_training.md | Completed common 250M repository-data campaign, recovery checks and matched results |
 | 62_unified_cpu_functional_evaluation.md | Deterministic 100-prompt functional scoring, routing/N-gram telemetry, safe checkpoint queue, and architecture estimates |
+| 54_prompt5_500m_interim.md | Dense continuation checkpoint and generation benchmark at 375M tokens |
 | 63_prompt5_functional_cap_followup.md | All-model 128/256-token execution results and the explicitly partial 512-token follow-up |
 
 Machine-readable results live under `results/`. Large datasets and checkpoints are not included in ordinary Git; their manifests retain integrity metadata.

@@ -1,4 +1,4 @@
-# Prompt-2 completion audit
+# Real-data comparison completion audit
 
 The full original objective remains all three seed42 models at20M/50M/70M/100M, followed by curve interpretation, routing/memory evidence, conditional seed replication and a verified second-copy archive. A running process, partial release or successful syntax check does not prove completion.
 
@@ -6,7 +6,7 @@ The full original objective remains all three seed42 models at20M/50M/70M/100M, 
 
 Final CPU tensor/optimizer inspection remains `python -m analysis.research_v1.integrity`. Its receipt is corroborating evidence; inspect its actual coverage and run it after all primary milestones. Re-run final regressions and current-source engineering/readiness gates after source changes are finished; do not overlap GPU resume/parity work with training. Source-bound primary training math stays frozen.
 
-After all100M curves, the agent must interpret the results and answer all12 original questions and all14 Prompt-2.5 continuation questions. `final_decision.json` records status complete, classification GOOD/MIXED/BAD, human_review_confirmed true only after actual review, original_questions and continuation_questions numbered string-key answer mappings, and review_document pointing to the report. The replication_decision object includes required and rationale; if required, evidence_path must reference actual passed seed1337 replication evidence. Do not use a placeholder or an unexecuted plan as replication evidence. Original instructions require a strongest-pair second seed if architecture gaps remain tiny/ambiguous after100M.
+After all100M curves, the final review must interpret the results and answer all12 original questions and all14 continuation questions in the research evidence protocol. `final_decision.json` records status complete, classification GOOD/MIXED/BAD, human_review_confirmed true only after actual review, original_questions and continuation_questions numbered string-key answer mappings, and review_document pointing to the report. The replication_decision object includes required and rationale; if required, evidence_path must reference actual passed seed1337 replication evidence. Do not use a placeholder or an unexecuted plan as replication evidence. Original instructions require a strongest-pair second seed if architecture gaps remain tiny/ambiguous after100M.
 
 The final card must contain all12 measured runs, calculated architecture/compute estimates, planned/unknown distinctions, limitations and concurrent operating conditions. All eight figure families require PNG/SVG/PDF outputs from canonical data; plot renderers and data provenance must also be inspected. Mechanical checks do not judge the quality of human interpretation or establish large-model scaling.
 
@@ -14,4 +14,4 @@ Finalize GOALS/Prompt-2.md, reports and references before archiving. GOALS and w
 
 After archive creation, `python -m tools.research_completion_audit --final --output .local/prompt2_final_completion_audit.json` additionally opens the ZIP, checks CRC, actual ZIP SHA, every archived/current canonical SHA, all large-reference sizes/SHA and the goal mirror. It exits nonzero if any check is incomplete. The receipt is private to avoid a self-referential archive hash cycle; export it to the chat output directory when delivering the archive. Do not edit archived canonical evidence after verification without rebuilding and re-verifying the archive. Independently inspect source/test/semantic requirements not covered by this mechanical audit before calling the goal complete.
 
-Stop after the verified final review. No Prompt-3,75M experiment or new architecture feature starts automatically.
+Stop after the verified final review. No 75M architecture experiment or new architecture feature starts automatically.

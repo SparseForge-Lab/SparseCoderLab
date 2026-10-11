@@ -1,4 +1,4 @@
-# Matched20M evidence — partial Prompt-2 comparison
+# Matched 20M evidence — partial real-data comparison
 
 All three seed42 models completed20,004,864 cumulative predicted tokens /2,442 updates with the same frozen research corpus, tokenizer, evaluation, token order and100M schedule. Lower NLL is better. The50M matched review and70M/100M comparisons are still required.
 
@@ -42,6 +42,6 @@ All three models passed0/6 bounded arithmetic-code probes at20M. Lower predictio
 
 Ngram checkpoint SHA25667920b5f5da6b439154d5751e41b6f94016a465360e89a362f5c562688175190. Permanent ledger and20M release snapshot contain checkpoint paths/sizes/hash, full metrics, source/config/data/tokenizer identities and architecture. Ngram continues cumulatively20M→50M; no new seed, LR schedule or corpus is introduced.
 
-Ngram20M measured22,217 step tok/s and20,041 wall tok/s, with1,894,864,384 peak allocated bytes. Cumulative speed includes user-authorized Roblox/desktop concurrency; Dense wall retains the documented reporting-recovery lower-bound caveat. Prompt-1 remains the controlled speed study.
+Ngram20M measured22,217 step tok/s and20,041 wall tok/s, with1,894,864,384 peak allocated bytes. Cumulative speed includes user-authorized Roblox/desktop concurrency; Dense wall retains the documented reporting-recovery lower-bound caveat. The MoE runtime study remains the controlled speed study.
 
 Sources: immutable checkpoint summaries; results/research_v1/review_evidence.json, memory_20004864_ablation.json, clustered_document_intervals.json, ngram_gate_summary.json and resume_state.json; results/releases/20M/.

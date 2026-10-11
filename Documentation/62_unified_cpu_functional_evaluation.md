@@ -33,7 +33,7 @@ python -m tools.unified_eval architecture --vocab 32000 --d-model 2048 --layers 
 python -m tools.unified_eval queue --root experiments --output results/checkpoint_eval_queue_r1.json
 ```
 
-Checkpoint discovery is queue-only and records SHA-256 values. It never starts evaluation, reads model weights into memory, or requests the GPU. Existing hashes can be passed with `--existing` to deduplicate into a fresh output file. Historical report imports copy the original JSON into a new, versioned wrapper with its source hash, Prompt label, and an explicit `exact`, `near_match`, or `unmatched` classification; they never rewrite source reports or claim continuous learning from Prompt-3 to Prompt-5.
+Checkpoint discovery is queue-only and records SHA-256 values. It never starts evaluation, reads model weights into memory, or requests the GPU. Existing hashes can be passed with `--existing` to deduplicate into a fresh output file. Historical report imports copy the original JSON into a new, versioned wrapper with its source hash, historical study identifier, and an explicit `exact`, `near_match`, or `unmatched` classification; they never rewrite source reports or claim continuous learning between the prototype-corpus and repository-data studies.
 
 The architecture command reports first-order stored and active parameter estimates, weight bytes, and optimizer-state bytes. For dense reference sizing, try the following approximate 750M, 7.5B, and 75B shapes (vocabulary 32K); use expert and n-gram options to model alternate storage/active-count assumptions:
 

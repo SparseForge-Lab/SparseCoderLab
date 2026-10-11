@@ -14,7 +14,7 @@ Dense/Sparse20M/50M and Ngram20M are complete. Ngram20M→50M is running cumulat
 
 Sparse-Dense mixed/code gap changes from+0.161791/+0.158768 at20M to−0.011661/−0.022011 at50M. Ngram20M improves over Sparse by−0.292863/−0.292553 and over Dense by−0.131072/−0.133786. Its zero-residual ablation penalty is+0.059097 mixed/+0.094661 code/+0.035774 general/+0.109459 technical. See Documentation44 for sampling/routing/memory evidence and limits. All three20M probes and the existing Dense/Sparse50M probes passed0/6; useful coding capability is unproved.
 
-Quality-run speed is cumulative observational timing, affected by CPU playground and later Roblox concurrency; it is not the controlled Prompt-1 study. Dense cumulative wall remains a reporting-recovery lower bound. No final promotion or scaling claim.
+Quality-run speed is cumulative observational timing, affected by CPU playground and later Roblox concurrency; it is not the controlled MoE runtime study. Dense cumulative wall remains a reporting-recovery lower bound. No final promotion or scaling claim.
 
 ## Historical shutdown state
 
