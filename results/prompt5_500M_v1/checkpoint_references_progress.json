@@ -11,10 +11,10 @@
     {
       "project_relative_path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt",
       "size_bytes": 1039071235,
-      "sha256": "4f94d64ef0827353abf37afca19347df0268caf25a1c0d188c0ce8d23103cd6d",
+      "sha256": "fc63cfaee63e5c098541041f138d233e64f0b28091770d66db24eae85fef2583",
       "originating_experiment": "sparse75_ngram10m",
-      "tokens_seen": 262144000,
-      "step": 32000
+      "tokens_seen": 286720000,
+      "step": 35000
     },
     {
       "project_relative_path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/last.pt",
