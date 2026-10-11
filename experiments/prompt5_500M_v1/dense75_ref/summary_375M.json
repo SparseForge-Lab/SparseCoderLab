@@ -1,0 +1,32 @@
+{
+  "full_state": {
+    "path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/375M_full.pt",
+    "sha256": "46603a0f274e4601f25488c53e65fe8137954e3ca77068a3e959d5a1b1c3381c",
+    "size_bytes": 648381931,
+    "tokens_seen": 374996992,
+    "step": 45776,
+    "continuation_updates": 15258,
+    "continuation_tokens": 124993536,
+    "phase_steps": 33568,
+    "cursor": 268544,
+    "cursor_epoch_position": [
+      1,
+      72110
+    ],
+    "scheduler_last_epoch": 33568,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 114,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "3c2c1ebf8dc04ed6962a86766b4d8fe6197d9db6a93cd8c6302d4a0b26522eef"
+  },
+  "model_only_path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/model_375M.pt",
+  "model_only_sha256": "2247dd6464741e24168aca0bc7eceaf4c2599c06af2e3109abf664939d7f8d83",
+  "model_only_size_bytes": 216115611,
+  "tokens_seen": 374996992,
+  "continuation_tokens": 124993536,
+  "continuation_updates": 15258,
+  "variant": "dense75_ref",
+  "config_sha256": "ded758caf8a94f445bb3327635061500fbcdb0c8d50cb893da1d9670573eee98",
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a"
+}
