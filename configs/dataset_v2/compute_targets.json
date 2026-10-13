@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "local_teacher_inference_enabled": false,
+  "trc": {
+    "access_confirmed": false,
+    "inference_permission_confirmed": false,
+    "enabled": false
+  },
+  "move_to_accelerator_only_after": ["allocation_access_verified", "inference_permission_verified"],
+  "private_allocation_details_in_public_records": false
+}

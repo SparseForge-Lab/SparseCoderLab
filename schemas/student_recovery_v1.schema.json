@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparsecoderlab.local/schemas/student_recovery_v1.schema.json",
+  "title": "Student failure and verified recovery v1",
+  "type": "object",
+  "required": ["schema_version", "sample_id", "parent_sample_id", "failure_type", "wrong_hypothesis", "evidence", "diagnosis", "recovery_actions", "verification", "recovery_verified", "accepted", "recovery_source", "student_model", "student_version", "final_result"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "sample_id": {"type": "string", "minLength": 1},
+    "parent_sample_id": {"type": "string", "minLength": 1},
+    "failure_type": {"type": "string", "minLength": 1},
+    "wrong_hypothesis": {},
+    "evidence": {},
+    "diagnosis": {"type": "string"},
+    "recovery_actions": {"type": "array", "items": {"type": "object"}, "minItems": 1},
+    "verification": {"type": "object"},
+    "recovery_verified": {"type": "boolean"},
+    "accepted": {"type": "boolean"},
+    "recovery_source": {"type": "string", "minLength": 1},
+    "student_model": {"type": "string"},
+    "student_version": {"type": "string"},
+    "final_result": {"type": "string"},
+    "recurrence_count": {"type": "integer", "minimum": 1},
+    "confidence_before_failure": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "similarity_reference": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,20 @@
+========================================================================
+MODEL: Sparse 75M + 25M ngram @ 250M tokens @ 499,998,720 tokens
+Variant: sparse75_ngram25m
+Checkpoint: experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/model_500M.pt
+Checkpoint SHA-256: 6ba76650bfacba91e02df7c9584f35f2bf20ca461976a28f7627d4742b12e81b
+Tokenizer SHA-256: 832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a
+Device: NVIDIA GeForce RTX 5070
+
+Matched Prompt-5 25-prompt x 7-temperature diagnostic, with the same seed, top-k, stop tokens,
+context window and 128-token generation cap as the 250M benchmark. Heuristics are not functional tests.
+
+Temperature 0.0: 25/25 outputs; empty: 0; url: 0; markdown_heading: 0; obvious_repetition_loop: 16; python_like_code: 22; contains_return: 23; parseable_as_python_with_prompt: 3
+Temperature 0.2: 25/25 outputs; empty: 0; url: 0; markdown_heading: 0; obvious_repetition_loop: 16; python_like_code: 20; contains_return: 21; parseable_as_python_with_prompt: 7
+Temperature 0.5: 25/25 outputs; empty: 0; url: 0; markdown_heading: 0; obvious_repetition_loop: 14; python_like_code: 23; contains_return: 22; parseable_as_python_with_prompt: 8
+Temperature 0.8: 25/25 outputs; empty: 0; url: 2; markdown_heading: 1; obvious_repetition_loop: 12; python_like_code: 23; contains_return: 21; parseable_as_python_with_prompt: 6
+Temperature 1.0: 25/25 outputs; empty: 0; url: 1; markdown_heading: 2; obvious_repetition_loop: 6; python_like_code: 22; contains_return: 20; parseable_as_python_with_prompt: 7
+Temperature 1.2: 25/25 outputs; empty: 0; url: 0; markdown_heading: 0; obvious_repetition_loop: 5; python_like_code: 25; contains_return: 20; parseable_as_python_with_prompt: 2
+Temperature 1.5: 25/25 outputs; empty: 0; url: 2; markdown_heading: 2; obvious_repetition_loop: 0; python_like_code: 21; contains_return: 18; parseable_as_python_with_prompt: 2
+
+These regex/AST indicators are approximate. Generated code was not executed.

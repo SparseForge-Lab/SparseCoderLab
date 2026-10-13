@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparsecoderlab.local/schemas/student_failure_v1.schema.json",
+  "title": "Student failure record v1",
+  "type": "object",
+  "required": ["sample_id", "student_model", "student_version", "failure_type", "state", "evidence", "wrong_hypothesis", "environment", "known_bad_actions"],
+  "properties": {
+    "sample_id": {"type": "string", "minLength": 1},
+    "student_model": {"type": "string", "minLength": 1},
+    "student_version": {"type": "string", "minLength": 1},
+    "failure_type": {"enum": ["invented_api", "wrong_symbol", "wrong_file", "did_not_inspect_repo", "false_assumption", "misread_test", "loop_after_correct", "continued_after_complete", "stopped_too_early", "failed_recovery", "incorrect_tool_use", "ignored_evidence", "other"]},
+    "state": {},
+    "evidence": {},
+    "wrong_hypothesis": {},
+    "environment": {},
+    "known_bad_actions": {"type": "array", "items": {"type": "object"}},
+    "recurrence_count": {"type": "integer", "minimum": 1},
+    "confidence_before_failure": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "similarity_reference": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

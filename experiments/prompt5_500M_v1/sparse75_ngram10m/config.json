@@ -1,0 +1,217 @@
+{
+  "model": {
+    "vocab_size": 32768,
+    "d_model": 512,
+    "layers": 16,
+    "q_heads": 8,
+    "kv_heads": 2,
+    "head_dim": 64,
+    "ffn": 1024,
+    "norm_eps": 1e-06,
+    "rope_theta": 10000.0,
+    "init_std": 0.02,
+    "moe_layers": [
+      3,
+      7,
+      11,
+      15
+    ],
+    "experts": 12,
+    "expert_ffn": 320,
+    "top_k": 1,
+    "aux_weight": 0.01,
+    "activation_checkpointing": true,
+    "moe_backend": "grouped"
+  },
+  "memory": {
+    "enabled": true,
+    "banks": 4,
+    "rows": 327680,
+    "dim": 8,
+    "orders": [
+      2,
+      2,
+      3,
+      3
+    ],
+    "seeds": [
+      17,
+      65537,
+      104729,
+      999983
+    ],
+    "layer": 1,
+    "gate_bias": -2.0
+  },
+  "mtp": {
+    "enabled": false,
+    "design": "shared_mtp_3step",
+    "horizons": 3,
+    "ffn": 160,
+    "loss_weights": [
+      0.1,
+      0.1,
+      0.1
+    ]
+  },
+  "routeahead": {
+    "horizons": 3,
+    "hidden": 32,
+    "top_k": 2,
+    "history": 4
+  },
+  "training": {
+    "seed": 42,
+    "device": "cuda",
+    "bf16": true,
+    "tf32": true,
+    "compile": false,
+    "fused_optimizer": false,
+    "context": 1024,
+    "max_context": 16384,
+    "microbatch": 8,
+    "accumulation": 1,
+    "lr": 0.0003,
+    "weight_decay": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "grad_clip": 1.0,
+    "warmup_steps": 500,
+    "schedule_steps": 18310,
+    "min_lr_ratio": 0.1,
+    "max_wall_minutes": 300,
+    "reserve_seconds": 60,
+    "target_tokens": 250003456,
+    "checkpoint_steps": 1000,
+    "log_steps": 50,
+    "eval_steps": 10000,
+    "eval_batches": 4,
+    "batch_candidates": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "headroom_fraction": 0.15,
+    "optimizer_decay_policy": "matrix_except_ngram_v1",
+    "publish_leaderboard": false
+  },
+  "data": {
+    "tokenizer": "data/research_v1/tokenizer.json",
+    "shards": "data/research_v2_real/shards/transition_r2",
+    "manifest": "results/research_v2_real/corpus_transition_manifest_r2.json",
+    "cache_gb": 6,
+    "project_gb": 100,
+    "seed": 42,
+    "eval_fraction": 0.1,
+    "mixture": {
+      "general": 0.006650879974788065,
+      "technical": 0.09345993728475303,
+      "code": 0.8697541792516054,
+      "context": 0.030135003488853535
+    },
+    "dev_documents": 16000,
+    "shard_tokens": 134217728,
+    "max_tokens": 500000000,
+    "dataset_version": "research_v2_repository_transition_2026_10_08_r2",
+    "tokenizer_report": "results/research_v2_real/tokenizer_quality_transition_r2.json",
+    "cache": "data/research_v2_real/cache/transition_r2",
+    "packing_policy": "document_isolated_v1",
+    "repository_split_assignments": {
+      "DapperLib/Dapper": "val",
+      "OpenLogicProject/OpenLogic": "train",
+      "angular/angular": "train",
+      "apache/commons-lang": "val",
+      "apache/lucene": "train",
+      "avigad/mathematics_in_lean_source": "train",
+      "bats-core/bats-core": "val",
+      "benhoyt/inih": "val",
+      "colinhacks/zod": "train",
+      "django/django": "train",
+      "dotnet/aspnetcore": "val",
+      "dotnet/roslyn": "train",
+      "duckdb/duckdb": "train",
+      "expressjs/express": "train",
+      "fastapi/fastapi": "val",
+      "fmtlib/fmt": "train",
+      "gin-gonic/gin": "val",
+      "golang/go": "train",
+      "google/googletest": "val",
+      "google/gson": "train",
+      "jqlang/jq": "val",
+      "kubernetes/kubernetes": "train",
+      "leanprover/logic_and_proof_lean3": "val",
+      "libexpat/libexpat": "val",
+      "libuv/libuv": "train",
+      "lodash/lodash": "val",
+      "microsoft/TypeScript": "train",
+      "necolas/normalize.css": "val",
+      "ohmyzsh/ohmyzsh": "train",
+      "pallets/flask": "val",
+      "protocolbuffers/protobuf": "train",
+      "psf/requests": "train",
+      "react/react": "train",
+      "rust-lang/rust": "train",
+      "scikit-learn/scikit-learn": "train",
+      "serde-rs/serde": "train",
+      "spf13/cobra": "train",
+      "spring-projects/spring-framework": "train",
+      "sqlfluff/sqlfluff": "train",
+      "tailwindlabs/tailwindcss": "val",
+      "tobymao/sqlglot": "val",
+      "tokio-rs/tokio": "val",
+      "twbs/bootstrap": "train",
+      "vuejs/core": "val"
+    },
+    "mixture_policy": "natural_frozen_tokens_v1; no oversampling",
+    "training_storage_budget_gb": 6,
+    "checkpoint_free_space_reserve_gb": 20
+  },
+  "runtime": {
+    "expert_bytes": 307200,
+    "page_sizes": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "vram_pages": 4,
+    "ram_pages": 8,
+    "ssd_mib_s": 400,
+    "ssd_latency_ms": 0.2,
+    "ram_mib_s": 12000,
+    "ram_latency_ms": 0.02,
+    "scale_layers": 16,
+    "scale_experts": 256,
+    "trace_tokens": 16384,
+    "prefetch_window_s": 0.0002
+  },
+  "context": {
+    "task_count": 100,
+    "ratios": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "boundaries": 3,
+    "exact_fields": [
+      "identifier",
+      "filename",
+      "signature",
+      "constraint",
+      "numeric_value",
+      "failed_approach",
+      "tool_output",
+      "compiler_error"
+    ]
+  },
+  "agent": {
+    "shell_timeout": 10,
+    "max_actions": 30,
+    "max_output_chars": 10000
+  },
+  "name": "Prompt3_sparse75_ngram10m"
+}

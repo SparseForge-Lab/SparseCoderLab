@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "utc": "2026-10-13T12:24:17.920723+00:00",
+  "variant": "sparse75_ngram10m",
+  "stage": "run_config_identity_stop",
+  "error": "run config differs from frozen Prompt-5 config",
+  "training_started": false,
+  "safe_checkpoint": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt",
+    "tokens_seen": 376832000,
+    "sha256": "284bae240edbf1dca7a4778c22dacf341df3c6c0e44a5a425a27982493a258b2"
+  },
+  "recovery": "Restore exact frozen config bytes before restarting. Model state was not changed by this preflight failure."
+}

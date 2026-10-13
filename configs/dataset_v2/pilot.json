@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "blocked_until_500m_winner_is_frozen",
+  "generation_enabled": false,
+  "target_task_instances": {"minimum": 5000, "maximum": 10000},
+  "task_family_coverage": [
+    "code_from_scratch", "bug_fix", "multi_file_repo_work", "tool_use", "terminal_use",
+    "evidence_grounded_reasoning", "recovery", "anti_hallucination", "stop_scope", "agentic_swe"
+  ],
+  "acceptance": "objective_verifier_pass_and_independent_critic_pass_for_synthetic_posttraining",
+  "required_metrics": [
+    "objective_pass_rate", "generator_reject_rate", "critic_reject_rate", "correction_rate",
+    "hallucination_rate", "scope_error_rate", "stop_error_rate", "recovery_rate",
+    "average_tokens_per_task", "generation_seconds", "critic_seconds", "final_acceptance_rate",
+    "storage_bytes", "performance_by_task_family"
+  ],
+  "must_not_start_before": ["all_selected_500m_variants_verified", "matched_evaluation_complete", "winner_frozen"]
+}

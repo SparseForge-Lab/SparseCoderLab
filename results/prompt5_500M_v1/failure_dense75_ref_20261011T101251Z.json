@@ -1,0 +1,7 @@
+{
+  "utc": "2026-10-11T10:12:51.355570+00:00",
+  "variant": "dense75_ref",
+  "error": "RuntimeError('375M benchmark failed with exit code 1; see D:\\\\SparseCoderLab\\\\results\\\\prompt5_500M_v1\\\\milestone_benchmark_output.txt')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 693, in main\n    completed[tag] = run_variant(tag, preflight)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 589, in run_variant\n    run_benchmark(tag)\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 503, in run_benchmark\n    raise RuntimeError(f\"375M benchmark failed with exit code {code}; see {log_path}\")\nRuntimeError: 375M benchmark failed with exit code 1; see D:\\SparseCoderLab\\results\\prompt5_500M_v1\\milestone_benchmark_output.txt\n",
+  "completed_models": {}
+}

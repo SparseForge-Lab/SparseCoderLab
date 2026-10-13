@@ -1,0 +1,48 @@
+{
+  "utc": "2026-10-13T12:22:02.495261+00:00",
+  "variant": "sparse75_ngram10m",
+  "error": "IdentityDriftError('Training source identity changed during the continuation')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 423, in run_segment\n    result = engine.run(cfg, run_dir, target_tokens=target, max_wall_minutes=300, resume=resume)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\src\\training\\engine.py\", line 218, in run\n    save_checkpoint()\n  File \"D:\\SparseCoderLab\\src\\training\\engine.py\", line 145, in save_checkpoint\n    save_training(checkpoint,model,optimizer,scheduler,meta,\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 323, in save\n    check_metadata(meta, scheduler.state_dict())\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 317, in check_metadata\n    check_identity(tag, source_guard)\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 132, in check_identity\n    raise IdentityDriftError(\"Training source identity changed during the continuation\")\nIdentityDriftError: Training source identity changed during the continuation\n",
+  "latest_verified": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt",
+    "sha256": "284bae240edbf1dca7a4778c22dacf341df3c6c0e44a5a425a27982493a258b2",
+    "size_bytes": 1039071235,
+    "tokens_seen": 376832000,
+    "step": 46000,
+    "continuation_updates": 15482,
+    "continuation_tokens": 126828544,
+    "phase_steps": 33792,
+    "cursor": 270336,
+    "cursor_epoch_position": [
+      1,
+      73902
+    ],
+    "scheduler_last_epoch": 33792,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 221,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "e3a3f4fa7f1f6abfbfd1356c038f6f4aedd5e397fee6e7ca96a0e8f99ae0f77d"
+  },
+  "previous_verified": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/previous.pt",
+    "sha256": "297e86caf82d547c783f4bda2904ebf964a2499dc3386dd59711500d6b513c9b",
+    "size_bytes": 1039071235,
+    "tokens_seen": 374996992,
+    "step": 45776,
+    "continuation_updates": 15258,
+    "continuation_tokens": 124993536,
+    "phase_steps": 33568,
+    "cursor": 268544,
+    "cursor_epoch_position": [
+      1,
+      72110
+    ],
+    "scheduler_last_epoch": 33568,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 221,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "e3a3f4fa7f1f6abfbfd1356c038f6f4aedd5e397fee6e7ca96a0e8f99ae0f77d"
+  }
+}

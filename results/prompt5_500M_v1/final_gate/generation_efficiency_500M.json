@@ -1,0 +1,239 @@
+{
+  "groups": [
+    {
+      "variant": "dense75_ref",
+      "temperature": 0.0,
+      "completions": 25,
+      "generated_tokens": 3148,
+      "seconds": 26.56707820000065,
+      "generated_tokens_per_second": 118.49251830786281,
+      "peak_allocated_bytes": 290583040,
+      "peak_reserved_bytes": 314572800,
+      "cpu_rss_bytes": 1404182528
+    },
+    {
+      "variant": "dense75_ref",
+      "temperature": 0.2,
+      "completions": 25,
+      "generated_tokens": 3200,
+      "seconds": 28.609963199999584,
+      "generated_tokens_per_second": 111.8491477122923,
+      "peak_allocated_bytes": 290585088,
+      "peak_reserved_bytes": 314572800,
+      "cpu_rss_bytes": 1788825600
+    },
+    {
+      "variant": "dense75_ref",
+      "temperature": 0.5,
+      "completions": 25,
+      "generated_tokens": 2800,
+      "seconds": 26.969951799999762,
+      "generated_tokens_per_second": 103.81924375556447,
+      "peak_allocated_bytes": 290585088,
+      "peak_reserved_bytes": 314572800,
+      "cpu_rss_bytes": 1788776448
+    },
+    {
+      "variant": "dense75_ref",
+      "temperature": 0.8,
+      "completions": 25,
+      "generated_tokens": 2370,
+      "seconds": 25.411309499999334,
+      "generated_tokens_per_second": 93.26555957299493,
+      "peak_allocated_bytes": 290585088,
+      "peak_reserved_bytes": 314572800,
+      "cpu_rss_bytes": 1788780544
+    },
+    {
+      "variant": "dense75_ref",
+      "temperature": 1.0,
+      "completions": 25,
+      "generated_tokens": 2071,
+      "seconds": 25.90928690000146,
+      "generated_tokens_per_second": 79.93272867729459,
+      "peak_allocated_bytes": 290585088,
+      "peak_reserved_bytes": 314572800,
+      "cpu_rss_bytes": 1788743680
+    },
+    {
+      "variant": "dense75_ref",
+      "temperature": 1.2,
+      "completions": 25,
+      "generated_tokens": 2625,
+      "seconds": 26.538477900001453,
+      "generated_tokens_per_second": 98.91298249625146,
+      "peak_allocated_bytes": 290585088,
+      "peak_reserved_bytes": 314572800,
+      "cpu_rss_bytes": 1646768128
+    },
+    {
+      "variant": "dense75_ref",
+      "temperature": 1.5,
+      "completions": 25,
+      "generated_tokens": 2572,
+      "seconds": 26.884567699999025,
+      "generated_tokens_per_second": 95.66826696640888,
+      "peak_allocated_bytes": 290585088,
+      "peak_reserved_bytes": 314572800,
+      "cpu_rss_bytes": 1646854144
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "temperature": 0.0,
+      "completions": 25,
+      "generated_tokens": 2384,
+      "seconds": 33.69204189999982,
+      "generated_tokens_per_second": 70.75854906852685,
+      "peak_allocated_bytes": 423892992,
+      "peak_reserved_bytes": 459276288,
+      "cpu_rss_bytes": 2108022784
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "temperature": 0.2,
+      "completions": 25,
+      "generated_tokens": 2389,
+      "seconds": 34.81076790000043,
+      "generated_tokens_per_second": 68.62819018709354,
+      "peak_allocated_bytes": 424259072,
+      "peak_reserved_bytes": 459276288,
+      "cpu_rss_bytes": 2108022784
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "temperature": 0.5,
+      "completions": 25,
+      "generated_tokens": 2348,
+      "seconds": 34.64042159999917,
+      "generated_tokens_per_second": 67.78208496169273,
+      "peak_allocated_bytes": 424295936,
+      "peak_reserved_bytes": 459276288,
+      "cpu_rss_bytes": 2108039168
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "temperature": 0.8,
+      "completions": 25,
+      "generated_tokens": 2575,
+      "seconds": 34.92603830000007,
+      "generated_tokens_per_second": 73.72722831836312,
+      "peak_allocated_bytes": 424295936,
+      "peak_reserved_bytes": 459276288,
+      "cpu_rss_bytes": 1794850816
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "temperature": 1.0,
+      "completions": 25,
+      "generated_tokens": 2670,
+      "seconds": 34.51224279999951,
+      "generated_tokens_per_second": 77.36385072024464,
+      "peak_allocated_bytes": 424576512,
+      "peak_reserved_bytes": 459276288,
+      "cpu_rss_bytes": 1794854912
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "temperature": 1.2,
+      "completions": 25,
+      "generated_tokens": 2405,
+      "seconds": 36.860075000000506,
+      "generated_tokens_per_second": 65.24674732756151,
+      "peak_allocated_bytes": 424576512,
+      "peak_reserved_bytes": 459276288,
+      "cpu_rss_bytes": 1794887680
+    },
+    {
+      "variant": "sparse75_ngram10m",
+      "temperature": 1.5,
+      "completions": 25,
+      "generated_tokens": 2234,
+      "seconds": 36.016609599999356,
+      "generated_tokens_per_second": 62.026937704876026,
+      "peak_allocated_bytes": 424576512,
+      "peak_reserved_bytes": 459276288,
+      "cpu_rss_bytes": 1794879488
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "temperature": 0.0,
+      "completions": 25,
+      "generated_tokens": 3200,
+      "seconds": 34.723087500000474,
+      "generated_tokens_per_second": 92.15770343002926,
+      "peak_allocated_bytes": 482660864,
+      "peak_reserved_bytes": 528482304,
+      "cpu_rss_bytes": 1794940928
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "temperature": 0.2,
+      "completions": 25,
+      "generated_tokens": 2875,
+      "seconds": 36.162822700000106,
+      "generated_tokens_per_second": 79.50153736201548,
+      "peak_allocated_bytes": 482660864,
+      "peak_reserved_bytes": 528482304,
+      "cpu_rss_bytes": 1794940928
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "temperature": 0.5,
+      "completions": 25,
+      "generated_tokens": 2547,
+      "seconds": 35.77223849999973,
+      "generated_tokens_per_second": 71.20046457254888,
+      "peak_allocated_bytes": 482660864,
+      "peak_reserved_bytes": 528482304,
+      "cpu_rss_bytes": 1794940928
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "temperature": 0.8,
+      "completions": 25,
+      "generated_tokens": 2807,
+      "seconds": 35.45004159999917,
+      "generated_tokens_per_second": 79.18185348476618,
+      "peak_allocated_bytes": 482723328,
+      "peak_reserved_bytes": 528482304,
+      "cpu_rss_bytes": 1794596864
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "temperature": 1.0,
+      "completions": 25,
+      "generated_tokens": 3013,
+      "seconds": 36.13305620000028,
+      "generated_tokens_per_second": 83.3862484070743,
+      "peak_allocated_bytes": 482723328,
+      "peak_reserved_bytes": 528482304,
+      "cpu_rss_bytes": 1794666496
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "temperature": 1.2,
+      "completions": 25,
+      "generated_tokens": 2757,
+      "seconds": 35.81408770000053,
+      "generated_tokens_per_second": 76.98088034781797,
+      "peak_allocated_bytes": 482723328,
+      "peak_reserved_bytes": 528482304,
+      "cpu_rss_bytes": 1794682880
+    },
+    {
+      "variant": "sparse75_ngram25m",
+      "temperature": 1.5,
+      "completions": 25,
+      "generated_tokens": 2617,
+      "seconds": 35.62240510000083,
+      "generated_tokens_per_second": 73.46500026186999,
+      "peak_allocated_bytes": 482723328,
+      "peak_reserved_bytes": 528482304,
+      "cpu_rss_bytes": 1794666496
+    }
+  ],
+  "completed_slots": 525,
+  "generation_source_sha256": "18295ecd141cdd721ddafd25f86487b9af06fe8365825281a271a3380942bee9",
+  "baseline_sampler_sha256": "f3008f42edff7c39d65adb07a15ccfa114127c168b05ccf4a6ceee1f8c318115",
+  "scope": "Same sampler, batch4, seven temperatures, per-prompt seed42 and decoding settings as canonical100M baseline. Recovery preserves original prompt grouping."
+}

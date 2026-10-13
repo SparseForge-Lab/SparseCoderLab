@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "implementation_enabled": false,
+  "promotion_requires_regression_and_capability_evaluation": true,
+  "comparisons": [
+    "static_baseline",
+    "retrieval_error_memory",
+    "error_memory_plus_small_plastic_adapter",
+    "periodic_adapter_consolidation",
+    "specialized_plastic_experts",
+    "slow_consolidation_into_stable_components"
+  ],
+  "online_main_weight_updates": false
+}

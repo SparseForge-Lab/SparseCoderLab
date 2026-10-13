@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "configurable_starting_point_not_validated",
+  "foundation_mix": {
+    "file_level_code": 0.30,
+    "repository_level_code": 0.25,
+    "issues_prs_commits_tests_reviews": 0.20,
+    "technical_documentation_text_to_code": 0.08,
+    "algorithms_math_reasoning": 0.07,
+    "general_multilingual_technical": 0.05,
+    "fim_verified_transformations": 0.05
+  },
+  "natural_languages": ["en", "de", "es", "fr", "pt", "zh", "ja"],
+  "english_is_primary": true,
+  "additional_language_quality_gate": "include only when source quality, rights, and task coverage are sufficient",
+  "programming_languages": ["Python", "JavaScript", "TypeScript", "Java", "C", "C++", "Rust", "Go", "C#", "SQL", "Shell", "PowerShell", "HTML", "CSS", "Kotlin", "Swift"],
+  "posttraining_separate_from_foundation": true,
+  "source_redistribution_policy": "retain_payload_only_when_license_allows; otherwise record immutable source references"
+}

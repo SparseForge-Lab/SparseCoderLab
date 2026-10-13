@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "policy": "frozen evaluation material and direct derivatives are excluded from training",
+  "lexical_screen_limit": "a clear lexical scan does not establish universal contamination freedom",
+  "quarantine_classes": [
+    {
+      "id": "frozen_target_function_eval",
+      "path_refs": ["configs/eval/", "results/unified_python_250M_*"]
+    },
+    {
+      "id": "repository_diagnostic_25_by_7",
+      "path_refs": ["work/prompt5_scale_milestone_benchmark.py", "results/prompt5_500M_v1/milestone_benchmarks/*.jsonl"]
+    },
+    {
+      "id": "benchmark_answers_and_direct_paraphrases",
+      "path_refs": ["all frozen benchmark result artifacts and exact-answer records"]
+    },
+    {
+      "id": "held_out_swe_evaluations",
+      "path_refs": ["register exact benchmark/task identifiers and source revisions before pilot ingestion"]
+    }
+  ],
+  "required_record_fields": ["eval_quarantine_status", "eval_quarantine_evidence", "split"]
+}

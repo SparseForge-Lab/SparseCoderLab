@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "utc": "2026-10-13T12:22:02.586935+00:00",
+  "variant": "sparse75_ngram10m",
+  "stage": "global_identity_drift_stop",
+  "error": "IdentityDriftError: training source identity changed during checkpoint save",
+  "cause": "New Dataset-v2 files were temporarily placed under frozen src/tests directories, so the guard rejected the run before replacing its last verified checkpoint.",
+  "safe_checkpoint": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt",
+    "tokens_seen": 376832000,
+    "step": 46000,
+    "cursor": 270336,
+    "sha256": "284bae240edbf1dca7a4778c22dacf341df3c6c0e44a5a425a27982493a258b2",
+    "matches_checkpoint_verification_latest": true
+  },
+  "recovery": "Moved the new infrastructure and its tests outside frozen training-source directories. Recomputed source identity matches the campaign manifest. Resume from the listed checkpoint; no saved update range is repeated."
+}

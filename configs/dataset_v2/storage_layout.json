@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "planned_root": "data/dataset_v2",
+  "practical_project_budget_bytes": 1600000000000,
+  "directories": [
+    "raw_refs", "canonical", "repos", "tasks", "trajectories", "student_failures", "recoveries",
+    "verified", "rejected", "manifests", "indices", "shards", "cache"
+  ],
+  "rules": {
+    "payloads_immutable_and_sha256_addressed": true,
+    "restricted_sources_keep_reference_and_extraction_recipe": true,
+    "training_data_uses_large_sequential_shards": true,
+    "avoid_millions_of_small_training_files": true,
+    "derive_multiple_views_from_canonical_records": true,
+    "retain_every_rejected_candidate_forever": false,
+    "retain_duplicate_repositories_forever": false,
+    "hot_cache_preferred_storage": "NVMe_or_SSD",
+    "archive_storage": "HDD"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparsecoderlab.local/schemas/critic_result_v1.schema.json",
+  "title": "Normalized critic result v1",
+  "type": "object",
+  "required": ["verdict", "confidence", "functional_issue", "hallucination", "scope_violation", "stop_issue", "reasoning_issue", "test_gaming", "needs_deeper_review", "critic_model", "critic_version"],
+  "properties": {
+    "verdict": {"enum": ["PASS", "REVISE", "FAIL"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "functional_issue": {"type": "boolean"},
+    "hallucination": {"type": "boolean"},
+    "scope_violation": {"type": "boolean"},
+    "stop_issue": {"type": "boolean"},
+    "reasoning_issue": {"type": "boolean"},
+    "test_gaming": {"type": "boolean"},
+    "needs_deeper_review": {"type": "boolean"},
+    "issue_summary": {"type": "string"},
+    "suggested_fix": {"type": "string"},
+    "critic_model": {"type": "string"},
+    "critic_version": {"type": "string"}
+  },
+  "additionalProperties": false
+}

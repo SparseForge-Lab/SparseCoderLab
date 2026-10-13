@@ -1,0 +1,7 @@
+{
+  "utc": "2026-10-11T10:03:41.067103+00:00",
+  "variant": "dense75_ref",
+  "error": "RuntimeError('A conflicting CUDA compute process is active: [19032, 19384, 26272]')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 693, in main\n    completed[tag] = run_variant(tag, preflight)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 589, in run_variant\n    run_benchmark(tag)\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 485, in run_benchmark\n    check_no_competitor()\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 625, in check_no_competitor\n    raise RuntimeError(f\"A conflicting CUDA compute process is active: {sorted(pids)}\")\nRuntimeError: A conflicting CUDA compute process is active: [19032, 19384, 26272]\n",
+  "completed_models": {}
+}

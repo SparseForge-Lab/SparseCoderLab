@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "foundation": [
+    "file_level_code", "repository_snapshot", "cross_file_relationship", "test_implementation_pair",
+    "documentation_implementation_pair", "issue_patch_pair", "commit_before_after", "dependency_build_ci",
+    "fim", "repository_serialization", "algorithm", "mathematics", "technical_text", "multilingual_technical"
+  ],
+  "posttraining": [
+    "code_from_scratch", "bug_fix", "repository_understanding", "cross_file_reasoning", "multi_file_edit",
+    "repo_navigation", "terminal_tool_use", "test_generation", "debugging", "failed_attempt_recovery",
+    "api_version_grounding", "anti_hallucination", "stop_scope", "anti_loop", "software_engineering_agent",
+    "evidence_grounded_reasoning", "student_failure_recovery", "multilingual_interaction"
+  ],
+  "verified_transformations": [
+    "bug_injection", "bug_repair", "refactoring", "api_migration", "search_replace", "implementation_from_tests",
+    "implementation_from_specification", "verified_test_generation"
+  ],
+  "future_multimodal": [
+    "screenshot_to_ui_code", "visual_ui_repair", "render_to_blender_code", "image_to_openscad",
+    "image_to_cadquery", "image_to_threejs", "diagram_to_code", "ide_screenshot_diagnosis",
+    "terminal_screenshot_diagnosis", "visual_regression_patch"
+  ]
+}

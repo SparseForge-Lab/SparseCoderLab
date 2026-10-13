@@ -1,0 +1,32 @@
+{
+  "full_state": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/375M_full.pt",
+    "sha256": "7cbc4a93341a38997505399bfe39c0732cb6b600a401beab05ad17bad05e4d62",
+    "size_bytes": 1215232003,
+    "tokens_seen": 374996992,
+    "step": 45776,
+    "continuation_updates": 15258,
+    "continuation_tokens": 124993536,
+    "phase_steps": 33568,
+    "cursor": 268544,
+    "cursor_epoch_position": [
+      1,
+      72110
+    ],
+    "scheduler_last_epoch": 33568,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 221,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "b4ea10eca7768355f6796db2e4f4af3bc9269c1c1907bf9a838e04468ea2e3ca"
+  },
+  "model_only_path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/model_375M.pt",
+  "model_only_sha256": "ebc0bca985a16631869a28014b5b3e3dd9117c7cccf24b8009c13456838384f7",
+  "model_only_size_bytes": 405049461,
+  "tokens_seen": 374996992,
+  "continuation_tokens": 124993536,
+  "continuation_updates": 15258,
+  "variant": "sparse75_ngram25m",
+  "config_sha256": "5bfc73b8feaf4cdb025ef6473454be26231e01c776a137064387ead2487115a0",
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a"
+}

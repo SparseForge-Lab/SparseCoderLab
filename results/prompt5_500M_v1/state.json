@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-13T14:20:12.117276+00:00",
+  "stage": "all_models_at_500M_gate",
+  "pid": 12940,
+  "completed": {
+    "sparse75_ngram10m": "8ef8d7e1ca7bcba14e3a2bee8e7438ded774dcd629f04ba91ae7dda00d3c47c4"
+  }
+}

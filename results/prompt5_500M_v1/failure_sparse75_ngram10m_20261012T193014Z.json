@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-12T19:30:14.091550+00:00",
+  "variant": "sparse75_ngram10m",
+  "error": "RuntimeError('A conflicting CUDA compute process is active: [14900]')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 708, in main\n    completed[tag] = run_variant(tag, preflight)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 599, in run_variant\n    run_benchmark(tag, MID_TOKENS)\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 496, in run_benchmark\n    check_no_competitor()\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 640, in check_no_competitor\n    raise RuntimeError(f\"A conflicting CUDA compute process is active: {sorted(pids)}\")\nRuntimeError: A conflicting CUDA compute process is active: [14900]\n",
+  "completed_models": {
+    "sparse75_ngram25m": {
+      "full_state": {
+        "path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/500M_full.pt",
+        "sha256": "953ebf1c89c05f0591404709d0f7070c49f0998f6d3a0943ceb7e8c854b911ce",
+        "size_bytes": 1215232003,
+        "tokens_seen": 499998720,
+        "step": 61035,
+        "continuation_updates": 30517,
+        "continuation_tokens": 249995264,
+        "phase_steps": 48827,
+        "cursor": 390616,
+        "cursor_epoch_position": [
+          1,
+          194182
+        ],
+        "scheduler_last_epoch": 48827,
+        "learning_rate": 2.9999999999999997e-05,
+        "optimizer_state_entries": 221,
+        "rng_streams_present": true,
+        "finite_model_and_optimizer": true,
+        "shape_fingerprint": "b4ea10eca7768355f6796db2e4f4af3bc9269c1c1907bf9a838e04468ea2e3ca"
+      },
+      "model_only_path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/model_500M.pt",
+      "model_only_sha256": "6ba76650bfacba91e02df7c9584f35f2bf20ca461976a28f7627d4742b12e81b",
+      "model_only_size_bytes": 405049461,
+      "tokens_seen": 499998720,
+      "continuation_tokens": 249995264,
+      "continuation_updates": 30517
+    }
+  }
+}

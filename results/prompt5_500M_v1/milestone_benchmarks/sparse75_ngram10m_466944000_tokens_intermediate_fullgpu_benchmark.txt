@@ -1,0 +1,18 @@
+Matched intermediate 25-prompt x 7-temperature GPU diagnostic
+Variant: sparse75_ngram10m
+Training tokens: 466,944,000
+Checkpoint: experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt
+Checkpoint SHA-256: d5b4040f7c71db78c2ddd4db794e4cfc7ed17b6cbf7bba11f1b6476d7ff8b686
+Tokenizer SHA-256: 832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a
+Settings: frozen Prompt-5 prompt set, seed, temperatures, top-k, stop tokens, and 128-token cap.
+These regex/AST indicators are approximate; generated code was not executed.
+Generation wall time: 610.22 seconds
+
+Comparison with the matched 375M checkpoint:
+Temperature 0.0: current={'python_like_code': 24, 'contains_return': 24, 'parseable_as_python_with_prompt': 11, 'obvious_repetition_loop': 18, 'empty': 0, 'url': 0, 'markdown_heading': 6}; change_vs_375M={'python_like_code': 1, 'contains_return': 1, 'parseable_as_python_with_prompt': -1, 'obvious_repetition_loop': 1, 'empty': 0, 'url': 0, 'markdown_heading': 3}
+Temperature 0.2: current={'python_like_code': 25, 'contains_return': 25, 'parseable_as_python_with_prompt': 10, 'obvious_repetition_loop': 15, 'empty': 0, 'url': 0, 'markdown_heading': 8}; change_vs_375M={'python_like_code': 2, 'contains_return': 2, 'parseable_as_python_with_prompt': -6, 'obvious_repetition_loop': -4, 'empty': 0, 'url': 0, 'markdown_heading': 3}
+Temperature 0.5: current={'python_like_code': 24, 'contains_return': 25, 'parseable_as_python_with_prompt': 11, 'obvious_repetition_loop': 17, 'empty': 0, 'url': 0, 'markdown_heading': 2}; change_vs_375M={'python_like_code': 2, 'contains_return': 2, 'parseable_as_python_with_prompt': -3, 'obvious_repetition_loop': 1, 'empty': 0, 'url': -1, 'markdown_heading': -4}
+Temperature 0.8: current={'python_like_code': 25, 'contains_return': 25, 'parseable_as_python_with_prompt': 6, 'obvious_repetition_loop': 14, 'empty': 0, 'url': 0, 'markdown_heading': 7}; change_vs_375M={'python_like_code': 2, 'contains_return': 2, 'parseable_as_python_with_prompt': -2, 'obvious_repetition_loop': 8, 'empty': 0, 'url': 0, 'markdown_heading': 1}
+Temperature 1.0: current={'python_like_code': 23, 'contains_return': 24, 'parseable_as_python_with_prompt': 9, 'obvious_repetition_loop': 9, 'empty': 0, 'url': 0, 'markdown_heading': 6}; change_vs_375M={'python_like_code': 0, 'contains_return': 1, 'parseable_as_python_with_prompt': -2, 'obvious_repetition_loop': 3, 'empty': 0, 'url': 0, 'markdown_heading': 2}
+Temperature 1.2: current={'python_like_code': 25, 'contains_return': 24, 'parseable_as_python_with_prompt': 2, 'obvious_repetition_loop': 7, 'empty': 0, 'url': 0, 'markdown_heading': 5}; change_vs_375M={'python_like_code': 0, 'contains_return': 0, 'parseable_as_python_with_prompt': -2, 'obvious_repetition_loop': 6, 'empty': 0, 'url': 0, 'markdown_heading': 2}
+Temperature 1.5: current={'python_like_code': 23, 'contains_return': 23, 'parseable_as_python_with_prompt': 3, 'obvious_repetition_loop': 1, 'empty': 0, 'url': 2, 'markdown_heading': 4}; change_vs_375M={'python_like_code': -1, 'contains_return': 1, 'parseable_as_python_with_prompt': -1, 'obvious_repetition_loop': -1, 'empty': 0, 'url': 1, 'markdown_heading': 3}

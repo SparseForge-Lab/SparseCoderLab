@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "model": "Qwen3.8 Flash-Next GSQ-RCO IQ3_XXS",
+  "model_scope": "full_flash_next",
+  "production_generation_enabled": false,
+  "profiles": {
+    "32k": {"context_tokens": 32768, "reasoning_tokens_target": [150, 300]},
+    "64k": {"context_tokens": 65536, "reasoning_tokens_target": [400, 800]},
+    "128k": {"context_tokens": 131072, "reasoning_tokens_target": [400, 800]},
+    "256k": {"context_tokens": 262144, "reasoning_tokens_target": [1000, 3000]}
+  },
+  "thinking_budgets": {
+    "quick": {"reasoning_tokens_target": [150, 300], "use_for": ["tiny_tasks", "strongly_objectively_verified_outputs"]},
+    "normal": {"reasoning_tokens_target": [400, 800], "use_for": ["normal_coding", "standard_reasoning", "small_repository_tasks"]},
+    "deep": {"reasoning_tokens_target": [1000, 3000], "use_for": ["difficult_repository_tasks", "recovery", "ambiguous_bugs", "agentic_tasks", "multimodal_tasks"]}
+  },
+  "default_profile": null,
+  "default_profile_note": "Benchmark context, throughput, memory, acceptance, and correction rates before selecting a standard profile.",
+  "cache_identity_fields": [
+    "task", "context", "candidate", "patch", "objective_evidence",
+    "critic_model", "critic_config", "critic_prompt_version"
+  ],
+  "acceptance_rule": "objective_verifier_pass_and_independent_critic_pass"
+}

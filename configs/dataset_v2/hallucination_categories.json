@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "categories": [
+    "nonexistent_symbol",
+    "nonexistent_api",
+    "wrong_api_version",
+    "missing_dependency",
+    "missing_file",
+    "false_user_premise",
+    "repository_contradicts_task_description",
+    "insufficient_evidence",
+    "multiple_possible_root_causes",
+    "tool_inspection_required"
+  ],
+  "desired_behavior": ["inspect", "gather_evidence", "conclude_when_supported", "express_uncertainty_when_needed"],
+  "blanket_refusal_target": false
+}

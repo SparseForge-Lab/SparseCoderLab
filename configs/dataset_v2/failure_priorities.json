@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "initial_priority_features_not_empirically_tuned",
+  "boost_when": [
+    "objective_verification", "high_confidence_but_wrong", "recurrent_failure",
+    "difficult_recovery", "hallucination", "stop_scope", "tool_use", "repo_navigation",
+    "reasoning", "missing_verification", "wrong_api_assumption"
+  ],
+  "tracked_categories": [
+    "invented_api", "wrong_symbol", "wrong_file", "did_not_inspect_repo", "false_assumption",
+    "misread_test", "loop_after_correct", "continued_after_complete", "stopped_too_early",
+    "failed_recovery", "incorrect_tool_use", "ignored_evidence"
+  ],
+  "automatic_weight_updates": false
+}

@@ -1,0 +1,7 @@
+{
+  "utc": "2026-10-11T17:10:07.760016+00:00",
+  "variant": "sparse75_ngram25m",
+  "error": "ValueError('sparse75_ngram25m: run config differs from frozen Prompt-5 config')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 708, in main\n    completed[tag] = run_variant(tag, preflight)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 550, in run_variant\n    raise ValueError(f\"{tag}: run config differs from frozen Prompt-5 config\")\nValueError: sparse75_ngram25m: run config differs from frozen Prompt-5 config\n",
+  "completed_models": {}
+}

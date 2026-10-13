@@ -1,0 +1,48 @@
+{
+  "utc": "2026-10-13T13:31:09.896271+00:00",
+  "variant": "sparse75_ngram10m",
+  "error": "RuntimeError('User GPU pause is active; preserving partial output')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 423, in run_segment\n    result = engine.run(cfg, run_dir, target_tokens=target, max_wall_minutes=300, resume=resume)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\src\\training\\engine.py\", line 191, in run\n    optimizer.step(); scheduler.step()\n    ^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\.venv\\Lib\\site-packages\\torch\\optim\\lr_scheduler.py\", line 166, in wrapper\n    return func.__get__(opt, opt.__class__)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\.venv\\Lib\\site-packages\\torch\\optim\\optimizer.py\", line 539, in wrapper\n    result = pre_hook(self, args, kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 353, in guarded_step\n    gpu_allowed()\n  File \"D:\\SparseCoderLab\\tools\\generate_canonical_python.py\", line 19, in gpu_allowed\n    raise RuntimeError('User GPU pause is active; preserving partial output')\nRuntimeError: User GPU pause is active; preserving partial output\n",
+  "latest_verified": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/last.pt",
+    "sha256": "d5b4040f7c71db78c2ddd4db794e4cfc7ed17b6cbf7bba11f1b6476d7ff8b686",
+    "size_bytes": 1039071235,
+    "tokens_seen": 466944000,
+    "step": 57000,
+    "continuation_updates": 26482,
+    "continuation_tokens": 216940544,
+    "phase_steps": 44792,
+    "cursor": 358336,
+    "cursor_epoch_position": [
+      1,
+      161902
+    ],
+    "scheduler_last_epoch": 44792,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 221,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "e3a3f4fa7f1f6abfbfd1356c038f6f4aedd5e397fee6e7ca96a0e8f99ae0f77d"
+  },
+  "previous_verified": {
+    "path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/previous.pt",
+    "sha256": "6f62d9a74e7a3e0ebc1ffc37d7f79662cdc166476cdcad452dd6fe6bd135e4b4",
+    "size_bytes": 1039071235,
+    "tokens_seen": 458752000,
+    "step": 56000,
+    "continuation_updates": 25482,
+    "continuation_tokens": 208748544,
+    "phase_steps": 43792,
+    "cursor": 350336,
+    "cursor_epoch_position": [
+      1,
+      153902
+    ],
+    "scheduler_last_epoch": 43792,
+    "learning_rate": 2.9999999999999997e-05,
+    "optimizer_state_entries": 221,
+    "rng_streams_present": true,
+    "finite_model_and_optimizer": true,
+    "shape_fingerprint": "e3a3f4fa7f1f6abfbfd1356c038f6f4aedd5e397fee6e7ca96a0e8f99ae0f77d"
+  }
+}

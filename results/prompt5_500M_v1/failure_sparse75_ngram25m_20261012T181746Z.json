@@ -1,0 +1,7 @@
+{
+  "utc": "2026-10-12T18:17:46.397271+00:00",
+  "variant": "sparse75_ngram25m",
+  "error": "RuntimeError('A conflicting CUDA compute process is active: [26288]')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 708, in main\n    completed[tag] = run_variant(tag, preflight)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 614, in run_variant\n    run_benchmark(tag, TARGET_TOKENS)\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 496, in run_benchmark\n    check_no_competitor()\n  File \"D:\\SparseCoderLab\\work\\prompt5_scale_500m.py\", line 640, in check_no_competitor\n    raise RuntimeError(f\"A conflicting CUDA compute process is active: {sorted(pids)}\")\nRuntimeError: A conflicting CUDA compute process is active: [26288]\n",
+  "completed_models": {}
+}

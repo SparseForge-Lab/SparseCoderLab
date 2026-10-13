@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "production_generation_enabled": false,
+  "batching_policy": "load_once_per_model_batch_then_persist_candidates",
+  "profiles": [
+    {
+      "model": "Ternary Bonsai 2 27B",
+      "role": "bulk_coding_and_reasoning_generator",
+      "candidate_quantizations": ["PQ2_0", "benchmark_selected_local_quant"],
+      "quantization_selected": false,
+      "required_measurements": ["load_time", "prompt_tokens_per_second", "decode_tokens_per_second", "ram_bytes", "vram_bytes", "task_quality_by_family"]
+    },
+    {
+      "model": "Ornith 1.5 35B-A3B",
+      "role": "agentic_repository_and_swe_generator",
+      "candidate_format": "GGUF",
+      "allow_expert_offload": true,
+      "reject_by_stored_file_size_alone": false,
+      "required_measurements": ["load_time", "prompt_tokens_per_second", "decode_tokens_per_second", "ram_bytes", "vram_bytes", "context_scaling", "task_quality_by_family"]
+    },
+    {
+      "model": "Qwen3.8 Flash-Next GSQ-RCO IQ3_XXS",
+      "role": "independent_global_critic",
+      "model_scope": "full_model",
+      "expert_pruned_coder_variant_allowed": false,
+      "critic_profiles": ["32k", "64k", "128k", "256k"],
+      "review_scope": "high_value_synthetic_and_posttraining_samples"
+    }
+  ]
+}
