@@ -1,0 +1,392 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-13",
+  "total_tokens": 499998720,
+  "maintenance_scope": "CPU evidence inspection and documentation reconciliation; no new training, generation, or functional execution.",
+  "plain_sparse_500m_arm": "Not included in the authorized continuation.",
+  "models": {
+    "dense75_ref": {
+      "checkpoints": {
+        "full_state_sha256": "578cdf1b4bdf7bc81e0f95d5817f85741fb83daac598b2c9c95c8ca646240548",
+        "model_only_sha256": "81f257e0e1e0a80c309ef26503d547eea7705f9b467cd2b42949fd2223b6d05d",
+        "full_state_size_bytes": 648381931,
+        "model_only_size_bytes": 216115611,
+        "tokens_seen": 499998720,
+        "step": 61035,
+        "state_keys": [
+          "model",
+          "optimizer",
+          "scheduler",
+          "rng",
+          "scaler",
+          "metadata"
+        ],
+        "finite_model_and_optimizer": true
+      },
+      "full_state_path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/500M_full.pt",
+      "model_only_path": "experiments/prompt5_500M_v1/dense75_ref/checkpoints/model_500M.pt",
+      "continuation_tokens": 249995264,
+      "continuation_updates": 30517,
+      "nll": {
+        "val_loss": 2.688166599980959,
+        "code_val_loss": 2.099091223379649,
+        "technical_val_loss": 5.983665757977979,
+        "general_val_loss": 2.732021402321676
+      },
+      "matched_executable": {
+        "samples": 175,
+        "passes": 0
+      },
+      "target_and_whole_output": {
+        "samples": 175,
+        "target_outcomes": {
+          "EXPLICIT_CONSTRAINT_VIOLATION": 20,
+          "INCOMPLETE": 3,
+          "RUNTIME_ERROR": 50,
+          "SYNTAX_ERROR": 61,
+          "WRONG_ANSWER": 41
+        },
+        "target_pass_count": 0,
+        "target_pass_at_1": 0.0,
+        "strict_full_output_pass_count": 0,
+        "strict_full_output_pass_rate": 0.0,
+        "target_complete_count": 111,
+        "natural_stop_count": 35,
+        "cap_reached_count": 140,
+        "premature_stop_count": 6,
+        "target_completed_with_cap_reached_count": 82,
+        "correct_target_later_ruined_count": 2,
+        "continuation_after_target_count": 83,
+        "repetition_after_target_count": 31,
+        "explicit_constraint_violation_count": 20,
+        "strict_outcomes": {
+          "INCOMPLETE": 64,
+          "RUNTIME_ERROR": 19,
+          "SYNTAX_ERROR": 69,
+          "WRONG_ANSWER": 23
+        },
+        "target_outcome_categories": [
+          "EXPLICIT_CONSTRAINT_VIOLATION",
+          "INCOMPLETE",
+          "RUNTIME_ERROR",
+          "SYNTAX_ERROR",
+          "WRONG_ANSWER"
+        ]
+      },
+      "generation_diagnostic_rows": 175,
+      "provenance_snapshot_tokens": 401408000
+    },
+    "sparse75_ngram10m": {
+      "checkpoints": {
+        "full_state_sha256": "8ef8d7e1ca7bcba14e3a2bee8e7438ded774dcd629f04ba91ae7dda00d3c47c4",
+        "model_only_sha256": "645d75e3d77ea48ea604cffa4f68f36d67f978226941da5ccf4cf76f36e79057",
+        "full_state_size_bytes": 1039071235,
+        "model_only_size_bytes": 346329205,
+        "tokens_seen": 499998720,
+        "step": 61035,
+        "state_keys": [
+          "model",
+          "optimizer",
+          "scheduler",
+          "rng",
+          "scaler",
+          "metadata"
+        ],
+        "finite_model_and_optimizer": true
+      },
+      "full_state_path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/500M_full.pt",
+      "model_only_path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/model_500M.pt",
+      "continuation_tokens": 249995264,
+      "continuation_updates": 30517,
+      "nll": {
+        "val_loss": 2.659873121673979,
+        "code_val_loss": 2.073929499230209,
+        "technical_val_loss": 5.950040485347509,
+        "general_val_loss": 2.683864354675219
+      },
+      "matched_executable": {
+        "samples": 175,
+        "passes": 4
+      },
+      "target_and_whole_output": {
+        "samples": 175,
+        "target_outcomes": {
+          "EXPLICIT_CONSTRAINT_VIOLATION": 21,
+          "INCOMPLETE": 3,
+          "RUNTIME_ERROR": 63,
+          "SYNTAX_ERROR": 49,
+          "TARGET_PASS": 3,
+          "WRONG_ANSWER": 36
+        },
+        "target_pass_count": 3,
+        "target_pass_at_1": 0.017142857142857144,
+        "strict_full_output_pass_count": 5,
+        "strict_full_output_pass_rate": 0.02857142857142857,
+        "target_complete_count": 123,
+        "natural_stop_count": 58,
+        "cap_reached_count": 117,
+        "premature_stop_count": 11,
+        "target_completed_with_cap_reached_count": 76,
+        "correct_target_later_ruined_count": 0,
+        "continuation_after_target_count": 85,
+        "repetition_after_target_count": 29,
+        "explicit_constraint_violation_count": 21,
+        "strict_outcomes": {
+          "INCOMPLETE": 52,
+          "RUNTIME_ERROR": 38,
+          "STRICT_FULL_OUTPUT_PASS": 5,
+          "SYNTAX_ERROR": 57,
+          "WRONG_ANSWER": 23
+        },
+        "target_outcome_categories": [
+          "EXPLICIT_CONSTRAINT_VIOLATION",
+          "INCOMPLETE",
+          "RUNTIME_ERROR",
+          "SYNTAX_ERROR",
+          "TARGET_PASS",
+          "WRONG_ANSWER"
+        ]
+      },
+      "generation_diagnostic_rows": 175,
+      "provenance_snapshot_tokens": 466944000,
+      "residual_off_nll_delta": {
+        "val_loss": 0.024312743868653452,
+        "code_val_loss": 0.05129103737955809,
+        "technical_val_loss": 0.02020393770967388,
+        "general_val_loss": 0.035003615577370084
+      },
+      "diagnostics": {
+        "route_records": 56,
+        "max_unused_experts_per_record": 0,
+        "maximum_expert_share_range": [
+          0.09507792130246999,
+          0.2648918108586497
+        ],
+        "ngram_stratum_gate_mean_range": [
+          0.5684825256587979,
+          0.7686818661649026
+        ],
+        "bounded_sample_collision_fraction_range": [
+          0.0,
+          0.006872852233676976
+        ]
+      }
+    },
+    "sparse75_ngram25m": {
+      "checkpoints": {
+        "full_state_sha256": "953ebf1c89c05f0591404709d0f7070c49f0998f6d3a0943ceb7e8c854b911ce",
+        "model_only_sha256": "6ba76650bfacba91e02df7c9584f35f2bf20ca461976a28f7627d4742b12e81b",
+        "full_state_size_bytes": 1215232003,
+        "model_only_size_bytes": 405049461,
+        "tokens_seen": 499998720,
+        "step": 61035,
+        "state_keys": [
+          "model",
+          "optimizer",
+          "scheduler",
+          "rng",
+          "scaler",
+          "metadata"
+        ],
+        "finite_model_and_optimizer": true
+      },
+      "full_state_path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/500M_full.pt",
+      "model_only_path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/model_500M.pt",
+      "continuation_tokens": 249995264,
+      "continuation_updates": 30517,
+      "nll": {
+        "val_loss": 2.631813498392804,
+        "code_val_loss": 2.0597763173469863,
+        "technical_val_loss": 5.873659583817146,
+        "general_val_loss": 2.659208996080421
+      },
+      "matched_executable": {
+        "samples": 175,
+        "passes": 4
+      },
+      "target_and_whole_output": {
+        "samples": 175,
+        "target_outcomes": {
+          "EXPLICIT_CONSTRAINT_VIOLATION": 20,
+          "INCOMPLETE": 18,
+          "RUNTIME_ERROR": 40,
+          "SYNTAX_ERROR": 33,
+          "TARGET_PASS": 9,
+          "WRONG_ANSWER": 55
+        },
+        "target_pass_count": 9,
+        "target_pass_at_1": 0.05142857142857143,
+        "strict_full_output_pass_count": 3,
+        "strict_full_output_pass_rate": 0.017142857142857144,
+        "target_complete_count": 124,
+        "natural_stop_count": 22,
+        "cap_reached_count": 153,
+        "premature_stop_count": 3,
+        "target_completed_with_cap_reached_count": 105,
+        "correct_target_later_ruined_count": 8,
+        "continuation_after_target_count": 106,
+        "repetition_after_target_count": 34,
+        "explicit_constraint_violation_count": 20,
+        "strict_outcomes": {
+          "INCOMPLETE": 51,
+          "RUNTIME_ERROR": 17,
+          "STRICT_FULL_OUTPUT_PASS": 3,
+          "SYNTAX_ERROR": 91,
+          "WRONG_ANSWER": 13
+        },
+        "target_outcome_categories": [
+          "EXPLICIT_CONSTRAINT_VIOLATION",
+          "INCOMPLETE",
+          "RUNTIME_ERROR",
+          "SYNTAX_ERROR",
+          "TARGET_PASS",
+          "WRONG_ANSWER"
+        ]
+      },
+      "generation_diagnostic_rows": 175,
+      "provenance_snapshot_tokens": 434176000,
+      "residual_off_nll_delta": {
+        "val_loss": 0.05135997715845164,
+        "code_val_loss": 0.08254073650267513,
+        "technical_val_loss": 0.04381328136061491,
+        "general_val_loss": 0.05555554128335993
+      },
+      "diagnostics": {
+        "route_records": 56,
+        "max_unused_experts_per_record": 0,
+        "maximum_expert_share_range": [
+          0.10167451704604404,
+          0.29379619776237453
+        ],
+        "ngram_stratum_gate_mean_range": [
+          0.6144709714389246,
+          0.7919540451353936
+        ],
+        "bounded_sample_collision_fraction_range": [
+          0.0,
+          0.005555555555555556
+        ]
+      }
+    }
+  },
+  "sources": {
+    "experiments/prompt5_500M_v1/dense75_ref/checkpoint_verification.json": {
+      "sha256": "241233b0b88c5300e6bfc73bd860af6d05e1dc0b15b6083502339d60f825eb07",
+      "size_bytes": 3670
+    },
+    "experiments/prompt5_500M_v1/dense75_ref/provenance.json": {
+      "sha256": "53e5e6a1e47b691c598f84a565db986611a375d18fadcccb0677be203f08730c",
+      "size_bytes": 1393
+    },
+    "experiments/prompt5_500M_v1/dense75_ref/summary_500M.json": {
+      "sha256": "fac384e1232e908489f9e2d67cfd184dfb2df853caa65e9d66dfcaea70efb54b",
+      "size_bytes": 1249
+    },
+    "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoint_verification.json": {
+      "sha256": "adcaf7178828b1a3fac5160506f84fde2ef7ab61d8ee855a84c257f9d1353717",
+      "size_bytes": 3711
+    },
+    "experiments/prompt5_500M_v1/sparse75_ngram10m/provenance.json": {
+      "sha256": "8dcf9c13181b650924488a88de2881edcca517f34b2efa52f42cff77d7abf4e2",
+      "size_bytes": 1392
+    },
+    "experiments/prompt5_500M_v1/sparse75_ngram10m/summary_500M.json": {
+      "sha256": "3e40f91ad3b107401b8d98af61c657b2dc5b73362efe4cbf6b2b8de62e0b350a",
+      "size_bytes": 1268
+    },
+    "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoint_verification.json": {
+      "sha256": "ca4ee81b2bb5d522f23ad1818f37587280889a3fafe0e2b783165f9c96e57621",
+      "size_bytes": 3711
+    },
+    "experiments/prompt5_500M_v1/sparse75_ngram25m/provenance.json": {
+      "sha256": "713d44690d9b4f3ec3f75137d8bd4ddde1b0861a772a84416b940d1378b66696",
+      "size_bytes": 1392
+    },
+    "experiments/prompt5_500M_v1/sparse75_ngram25m/summary_500M.json": {
+      "sha256": "e7a92447fb2f52c0125c76aa893488900350e77c40551576e08734ffea8179bb",
+      "size_bytes": 1268
+    },
+    "results/prompt5_500M_v1/final_gate/dense75_ref_evaluation_500M.json": {
+      "sha256": "0dcfe41cee025109fa6060335c0a4d7130743144280ac3ba2cd385e3d0c44a28",
+      "size_bytes": 266489
+    },
+    "results/prompt5_500M_v1/final_gate/functional_500M_r1.json": {
+      "sha256": "3059ce1a5da04d3d2d734030fb14fecd813366ef992df4320a29c57ba5223897",
+      "size_bytes": 252458
+    },
+    "results/prompt5_500M_v1/final_gate/generation_efficiency_500M.json": {
+      "sha256": "1c1cd9e5fc399babad215fe3a80d6f27e069a63a4c84604eb37c820af5b57758",
+      "size_bytes": 7779
+    },
+    "results/prompt5_500M_v1/final_gate/matched_gate_checkpoints.json": {
+      "sha256": "a6bde8b921824bfd9863e3bea14bf9f30935f2a25efb04898e508eec14616eb0",
+      "size_bytes": 5417
+    },
+    "results/prompt5_500M_v1/final_gate/repository_gate_500M_r1.jsonl": {
+      "sha256": "18295ecd141cdd721ddafd25f86487b9af06fe8365825281a271a3380942bee9",
+      "size_bytes": 597133
+    },
+    "results/prompt5_500M_v1/final_gate/sparse75_ngram10m_evaluation_500M.json": {
+      "sha256": "5716519fecf2405852bf40c3268ce4a1e39725191d3716685272aa4b43a4cea6",
+      "size_bytes": 803001
+    },
+    "results/prompt5_500M_v1/final_gate/sparse75_ngram25m_evaluation_500M.json": {
+      "sha256": "2e97cd2296afbed1c3ba07b38b3cca6205e738b0b4b178e4f975c445a7cc1fba",
+      "size_bytes": 802338
+    },
+    "results/prompt5_500M_v1/final_matched_functional.json": {
+      "sha256": "f2d5b75699e01aaf48bae12138ced0e0c0d0922f1826c5faecffbd37258acbd7",
+      "size_bytes": 1175333
+    },
+    "results/prompt5_500M_v1/milestone_benchmarks/dense75_ref_500M_fullgpu_benchmark.jsonl": {
+      "sha256": "ef0e7ca056398bb67e92e91fe5974eb92cbc881bd586b42e5f993493978a462c",
+      "size_bytes": 254829
+    },
+    "results/prompt5_500M_v1/milestone_benchmarks/sparse75_ngram10m_375M_fullgpu_benchmark.jsonl": {
+      "sha256": "3d1eee96ee8af7388bd1e899810fbf7317ecc436f49e21f5bc382b96a3152680",
+      "size_bytes": 256386
+    },
+    "results/prompt5_500M_v1/milestone_benchmarks/sparse75_ngram10m_466944000_tokens_intermediate_fullgpu_benchmark.jsonl": {
+      "sha256": "195bee4b8275f9aec8f746ac764e0573612d30fd84b6a102ef00831f3d6a4ed8",
+      "size_bytes": 277008
+    },
+    "results/prompt5_500M_v1/milestone_benchmarks/sparse75_ngram10m_500M_fullgpu_benchmark.jsonl": {
+      "sha256": "8ed7bf2cfebf588cf47b33df9782c35f299dc568ac039f1a06acc41ae24c6e6e",
+      "size_bytes": 253643
+    },
+    "results/prompt5_500M_v1/milestone_benchmarks/sparse75_ngram25m_500M_fullgpu_benchmark.jsonl": {
+      "sha256": "fbda444047a9471e1e45d146241dbbc5b42727ec7630a8a70eb52e683bc82e6e",
+      "size_bytes": 270731
+    }
+  },
+  "intermediate_10m_generation_diagnostics": [
+    {
+      "tokens": 374996992,
+      "samples": 175,
+      "parseable": 69,
+      "repetition_loop_flag": 67
+    },
+    {
+      "tokens": 466944000,
+      "samples": 175,
+      "parseable": 52,
+      "repetition_loop_flag": 81
+    },
+    {
+      "tokens": 499998720,
+      "samples": 175,
+      "parseable": 68,
+      "repetition_loop_flag": 62
+    }
+  ],
+  "limitations": [
+    "Matched executable and target/whole-output reports score distinct generation matrices and policies; do not pool scores.",
+    "25 prompts at seven temperatures are correlated samples, not 175 independent tasks or conventional pass@k.",
+    "Target extraction includes explicit prompt constraints; whole-output checks are a different rule, not a nested subset.",
+    "Natural stopping is inferred from length, not saved EOS identity; tail-token counts are approximate.",
+    "Intermediate syntax/repetition heuristics do not establish intermediate executable correctness.",
+    "Residual-off tests isolate dependence within the trained checkpoint, not the causal advantage of an architecture.",
+    "Concurrent desktop/game use affects timing; no controlled hardware comparison is inferred.",
+    "Historical provenance.json files record resume-load snapshots, not final milestone counters."
+  ]
+}

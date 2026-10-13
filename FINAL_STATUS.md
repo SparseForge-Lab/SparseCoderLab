@@ -2,7 +2,7 @@
 
 ## Current repository-data comparison
 
-The matched four-model comparison at 250,003,456 total training tokens is complete. The continuation targets 499,998,720 tokens. Sparse + 10M Ngram reached a verified 286,720,000-token checkpoint before stopping; Sparse + 25M Ngram has not continued yet. The Dense midpoint checkpoint reached 374,996,992 tokens; the final matched evaluation remains pending. See the [250M comparison](Documentation/61_matched_repository_training.md), [truncation follow-up](Documentation/63_prompt5_functional_cap_followup.md) and [375M interim report](Documentation/54_prompt5_500m_interim.md). These are small-model results and do not establish general coding ability.
+The matched four-model comparison at 250,003,456 tokens and the selected three-arm continuation are complete. Dense, Sparse + 10M Ngram and Sparse + 25M Ngram have completed the matched **499,998,720-token** continuation and evaluation. Plain Sparse was intentionally excluded from the continuation. The [500M report](Documentation/64_matched_500m_results.md) keeps matched executable scores (0/175, 4/175, 4/175), strict target-function scores (0/175, 3/175, 9/175) and whole-output scores (0/175, 5/175, 3/175) separate. +25M has the lowest mixed NLL, 2.631813498392804; no final architecture winner is established. Both Ngram variants are retained for a planned Dataset V2 comparison at 625,000,448 and 750,002,176 tokens. That training has not started.
 
 ## Earlier 100M real-data comparison
 

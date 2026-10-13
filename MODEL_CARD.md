@@ -2,7 +2,7 @@
 
 SparseCoderLab is a research codebase for comparing dense transformers, sparse expert layers, and conditional Ngram memory on code-oriented language modeling. The evaluated models are small research systems, not production coding assistants.
 
-## Evaluated architecture and data
+## Earlier small-model architecture and data
 
 The shared backbone has 9 layers, width 320, 5 query heads, 1 KV head, head dimension 64, and context length 1,024. The dense model uses a 448-unit feed-forward layer. Sparse variants use a 384-unit resident layer and 12 grouped Top-1 experts of width 160 at layers 2, 5, and 8. The Ngram variant adds four 131,072-by-8 tables at layer 1, with orders 2, 2, 3, and 3.
 
@@ -30,4 +30,6 @@ The four 100M snapshots supplied the canonical transition weights; no winner was
 
 All four 75M-class variants completed a matched comparison at 250,003,456 total tokens on the expanded frozen repository corpus. The [matched report](Documentation/61_matched_repository_training.md) records loss, functional scores and checkpoint checks. The [truncation follow-up](Documentation/63_prompt5_functional_cap_followup.md) is a separate diagnostic evaluation; its partial 512-token results are not a matched four-model comparison.
 
-The continuation targets 499,998,720 tokens. Sparse + 10M Ngram reached a verified 286,720,000-token checkpoint before stopping; Sparse + 25M Ngram has not continued yet. Dense reached 374,996,992 tokens, but a final matched comparison is still pending. The [interim report](Documentation/54_prompt5_500m_interim.md) records generation diagnostics rather than executable correctness. No architecture winner or large-model transfer claim follows from these interim results.
+Dense, Sparse + 10M Ngram and Sparse + 25M Ngram have completed the matched **499,998,720-token** continuation and evaluation. Plain Sparse was intentionally excluded from the continuation. The [500M report](Documentation/64_matched_500m_results.md) keeps matched executable scores (0/175, 4/175, 4/175), strict target-function scores (0/175, 3/175, 9/175) and whole-output scores (0/175, 5/175, 3/175) separate. +25M has the lowest mixed NLL, 2.631813498392804; no final architecture winner is established. Both Ngram variants are retained for a planned Dataset V2 comparison at 625,000,448 and 750,002,176 tokens. That training has not started.
+
+These single-seed 25-prompt/seven-temperature results do not establish general coding-agent capability. Excess continuation remains common, especially for +25M. Target extraction and whole-output acceptance use different constraints and are not nested metrics. See the linked report for scoring settings, inferred stopping limitations, residual-off evidence and exact checkpoint identities.

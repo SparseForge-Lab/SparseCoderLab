@@ -51,7 +51,9 @@ Public reports describe experiment methods and measured evidence. Large checkpoi
 | 60_frozen_repository_transition_preflight.md | Frozen corpus, measured recipe/coverage, canonical functional evidence and exact CUDA transition resume |
 | 61_matched_repository_training.md | Completed common 250M repository-data campaign, recovery checks and matched results |
 | 62_unified_cpu_functional_evaluation.md | Deterministic 100-prompt functional scoring, routing/N-gram telemetry, safe checkpoint queue, and architecture estimates |
-| 54_prompt5_500m_interim.md | Dense continuation checkpoint and generation benchmark at 375M tokens |
+| 54_prompt5_500m_interim.md | Historical continuation checkpoints, superseded by the completed 500M comparison |
+| 64_matched_500m_results.md | Verified three-arm 500M results, separate executable metrics, stopping failures and planned 625M/750M comparison |
+| dataset_v2_and_forgebuilder.md | Implemented offline scaffolding and disabled Dataset V2 generation/training plans |
 | 63_prompt5_functional_cap_followup.md | All-model 128/256-token execution results and the explicitly partial 512-token follow-up |
 
 Machine-readable results live under `results/`. Large datasets and checkpoints are not included in ordinary Git; their manifests retain integrity metadata.

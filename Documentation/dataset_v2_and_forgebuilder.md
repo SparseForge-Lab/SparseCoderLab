@@ -9,8 +9,7 @@ and linked student-failure/recovery records.
 
 The scaffolding is deliberately not a data-generation run. It does not load
 Bonsai, Ornith, or Flash, fetch external repositories, execute candidate code,
-or launch Dataset-v2 training. Those actions remain out of scope until the
-matched 500M comparison is complete and a winner is frozen.
+or launch Dataset-v2 training. The matched 500M comparison is now complete; those actions remain disabled pending Dataset V2 preparation, a frozen two-arm comparison protocol and explicit launch authorization. No architecture winner has been frozen.
 
 ## Record and storage rules
 
@@ -104,9 +103,12 @@ failure/recovery links, rejection reasons, resumable shards, queue recovery,
 model-centric batching, and manifest round trips. No frozen benchmark prompt
 is used as a test fixture.
 
-The 5K–10K pilot configuration is present but disabled. Its gate requires all
-three 500M arms, the matched evaluation, and a frozen winner first. The
+The 5K–10K pilot configuration is present but disabled. Its gates require the completed three-arm 500M evaluation, a frozen comparison protocol, a verified Dataset V2 manifest and explicit launch authorization. Both Ngram arms are retained; the previous frozen-winner prerequisite is superseded. The
 configuration records the required per-family quality, correction, rejection,
 stop/scope, recovery, timing, and storage metrics. Generator and compute-target
 files are planning profiles only; they do not load local teacher models, call
 remote services, or assume TPU/TRC permission.
+
+## Planned two-arm continuation
+
+The [500M review](64_matched_500m_results.md) supports retaining +10M and +25M rather than declaring a final architecture winner. The [disabled comparison plan](../configs/dataset_v2/comparison_plan.json) starts at 499,998,720 tokens and requires matched evaluations at 625,000,448 and 750,002,176 tokens. Dataset V2 generation, training and both continuation gates are planned / not started. Architecture, tokenizer and context remain fixed; the eventual shared data stream, scheduler transition and exact-resume policy must be validated before launch.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "blocked_until_500m_winner_is_frozen",
+  "status": "planned_not_started",
   "generation_enabled": false,
   "target_task_instances": {"minimum": 5000, "maximum": 10000},
   "task_family_coverage": [
@@ -14,5 +14,5 @@
     "average_tokens_per_task", "generation_seconds", "critic_seconds", "final_acceptance_rate",
     "storage_bytes", "performance_by_task_family"
   ],
-  "must_not_start_before": ["all_selected_500m_variants_verified", "matched_evaluation_complete", "winner_frozen"]
+  "must_not_start_before": ["all_selected_500m_variants_verified", "matched_evaluation_complete", "comparison_protocol_frozen", "dataset_v2_manifest_verified", "explicit_launch_authorization"]
 }
