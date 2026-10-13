@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "corpus": "data/research_v2_real/documents/research_v2_repository_transition_2026_10_08_r2.jsonl",
+  "source_plan": "configs/dataset_v2/reviewed_sources.json",
+  "frozen_splits": "data/research_v2_real/shards/transition_r2",
+  "tokenizer": "data/research_v1/tokenizer.json",
+  "evaluation_negatives": [
+    "configs/eval/simple_python_v1.json",
+    "configs/eval/unified_python_v1.json",
+    "results/prompt5_500M_v1/milestone_benchmarks/*.jsonl",
+    "results/unified_python_250M_greedy*.jsonl"
+  ],
+  "student_training_authorized": false
+}

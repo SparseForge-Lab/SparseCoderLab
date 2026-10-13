@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "student_training_enabled": false,
+  "models": [
+    {
+      "role": "bulk_generator",
+      "repository": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+      "revision": "b072e1d3b35a0a630cece372c2127528e0994386",
+      "filename": "Ternary-Bonsai-2-27B-PQ2_0.gguf",
+      "size_bytes": 7206168928,
+      "sha256": "3907dc1658db1f78a9826bf8d5bcb8dc65db0d466388937af57f2294fae62ec1",
+      "license": "Apache-2.0",
+      "directory": "D:/models/dataset_v2/bonsai2_27b",
+      "runtime_requirement": "PrismML llama.cpp fork with PQ2_0 activation transform support"
+    },
+    {
+      "role": "repository_generator",
+      "repository": "ornith-ai/Ornith-1.5-35B-A3B-GGUF",
+      "revision": "12393612fd4f730ff5aadc23e9b8f9648aa49ceb",
+      "filename": "Ornith-1.5-35B-Q4_K_M.gguf",
+      "size_bytes": 21713463040,
+      "sha256": "42739874cc2ccfdb8523b23fbe52e29b2a7555c8176737ca9ca0b5d59859d41f",
+      "license": "MIT",
+      "directory": "E:/models/dataset_v2/ornith15_35b",
+      "runtime_requirement": "Compatible llama.cpp with measured GPU/RAM expert offload"
+    }
+  ]
+}

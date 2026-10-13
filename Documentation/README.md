@@ -53,7 +53,7 @@ Public reports describe experiment methods and measured evidence. Large checkpoi
 | 62_unified_cpu_functional_evaluation.md | Deterministic 100-prompt functional scoring, routing/N-gram telemetry, safe checkpoint queue, and architecture estimates |
 | 54_prompt5_500m_interim.md | Historical continuation checkpoints, superseded by the completed 500M comparison |
 | 64_matched_500m_results.md | Verified three-arm 500M results, separate executable metrics, stopping failures and planned 625M/750M comparison |
-| dataset_v2_and_forgebuilder.md | Implemented offline scaffolding and disabled Dataset V2 generation/training plans |
+| dataset_v2_and_forgebuilder.md | Foundation construction, local teacher review and pending student-training gates |
 | 63_prompt5_functional_cap_followup.md | All-model 128/256-token execution results and the explicitly partial 512-token follow-up |
 
 Machine-readable results live under `results/`. Large datasets and checkpoints are not included in ordinary Git; their manifests retain integrity metadata.

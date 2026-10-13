@@ -1,15 +1,12 @@
 # Dataset-v2 and ForgeBuilder infrastructure
 
-This is the initial, offline-capable infrastructure for a future Dataset-v2
-pilot. It defines versioned records, immutable content-addressed storage,
+Dataset V2 construction is in progress. The infrastructure defines versioned records, immutable content-addressed storage,
 deterministic manifests and splits, benchmark quarantine metadata, sequential
 resumable shards, model-batched generation interfaces, a transactional work
 queue, critic caching, objective verification results, repository-task gates,
 and linked student-failure/recovery records.
 
-The scaffolding is deliberately not a data-generation run. It does not load
-Bonsai, Ornith, or Flash, fetch external repositories, execute candidate code,
-or launch Dataset-v2 training. The matched 500M comparison is now complete; those actions remain disabled pending Dataset V2 preparation, a frozen two-arm comparison protocol and explicit launch authorization. No architecture winner has been frozen.
+The foundation builder reuses reviewed pinned repository sources, preserves the existing held-out splits, and creates canonical file, FIM and repository views. Reuse and additional views do not count as new unique source material. A separate local Flash-Next runtime reviews source-grounded pilot candidates. Student training remains disabled pending a frozen two-arm comparison protocol, verified data and separate launch authorization. No architecture winner has been frozen.
 
 ## Record and storage rules
 
@@ -19,7 +16,7 @@ license metadata is represented as `null`; provenance is required. Stable IDs
 are derived from source identity, content hash, task family, transformation,
 and parent sample IDs rather than timestamps or mutable review fields.
 
-Use `data/dataset_v2/` for the eventual store, with separate locations for
+Use `data/dataset_v2/` for the private store, with separate locations for
 references, canonical objects, repository snapshots, tasks, trajectories,
 student failures, recoveries, verified/rejected records, manifests, indexes,
 shards, and cache. The content-addressed store writes immutable SHA-256 objects.
@@ -71,8 +68,7 @@ pending. The critic cache key binds task, context, candidate, patch, objective
 evidence, model/config, and prompt version.
 
 The profile file names the full Flash-Next critic and provides 32K, 64K, 128K,
-and 256K context targets. No default profile is selected until throughput,
-memory, acceptance, and correction rates are measured. Critic review is
+and 256K context targets. The current local runtime uses 32K; larger profiles remain unmeasured. Critic review is
 reserved for valuable synthetic/post-training samples; raw foundation code
 uses provenance, license, quality, deduplication, parser, and quarantine
 filters first. If Flash generated a candidate, critique must happen in a fresh
@@ -83,7 +79,7 @@ generation candidate whose quantization and output quality need measurement.
 Ornith 1.5 35B-A3B remains an agentic/SWE candidate; stored GGUF size alone is
 not used as a rejection criterion. Load time, prompt/decode speed, RAM, VRAM,
 context scaling, and task quality must be measured before routing production
-batches. No local model was loaded for this infrastructure work.
+batches. Flash-Next IQ3_XXS has been loaded through the isolated runtime described below.
 
 ## Student errors and recovery
 
@@ -96,6 +92,10 @@ adapter experiments; they do not trigger online weight updates.
 
 ## Current validation scope
 
+The [foundation receipt](../results/dataset_v2/foundation_v1.json) records 124,467 canonical files and 71,039 derived views from 43 reviewed repository families. It excludes 712 records outside the reviewed source plan, quarantines 34 lexical evaluation overlaps and one Python parse failure, and registers 2,131 distinct evaluation negatives. The actual mixture remains uneven: the issues/PR/tests category currently contains tests, and broad multilingual/general text and real issue/PR patch coverage are incomplete. These counts do not establish training readiness.
+
+The [qualification snapshot](../results/dataset_v2/source_pilot_qualification_v1.json) contains 4,165 prepared candidates against a 5,000 target, with 58 reviewed/accepted records in the saved snapshot. Additional reviews run separately and do not change that historical snapshot. The source extractor exhausted its eligible two-function excerpts; remaining coverage must come from further verified tasks rather than duplicated candidates.
+
 Tests use tiny synthetic fixtures only. They exercise schema checks, stable
 IDs, deterministic manifests and splits, quarantine screening, license
 metadata, STOP/CONTINUE task metadata, critic caching, verifier results,
@@ -103,12 +103,23 @@ failure/recovery links, rejection reasons, resumable shards, queue recovery,
 model-centric batching, and manifest round trips. No frozen benchmark prompt
 is used as a test fixture.
 
-The 5K–10K pilot configuration is present but disabled. Its gates require the completed three-arm 500M evaluation, a frozen comparison protocol, a verified Dataset V2 manifest and explicit launch authorization. Both Ngram arms are retained; the previous frozen-winner prerequisite is superseded. The
+The first pilot targets 5,000 source-grounded candidates covering excerpt-grounded reasoning, missing-symbol checks, constructed recovery and paired STOP/CONTINUE extraction. Exact source/AST checks run before independent critic review. These checks establish extraction and evidence support, not executable behavior or SWE patch correctness. Actual tool/terminal execution, code synthesis, real fail-to-pass repository patches and student-on-policy recovery remain pending; this pilot alone does not satisfy the complete dataset coverage requirement. Both Ngram arms are retained. The
 configuration records the required per-family quality, correction, rejection,
 stop/scope, recovery, timing, and storage metrics. Generator and compute-target
-files are planning profiles only; they do not load local teacher models, call
-remote services, or assume TPU/TRC permission.
+files for remote compute remain planning profiles. No remote inference services or TPU/TRC allocation are used.
+
+The [pinned local-model inventory](../configs/dataset_v2/local_models.json) selects the publisher's Bonsai 2 27B PQ2_0 and Ornith 1.5 35B-A3B Q4_K_M files for download and measurement. Bonsai requires PrismML's activation-transform-capable runtime; the existing local PrismML llama.cpp fork is available. The downloader uses resumable, checked HTTP byte ranges and verifies publisher file sizes and SHA256 before exposing final model filenames. Ornith's runtime compatibility, generator throughput and task quality remain to be measured. No vision projector download is needed for the current text-only generator tasks.
+
+Bonsai's [first local qualification](../results/dataset_v2/bonsai_generator_qualification_v1.json) passed all three project-specific tasks and 15 WASI cases, at a median 64.87 decoded tokens/s including thinking tokens. These are small functional qualification tasks, not a general coding benchmark. Independent critique is still required before accepting their generated code into a training pool. Ornith's download and offload qualification are separate pending stages. The worker pauses the saved critic queue only during a generator qualification run, then resumes reviews while the other download continues.
+
+## Local 32K Flash runtime
+
+`python -m tools.dataset_v2_strata start` copies the installed IQ3_XXS configuration and shared settings into `.local/dataset_v2/strata32k/`, then invokes the existing Strata server and engine. Model arguments remain identical except `--max-context 32768`. Host, port and logs are isolated at `127.0.0.1:8096`. The main Strata configuration and shared settings are never edited. The first model shard stays on D: and the existing second-shard symlink resolves to C:.
+
+`python -m tools.dataset_v2_strata fingerprint` hashes the actual model shards, converted packs, tokenizer, MTP, control vector and vision assets before critic review. The critic cache binds those identities, task/evidence/candidate, runtime configuration and review version. Each review starts a fresh chat context. Incomplete or malformed critic output leaves the review pending; it does not make the candidate functionally incorrect.
+
+`python -m tools.build_dataset_v2` constructs the foundation manifests. `python -m tools.finalize_dataset_v2_foundation` sorts them by stable sample ID with bounded memory and a recovery journal. `python -m tools.dataset_v2_pilot prepare` builds the pilot candidates; `review` resumes independent local review from durable receipts and cache entries. The campaign worker sequences these stages without launching student training. Create `data/dataset_v2/source_pilot_v1/STOP` to stop review after its current request; `.local/dataset_v2/STOP` prevents later campaign stages.
 
 ## Planned two-arm continuation
 
-The [500M review](64_matched_500m_results.md) supports retaining +10M and +25M rather than declaring a final architecture winner. The [disabled comparison plan](../configs/dataset_v2/comparison_plan.json) starts at 499,998,720 tokens and requires matched evaluations at 625,000,448 and 750,002,176 tokens. Dataset V2 generation, training and both continuation gates are planned / not started. Architecture, tokenizer and context remain fixed; the eventual shared data stream, scheduler transition and exact-resume policy must be validated before launch.
+The [500M review](64_matched_500m_results.md) supports retaining +10M and +25M rather than declaring a final architecture winner. The [disabled comparison plan](../configs/dataset_v2/comparison_plan.json) starts at 499,998,720 tokens and requires matched evaluations at 625,000,448 and 750,002,176 tokens. Dataset V2 construction has started; student training and both continuation gates remain unstarted. Architecture, tokenizer and student context remain fixed; the eventual shared data stream, scheduler transition and exact-resume policy must be validated before launch.

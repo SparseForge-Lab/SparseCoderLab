@@ -1,7 +1,11 @@
 {
   "schema_version": 1,
-  "status": "planned_not_started",
-  "generation_enabled": false,
+  "status": "dataset_build_authorized_source_grounded_pilot_in_progress",
+  "generation_enabled": true,
+  "student_training_enabled": false,
+  "authorization_scope": "dataset construction and local teacher inference only",
+  "current_candidate_generator": "deterministic_source_extractor",
+  "remaining_generation_pools": ["executable_code_generation", "verified_repository_patches", "actual_tool_and_terminal_execution", "student_on_policy_recovery"],
   "target_task_instances": {"minimum": 5000, "maximum": 10000},
   "task_family_coverage": [
     "code_from_scratch", "bug_fix", "multi_file_repo_work", "tool_use", "terminal_use",
@@ -14,5 +18,6 @@
     "average_tokens_per_task", "generation_seconds", "critic_seconds", "final_acceptance_rate",
     "storage_bytes", "performance_by_task_family"
   ],
-  "must_not_start_before": ["all_selected_500m_variants_verified", "matched_evaluation_complete", "comparison_protocol_frozen", "dataset_v2_manifest_verified", "explicit_launch_authorization"]
+  "dataset_build_prerequisites": ["all_selected_500m_variants_verified", "matched_evaluation_complete", "explicit_dataset_build_authorization"],
+  "student_training_prerequisites": ["comparison_protocol_frozen", "dataset_v2_manifest_verified", "explicit_student_training_launch_authorization"]
 }

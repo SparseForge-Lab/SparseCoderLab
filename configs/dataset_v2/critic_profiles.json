@@ -14,8 +14,8 @@
     "normal": {"reasoning_tokens_target": [400, 800], "use_for": ["normal_coding", "standard_reasoning", "small_repository_tasks"]},
     "deep": {"reasoning_tokens_target": [1000, 3000], "use_for": ["difficult_repository_tasks", "recovery", "ambiguous_bugs", "agentic_tasks", "multimodal_tasks"]}
   },
-  "default_profile": null,
-  "default_profile_note": "Benchmark context, throughput, memory, acceptance, and correction rates before selecting a standard profile.",
+  "default_profile": "32k",
+  "default_profile_note": "Authorized local runtime inherits the installed Strata IQ3_XXS config and shared settings, lowering context to 32768 only. Other profiles remain planning candidates. Reasoning-effort and sampling settings are inherited rather than replaced by these target budgets.",
   "cache_identity_fields": [
     "task", "context", "candidate", "patch", "objective_evidence",
     "critic_model", "critic_config", "critic_prompt_version"

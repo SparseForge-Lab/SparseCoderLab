@@ -1,0 +1,11 @@
+Bonsai 2 27B PQ2_0: local generator qualification
+Runtime: existing PrismML llama.cpp fork; 32K context; GPU layers 99; reasoning effort medium.
+Scope: 3 new project-specific tasks, 15 sandboxed cases. This is not a general coding benchmark.
+
+segment_read_plan_v1: objective PASS; decode 64.83 tokens/s; prompt 344.71 tokens/s; completion 3360 tokens; cap=False; 52.52 seconds
+tlv_frame_scan_v1: objective PASS; decode 64.87 tokens/s; prompt 730.33 tokens/s; completion 1360 tokens; cap=False; 21.63 seconds
+trajectory_character_mask_v1: objective PASS; decode 66.06 tokens/s; prompt 807.42 tokens/s; completion 731 tokens; cap=False; 11.66 seconds
+
+Median decode: 64.87 tokens/s (includes thinking tokens).
+Objective checks: 3/3 passed. Independent Flash critique still required before any training acceptance.
+Student training remains unstarted.

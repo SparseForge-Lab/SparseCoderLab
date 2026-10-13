@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "scope": "New project-specific qualification tasks, not frozen evaluation tasks",
+  "tasks": [
+    {
+      "id": "segment_read_plan_v1",
+      "function": "plan_segment_reads",
+      "instruction": "Implement plan_segment_reads(lengths, offset, limit). lengths contains nonnegative segment lengths. offset is a nonnegative absolute position in their concatenation. Return a list of [segment_index, offset_in_segment, number_to_read] covering up to limit consecutive units, skipping empty segments and stopping at the total length. Return [] for limit <= 0 or offset >= total length. Do not mutate inputs. Return only Python source, without markdown.",
+      "cases": [
+        {"args": [[3, 0, 5], 2, 4], "expected": [[0, 2, 1], [2, 0, 3]]},
+        {"args": [[3, 0, 5], 3, 99], "expected": [[2, 0, 5]]},
+        {"args": [[0, 0], 0, 3], "expected": []},
+        {"args": [[2, 3], 5, 9], "expected": []},
+        {"args": [[2, 3], 0, 0], "expected": []},
+        {"args": [[1, 2, 1], 0, 3], "expected": [[0, 0, 1], [1, 0, 2]]}
+      ]
+    },
+    {
+      "id": "tlv_frame_scan_v1",
+      "function": "scan_tlv_frames",
+      "instruction": "Implement scan_tlv_frames(hex_text). Input is valid even-length hexadecimal text. Interpret the decoded bytes as consecutive frames: one unsigned byte tag, one unsigned byte payload length, then that many payload bytes. Return {frames: [{tag: integer, payload_hex: lowercase hex}, ...], error_offset: null} when complete. If a header or payload is incomplete, return the previously complete frames and error_offset equal to the byte offset of that incomplete frame's tag. Empty input has no frames and no error. Return only Python source, without markdown.",
+      "cases": [
+        {"args": [""], "expected": {"frames": [], "error_offset": null}},
+        {"args": ["0102aabb0200"], "expected": {"frames": [{"tag": 1, "payload_hex": "aabb"}, {"tag": 2, "payload_hex": ""}], "error_offset": null}},
+        {"args": ["0103aabb"], "expected": {"frames": [], "error_offset": 0}},
+        {"args": ["000002"], "expected": {"frames": [{"tag": 0, "payload_hex": ""}], "error_offset": 2}},
+        {"args": ["FF01AF"], "expected": {"frames": [{"tag": 255, "payload_hex": "af"}], "error_offset": null}}
+      ]
+    },
+    {
+      "id": "trajectory_character_mask_v1",
+      "function": "render_scope_segments",
+      "instruction": "Implement render_scope_segments(segments). Each segment is a dict with text (string), kind (string) and optional known_bad (bool). Concatenate text without separators. Return {text: concatenation, loss_mask: list of integers, one per Unicode character}. A segment gets mask 0 if known_bad is true or kind is EVIDENCE, TOOL_RESULT, WRONG_HYPOTHESIS or FAILURE_OUTPUT; otherwise mask 1. Preserve all text including known-bad context. Empty input returns empty text and mask. Do not mutate inputs. Return only Python source, without markdown.",
+      "cases": [
+        {"args": [[]], "expected": {"text": "", "loss_mask": []}},
+        {"args": [[{"text": "é", "kind": "EVIDENCE"}, {"text": "答", "kind": "FINAL"}]], "expected": {"text": "é答", "loss_mask": [0, 1]}},
+        {"args": [[{"text": "bad", "kind": "ACTION", "known_bad": true}, {"text": "ok", "kind": "FINAL"}]], "expected": {"text": "badok", "loss_mask": [0, 0, 0, 1, 1]}},
+        {"args": [[{"text": "x", "kind": "WRONG_HYPOTHESIS"}, {"text": "yz", "kind": "PLAN"}, {"text": "!", "kind": "TOOL_RESULT"}]], "expected": {"text": "xyz!", "loss_mask": [0, 1, 1, 0]}}
+      ]
+    }
+  ]
+}
