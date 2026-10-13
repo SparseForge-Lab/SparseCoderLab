@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "cpu_tests": {
+    "tests": 61,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_command": "python -m pytest forgebuilder/tests -q",
+  "syntax_compilation_passed": true,
+  "training_launched": false,
+  "source_and_evidence_hashes": {
+    "forgebuilder/quality.py": "3e6fdfe512f3375c3c476b4a7f985c759adc6797efc457688a1bd7833cc86a2e",
+    "forgebuilder/serialization.py": "e0c03391d85ea205fe51946516352a6bbab5566004483a9ea727da5fc4475d69",
+    "forgebuilder/tests/test_quality.py": "5b63cc64ef1bb9a1335309d3453c96499513eb3d01496f698e5c1a418f6fd2d8",
+    "forgebuilder/tests/test_serialization.py": "2857d10593e8c0c5fa4cca970dd42bc89f4220abf0f252d2084c6385ed182fa9",
+    "tools/inspect_dataset_v2_coverage.py": "1e74d1c7d27f51334838b15f836d3a6b70b69449e3feab457485a0ef93bde89e",
+    "tools/validate_dataset_v2_serialization.py": "7fc7afd1bbf633e79cd2915a24113c0bd528d8059abb670df5336cd9db696386",
+    "results/dataset_v2/pilot_coverage_v1.json": "595311863c73552b7e0dd0bab9f72087961e445bd169742a2a2ec34bbc755105",
+    "results/dataset_v2/serialization_validation_v1.json": "9d2844e5b4daab8c4653c46c26a7502894e12c7bb3de238c2fc4550fc676a17c"
+  },
+  "scope": "Seven coverage and nine serialization regressions added to45 existing tests; actual saved-snapshot serialization checked separately. No weighted-loss training or final dataset freeze."
+}

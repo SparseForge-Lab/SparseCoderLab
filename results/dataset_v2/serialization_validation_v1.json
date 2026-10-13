@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "offline_serialization_validated_not_training_ready",
+  "tokenizer_sha256": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+  "sources": [
+    {
+      "path": "data/dataset_v2/source_pilot_v1/accepted_snapshot.jsonl",
+      "sha256": "4455d5a5d47f3b55b38ac3c2a37a75b50eacbd35c771188ab2e776a9cb7a29bc"
+    },
+    {
+      "path": "data/dataset_v2/generated_pilot_v1/accepted_snapshot.jsonl",
+      "sha256": "789feeb9ead19bcfab950aa87af7f1d66d63ce7e67f6137d8fc1de9902b58d9c"
+    }
+  ],
+  "counts": {
+    "serialized": 58,
+    "recovery_records": 12,
+    "exceed_student_context": 0,
+    "withheld_unknown_license": 6
+  },
+  "serialized_tokens": 27101,
+  "target_tokens": 4122,
+  "masked_known_bad_tokens": 199,
+  "minimum_record_tokens": 199,
+  "maximum_record_tokens": 1002,
+  "serialized_payload_sha256": "315092028d3bfa22b2844ff04ce839b99693d407a17e44529d027e091f2b669e",
+  "serialized_payload_bytes": 363039,
+  "target_mask_leaks": 0,
+  "student_context": 1024,
+  "training_launched": false,
+  "gpu_used": false,
+  "limits": [
+    "Saved accepted snapshots only; independent objective checks are not rerun here.",
+    "Unknown output licenses are withheld, not counted as functional failures.",
+    "Known license metadata is not a new rights-clearance assertion.",
+    "Windowing, batching and weighted-loss integration remain unimplemented and unfrozen."
+  ]
+}
