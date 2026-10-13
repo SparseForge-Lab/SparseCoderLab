@@ -1,0 +1,21 @@
+{
+  "status": "review_complete_snapshot_not_dataset_frozen",
+  "accepted_records": 6,
+  "reviewed_records": 6,
+  "candidate_records": 6,
+  "task_families": {
+    "code_from_scratch": 6
+  },
+  "accepted_snapshot_sha256": "789feeb9ead19bcfab950aa87af7f1d66d63ce7e67f6137d8fc1de9902b58d9c",
+  "reviewed_prefix_sha256": "41b1c82c3d6052146d88f163399e965b22bef1ed62b9526e4bfb8baef15af284",
+  "reviewed_prefix_bytes": 10291,
+  "student_training_authorized": false,
+  "coverage": "Generated functions passed finite project-specific WASI cases and independent critique; no real SWE patch correctness claim.",
+  "candidate_sha256": "4ab7f5539d9d02a2983f7149ca9a14750ee7e54dc39aed298c9d7729fb865728",
+  "qualification_reports": [
+    "results/dataset_v2/bonsai_generator_qualification_v1.json",
+    "results/dataset_v2/ornith_generator_qualification_v1.json"
+  ],
+  "timing_limit": "Reviews span two GPU-cache reserve settings; not a controlled throughput comparison.",
+  "license_limit": "Generated output licenses remain unknown; model licenses are not asserted as output licenses."
+}

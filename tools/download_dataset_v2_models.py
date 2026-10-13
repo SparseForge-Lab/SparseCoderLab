@@ -13,6 +13,7 @@ from forgebuilder.strata_runtime import digest
 
 
 def download(model):
+    start=time.time()
     root=Path(model['directory'])
     root.mkdir(parents=True,exist_ok=True)
     target=root/model['filename']
@@ -22,7 +23,6 @@ def download(model):
     reserve=20*1024**3
     if shutil.disk_usage(root).free < model['size_bytes']-existing+reserve:
         raise RuntimeError(f'not enough space with 20 GiB reserve: {root}')
-    start=time.time()
     partial=target.with_suffix(target.suffix+'.partial')
     if not target.exists():
         attempts=0
@@ -58,11 +58,15 @@ def download(model):
                 time.sleep(min(10,2*attempts))
         if partial.stat().st_size!=model['size_bytes'] or digest(partial)!=model['sha256']:
             raise RuntimeError(f'downloaded model failed size/SHA256 verification: {partial}')
+        verified_stat=partial.stat()
         os.replace(partial,target)
+        final_stat=target.stat()
+        if (final_stat.st_size,final_stat.st_mtime_ns)!=(verified_stat.st_size,verified_stat.st_mtime_ns):
+            raise RuntimeError('model changed during atomic finalization')
     path=target
-    if path.stat().st_size!=model['size_bytes'] or digest(path)!=model['sha256']:
-        raise RuntimeError(f'downloaded model failed size/SHA256 verification: {path}')
-    receipt=dict(model,status='verified_download',path=str(path),elapsed_seconds=time.time()-start)
+    receipt=dict(model,status='verified_download',path=str(path),elapsed_seconds=time.time()-start,
+                 mtime_ns=path.stat().st_mtime_ns,verification=('SHA256 of existing final file' if existing else
+                 'SHA256 before atomic finalization; size/mtime after rename'))
     (root/'download_receipt.json').write_bytes(canonical_json(receipt)+b'\n')
     print(json.dumps({'model':model['repository'],'status':'verified_download','path':str(path)}),flush=True)
     return receipt

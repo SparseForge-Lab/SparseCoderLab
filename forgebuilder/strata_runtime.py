@@ -20,8 +20,8 @@ def digest(path: Path) -> str:
     return h.hexdigest()
 
 
-def derive_config(source: dict, runtime: Path, port: int = 8096) -> dict:
-    """Preserve all model settings; isolate logs/network and lower context only."""
+def derive_config(source: dict, runtime: Path, port: int = 8096, reserve_mib: int | None = None) -> dict:
+    """Inherit model settings with explicit context and optional headroom overrides."""
     if not 1024 <= port <= 65535:
         raise ValueError('invalid local port')
     result = copy.deepcopy(source)
@@ -29,11 +29,15 @@ def derive_config(source: dict, runtime: Path, port: int = 8096) -> dict:
     if args.count('--max-context') != 1:
         raise ValueError('source must define exactly one max-context argument')
     args[args.index('--max-context') + 1] = '32768'
+    if reserve_mib is not None:
+        if not 64 <= reserve_mib <= 16384 or args.count('--vram-reserve-mib') != 1:
+            raise ValueError('a valid reserve and one source vram-reserve argument are required')
+        args[args.index('--vram-reserve-mib')+1] = str(reserve_mib)
     result.update(host='127.0.0.1', port=port, log=str(runtime / 'engine.log'))
     return result
 
 
-def prepare(source: Path, runtime: Path, port: int = 8096) -> dict:
+def prepare(source: Path, runtime: Path, port: int = 8096, reserve_mib: int | None = None) -> dict:
     source, runtime = source.resolve(), runtime.resolve()
     if runtime == source.parent or source.parent in runtime.parents:
         raise ValueError('runtime must be outside the source installation')
@@ -41,7 +45,7 @@ def prepare(source: Path, runtime: Path, port: int = 8096) -> dict:
     if (runtime / 'process.json').exists():
         raise FileExistsError('runtime already has a process receipt; use a new runtime directory')
     shared = source.with_name(source.stem + '.shared-settings.json')
-    config = derive_config(json.loads(source.read_text(encoding='utf8')), runtime, port)
+    config = derive_config(json.loads(source.read_text(encoding='utf8')), runtime, port, reserve_mib)
     # Keep the exact source shard arguments, including the established C: symlink.
     assets = []
     for flag in ('--native', '--ple-gguf', '--expert-profile'):
@@ -60,7 +64,8 @@ def prepare(source: Path, runtime: Path, port: int = 8096) -> dict:
     command = [str(python), str(server), '--engine', 'strata', '--config', str(target),
                '--host', '127.0.0.1', '--port', str(port)]
     receipt = dict(context=32768, port=port, config=str(target), config_sha256=digest(target),
-                   source_hashes=hashes, assets=assets, command=command, student_training=False)
+                   source_hashes=hashes, assets=assets, command=command, student_training=False,
+                   vram_reserve_mib=reserve_mib)
     (runtime / 'prepared.json').write_text(json.dumps(receipt, indent=2) + '\n', encoding='utf8')
     return receipt
 

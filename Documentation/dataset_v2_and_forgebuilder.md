@@ -74,12 +74,7 @@ uses provenance, license, quality, deduplication, parser, and quarantine
 filters first. If Flash generated a candidate, critique must happen in a fresh
 context after deterministic verification.
 
-Generator profiles are configuration only. Bonsai 2 27B remains a bulk
-generation candidate whose quantization and output quality need measurement.
-Ornith 1.5 35B-A3B remains an agentic/SWE candidate; stored GGUF size alone is
-not used as a rejection criterion. Load time, prompt/decode speed, RAM, VRAM,
-context scaling, and task quality must be measured before routing production
-batches. Flash-Next IQ3_XXS has been loaded through the isolated runtime described below.
+Bonsai 2 27B PQ2_0 and Ornith 1.5 35B-A3B Q4_K_M have completed small local function qualifications at 32K. Their intended bulk-coding and repository/SWE roles still require broader task coverage, resource measurements and context scaling before production routing. Stored GGUF size alone is not a rejection criterion. Flash-Next IQ3_XXS reviews candidates through the isolated runtime described below.
 
 ## Student errors and recovery
 
@@ -103,18 +98,20 @@ failure/recovery links, rejection reasons, resumable shards, queue recovery,
 model-centric batching, and manifest round trips. No frozen benchmark prompt
 is used as a test fixture.
 
-The first pilot targets 5,000 source-grounded candidates covering excerpt-grounded reasoning, missing-symbol checks, constructed recovery and paired STOP/CONTINUE extraction. Exact source/AST checks run before independent critic review. These checks establish extraction and evidence support, not executable behavior or SWE patch correctness. Actual tool/terminal execution, code synthesis, real fail-to-pass repository patches and student-on-policy recovery remain pending; this pilot alone does not satisfy the complete dataset coverage requirement. Both Ngram arms are retained. The
+The first pilot targets 5,000 source-grounded candidates covering excerpt-grounded reasoning, missing-symbol checks, constructed recovery and paired STOP/CONTINUE extraction. Exact source/AST checks run before independent critic review. These checks establish extraction and evidence support, not executable behavior or SWE patch correctness. A separate six-solution code-synthesis pool has passed finite WASI checks and independent critique. Actual tool/terminal trajectories, real fail-to-pass repository patches and student-on-policy recovery remain pending; this pilot alone does not satisfy the complete dataset coverage requirement. Both Ngram arms are retained. The
 configuration records the required per-family quality, correction, rejection,
 stop/scope, recovery, timing, and storage metrics. Generator and compute-target
 files for remote compute remain planning profiles. No remote inference services or TPU/TRC allocation are used.
 
-The [pinned local-model inventory](../configs/dataset_v2/local_models.json) selects the publisher's Bonsai 2 27B PQ2_0 and Ornith 1.5 35B-A3B Q4_K_M files for download and measurement. Bonsai requires PrismML's activation-transform-capable runtime; the existing local PrismML llama.cpp fork is available. The downloader uses resumable, checked HTTP byte ranges and verifies publisher file sizes and SHA256 before exposing final model filenames. Ornith's runtime compatibility, generator throughput and task quality remain to be measured. No vision projector download is needed for the current text-only generator tasks.
+The [pinned local-model inventory](../configs/dataset_v2/local_models.json) selects the publisher's Bonsai 2 27B PQ2_0 and Ornith 1.5 35B-A3B Q4_K_M files for download and measurement. Bonsai requires PrismML's activation-transform-capable runtime; the existing local PrismML llama.cpp fork is available. The downloader uses resumable, checked HTTP byte ranges and verifies publisher file sizes and SHA256 before exposing final model filenames. Both files passed publisher size/SHA256 verification. Ornith runs from D:/models/dataset_v2/ornith15_35b after relocation from the HDD; its local compatibility and small-function qualification are measured below. No vision projector download is needed for the current text-only generator tasks.
 
-Bonsai's [first local qualification](../results/dataset_v2/bonsai_generator_qualification_v1.json) passed all three project-specific tasks and 15 WASI cases, at a median 64.87 decoded tokens/s including thinking tokens. These are small functional qualification tasks, not a general coding benchmark. Independent critique is still required before accepting their generated code into a training pool. Ornith's download and offload qualification are separate pending stages. The worker pauses the saved critic queue only during a generator qualification run, then resumes reviews while the other download continues.
+Bonsai's [local qualification](../results/dataset_v2/bonsai_generator_qualification_v1.json) and Ornith's [local qualification](../results/dataset_v2/ornith_generator_qualification_v1.json) each passed three project-specific tasks and 15 WASI cases. Median decoded throughput was 64.87 and 49.63 tokens/s respectively, including thinking tokens. These are small functional qualifications, not general coding benchmarks or controlled model-throughput comparisons.
+
+The [generated-code snapshot](../results/dataset_v2/generated_pilot_qualification_v1.json) contains six solutions that passed independent WASI re-verification and fresh-context Flash critique. Raw responses, transformations and model identities are retained privately. Finite tests do not prove universal correctness or repository patch quality. Generated output licenses remain unknown; the model license is not assigned to outputs. The snapshot is not a frozen training dataset. Reviews span two expert-cache reserve settings, so their timings do not establish a controlled performance comparison.
 
 ## Local 32K Flash runtime
 
-`python -m tools.dataset_v2_strata start` copies the installed IQ3_XXS configuration and shared settings into `.local/dataset_v2/strata32k/`, then invokes the existing Strata server and engine. Model arguments remain identical except `--max-context 32768`. Host, port and logs are isolated at `127.0.0.1:8096`. The main Strata configuration and shared settings are never edited. The first model shard stays on D: and the existing second-shard symlink resolves to C:.
+`python -m tools.dataset_v2_strata start` copies the installed IQ3_XXS configuration and shared settings into `.local/dataset_v2/strata32k/`, then invokes the existing Strata server and engine. Model arguments inherit the installation except `--max-context 32768` and `--vram-reserve-mib 2560`. The reserve allows roughly 2 GiB free after extra engine buffers; actual free memory varies with concurrent applications. The [headroom receipt](../results/dataset_v2/teacher_runtime_headroom_v2.json) records 2,374 MiB free at measurement and 2,301 MiB at engine startup. The initial near-full allocation remains historical evidence. Host, port and logs are isolated at `127.0.0.1:8096`. The main Strata configuration and shared settings are never edited. The first model shard stays on D: and the existing second-shard symlink resolves to C:.
 
 `python -m tools.dataset_v2_strata fingerprint` hashes the actual model shards, converted packs, tokenizer, MTP, control vector and vision assets before critic review. The critic cache binds those identities, task/evidence/candidate, runtime configuration and review version. Each review starts a fresh chat context. Incomplete or malformed critic output leaves the review pending; it does not make the candidate functionally incorrect.
 

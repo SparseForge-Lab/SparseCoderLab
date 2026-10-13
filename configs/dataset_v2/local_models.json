@@ -21,7 +21,7 @@
       "size_bytes": 21713463040,
       "sha256": "42739874cc2ccfdb8523b23fbe52e29b2a7555c8176737ca9ca0b5d59859d41f",
       "license": "MIT",
-      "directory": "E:/models/dataset_v2/ornith15_35b",
+      "directory": "D:/models/dataset_v2/ornith15_35b",
       "runtime_requirement": "Compatible llama.cpp with measured GPU/RAM expert offload"
     }
   ]

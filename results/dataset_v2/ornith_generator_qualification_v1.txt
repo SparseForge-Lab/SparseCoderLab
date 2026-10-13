@@ -1,0 +1,13 @@
+Ornith 1.5 35B-A3B Q4_K_M: local generator qualification
+Model: D:/models/dataset_v2/ornith15_35b/Ornith-1.5-35B-Q4_K_M.gguf
+Runtime: existing PrismML llama.cpp fork; 32K context; automatic GPU/RAM placement; 1024 MiB fit margin; medium reasoning.
+Scope: 3 new project-specific tasks, 15 sandboxed cases; not a general coding benchmark.
+Python fence removal is recorded where used; raw responses remain retained.
+
+segment_read_plan_v1: objective PASS; decode 49.04 tokens/s; prompt 45.32 tokens/s; completion 3310 tokens; cap=False; 70.07 seconds; transform=strip_single_python_fence_v1
+tlv_frame_scan_v1: objective PASS; decode 49.63 tokens/s; prompt 164.78 tokens/s; completion 2061 tokens; cap=False; 42.65 seconds; transform=strip_single_python_fence_v1
+trajectory_character_mask_v1: objective PASS; decode 49.74 tokens/s; prompt 168.68 tokens/s; completion 2802 tokens; cap=False; 57.46 seconds; transform=strip_single_python_fence_v1
+
+Median decode: 49.63 tokens/s (includes thinking tokens).
+Objective checks: 3/3 passed. Independent Flash critique is a separate acceptance gate.
+Student training remains unstarted.

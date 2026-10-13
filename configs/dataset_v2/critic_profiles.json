@@ -15,7 +15,7 @@
     "deep": {"reasoning_tokens_target": [1000, 3000], "use_for": ["difficult_repository_tasks", "recovery", "ambiguous_bugs", "agentic_tasks", "multimodal_tasks"]}
   },
   "default_profile": "32k",
-  "default_profile_note": "Authorized local runtime inherits the installed Strata IQ3_XXS config and shared settings, lowering context to 32768 only. Other profiles remain planning candidates. Reasoning-effort and sampling settings are inherited rather than replaced by these target budgets.",
+  "default_profile_note": "Local runtime inherits the installed Strata IQ3_XXS config and shared settings, with context 32768 and VRAM reserve 2560 MiB to leave approximately 2 GiB free. Actual headroom depends on concurrent allocations. Other profiles remain planning candidates. Reasoning and sampling settings are inherited.",
   "cache_identity_fields": [
     "task", "context", "candidate", "patch", "objective_evidence",
     "critic_model", "critic_config", "critic_prompt_version"

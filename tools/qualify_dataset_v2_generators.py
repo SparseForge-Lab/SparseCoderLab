@@ -39,6 +39,23 @@ def review_workers_running():
     return bool(result.stdout.strip())
 
 
+def verify_model(model,path):
+    candidates=[STATE/'ornith_relocation_verified.json',path.parent/'download_receipt.json']
+    for candidate in candidates:
+        if not candidate.exists():
+            continue
+        receipt=json.loads(candidate.read_text(encoding='utf8'))
+        stat=path.stat()
+        if (receipt.get('status') in ('verified_download','verified_user_relocation')
+            and Path(receipt.get('path','')).resolve()==path.resolve()
+            and receipt.get('sha256')==model['sha256']
+            and receipt.get('size_bytes')==stat.st_size==model['size_bytes']
+            and receipt.get('mtime_ns')==stat.st_mtime_ns):
+            return
+    if path.stat().st_size!=model['size_bytes'] or digest(path)!=model['sha256']:
+        raise ValueError('generator does not match pinned publisher identity')
+
+
 def qualify(model):
     destination=ROOT/'data/dataset_v2/generator_qualification'/model['role']
     destination.mkdir(parents=True,exist_ok=True)
@@ -49,8 +66,7 @@ def qualify(model):
         if stopped():
             return
         time.sleep(10)
-    if path.stat().st_size!=model['size_bytes'] or digest(path)!=model['sha256']:
-        raise ValueError('generator does not match pinned publisher identity')
+    verify_model(model,path)
     task_path=ROOT/'configs/dataset_v2/generator_qualification.json'
     tasks=json.loads(task_path.read_text(encoding='utf8'))['tasks']
     foundation=json.loads((ROOT/'data/dataset_v2/foundation_v1/build_receipt.json').read_text(encoding='utf8'))
