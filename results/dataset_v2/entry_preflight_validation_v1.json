@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "cpu_tests": {
+    "tests": 45,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_command": "python -m pytest forgebuilder/tests -q",
+  "syntax_compilation_passed": true,
+  "training_launched": false,
+  "entry_report_sha256": "787c1c460f93c21af17867695d0ddd202990da604351bb625ec30ae07a48a33b",
+  "implementation_sha256": "946723b342e7b48ce98a0c594f1dc77de4289bc6a948f06f7cde1c830af510a0",
+  "scope": "Eleven new entry/plan regression cases plus existing34 ForgeBuilder tests. Actual CPU inspection of both pinned entries is recorded separately; numerical resume equivalence remains open."
+}

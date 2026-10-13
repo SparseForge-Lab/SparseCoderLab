@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "status": "entry_structure_verified_launch_blocked",
+  "plan_sha256": "e749a1759e91e383cd380c25d986b1ac8806bc3d78fef7599f8a46e80ae40b72",
+  "entry_checks_passed": true,
+  "variants": {
+    "sparse75_ngram10m": {
+      "tokens_seen": 499998720,
+      "step": 61035,
+      "cursor": 390616,
+      "phase_steps": 48827,
+      "scheduler_last_epoch": 48827,
+      "optimizer_parameters": 221,
+      "model_tensors": 221,
+      "saved_cuda_rng_streams": 1,
+      "group_lrs": [
+        2.9999999999999997e-05,
+        2.9999999999999997e-05
+      ],
+      "config_fingerprint": "42bac718bfc27a4f79862f3f80100f0150118ec4f575f41f97f3e72530bb4a22",
+      "context_tokens": 1024,
+      "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "data_hash": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6",
+      "next_source_batch_sha256": "5c3ea128cfb9df51dcf5939d3cddf2de6bf25127b3c8902036aa735b5f230d1d",
+      "next_cursor": 390624,
+      "config_path": "experiments/prompt5_500M_v1/sparse75_ngram10m/config.json",
+      "config_sha256": "cd1e14e676b3816d467726f255bf240cb56ff76c3b5fc2c41e4706e2dfc51a52",
+      "checkpoint_sha256": "8ef8d7e1ca7bcba14e3a2bee8e7438ded774dcd629f04ba91ae7dda00d3c47c4",
+      "checkpoint_bytes": 1039071235,
+      "entry_checkpoint_path": "experiments/prompt5_500M_v1/sparse75_ngram10m/checkpoints/500M_full.pt"
+    },
+    "sparse75_ngram25m": {
+      "tokens_seen": 499998720,
+      "step": 61035,
+      "cursor": 390616,
+      "phase_steps": 48827,
+      "scheduler_last_epoch": 48827,
+      "optimizer_parameters": 221,
+      "model_tensors": 221,
+      "saved_cuda_rng_streams": 1,
+      "group_lrs": [
+        2.9999999999999997e-05,
+        2.9999999999999997e-05
+      ],
+      "config_fingerprint": "3799e490415809872828e7098d05953c23f6821134242581875b40e0c1322dff",
+      "context_tokens": 1024,
+      "tokenizer_hash": "832daf453fc64e28f50df00ac2e458718576bb26e3f16e737f18b120ae4e309a",
+      "data_hash": "2c8dabbef690fdd4f416f02ae301e3880de9d184f7d2b328a43640e34c526cc6",
+      "next_source_batch_sha256": "5c3ea128cfb9df51dcf5939d3cddf2de6bf25127b3c8902036aa735b5f230d1d",
+      "next_cursor": 390624,
+      "config_path": "experiments/prompt5_500M_v1/sparse75_ngram25m/config.json",
+      "config_sha256": "5bfc73b8feaf4cdb025ef6473454be26231e01c776a137064387ead2487115a0",
+      "checkpoint_sha256": "953ebf1c89c05f0591404709d0f7070c49f0998f6d3a0943ceb7e8c854b911ce",
+      "checkpoint_bytes": 1215232003,
+      "entry_checkpoint_path": "experiments/prompt5_500M_v1/sparse75_ngram25m/checkpoints/500M_full.pt"
+    }
+  },
+  "storage": {
+    "measured_free_bytes": 46165696512,
+    "minimum_reserve_bytes": 21474836480,
+    "current_reserve_passed": true,
+    "limit": "Current free space only; final dataset/checkpoint peak budget remains to be frozen."
+  },
+  "training_launched": false,
+  "gpu_used": false,
+  "open_launch_gates": [
+    "licensed_complete_dataset_and_quarantine",
+    "shared_frozen_packing_recipe_and_order",
+    "explicit_dataset_transition_scheduler_and_cursor_policy",
+    "numerical_interrupted_vs_continuous_resume",
+    "final_peak_storage_budget",
+    "explicit_student_training_authorization"
+  ],
+  "scope": "CPU memory-mapped full-state identity, configuration, shape, optimizer binding, scheduler and historical source-cursor inspection. No weight update, CUDA RNG restoration, numerical resume equivalence or Dataset V2 transition was executed."
+}

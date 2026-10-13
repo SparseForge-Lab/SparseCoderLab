@@ -120,3 +120,12 @@ The [generated-code snapshot](../results/dataset_v2/generated_pilot_qualificatio
 ## Planned two-arm continuation
 
 The [500M review](64_matched_500m_results.md) supports retaining +10M and +25M rather than declaring a final architecture winner. The [disabled comparison plan](../configs/dataset_v2/comparison_plan.json) starts at 499,998,720 tokens and requires matched evaluations at 625,000,448 and 750,002,176 tokens. Dataset V2 construction has started; student training and both continuation gates remain unstarted. Architecture, tokenizer and student context remain fixed; the eventual shared data stream, scheduler transition and exact-resume policy must be validated before launch.
+
+
+## Read-only continuation entry checks
+
+`python -m tools.inspect_dataset_v2_entries` checks the two pinned full states on CPU using memory-mapped checkpoint reads and a model constructed on the meta device. The [entry inspection](../results/dataset_v2/entry_preflight_v1.json) verifies both states at 499,998,720 tokens / 61,035 updates, model tensor shapes and dtypes, all 221 optimizer parameter bindings per arm, moment shapes, saved RNG presence, scheduler counters and learning-rate floor. It also verifies tokenizer/source-manifest hashes and identical next historical source batches from cursor 390,616. The inspection does not update weights or write replacement checkpoints.
+
+The saved configuration is read as JSON to preserve its numeric types and original fingerprint. The generic YAML loader interprets an exponent literal differently, so it is not used to reconstruct these JSON checkpoint identities. Historical scheduler counters are retained: phase step 48,827 and learning rate 0.00003. The old config's 250M target is historical; it does not define the planned comparison endpoint.
+
+This is structural entry validation, not proof of interrupted-versus-continuous numerical equivalence. CUDA RNG restoration, the Dataset V2 scheduler/data-cursor transition, final packing/mixture/order, peak storage budget and explicit student-training authorization remain open launch gates. Current disk free space clears the existing 20 GiB reserve, but that observation does not establish capacity for the eventual full dataset and atomic checkpoint peak.
