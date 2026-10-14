@@ -105,6 +105,9 @@ def verify(record):
     if task['kind']=='new_project_function':
         from .generated import verify_generated
         return verify_generated(record)
+    if task['kind']=='rg_definition_locations':
+        from .terminal_tasks import verify_terminal
+        return verify_terminal(record)
     excerpt = task['evidence']['excerpt']
     tree = ast.parse(excerpt)
     nodes = [n for n in tree.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))]

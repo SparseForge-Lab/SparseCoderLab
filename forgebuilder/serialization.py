@@ -32,6 +32,10 @@ def serialize_posttraining(record,tokenizer):
         # Hidden qualification oracles are verifier/critic evidence, not part
         # of the generator's function specification or serialized user input.
         evidence={'specification':evidence['specification']}
+    elif task['kind']=='rg_definition_locations':
+        # The saved terminal execution is objective evidence. Its observation
+        # belongs after TOOL_CALL in the trajectory, not in initial user input.
+        evidence={k:v for k,v in evidence.items() if k!='terminal_execution'}
     parts=[]; spans=[]; position=0
 
     def add(text,weight,kind):

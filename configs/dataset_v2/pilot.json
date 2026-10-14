@@ -5,7 +5,7 @@
   "student_training_enabled": false,
   "authorization_scope": "dataset construction and local teacher inference only",
   "current_candidate_generator": "deterministic_source_extractor",
-  "remaining_generation_pools": ["executable_code_generation", "verified_repository_patches", "actual_tool_and_terminal_execution", "student_on_policy_recovery"],
+  "remaining_generation_pools": ["executable_code_generation", "verified_repository_patches", "general_tool_use_and_terminal_tasks_beyond_read_only_search", "student_on_policy_recovery"],
   "target_task_instances": {"minimum": 5000, "maximum": 10000},
   "task_family_coverage": [
     "code_from_scratch", "bug_fix", "multi_file_repo_work", "tool_use", "terminal_use",

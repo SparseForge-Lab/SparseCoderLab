@@ -11,7 +11,10 @@ def main():
     parser.add_argument('--report',type=Path,required=True)
     args=parser.parse_args()
     if args.report.exists(): raise FileExistsError('retain prior coverage snapshots')
-    report=inspect_coverage([Path('data/dataset_v2/source_pilot_v1'),Path('data/dataset_v2/generated_pilot_v1')],
+    pools=[Path('data/dataset_v2/source_pilot_v1'),Path('data/dataset_v2/generated_pilot_v1')]
+    terminal=Path('data/dataset_v2/terminal_pilot_v1')
+    if (terminal/'preparation.json').exists(): pools.append(terminal)
+    report=inspect_coverage(pools,
                             Path('configs/dataset_v2/pilot.json'))
     args.report.parent.mkdir(parents=True,exist_ok=True)
     args.report.write_bytes((json.dumps(report,indent=2)+'\n').encode())

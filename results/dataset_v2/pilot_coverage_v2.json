@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "measured_at_utc": "2026-10-14T10:44:20.857104+00:00",
+  "status": "partial_pilot_coverage_not_frozen",
+  "pilots": [
+    {
+      "path": "data/dataset_v2/source_pilot_v1",
+      "candidate_sha256": "0376e1f15a29a28b91c35edae83f3d79d3b18c1969a15741d9288a0d8bd683cc",
+      "reviewed_prefix_sha256": "08cd7f7f50f6e82a45f5c41d16b3535d9df5add36f2142d10ad71b82db425bbd",
+      "reviewed_prefix_bytes": 1065832,
+      "incomplete_tail_bytes": 0,
+      "candidates": 4165,
+      "reviewed": 886,
+      "accepted": 886,
+      "accepted_with_complete_scope_pairs": 886,
+      "accepted_unknown_license": 0,
+      "accepted_known_license_metadata": 886,
+      "candidate_license_counts": {
+        "Apache-2.0": 155,
+        "MIT": 1225,
+        "BSD-3-Clause": 2785
+      },
+      "family_metrics": {
+        "anti_hallucination": {
+          "candidates": 833,
+          "reviewed": 177,
+          "pending": 656,
+          "objective_passes": 177,
+          "objective_pass_rate": 1.0,
+          "critic_failures": 0,
+          "critic_failure_rate": 0.0,
+          "critic_revise_recommendations": 0,
+          "accepted": 177,
+          "acceptance_rate_among_reviewed": 1.0,
+          "accepted_fraction_of_candidates": 0.21248499399759904,
+          "mean_candidate_tokens": 23.6218487394958,
+          "completed_review_elapsed_seconds": 1312.821700811386,
+          "critic_issue_counts": {
+            "hallucination": 0,
+            "scope_violation": 0,
+            "stop_issue": 0
+          },
+          "critic_issue_rates": {
+            "hallucination": 0.0,
+            "scope_violation": 0.0,
+            "stop_issue": 0.0
+          },
+          "actual_correction_rate": null,
+          "generator_reject_rate": null,
+          "recovery_scope": null
+        },
+        "evidence_grounded_reasoning": {
+          "candidates": 833,
+          "reviewed": 178,
+          "pending": 655,
+          "objective_passes": 178,
+          "objective_pass_rate": 1.0,
+          "critic_failures": 0,
+          "critic_failure_rate": 0.0,
+          "critic_revise_recommendations": 0,
+          "accepted": 178,
+          "acceptance_rate_among_reviewed": 1.0,
+          "accepted_fraction_of_candidates": 0.21368547418967587,
+          "mean_candidate_tokens": 18.80672268907563,
+          "completed_review_elapsed_seconds": 1474.5176701545715,
+          "critic_issue_counts": {
+            "hallucination": 0,
+            "scope_violation": 0,
+            "stop_issue": 0
+          },
+          "critic_issue_rates": {
+            "hallucination": 0.0,
+            "scope_violation": 0.0,
+            "stop_issue": 0.0
+          },
+          "actual_correction_rate": null,
+          "generator_reject_rate": null,
+          "recovery_scope": null
+        },
+        "recovery": {
+          "candidates": 833,
+          "reviewed": 177,
+          "pending": 656,
+          "objective_passes": 177,
+          "objective_pass_rate": 1.0,
+          "critic_failures": 0,
+          "critic_failure_rate": 0.0,
+          "critic_revise_recommendations": 0,
+          "accepted": 177,
+          "acceptance_rate_among_reviewed": 1.0,
+          "accepted_fraction_of_candidates": 0.21248499399759904,
+          "mean_candidate_tokens": 18.80672268907563,
+          "completed_review_elapsed_seconds": 1250.0526955127716,
+          "critic_issue_counts": {
+            "hallucination": 0,
+            "scope_violation": 0,
+            "stop_issue": 0
+          },
+          "critic_issue_rates": {
+            "hallucination": 0.0,
+            "scope_violation": 0.0,
+            "stop_issue": 0.0
+          },
+          "actual_correction_rate": null,
+          "generator_reject_rate": null,
+          "recovery_scope": "constructed known-bad lookup; not student-on-policy"
+        },
+        "stop_scope": {
+          "candidates": 1666,
+          "reviewed": 354,
+          "pending": 1312,
+          "objective_passes": 354,
+          "objective_pass_rate": 1.0,
+          "critic_failures": 0,
+          "critic_failure_rate": 0.0,
+          "critic_revise_recommendations": 0,
+          "accepted": 354,
+          "acceptance_rate_among_reviewed": 1.0,
+          "accepted_fraction_of_candidates": 0.21248499399759904,
+          "mean_candidate_tokens": 141.90096038415365,
+          "completed_review_elapsed_seconds": 4124.751658439636,
+          "critic_issue_counts": {
+            "hallucination": 0,
+            "scope_violation": 0,
+            "stop_issue": 0
+          },
+          "critic_issue_rates": {
+            "hallucination": 0.0,
+            "scope_violation": 0.0,
+            "stop_issue": 0.0
+          },
+          "actual_correction_rate": null,
+          "generator_reject_rate": null,
+          "recovery_scope": null
+        }
+      },
+      "critic_config_identity_counts": {
+        "UNKNOWN_HISTORICAL": 809,
+        "95c7e25ad7bb217ab138404c119201694c113de9cecd1e4e98d6bb99787eb4c5": 77
+      }
+    },
+    {
+      "path": "data/dataset_v2/generated_pilot_v1",
+      "candidate_sha256": "4ab7f5539d9d02a2983f7149ca9a14750ee7e54dc39aed298c9d7729fb865728",
+      "reviewed_prefix_sha256": "41b1c82c3d6052146d88f163399e965b22bef1ed62b9526e4bfb8baef15af284",
+      "reviewed_prefix_bytes": 10291,
+      "incomplete_tail_bytes": 0,
+      "candidates": 6,
+      "reviewed": 6,
+      "accepted": 6,
+      "accepted_with_complete_scope_pairs": 6,
+      "accepted_unknown_license": 6,
+      "accepted_known_license_metadata": 0,
+      "candidate_license_counts": {
+        "UNKNOWN": 6
+      },
+      "family_metrics": {
+        "code_from_scratch": {
+          "candidates": 6,
+          "reviewed": 6,
+          "pending": 0,
+          "objective_passes": 6,
+          "objective_pass_rate": 1.0,
+          "critic_failures": 0,
+          "critic_failure_rate": 0.0,
+          "critic_revise_recommendations": 0,
+          "accepted": 6,
+          "acceptance_rate_among_reviewed": 1.0,
+          "accepted_fraction_of_candidates": 1.0,
+          "mean_candidate_tokens": 174.66666666666666,
+          "completed_review_elapsed_seconds": 289.5196316242218,
+          "critic_issue_counts": {
+            "hallucination": 0,
+            "scope_violation": 0,
+            "stop_issue": 0
+          },
+          "critic_issue_rates": {
+            "hallucination": 0.0,
+            "scope_violation": 0.0,
+            "stop_issue": 0.0
+          },
+          "actual_correction_rate": null,
+          "generator_reject_rate": null,
+          "recovery_scope": null
+        }
+      },
+      "critic_config_identity_counts": {
+        "UNKNOWN_HISTORICAL": 6
+      }
+    },
+    {
+      "path": "data/dataset_v2/terminal_pilot_v1",
+      "candidate_sha256": "88be57e54918fdde2e7f775e6e7b26c80c519fd9c4810813a44336c055b53e97",
+      "reviewed_prefix_sha256": "994265ca53693c2cb3e0b20fb03d35a1a1aa7928087822eb7a3c28be6e422d27",
+      "reviewed_prefix_bytes": 32711,
+      "incomplete_tail_bytes": 0,
+      "candidates": 833,
+      "reviewed": 16,
+      "accepted": 16,
+      "accepted_with_complete_scope_pairs": 16,
+      "accepted_unknown_license": 0,
+      "accepted_known_license_metadata": 16,
+      "candidate_license_counts": {
+        "BSD-3-Clause": 557,
+        "Apache-2.0": 31,
+        "MIT": 245
+      },
+      "family_metrics": {
+        "terminal_use": {
+          "candidates": 833,
+          "reviewed": 16,
+          "pending": 817,
+          "objective_passes": 16,
+          "objective_pass_rate": 1.0,
+          "critic_failures": 0,
+          "critic_failure_rate": 0.0,
+          "critic_revise_recommendations": 0,
+          "accepted": 16,
+          "acceptance_rate_among_reviewed": 1.0,
+          "accepted_fraction_of_candidates": 0.01920768307322929,
+          "mean_candidate_tokens": 36.80672268907563,
+          "completed_review_elapsed_seconds": 218.23531341552734,
+          "critic_issue_counts": {
+            "hallucination": 0,
+            "scope_violation": 0,
+            "stop_issue": 0
+          },
+          "critic_issue_rates": {
+            "hallucination": 0.0,
+            "scope_violation": 0.0,
+            "stop_issue": 0.0
+          },
+          "actual_correction_rate": null,
+          "generator_reject_rate": null,
+          "recovery_scope": null
+        }
+      },
+      "critic_config_identity_counts": {
+        "95c7e25ad7bb217ab138404c119201694c113de9cecd1e4e98d6bb99787eb4c5": 16
+      }
+    }
+  ],
+  "prepared_task_instances": 5004,
+  "minimum_target": 5000,
+  "shortfall_to_minimum": 0,
+  "missing_required_task_families": [
+    "bug_fix",
+    "multi_file_repo_work",
+    "tool_use",
+    "agentic_swe"
+  ],
+  "training_ready": false,
+  "student_training_authorized": false,
+  "metric_limits": [
+    "Counts reflect durable completed review prefixes, not the entire running campaign.",
+    "Objective/critic evidence is inspected here, not re-executed.",
+    "Known license metadata does not assert complete per-file or generated-output rights clearance.",
+    "REVISE recommendations are not measured successful corrections.",
+    "Review elapsed times exclude unsaved failed attempts and are not pure inference timings.",
+    "Source extraction and constructed recovery do not establish executable SWE or on-policy recovery coverage."
+  ]
+}

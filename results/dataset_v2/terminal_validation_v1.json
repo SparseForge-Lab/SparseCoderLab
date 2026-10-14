@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "cpu_tests": {
+    "tests": 66,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "test_command": "python -m pytest forgebuilder/tests -q",
+  "syntax_compilation_passed": true,
+  "student_training_launched": false,
+  "source_and_evidence_hashes": {
+    "forgebuilder/terminal_tasks.py": "92409c88d273d121487c33d45d7390519a8d549c7f8536a1dfd94e4dee65f634",
+    "forgebuilder/tests/test_terminal_tasks.py": "681119e993ea0720b1dd3007a099c1ff787d9be60730a5e0ca54178e55a5c256",
+    "forgebuilder/pilot.py": "1bb72957205177b8464844064ef8e1bc44ce1a51c20ba21f75ccfbdb9e9e8e83",
+    "forgebuilder/serialization.py": "0a3ba1fb63e3bead24f395e4c4e1a10cd0528ac7c5ebde7847a3d71ed093b2b8",
+    "forgebuilder/tests/test_serialization.py": "55a2800b1afc711edc858ec652a452f25c2b2475d57702500dc2a1b4dff0a418",
+    "tools/prepare_dataset_v2_terminal.py": "1becc226a8a02659906664280fb11ea83ecd76f2b4cf68129f3936cc5a30f437",
+    "tools/export_dataset_v2_pilot.py": "7338f38d474c8309becfb9afcb2e4eb3dd98bc5f019ec8a52dabd494109b7e06",
+    "tools/inspect_dataset_v2_coverage.py": "c918ec3e8d5bdd415d710b872c340651c73c662c2e2ea96b4f41067b20de7537",
+    "configs/dataset_v2/pilot.json": "be0b4bdd1a765afe602448c4957ba5d534c277ed65782e1c28e6f2a7a710a55a",
+    "results/dataset_v2/terminal_qualification_v1.json": "cbd8b9ad9da6a15c7b4a010afcf2efcc709e9b3570417352f1049f65b120e405",
+    "results/dataset_v2/pilot_coverage_v2.json": "8bfc86ae9f31b647a91740ba697b2fa0e841fac1412a4938f742f400ff628bfb"
+  },
+  "scope": "Actual bounded terminal execution plus16-example independent-review/serialization qualification. Four new terminal regressions and one observation-order regression added to61 prior tests; no code-execution or SWE quality claim."
+}

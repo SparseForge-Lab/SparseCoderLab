@@ -45,6 +45,19 @@ def test_hidden_oracles_are_not_serialized_as_user_context():
     assert 'PRIVATE_ORACLE' not in result['text']
 
 
+def test_terminal_observation_only_appears_after_the_tool_call():
+    record,tokenizer=fixture()
+    record['task'].update(kind='rg_definition_locations',evidence={'excerpt':'good',
+        'terminal_execution':{'stdout':'OBSERVED_ONLY_LATER'}})
+    record['trajectory']=normalize_trajectory([
+        {'type':'TOOL_CALL','content':'rg query source.py'},
+        {'type':'TOOL_RESULT','content':'OBSERVED_ONLY_LATER'},
+        {'type':'FINAL','content':record['candidate']}])
+    result=serialize_posttraining(record,tokenizer)
+    assert 'OBSERVED_ONLY_LATER' not in result['text'].split('[TOOL_CALL]')[0]
+    assert result['text'].count('OBSERVED_ONLY_LATER')==1
+
+
 @pytest.mark.parametrize('change',['unknown_license','pending','changed_candidate','bad_final','critic_issue'])
 def test_unaccepted_or_changed_records_cannot_be_serialized(change):
     record,tokenizer=fixture()

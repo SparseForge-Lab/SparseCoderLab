@@ -42,7 +42,9 @@ def export(pilot):
     coverage=[]
     if 'new_project_function' in kinds:
         coverage.append('Generated functions passed finite project-specific WASI cases and independent critique; no real SWE patch correctness claim.')
-    if kinds-{'new_project_function'}:
+    if 'rg_definition_locations' in kinds:
+        coverage.append('Actual read-only terminal searches and source-relative line checks; no candidate code execution or SWE patch correctness claim.')
+    if kinds-{'new_project_function','rg_definition_locations'}:
         coverage.append('Source-grounded extraction/reasoning and constructed recovery; no executable SWE correctness claim.')
     complete=all(row['sample_id'] in reviews for row in candidates)
     receipt=dict(status='review_complete_snapshot_not_dataset_frozen' if complete else 'partial_reviewed_snapshot_not_frozen',accepted_records=len(accepted),

@@ -1,0 +1,22 @@
+{
+  "status": "bounded_terminal_qualification_not_complete_pool",
+  "accepted_records": 16,
+  "reviewed_records": 16,
+  "candidate_records": 833,
+  "task_families": {
+    "terminal_use": 16
+  },
+  "accepted_snapshot_sha256": "fbe11ba155602e468d636ea6cad76ddec58d1626ddebe0489c48c7f7ee6846d7",
+  "reviewed_prefix_sha256": "994265ca53693c2cb3e0b20fb03d35a1a1aa7928087822eb7a3c28be6e422d27",
+  "reviewed_prefix_bytes": 32711,
+  "student_training_authorized": false,
+  "coverage": "Actual read-only terminal searches and source-relative line checks; no candidate code execution or SWE patch correctness claim.",
+  "candidate_count": 833,
+  "actual_rg_execution_passes_at_preparation": 833,
+  "prepared_candidate_sha256": "88be57e54918fdde2e7f775e6e7b26c80c519fd9c4810813a44336c055b53e97",
+  "serialization_checked_records": 16,
+  "serialization_max_tokens": 717,
+  "serialization_over_1024": 0,
+  "protocol_note": "One malformed critic response lacked issue_summary and stayed pending; it was not counted as semantic task failure.",
+  "scope": "Temporary reviewed source excerpts and relative line locations; no full repository execution, code correctness or SWE repair claim."
+}
